@@ -47,7 +47,11 @@ EventScript_AccessSomeonesPC::
 	return
 
 EventScript_AccessLanettesPC::
+#if IS_FRLG
+	msgbox gText_AccessedBillsPC, MSGBOX_DEFAULT
+#else
 	msgbox gText_AccessedLanettesPC, MSGBOX_DEFAULT
+#endif
 	return
 
 EventScript_TurnOffPC::
@@ -63,4 +67,12 @@ EventScript_AccessHallOfFame::
 	special AccessHallOfFamePC
 	waitstate
 	goto EventScript_AccessPC
+	end
+
+EventScript_AccessPokemonBoxLink::
+	playse SE_PC_LOGIN
+	msgbox gText_StorageSystemOpened, MSGBOX_DEFAULT
+	special ShowPokemonStorageSystemPC
+	waitstate
+	goto EventScript_TurnOffPC
 	end
