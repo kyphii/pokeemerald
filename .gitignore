@@ -67,3 +67,4 @@ __pycache__
 .map_version
 
 .vs
+tools/poryscript/poryscript

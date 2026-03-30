@@ -1,0 +1,41 @@
+mapscripts SecretCove_MapScripts {}
+
+script SecretCove_Talk_Lady {
+    lock
+    faceplayer
+    if (flag(FLAG_TEMP_1)) {
+        msgbox("Have you come to get away from it all,
+            too?
+			
+			Take all your anxiety, your worries…
+			
+			…and set them adrift in the sea.", 
+            MSGBOX_DEFAULT)
+        release
+        end
+    }
+    else {
+        msgbox("Oh! A person…
+			
+			This is my special place. Not many
+			people find it.
+			
+			It's nice and quiet here.
+			I need to get away from everything,
+			Sometimes.
+
+			…Okay, most of the time.
+			I basically live here.
+
+			…Can you keep this spot a secret,
+			please?
+			Just between us?
+
+			I've seen some rare wild Pokémon
+			here, if that interests you.", 
+            MSGBOX_DEFAULT)
+        setflag(FLAG_TEMP_1)
+        release
+        end
+    }
+}

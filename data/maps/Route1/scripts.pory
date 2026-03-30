@@ -1,0 +1,123 @@
+mapscripts Route1_MapScripts {}
+
+script Route1_Intro_PreventExitWest {
+	msgbox(
+		"They're locked in a heated battle.
+		Best not get in the way.", 
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	applymovement(LOCALID_PLAYER, moves(
+		walk_right
+	))
+	waitmovement(0)
+}
+
+script Route1_Intro_TalkBattler1 {
+	lock
+    bufferspeciesname(STR_VAR_1, SPECIES_WINGULL)
+    goto(Route1_Intro_BattlerSeq)
+}
+
+script Route1_Intro_TalkBattler2 {
+	lock
+    bufferspeciesname(STR_VAR_1, SPECIES_SKITTY)
+    goto(Route1_Intro_BattlerSeq)
+}
+
+script Route1_Intro_BattlerSeq {
+	if (var(VAR_TEMP_0) == 5) {
+		setvar(VAR_TEMP_0, 0)
+	}
+	addvar(VAR_TEMP_0, 1)
+	switch(var(VAR_TEMP_0)) {
+		case 1:
+			msgbox(
+				"{STR_VAR_1}, use GROWL!",
+				MSGBOX_DEFAULT
+			)
+		case 2:
+			msgbox(
+				"{STR_VAR_1}, stay focused!
+				Counter with a GROWL",
+				MSGBOX_DEFAULT
+			)
+		case 3:
+			msgbox(
+				"{STR_VAR_1}, now's your chance!
+				GROWL!",
+				MSGBOX_DEFAULT
+			)
+		case 4:
+			msgbox(
+				"Gah, we can't take much more!
+				GROWL, {STR_VAR_1}, GROWL!",
+				MSGBOX_DEFAULT
+			)
+		case 5:
+			msgbox(
+				"This is it, {STR_VAR_1}!
+				Use GROWL!",
+				MSGBOX_DEFAULT
+			)
+	}
+	closemessage
+	release
+}
+
+script Route1_Intro_CryWingull {
+	playmoncry(SPECIES_WINGULL 0)
+    waitmoncry
+}
+
+script Route1_Intro_CrySkitty {
+	playmoncry(SPECIES_SKITTY 0)
+    waitmoncry
+}
+
+script Route1_Talk_RoadWorker {
+	lock
+	faceplayer
+	msgbox(
+		"The renovations on the road are still
+		ongoing. It will take time to clear all
+		the overgrowth.
+		
+		If you have to get through, make sure
+		you have a Pok\emon with you.",
+		MSGBOX_NPC
+	)
+	closemessage
+	release
+}
+
+script Route1_Talk_ConspiracyLady {
+	lock
+	faceplayer
+	msgbox(
+		"Are you headed to the lab up north?
+		
+		I tried to get an interview with
+		Professor Hawthorn, but she slammed
+		the door in my face! The indignity!
+		
+		All I wanted was to ask her about her
+		research, and her accomplishments, and
+		her opinions on my Ditto People Theory!
+		Now who am I gonna have on my podcast?",
+		MSGBOX_NPC
+	)
+	closemessage
+	release
+}
+
+script Route1_RouteSign {
+	msgbox(
+		"ROUTE 1
+		{UP_ARROW} HAWTHORN LABS
+		{LEFT_ARROW} CANALONE CITY
+		{RIGHT_ARROW} MARINACRE TOWN",
+		MSGBOX_SIGN
+	)
+	closemessage
+}

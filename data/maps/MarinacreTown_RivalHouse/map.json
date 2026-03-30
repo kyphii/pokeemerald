@@ -1,0 +1,41 @@
+{
+  "id": "MAP_MARINACRE_TOWN_RIVAL_HOUSE",
+  "name": "MarinacreTown_RivalHouse",
+  "layout": "LAYOUT_MARINACRE_TOWN_RIVAL_HOUSE",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_MARINACRE_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_MARINACRE_TOWN",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 9,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_MARINACRE_TOWN",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

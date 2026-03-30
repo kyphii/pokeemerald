@@ -1,0 +1,14 @@
+mapscripts MarinacreTown_PlayerHouse_2F_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+		if (var(VAR_INTRO_SEQUENCE_STATE) == 0) {
+			setflag(FLAG_SYS_B_DASH)
+			setflag(FLAG_RECEIVED_RUNNING_SHOES)
+		}
+	}
+}
+
+script MarinacreTown_PlayerHouse_2F_Sign_NintendoSwitch {
+	msgbox("It's your Nintendo Switch.
+		When was the last time you used it?", 
+		MSGBOX_SIGN)
+}

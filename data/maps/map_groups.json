@@ -1,6 +1,88 @@
 {
   "group_order": [
+    "gMapGroup_Towns",
+    "gMapGroup_Routes",
+    "gMapGroup_Wilderness",
+    "gMapGroup_Dungeons",
+    "gMapGroup_Underwater",
+    "gMapGroup_IndoorsPokemonCenters",
+    "gMapGroup_IndoorsMarts",
+    "gMapGroup_IndoorsGyms",
+    "gMapGroup_IndoorsPokemonLeague",
+    "gMapGroup_IndoorsContestHalls",
+    "gMapGroup_IndoorsHouses",
+    "gMapGroup_IndoorsOther",
     "gMapGroup_Misc"
+  ],
+  "gMapGroup_Towns": [
+    "MarinacreTown",
+    "HawthornLabs",
+    "NautirustCity",
+    "JunopolisCity",
+    "PeriwindCity",
+    "AbaloveTown"
+  ],
+  "gMapGroup_Routes": [
+    "Route1",
+    "Route2",
+    "Route3",
+    "Route4",
+    "Route5",
+    "Route6",
+    "Route12",
+    "Route15",
+    "Route16",
+    "Route17",
+    "Route18",
+    "Route19",
+    "Route20"
+  ],
+  "gMapGroup_Wilderness": [
+    "NautirustForest",
+    "MountBriar",
+    "SecretCove",
+    "SecretWaterfall"
+  ],
+  "gMapGroup_Dungeons": [
+    "PrismaticCave_1",
+    "PrismaticCave_2",
+    "PrismaticCave_3"
+  ],
+  "gMapGroup_Underwater": [
+    "Underwater_Route1",
+    "Underwater_HawthornLabs"
+  ],
+  "gMapGroup_IndoorsPokemonCenters": [
+    "NautirustCity_PokemonCenter_1F",
+    "NautirustCity_PokemonCenter_2F",
+    "JunopolisCity_PokemonCenter_1F",
+    "JunopolisCity_PokemonCenter_2F",
+    "PeriwindCity_PokemonCenter_1F",
+    "PeriwindCity_PokemonCenter_2F",
+    "AbaloveTown_PokemonCenter_1F",
+    "AbaloveTown_PokemonCenter_2F"
+  ],
+  "gMapGroup_IndoorsMarts": [
+    "MarinacreTown_Mart",
+    "NautirustCity_Mart",
+    "JunopolisCity_Mart",
+    "PeriwindCity_Mart",
+    "AbaloveTown_Mart"
+  ],
+  "gMapGroup_IndoorsGyms": [
+    "NautirustCity_Gym",
+    "JunopolisCity_Gym",
+    "PeriwindCity_Gym"
+  ],
+  "gMapGroup_IndoorsPokemonLeague": [],
+  "gMapGroup_IndoorsContestHalls": [],
+  "gMapGroup_IndoorsHouses": [
+    "MarinacreTown_PlayerHouse_1F",
+    "MarinacreTown_PlayerHouse_2F",
+    "MarinacreTown_RivalHouse"
+  ],
+  "gMapGroup_IndoorsOther": [
+    "HawthornLabs_Interior"
   ],
   "gMapGroup_Misc": [
     "DummyMap"

@@ -1,0 +1,623 @@
+mapscripts HawthornLabs_Interior_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_INTRO_SEQUENCE_STATE, 3 {
+			call(HawthornLabs_Interior_Intro_MeetProfessorScene)
+		}
+	]
+}
+
+script HawthornLabs_Interior_LockedDoor {
+	msgbox(
+        "The door is locked.",
+        MSGBOX_SIGN
+    )
+}
+
+script HawthornLabs_Interior_DoorNotice {
+	msgbox(
+        "A series of notes is posted beside the door:
+		
+		\qoTYPE ENERGETICS LAB - RESTRICTED AREA\qc
+		\qo(That means no unauthorized personnel)\qc
+		\qo(That means you, Reynolds)\qc
+		",
+        MSGBOX_SIGN
+    )
+}
+
+script HawthornLabs_Interior_WallLogo {
+	msgbox(
+        "HAWTHORN LABS
+		
+		It's difficult to tell what it says, but
+		it does say that, if you squint.",
+        MSGBOX_SIGN
+    )
+}
+
+script HawthornLabs_Interior_Bookshelf1 {
+	msgbox(
+        "A paper titled \qoThe ecological impacts
+		of regional and generational gimmicks:
+		a meta-anaylsis\qc",
+        MSGBOX_SIGN
+    )
+}
+
+script HawthornLabs_Interior_Bookshelf2 {
+	msgbox(
+        "A paper titled \qoIdentification of
+		natural variation of ThkFt1Ab-PKy38
+		glycoprotein heterodimers resulting in
+		emergent fire-type resistance in
+		Swinub population.\qc
+		
+		This is fascinating to someone,
+		probably.",
+        MSGBOX_SIGN
+    )
+}
+
+script HawthornLabs_Interior_Bookshelf3 {
+	msgbox(
+        "A book called \qoI Was Reincarnated in
+		Another World of Half-Pok\emon
+		Women?\qc
+		
+		This shouldn't be here.",
+        MSGBOX_SIGN
+    )
+}
+
+script HawthornLabs_Interior_Bookshelf4 {
+	msgbox(
+        "A paper titled \qoA double-blind
+		analysis on the effects of IV spreads
+		on the gut microbiome of Pidgey.\qc",
+        MSGBOX_SIGN
+    )
+}
+
+script HawthornLabs_Interior_Bookshelf5 {
+	msgbox(
+        "A paper titled \qoA genomic basis for
+		the distinct classification of Normal
+		and Fairy-type Clefable.\qc",
+        MSGBOX_SIGN
+    )
+}
+
+script HawthornLabs_Interior_Bookshelf6 {
+	msgbox(
+        "A book called \qoThe ??? Type and
+		Other Anomalies\qc",
+        MSGBOX_SIGN
+    )
+}
+
+script HawthornLabs_Interior_Talk_Scientist1 {
+	lock
+	msgbox(
+        "Thirty-one… Seventy-five…
+		One hundred eighteen…", 
+        MSGBOX_DEFAULT
+        )
+	faceplayer
+	msgbox(
+        "My job is to monitor the machines, and
+		record the values they output.
+		
+		…Actually, the Professor has never told
+		me what these machines do.
+		But if I get it wrong, she gets really
+		mad at me.
+		
+		They look super science-y and high-
+		tech, though, so they must be doing
+		something important, right?", 
+        MSGBOX_DEFAULT
+        )
+	closemessage
+	release 
+}
+
+script HawthornLabs_Interior_Talk_Receptionist {
+	lock
+	faceplayer
+	msgbox(
+        "Professor Hawthorn is very particular
+		about the kinds of people she allows in
+		the lab.
+		
+		For example, after she hired me,
+		she didn't let me in for two weeks.", 
+        MSGBOX_DEFAULT
+        )
+	closemessage
+	release 
+}
+
+script HawthornLabs_Interior_Talk_Professor {
+	lock
+	faceplayer
+	if (var(VAR_INTRO_SEQUENCE_STATE) < 9) {
+		msgbox(
+			"PROFESSOR: You have your mission, don't
+			you?
+			
+			Go ahead and run along, now.
+			I'm quite busy.",
+			MSGBOX_DEFAULT
+			)
+		closemessage
+	}
+	release
+}
+
+script HawthornLabs_Interior_Intro_MeetProfessorScene {
+	lockall
+	
+	special(HealPlayerParty)
+	
+	applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    applymovement(LOCALID_LABINT_RIVAL, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	turnobject(LOCALID_PLAYER, DIR_WEST)
+    turnobject(LOCALID_LABINT_RIVAL, DIR_EAST)
+	
+	msgbox(
+        "MAYA: Okay. So, where is Professor
+		Hawthorn?", 
+        MSGBOX_DEFAULT
+    )
+	
+	turnobject(LOCALID_PLAYER, DIR_NORTH)
+    turnobject(LOCALID_LABINT_RIVAL, DIR_NORTH)
+	applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    applymovement(LOCALID_LABINT_RIVAL, Common_Movement_ExclamationMark)
+    msgbox(
+		"Excuse me!",
+		MSGBOX_NPC
+	)
+    applymovement(LOCALID_LABINT_RECEPTIONIST, moves(
+		walk_right * 2
+		walk_down * 2
+		walk_left
+		face_down
+	))
+    waitmovement(0)
+	
+	msgbox(
+        "The lab is about to close for the day.
+		Professor Hawthorn is not accepting
+		visitors at this time!
+		
+		Whatever you're selling, we have no
+		interest in it, so please leave!", 
+        MSGBOX_NPC
+    )
+	msgbox(
+        "MAYA: Huh? We're not here to sell
+		anything!
+		
+		Please, we need to see the professor,
+        it's important!",
+        MSGBOX_DEFAULT
+    )
+	msgbox(
+        "The professor is busy! Didn't you see
+		the sign out front?
+		
+		No solicitors allowed!
+		
+		Please see yourselves to the door!",
+        MSGBOX_NPC
+    )
+	closemessage
+    msgbox(
+        "What's all this racket about, now?",
+        MSGBOX_DEFAULT
+    )
+	closemessage
+	
+    turnobject(LOCALID_PLAYER, DIR_EAST)
+    turnobject(LOCALID_LABINT_RIVAL, DIR_EAST)
+    turnobject(LOCALID_LABINT_RECEPTIONIST, DIR_EAST)
+	setobjectxyperm(LOCALID_LABINT_PROFESSOR, 8, 14)
+    addobject(LOCALID_LABINT_PROFESSOR)
+    applymovement(LOCALID_LABINT_PROFESSOR, moves(
+    	walk_down * 5
+        face_left
+    ))
+    waitmovement(0)
+    
+	turnobject(LOCALID_PLAYER, DIR_NORTH)
+    turnobject(LOCALID_LABINT_RIVAL, DIR_NORTH)
+    msgbox(
+        "Professor Hawthorn, ma'am!
+        
+        My apologies, I was just about to show
+        these solicitors here to the door.",
+        MSGBOX_NPC
+    )	
+    turnobject(LOCALID_PLAYER, DIR_EAST)
+    turnobject(LOCALID_LABINT_RIVAL, DIR_EAST)
+    msgbox(
+        "PROFESSOR: Hmm?
+        Solicitors, you say?
+        
+        …
+        
+        Let them through, Reynolds.",
+        MSGBOX_DEFAULT
+    )
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    turnobject(LOCALID_LABINT_RIVAL, DIR_NORTH)
+    msgbox(
+        "…But Professor, isn't that what you
+        wrote on the sign out front?
+        That was your rule, no?",
+        MSGBOX_NPC
+    )	
+    turnobject(LOCALID_PLAYER, DIR_EAST)
+    turnobject(LOCALID_LABINT_RIVAL, DIR_EAST)
+    delay(60)
+    msgbox(
+        "PROFESSOR: …Reynolds.
+        
+        Look at them, then look me in the eyes
+		and ask me that question again.",
+        MSGBOX_DEFAULT
+    )
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    turnobject(LOCALID_LABINT_RIVAL, DIR_NORTH)
+    applymovement(LOCALID_LABINT_RECEPTIONIST, moves(
+    	face_down
+        delay_16 * 2
+        face_right
+        delay_16 * 2
+    	face_down
+        delay_16
+        face_right
+    ))
+    waitmovement(0)
+    delay(60)
+    msgbox(
+        "…I-{PAUSE 30}I'll take my leave, then.",
+        MSGBOX_NPC
+    )
+	closemessage
+    applymovement(LOCALID_LABINT_RECEPTIONIST, moves(
+    	walk_right
+    	walk_up * 5
+    ))
+    waitmovement(0)
+    removeobject(LOCALID_LABINT_RECEPTIONIST)
+    setobjectxyperm(LOCALID_LABINT_RECEPTIONIST, 0, 47)
+    
+    applymovement(LOCALID_LABINT_PROFESSOR, moves(
+    	walk_left
+    	face_down
+    ))
+    waitmovement(0)
+    msgbox(
+        "PROFESSOR: Well, now that you've got my
+        attention…
+        What is it that you two need from me?
+        
+        …And please, try to keep it brief.",
+        MSGBOX_DEFAULT
+    )
+	closemessage
+    delay(30)
+    msgbox(
+        "MAYA: Um…
+		…Hi, Professor! 
+        
+        We found a bag full of Pok\e Balls
+		washed up on the beach.
+		There were Pok\emon inside!
+
+		It seemed like they were drifting in the
+		ocean for a really long time.
+		
+		We want to try and track down their
+		trainer and return them.
+		We were hoping you'd know where to
+		start looking!",
+        MSGBOX_DEFAULT
+    )
+    msgbox(
+        "PROFESSOR:  …That's quite the story,
+		isn't it?
+		
+		Come with me, if you will.
+		I'd like to take a look at this.",
+        MSGBOX_DEFAULT
+    )
+	closemessage
+	
+	hideobjectat(LOCALID_LABINT_BAG, 0)
+	hideobjectat(LOCALID_LABINT_STARTER_GRASS, 0)
+	hideobjectat(LOCALID_LABINT_STARTER_FIRE, 0)
+	hideobjectat(LOCALID_LABINT_STARTER_WATER, 0)
+	applymovement(LOCALID_LABINT_PROFESSOR, moves(
+    	walk_up * 9
+        walk_right * 4
+		walk_up
+		face_down
+    ))
+	applymovement(LOCALID_PLAYER, moves(
+        walk_right * 2
+    	walk_up * 10
+        walk_right * 6
+		face_left
+    ))
+	applymovement(LOCALID_LABINT_RIVAL, moves(
+        walk_right * 2
+    	walk_up * 10
+        walk_right * 5
+		face_up
+    ))
+	waitmovement(0)
+	turnobject(LOCALID_LABINT_PROFESSOR, DIR_EAST)
+	delay(10)
+	showobjectat(LOCALID_LABINT_BAG, 0)
+	delay(60)
+	
+	msgbox(
+        "PROFESSOR: Hmm.
+		
+		It does appear as you said.
+		This certainly looks like it's been lost
+		at sea for quite a while.
+		
+		Long enough that there's no telling
+		where it originally came from.
+		
+		Alright, now, you've piqued my interest.
+		Show me the Pok\emon you found inside,
+		will you?",
+        MSGBOX_DEFAULT
+    )
+	closemessage
+	
+	delay(30)
+	msgbox(
+        "MAYA: Okay!",
+        MSGBOX_DEFAULT
+    )
+    turnobject(LOCALID_PLAYER, DIR_SOUTH)
+    turnobject(LOCALID_LABINT_RIVAL, DIR_SOUTH)
+	fadescreen(FADE_TO_WHITE)
+	showobjectat(LOCALID_LABINT_STARTER_GRASS, 0)
+	showobjectat(LOCALID_LABINT_STARTER_FIRE, 0)
+	showobjectat(LOCALID_LABINT_STARTER_WATER, 0)
+	switch(var(VAR_STARTER_MON)) {
+		case 0: // player picked grass
+			setobjectxyperm(LOCALID_LABINT_STARTER_WATER, 13, 12)
+			setobjectxyperm(LOCALID_LABINT_STARTER_FIRE, 14, 12)
+			setobjectxyperm(LOCALID_LABINT_STARTER_GRASS, 15, 12)
+		case 1: // player picked fire
+			setobjectxyperm(LOCALID_LABINT_STARTER_GRASS, 13, 12)
+			setobjectxyperm(LOCALID_LABINT_STARTER_WATER, 14, 12)
+			setobjectxyperm(LOCALID_LABINT_STARTER_FIRE, 15, 12)
+		case 2: // player picked water
+			setobjectxyperm(LOCALID_LABINT_STARTER_FIRE, 13, 12)
+			setobjectxyperm(LOCALID_LABINT_STARTER_GRASS, 14, 12)
+			setobjectxyperm(LOCALID_LABINT_STARTER_WATER, 15, 12)
+	}
+	fadescreen(FADE_FROM_WHITE)
+	delay(60)
+	
+	applymovement(LOCALID_LABINT_PROFESSOR, moves(
+    	walk_down * 2
+		face_right
+    ))
+	waitmovement(0)
+	
+	msgbox(
+        "PROFESSOR: Well now, isn't that
+		something.
+		
+		Though their Pok\e Balls are clearly
+		weathered, the Pok\emon themselves
+		appear to be healthy.",
+        MSGBOX_DEFAULT
+    )
+	msgbox(
+        "MAYA: They seemed confused when we let
+		them out.
+
+		I wonder if they felt anything while
+		they were in the ocean?
+		Could they sense the time passing?
+		Were they scared? Hungry? Hurting?",
+        MSGBOX_DEFAULT
+    )
+	msgbox(
+        "PROFESSOR: Yes, it's a fascinating
+		research opportunity, isn't it?",
+        MSGBOX_DEFAULT
+    )
+	closemessage
+	
+	delay(30)
+	msgbox(
+        "MAYA: So, do you have any ideas for how
+		we could find their original trainer,
+		Professor?",
+        MSGBOX_DEFAULT
+    )
+	closemessage
+	
+	applymovement(LOCALID_LABINT_PROFESSOR, moves(
+    	walk_up * 3
+		walk_right * 2
+		face_down
+    ))
+	waitmovement(0)
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    turnobject(LOCALID_LABINT_RIVAL, DIR_NORTH)
+	msgbox(
+        "PROFESSOR: Hmm…
+		It's quite the puzzle.
+		
+		These could've drifted here from just
+		about anywhere.
+		
+		The Pok\emon themselves are rare
+		species, from all over the world.
+		
+		Whoever their trainer was, they must've
+		been quite the collector. Perhaps that
+		could narrow it down.",
+        MSGBOX_DEFAULT
+    )
+	msgbox(
+        "Off the top of my head…
+		
+		There's a Pok\e Ball factory in
+		Armiter City, to the west.
+		
+		Perhaps you could get the Pok\e Balls
+		analyzed there, to determine where
+		and when they were manufactured.
+		
+		You could also try to see if anyone can
+		identify the bag.
+		
+		There's a boutique in Canvenus City, to
+		the south. They might be able to do it.
+		
+		I would recommend starting with those
+		two places.
+		
+		Once you have a lead, return to me, and
+		I'll put a word out to my network of
+		Pok\emon Professors.
+		
+		You should each take one of these
+		Pok\emon with you as you travel.
+		
+		Perhaps you could run into someone who
+		recognizes them.
+		
+		I'll keep the third one here, and see if
+		the lab boys can learn anything more.",
+        MSGBOX_DEFAULT
+    )
+	
+	closemessage
+	applymovement(LOCALID_LABINT_RIVAL, moves(
+		jump_in_place_left
+    ))
+	waitmovement(0)
+	msgbox(
+        "MAYA: Great!
+		Sounds like a plan!",
+        MSGBOX_DEFAULT
+    )
+	closemessage
+    turnobject(LOCALID_PLAYER, DIR_WEST)
+	applymovement(LOCALID_LABINT_RIVAL, moves(
+		walk_right
+		face_down
+    ))
+	waitmovement(0)
+	msgbox(
+        "MAYA: I'll take this one, then!",
+        MSGBOX_DEFAULT
+    )
+	closemessage
+	switch(var(VAR_STARTER_MON)) {
+		case 0: // player picked grass
+			setobjectxyperm(LOCALID_LABINT_STARTER_FIRE, 32, 0)
+			removeobject(LOCALID_LABINT_STARTER_FIRE)
+		case 1: // player picked fire
+			setobjectxyperm(LOCALID_LABINT_STARTER_WATER, 32, 0)
+			removeobject(LOCALID_LABINT_STARTER_WATER)
+		case 2: // player picked water
+			setobjectxyperm(LOCALID_LABINT_STARTER_GRASS, 32, 0)
+			removeobject(LOCALID_LABINT_STARTER_GRASS)
+	}
+	delay(60)
+	
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    turnobject(LOCALID_LABINT_RIVAL, DIR_EAST)
+	msgbox(
+        "PROFESSOR: As for you…
+		
+		You appear to already be acquainted
+		with that Pok\emon beside you.
+		Go ahead, now.",
+        MSGBOX_DEFAULT
+    )
+	closemessage
+	turnobject(LOCALID_PLAYER, DIR_SOUTH)
+	delay(30)
+	switch(var(VAR_STARTER_MON)) {
+		case 0: // player picked grass
+			setobjectxyperm(LOCALID_LABINT_STARTER_GRASS, 32, 0)
+			removeobject(LOCALID_LABINT_STARTER_GRASS)
+		case 1: // player picked fire
+			setobjectxyperm(LOCALID_LABINT_STARTER_FIRE, 32, 0)
+			removeobject(LOCALID_LABINT_STARTER_FIRE)
+		case 2: // player picked water
+			setobjectxyperm(LOCALID_LABINT_STARTER_WATER, 32, 0)
+			removeobject(LOCALID_LABINT_STARTER_WATER)
+	}
+	delay(60)
+	
+	msgbox(
+        "PROFESSOR: Excellent!
+		
+		I commend you two for seeking me out.
+		Good luck on your search.
+		
+		Run along, now!",
+        MSGBOX_DEFAULT
+    )
+	applymovement(LOCALID_LABINT_PROFESSOR, moves(
+    	walk_left * 2
+		walk_down * 2
+		walk_left * 3
+		walk_up * 7
+    ))
+	msgbox(
+        "MAYA: Alright! Thank you, Professor!",
+        MSGBOX_DEFAULT
+    )
+	delay(60)
+	turnobject(LOCALID_PLAYER, DIR_WEST)
+    turnobject(LOCALID_LABINT_RIVAL, DIR_WEST)
+	closemessage
+	waitmovement(0)
+	setobjectxyperm(LOCALID_LABINT_PROFESSOR, 15, 4)
+	removeobject(LOCALID_LABINT_PROFESSOR)
+	
+    turnobject(LOCALID_LABINT_RIVAL, DIR_EAST)
+	msgbox(
+        "MAYA: That went… better than I
+		anticipated.
+		
+		I guess we'd better get going!
+		Let's talk outside, okay, {PLAYER}?",
+        MSGBOX_DEFAULT
+    )
+	closemessage
+	applymovement(LOCALID_LABINT_RIVAL, moves(
+		walk_fast_left * 6
+		walk_fast_down * 7
+    ))
+	setobjectxyperm(LOCALID_LABINT_RIVAL, 32, 0)
+	removeobject(LOCALID_LABINT_RIVAL)
+	
+	setflag(FLAG_INTRO_MET_PROFESSOR)
+    setvar(VAR_INTRO_SEQUENCE_STATE, 4)
+	releaseall
+}
+
+movement HawthornLabs_Interior_Intro_ApproachDesk {
+	walk_up * 2
+}

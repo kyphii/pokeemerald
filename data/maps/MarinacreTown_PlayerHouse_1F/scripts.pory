@@ -1,0 +1,264 @@
+mapscripts MarinacreTown_PlayerHouse_1F_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+      if (var(VAR_INTRO_SEQUENCE_STATE) == 0) {
+          setobjectxyperm(LOCALID_MOM, 32, 32)
+      }
+    }
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_INTRO_SEQUENCE_STATE, 5 {
+			goto(HomeTown_PlayerHouse_Intro_ReturnHomeScene)
+		}
+		VAR_INTRO_SEQUENCE_STATE, 6 {
+			goto(HomeTown_PlayerHouse_Intro_LeaveHomeScene)
+		}
+	]
+}
+
+script HomeTown_PlayerHouse_TalkMom {
+	lock
+	faceplayer
+    switch(var(VAR_INTRO_SEQUENCE_STATE)) {
+		case 1:
+			msgbox(
+				"MOM: Maya said she'd be down
+				by the beach.
+				
+				You know what she's like. Better not
+				keep her waiting!", 
+				MSGBOX_DEFAULT
+			)
+			closemessage
+			release
+		case 3:
+			if (!flag(FLAG_MOM_ENABLE_HEAL)) {
+				msgbox(
+					"MOM: Huh? {PLAYER}, is something
+					the matter?
+					
+					...
+					
+					Wow. That's quite something, isn't
+					it?
+					
+					Well, it sounds like you have a job to do
+					today!
+					
+					Go take those Pok\emon right to
+					Professor Hawthorn's Lab!", 
+					MSGBOX_DEFAULT
+				)
+				closemessage
+				setflag(FLAG_MOM_ENABLE_HEAL)
+				release
+			}
+			else {
+				msgbox(
+					"MOM: Oh? Does that Pok\emon need
+					a rest, {PLAYER}?
+					
+					Go ahead, take a break for a bit.", 
+					MSGBOX_DEFAULT
+				)
+				call(Common_EventScript_OutOfCenterPartyHeal)
+				incrementgamestat(GAME_STAT_RESTED_AT_HOME)
+				msgbox(
+					"MOM: There! Your Pok\emon looks all
+					ready to go!
+					
+					Go ahead, {PLAYER}! Take that Pok\emon
+					right to Professor Hawthorn's Lab!", 
+					MSGBOX_DEFAULT
+				)
+				closemessage
+				release
+			}
+		case 6:
+			msgbox(
+				"MOM: Hi, {PLAYER}!
+				Do you and your Pok\emon need a break?
+				
+				Here, stay and rest a while.", 
+				MSGBOX_DEFAULT
+			)
+			call(Common_EventScript_OutOfCenterPartyHeal)
+			incrementgamestat(GAME_STAT_RESTED_AT_HOME)
+			msgbox(
+				"MOM: There! All freshened up and ready
+				to go!
+				
+				Good luck out there, {PLAYER}!", 
+				MSGBOX_DEFAULT
+			)
+			closemessage
+			release
+	}
+}
+
+script HomeTown_PlayerHouse_Intro_MeetMomScene {
+	lockall
+	playse(SE_EXIT)
+	
+	setobjectxyperm(LOCALID_MOM, 6, 9)
+    addobject(LOCALID_MOM)
+	applymovement(LOCALID_MOM, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(20)
+	
+	msgbox(
+		"{PLAYER}! I'm home!", 
+        MSGBOX_DEFAULT
+	)
+    closemessage
+	
+	getplayerxy(VAR_0x8008, VAR_0x8009)
+	if (var(VAR_0x8009) == 7) {
+		applymovement(LOCALID_MOM, moves(
+			walk_up
+		))
+		waitmovement(0)
+	}
+	applymovement(LOCALID_MOM, moves(
+		walk_up
+		face_right
+	))
+	applymovement(LOCALID_PLAYER, moves(
+		walk_left * 3
+	))
+	waitmovement(0)
+	
+	msgbox(
+		"MOM: Did you have a good afternoon?
+		
+		…You look like you just got out of bed!
+		Did you take a nap?
+		…You're not sick, are you?",
+        MSGBOX_DEFAULT
+	)
+	
+	turnobject(LOCALID_MOM, DIR_SOUTH)
+	playse(SE_PIN)
+    applymovement(LOCALID_MOM, Common_Movement_ExclamationMark)
+    waitmovement(0)
+	delay(60)
+	turnobject(LOCALID_MOM, DIR_EAST)
+	
+	msgbox(
+		"Oh! I ran into your friend Maya on
+		the way home.
+		
+		I think she was looking for you. She
+		said she'd be at the beach, on the
+		south side of town.
+		
+		It's going to be a few hours before
+		I have dinner ready. Why don't you go
+		see what she wants?",
+        MSGBOX_DEFAULT
+	)
+	closemessage
+	
+	applymovement(LOCALID_MOM, moves(
+		walk_up
+		walk_left
+		face_down
+	))
+    waitmovement(0)
+	setobjectxyperm(LOCALID_MOM, 5, 6)
+	
+	setvar(VAR_INTRO_SEQUENCE_STATE, 1)
+    releaseall
+}
+
+script HomeTown_PlayerHouse_Intro_ReturnHomeScene {
+	lockall
+	turnobject(LOCALID_PLAYER, DIR_WEST)
+	turnobject(LOCALID_MOM, DIR_EAST)
+	msgbox(
+		"MOM: Oh, wow. What a story!
+		
+		Returning those lost Pok\emon to
+		their trainer…
+		That sounds like quite the adventure!
+		
+		-Oh, but you must be hungry, aren't
+		you? And it's getting late!
+		
+		Come on, dinner is almost ready!
+		
+		Let's eat, and rest up! You can set out
+		on your mission first thing tomorrow!",
+        MSGBOX_DEFAULT
+	)
+	closemessage
+	
+	setvar(VAR_INTRO_SEQUENCE_STATE, 6)
+	
+	warp(MAP_MARINACRE_TOWN_PLAYER_HOUSE_2F, 12, 2)
+    waitstate
+	
+    releaseall
+}
+
+script HomeTown_PlayerHouse_Intro_LeaveHomeScene {
+	lockall
+	turnobject(LOCALID_MOM, DIR_EAST)
+	applymovement(LOCALID_PLAYER, moves(
+		walk_left * 8
+		walk_up
+		walk_left
+	))
+    waitmovement(0)
+	
+	msgbox(
+		"MOM: There you are!
+		
+		Are you all ready to go
+		travelling with Maya?
+		
+		Great!
+		
+		Hey, I have a surprise for you!
+		Close your eyes, and hold out your
+		hands…",
+        MSGBOX_DEFAULT
+	)
+	closemessage
+	giveitem(ITEM_POKE_BALL, 5)
+	
+	msgbox(
+		"Don't move! Take this, too!",
+        MSGBOX_DEFAULT
+	)
+	closemessage
+	playfanfare(MUS_OBTAIN_ITEM)
+	message("{PLAYER} received a Pok\edex from Mom!")
+	waitmessage
+	waitfanfare
+	
+	msgbox(
+		"I got that for you at the Pok\e
+		Mart as soon as it opened!
+		
+		Ah… to be so young and ready for
+		adventure…
+		
+		You and Maya go and have a great time!
+		
+		-Oh, and if you ever need a rest, come
+		home anytime!
+		
+		Good luck out there, {PLAYER}!",
+        MSGBOX_DEFAULT
+	)
+	closemessage
+	
+	special(SetUnlockedPokedexFlags)
+	setflag(FLAG_ADVENTURE_STARTED)
+	setflag(FLAG_INTRO_MET_MOM)
+	setflag(FLAG_SYS_POKEDEX_GET)
+	setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
+	setflag(FLAG_MOM_ENABLE_HEAL)
+	setvar(VAR_CABLE_CLUB_TUTORIAL_STATE, 1)
+	setvar(VAR_INTRO_SEQUENCE_STATE, 7)
+	releaseall
+}

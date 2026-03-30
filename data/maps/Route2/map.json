@@ -1,0 +1,51 @@
+{
+  "id": "MAP_ROUTE_2",
+  "name": "Route2",
+  "layout": "LAYOUT_ROUTE_2",
+  "music": "MUS_ROUTE104",
+  "region_map_section": "MAPSEC_ROUTE_2",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE_1",
+      "offset": -24,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_NAUTIRUST_FOREST",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_NAUTIRUST_CITY",
+      "offset": -24,
+      "direction": "left"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_RIVAL",
+      "graphics_id": "OBJ_EVENT_GFX_RIVAL",
+      "x": 28,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

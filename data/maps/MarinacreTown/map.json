@@ -1,0 +1,362 @@
+{
+  "id": "MAP_MARINACRE_TOWN",
+  "name": "MarinacreTown",
+  "layout": "LAYOUT_MARINACRE_TOWN",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_MARINACRE_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE_1",
+      "offset": -24,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE_17",
+      "offset": 24,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_HOMETOWN_RIVAL",
+      "graphics_id": "OBJ_EVENT_GFX_RIVAL",
+      "x": 30,
+      "y": 31,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HomeTown_BeachScene1_TalkRival",
+      "flag": "FLAG_INTRO_MET_RIVAL"
+    },
+    {
+      "local_id": "LOCALID_HOMETOWN_BAG",
+      "graphics_id": "OBJ_EVENT_GFX_STARTER_BAG",
+      "x": 28,
+      "y": 38,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HomeTown_BeachScene1_FlavorTextBag",
+      "flag": "FLAG_INTRO_MET_RIVAL"
+    },
+    {
+      "local_id": "LOCALID_HOMETOWN_STARTER_GRASS",
+      "graphics_id": "OBJ_EVENT_GFX_SKITTY",
+      "x": 0,
+      "y": 37,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HomeTown_TownSign",
+      "flag": "FLAG_INTRO_MET_RIVAL"
+    },
+    {
+      "local_id": "LOCALID_HOMETOWN_STARTER_FIRE",
+      "graphics_id": "OBJ_EVENT_GFX_PIKACHU",
+      "x": 0,
+      "y": 38,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HomeTown_TownSign",
+      "flag": "FLAG_INTRO_MET_RIVAL"
+    },
+    {
+      "local_id": "LOCALID_HOMETOWN_STARTER_WATER",
+      "graphics_id": "OBJ_EVENT_GFX_WINGULL",
+      "x": 0,
+      "y": 39,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HomeTown_TownSign",
+      "flag": "FLAG_INTRO_MET_RIVAL"
+    },
+    {
+      "local_id": "LOCALID_HOMETOWN_BALL_GRASS",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 1,
+      "y": 37,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_INTRO_MET_RIVAL"
+    },
+    {
+      "local_id": "LOCALID_HOMETOWN_BALL_FIRE",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 1,
+      "y": 38,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_INTRO_MET_RIVAL"
+    },
+    {
+      "local_id": "LOCALID_HOMETOWN_BALL_WATER",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 1,
+      "y": 39,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_INTRO_MET_RIVAL"
+    },
+    {
+      "local_id": "LOCALID_HOMETOWN_GATEKEEPER",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 1,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HomeTown_IntroTalkGatekeeper",
+      "flag": "FLAG_INTRO_MET_RIVAL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
+      "x": 8,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HomeTown_IntroBlockMart",
+      "flag": "FLAG_INTRO_MET_PROFESSOR"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 31,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_MARINACRE_TOWN_PLAYER_HOUSE_1F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 8,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_MARINACRE_TOWN_MART",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 14,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_MARINACRE_TOWN_RIVAL_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_DUMMY_MAP",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "1",
+      "script": "HomeTown_Trigger_RestoreMusic"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "1",
+      "script": "HomeTown_Trigger_RestoreMusic"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "1",
+      "script": "HomeTown_Trigger_RestoreMusic"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 35,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "2",
+      "script": "HomeTown_BeachScene1_PreventLeave"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 35,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "2",
+      "script": "HomeTown_BeachScene1_PreventLeave"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "1",
+      "script": "HomeTown_BeachScene1_Start"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "1",
+      "script": "HomeTown_BeachScene1_Start"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "1",
+      "script": "HomeTown_BeachScene1_Start"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_TEMP_A",
+      "var_value": "1",
+      "script": "HomeTown_Trigger_CutMusic"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_TEMP_A",
+      "var_value": "1",
+      "script": "HomeTown_Trigger_CutMusic"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_TEMP_A",
+      "var_value": "1",
+      "script": "HomeTown_Trigger_CutMusic"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "1",
+      "script": "HomeTown_IntroPreventLeave"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "1",
+      "script": "HomeTown_IntroPreventLeave"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "1",
+      "script": "HomeTown_IntroPreventLeave"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "1",
+      "script": "HomeTown_IntroPreventLeave"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 35,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "2",
+      "script": "HomeTown_BeachScene1_PreventLeave"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "HomeTown_TownSign"
+    },
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 6,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "HomeTown_PlayerMailbox"
+    }
+  ]
+}

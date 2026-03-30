@@ -1,0 +1,35 @@
+{
+  "id": "MAP_PRISMATIC_CAVE_1",
+  "name": "PrismaticCave_1",
+  "layout": "LAYOUT_PRISMATIC_CAVE_1",
+  "music": "MUS_NONE",
+  "region_map_section": "MAPSEC_PRISMATIC_CAVE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 12,
+      "y": 43,
+      "elevation": 0,
+      "dest_map": "MAP_SECRET_WATERFALL",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_PRISMATIC_CAVE_2",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

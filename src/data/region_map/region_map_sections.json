@@ -1626,6 +1626,39 @@
       "y": 4,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_HAWTHORN_LABS"
+    },
+    {
+      "id": "MAPSEC_MARINACRE_TOWN"
+    },
+    {
+      "id": "MAPSEC_JUNOPOLIS_CITY"
+    },
+    {
+      "id": "MAPSEC_PERIWIND_CITY"
+    },
+    {
+      "id": "MAPSEC_NAUTIRUST_CITY"
+    },
+    {
+      "id": "MAPSEC_ABALOVE_TOWN"
+    },
+    {
+      "id": "MAPSEC_MOUNT_BRIAR"
+    },
+    {
+      "id": "MAPSEC_PRISMATIC_CAVE"
+    },
+    {
+      "id": "MAPSEC_SECRET_WATERFALL"
+    },
+    {
+      "id": "MAPSEC_SECRET_COVE"
+    },
+    {
+      "id": "MAPSEC_NAUTIRUST_FOREST"
     }
   ]
 }

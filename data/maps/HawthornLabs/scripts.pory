@@ -1,0 +1,238 @@
+mapscripts HawthornLabs_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+		setflag(FLAG_VISITED_OLDALE_TOWN)
+	}
+}
+
+script HawthornLabs_Sign {
+	msgbox(
+        "HAWTHORN LABS
+        
+		Someone has added to the sign, in
+		big red letters:
+		
+		\qo{COLOR RED}NO SOLICITORS{COLOR DARK_GRAY}\qc", 
+        MSGBOX_SIGN
+    )
+}
+
+script HawthornLabs_Talk_Scientist {
+	lock
+	faceplayer
+	msgbox(
+        "Professor Hawthorn's research is
+		focused on Pok\emon types.
+		
+		The Professor has some very
+		interesting theories regarding them.
+		
+		…I think. She hasn't actually told me
+		what we're working on.", 
+        MSGBOX_DEFAULT
+    )
+	release
+}
+
+script HawthornLabs_Intro_MeetRival {
+	lockall
+	turnobject(LOCALID_PLAYER, DIR_NORTH)
+    turnobject(LOCALID_RIVAL, DIR_SOUTH)
+	msgbox(
+        "MAYA: There you are!
+		The lab is just up ahead!", 
+        MSGBOX_DEFAULT
+    )
+	closemessage
+	
+	getplayerxy(VAR_0x8008, VAR_0x8009)
+	switch(var(VAR_0x8008)) {
+		case 10:
+			applymovement(LOCALID_PLAYER, moves(
+				walk_up * 5
+				delay_16
+				walk_up * 4
+			))
+		case 11:
+			applymovement(LOCALID_PLAYER, moves(
+				walk_up * 6
+				walk_left
+				walk_up * 3
+			))
+		case 12:
+			applymovement(LOCALID_PLAYER, moves(
+				walk_left
+				walk_up * 6
+				walk_left
+				walk_up * 3
+			))
+	}
+	applymovement(LOCALID_RIVAL, moves(
+		walk_up * 5
+		walk_left
+		walk_up * 4
+		delay_16
+		face_down
+	))
+	waitmovement(0)
+	
+	msgbox(
+        "MAYA: I heard that Professor Hawthorn
+		can bea bit… {PAUSE 30}prickly?
+		
+		My dad met her once, I think.
+		
+		…But I'm sure once we explain the
+		situation, it'll be all good.
+		
+		Alright, {PLAYER}! No hesitating!
+		Let's go!", 
+        MSGBOX_DEFAULT
+    )
+	closemessage
+	
+    turnobject(LOCALID_RIVAL, DIR_NORTH)
+	opendoor(10, 8)
+    waitdooranim
+	applymovement(LOCALID_RIVAL, moves(
+		walk_up
+		set_invisible
+	))
+	applymovement(LOCALID_PLAYER, moves(
+		walk_up * 2
+		set_invisible
+	))
+	closedoor(10, 8)
+	waitdooranim
+	playse(SE_EXIT)
+    warp(MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 0)
+    waitstate
+    releaseall
+}
+
+script HawthornLabs_Intro_BattleRival {
+	lockall
+	
+    fadeoutbgm(1)
+	getplayerxy(VAR_0x8008, VAR_0x8009)
+	switch(var(VAR_0x8008)) {
+		case 10:
+			applymovement(LOCALID_PLAYER, moves(
+				walk_right
+				walk_down
+			))
+		case 11:
+			applymovement(LOCALID_PLAYER, moves(
+				walk_down
+			))
+		case 12:
+			applymovement(LOCALID_PLAYER, moves(
+				walk_left
+				walk_down
+			))
+	}
+	waitmovement(0)
+	delay(60)
+	msgbox(
+        "MAYA: …So, that's what Professor
+         Hawthorn is like.
+		
+		I can see why she has the reputation
+		that she does.
+		
+		But she was willing to help. I feel like
+		we actually have a chance of finding
+		these Pok\emons' trainer, now.", 
+        MSGBOX_DEFAULT
+    )
+	closemessage
+    turnobject(LOCALID_RIVAL, DIR_EAST)
+	delay(30)
+	msgbox(
+        "And in the meantime, we'll keep these
+		ones with us…", 
+        MSGBOX_DEFAULT
+    )
+	closemessage
+	delay(60)
+    turnobject(LOCALID_RIVAL, DIR_NORTH)
+	msgbox(
+        "…{PLAYER}.
+		
+		I guess this makes us trainers now,
+		huh?
+		
+		…You know what that means, right?", 
+        MSGBOX_DEFAULT
+    )
+	applymovement(LOCALID_RIVAL, moves(
+		jump_in_place_up * 2
+	))
+	waitmovement(0)
+	playbgm(MUS_ENCOUNTER_MAY, TRUE)
+	msgbox(
+        "I can sense these Pok\emons' energy!
+		They're raring for some action!
+		{PLAYER}! Let's duke it out!
+		I challenge you to a Pok\emon battle!",
+        MSGBOX_DEFAULT
+    )
+	
+	switch(var(VAR_STARTER_MON)) {
+	case 0: // player picked grass
+		trainerbattle_earlyrival(TRAINER_RIVAL_INTRO_FIRE, 0, HawthornLabs_Intro_BattleRival_PlayerWin, HawthornLabs_Intro_BattleRival_PlayerLose)
+	case 1: // player picked fire
+		trainerbattle_earlyrival(TRAINER_RIVAL_INTRO_WATER, 0, HawthornLabs_Intro_BattleRival_PlayerWin, HawthornLabs_Intro_BattleRival_PlayerLose)
+	case 2: // player picked water
+		trainerbattle_earlyrival(TRAINER_RIVAL_INTRO_GRASS, 0, HawthornLabs_Intro_BattleRival_PlayerWin, HawthornLabs_Intro_BattleRival_PlayerLose)
+	}
+	
+	// after battle
+	special(HealPlayerParty)
+	fadedefaultbgm
+	
+	msgbox(
+        "MAYA: Wow!
+		
+		Even with such small Pok\emon,
+		that was exhilirating!
+		
+		I think I get why people go nuts
+		for Pok\emon battles now.
+		
+		Okay, {PLAYER}!
+		We've had our fun, but now we have a
+		mission!
+		
+		Let's go home for now. We should get
+		some rest, and get ready.
+		
+		And I need to tell my family…
+		
+		I'll see you back in town, okay?",
+        MSGBOX_DEFAULT
+    )
+	closemessage
+	
+	applymovement(LOCALID_RIVAL, moves(
+		walk_down * 2
+		delay_16 * 2
+		walk_fast_down * 6
+	))
+	waitmovement(0)
+	removeobject(LOCALID_RIVAL)
+    setobjectxyperm(LOCALID_RIVAL, 47, 0)
+	
+	setvar(VAR_INTRO_SEQUENCE_STATE, 5)
+	
+	warp(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F, 6, 6)
+    waitstate
+	
+	releaseall
+}
+
+text HawthornLabs_Intro_BattleRival_PlayerWin {
+	"Your Pok\emon is so strong!"
+}
+text HawthornLabs_Intro_BattleRival_PlayerLose {
+	"Woo! This Pok\emon is strong!"
+}

@@ -1,0 +1,699 @@
+const STARTER_SPECIES_GRASS = SPECIES_TURTWIG
+const STARTER_SPECIES_FIRE  = SPECIES_FENNEKIN
+const STARTER_SPECIES_WATER = SPECIES_POPPLIO
+
+mapscripts MarinacreTown_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_VISITED_LITTLEROOT_TOWN)
+    }
+    MAP_SCRIPT_ON_LOAD {
+        if (var(VAR_INTRO_SEQUENCE_STATE) == 1) {
+            setobjectxyperm(LOCALID_HOMETOWN_RIVAL, 30, 31)
+			setobjectxyperm(LOCALID_HOMETOWN_BAG, 28, 38)
+			
+			// prevent music cutout
+			setvar(VAR_TEMP_A, 5)
+        }
+    }
+}
+
+script HomeTown_Trigger_CutMusic {
+    fadeoutbgm(1)
+    setvar(VAR_TEMP_A, 5)
+    release
+}
+    
+script HomeTown_Trigger_RestoreMusic {
+    fadeinbgm(1)
+    setvar(VAR_TEMP_A, 5)
+    release
+}
+
+script HomeTown_TownSign {
+    msgbox(
+        "MARINACRE TOWN
+        Gifts from the sea, sparkling in the
+        rising sun", 
+        MSGBOX_SIGN
+    )
+}
+    
+script HomeTown_PlayerMailbox {
+    msgbox(
+        "{PLAYER}'s HOUSE",
+        MSGBOX_SIGN
+    )
+}
+
+script HomeTown_IntroPreventLeave {
+    lockall
+    playse(SE_PIN)
+    applymovement(LOCALID_HOMETOWN_GATEKEEPER, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    turnobject(LOCALID_HOMETOWN_GATEKEEPER, DIR_SOUTH)
+    delay(60)
+    
+    message(
+        "Excuse me!"
+    )
+    waitmessage
+    
+    getplayerxy(VAR_0x8008, VAR_0x8009)
+    switch(var(VAR_0x8009)) {
+        // case 12: do nothing
+        case 13:
+            applymovement(LOCALID_HOMETOWN_GATEKEEPER, moves(
+                walk_down
+            ))
+        case 14:
+            applymovement(LOCALID_HOMETOWN_GATEKEEPER, moves(
+                walk_down * 2
+            ))
+        case 15:
+            applymovement(LOCALID_HOMETOWN_GATEKEEPER, moves(
+                walk_down * 3
+            ))
+    }
+    waitmovement(0)
+    waitbuttonpress
+    
+    msgbox(
+        "We're still working on the road out of
+        town.
+        The repairs are almost done, and we
+        should be wrapping up in just a bit.
+        Do you mind waiting a little bit longer?", 
+        MSGBOX_DEFAULT
+        )
+    closemessage
+    
+    applymovement(LOCALID_PLAYER, moves(walk_right))
+    waitmovement(0)
+    
+    getplayerxy(VAR_0x8008, VAR_0x8009)
+    switch(var(VAR_0x8009)) {
+        // case 12: do nothing
+        case 13:
+            applymovement(LOCALID_HOMETOWN_GATEKEEPER, moves(
+                walk_up
+                face_down
+            ))
+        case 14:
+            applymovement(LOCALID_HOMETOWN_GATEKEEPER, moves(
+                walk_up * 2
+                face_down
+            ))
+        case 15:
+            applymovement(LOCALID_HOMETOWN_GATEKEEPER, moves(
+                walk_up * 3
+                face_down
+            ))
+    }
+    waitmovement(0)
+    waitbuttonpress
+    
+    releaseall
+	release
+	end
+}
+
+script HomeTown_IntroTalkGatekeeper {
+    lock
+    faceplayer
+    msgbox(
+        "I'm with the road crew. We're working on 
+        the road out of town.
+        
+        We're just about finished. Please wait
+        a little longer, okay?", 
+        MSGBOX_DEFAULT
+        )
+	closemessage
+    release
+}
+
+script HomeTown_IntroBlockMart {
+    lock
+    faceplayer
+    msgbox(
+        "Hi.
+        The Pok\eMart is closing up for today.
+
+        If you need something, you'll have to 
+        come back tomorrow.
+        Sorry!", 
+        MSGBOX_DEFAULT
+        )
+	closemessage
+    release
+}
+
+script HomeTown_BeachScene1_Start {
+    lockall
+    setvar(VAR_INTRO_SEQUENCE_STATE, 2)
+    
+    // Rival see player
+    applymovement(LOCALID_HOMETOWN_RIVAL, Common_Movement_FaceUp)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_HOMETOWN_RIVAL, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    delay(60)
+    msgbox(
+        "Oh, {PLAYER}!
+        I was hoping I'd run into you!", 
+        MSGBOX_DEFAULT
+    )
+    closemessage
+
+    // Walk player to rival
+    getplayerxy(VAR_0x8008, VAR_0x8009)
+    switch(var(VAR_0x8008)) {
+        case 29:
+            applymovement(LOCALID_PLAYER, moves(
+                walk_right
+                walk_down * 2
+                walk_right
+                walk_down
+                face_left
+            ))
+        case 30:
+            applymovement(LOCALID_PLAYER, moves(
+                walk_down * 2
+                walk_right
+                walk_down
+                face_left
+            ))
+        case 31:
+            applymovement(LOCALID_PLAYER, moves(
+                walk_down * 3
+                face_left
+            ))
+    }
+    waitmovement(0)
+    turnobject(LOCALID_PLAYER, DIR_WEST)
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
+    
+    // rival monologue
+    msgbox(
+        "INTRO MONOLOGUE 1",
+        MSGBOX_DEFAULT
+    )
+    closemessage
+    fadeoutbgm(1)
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_SOUTH)
+    delay(60)
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
+    msgbox(
+        "INTRO MONOLOGUE 2",
+        MSGBOX_DEFAULT
+    )
+    closemessage
+    delay(40)
+    msgbox(
+        "INTRO MONOLOGUE 3",
+        MSGBOX_DEFAULT
+    )
+    closemessage
+    delay(60)
+    msgbox(
+        "INTRO MONOLOGUE 4",
+        MSGBOX_DEFAULT
+    )
+    closemessage
+    
+    // See bag
+    playse(SE_PIN)
+    applymovement(LOCALID_HOMETOWN_RIVAL, Common_Movement_QuestionMark)
+    waitmovement(0)
+    delay(60)
+    msgbox(
+        "Hmm? What's that over there?",
+        MSGBOX_DEFAULT
+    )
+    closemessage
+    
+    // Walk to bag
+    applymovement(LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_WalkToBag)
+    delay(30)
+    applymovement(LOCALID_PLAYER, HomeTown_BeachScene1_WalkToBag)
+    waitmovement(0)
+    delay(30)
+    
+    // Examine bag
+    msgbox(
+        "Oh, it's an old bag.
+        Must've washed up here.
+        Just trash, I guess.",
+        MSGBOX_DEFAULT
+    )
+    closemessage
+    applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+        walk_down
+        face_right))
+    waitmovement(0)
+    delay(60)
+    playse(SE_PIN)
+    applymovement(LOCALID_HOMETOWN_RIVAL, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    delay(60)
+    applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+      jump_in_place_right * 2
+    ))
+    waitmovement(0)
+    message(
+        "Wait a second! {PLAYER}! Look!
+        There are Poké Balls in here!
+        
+        Do you think… there's anything
+        in them?"
+    )
+    applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+      delay_16 * 2
+      walk_fast_up
+      face_right
+    ))
+    waitmovement(0)
+    waitbuttonpress
+    closemessage
+    waitmovement(0)
+    applymovement(LOCALID_HOMETOWN_RIVAL, Common_Movement_FaceDown)
+    waitmovement(0)
+    delay(20)
+    msgbox(
+        "We should probably check, huh?",
+        MSGBOX_DEFAULT)
+    closemessage
+    
+    // Rival starter place
+    applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+		walk_down
+		face_right
+		delay_16 * 2
+		walk_up
+	))
+    waitmovement(0)
+    applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
+    applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+		walk_up
+	))
+    waitmovement(0)
+    setobjectxyperm(LOCALID_HOMETOWN_BALL_GRASS, 27, 35)
+    addobject(LOCALID_HOMETOWN_BALL_GRASS)
+    delay(30)
+    applymovement(LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter)
+    waitmovement(0)
+    setobjectxyperm(LOCALID_HOMETOWN_BALL_FIRE, 28, 35)
+    addobject(LOCALID_HOMETOWN_BALL_FIRE)
+    delay(30)
+    applymovement(LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter)
+    waitmovement(0)
+    setobjectxyperm(LOCALID_HOMETOWN_BALL_WATER, 29, 35)
+    addobject(LOCALID_HOMETOWN_BALL_WATER)
+    delay(30)
+    applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+    walk_left * 2
+    face_up
+	))
+    waitmovement(0)
+    
+    // Open pokeballs
+    delay(60)
+    fadescreen(FADE_TO_WHITE)
+    setobjectxyperm(LOCALID_HOMETOWN_STARTER_GRASS, 27, 35)
+    setobjectxyperm(LOCALID_HOMETOWN_STARTER_FIRE, 28, 35)
+    setobjectxyperm(LOCALID_HOMETOWN_STARTER_WATER, 29, 35)
+    addobject(LOCALID_HOMETOWN_STARTER_GRASS)
+    addobject(LOCALID_HOMETOWN_STARTER_FIRE)
+    addobject(LOCALID_HOMETOWN_STARTER_WATER)
+    removeobject(LOCALID_HOMETOWN_BALL_GRASS)
+    removeobject(LOCALID_HOMETOWN_BALL_FIRE)
+    removeobject(LOCALID_HOMETOWN_BALL_WATER)
+    fadescreen(FADE_FROM_WHITE)
+    lockall
+    playse(SE_PIN)
+    applymovement(LOCALID_HOMETOWN_STARTER_FIRE, HomeTown_BeachScene1_StarterReact)
+    delay(10)
+    playse(SE_PIN)
+    applymovement(LOCALID_HOMETOWN_STARTER_GRASS, HomeTown_BeachScene1_StarterReact)
+    delay(10)
+    playse(SE_PIN)
+    applymovement(LOCALID_HOMETOWN_STARTER_WATER, HomeTown_BeachScene1_StarterReact)
+    delay(10)
+    
+    // Rival react
+    applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+        jump_in_place_up
+        walk_fast_down
+        face_up
+    ))
+    delay(20)
+    msgbox(
+        "Woah!",
+        MSGBOX_DEFAULT)
+    closemessage
+    releaseall // Allow starters to look around freely
+    applymovement(LOCALID_HOMETOWN_RIVAL, Common_Movement_FaceUp) // reapply lock to rival
+    waitmovement(0)
+    
+    // Talk
+    delay(30)
+    turnobject(LOCALID_PLAYER, DIR_WEST)
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
+    msgbox(
+        "{PLAYER}! These Pok\emon belong
+        to someone!
+        Their trainer must've lost that bag 
+        in the ocean!",
+        MSGBOX_DEFAULT
+    )
+    closemessage
+    delay(30)
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_NORTH)
+    msgbox(
+        "They look… 
+        confused, don't they?
+        
+        Like they haven't been let out in a 
+        really long time.
+        
+        How long were they drifting out in
+        the ocean?",
+        MSGBOX_DEFAULT
+    )
+    closemessage
+    delay(20)
+    turnobject(LOCALID_PLAYER, DIR_WEST)
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
+    msgbox(
+        "What should we do about this,
+        {PLAYER}?
+        Got any ideas?"
+    )
+    dynmultichoice(25, 6, TRUE, 3, 1, DYN_MULTICHOICE_CB_NONE,
+		"No clue", "Look for their trainer", "Finders keepers")
+    switch(var(VAR_RESULT)) {
+        case 0: //"no idea"
+            msgbox(
+                "Yeah, me neither.
+                
+                I wanna say we should try to return
+                them to their trainer, but…
+                where would we even start?",
+                MSGBOX_DEFAULT
+            )
+        case 1: //"find their trainer"
+            msgbox(
+                "Do you think there's a shot?
+                it'd be the right thing to do, but…
+
+                …Who knows where they drifted in from,
+                or how long they've been out there?
+
+                Where would we even start looking?",
+                MSGBOX_DEFAULT
+            )
+        case 2: //"finders keepers"
+            msgbox(
+                "…You really think so?
+                I guess it'd be hard to track down
+                their original trainer…
+
+                But I feel like we should at least try,
+                you know? Like, maybe…
+
+                …Nevermind. I got nothing.",
+                MSGBOX_DEFAULT
+            )
+    }
+    closemessage
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_SOUTH)
+    playse(SE_PIN)
+    applymovement(LOCALID_HOMETOWN_RIVAL, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    delay(30)
+    fadeinbgm(0)
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
+    msgbox(
+        "Wait, I have an idea!
+        We should take these Pok\emon to
+        Professor Hawthorn!
+        
+        She's the Pok\emon professor for the
+        Wohnet Region.
+        
+		If anyone can help, it'll be her.
+        Her lab is just up the road on Route 1!
+        
+        …Hmm, but the road is a bit rough
+        right now.
+        What if wild Pok\emon attacked us?",
+        MSGBOX_DEFAULT
+    )
+    closemessage
+    delay(20)
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_NORTH)
+    msgbox(
+        "{PLAYER}, how about we each keep one 
+        of these Pok\emon for the trip?
+        
+        Yeah, that sounds like a plan!",
+        MSGBOX_DEFAULT
+    )
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
+    msgbox(
+        "Go ahead, {PLAYER}!
+        You pick first!"
+        MSGBOX_DEFAULT
+    )
+    closemessage
+
+    releaseall
+}
+
+script HomeTown_BeachScene1_ExamineStarterGrass{
+    setvar(VAR_0x8000, STARTER_SPECIES_GRASS)
+    setvar(VAR_0x8001, LOCALID_HOMETOWN_STARTER_GRASS)
+	bufferstring(STR_VAR_2, "Grass")
+    setvar(VAR_STARTER_MON, 0)
+    goto(HomeTown_BeachScene1_ExamineStarter)
+}
+
+script HomeTown_BeachScene1_ExamineStarterFire{
+    setvar(VAR_0x8000, STARTER_SPECIES_FIRE)
+    setvar(VAR_0x8001, LOCALID_HOMETOWN_STARTER_FIRE)
+	bufferstring(STR_VAR_2, "Fire")
+    setvar(VAR_STARTER_MON, 1)
+    goto(HomeTown_BeachScene1_ExamineStarter)
+}
+
+script HomeTown_BeachScene1_ExamineStarterWater{
+    setvar(VAR_0x8000, STARTER_SPECIES_WATER)
+    setvar(VAR_0x8001, LOCALID_HOMETOWN_STARTER_WATER)
+	bufferstring(STR_VAR_2, "Water")
+    setvar(VAR_STARTER_MON, 2)
+    goto(HomeTown_BeachScene1_ExamineStarter)
+}
+
+script HomeTown_BeachScene1_ExamineStarter {
+    lock
+    faceplayer
+	bufferspeciesname(STR_VAR_1, VAR_0x8000)
+    showmonpic(VAR_0x8000, 10, 3)
+    playmoncry(VAR_0x8000, 0)
+    waitmoncry
+    msgbox(
+		"{STR_VAR_1}
+		The {STR_VAR_2}-type Pok\emon
+		
+		Take {STR_VAR_1} with you?", MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        goto(HomeTown_BeachScene1_TakeStarter)
+    }
+    else {
+          hidemonpic
+          closemessage
+        release
+    }
+}
+
+script HomeTown_BeachScene1_TakeStarter {
+    hidemonpic
+    playfanfare(MUS_OBTAIN_TMHM)
+    message("You took {STR_VAR_1} with you!")
+    waitmessage
+    waitfanfare
+    closemessage
+    release
+    removeobject(VAR_0x8001)
+    
+    
+    givemon(VAR_0x8000, 5)
+    call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+    setflag(FLAG_SYS_POKEMON_GET)
+    goto(HomeTown_BeachScene1_Finish)
+}
+
+script HomeTown_BeachScene1_Finish {
+    turnobject(LOCALID_PLAYER, DIR_SOUTH)
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_NORTH)
+    delay(10)
+    msgbox(
+        "Alright, then!
+		I'll bring the rest", MSGBOX_DEFAULT
+    )
+	closemessage
+	
+	// rival clean up bag
+	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+		walk_down
+		face_right
+		delay_16
+	))
+    waitmovement(0)
+	removeobject(LOCALID_HOMETOWN_BAG)
+	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+		delay_16
+		walk_up
+	))
+	applymovement(LOCALID_PLAYER, moves(
+		delay_16
+		walk_up * 2
+		face_down
+	))
+	waitmovement(0)
+	
+	// rival cleanup starters
+	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+		walk_up
+	))
+	waitmovement(0)
+	if (var(VAR_STARTER_MON) != 0) {
+		delay(30)
+		removeobject(LOCALID_HOMETOWN_STARTER_GRASS)
+	}
+	if (var(VAR_STARTER_MON) != 1) {
+		applymovement(LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter)
+		waitmovement(0)
+		delay(30)
+		removeobject(LOCALID_HOMETOWN_STARTER_FIRE)
+	}
+	else {
+		applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+			walk_right
+		))
+		waitmovement(0)
+	}
+	if (var(VAR_STARTER_MON) != 2) {
+		applymovement(LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter)
+		waitmovement(0)
+		delay(30)
+		removeobject(LOCALID_HOMETOWN_STARTER_WATER)
+	}
+	else {
+		applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+			walk_right
+		))
+		waitmovement(0)
+	}
+	
+	// end convo
+	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+		walk_right
+		walk_up * 2
+		face_left
+	))
+	waitmovement(0)
+	turnobject(LOCALID_PLAYER, DIR_EAST)
+    msgbox(
+        "Alright then! Let's not waste any time!
+		I'll meet you at Professor Hawthorn's
+		lab!",
+		MSGBOX_DEFAULT
+    )
+	closemessage
+	
+	// rival run off
+	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+		walk_up
+		delay_16 * 2
+		face_left
+		delay_16 * 2
+		walk_fast_up * 5
+	))
+    waitmovement(0)
+    removeobject(LOCALID_HOMETOWN_RIVAL)
+    setobjectxyperm(LOCALID_HOMETOWN_RIVAL, 0, 47)
+    
+    setflag(FLAG_INTRO_MET_RIVAL)
+    setvar(VAR_INTRO_SEQUENCE_STATE, 3)
+	
+	releaseall
+}
+
+script HomeTown_BeachScene1_PreventLeave {
+    lock
+    playse(SE_PIN)
+    applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+        emote_exclamation_mark
+        face_player
+    ))
+    waitmovement(0)
+    msgbox(
+        "Hey, where are you going?
+        Don't leave now!",
+        MSGBOX_DEFAULT
+    )
+    closemessage
+    applymovement(LOCALID_PLAYER, moves(
+        walk_down
+    ))
+    waitmovement(0)
+    release
+}
+
+script HomeTown_BeachScene1_FlavorTextBag {
+    msgbox(
+        "It's been bleached by the sun,
+        and pummeled by waves.",
+        MSGBOX_SIGN
+    )
+}
+
+script HomeTown_BeachScene1_TalkRival {
+	lock
+	faceplayer
+    msgbox(
+        "Hurry up and pick one!
+        Uh, no rush, though!",
+        MSGBOX_NPC
+    )
+	release
+}
+
+movement HomeTown_BeachScene1_WalkToBag {
+    walk_left
+    walk_down * 4
+    walk_left * 2
+    walk_down * 2
+}
+
+movement HomeTown_BeachScene1_GoToNextStarter {
+    walk_right
+    face_up
+}
+
+movement HomeTown_BeachScene1_StarterReact {
+    emote_exclamation_mark
+    face_down
+    delay_16 * 2
+    jump_in_place_down
+    face_left
+    delay_16
+    face_right
+    delay_16
+    face_down
+}
