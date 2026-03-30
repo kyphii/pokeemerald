@@ -11,6 +11,7 @@
 #include "battle_setup.h"
 #include "battle_tv.h"
 #include "cable_club.h"
+#include "dynamic_palettes.h"
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "item.h"
@@ -2423,6 +2424,7 @@ void BtlController_HandleReturnMonToBall(enum BattlerId battler)
 
 void BtlController_HandleDrawTrainerPic(enum BattlerId battler, enum TrainerPicID trainerPicId, bool32 isFrontPic, s16 xPos, s16 yPos, s32 subpriority)
 {
+    u8 paletteNum;
     if (!IsOnPlayerSide(battler)) // Always the front sprite for the opponent.
     {
         DecompressTrainerFrontPic(trainerPicId, battler);
@@ -2451,8 +2453,9 @@ void BtlController_HandleDrawTrainerPic(enum BattlerId battler, enum TrainerPicI
                                                              xPos,
                                                              yPos,
                                                              subpriority);
-
-            gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].oam.paletteNum = IndexOfSpritePaletteTag(gTrainerSprites[trainerPicId].palette.tag);
+            paletteNum = AllocSpritePalette(0xD6F8);
+            DynPal_LoadPaletteByOffset(sDynPalPlayerBattleBack, OBJ_PLTT_ID(paletteNum));
+            gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].oam.paletteNum = paletteNum;
             gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].oam.affineMode = ST_OAM_AFFINE_OFF;
             gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].hFlip = 1;
             gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].y2 = 48;

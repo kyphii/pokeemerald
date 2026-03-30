@@ -20,6 +20,7 @@
 #include "party_menu.h"
 #include "m4a.h"
 #include "decompress.h"
+#include "dynamic_palettes.h"
 #include "data.h"
 #include "palette.h"
 #include "contest.h"
@@ -29,6 +30,7 @@
 #include "constants/battle_palace.h"
 #include "constants/battle_move_effects.h"
 #include "constants/event_objects.h" // only for SHADOW_SIZE constants
+#include "constants/trainers.h"
 
 // this file's functions
 static u8 GetBattlePalaceMoveGroup(enum BattlerId battler, enum Move move);
@@ -701,7 +703,12 @@ void DecompressTrainerBackPic(enum TrainerPicID backPicId, enum BattlerId battle
 {
     enum BattlerPosition position = GetBattlerPosition(battler);
     CopyTrainerBackspriteFramesToDest(backPicId, gMonSpritesGfxPtr->spritesGfx[position]);
-    LoadSpritePalette(&gTrainerBacksprites[backPicId].palette);
+    if (backPicId == TRAINER_PIC_BACK_BRENDAN || backPicId == TRAINER_PIC_BACK_MAY) {
+        DynPal_LoadPaletteByOffset(sDynPalPlayerBattleBack, OBJ_PLTT_ID(battler));
+    }
+    else {
+        LoadSpritePalette(&gTrainerBacksprites[backPicId].palette);
+    }
 }
 
 void FreeTrainerFrontPicPalette(u16 frontPicId)

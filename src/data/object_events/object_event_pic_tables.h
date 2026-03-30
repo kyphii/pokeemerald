@@ -1361,6 +1361,14 @@ static const struct SpriteFrameImage sPicTable_ApricornTree[] = {
     overworld_frame(gObjectEventPic_ApricornTree, 2, 2, 0),
 };
 
+static const struct SpriteFrameImage sPicTable_Rival[] = {
+    overworld_ascending_frames(gObjectEventPic_Rival, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_StarterBag[] = {
+    obj_frame_tiles(gObjectEventPic_StarterBag),
+};
+
 #if IS_FRLG
 
 static const struct SpriteFrameImage sPicTable_RedNormal[] = {

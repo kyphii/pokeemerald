@@ -412,18 +412,15 @@
 #define OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG      385
 #define OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG         386
 #define OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG        387
-
-// FRLG equivalents
-
-// #define OBJ_EVENT_GFX_MEW OBJ_EVENT_GFX_NINJA_BOY
-// #define OBJ_EVENT_GFX_LUGIA OBJ_EVENT_GFX_NINJA_BOY
+#define OBJ_EVENT_GFX_RIVAL	                     388
+#define OBJ_EVENT_GFX_STARTER_BAG                389
 
 
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        388
+#define NUM_OBJ_EVENT_GFX                        390
 
 
 // These are dynamic object gfx ids.
@@ -523,10 +520,9 @@
 #define OBJ_EVENT_PAL_TAG_NPC_2                   0x1104
 #define OBJ_EVENT_PAL_TAG_NPC_3                   0x1105
 #define OBJ_EVENT_PAL_TAG_NPC_4                   0x1106
-#define OBJ_EVENT_PAL_TAG_NPC_1_REFLECTION        0x1107
-#define OBJ_EVENT_PAL_TAG_NPC_2_REFLECTION        0x1108
-#define OBJ_EVENT_PAL_TAG_NPC_3_REFLECTION        0x1109
-#define OBJ_EVENT_PAL_TAG_NPC_4_REFLECTION        0x110A
+#define OBJ_EVENT_PAL_TAG_NPC_5                   0x1107
+#define OBJ_EVENT_PAL_TAG_NPC_6                   0x1108
+#define OBJ_EVENT_PAL_TAG_NPC_REFLECTION          0x1109
 #define OBJ_EVENT_PAL_TAG_QUINTY_PLUMP            0x110B
 #define OBJ_EVENT_PAL_TAG_QUINTY_PLUMP_REFLECTION 0x110C
 #define OBJ_EVENT_PAL_TAG_TRUCK                   0x110D
@@ -568,6 +564,7 @@
 #define OBJ_EVENT_PAL_TAG_METEORITE               0x1131
 #define OBJ_EVENT_PAL_TAG_SEAGALLOP               0x1132
 #define OBJ_EVENT_PAL_TAG_SS_ANNE                 0x1133
+#define OBJ_EVENT_PAL_TAG_RIVAL	                  0x1134
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

@@ -32,7 +32,7 @@ const u32 gObjectEventPic_BrendanUnderwater[] = INCBIN_U32("graphics/object_even
 const u32 gObjectEventPic_MayUnderwater[] = INCBIN_U32("graphics/object_events/pics/people/may/underwater.4bpp");
 const u16 gObjectEventPal_PlayerUnderwater[] = INCBIN_U16("graphics/object_events/palettes/player_underwater.gbapal");
 const u32 gObjectEventPic_MayNormalRunning[] = INCBIN_U32("graphics/object_events/pics/people/may/walking.4bpp", "graphics/object_events/pics/people/may/running.4bpp");
-const u16 gObjectEventPal_May[] = INCBIN_U16("graphics/object_events/palettes/may.gbapal");
+const u16 gObjectEventPal_May[] = INCBIN_U16("graphics/object_events/palettes/player.gbapal");
 const u16 gObjectEventPal_MayReflection[] = INCBIN_U16("graphics/object_events/palettes/may_reflection.gbapal");
 const u32 gObjectEventPic_RubySapphireMayNormal[] = INCBIN_U32("graphics/object_events/pics/people/ruby_sapphire_may/walking.4bpp");
 const u32 gObjectEventPic_RubySapphireMayRunning[] = INCBIN_U32("graphics/object_events/pics/people/ruby_sapphire_may/running.4bpp");
@@ -392,6 +392,10 @@ const u16 gObjectEventPal_Substitute[] = INCBIN_U16("graphics/object_events/pics
 const u16 gObjectEventPaletteEmotes[] = INCBIN_U16("graphics/misc/emotes.gbapal");
 const u16 gObjectEventPaletteNeonLight[] = INCBIN_U16("graphics/object_events/palettes/neon_light.gbapal");
 
+const u32 gObjectEventPic_Rival[] = INCBIN_U32("graphics/object_events/pics/people/rival.4bpp");
+const u16 gObjectEventPal_Rival[] = INCBIN_U16("graphics/object_events/palettes/rival.gbapal");
+const u32 gObjectEventPic_StarterBag[] = INCBIN_U32("graphics/object_events/pics/misc/starter_bag.4bpp");
+
 #if OW_FOLLOWERS_POKEBALLS
 const u32 gObjectEventPic_MasterBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_master.4bpp");
 const u32 gObjectEventPic_UltraBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_ultra.4bpp");
@@ -634,4 +638,7 @@ const u16 gObjectEventPic_JigglypuffOld[] = INCBIN_U16("graphics/object_events/p
 const u16 gObjectEventPic_PidgeyOld[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/pidgey.4bpp");
 const u16 gObjectEventPic_ClefairyOld[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/clefairy.4bpp");
 
+const u32 gObjectEventPic_Rival[] = INCBIN_U32("graphics/object_events/pics/people/rival.4bpp");
+const u16 gObjectEventPal_Rival[] = INCBIN_U16("graphics/object_events/palettes/rival.gbapal");
+const u32 gObjectEventPic_StarterBag[] = INCBIN_U32("graphics/object_events/pics/misc/starter_bag.4bpp");
 #endif // IS_FRLG

@@ -1,6 +1,7 @@
 #include "global.h"
 #include "data.h"
 #include "decompress.h"
+#include "dynamic_palettes.h"
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "field_camera.h"
@@ -39,6 +40,7 @@
 #include "constants/metatile_behaviors.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "constants/trainers.h"
 
 #define subsprite_table(ptr) {.subsprites = ptr, .subspriteCount = (sizeof ptr) / (sizeof(struct Subsprite))}
 
@@ -988,7 +990,15 @@ u8 CreateTrainerSprite(u8 trainerSpriteID, s16 x, s16 y, u8 subpriority, u8 *buf
         alloced = TRUE;
     }
 
-    LoadSpritePalette(&gTrainerSprites[trainerSpriteID].palette);
+    // DYNPAL: override palette
+    if (trainerSpriteID == TRAINER_PIC_FRONT_BRENDAN || trainerSpriteID == TRAINER_PIC_FRONT_MAY)
+    {
+        DynPal_LoadPaletteByTag(sDynPalPlayerBattleFront, gTrainerSprites[trainerSpriteID].palette.tag);
+    }
+    else
+    {
+        LoadSpritePalette(&gTrainerSprites[trainerSpriteID].palette);
+    }
     LoadCompressedSpriteSheetOverrideBuffer(&gTrainerSprites[trainerSpriteID].frontPic, buffer);
     if (alloced)
         Free(buffer);
