@@ -2,6 +2,7 @@
 #define GUARD_CONSTANTS_MAPS_H
 
 #include "map_groups.h"
+#include "dummy_map_defines.h"
 
 enum
 {
