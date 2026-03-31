@@ -1633,14 +1633,16 @@ enum Gender GetPlayerAvatarGenderByGraphicsId(u16 gfxId)
 bool8 PartyHasMonWithSurf(void)
 {
     u8 i;
+    u16 species;
 
     if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
     {
         for (i = 0; i < PARTY_SIZE; i++)
         {
-            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE)
+            species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
+            if (species == SPECIES_NONE)
                 break;
-            if (MonKnowsMove(&gPlayerParty[i], MOVE_SURF))
+            if (CanLearnTeachableMove(species, MOVE_SURF))
                 return TRUE;
         }
     }
