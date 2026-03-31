@@ -14,16 +14,18 @@ MarinacreTown_PlayerHouse_2F_MapScripts_MAP_SCRIPT_ON_LOAD_1:
 	setflag FLAG_SYS_B_DASH
 # 5 "data/maps/MarinacreTown_PlayerHouse_2F/scripts.pory"
 	setflag FLAG_RECEIVED_RUNNING_SHOES
+# 6 "data/maps/MarinacreTown_PlayerHouse_2F/scripts.pory"
+	setplayerlevel 4
 	return
 
 
 MarinacreTown_PlayerHouse_2F_Sign_NintendoSwitch::
-# 11 "data/maps/MarinacreTown_PlayerHouse_2F/scripts.pory"
+# 12 "data/maps/MarinacreTown_PlayerHouse_2F/scripts.pory"
 	msgbox MarinacreTown_PlayerHouse_2F_Sign_NintendoSwitch_Text_0, MSGBOX_SIGN
 	return
 
 
 MarinacreTown_PlayerHouse_2F_Sign_NintendoSwitch_Text_0:
-# 11 "data/maps/MarinacreTown_PlayerHouse_2F/scripts.pory"
+# 12 "data/maps/MarinacreTown_PlayerHouse_2F/scripts.pory"
 	.string "It's your Nintendo Switch.\n"
 	.string "When was the last time you used it?$"

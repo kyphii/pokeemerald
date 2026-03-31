@@ -12,6 +12,7 @@
 #include "decompress.h"
 #include "decoration.h"
 #include "decoration_inventory.h"
+#include "dynamic_pokemon.h"
 #include "event_data.h"
 #include "field_door.h"
 #include "field_effect.h"
@@ -3353,3 +3354,37 @@ bool8 ScrCmd_getbraillestringwidth(struct ScriptContext * ctx)
     gSpecialVar_0x8004 = GetStringWidth(FONT_BRAILLE, msg, -1);
     return FALSE;
 }
+
+bool8 Scrcmd_getplayerlevel(struct ScriptContext* ctx)
+{
+    Script_RequestEffects(SCREFF_V1);
+    gSpecialVar_Result = gSaveBlock2Ptr->playerLevel;
+    return FALSE;
+}
+
+bool8 Scrcmd_setplayerlevel(struct ScriptContext* ctx)
+{
+    u8 lvl = ScriptReadByte(ctx);
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+    if (lvl > PLAYER_LEVEL_MAX) {
+        gSaveBlock2Ptr->playerLevel = PLAYER_LEVEL_MAX;
+    }
+    else {
+        gSaveBlock2Ptr->playerLevel = lvl;
+    }
+    return FALSE;
+}
+
+bool8 Scrcmd_addplayerlevel(struct ScriptContext* ctx)
+{
+    u8 lvlInc = ScriptReadByte(ctx);
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+    if (PLAYER_LEVEL_MAX - lvlInc < gSaveBlock2Ptr->playerLevel) {
+        gSaveBlock2Ptr->playerLevel = PLAYER_LEVEL_MAX;
+    }
+    else {
+        gSaveBlock2Ptr->playerLevel += lvlInc;
+    }
+    return FALSE;
+}
+

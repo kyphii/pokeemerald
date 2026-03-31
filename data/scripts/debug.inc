@@ -839,3 +839,15 @@ Debug_EventScript_TellTheTime_Text_0:
 
 DebugEventScript_PrintWeekday_Text_0:
 	.string "Time of day: {STR_VAR_1}$"
+
+DebugEventScript_CheckPlayerLevel::
+	getplayerlevel
+	buffernumberstring STR_VAR_1, VAR_RESULT
+	msgbox DebugEventScript_CheckPlayerLevel_Text_0, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	end
+
+DebugEventScript_CheckPlayerLevel_Text_0:
+	.string "Current player level:\n"
+	.string "{STR_VAR_1}$"

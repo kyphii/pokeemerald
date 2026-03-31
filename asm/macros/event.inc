@@ -2854,3 +2854,20 @@
 	getbraillestringwidth \text
 	call EventScript_BrailleCursorWaitButton
 	.endm
+
+	@ Retrieves the player's scaling level, and stores it in VAR_RESULT
+	.macro getplayerlevel
+	callnative Scrcmd_getplayerlevel, requests_effects=1
+	.endm
+	
+    @ Sets the player's scaling level.
+	.macro setplayerlevel lvl:req
+	callnative Scrcmd_setplayerlevel, requests_effects=1
+	.byte \lvl
+	.endm
+	
+    @ Adds to the player's scaling level.
+	.macro addplayerlevel inc:req
+	callnative Scrcmd_addplayerlevel, requests_effects=1
+	.byte \inc
+	.endm

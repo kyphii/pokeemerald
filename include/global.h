@@ -622,6 +622,7 @@ struct SaveBlock2
     u8 dynPalSkinPreset;
     u8 dynPalHairPreset;
     u8 dynPalClothesPreset;
+    u8 playerLevel;
 }; // sizeof=0xF2C
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;

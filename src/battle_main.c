@@ -23,6 +23,7 @@
 #include "decompress.h"
 #include "dexnav.h"
 #include "dma3.h"
+#include "dynamic_pokemon.h"
 #include "event_data.h"
 #include "evolution_scene.h"
 #include "frontier_util.h"
@@ -1960,6 +1961,9 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             struct OriginalTrainerId otId = OTID_STRUCT_RANDOM_NO_SHINY;
             u32 abilityNum = 0;
 
+            u8 level = max(1, DynamicScaleAdjustMonLevel(100, FALSE) + partyData[i].lvl);
+            u16 species = DynamicScaleAdjustMonSpecies(partyData[i].species, level);
+
             if (trainer->battleType != TRAINER_BATTLE_TYPE_SINGLES)
                 personalityValue = 0x80;
             else if (trainer->gender == TRAINER_GENDER_FEMALE)
@@ -1980,7 +1984,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 otId.method = OT_ID_PRESET;
                 otId.value = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-            CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl, personalityValue, otId);
+            CreateMon(&party[i], species, level, personalityValue, otId);
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
 
             CustomTrainerPartyAssignMoves(&party[i], &partyData[monIndex]);
