@@ -67,13 +67,13 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_INTRO_MET_PROFESSOR"
     },
     {
       "local_id": "LOCALID_LABINT_BAG",
       "graphics_id": "OBJ_EVENT_GFX_STARTER_BAG",
-      "x": 13,
-      "y": 10,
+      "x": 17,
+      "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -86,8 +86,8 @@
     {
       "local_id": "LOCALID_LABINT_STARTER_GRASS",
       "graphics_id": "OBJ_EVENT_GFX_SKITTY",
-      "x": 14,
-      "y": 12,
+      "x": 19,
+      "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -100,8 +100,8 @@
     {
       "local_id": "LOCALID_LABINT_STARTER_FIRE",
       "graphics_id": "OBJ_EVENT_GFX_PIKACHU",
-      "x": 13,
-      "y": 12,
+      "x": 18,
+      "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -114,8 +114,8 @@
     {
       "local_id": "LOCALID_LABINT_STARTER_WATER",
       "graphics_id": "OBJ_EVENT_GFX_WINGULL",
-      "x": 15,
-      "y": 12,
+      "x": 20,
+      "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -247,14 +247,6 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "HawthornLabs_Interior_Bookshelf6"
-    },
-    {
-      "type": "sign",
-      "x": 14,
-      "y": 4,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
-      "script": "HawthornLabs_Interior_Talk_Professor"
     }
   ]
 }

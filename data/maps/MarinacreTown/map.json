@@ -64,7 +64,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "HomeTown_TownSign",
+      "script": "HomeTown_BeachScene1_ExamineStarterGrass",
       "flag": "FLAG_INTRO_MET_RIVAL"
     },
     {
@@ -78,7 +78,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "HomeTown_TownSign",
+      "script": "HomeTown_BeachScene1_ExamineStarterFire",
       "flag": "FLAG_INTRO_MET_RIVAL"
     },
     {
@@ -92,7 +92,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "HomeTown_TownSign",
+      "script": "HomeTown_BeachScene1_ExamineStarterWater",
       "flag": "FLAG_INTRO_MET_RIVAL"
     },
     {
@@ -199,27 +199,27 @@
     {
       "type": "trigger",
       "x": 29,
-      "y": 28,
+      "y": 26,
       "elevation": 0,
-      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var": "VAR_TEMP_A",
       "var_value": "1",
       "script": "HomeTown_Trigger_RestoreMusic"
     },
     {
       "type": "trigger",
       "x": 30,
-      "y": 28,
+      "y": 26,
       "elevation": 0,
-      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var": "VAR_TEMP_A",
       "var_value": "1",
       "script": "HomeTown_Trigger_RestoreMusic"
     },
     {
       "type": "trigger",
       "x": 31,
-      "y": 28,
+      "y": 26,
       "elevation": 0,
-      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var": "VAR_TEMP_A",
       "var_value": "1",
       "script": "HomeTown_Trigger_RestoreMusic"
     },
@@ -244,7 +244,7 @@
     {
       "type": "trigger",
       "x": 29,
-      "y": 26,
+      "y": 28,
       "elevation": 0,
       "var": "VAR_INTRO_SEQUENCE_STATE",
       "var_value": "1",
@@ -253,7 +253,7 @@
     {
       "type": "trigger",
       "x": 30,
-      "y": 26,
+      "y": 28,
       "elevation": 0,
       "var": "VAR_INTRO_SEQUENCE_STATE",
       "var_value": "1",
@@ -262,7 +262,7 @@
     {
       "type": "trigger",
       "x": 31,
-      "y": 26,
+      "y": 28,
       "elevation": 0,
       "var": "VAR_INTRO_SEQUENCE_STATE",
       "var_value": "1",
@@ -274,7 +274,7 @@
       "y": 27,
       "elevation": 0,
       "var": "VAR_TEMP_A",
-      "var_value": "1",
+      "var_value": "0",
       "script": "HomeTown_Trigger_CutMusic"
     },
     {
@@ -283,7 +283,7 @@
       "y": 27,
       "elevation": 0,
       "var": "VAR_TEMP_A",
-      "var_value": "1",
+      "var_value": "0",
       "script": "HomeTown_Trigger_CutMusic"
     },
     {
@@ -292,7 +292,7 @@
       "y": 27,
       "elevation": 0,
       "var": "VAR_TEMP_A",
-      "var_value": "1",
+      "var_value": "0",
       "script": "HomeTown_Trigger_CutMusic"
     },
     {

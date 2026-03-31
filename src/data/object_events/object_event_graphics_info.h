@@ -4477,6 +4477,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rival = {
     .paletteSlot = PALSLOT_NPC_SPECIAL,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
+    .compressed = FALSE,
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
@@ -4495,12 +4496,12 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StarterBag = {
     .paletteSlot = PALSLOT_NPC_1,
     .shadowSize = SHADOW_SIZE_S,
     .inanimate = TRUE,
+    .compressed = FALSE,
     .tracks = TRACKS_NONE,
     .oam = &gObjectEventBaseOam_16x16,
     .subspriteTables = sOamTables_16x16,
     .anims = sAnimTable_Inanimate,
     .images = sPicTable_StarterBag,
-    .affineAnims = gDummySpriteAffineAnimTable,
 };
 
 #if IS_FRLG

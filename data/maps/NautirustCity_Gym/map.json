@@ -359,6 +359,13 @@
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
       "dest_warp_id": "36"
+    },
+    {
+      "x": 7,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],

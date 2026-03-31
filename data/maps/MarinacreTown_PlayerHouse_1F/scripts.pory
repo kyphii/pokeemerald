@@ -1,8 +1,8 @@
 mapscripts MarinacreTown_PlayerHouse_1F_MapScripts {
     MAP_SCRIPT_ON_LOAD {
-      if (var(VAR_INTRO_SEQUENCE_STATE) == 0) {
-          setobjectxyperm(LOCALID_MOM, 32, 32)
-      }
+		if (var(VAR_INTRO_SEQUENCE_STATE) == 0) {
+			setobjectxyperm(LOCALID_MOM, 32, 32)
+		}
     }
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_INTRO_SEQUENCE_STATE, 5 {
@@ -135,6 +135,7 @@ script HomeTown_PlayerHouse_Intro_MeetMomScene {
         MSGBOX_DEFAULT
 	)
 	
+	delay(30)
 	turnobject(LOCALID_MOM, DIR_SOUTH)
 	playse(SE_PIN)
     applymovement(LOCALID_MOM, Common_Movement_ExclamationMark)
@@ -171,10 +172,19 @@ script HomeTown_PlayerHouse_Intro_MeetMomScene {
 
 script HomeTown_PlayerHouse_Intro_ReturnHomeScene {
 	lockall
-	turnobject(LOCALID_PLAYER, DIR_WEST)
+	applymovement(LOCALID_PLAYER, moves(
+		walk_up * 3
+		face_left
+	))
+	waitmovement(0)
 	turnobject(LOCALID_MOM, DIR_EAST)
 	msgbox(
-		"MOM: Oh, wow. What a story!
+		"MOM: Welcome back, {PLAYER}!
+		What happened out there?
+		
+		…{PAUSE 30}…{PAUSE 30}…
+		
+		Oh, wow. What a story!
 		
 		Returning those lost Pok\emon to
 		their trainer…
@@ -193,22 +203,24 @@ script HomeTown_PlayerHouse_Intro_ReturnHomeScene {
 	
 	setvar(VAR_INTRO_SEQUENCE_STATE, 6)
 	
+	fadescreen(FADE_TO_BLACK)
+	call(Common_EventScript_OutOfCenterPartyHeal)
 	warp(MAP_MARINACRE_TOWN_PLAYER_HOUSE_2F, 12, 2)
+	fadescreen(FADE_FROM_BLACK)
     waitstate
 	
     releaseall
 }
 
 script HomeTown_PlayerHouse_Intro_LeaveHomeScene {
-	lockall
-	turnobject(LOCALID_MOM, DIR_EAST)
 	applymovement(LOCALID_PLAYER, moves(
 		walk_left * 8
 		walk_up
 		walk_left
 	))
     waitmovement(0)
-	
+	lockall
+	turnobject(LOCALID_MOM, DIR_EAST)
 	msgbox(
 		"MOM: There you are!
 		

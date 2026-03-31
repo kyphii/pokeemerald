@@ -130,7 +130,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_101",
-      "name": "ROUTE 101",
+      "name": "ROUTE 1",
       "x": 4,
       "y": 10,
       "width": 1,
@@ -1628,37 +1628,47 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_HAWTHORN_LABS"
+      "id": "MAPSEC_HAWTHORN_LABS",
+      "name": "HAWTHORN LABS"
     },
     {
-      "id": "MAPSEC_MARINACRE_TOWN"
+      "id": "MAPSEC_MARINACRE_TOWN",
+      "name": "MARINACRE TOWN"
     },
     {
-      "id": "MAPSEC_JUNOPOLIS_CITY"
+      "id": "MAPSEC_JUNOPOLIS_CITY",
+      "name": "JUNOPOLIS CITY"
     },
     {
-      "id": "MAPSEC_PERIWIND_CITY"
+      "id": "MAPSEC_PERIWIND_CITY",
+      "name": "PERIWIND CITY"
     },
     {
-      "id": "MAPSEC_NAUTIRUST_CITY"
+      "id": "MAPSEC_NAUTIRUST_CITY",
+      "name": "NAUTIRUST CITY"
     },
     {
-      "id": "MAPSEC_ABALOVE_TOWN"
+      "id": "MAPSEC_ABALOVE_TOWN",
+      "name": "ABALOVE TOWN"
     },
     {
-      "id": "MAPSEC_MOUNT_BRIAR"
+      "id": "MAPSEC_MOUNT_BRIAR",
+      "name": "Mount Briar"
     },
     {
       "id": "MAPSEC_PRISMATIC_CAVE"
     },
     {
-      "id": "MAPSEC_SECRET_WATERFALL"
+      "id": "MAPSEC_SECRET_WATERFALL",
+      "name": "Secret Waterfall"
     },
     {
-      "id": "MAPSEC_SECRET_COVE"
+      "id": "MAPSEC_SECRET_COVE",
+      "name": "Secret Cove"
     },
     {
-      "id": "MAPSEC_NAUTIRUST_FOREST"
+      "id": "MAPSEC_NAUTIRUST_FOREST",
+      "name": "Nautirust Forest"
     }
   ]
 }

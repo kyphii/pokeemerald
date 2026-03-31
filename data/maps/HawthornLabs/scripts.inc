@@ -6,392 +6,440 @@ HawthornLabs_MapScripts::
 HawthornLabs_MapScripts_MAP_SCRIPT_ON_LOAD:
 # 3 "data/maps/HawthornLabs/scripts.pory"
 	setflag FLAG_VISITED_OLDALE_TOWN
+# 5 "data/maps/HawthornLabs/scripts.pory"
+	compare VAR_INTRO_SEQUENCE_STATE, 4
+	goto_if_eq HawthornLabs_MapScripts_MAP_SCRIPT_ON_LOAD_1
+	return
+
+HawthornLabs_MapScripts_MAP_SCRIPT_ON_LOAD_1:
+# 7 "data/maps/HawthornLabs/scripts.pory"
+	clearflag FLAG_INTRO_MET_MOM
+# 8 "data/maps/HawthornLabs/scripts.pory"
+	addobject LOCALID_LABEXT_RIVAL
 	return
 
 
 HawthornLabs_Sign::
-# 8 "data/maps/HawthornLabs/scripts.pory"
+# 14 "data/maps/HawthornLabs/scripts.pory"
 	msgbox HawthornLabs_Sign_Text_0, MSGBOX_SIGN
 	return
 
 
 HawthornLabs_Talk_Scientist::
-# 20 "data/maps/HawthornLabs/scripts.pory"
+# 26 "data/maps/HawthornLabs/scripts.pory"
 	lock
-# 21 "data/maps/HawthornLabs/scripts.pory"
+# 27 "data/maps/HawthornLabs/scripts.pory"
 	faceplayer
-# 22 "data/maps/HawthornLabs/scripts.pory"
+# 28 "data/maps/HawthornLabs/scripts.pory"
 	msgbox HawthornLabs_Talk_Scientist_Text_0, MSGBOX_DEFAULT
-# 33 "data/maps/HawthornLabs/scripts.pory"
+# 39 "data/maps/HawthornLabs/scripts.pory"
+	release
+	return
+
+
+HawthornLabs_Talk_Receptionist::
+# 43 "data/maps/HawthornLabs/scripts.pory"
+	lock
+# 44 "data/maps/HawthornLabs/scripts.pory"
+	faceplayer
+# 45 "data/maps/HawthornLabs/scripts.pory"
+	msgbox HawthornLabs_Talk_Receptionist_Text_0, MSGBOX_DEFAULT
+# 54 "data/maps/HawthornLabs/scripts.pory"
 	release
 	return
 
 
 HawthornLabs_Intro_MeetRival::
-# 37 "data/maps/HawthornLabs/scripts.pory"
+# 58 "data/maps/HawthornLabs/scripts.pory"
 	lockall
-# 38 "data/maps/HawthornLabs/scripts.pory"
+# 59 "data/maps/HawthornLabs/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_NORTH
-# 39 "data/maps/HawthornLabs/scripts.pory"
-	turnobject LOCALID_RIVAL, DIR_SOUTH
-# 40 "data/maps/HawthornLabs/scripts.pory"
+# 60 "data/maps/HawthornLabs/scripts.pory"
+	applymovement LOCALID_LABEXT_RIVAL, HawthornLabs_Intro_MeetRival_Movement_0
+# 64 "data/maps/HawthornLabs/scripts.pory"
 	msgbox HawthornLabs_Intro_MeetRival_Text_0, MSGBOX_DEFAULT
-# 45 "data/maps/HawthornLabs/scripts.pory"
+# 69 "data/maps/HawthornLabs/scripts.pory"
 	closemessage
-# 47 "data/maps/HawthornLabs/scripts.pory"
+# 70 "data/maps/HawthornLabs/scripts.pory"
+	delay 30
+# 72 "data/maps/HawthornLabs/scripts.pory"
 	getplayerxy VAR_0x8008, VAR_0x8009
-# 48 "data/maps/HawthornLabs/scripts.pory"
+# 73 "data/maps/HawthornLabs/scripts.pory"
+	applymovement LOCALID_LABEXT_RIVAL, HawthornLabs_Intro_MeetRival_Movement_1
+# 80 "data/maps/HawthornLabs/scripts.pory"
+	delay 10
+# 81 "data/maps/HawthornLabs/scripts.pory"
 	switch VAR_0x8008
-# 49 "data/maps/HawthornLabs/scripts.pory"
+# 82 "data/maps/HawthornLabs/scripts.pory"
 	case 10, HawthornLabs_Intro_MeetRival_3
-# 55 "data/maps/HawthornLabs/scripts.pory"
+# 88 "data/maps/HawthornLabs/scripts.pory"
 	case 11, HawthornLabs_Intro_MeetRival_4
-# 61 "data/maps/HawthornLabs/scripts.pory"
+# 94 "data/maps/HawthornLabs/scripts.pory"
 	case 12, HawthornLabs_Intro_MeetRival_5
 HawthornLabs_Intro_MeetRival_1:
-# 69 "data/maps/HawthornLabs/scripts.pory"
-	applymovement LOCALID_RIVAL, HawthornLabs_Intro_MeetRival_Movement_3
-# 76 "data/maps/HawthornLabs/scripts.pory"
+# 102 "data/maps/HawthornLabs/scripts.pory"
 	waitmovement 0
-# 78 "data/maps/HawthornLabs/scripts.pory"
-	msgbox HawthornLabs_Intro_MeetRival_Text_1, MSGBOX_DEFAULT
-# 91 "data/maps/HawthornLabs/scripts.pory"
-	closemessage
-# 93 "data/maps/HawthornLabs/scripts.pory"
-	turnobject LOCALID_RIVAL, DIR_NORTH
-# 94 "data/maps/HawthornLabs/scripts.pory"
-	opendoor 10, 8
-# 95 "data/maps/HawthornLabs/scripts.pory"
-	waitdooranim
-# 96 "data/maps/HawthornLabs/scripts.pory"
-	applymovement LOCALID_RIVAL, HawthornLabs_Intro_MeetRival_Movement_4
-# 100 "data/maps/HawthornLabs/scripts.pory"
-	applymovement LOCALID_PLAYER, HawthornLabs_Intro_MeetRival_Movement_5
-# 104 "data/maps/HawthornLabs/scripts.pory"
-	closedoor 10, 8
+# 103 "data/maps/HawthornLabs/scripts.pory"
+	delay 30
 # 105 "data/maps/HawthornLabs/scripts.pory"
+	msgbox HawthornLabs_Intro_MeetRival_Text_1, MSGBOX_DEFAULT
+# 118 "data/maps/HawthornLabs/scripts.pory"
+	closemessage
+# 119 "data/maps/HawthornLabs/scripts.pory"
+	delay 10
+# 120 "data/maps/HawthornLabs/scripts.pory"
+	turnobject LOCALID_LABEXT_RIVAL, DIR_NORTH
+# 121 "data/maps/HawthornLabs/scripts.pory"
+	opendoor 10, 8
+# 122 "data/maps/HawthornLabs/scripts.pory"
 	waitdooranim
-# 106 "data/maps/HawthornLabs/scripts.pory"
+# 123 "data/maps/HawthornLabs/scripts.pory"
+	applymovement LOCALID_LABEXT_RIVAL, HawthornLabs_Intro_MeetRival_Movement_5
+# 126 "data/maps/HawthornLabs/scripts.pory"
+	waitmovement 0
+# 127 "data/maps/HawthornLabs/scripts.pory"
+	removeobject LOCALID_LABEXT_RIVAL
+# 129 "data/maps/HawthornLabs/scripts.pory"
+	clearflag FLAG_INTRO_MET_MOM
+# 131 "data/maps/HawthornLabs/scripts.pory"
+	applymovement LOCALID_PLAYER, HawthornLabs_Intro_MeetRival_Movement_6
+# 134 "data/maps/HawthornLabs/scripts.pory"
+	waitmovement 0
+# 135 "data/maps/HawthornLabs/scripts.pory"
+	hideobjectat LOCALID_PLAYER, 0
+# 136 "data/maps/HawthornLabs/scripts.pory"
+	closedoor 10, 8
+# 137 "data/maps/HawthornLabs/scripts.pory"
+	waitdooranim
+# 138 "data/maps/HawthornLabs/scripts.pory"
 	playse SE_EXIT
-# 107 "data/maps/HawthornLabs/scripts.pory"
-	warp MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 0
-# 108 "data/maps/HawthornLabs/scripts.pory"
+# 139 "data/maps/HawthornLabs/scripts.pory"
+	warp MAP_HAWTHORN_LABS_INTERIOR, 0
+# 140 "data/maps/HawthornLabs/scripts.pory"
 	waitstate
-# 109 "data/maps/HawthornLabs/scripts.pory"
+# 141 "data/maps/HawthornLabs/scripts.pory"
 	releaseall
 	return
 
 HawthornLabs_Intro_MeetRival_3:
-# 50 "data/maps/HawthornLabs/scripts.pory"
-	applymovement LOCALID_PLAYER, HawthornLabs_Intro_MeetRival_Movement_0
+# 83 "data/maps/HawthornLabs/scripts.pory"
+	applymovement LOCALID_PLAYER, HawthornLabs_Intro_MeetRival_Movement_2
 	goto HawthornLabs_Intro_MeetRival_1
 
 HawthornLabs_Intro_MeetRival_4:
-# 56 "data/maps/HawthornLabs/scripts.pory"
-	applymovement LOCALID_PLAYER, HawthornLabs_Intro_MeetRival_Movement_1
+# 89 "data/maps/HawthornLabs/scripts.pory"
+	applymovement LOCALID_PLAYER, HawthornLabs_Intro_MeetRival_Movement_3
 	goto HawthornLabs_Intro_MeetRival_1
 
 HawthornLabs_Intro_MeetRival_5:
-# 62 "data/maps/HawthornLabs/scripts.pory"
-	applymovement LOCALID_PLAYER, HawthornLabs_Intro_MeetRival_Movement_2
+# 95 "data/maps/HawthornLabs/scripts.pory"
+	applymovement LOCALID_PLAYER, HawthornLabs_Intro_MeetRival_Movement_4
 	goto HawthornLabs_Intro_MeetRival_1
 
 
 HawthornLabs_Intro_BattleRival::
-# 113 "data/maps/HawthornLabs/scripts.pory"
+# 145 "data/maps/HawthornLabs/scripts.pory"
 	lockall
-# 115 "data/maps/HawthornLabs/scripts.pory"
-	fadeoutbgm 1
-# 116 "data/maps/HawthornLabs/scripts.pory"
+# 147 "data/maps/HawthornLabs/scripts.pory"
 	getplayerxy VAR_0x8008, VAR_0x8009
-# 117 "data/maps/HawthornLabs/scripts.pory"
+# 148 "data/maps/HawthornLabs/scripts.pory"
 	switch VAR_0x8008
-# 118 "data/maps/HawthornLabs/scripts.pory"
+# 149 "data/maps/HawthornLabs/scripts.pory"
 	case 10, HawthornLabs_Intro_BattleRival_3
-# 123 "data/maps/HawthornLabs/scripts.pory"
+# 154 "data/maps/HawthornLabs/scripts.pory"
 	case 11, HawthornLabs_Intro_BattleRival_4
-# 127 "data/maps/HawthornLabs/scripts.pory"
+# 158 "data/maps/HawthornLabs/scripts.pory"
 	case 12, HawthornLabs_Intro_BattleRival_5
 HawthornLabs_Intro_BattleRival_1:
-# 133 "data/maps/HawthornLabs/scripts.pory"
+# 164 "data/maps/HawthornLabs/scripts.pory"
 	waitmovement 0
-# 134 "data/maps/HawthornLabs/scripts.pory"
-	delay 60
-# 135 "data/maps/HawthornLabs/scripts.pory"
-	msgbox HawthornLabs_Intro_BattleRival_Text_0, MSGBOX_DEFAULT
-# 147 "data/maps/HawthornLabs/scripts.pory"
-	closemessage
-# 148 "data/maps/HawthornLabs/scripts.pory"
-	turnobject LOCALID_RIVAL, DIR_EAST
-# 149 "data/maps/HawthornLabs/scripts.pory"
+# 165 "data/maps/HawthornLabs/scripts.pory"
 	delay 30
-# 150 "data/maps/HawthornLabs/scripts.pory"
-	msgbox HawthornLabs_Intro_BattleRival_Text_1, MSGBOX_DEFAULT
-# 155 "data/maps/HawthornLabs/scripts.pory"
+# 166 "data/maps/HawthornLabs/scripts.pory"
+	msgbox HawthornLabs_Intro_BattleRival_Text_0, MSGBOX_DEFAULT
+# 178 "data/maps/HawthornLabs/scripts.pory"
 	closemessage
-# 156 "data/maps/HawthornLabs/scripts.pory"
-	delay 60
-# 157 "data/maps/HawthornLabs/scripts.pory"
-	turnobject LOCALID_RIVAL, DIR_NORTH
-# 158 "data/maps/HawthornLabs/scripts.pory"
-	msgbox HawthornLabs_Intro_BattleRival_Text_2, MSGBOX_DEFAULT
-# 167 "data/maps/HawthornLabs/scripts.pory"
-	applymovement LOCALID_RIVAL, HawthornLabs_Intro_BattleRival_Movement_3
-# 170 "data/maps/HawthornLabs/scripts.pory"
-	waitmovement 0
-# 171 "data/maps/HawthornLabs/scripts.pory"
-	playbgm MUS_ENCOUNTER_MAY, TRUE
-# 172 "data/maps/HawthornLabs/scripts.pory"
-	msgbox HawthornLabs_Intro_BattleRival_Text_3, MSGBOX_DEFAULT
+# 179 "data/maps/HawthornLabs/scripts.pory"
+	fadeoutbgm 1
 # 180 "data/maps/HawthornLabs/scripts.pory"
-	switch VAR_STARTER_MON
+	turnobject LOCALID_LABEXT_RIVAL, DIR_EAST
 # 181 "data/maps/HawthornLabs/scripts.pory"
+	delay 30
+# 182 "data/maps/HawthornLabs/scripts.pory"
+	msgbox HawthornLabs_Intro_BattleRival_Text_1, MSGBOX_DEFAULT
+# 187 "data/maps/HawthornLabs/scripts.pory"
+	closemessage
+# 188 "data/maps/HawthornLabs/scripts.pory"
+	delay 60
+# 189 "data/maps/HawthornLabs/scripts.pory"
+	turnobject LOCALID_LABEXT_RIVAL, DIR_NORTH
+# 190 "data/maps/HawthornLabs/scripts.pory"
+	msgbox HawthornLabs_Intro_BattleRival_Text_2, MSGBOX_DEFAULT
+# 199 "data/maps/HawthornLabs/scripts.pory"
+	applymovement LOCALID_LABEXT_RIVAL, HawthornLabs_Intro_BattleRival_Movement_3
+# 202 "data/maps/HawthornLabs/scripts.pory"
+	waitmovement 0
+# 203 "data/maps/HawthornLabs/scripts.pory"
+	playbgm MUS_ENCOUNTER_MAY, TRUE
+# 204 "data/maps/HawthornLabs/scripts.pory"
+	msgbox HawthornLabs_Intro_BattleRival_Text_3, MSGBOX_DEFAULT
+# 215 "data/maps/HawthornLabs/scripts.pory"
+	switch VAR_STARTER_MON
+# 216 "data/maps/HawthornLabs/scripts.pory"
 	case 0, HawthornLabs_Intro_BattleRival_8
-# 183 "data/maps/HawthornLabs/scripts.pory"
+# 218 "data/maps/HawthornLabs/scripts.pory"
 	case 1, HawthornLabs_Intro_BattleRival_9
-# 185 "data/maps/HawthornLabs/scripts.pory"
+# 220 "data/maps/HawthornLabs/scripts.pory"
 	case 2, HawthornLabs_Intro_BattleRival_10
 HawthornLabs_Intro_BattleRival_6:
-# 190 "data/maps/HawthornLabs/scripts.pory"
-	special HealPlayerParty
-# 191 "data/maps/HawthornLabs/scripts.pory"
-	fadedefaultbgm
-# 193 "data/maps/HawthornLabs/scripts.pory"
-	msgbox HawthornLabs_Intro_BattleRival_Text_4, MSGBOX_DEFAULT
-# 214 "data/maps/HawthornLabs/scripts.pory"
-	closemessage
-# 216 "data/maps/HawthornLabs/scripts.pory"
-	applymovement LOCALID_RIVAL, HawthornLabs_Intro_BattleRival_Movement_4
-# 221 "data/maps/HawthornLabs/scripts.pory"
-	waitmovement 0
-# 222 "data/maps/HawthornLabs/scripts.pory"
-	removeobject LOCALID_RIVAL
-# 223 "data/maps/HawthornLabs/scripts.pory"
-	setobjectxyperm LOCALID_RIVAL, 47, 0
 # 225 "data/maps/HawthornLabs/scripts.pory"
-	setvar VAR_INTRO_SEQUENCE_STATE, 5
+	fadedefaultbgm
 # 227 "data/maps/HawthornLabs/scripts.pory"
-	warp MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F, 6, 6
-# 228 "data/maps/HawthornLabs/scripts.pory"
+	msgbox HawthornLabs_Intro_BattleRival_Text_4, MSGBOX_DEFAULT
+# 248 "data/maps/HawthornLabs/scripts.pory"
+	closemessage
+# 250 "data/maps/HawthornLabs/scripts.pory"
+	applymovement LOCALID_LABEXT_RIVAL, HawthornLabs_Intro_BattleRival_Movement_4
+# 255 "data/maps/HawthornLabs/scripts.pory"
+	waitmovement 0
+# 256 "data/maps/HawthornLabs/scripts.pory"
+	removeobject LOCALID_LABEXT_RIVAL
+# 257 "data/maps/HawthornLabs/scripts.pory"
+	setobjectxyperm LOCALID_LABEXT_RIVAL, 47, 0
+# 259 "data/maps/HawthornLabs/scripts.pory"
+	setvar VAR_INTRO_SEQUENCE_STATE, 5
+# 261 "data/maps/HawthornLabs/scripts.pory"
+	warp MAP_MARINACRE_TOWN_PLAYER_HOUSE_1F, 0
+# 262 "data/maps/HawthornLabs/scripts.pory"
 	waitstate
-# 230 "data/maps/HawthornLabs/scripts.pory"
+# 264 "data/maps/HawthornLabs/scripts.pory"
 	releaseall
 	return
 
 HawthornLabs_Intro_BattleRival_3:
-# 119 "data/maps/HawthornLabs/scripts.pory"
+# 150 "data/maps/HawthornLabs/scripts.pory"
 	applymovement LOCALID_PLAYER, HawthornLabs_Intro_BattleRival_Movement_0
 	goto HawthornLabs_Intro_BattleRival_1
 
 HawthornLabs_Intro_BattleRival_4:
-# 124 "data/maps/HawthornLabs/scripts.pory"
+# 155 "data/maps/HawthornLabs/scripts.pory"
 	applymovement LOCALID_PLAYER, HawthornLabs_Intro_BattleRival_Movement_1
 	goto HawthornLabs_Intro_BattleRival_1
 
 HawthornLabs_Intro_BattleRival_5:
-# 128 "data/maps/HawthornLabs/scripts.pory"
+# 159 "data/maps/HawthornLabs/scripts.pory"
 	applymovement LOCALID_PLAYER, HawthornLabs_Intro_BattleRival_Movement_2
 	goto HawthornLabs_Intro_BattleRival_1
 
 HawthornLabs_Intro_BattleRival_8:
-# 182 "data/maps/HawthornLabs/scripts.pory"
-	trainerbattle_earlyrival TRAINER_RIVAL_INTRO_FIRE, 0, HawthornLabs_Intro_BattleRival_PlayerWin, HawthornLabs_Intro_BattleRival_PlayerLose
+# 217 "data/maps/HawthornLabs/scripts.pory"
+	trainerbattle_earlyrival TRAINER_RIVAL_INTRO_FIRE, RIVAL_BATTLE_LOSEABLE, HawthornLabs_Intro_BattleRival_PlayerWin, HawthornLabs_Intro_BattleRival_PlayerLose
 	goto HawthornLabs_Intro_BattleRival_6
 
 HawthornLabs_Intro_BattleRival_9:
-# 184 "data/maps/HawthornLabs/scripts.pory"
-	trainerbattle_earlyrival TRAINER_RIVAL_INTRO_WATER, 0, HawthornLabs_Intro_BattleRival_PlayerWin, HawthornLabs_Intro_BattleRival_PlayerLose
+# 219 "data/maps/HawthornLabs/scripts.pory"
+	trainerbattle_earlyrival TRAINER_RIVAL_INTRO_WATER, RIVAL_BATTLE_LOSEABLE, HawthornLabs_Intro_BattleRival_PlayerWin, HawthornLabs_Intro_BattleRival_PlayerLose
 	goto HawthornLabs_Intro_BattleRival_6
 
 HawthornLabs_Intro_BattleRival_10:
-# 186 "data/maps/HawthornLabs/scripts.pory"
-	trainerbattle_earlyrival TRAINER_RIVAL_INTRO_GRASS, 0, HawthornLabs_Intro_BattleRival_PlayerWin, HawthornLabs_Intro_BattleRival_PlayerLose
+# 221 "data/maps/HawthornLabs/scripts.pory"
+	trainerbattle_earlyrival TRAINER_RIVAL_INTRO_GRASS, RIVAL_BATTLE_LOSEABLE, HawthornLabs_Intro_BattleRival_PlayerWin, HawthornLabs_Intro_BattleRival_PlayerLose
 	goto HawthornLabs_Intro_BattleRival_6
 
 
-# 50 "data/maps/HawthornLabs/scripts.pory"
+# 60 "data/maps/HawthornLabs/scripts.pory"
 HawthornLabs_Intro_MeetRival_Movement_0:
-# 51 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 51 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 51 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 51 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 51 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 52 "data/maps/HawthornLabs/scripts.pory"
-	delay_16
-# 53 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 53 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 53 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 53 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-	step_end
-
-# 56 "data/maps/HawthornLabs/scripts.pory"
-HawthornLabs_Intro_MeetRival_Movement_1:
-# 57 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 57 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 57 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 57 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 57 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 57 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 58 "data/maps/HawthornLabs/scripts.pory"
-	walk_left
-# 59 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 59 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 59 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-	step_end
-
+# 61 "data/maps/HawthornLabs/scripts.pory"
+	jump_in_place_down
 # 62 "data/maps/HawthornLabs/scripts.pory"
-HawthornLabs_Intro_MeetRival_Movement_2:
-# 63 "data/maps/HawthornLabs/scripts.pory"
-	walk_left
-# 64 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 64 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 64 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 64 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 64 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 64 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 65 "data/maps/HawthornLabs/scripts.pory"
-	walk_left
-# 66 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 66 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 66 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
+	delay_16
 	step_end
 
-# 69 "data/maps/HawthornLabs/scripts.pory"
-HawthornLabs_Intro_MeetRival_Movement_3:
-# 70 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 70 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 70 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 70 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 70 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 71 "data/maps/HawthornLabs/scripts.pory"
-	walk_left
-# 72 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 72 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 72 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 72 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
 # 73 "data/maps/HawthornLabs/scripts.pory"
-	delay_16
+HawthornLabs_Intro_MeetRival_Movement_1:
 # 74 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 74 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 74 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 74 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 74 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 75 "data/maps/HawthornLabs/scripts.pory"
+	walk_left
+# 76 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 76 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 76 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 76 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 77 "data/maps/HawthornLabs/scripts.pory"
+	delay_16
+# 78 "data/maps/HawthornLabs/scripts.pory"
 	face_down
 	step_end
 
-# 96 "data/maps/HawthornLabs/scripts.pory"
+# 83 "data/maps/HawthornLabs/scripts.pory"
+HawthornLabs_Intro_MeetRival_Movement_2:
+# 84 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 84 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 84 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 84 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 84 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 85 "data/maps/HawthornLabs/scripts.pory"
+	delay_16
+# 86 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 86 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 86 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 86 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+	step_end
+
+# 89 "data/maps/HawthornLabs/scripts.pory"
+HawthornLabs_Intro_MeetRival_Movement_3:
+# 90 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 90 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 90 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 90 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 90 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 90 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 91 "data/maps/HawthornLabs/scripts.pory"
+	walk_left
+# 92 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 92 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 92 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+	step_end
+
+# 95 "data/maps/HawthornLabs/scripts.pory"
 HawthornLabs_Intro_MeetRival_Movement_4:
+# 96 "data/maps/HawthornLabs/scripts.pory"
+	walk_left
+# 97 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 97 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 97 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 97 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 97 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
 # 97 "data/maps/HawthornLabs/scripts.pory"
 	walk_up
 # 98 "data/maps/HawthornLabs/scripts.pory"
-	set_invisible
-	step_end
-
-# 100 "data/maps/HawthornLabs/scripts.pory"
-HawthornLabs_Intro_MeetRival_Movement_5:
-# 101 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 101 "data/maps/HawthornLabs/scripts.pory"
-	walk_up
-# 102 "data/maps/HawthornLabs/scripts.pory"
-	set_invisible
-	step_end
-
-# 119 "data/maps/HawthornLabs/scripts.pory"
-HawthornLabs_Intro_BattleRival_Movement_0:
-# 120 "data/maps/HawthornLabs/scripts.pory"
-	walk_right
-# 121 "data/maps/HawthornLabs/scripts.pory"
-	walk_down
-	step_end
-
-# 124 "data/maps/HawthornLabs/scripts.pory"
-HawthornLabs_Intro_BattleRival_Movement_1:
-# 125 "data/maps/HawthornLabs/scripts.pory"
-	walk_down
-	step_end
-
-# 128 "data/maps/HawthornLabs/scripts.pory"
-HawthornLabs_Intro_BattleRival_Movement_2:
-# 129 "data/maps/HawthornLabs/scripts.pory"
 	walk_left
-# 130 "data/maps/HawthornLabs/scripts.pory"
+# 99 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 99 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 99 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+	step_end
+
+# 123 "data/maps/HawthornLabs/scripts.pory"
+HawthornLabs_Intro_MeetRival_Movement_5:
+# 124 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+	step_end
+
+# 131 "data/maps/HawthornLabs/scripts.pory"
+HawthornLabs_Intro_MeetRival_Movement_6:
+# 132 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+# 132 "data/maps/HawthornLabs/scripts.pory"
+	walk_up
+	step_end
+
+# 150 "data/maps/HawthornLabs/scripts.pory"
+HawthornLabs_Intro_BattleRival_Movement_0:
+# 151 "data/maps/HawthornLabs/scripts.pory"
+	walk_right
+# 152 "data/maps/HawthornLabs/scripts.pory"
+	walk_down
+# 152 "data/maps/HawthornLabs/scripts.pory"
 	walk_down
 	step_end
 
-# 167 "data/maps/HawthornLabs/scripts.pory"
+# 155 "data/maps/HawthornLabs/scripts.pory"
+HawthornLabs_Intro_BattleRival_Movement_1:
+# 156 "data/maps/HawthornLabs/scripts.pory"
+	walk_down
+# 156 "data/maps/HawthornLabs/scripts.pory"
+	walk_down
+	step_end
+
+# 159 "data/maps/HawthornLabs/scripts.pory"
+HawthornLabs_Intro_BattleRival_Movement_2:
+# 160 "data/maps/HawthornLabs/scripts.pory"
+	walk_left
+# 161 "data/maps/HawthornLabs/scripts.pory"
+	walk_down
+# 161 "data/maps/HawthornLabs/scripts.pory"
+	walk_down
+	step_end
+
+# 199 "data/maps/HawthornLabs/scripts.pory"
 HawthornLabs_Intro_BattleRival_Movement_3:
-# 168 "data/maps/HawthornLabs/scripts.pory"
+# 200 "data/maps/HawthornLabs/scripts.pory"
 	jump_in_place_up
-# 168 "data/maps/HawthornLabs/scripts.pory"
+# 200 "data/maps/HawthornLabs/scripts.pory"
 	jump_in_place_up
 	step_end
 
-# 216 "data/maps/HawthornLabs/scripts.pory"
+# 250 "data/maps/HawthornLabs/scripts.pory"
 HawthornLabs_Intro_BattleRival_Movement_4:
-# 217 "data/maps/HawthornLabs/scripts.pory"
+# 251 "data/maps/HawthornLabs/scripts.pory"
 	walk_down
-# 217 "data/maps/HawthornLabs/scripts.pory"
+# 251 "data/maps/HawthornLabs/scripts.pory"
 	walk_down
-# 218 "data/maps/HawthornLabs/scripts.pory"
+# 252 "data/maps/HawthornLabs/scripts.pory"
 	delay_16
-# 218 "data/maps/HawthornLabs/scripts.pory"
+# 252 "data/maps/HawthornLabs/scripts.pory"
 	delay_16
-# 219 "data/maps/HawthornLabs/scripts.pory"
+# 253 "data/maps/HawthornLabs/scripts.pory"
 	walk_fast_down
-# 219 "data/maps/HawthornLabs/scripts.pory"
+# 253 "data/maps/HawthornLabs/scripts.pory"
 	walk_fast_down
-# 219 "data/maps/HawthornLabs/scripts.pory"
+# 253 "data/maps/HawthornLabs/scripts.pory"
 	walk_fast_down
-# 219 "data/maps/HawthornLabs/scripts.pory"
+# 253 "data/maps/HawthornLabs/scripts.pory"
 	walk_fast_down
-# 219 "data/maps/HawthornLabs/scripts.pory"
+# 253 "data/maps/HawthornLabs/scripts.pory"
 	walk_fast_down
-# 219 "data/maps/HawthornLabs/scripts.pory"
+# 253 "data/maps/HawthornLabs/scripts.pory"
 	walk_fast_down
 	step_end
 
 HawthornLabs_Sign_Text_0:
-# 9 "data/maps/HawthornLabs/scripts.pory"
+# 15 "data/maps/HawthornLabs/scripts.pory"
 	.string "HAWTHORN LABS\p"
 	.string "Someone has added to the sign, in\n"
 	.string "big red letters:\p"
 	.string "“{COLOR RED}NO SOLICITORS{COLOR DARK_GRAY}”$"
 
 HawthornLabs_Talk_Scientist_Text_0:
-# 23 "data/maps/HawthornLabs/scripts.pory"
+# 29 "data/maps/HawthornLabs/scripts.pory"
 	.string "Professor Hawthorn's research is\n"
 	.string "focused on Pokémon types.\p"
 	.string "The Professor has some very\n"
@@ -399,15 +447,22 @@ HawthornLabs_Talk_Scientist_Text_0:
 	.string "…I think. She hasn't actually told me\n"
 	.string "what we're working on.$"
 
+HawthornLabs_Talk_Receptionist_Text_0:
+# 46 "data/maps/HawthornLabs/scripts.pory"
+	.string "Professor Hawthorn…\p"
+	.string "She bosses me around a lot.\n"
+	.string "I mean, she's my boss, but- \p"
+	.string "Um, nevermind.$"
+
 HawthornLabs_Intro_MeetRival_Text_0:
-# 41 "data/maps/HawthornLabs/scripts.pory"
+# 65 "data/maps/HawthornLabs/scripts.pory"
 	.string "MAYA: There you are!\n"
 	.string "The lab is just up ahead!$"
 
 HawthornLabs_Intro_MeetRival_Text_1:
-# 79 "data/maps/HawthornLabs/scripts.pory"
+# 106 "data/maps/HawthornLabs/scripts.pory"
 	.string "MAYA: I heard that Professor Hawthorn\n"
-	.string "can bea bit… {PAUSE 30}prickly?\p"
+	.string "can be a bit… {PAUSE 30}prickly?\p"
 	.string "My dad met her once, I think.\p"
 	.string "…But I'm sure once we explain the\n"
 	.string "situation, it'll be all good.\p"
@@ -415,7 +470,7 @@ HawthornLabs_Intro_MeetRival_Text_1:
 	.string "Let's go!$"
 
 HawthornLabs_Intro_BattleRival_Text_0:
-# 136 "data/maps/HawthornLabs/scripts.pory"
+# 167 "data/maps/HawthornLabs/scripts.pory"
 	.string "MAYA: …So, that's what Professor\n"
 	.string "Hawthorn is like.\p"
 	.string "I can see why she has the reputation\n"
@@ -425,26 +480,27 @@ HawthornLabs_Intro_BattleRival_Text_0:
 	.string "these Pokémons' trainer, now.$"
 
 HawthornLabs_Intro_BattleRival_Text_1:
-# 151 "data/maps/HawthornLabs/scripts.pory"
+# 183 "data/maps/HawthornLabs/scripts.pory"
 	.string "And in the meantime, we'll keep these\n"
 	.string "ones with us…$"
 
 HawthornLabs_Intro_BattleRival_Text_2:
-# 159 "data/maps/HawthornLabs/scripts.pory"
+# 191 "data/maps/HawthornLabs/scripts.pory"
 	.string "…{PLAYER}.\p"
-	.string "I guess this makes us trainers now,\n"
-	.string "huh?\p"
+	.string "I guess this makes us Pokémon \n"
+	.string "trainers now, huh?\p"
 	.string "…You know what that means, right?$"
 
 HawthornLabs_Intro_BattleRival_Text_3:
-# 173 "data/maps/HawthornLabs/scripts.pory"
+# 205 "data/maps/HawthornLabs/scripts.pory"
+	.string "{PLAYER}!\p"
 	.string "I can sense these Pokémons' energy!\n"
-	.string "They're raring for some action!\l"
-	.string "{PLAYER}! Let's duke it out!\l"
+	.string "They're raring for some action!\p"
+	.string "Let's duke it out!\n"
 	.string "I challenge you to a Pokémon battle!$"
 
 HawthornLabs_Intro_BattleRival_Text_4:
-# 194 "data/maps/HawthornLabs/scripts.pory"
+# 228 "data/maps/HawthornLabs/scripts.pory"
 	.string "MAYA: Wow!\p"
 	.string "Even with such small Pokémon,\n"
 	.string "that was exhilirating!\p"
@@ -459,9 +515,9 @@ HawthornLabs_Intro_BattleRival_Text_4:
 	.string "I'll see you back in town, okay?$"
 
 HawthornLabs_Intro_BattleRival_PlayerWin::
-# 233 "data/maps/HawthornLabs/scripts.pory"
+# 267 "data/maps/HawthornLabs/scripts.pory"
 	.string "Your Pokémon is so strong!$"
 
 HawthornLabs_Intro_BattleRival_PlayerLose::
-# 236 "data/maps/HawthornLabs/scripts.pory"
+# 270 "data/maps/HawthornLabs/scripts.pory"
 	.string "Woo! This Pokémon is strong!$"

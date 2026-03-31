@@ -178,26 +178,23 @@ void DynPal_InitAllDynamicPalettes()
     DynPal_InitBattleBack(sDynPalPlayerBattleBack, skinPalData, hairPalData, clothesPalData, DYNPAL_COLOR_GROUP_NORMAL);
 }
 
-// *MODIFY*
 // Load each section of the palette. Your implementation will differ depending on how the sprite palette is arranged.
 // For any sections of the palette that should remain constant regardless of parts, use sDynPal_Base as <src>
 static void DynPal_InitOverworld(u16* dest, const u16* skinPalData, const u16* hairPalData, const u16* clothesPalData, int groupOffset)
 {
-    // Change this function to match your palette setup
-
-    // This setup assumes your male and female characters will be using the same base palette
-    // If they don't, you can create a second base palette and check against the selected gender
-
-    //Skin 1-4
+    //0 transparent
+    //1-4 skin
     DynPal_CopySection(skinPalData, dest, 1, 1, groupOffset, 4);
-    //Misc 5-8
-    DynPal_CopySection(hairPalData, dest, 1, 5, groupOffset, 4);
-    //Grey 9
-    DynPal_CopySection(sDynPal_Base, dest, 1, 9, groupOffset, 1);
-    //Clothes 10-13
-    DynPal_CopySection(clothesPalData, dest, 1, 10, groupOffset, 4);
-    //Black&White 14-15
-    DynPal_CopySection(sDynPal_Base, dest, 2, 14, groupOffset, 2);
+    //5-6 hair 1
+    DynPal_CopySection(hairPalData, dest, 1, 5, groupOffset, 2);
+    //7 hair 2
+    DynPal_CopySection(hairPalData, dest, 4, 7, groupOffset, 1);
+    //8-9 shirt
+    DynPal_CopySection(clothesPalData, dest, 1, 8, groupOffset, 2);
+    //10-11 bag
+    DynPal_CopySection(clothesPalData, dest, 4, 10, groupOffset, 2);
+    //12-15 greyscale
+    DynPal_CopySection(sDynPal_Base, dest, 1, 12, groupOffset, 4);
 }
 
 // *MODIFY*
@@ -205,8 +202,8 @@ static void DynPal_InitOverworld(u16* dest, const u16* skinPalData, const u16* h
 static void DynPal_InitBattleFront(u16* dest, const u16* skinPalData, const u16* hairPalData, const u16* clothesPalData, int groupOffset)
 {
     DynPal_InitOverworld(dest, skinPalData, hairPalData, clothesPalData, groupOffset);
-
-    //Add any modifications you need here
+    // red for poke ball
+    DynPal_CopySection(sDynPal_Base, dest, 5, 2, groupOffset, 1);
 }
 
 // *MODIFY*
@@ -214,8 +211,8 @@ static void DynPal_InitBattleFront(u16* dest, const u16* skinPalData, const u16*
 static void DynPal_InitBattleBack(u16* dest, const u16* skinPalData, const u16* hairPalData, const u16* clothesPalData, int groupOffset)
 {
     DynPal_InitOverworld(dest, skinPalData, hairPalData, clothesPalData, groupOffset);
-    
-    //Add any modifications you need here
+    // extra outline color for clothes
+    DynPal_CopySection(clothesPalData, dest, 3, 2, groupOffset, 1);
 }
 
 // *MODIFY*
@@ -607,22 +604,20 @@ static void DynPal_ReloadPlayerPaletteForMenu(u16 paletteTag, u8 skinTone, u8 ha
     if (hairTone != 0xFF)
     {
         const u16* hairPalData = sDynPalHairPresets[min(hairTone, COUNT_HAIR_TONES)].data;
-        DynPal_CopySection(hairPalData, &gPlttBufferUnfaded[offset], 1, 5, DYNPAL_COLOR_GROUP_NORMAL, 4);
+        DynPal_CopySection(hairPalData, &gPlttBufferUnfaded[offset], 1, 5, DYNPAL_COLOR_GROUP_NORMAL, 2);
+        DynPal_CopySection(hairPalData, &gPlttBufferUnfaded[offset], 4, 7, DYNPAL_COLOR_GROUP_NORMAL, 1);
     }
     if (clothesTone != 0xFF)
     {
         const u16* clothesPalData = sDynPalClothesPresets[min(clothesTone, COUNT_CLOTHES_TONES)].data;
-        DynPal_CopySection(clothesPalData, &gPlttBufferUnfaded[offset], 1, 10, DYNPAL_COLOR_GROUP_NORMAL, 4);
+        DynPal_CopySection(clothesPalData, &gPlttBufferUnfaded[offset], 1, 8, DYNPAL_COLOR_GROUP_NORMAL, 2);
+        DynPal_CopySection(clothesPalData, &gPlttBufferUnfaded[offset], 4, 10, DYNPAL_COLOR_GROUP_NORMAL, 2);
     }
-    DynPal_CopySection(sDynPal_Base, &gPlttBufferUnfaded[offset], 1, 9, DYNPAL_COLOR_GROUP_NORMAL, 1);
-    DynPal_CopySection(sDynPal_Base, &gPlttBufferUnfaded[offset], 2, 14, DYNPAL_COLOR_GROUP_NORMAL, 2);
 
-    /*
     if (!sDynPalMenu.isOverworld)
     {
-        // Reflect the code in DynPal_InitBattleFront here
+        DynPal_CopySection(sDynPal_Base, &gPlttBufferUnfaded[offset], 5, 2, DYNPAL_COLOR_GROUP_NORMAL, 1);
     }
-    */
 
     memcpy(&gPlttBufferFaded[offset], &gPlttBufferUnfaded[offset], PLTT_SIZE_4BPP);
 }

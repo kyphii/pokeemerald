@@ -637,8 +637,4 @@ const u16 gObjectEventPic_PikachuOldFrlg[] = INCBIN_U16("graphics/object_events/
 const u16 gObjectEventPic_JigglypuffOld[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/jigglypuff.4bpp");
 const u16 gObjectEventPic_PidgeyOld[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/pidgey.4bpp");
 const u16 gObjectEventPic_ClefairyOld[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/clefairy.4bpp");
-
-const u32 gObjectEventPic_Rival[] = INCBIN_U32("graphics/object_events/pics/people/rival.4bpp");
-const u16 gObjectEventPal_Rival[] = INCBIN_U16("graphics/object_events/palettes/rival.gbapal");
-const u32 gObjectEventPic_StarterBag[] = INCBIN_U32("graphics/object_events/pics/misc/starter_bag.4bpp");
 #endif // IS_FRLG

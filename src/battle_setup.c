@@ -1444,7 +1444,7 @@ static void CB2_EndTrainerBattle(void)
         if (IsPlayerDefeated(gBattleOutcome) == TRUE)
         {
             gSpecialVar_Result = TRUE;
-            if (GetRivalBattleFlags() & RIVAL_BATTLE_HEAL_AFTER)
+            if (GetRivalBattleFlags() & RIVAL_BATTLE_LOSEABLE)
             {
                 HealPlayerParty();
             }

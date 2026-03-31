@@ -18,15 +18,19 @@ mapscripts MarinacreTown_MapScripts {
 }
 
 script HomeTown_Trigger_CutMusic {
-    fadeoutbgm(1)
-    setvar(VAR_TEMP_A, 5)
-    release
+	if (var(VAR_TEMP_A) == 0) {
+		fadeoutbgm(2)
+		setvar(VAR_TEMP_A, 1)
+	}
+	release
 }
     
 script HomeTown_Trigger_RestoreMusic {
-    fadeinbgm(1)
-    setvar(VAR_TEMP_A, 5)
-    release
+	if (var(VAR_TEMP_A) == 1) {
+		fadeinbgm(2)
+		setvar(VAR_TEMP_A, 0)
+	}
+	release
 }
 
 script HomeTown_TownSign {
@@ -109,12 +113,9 @@ script HomeTown_IntroPreventLeave {
                 face_down
             ))
     }
-    waitmovement(0)
-    waitbuttonpress
-    
-    releaseall
-	release
-	end
+	waitmovement(0)
+			
+	releaseall
 }
 
 script HomeTown_IntroTalkGatekeeper {
@@ -196,31 +197,79 @@ script HomeTown_BeachScene1_Start {
     
     // rival monologue
     msgbox(
-        "INTRO MONOLOGUE 1",
+        "Huh? Why?
+		
+		…{PAUSE 30}I just wanted to hang out, dude.
+		Does there have to be a reason?
+		
+		I feel like it's been too long since we
+		just chilled here together.",
         MSGBOX_DEFAULT
     )
     closemessage
-    fadeoutbgm(1)
     turnobject(LOCALID_HOMETOWN_RIVAL, DIR_SOUTH)
+	delay(60)
+	msgbox(
+        "Hey, remember when we found that
+		Shellder in the sand?
+		…{PAUSE 30}And then I stuck it in my mom's purse?
+		
+		Her face when she found it - man, that
+		was so worth getting grounded for!",
+        MSGBOX_DEFAULT
+    )
+    closemessage
+	
+    fadeoutbgm(3)
+	turnobject(LOCALID_PLAYER, DIR_SOUTH)
     delay(60)
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
     msgbox(
-        "INTRO MONOLOGUE 2",
+        "…{PAUSE 30}So…
+		
+		You know how my dad's been looking
+		for a new job, right?
+		
+		After his old place got bought out by
+		Devon International?
+		
+		Well, he's been going on a bunch of
+		interviews, and he finally got an offer!
+		That's good, right?
+		
+		He hasn't made a decision if he's gonna
+		accept it yet, but it's apparently, like,
+		really good money.
+		
+		But if he takes it…",
+        MSGBOX_DEFAULT
+    )
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_WEST)
+	delay(60)
+    msgbox(
+        "Anyways, I had a talk with my family
+		about it.
+		Well, I guess less of a talk, and more…",
+        MSGBOX_DEFAULT
+    )
+	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+		walk_in_place_right * 2
+	))
+	waitmovement(0)
+	
+    msgbox(
+        "…Gah, forget it!
+		
+		Don't worry about it.
+		I just wanna sit here and take in the
+		scenery.
+		
+		C'mon, let's just chill!",
         MSGBOX_DEFAULT
     )
     closemessage
-    delay(40)
-    msgbox(
-        "INTRO MONOLOGUE 3",
-        MSGBOX_DEFAULT
-    )
-    closemessage
-    delay(60)
-    msgbox(
-        "INTRO MONOLOGUE 4",
-        MSGBOX_DEFAULT
-    )
-    closemessage
+	turnobject(LOCALID_PLAYER, DIR_SOUTH)
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_SOUTH)
+	delay(150)
     
     // See bag
     playse(SE_PIN)
@@ -228,7 +277,7 @@ script HomeTown_BeachScene1_Start {
     waitmovement(0)
     delay(60)
     msgbox(
-        "Hmm? What's that over there?",
+        "Hey, what's that over there?",
         MSGBOX_DEFAULT
     )
     closemessage
@@ -259,45 +308,44 @@ script HomeTown_BeachScene1_Start {
     delay(60)
     applymovement(LOCALID_HOMETOWN_RIVAL, moves(
       jump_in_place_right * 2
+	  delay_16 * 2
+	  face_up
+	  delay_8
+	  face_right
+	  delay_8
+	  face_up
+	  delay_8
+	  face_right
     ))
-    waitmovement(0)
-    message(
-        "Wait a second! {PLAYER}! Look!
-        There are Poké Balls in here!
-        
-        Do you think… there's anything
-        in them?"
+	delay(30)
+    msgbox(
+        "Wait a second!{PAUSE 30} {PLAYER}! Look!
+        There are Poké Balls in here!",
+		MSGBOX_DEFAULT
     )
-    applymovement(LOCALID_HOMETOWN_RIVAL, moves(
-      delay_16 * 2
-      walk_fast_up
-      face_right
-    ))
     waitmovement(0)
-    waitbuttonpress
+	turnobject(LOCALID_HOMETOWN_RIVAL, DIR_NORTH)
+	msgbox(
+        "Do you think…{PAUSE 30} there's anything
+        in them?",
+		MSGBOX_DEFAULT
+    )
     closemessage
-    waitmovement(0)
-    applymovement(LOCALID_HOMETOWN_RIVAL, Common_Movement_FaceDown)
-    waitmovement(0)
-    delay(20)
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
+    delay(60)
     msgbox(
         "We should probably check, huh?",
         MSGBOX_DEFAULT)
     closemessage
     
     // Rival starter place
+	delay(40)
     applymovement(LOCALID_HOMETOWN_RIVAL, moves(
-		walk_down
-		face_right
-		delay_16 * 2
-		walk_up
+		walk_up * 2
 	))
     waitmovement(0)
     applymovement(LOCALID_PLAYER, Common_Movement_FaceUp)
-    applymovement(LOCALID_HOMETOWN_RIVAL, moves(
-		walk_up
-	))
-    waitmovement(0)
+	delay(30)
     setobjectxyperm(LOCALID_HOMETOWN_BALL_GRASS, 27, 35)
     addobject(LOCALID_HOMETOWN_BALL_GRASS)
     delay(30)
@@ -368,18 +416,18 @@ script HomeTown_BeachScene1_Start {
         MSGBOX_DEFAULT
     )
     closemessage
-    delay(30)
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     turnobject(LOCALID_HOMETOWN_RIVAL, DIR_NORTH)
+    delay(60)
     msgbox(
-        "They look… 
+        "They look…{PAUSE 30} 
         confused, don't they?
         
         Like they haven't been let out in a 
         really long time.
         
         How long were they drifting out in
-        the ocean?",
+        the sea?",
         MSGBOX_DEFAULT
     )
     closemessage
@@ -391,7 +439,7 @@ script HomeTown_BeachScene1_Start {
         {PLAYER}?
         Got any ideas?"
     )
-    dynmultichoice(25, 6, TRUE, 3, 1, DYN_MULTICHOICE_CB_NONE,
+    dynmultichoice(25, 6, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE,
 		"No clue", "Look for their trainer", "Finders keepers")
     switch(var(VAR_RESULT)) {
         case 0: //"no idea"
@@ -408,7 +456,7 @@ script HomeTown_BeachScene1_Start {
                 "Do you think there's a shot?
                 it'd be the right thing to do, but…
 
-                …Who knows where they drifted in from,
+                …{PAUSE 30}Who knows where they drifted in from,
                 or how long they've been out there?
 
                 Where would we even start looking?",
@@ -423,17 +471,18 @@ script HomeTown_BeachScene1_Start {
                 But I feel like we should at least try,
                 you know? Like, maybe…
 
-                …Nevermind. I got nothing.",
+                …{PAUSE 30}Nevermind. I got nothing.",
                 MSGBOX_DEFAULT
             )
     }
     closemessage
+    delay(60)
     turnobject(LOCALID_HOMETOWN_RIVAL, DIR_SOUTH)
     playse(SE_PIN)
     applymovement(LOCALID_HOMETOWN_RIVAL, Common_Movement_ExclamationMark)
     waitmovement(0)
-    delay(30)
-    fadeinbgm(0)
+	delay(40)
+    fadeinbgm(1)
     turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
     msgbox(
         "Wait, I have an idea!
@@ -446,7 +495,7 @@ script HomeTown_BeachScene1_Start {
 		If anyone can help, it'll be her.
         Her lab is just up the road on Route 1!
         
-        …Hmm, but the road is a bit rough
+        …{PAUSE 30}Hmm, but the road is a bit rough
         right now.
         What if wild Pok\emon attacked us?",
         MSGBOX_DEFAULT
@@ -529,12 +578,17 @@ script HomeTown_BeachScene1_TakeStarter {
     release
     removeobject(VAR_0x8001)
     
-    
     givemon(VAR_0x8000, 5)
-    call(Common_EventScript_GetGiftMonPartySlot)
-	call(Common_EventScript_NameReceivedPartyMon)
     setflag(FLAG_SYS_POKEMON_GET)
-    goto(HomeTown_BeachScene1_Finish)
+    call(Common_EventScript_GetGiftMonPartySlot)
+	msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call(Common_EventScript_NameReceivedPartyMon)
+		goto(HomeTown_BeachScene1_Finish)
+	}
+	else {
+		goto(HomeTown_BeachScene1_Finish)
+	}
 }
 
 script HomeTown_BeachScene1_Finish {
@@ -543,7 +597,7 @@ script HomeTown_BeachScene1_Finish {
     delay(10)
     msgbox(
         "Alright, then!
-		I'll bring the rest", MSGBOX_DEFAULT
+		I'll bring the rest!", MSGBOX_DEFAULT
     )
 	closemessage
 	
@@ -556,6 +610,7 @@ script HomeTown_BeachScene1_Finish {
     waitmovement(0)
 	removeobject(LOCALID_HOMETOWN_BAG)
 	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+		delay_16
 		delay_16
 		walk_up
 	))
@@ -642,8 +697,9 @@ script HomeTown_BeachScene1_PreventLeave {
         face_player
     ))
     waitmovement(0)
+	delay(60)
     msgbox(
-        "Hey, where are you going?
+        "MAYA: Hey, where are you going?
         Don't leave now!",
         MSGBOX_DEFAULT
     )
@@ -667,7 +723,7 @@ script HomeTown_BeachScene1_TalkRival {
 	lock
 	faceplayer
     msgbox(
-        "Hurry up and pick one!
+        "MAYA: Hurry up and pick one!
         Uh, no rush, though!",
         MSGBOX_NPC
     )

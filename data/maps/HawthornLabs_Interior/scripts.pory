@@ -15,12 +15,15 @@ script HawthornLabs_Interior_LockedDoor {
 
 script HawthornLabs_Interior_DoorNotice {
 	msgbox(
-        "A series of notes is posted beside the door:
+        "A series of notes is posted beside the
+		door:
 		
-		\qoTYPE ENERGETICS LAB - RESTRICTED AREA\qc
-		\qo(That means no unauthorized personnel)\qc
-		\qo(That means you, Reynolds)\qc
-		",
+		TYPE ENERGETICS LAB
+		RESTRICTED AREA
+		
+		(That means no 
+		unauthorized personnel)
+		(That means you, Reynolds)",
         MSGBOX_SIGN
     )
 }
@@ -159,11 +162,17 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 	
 	special(HealPlayerParty)
 	
-	applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
-    applymovement(LOCALID_LABINT_RIVAL, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_PLAYER, moves(
+		walk_up * 2
+	))
+	applymovement(LOCALID_LABINT_RIVAL, moves(
+		walk_up * 2
+	))
 	waitmovement(0)
 	turnobject(LOCALID_PLAYER, DIR_WEST)
     turnobject(LOCALID_LABINT_RIVAL, DIR_EAST)
+	
+	delay(30)
 	
 	msgbox(
         "MAYA: Okay. So, where is Professor
@@ -173,12 +182,16 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 	
 	turnobject(LOCALID_PLAYER, DIR_NORTH)
     turnobject(LOCALID_LABINT_RIVAL, DIR_NORTH)
+	playse(SE_PIN)
 	applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
     applymovement(LOCALID_LABINT_RIVAL, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	delay(60)
     msgbox(
 		"Excuse me!",
 		MSGBOX_NPC
 	)
+	turnobject(LOCALID_PLAYER, DIR_NORTH)
     applymovement(LOCALID_LABINT_RECEPTIONIST, moves(
 		walk_right * 2
 		walk_down * 2
@@ -196,6 +209,11 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 		interest in it, so please leave!", 
         MSGBOX_NPC
     )
+	delay(10)
+	playse(SE_PIN)
+	applymovement(LOCALID_LABINT_RIVAL, Common_Movement_QuestionMark)
+	waitmovement(0)
+	delay(30)
 	msgbox(
         "MAYA: Huh? We're not here to sell
 		anything!
@@ -204,6 +222,12 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
         it's important!",
         MSGBOX_DEFAULT
     )
+	applymovement(LOCALID_LABINT_RECEPTIONIST, moves(
+		jump_in_place_down
+		delay_16 * 2
+		walk_in_place_down
+	))
+	waitmovement(0)
 	msgbox(
         "The professor is busy! Didn't you see
 		the sign out front?
@@ -214,6 +238,11 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
         MSGBOX_NPC
     )
 	closemessage
+	delay(30)
+	playse(SE_PIN)
+	applymovement(LOCALID_LABINT_RECEPTIONIST, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	turnobject(LOCALID_LABINT_RECEPTIONIST, DIR_EAST)
     msgbox(
         "What's all this racket about, now?",
         MSGBOX_DEFAULT
@@ -223,36 +252,52 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
     turnobject(LOCALID_PLAYER, DIR_EAST)
     turnobject(LOCALID_LABINT_RIVAL, DIR_EAST)
     turnobject(LOCALID_LABINT_RECEPTIONIST, DIR_EAST)
-	setobjectxyperm(LOCALID_LABINT_PROFESSOR, 8, 14)
+	setobjectxyperm(LOCALID_LABINT_PROFESSOR, 9, 14)
     addobject(LOCALID_LABINT_PROFESSOR)
     applymovement(LOCALID_LABINT_PROFESSOR, moves(
-    	walk_down * 5
+    	walk_down * 6
         face_left
     ))
     waitmovement(0)
     
 	turnobject(LOCALID_PLAYER, DIR_NORTH)
     turnobject(LOCALID_LABINT_RIVAL, DIR_NORTH)
+	applymovement(LOCALID_LABINT_RECEPTIONIST, moves(
+		walk_in_place_right
+	))
+	waitmovement(0)
     msgbox(
         "Professor Hawthorn, ma'am!
         
         My apologies, I was just about to show
         these solicitors here to the door.",
         MSGBOX_NPC
-    )	
+    )
+	closemessage
+	delay(40)
     turnobject(LOCALID_PLAYER, DIR_EAST)
     turnobject(LOCALID_LABINT_RIVAL, DIR_EAST)
     msgbox(
         "PROFESSOR: Hmm?
-        Solicitors, you say?
-        
-        …
-        
-        Let them through, Reynolds.",
+        Solicitors, you say?",
         MSGBOX_DEFAULT
     )
+	closemessage
+	delay(30)
+    msgbox(
+        "…
+		
+		Let them through, Reynolds.",
+        MSGBOX_DEFAULT
+    )
+	closemessage
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     turnobject(LOCALID_LABINT_RIVAL, DIR_NORTH)
+	delay(20)
+	applymovement(LOCALID_LABINT_RECEPTIONIST, moves(
+		walk_in_place_right
+	))
+	waitmovement(0)
     msgbox(
         "…But Professor, isn't that what you
         wrote on the sign out front?
@@ -269,6 +314,7 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 		and ask me that question again.",
         MSGBOX_DEFAULT
     )
+	closemessage
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     turnobject(LOCALID_LABINT_RIVAL, DIR_NORTH)
     applymovement(LOCALID_LABINT_RECEPTIONIST, moves(
@@ -276,6 +322,10 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
         delay_16 * 2
         face_right
         delay_16 * 2
+    	face_down
+        delay_16
+        face_right
+		delay_16
     	face_down
         delay_16
         face_right
@@ -296,10 +346,11 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
     setobjectxyperm(LOCALID_LABINT_RECEPTIONIST, 0, 47)
     
     applymovement(LOCALID_LABINT_PROFESSOR, moves(
-    	walk_left
+    	walk_left * 2
     	face_down
     ))
     waitmovement(0)
+	delay(30)
     msgbox(
         "PROFESSOR: Well, now that you've got my
         attention…
@@ -310,6 +361,9 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
     )
 	closemessage
     delay(30)
+	applymovement(LOCALID_LABINT_RIVAL, moves(
+		walk_in_place_up
+	))
     msgbox(
         "MAYA: Um…
 		…Hi, Professor! 
@@ -337,23 +391,22 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
     )
 	closemessage
 	
-	hideobjectat(LOCALID_LABINT_BAG, 0)
-	hideobjectat(LOCALID_LABINT_STARTER_GRASS, 0)
-	hideobjectat(LOCALID_LABINT_STARTER_FIRE, 0)
-	hideobjectat(LOCALID_LABINT_STARTER_WATER, 0)
 	applymovement(LOCALID_LABINT_PROFESSOR, moves(
+		walk_right * 2
     	walk_up * 9
-        walk_right * 4
+        walk_right * 3
 		walk_up
 		face_down
     ))
 	applymovement(LOCALID_PLAYER, moves(
+		delay_8
         walk_right * 2
     	walk_up * 10
         walk_right * 6
 		face_left
     ))
 	applymovement(LOCALID_LABINT_RIVAL, moves(
+		delay_16
         walk_right * 2
     	walk_up * 10
         walk_right * 5
@@ -361,8 +414,13 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
     ))
 	waitmovement(0)
 	turnobject(LOCALID_LABINT_PROFESSOR, DIR_EAST)
-	delay(10)
-	showobjectat(LOCALID_LABINT_BAG, 0)
+	delay(30)
+	applymovement(LOCALID_LABINT_RIVAL, moves(
+		walk_in_place_up
+    ))
+	waitmovement(0)
+	setobjectxyperm(LOCALID_LABINT_BAG, 13, 10)
+	addobject(LOCALID_LABINT_BAG)
 	delay(60)
 	
 	msgbox(
@@ -382,17 +440,19 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
     )
 	closemessage
 	
-	delay(30)
+	delay(10)
+	applymovement(LOCALID_LABINT_RIVAL, moves(
+		walk_in_place_up
+    ))
+	waitmovement(0)
 	msgbox(
         "MAYA: Okay!",
         MSGBOX_DEFAULT
     )
     turnobject(LOCALID_PLAYER, DIR_SOUTH)
     turnobject(LOCALID_LABINT_RIVAL, DIR_SOUTH)
+	delay(30)
 	fadescreen(FADE_TO_WHITE)
-	showobjectat(LOCALID_LABINT_STARTER_GRASS, 0)
-	showobjectat(LOCALID_LABINT_STARTER_FIRE, 0)
-	showobjectat(LOCALID_LABINT_STARTER_WATER, 0)
 	switch(var(VAR_STARTER_MON)) {
 		case 0: // player picked grass
 			setobjectxyperm(LOCALID_LABINT_STARTER_WATER, 13, 12)
@@ -407,6 +467,9 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 			setobjectxyperm(LOCALID_LABINT_STARTER_GRASS, 14, 12)
 			setobjectxyperm(LOCALID_LABINT_STARTER_WATER, 15, 12)
 	}
+	addobject(LOCALID_LABINT_STARTER_GRASS)
+	addobject(LOCALID_LABINT_STARTER_FIRE)
+	addobject(LOCALID_LABINT_STARTER_WATER)
 	fadescreen(FADE_FROM_WHITE)
 	delay(60)
 	
@@ -425,6 +488,10 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 		appear to be healthy.",
         MSGBOX_DEFAULT
     )
+	applymovement(LOCALID_LABINT_RIVAL, moves(
+		walk_in_place_down
+    ))
+	waitmovement(0)
 	msgbox(
         "MAYA: They seemed confused when we let
 		them out.
@@ -435,14 +502,16 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 		Were they scared? Hungry? Hurting?",
         MSGBOX_DEFAULT
     )
+	turnobject(LOCALID_LABINT_PROFESSOR, DIR_NORTH)
 	msgbox(
         "PROFESSOR: Yes, it's a fascinating
 		research opportunity, isn't it?",
         MSGBOX_DEFAULT
     )
 	closemessage
+	turnobject(LOCALID_LABINT_RIVAL, DIR_WEST)
 	
-	delay(30)
+	delay(60)
 	msgbox(
         "MAYA: So, do you have any ideas for how
 		we could find their original trainer,
@@ -454,11 +523,20 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 	applymovement(LOCALID_LABINT_PROFESSOR, moves(
     	walk_up * 3
 		walk_right * 2
-		face_down
     ))
 	waitmovement(0)
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     turnobject(LOCALID_LABINT_RIVAL, DIR_NORTH)
+	applymovement(LOCALID_LABINT_PROFESSOR, moves(
+    	delay_16 * 4
+		walk_right
+		delay_16 * 3
+		walk_left
+		delay_16 * 3
+		walk_right
+		delay_16 * 3
+		walk_left
+    ))
 	msgbox(
         "PROFESSOR: Hmm…
 		It's quite the puzzle.
@@ -474,6 +552,13 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 		could narrow it down.",
         MSGBOX_DEFAULT
     )
+	waitmovement(0)
+	turnobject(LOCALID_LABINT_PROFESSOR, DIR_SOUTH)
+	delay(30)
+	applymovement(LOCALID_LABINT_PROFESSOR, moves(
+		walk_in_place_down
+    ))
+	waitmovement(0)
 	msgbox(
         "Off the top of my head…
 		
@@ -510,7 +595,7 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 	
 	closemessage
 	applymovement(LOCALID_LABINT_RIVAL, moves(
-		jump_in_place_left
+		jump_in_place_up * 2
     ))
 	waitmovement(0)
 	msgbox(
@@ -519,6 +604,7 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
         MSGBOX_DEFAULT
     )
 	closemessage
+	delay(30)
     turnobject(LOCALID_PLAYER, DIR_WEST)
 	applymovement(LOCALID_LABINT_RIVAL, moves(
 		walk_right
@@ -542,7 +628,10 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 			removeobject(LOCALID_LABINT_STARTER_GRASS)
 	}
 	delay(60)
-	
+	applymovement(LOCALID_LABINT_PROFESSOR, moves(
+		walk_right
+		face_down
+	))
     turnobject(LOCALID_PLAYER, DIR_NORTH)
     turnobject(LOCALID_LABINT_RIVAL, DIR_EAST)
 	msgbox(
@@ -569,6 +658,8 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 	}
 	delay(60)
 	
+	turnobject(LOCALID_PLAYER, DIR_NORTH)
+    turnobject(LOCALID_LABINT_RIVAL, DIR_NORTH)
 	msgbox(
         "PROFESSOR: Excellent!
 		
@@ -579,20 +670,25 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
         MSGBOX_DEFAULT
     )
 	applymovement(LOCALID_LABINT_PROFESSOR, moves(
-    	walk_left * 2
+    	walk_left * 3
 		walk_down * 2
 		walk_left * 3
-		walk_up * 7
+		walk_up * 9
     ))
+    applymovement(LOCALID_LABINT_RIVAL, moves(
+		jump_in_place_up * 2
+		face_left
+	))
+	delay(40)
 	msgbox(
         "MAYA: Alright! Thank you, Professor!",
         MSGBOX_DEFAULT
     )
+	closemessage
 	delay(60)
 	turnobject(LOCALID_PLAYER, DIR_WEST)
     turnobject(LOCALID_LABINT_RIVAL, DIR_WEST)
-	closemessage
-	waitmovement(0)
+	waitmovement(LOCALID_LABINT_PROFESSOR)
 	setobjectxyperm(LOCALID_LABINT_PROFESSOR, 15, 4)
 	removeobject(LOCALID_LABINT_PROFESSOR)
 	
@@ -610,6 +706,7 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 		walk_fast_left * 6
 		walk_fast_down * 7
     ))
+	waitmovement(0)
 	setobjectxyperm(LOCALID_LABINT_RIVAL, 32, 0)
 	removeobject(LOCALID_LABINT_RIVAL)
 	

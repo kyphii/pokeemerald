@@ -201,5 +201,5 @@ Route1_RouteSign_Text_0:
 # 116 "data/maps/Route1/scripts.pory"
 	.string "ROUTE 1\n"
 	.string "{UP_ARROW} HAWTHORN LABS\l"
-	.string "{LEFT_ARROW} CANALONE CITY\l"
+	.string "{LEFT_ARROW} NAUTIRUST CITY\l"
 	.string "{RIGHT_ARROW} MARINACRE TOWN$"

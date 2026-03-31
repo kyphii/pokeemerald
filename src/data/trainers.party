@@ -16875,7 +16875,7 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_RIVAL_INTRO_GRASS ===
-Name: MAYA
+Name: Maya
 Class: Rival
 Pic: Wally
 Gender: Female
@@ -16888,20 +16888,20 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_RIVAL_INTRO_FIRE ===
-Name: MAYA
+Name: Maya
 Class: Rival
 Pic: Wally
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Force Setup First Turn
+AI: Basic Trainer
 
 Charmander
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_RIVAL_INTRO_WATER ===
-Name: MAYA
+Name: Maya
 Class: Rival
 Pic: Wally
 Gender: Female
