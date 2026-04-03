@@ -454,7 +454,7 @@ script HomeTown_BeachScene1_Start {
         case 1: //"find their trainer"
             msgbox(
                 "Do you think there's a shot?
-                it'd be the right thing to do, but…
+                It'd be the right thing to do, but…
 
                 …{PAUSE 30}Who knows where they drifted in from,
                 or how long they've been out there?

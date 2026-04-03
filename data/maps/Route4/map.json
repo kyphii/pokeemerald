@@ -19,9 +19,9 @@
       "direction": "right"
     },
     {
-      "map": "MAP_MOUNT_BRIAR",
-      "offset": 0,
-      "direction": "up"
+      "map": "MAP_WHELCHORD_CITY",
+      "offset": -24,
+      "direction": "down"
     }
   ],
   "object_events": [],

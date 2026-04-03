@@ -1,3 +1,10 @@
 {
-  "heal_locations": []
+  "heal_locations": [
+    {
+      "id": "HEAL_LOCATION_JUNOPOLIS_CITY",
+      "map": "MAP_JUNOPOLIS_CITY",
+      "x": 29,
+      "y": 50
+    }
+  ]
 }

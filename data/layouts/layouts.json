@@ -40,7 +40,7 @@
       "width": 48,
       "height": 48,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Fortree",
+      "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/PeriwindCity/border.bin",
       "blockdata_filepath": "data/layouts/PeriwindCity/map.bin",
       "layout_version": "emerald"
@@ -115,9 +115,9 @@
       "id": "LAYOUT_ROUTE_4",
       "name": "Route4_Layout",
       "width": 24,
-      "height": 120,
+      "height": 96,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Slateport",
+      "secondary_tileset": "gTileset_Sootopolis",
       "border_filepath": "data/layouts/Route4/border.bin",
       "blockdata_filepath": "data/layouts/Route4/map.bin",
       "layout_version": "emerald"
@@ -128,7 +128,7 @@
       "width": 72,
       "height": 24,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Slateport",
+      "secondary_tileset": "gTileset_Sootopolis",
       "border_filepath": "data/layouts/Route5/border.bin",
       "blockdata_filepath": "data/layouts/Route5/map.bin",
       "layout_version": "emerald"
@@ -429,6 +429,36 @@
       "border_filepath": "data/layouts/PeriwindCity_Gym/border.bin",
       "blockdata_filepath": "data/layouts/PeriwindCity_Gym/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_WHELCHORD_CITY",
+      "name": "WhelchordCity_Layout",
+      "width": 48,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Sootopolis",
+      "border_filepath": "data/layouts/WhelchordCity/border.bin",
+      "blockdata_filepath": "data/layouts/WhelchordCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_CANVENUS_CITY",
+      "name": "CanvenusCity_Layout",
+      "width": 48,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/CanvenusCity/border.bin",
+      "blockdata_filepath": "data/layouts/CanvenusCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE_11",
+      "name": "Route11_Layout",
+      "width": 144,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/Route11/border.bin",
+      "blockdata_filepath": "data/layouts/Route11/map.bin"
     }
   ]
 }

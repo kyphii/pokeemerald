@@ -20,7 +20,9 @@
     "NautirustCity",
     "JunopolisCity",
     "PeriwindCity",
-    "AbaloveTown"
+    "AbaloveTown",
+    "WhelchordCity",
+    "CanvenusCity"
   ],
   "gMapGroup_Routes": [
     "Route1",
@@ -35,7 +37,8 @@
     "Route17",
     "Route18",
     "Route19",
-    "Route20"
+    "Route20",
+    "Route11"
   ],
   "gMapGroup_Wilderness": [
     "NautirustForest",

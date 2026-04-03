@@ -1264,7 +1264,7 @@ HomeTown_BeachScene1_Start_Text_18:
 HomeTown_BeachScene1_Start_Text_19:
 # 456 "data/maps/MarinacreTown/scripts.pory"
 	.string "Do you think there's a shot?\n"
-	.string "it'd be the right thing to do, but…\p"
+	.string "It'd be the right thing to do, but…\p"
 	.string "…{PAUSE 30}Who knows where they drifted in from,\n"
 	.string "or how long they've been out there?\p"
 	.string "Where would we even start looking?$"

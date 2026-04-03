@@ -22,6 +22,11 @@
       "map": "MAP_ROUTE_20",
       "offset": 72,
       "direction": "up"
+    },
+    {
+      "map": "MAP_CANVENUS_CITY",
+      "offset": -24,
+      "direction": "down"
     }
   ],
   "object_events": [],
