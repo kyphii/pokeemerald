@@ -13,3 +13,22 @@ script MarinacreTown_PlayerHouse_2F_Sign_NintendoSwitch {
 		When was the last time you used it?", 
 		MSGBOX_SIGN)
 }
+
+script MarinacreTown_PlayerHouse_2F_Mirror {
+	lockall
+	msgbox(
+		"An ordinary table mirror.
+		In it, you see your reflection…
+		
+		…Or maybe not?
+		
+		Do you want to change your 
+		appearance?",
+	MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		closemessage
+		turnobject(LOCALID_PLAYER, DIR_SOUTH)
+		special(DynPal_ShowFullToneMenu)
+    }
+	releaseall
+}

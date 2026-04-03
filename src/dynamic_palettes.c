@@ -380,8 +380,8 @@ static void Task_DynPal_MenuFinish(u8 taskId)
         // This code assumes fixed IDs for player palette, so you may need to change this.
         if (sDynPalMenu.isOverworld)
         {
-            DynPal_LoadPaletteByOffset(sDynPalPlayerOverworld, OBJ_PLTT_ID(0));
-            DynPal_LoadPaletteByOffset(sDynPalPlayerReflection, OBJ_PLTT_ID(1));
+            DynPal_LoadPaletteByOffset(sDynPalPlayerOverworld, OBJ_PLTT_ID(1));
+            DynPal_LoadPaletteByOffset(sDynPalPlayerReflection, OBJ_PLTT_ID(2));
             ScriptContext_Enable();
         }
 
@@ -434,6 +434,7 @@ static void DynPal_MenuInit()
 // Shows the color menu corresponding to the value in sDynPalMenu.menuSeq
 static void DynPal_MenuShow(u8 taskId)
 {
+    LockPlayerFieldControls();
     const struct ListMenuItem* menuItems;
     struct WindowTemplate windowTemplate;
     u8 numItems, maxShownItems, listTaskId, windowId;
@@ -538,6 +539,7 @@ static void Task_HandleDynPalMultichoiceInput(u8 taskId)
         ClearStdWindowAndFrame(gTasks[taskId].tDynpalWindowId, TRUE);
         RemoveWindow(gTasks[taskId].tDynpalWindowId);
         DestroyTask(taskId);
+        UnlockPlayerFieldControls();
     }
 }
 
@@ -589,7 +591,7 @@ static void DynPal_ReloadPlayerPaletteForMenu(u16 paletteTag, u8 skinTone, u8 ha
     u16 offset;
     if (sDynPalMenu.isOverworld)
     {
-        offset = OBJ_PLTT_ID(0);
+        offset = OBJ_PLTT_ID(1);
     }
     else
     {
