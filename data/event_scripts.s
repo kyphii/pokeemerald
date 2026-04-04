@@ -910,3 +910,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/CanvenusCity/scripts.inc"
 
 	.include "data/maps/Route11/scripts.inc"
+
+	.include "data/maps/Route2_House/scripts.inc"

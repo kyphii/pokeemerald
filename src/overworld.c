@@ -1649,7 +1649,7 @@ const struct BlendSettings gTimeOfDayBlend[] =
 {
     [TIME_MORNING] = {.coeff = 4,  .blendColor = 0xA8B0E0,   .isTint = TRUE},
     [TIME_DAY]     = {.coeff = 0,  .blendColor = 0,          .isTint = FALSE},
-    [TIME_EVENING] = {.coeff = 4,  .blendColor = 0xA8B0E0,   .isTint = TRUE},
+    [TIME_EVENING] = {.coeff = 7,  .blendColor = 0x78C0F8,   .isTint = TRUE},
     [TIME_NIGHT]   = {.coeff = 10, .blendColor = TINT_NIGHT, .isTint = TRUE},
 };
 
@@ -1661,9 +1661,15 @@ const struct BlendSettings gTimeOfDayBlend[] =
 void UpdateTimeOfDay(void)
 {
     s32 hours, minutes;
-    RtcCalcLocalTime();
-    hours = sHoursOverride ? sHoursOverride : gLocalTime.hours;
-    minutes = sHoursOverride ? 0 : gLocalTime.minutes;
+    if (VarGet(VAR_RTC_OVERRIDE_HOUR) != 0) {
+        hours = VarGet(VAR_RTC_OVERRIDE_HOUR) - 1;
+        minutes = 0;
+    }
+    else {
+        RtcCalcLocalTime();
+        hours = gLocalTime.hours;
+        minutes = gLocalTime.minutes;
+    }
 
     if (IsBetweenHours(hours, MORNING_HOUR_BEGIN, MORNING_HOUR_MIDDLE)) // night->morning
     {
@@ -3833,12 +3839,6 @@ u16 SetTimeOfDay(u16 hours)
     sHoursOverride = hours;
     gTimeUpdateCounter = 0;
     return oldHours;
-}
-
-bool8 ScrFunc_settimeofday(struct ScriptContext *ctx)
-{
-    SetTimeOfDay(ScriptReadByte(ctx));
-    return FALSE;
 }
 
 // Credits

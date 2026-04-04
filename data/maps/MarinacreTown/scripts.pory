@@ -6,15 +6,23 @@ mapscripts MarinacreTown_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_VISITED_LITTLEROOT_TOWN)
     }
-    MAP_SCRIPT_ON_LOAD {
-        if (var(VAR_INTRO_SEQUENCE_STATE) == 1) {
-            setobjectxyperm(LOCALID_HOMETOWN_RIVAL, 30, 31)
-			setobjectxyperm(LOCALID_HOMETOWN_BAG, 28, 38)
-			
-			// prevent music cutout
-			setvar(VAR_TEMP_A, 5)
-        }
-    }
+	MAP_SCRIPT_ON_LOAD {
+		switch(var(VAR_INTRO_SEQUENCE_STATE)) {
+			case 1:
+				setobjectxyperm(LOCALID_HOMETOWN_RIVAL, 30, 31)
+				setobjectxyperm(LOCALID_HOMETOWN_BAG, 28, 38)
+				
+				// prevent music cutout
+				setvar(VAR_TEMP_A, 5)
+			case 7:
+				setobjectxyperm(LOCALID_HOMETOWN_RIVAL, 31, 11)
+		}
+	}
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_INTRO_SEQUENCE_STATE, 7 {
+			goto(MarinacreTown_Intro_LeaveWithRivalScene)
+		}
+	]
 }
 
 script HomeTown_Trigger_CutMusic {
@@ -37,7 +45,7 @@ script HomeTown_TownSign {
     msgbox(
         "MARINACRE TOWN
         Gifts from the sea, sparkling in the
-        rising sun", 
+        rising sun.", 
         MSGBOX_SIGN
     )
 }
@@ -149,9 +157,100 @@ script HomeTown_IntroBlockMart {
     release
 }
 
+script MarinacreTown_Intro_LeaveWithRivalScene {
+	lockall
+	
+	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+		walk_up * 4
+	))
+	waitmovement(0)
+    delay(20)
+	msgbox(
+        "MAYA: Hey, {PLAYER}!
+		Perfect timing!
+		Are you all ready to go?", 
+		MSGBOX_DEFAULT
+    )
+    closemessage
+	
+	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+		walk_down * 5
+		walk_left * 16
+		walk_down * 3
+		walk_left * 10
+		walk_up * 2
+		walk_left * 5
+		face_right
+	))
+    applymovement(LOCALID_PLAYER, moves(
+		walk_down * 7
+		walk_left * 16
+		walk_down * 3
+		walk_left * 10
+		walk_up * 2
+		walk_left * 3
+		face_left
+	))
+	delay(40)
+	msgbox(
+        "Hey, you got a Pok\edex! Cool!
+		Always prepared for everything, aren't
+		you?", 
+		MSGBOX_DEFAULT
+    )
+	delay(10)
+	msgbox(
+        "It's exciting, isn't it?
+		
+		We'll explore the whole region, all on
+		our own…{PAUSE 10}
+		Away{PAUSE 10} from{PAUSE 20} home…
+		
+		I-{PAUSE 20}
+		
+		…I talked about it with my parents.
+		They're cool with it.
+		
+		I guess they'll call me once Dad
+		makes a decision about that job…", 
+		MSGBOX_DEFAULT
+    )
+	waitmovement(0)
+	
+	msgbox(
+		"Well, let's take the road west out
+		of town.
+		
+		Professor Hawthorn gave us two
+		places to look for clues.
+		
+		We can decide which direction
+		to go once we reach the next city.
+		
+		Alright, {PLAYER}!
+		Let's go!", 
+		MSGBOX_DEFAULT
+    )
+    closemessage
+	
+	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+		walk_left
+		face_right
+		delay_16 * 2
+		walk_fast_left * 7
+	))
+    waitmovement(0)
+    removeobject(LOCALID_HOMETOWN_RIVAL)
+    setobjectxyperm(LOCALID_HOMETOWN_RIVAL, 0, 47)
+    setvar(VAR_INTRO_SEQUENCE_STATE, 8)
+	
+	releaseall
+}
+
 script HomeTown_BeachScene1_Start {
     lockall
     setvar(VAR_INTRO_SEQUENCE_STATE, 2)
+	turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
     
     // Rival see player
     applymovement(LOCALID_HOMETOWN_RIVAL, Common_Movement_FaceUp)
@@ -161,7 +260,7 @@ script HomeTown_BeachScene1_Start {
     waitmovement(0)
     delay(60)
     msgbox(
-        "Oh, {PLAYER}!
+        "MAYA: Oh, {PLAYER}!
         I was hoping I'd run into you!", 
         MSGBOX_DEFAULT
     )
@@ -267,9 +366,12 @@ script HomeTown_BeachScene1_Start {
         MSGBOX_DEFAULT
     )
     closemessage
-	turnobject(LOCALID_PLAYER, DIR_SOUTH)
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_SOUTH)
-	delay(150)
+	
+	applymovement(LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_EndMonologue)
+    delay(10)
+    applymovement(LOCALID_PLAYER, HomeTown_BeachScene1_EndMonologue)
+    waitmovement(0)
+	delay(100)
     
     // See bag
     playse(SE_PIN)
@@ -725,16 +827,20 @@ script HomeTown_BeachScene1_TalkRival {
     msgbox(
         "MAYA: Hurry up and pick one!
         Uh, no rush, though!",
-        MSGBOX_NPC
+		MSGBOX_DEFAULT
     )
 	release
 }
 
-movement HomeTown_BeachScene1_WalkToBag {
-    walk_left
-    walk_down * 4
-    walk_left * 2
+movement HomeTown_BeachScene1_EndMonologue {
     walk_down * 2
+}
+
+movement HomeTown_BeachScene1_WalkToBag {
+    walk_left * 2
+    walk_down * 3
+    walk_left
+    walk_down
 }
 
 movement HomeTown_BeachScene1_GoToNextStarter {

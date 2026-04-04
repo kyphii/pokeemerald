@@ -81,6 +81,97 @@ Gender: Male
 Music: Male
 Double Battle: No
 
+=== TRAINER_ANABEL ===
+Name: ANABEL
+Class: Salon Maiden
+Pic: Salon Maiden Anabel
+Gender: Female
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Beldum
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_TUCKER ===
+Name: TUCKER
+Class: Dome Ace
+Pic: Dome Ace Tucker
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Beldum
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_SPENSER ===
+Name: SPENSER
+Class: Palace Maven
+Pic: Palace Maven Spenser
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Beldum
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_GRETA ===
+Name: GRETA
+Class: Arena Tycoon
+Pic: Arena Tycoon Greta
+Gender: Female
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Beldum
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_NOLAND ===
+Name: NOLAND
+Class: Factory Head
+Pic: Factory Head Noland
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Beldum
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_LUCY ===
+Name: LUCY
+Class: Pike Queen
+Pic: Pike Queen Lucy
+Gender: Female
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Beldum
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BRANDON ===
+Name: BRANDON
+Class: Pyramid King
+Pic: Pyramid King Brandon
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Beldum
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 === TRAINER_RIVAL_INTRO_GRASS ===
 Name: Maya
 Class: Rival
@@ -118,4 +209,51 @@ AI: Basic Trainer
 
 Popplio
 Level: 0
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_ROUTE2_1 ===
+Name: Liam
+Class: Youngster
+Pic: Youngster
+Gender: Male
+AI: Check Bad Move
+
+Swellow
+Level: -1
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Linoone
+Level: 0
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+
+=== TRAINER_ROUTE2_2 ===
+Name: Bimmy
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+AI: Check Bad Move
+
+Accelgor
+Level: -2
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Scolipede
+Level: -1
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+
+=== TRAINER_ROUTE2_3 ===
+Name: Alice
+Class: Lass
+Pic: Lass
+Gender: Female
+AI: Check Bad Move
+
+Delcatty
+Level: -1
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Azumarill
+Level: -2
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe

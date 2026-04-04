@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ROUTE_18",
+  "id": "MAP_ROUTE18",
   "name": "Route18",
-  "layout": "LAYOUT_ROUTE_18",
+  "layout": "LAYOUT_ROUTE18",
   "music": "MUS_ROUTE104",
   "region_map_section": "MAPSEC_ROUTE_18",
   "requires_flash": false,
@@ -19,7 +19,7 @@
       "direction": "up"
     },
     {
-      "map": "MAP_ROUTE_19",
+      "map": "MAP_ROUTE19",
       "offset": 0,
       "direction": "down"
     }

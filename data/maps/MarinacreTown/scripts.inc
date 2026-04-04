@@ -3,6 +3,8 @@ MarinacreTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MarinacreTown_MapScripts_MAP_SCRIPT_ON_TRANSITION
 # 9 "data/maps/MarinacreTown/scripts.pory"
 	map_script MAP_SCRIPT_ON_LOAD, MarinacreTown_MapScripts_MAP_SCRIPT_ON_LOAD
+# 21 "data/maps/MarinacreTown/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, MarinacreTown_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
 MarinacreTown_MapScripts_MAP_SCRIPT_ON_TRANSITION:
@@ -12,1115 +14,1403 @@ MarinacreTown_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 
 MarinacreTown_MapScripts_MAP_SCRIPT_ON_LOAD:
 # 10 "data/maps/MarinacreTown/scripts.pory"
-	compare VAR_INTRO_SEQUENCE_STATE, 1
-	goto_if_eq MarinacreTown_MapScripts_MAP_SCRIPT_ON_LOAD_1
+	switch VAR_INTRO_SEQUENCE_STATE
+# 11 "data/maps/MarinacreTown/scripts.pory"
+	case 1, MarinacreTown_MapScripts_MAP_SCRIPT_ON_LOAD_2
+# 17 "data/maps/MarinacreTown/scripts.pory"
+	case 7, MarinacreTown_MapScripts_MAP_SCRIPT_ON_LOAD_3
 	return
 
-MarinacreTown_MapScripts_MAP_SCRIPT_ON_LOAD_1:
-# 11 "data/maps/MarinacreTown/scripts.pory"
-	setobjectxyperm LOCALID_HOMETOWN_RIVAL, 30, 31
+MarinacreTown_MapScripts_MAP_SCRIPT_ON_LOAD_2:
 # 12 "data/maps/MarinacreTown/scripts.pory"
+	setobjectxyperm LOCALID_HOMETOWN_RIVAL, 30, 31
+# 13 "data/maps/MarinacreTown/scripts.pory"
 	setobjectxyperm LOCALID_HOMETOWN_BAG, 28, 38
-# 15 "data/maps/MarinacreTown/scripts.pory"
+# 16 "data/maps/MarinacreTown/scripts.pory"
 	setvar VAR_TEMP_A, 5
+	return
+
+MarinacreTown_MapScripts_MAP_SCRIPT_ON_LOAD_3:
+# 18 "data/maps/MarinacreTown/scripts.pory"
+	setobjectxyperm LOCALID_HOMETOWN_RIVAL, 31, 11
+	return
+
+MarinacreTown_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+# 22 "data/maps/MarinacreTown/scripts.pory"
+	map_script_2 VAR_INTRO_SEQUENCE_STATE, 7, MarinacreTown_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0
+	.2byte 0
+
+MarinacreTown_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
+# 23 "data/maps/MarinacreTown/scripts.pory"
+	goto MarinacreTown_Intro_LeaveWithRivalScene
 	return
 
 
 HomeTown_Trigger_CutMusic::
-# 21 "data/maps/MarinacreTown/scripts.pory"
+# 29 "data/maps/MarinacreTown/scripts.pory"
 	compare VAR_TEMP_A, 0
 	goto_if_eq HomeTown_Trigger_CutMusic_2
 HomeTown_Trigger_CutMusic_1:
-# 25 "data/maps/MarinacreTown/scripts.pory"
+# 33 "data/maps/MarinacreTown/scripts.pory"
 	release
 	return
 
 HomeTown_Trigger_CutMusic_2:
-# 22 "data/maps/MarinacreTown/scripts.pory"
+# 30 "data/maps/MarinacreTown/scripts.pory"
 	fadeoutbgm 2
-# 23 "data/maps/MarinacreTown/scripts.pory"
+# 31 "data/maps/MarinacreTown/scripts.pory"
 	setvar VAR_TEMP_A, 1
 	goto HomeTown_Trigger_CutMusic_1
 
 
 HomeTown_Trigger_RestoreMusic::
-# 29 "data/maps/MarinacreTown/scripts.pory"
+# 37 "data/maps/MarinacreTown/scripts.pory"
 	compare VAR_TEMP_A, 1
 	goto_if_eq HomeTown_Trigger_RestoreMusic_2
 HomeTown_Trigger_RestoreMusic_1:
-# 33 "data/maps/MarinacreTown/scripts.pory"
+# 41 "data/maps/MarinacreTown/scripts.pory"
 	release
 	return
 
 HomeTown_Trigger_RestoreMusic_2:
-# 30 "data/maps/MarinacreTown/scripts.pory"
+# 38 "data/maps/MarinacreTown/scripts.pory"
 	fadeinbgm 2
-# 31 "data/maps/MarinacreTown/scripts.pory"
+# 39 "data/maps/MarinacreTown/scripts.pory"
 	setvar VAR_TEMP_A, 0
 	goto HomeTown_Trigger_RestoreMusic_1
 
 
 HomeTown_TownSign::
-# 37 "data/maps/MarinacreTown/scripts.pory"
+# 45 "data/maps/MarinacreTown/scripts.pory"
 	msgbox HomeTown_TownSign_Text_0, MSGBOX_SIGN
 	return
 
 
 HomeTown_PlayerMailbox::
-# 46 "data/maps/MarinacreTown/scripts.pory"
+# 54 "data/maps/MarinacreTown/scripts.pory"
 	msgbox HomeTown_PlayerMailbox_Text_0, MSGBOX_SIGN
 	return
 
 
 HomeTown_IntroPreventLeave::
-# 53 "data/maps/MarinacreTown/scripts.pory"
+# 61 "data/maps/MarinacreTown/scripts.pory"
 	lockall
-# 54 "data/maps/MarinacreTown/scripts.pory"
+# 62 "data/maps/MarinacreTown/scripts.pory"
 	playse SE_PIN
-# 55 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_GATEKEEPER, Common_Movement_ExclamationMark
-# 56 "data/maps/MarinacreTown/scripts.pory"
-	waitmovement 0
-# 57 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_HOMETOWN_GATEKEEPER, DIR_SOUTH
-# 58 "data/maps/MarinacreTown/scripts.pory"
-	delay 60
-# 60 "data/maps/MarinacreTown/scripts.pory"
-	message HomeTown_IntroPreventLeave_Text_0
 # 63 "data/maps/MarinacreTown/scripts.pory"
-	waitmessage
+	applymovement LOCALID_HOMETOWN_GATEKEEPER, Common_Movement_ExclamationMark
+# 64 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
 # 65 "data/maps/MarinacreTown/scripts.pory"
-	getplayerxy VAR_0x8008, VAR_0x8009
+	turnobject LOCALID_HOMETOWN_GATEKEEPER, DIR_SOUTH
 # 66 "data/maps/MarinacreTown/scripts.pory"
-	switch VAR_0x8009
+	delay 60
 # 68 "data/maps/MarinacreTown/scripts.pory"
-	case 13, HomeTown_IntroPreventLeave_3
-# 72 "data/maps/MarinacreTown/scripts.pory"
-	case 14, HomeTown_IntroPreventLeave_4
+	message HomeTown_IntroPreventLeave_Text_0
+# 71 "data/maps/MarinacreTown/scripts.pory"
+	waitmessage
+# 73 "data/maps/MarinacreTown/scripts.pory"
+	getplayerxy VAR_0x8008, VAR_0x8009
+# 74 "data/maps/MarinacreTown/scripts.pory"
+	switch VAR_0x8009
 # 76 "data/maps/MarinacreTown/scripts.pory"
+	case 13, HomeTown_IntroPreventLeave_3
+# 80 "data/maps/MarinacreTown/scripts.pory"
+	case 14, HomeTown_IntroPreventLeave_4
+# 84 "data/maps/MarinacreTown/scripts.pory"
 	case 15, HomeTown_IntroPreventLeave_5
 HomeTown_IntroPreventLeave_1:
-# 81 "data/maps/MarinacreTown/scripts.pory"
+# 89 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
-# 82 "data/maps/MarinacreTown/scripts.pory"
+# 90 "data/maps/MarinacreTown/scripts.pory"
 	waitbuttonpress
-# 84 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_IntroPreventLeave_Text_1, MSGBOX_DEFAULT
 # 92 "data/maps/MarinacreTown/scripts.pory"
-	closemessage
-# 94 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_PLAYER, HomeTown_IntroPreventLeave_Movement_3
-# 95 "data/maps/MarinacreTown/scripts.pory"
-	waitmovement 0
-# 97 "data/maps/MarinacreTown/scripts.pory"
-	getplayerxy VAR_0x8008, VAR_0x8009
-# 98 "data/maps/MarinacreTown/scripts.pory"
-	switch VAR_0x8009
+	msgbox HomeTown_IntroPreventLeave_Text_1, MSGBOX_DEFAULT
 # 100 "data/maps/MarinacreTown/scripts.pory"
-	case 13, HomeTown_IntroPreventLeave_8
+	closemessage
+# 102 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_PLAYER, HomeTown_IntroPreventLeave_Movement_3
+# 103 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
 # 105 "data/maps/MarinacreTown/scripts.pory"
+	getplayerxy VAR_0x8008, VAR_0x8009
+# 106 "data/maps/MarinacreTown/scripts.pory"
+	switch VAR_0x8009
+# 108 "data/maps/MarinacreTown/scripts.pory"
+	case 13, HomeTown_IntroPreventLeave_8
+# 113 "data/maps/MarinacreTown/scripts.pory"
 	case 14, HomeTown_IntroPreventLeave_9
-# 110 "data/maps/MarinacreTown/scripts.pory"
+# 118 "data/maps/MarinacreTown/scripts.pory"
 	case 15, HomeTown_IntroPreventLeave_10
 HomeTown_IntroPreventLeave_6:
-# 116 "data/maps/MarinacreTown/scripts.pory"
+# 124 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
-# 118 "data/maps/MarinacreTown/scripts.pory"
+# 126 "data/maps/MarinacreTown/scripts.pory"
 	releaseall
 	return
 
 HomeTown_IntroPreventLeave_3:
-# 69 "data/maps/MarinacreTown/scripts.pory"
+# 77 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_HOMETOWN_GATEKEEPER, HomeTown_IntroPreventLeave_Movement_0
 	goto HomeTown_IntroPreventLeave_1
 
 HomeTown_IntroPreventLeave_4:
-# 73 "data/maps/MarinacreTown/scripts.pory"
+# 81 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_HOMETOWN_GATEKEEPER, HomeTown_IntroPreventLeave_Movement_1
 	goto HomeTown_IntroPreventLeave_1
 
 HomeTown_IntroPreventLeave_5:
-# 77 "data/maps/MarinacreTown/scripts.pory"
+# 85 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_HOMETOWN_GATEKEEPER, HomeTown_IntroPreventLeave_Movement_2
 	goto HomeTown_IntroPreventLeave_1
 
 HomeTown_IntroPreventLeave_8:
-# 101 "data/maps/MarinacreTown/scripts.pory"
+# 109 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_HOMETOWN_GATEKEEPER, HomeTown_IntroPreventLeave_Movement_4
 	goto HomeTown_IntroPreventLeave_6
 
 HomeTown_IntroPreventLeave_9:
-# 106 "data/maps/MarinacreTown/scripts.pory"
+# 114 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_HOMETOWN_GATEKEEPER, HomeTown_IntroPreventLeave_Movement_5
 	goto HomeTown_IntroPreventLeave_6
 
 HomeTown_IntroPreventLeave_10:
-# 111 "data/maps/MarinacreTown/scripts.pory"
+# 119 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_HOMETOWN_GATEKEEPER, HomeTown_IntroPreventLeave_Movement_6
 	goto HomeTown_IntroPreventLeave_6
 
 
 HomeTown_IntroTalkGatekeeper::
-# 122 "data/maps/MarinacreTown/scripts.pory"
+# 130 "data/maps/MarinacreTown/scripts.pory"
 	lock
-# 123 "data/maps/MarinacreTown/scripts.pory"
+# 131 "data/maps/MarinacreTown/scripts.pory"
 	faceplayer
-# 124 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_IntroTalkGatekeeper_Text_0, MSGBOX_DEFAULT
 # 132 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_IntroTalkGatekeeper_Text_0, MSGBOX_DEFAULT
+# 140 "data/maps/MarinacreTown/scripts.pory"
 	closemessage
-# 133 "data/maps/MarinacreTown/scripts.pory"
+# 141 "data/maps/MarinacreTown/scripts.pory"
 	release
 	return
 
 
 HomeTown_IntroBlockMart::
-# 137 "data/maps/MarinacreTown/scripts.pory"
+# 145 "data/maps/MarinacreTown/scripts.pory"
 	lock
-# 138 "data/maps/MarinacreTown/scripts.pory"
+# 146 "data/maps/MarinacreTown/scripts.pory"
 	faceplayer
-# 139 "data/maps/MarinacreTown/scripts.pory"
+# 147 "data/maps/MarinacreTown/scripts.pory"
 	msgbox HomeTown_IntroBlockMart_Text_0, MSGBOX_DEFAULT
-# 148 "data/maps/MarinacreTown/scripts.pory"
+# 156 "data/maps/MarinacreTown/scripts.pory"
 	closemessage
-# 149 "data/maps/MarinacreTown/scripts.pory"
+# 157 "data/maps/MarinacreTown/scripts.pory"
 	release
 	return
 
 
-HomeTown_BeachScene1_Start::
-# 153 "data/maps/MarinacreTown/scripts.pory"
-	lockall
-# 154 "data/maps/MarinacreTown/scripts.pory"
-	setvar VAR_INTRO_SEQUENCE_STATE, 2
-# 157 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_RIVAL, Common_Movement_FaceUp
-# 158 "data/maps/MarinacreTown/scripts.pory"
-	waitmovement 0
-# 159 "data/maps/MarinacreTown/scripts.pory"
-	playse SE_PIN
-# 160 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_RIVAL, Common_Movement_ExclamationMark
+MarinacreTown_Intro_LeaveWithRivalScene::
 # 161 "data/maps/MarinacreTown/scripts.pory"
-	waitmovement 0
-# 162 "data/maps/MarinacreTown/scripts.pory"
-	delay 60
+	lockall
 # 163 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_0, MSGBOX_DEFAULT
-# 168 "data/maps/MarinacreTown/scripts.pory"
-	closemessage
-# 171 "data/maps/MarinacreTown/scripts.pory"
-	getplayerxy VAR_0x8008, VAR_0x8009
-# 172 "data/maps/MarinacreTown/scripts.pory"
-	switch VAR_0x8008
-# 173 "data/maps/MarinacreTown/scripts.pory"
-	case 29, HomeTown_BeachScene1_Start_3
-# 181 "data/maps/MarinacreTown/scripts.pory"
-	case 30, HomeTown_BeachScene1_Start_4
-# 188 "data/maps/MarinacreTown/scripts.pory"
-	case 31, HomeTown_BeachScene1_Start_5
-HomeTown_BeachScene1_Start_1:
-# 194 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, MarinacreTown_Intro_LeaveWithRivalScene_Movement_0
+# 166 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
+# 167 "data/maps/MarinacreTown/scripts.pory"
+	delay 20
+# 168 "data/maps/MarinacreTown/scripts.pory"
+	msgbox MarinacreTown_Intro_LeaveWithRivalScene_Text_0, MSGBOX_DEFAULT
+# 174 "data/maps/MarinacreTown/scripts.pory"
+	closemessage
+# 176 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, MarinacreTown_Intro_LeaveWithRivalScene_Movement_1
+# 185 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_PLAYER, MarinacreTown_Intro_LeaveWithRivalScene_Movement_2
+# 194 "data/maps/MarinacreTown/scripts.pory"
+	delay 40
 # 195 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_WEST
-# 196 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_HOMETOWN_RIVAL, DIR_EAST
-# 199 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_1, MSGBOX_DEFAULT
-# 209 "data/maps/MarinacreTown/scripts.pory"
+	msgbox MarinacreTown_Intro_LeaveWithRivalScene_Text_1, MSGBOX_DEFAULT
+# 201 "data/maps/MarinacreTown/scripts.pory"
+	delay 10
+# 202 "data/maps/MarinacreTown/scripts.pory"
+	msgbox MarinacreTown_Intro_LeaveWithRivalScene_Text_2, MSGBOX_DEFAULT
+# 218 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
+# 220 "data/maps/MarinacreTown/scripts.pory"
+	msgbox MarinacreTown_Intro_LeaveWithRivalScene_Text_3, MSGBOX_DEFAULT
+# 234 "data/maps/MarinacreTown/scripts.pory"
 	closemessage
-# 210 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_HOMETOWN_RIVAL, DIR_SOUTH
-# 211 "data/maps/MarinacreTown/scripts.pory"
-	delay 60
-# 212 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_2, MSGBOX_DEFAULT
-# 221 "data/maps/MarinacreTown/scripts.pory"
-	closemessage
-# 223 "data/maps/MarinacreTown/scripts.pory"
-	fadeoutbgm 3
-# 224 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_SOUTH
-# 225 "data/maps/MarinacreTown/scripts.pory"
-	delay 60
-# 226 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_3, MSGBOX_DEFAULT
-# 246 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_HOMETOWN_RIVAL, DIR_WEST
+# 236 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, MarinacreTown_Intro_LeaveWithRivalScene_Movement_3
+# 242 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
+# 243 "data/maps/MarinacreTown/scripts.pory"
+	removeobject LOCALID_HOMETOWN_RIVAL
+# 244 "data/maps/MarinacreTown/scripts.pory"
+	setobjectxyperm LOCALID_HOMETOWN_RIVAL, 0, 47
+# 245 "data/maps/MarinacreTown/scripts.pory"
+	setvar VAR_INTRO_SEQUENCE_STATE, 8
 # 247 "data/maps/MarinacreTown/scripts.pory"
-	delay 60
-# 248 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_4, MSGBOX_DEFAULT
-# 254 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Start_Movement_3
+	releaseall
+	return
+
+
+HomeTown_BeachScene1_Start::
+# 251 "data/maps/MarinacreTown/scripts.pory"
+	lockall
+# 252 "data/maps/MarinacreTown/scripts.pory"
+	setvar VAR_INTRO_SEQUENCE_STATE, 2
+# 253 "data/maps/MarinacreTown/scripts.pory"
+	turnobject LOCALID_HOMETOWN_RIVAL, DIR_EAST
+# 256 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, Common_Movement_FaceUp
 # 257 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
+# 258 "data/maps/MarinacreTown/scripts.pory"
+	playse SE_PIN
 # 259 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_5, MSGBOX_DEFAULT
-# 269 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, Common_Movement_ExclamationMark
+# 260 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
+# 261 "data/maps/MarinacreTown/scripts.pory"
+	delay 60
+# 262 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_0, MSGBOX_DEFAULT
+# 267 "data/maps/MarinacreTown/scripts.pory"
 	closemessage
 # 270 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_SOUTH
+	getplayerxy VAR_0x8008, VAR_0x8009
 # 271 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_HOMETOWN_RIVAL, DIR_SOUTH
+	switch VAR_0x8008
 # 272 "data/maps/MarinacreTown/scripts.pory"
-	delay 150
-# 275 "data/maps/MarinacreTown/scripts.pory"
-	playse SE_PIN
-# 276 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_RIVAL, Common_Movement_QuestionMark
-# 277 "data/maps/MarinacreTown/scripts.pory"
-	waitmovement 0
-# 278 "data/maps/MarinacreTown/scripts.pory"
-	delay 60
-# 279 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_6, MSGBOX_DEFAULT
-# 283 "data/maps/MarinacreTown/scripts.pory"
-	closemessage
-# 286 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_WalkToBag
+	case 29, HomeTown_BeachScene1_Start_3
+# 280 "data/maps/MarinacreTown/scripts.pory"
+	case 30, HomeTown_BeachScene1_Start_4
 # 287 "data/maps/MarinacreTown/scripts.pory"
-	delay 30
-# 288 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_PLAYER, HomeTown_BeachScene1_WalkToBag
-# 289 "data/maps/MarinacreTown/scripts.pory"
-	waitmovement 0
-# 290 "data/maps/MarinacreTown/scripts.pory"
-	delay 30
+	case 31, HomeTown_BeachScene1_Start_5
+HomeTown_BeachScene1_Start_1:
 # 293 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_7, MSGBOX_DEFAULT
-# 299 "data/maps/MarinacreTown/scripts.pory"
-	closemessage
-# 300 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Start_Movement_4
-# 303 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
-# 304 "data/maps/MarinacreTown/scripts.pory"
-	delay 60
-# 305 "data/maps/MarinacreTown/scripts.pory"
-	playse SE_PIN
-# 306 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_RIVAL, Common_Movement_ExclamationMark
-# 307 "data/maps/MarinacreTown/scripts.pory"
-	waitmovement 0
-# 308 "data/maps/MarinacreTown/scripts.pory"
-	delay 60
-# 309 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Start_Movement_5
-# 320 "data/maps/MarinacreTown/scripts.pory"
-	delay 30
-# 321 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_8, MSGBOX_DEFAULT
-# 326 "data/maps/MarinacreTown/scripts.pory"
-	waitmovement 0
-# 327 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_HOMETOWN_RIVAL, DIR_NORTH
-# 328 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_9, MSGBOX_DEFAULT
-# 333 "data/maps/MarinacreTown/scripts.pory"
-	closemessage
-# 334 "data/maps/MarinacreTown/scripts.pory"
+# 294 "data/maps/MarinacreTown/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_WEST
+# 295 "data/maps/MarinacreTown/scripts.pory"
 	turnobject LOCALID_HOMETOWN_RIVAL, DIR_EAST
-# 335 "data/maps/MarinacreTown/scripts.pory"
-	delay 60
-# 336 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_10, MSGBOX_DEFAULT
-# 339 "data/maps/MarinacreTown/scripts.pory"
+# 298 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_1, MSGBOX_DEFAULT
+# 308 "data/maps/MarinacreTown/scripts.pory"
 	closemessage
-# 342 "data/maps/MarinacreTown/scripts.pory"
-	delay 40
-# 343 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Start_Movement_6
+# 309 "data/maps/MarinacreTown/scripts.pory"
+	turnobject LOCALID_HOMETOWN_RIVAL, DIR_SOUTH
+# 310 "data/maps/MarinacreTown/scripts.pory"
+	delay 60
+# 311 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_2, MSGBOX_DEFAULT
+# 320 "data/maps/MarinacreTown/scripts.pory"
+	closemessage
+# 322 "data/maps/MarinacreTown/scripts.pory"
+	fadeoutbgm 3
+# 323 "data/maps/MarinacreTown/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_SOUTH
+# 324 "data/maps/MarinacreTown/scripts.pory"
+	delay 60
+# 325 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_3, MSGBOX_DEFAULT
+# 345 "data/maps/MarinacreTown/scripts.pory"
+	turnobject LOCALID_HOMETOWN_RIVAL, DIR_WEST
 # 346 "data/maps/MarinacreTown/scripts.pory"
-	waitmovement 0
-# 347 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
-# 348 "data/maps/MarinacreTown/scripts.pory"
-	delay 30
-# 349 "data/maps/MarinacreTown/scripts.pory"
-	setobjectxyperm LOCALID_HOMETOWN_BALL_GRASS, 27, 35
-# 350 "data/maps/MarinacreTown/scripts.pory"
-	addobject LOCALID_HOMETOWN_BALL_GRASS
-# 351 "data/maps/MarinacreTown/scripts.pory"
-	delay 30
-# 352 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter
-# 353 "data/maps/MarinacreTown/scripts.pory"
-	waitmovement 0
-# 354 "data/maps/MarinacreTown/scripts.pory"
-	setobjectxyperm LOCALID_HOMETOWN_BALL_FIRE, 28, 35
-# 355 "data/maps/MarinacreTown/scripts.pory"
-	addobject LOCALID_HOMETOWN_BALL_FIRE
-# 356 "data/maps/MarinacreTown/scripts.pory"
-	delay 30
-# 357 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter
-# 358 "data/maps/MarinacreTown/scripts.pory"
-	waitmovement 0
-# 359 "data/maps/MarinacreTown/scripts.pory"
-	setobjectxyperm LOCALID_HOMETOWN_BALL_WATER, 29, 35
-# 360 "data/maps/MarinacreTown/scripts.pory"
-	addobject LOCALID_HOMETOWN_BALL_WATER
-# 361 "data/maps/MarinacreTown/scripts.pory"
-	delay 30
-# 362 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Start_Movement_7
-# 366 "data/maps/MarinacreTown/scripts.pory"
-	waitmovement 0
-# 369 "data/maps/MarinacreTown/scripts.pory"
 	delay 60
-# 370 "data/maps/MarinacreTown/scripts.pory"
-	fadescreen FADE_TO_WHITE
-# 371 "data/maps/MarinacreTown/scripts.pory"
-	setobjectxyperm LOCALID_HOMETOWN_STARTER_GRASS, 27, 35
-# 372 "data/maps/MarinacreTown/scripts.pory"
-	setobjectxyperm LOCALID_HOMETOWN_STARTER_FIRE, 28, 35
-# 373 "data/maps/MarinacreTown/scripts.pory"
-	setobjectxyperm LOCALID_HOMETOWN_STARTER_WATER, 29, 35
-# 374 "data/maps/MarinacreTown/scripts.pory"
-	addobject LOCALID_HOMETOWN_STARTER_GRASS
-# 375 "data/maps/MarinacreTown/scripts.pory"
-	addobject LOCALID_HOMETOWN_STARTER_FIRE
-# 376 "data/maps/MarinacreTown/scripts.pory"
-	addobject LOCALID_HOMETOWN_STARTER_WATER
-# 377 "data/maps/MarinacreTown/scripts.pory"
-	removeobject LOCALID_HOMETOWN_BALL_GRASS
-# 378 "data/maps/MarinacreTown/scripts.pory"
-	removeobject LOCALID_HOMETOWN_BALL_FIRE
-# 379 "data/maps/MarinacreTown/scripts.pory"
-	removeobject LOCALID_HOMETOWN_BALL_WATER
-# 380 "data/maps/MarinacreTown/scripts.pory"
-	fadescreen FADE_FROM_WHITE
-# 381 "data/maps/MarinacreTown/scripts.pory"
-	lockall
-# 382 "data/maps/MarinacreTown/scripts.pory"
-	playse SE_PIN
-# 383 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_STARTER_FIRE, HomeTown_BeachScene1_StarterReact
-# 384 "data/maps/MarinacreTown/scripts.pory"
-	delay 10
-# 385 "data/maps/MarinacreTown/scripts.pory"
-	playse SE_PIN
-# 386 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_STARTER_GRASS, HomeTown_BeachScene1_StarterReact
-# 387 "data/maps/MarinacreTown/scripts.pory"
-	delay 10
-# 388 "data/maps/MarinacreTown/scripts.pory"
-	playse SE_PIN
-# 389 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_STARTER_WATER, HomeTown_BeachScene1_StarterReact
-# 390 "data/maps/MarinacreTown/scripts.pory"
-	delay 10
-# 393 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Start_Movement_8
-# 398 "data/maps/MarinacreTown/scripts.pory"
-	delay 20
-# 399 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_11, MSGBOX_DEFAULT
-# 402 "data/maps/MarinacreTown/scripts.pory"
+# 347 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_4, MSGBOX_DEFAULT
+# 353 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Start_Movement_3
+# 356 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
+# 358 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_5, MSGBOX_DEFAULT
+# 368 "data/maps/MarinacreTown/scripts.pory"
 	closemessage
-# 403 "data/maps/MarinacreTown/scripts.pory"
-	releaseall
-# 404 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_RIVAL, Common_Movement_FaceUp
+# 370 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_EndMonologue
+# 371 "data/maps/MarinacreTown/scripts.pory"
+	delay 10
+# 372 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_PLAYER, HomeTown_BeachScene1_EndMonologue
+# 373 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
+# 374 "data/maps/MarinacreTown/scripts.pory"
+	delay 100
+# 377 "data/maps/MarinacreTown/scripts.pory"
+	playse SE_PIN
+# 378 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, Common_Movement_QuestionMark
+# 379 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
+# 380 "data/maps/MarinacreTown/scripts.pory"
+	delay 60
+# 381 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_6, MSGBOX_DEFAULT
+# 385 "data/maps/MarinacreTown/scripts.pory"
+	closemessage
+# 388 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_WalkToBag
+# 389 "data/maps/MarinacreTown/scripts.pory"
+	delay 30
+# 390 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_PLAYER, HomeTown_BeachScene1_WalkToBag
+# 391 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
+# 392 "data/maps/MarinacreTown/scripts.pory"
+	delay 30
+# 395 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_7, MSGBOX_DEFAULT
+# 401 "data/maps/MarinacreTown/scripts.pory"
+	closemessage
+# 402 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Start_Movement_4
 # 405 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
-# 408 "data/maps/MarinacreTown/scripts.pory"
-	delay 30
-# 409 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_WEST
-# 410 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_HOMETOWN_RIVAL, DIR_EAST
-# 411 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_12, MSGBOX_DEFAULT
-# 418 "data/maps/MarinacreTown/scripts.pory"
-	closemessage
-# 419 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_NORTH
-# 420 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_HOMETOWN_RIVAL, DIR_NORTH
-# 421 "data/maps/MarinacreTown/scripts.pory"
+# 406 "data/maps/MarinacreTown/scripts.pory"
 	delay 60
+# 407 "data/maps/MarinacreTown/scripts.pory"
+	playse SE_PIN
+# 408 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, Common_Movement_ExclamationMark
+# 409 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
+# 410 "data/maps/MarinacreTown/scripts.pory"
+	delay 60
+# 411 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Start_Movement_5
 # 422 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_13, MSGBOX_DEFAULT
-# 433 "data/maps/MarinacreTown/scripts.pory"
-	closemessage
-# 434 "data/maps/MarinacreTown/scripts.pory"
-	delay 20
+	delay 30
+# 423 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_8, MSGBOX_DEFAULT
+# 428 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
+# 429 "data/maps/MarinacreTown/scripts.pory"
+	turnobject LOCALID_HOMETOWN_RIVAL, DIR_NORTH
+# 430 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_9, MSGBOX_DEFAULT
 # 435 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_WEST
+	closemessage
 # 436 "data/maps/MarinacreTown/scripts.pory"
 	turnobject LOCALID_HOMETOWN_RIVAL, DIR_EAST
 # 437 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_14
-# 442 "data/maps/MarinacreTown/scripts.pory"
-	dynmultichoice 25, 6, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, HomeTown_BeachScene1_Start_Text_15, HomeTown_BeachScene1_Start_Text_16, HomeTown_BeachScene1_Start_Text_17
-# 444 "data/maps/MarinacreTown/scripts.pory"
-	switch VAR_RESULT
-# 445 "data/maps/MarinacreTown/scripts.pory"
-	case 0, HomeTown_BeachScene1_Start_8
-# 454 "data/maps/MarinacreTown/scripts.pory"
-	case 1, HomeTown_BeachScene1_Start_9
-# 465 "data/maps/MarinacreTown/scripts.pory"
-	case 2, HomeTown_BeachScene1_Start_10
-HomeTown_BeachScene1_Start_6:
-# 478 "data/maps/MarinacreTown/scripts.pory"
-	closemessage
-# 479 "data/maps/MarinacreTown/scripts.pory"
 	delay 60
-# 480 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_HOMETOWN_RIVAL, DIR_SOUTH
-# 481 "data/maps/MarinacreTown/scripts.pory"
-	playse SE_PIN
-# 482 "data/maps/MarinacreTown/scripts.pory"
-	applymovement LOCALID_HOMETOWN_RIVAL, Common_Movement_ExclamationMark
-# 483 "data/maps/MarinacreTown/scripts.pory"
-	waitmovement 0
-# 484 "data/maps/MarinacreTown/scripts.pory"
-	delay 40
-# 485 "data/maps/MarinacreTown/scripts.pory"
-	fadeinbgm 1
-# 486 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_HOMETOWN_RIVAL, DIR_EAST
-# 487 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_21, MSGBOX_DEFAULT
-# 503 "data/maps/MarinacreTown/scripts.pory"
+# 438 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_10, MSGBOX_DEFAULT
+# 441 "data/maps/MarinacreTown/scripts.pory"
 	closemessage
-# 504 "data/maps/MarinacreTown/scripts.pory"
+# 444 "data/maps/MarinacreTown/scripts.pory"
+	delay 40
+# 445 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Start_Movement_6
+# 448 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
+# 449 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+# 450 "data/maps/MarinacreTown/scripts.pory"
+	delay 30
+# 451 "data/maps/MarinacreTown/scripts.pory"
+	setobjectxyperm LOCALID_HOMETOWN_BALL_GRASS, 27, 35
+# 452 "data/maps/MarinacreTown/scripts.pory"
+	addobject LOCALID_HOMETOWN_BALL_GRASS
+# 453 "data/maps/MarinacreTown/scripts.pory"
+	delay 30
+# 454 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter
+# 455 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
+# 456 "data/maps/MarinacreTown/scripts.pory"
+	setobjectxyperm LOCALID_HOMETOWN_BALL_FIRE, 28, 35
+# 457 "data/maps/MarinacreTown/scripts.pory"
+	addobject LOCALID_HOMETOWN_BALL_FIRE
+# 458 "data/maps/MarinacreTown/scripts.pory"
+	delay 30
+# 459 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter
+# 460 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
+# 461 "data/maps/MarinacreTown/scripts.pory"
+	setobjectxyperm LOCALID_HOMETOWN_BALL_WATER, 29, 35
+# 462 "data/maps/MarinacreTown/scripts.pory"
+	addobject LOCALID_HOMETOWN_BALL_WATER
+# 463 "data/maps/MarinacreTown/scripts.pory"
+	delay 30
+# 464 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Start_Movement_7
+# 468 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
+# 471 "data/maps/MarinacreTown/scripts.pory"
+	delay 60
+# 472 "data/maps/MarinacreTown/scripts.pory"
+	fadescreen FADE_TO_WHITE
+# 473 "data/maps/MarinacreTown/scripts.pory"
+	setobjectxyperm LOCALID_HOMETOWN_STARTER_GRASS, 27, 35
+# 474 "data/maps/MarinacreTown/scripts.pory"
+	setobjectxyperm LOCALID_HOMETOWN_STARTER_FIRE, 28, 35
+# 475 "data/maps/MarinacreTown/scripts.pory"
+	setobjectxyperm LOCALID_HOMETOWN_STARTER_WATER, 29, 35
+# 476 "data/maps/MarinacreTown/scripts.pory"
+	addobject LOCALID_HOMETOWN_STARTER_GRASS
+# 477 "data/maps/MarinacreTown/scripts.pory"
+	addobject LOCALID_HOMETOWN_STARTER_FIRE
+# 478 "data/maps/MarinacreTown/scripts.pory"
+	addobject LOCALID_HOMETOWN_STARTER_WATER
+# 479 "data/maps/MarinacreTown/scripts.pory"
+	removeobject LOCALID_HOMETOWN_BALL_GRASS
+# 480 "data/maps/MarinacreTown/scripts.pory"
+	removeobject LOCALID_HOMETOWN_BALL_FIRE
+# 481 "data/maps/MarinacreTown/scripts.pory"
+	removeobject LOCALID_HOMETOWN_BALL_WATER
+# 482 "data/maps/MarinacreTown/scripts.pory"
+	fadescreen FADE_FROM_WHITE
+# 483 "data/maps/MarinacreTown/scripts.pory"
+	lockall
+# 484 "data/maps/MarinacreTown/scripts.pory"
+	playse SE_PIN
+# 485 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_STARTER_FIRE, HomeTown_BeachScene1_StarterReact
+# 486 "data/maps/MarinacreTown/scripts.pory"
+	delay 10
+# 487 "data/maps/MarinacreTown/scripts.pory"
+	playse SE_PIN
+# 488 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_STARTER_GRASS, HomeTown_BeachScene1_StarterReact
+# 489 "data/maps/MarinacreTown/scripts.pory"
+	delay 10
+# 490 "data/maps/MarinacreTown/scripts.pory"
+	playse SE_PIN
+# 491 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_STARTER_WATER, HomeTown_BeachScene1_StarterReact
+# 492 "data/maps/MarinacreTown/scripts.pory"
+	delay 10
+# 495 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Start_Movement_8
+# 500 "data/maps/MarinacreTown/scripts.pory"
 	delay 20
+# 501 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_11, MSGBOX_DEFAULT
+# 504 "data/maps/MarinacreTown/scripts.pory"
+	closemessage
 # 505 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	releaseall
 # 506 "data/maps/MarinacreTown/scripts.pory"
-	turnobject LOCALID_HOMETOWN_RIVAL, DIR_NORTH
+	applymovement LOCALID_HOMETOWN_RIVAL, Common_Movement_FaceUp
 # 507 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_22, MSGBOX_DEFAULT
-# 514 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
+# 510 "data/maps/MarinacreTown/scripts.pory"
+	delay 30
+# 511 "data/maps/MarinacreTown/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_WEST
+# 512 "data/maps/MarinacreTown/scripts.pory"
 	turnobject LOCALID_HOMETOWN_RIVAL, DIR_EAST
-# 515 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_Start_Text_23
+# 513 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_12, MSGBOX_DEFAULT
 # 520 "data/maps/MarinacreTown/scripts.pory"
 	closemessage
+# 521 "data/maps/MarinacreTown/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_NORTH
 # 522 "data/maps/MarinacreTown/scripts.pory"
+	turnobject LOCALID_HOMETOWN_RIVAL, DIR_NORTH
+# 523 "data/maps/MarinacreTown/scripts.pory"
+	delay 60
+# 524 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_13, MSGBOX_DEFAULT
+# 535 "data/maps/MarinacreTown/scripts.pory"
+	closemessage
+# 536 "data/maps/MarinacreTown/scripts.pory"
+	delay 20
+# 537 "data/maps/MarinacreTown/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_WEST
+# 538 "data/maps/MarinacreTown/scripts.pory"
+	turnobject LOCALID_HOMETOWN_RIVAL, DIR_EAST
+# 539 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_14
+# 544 "data/maps/MarinacreTown/scripts.pory"
+	dynmultichoice 25, 6, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, HomeTown_BeachScene1_Start_Text_15, HomeTown_BeachScene1_Start_Text_16, HomeTown_BeachScene1_Start_Text_17
+# 546 "data/maps/MarinacreTown/scripts.pory"
+	switch VAR_RESULT
+# 547 "data/maps/MarinacreTown/scripts.pory"
+	case 0, HomeTown_BeachScene1_Start_8
+# 556 "data/maps/MarinacreTown/scripts.pory"
+	case 1, HomeTown_BeachScene1_Start_9
+# 567 "data/maps/MarinacreTown/scripts.pory"
+	case 2, HomeTown_BeachScene1_Start_10
+HomeTown_BeachScene1_Start_6:
+# 580 "data/maps/MarinacreTown/scripts.pory"
+	closemessage
+# 581 "data/maps/MarinacreTown/scripts.pory"
+	delay 60
+# 582 "data/maps/MarinacreTown/scripts.pory"
+	turnobject LOCALID_HOMETOWN_RIVAL, DIR_SOUTH
+# 583 "data/maps/MarinacreTown/scripts.pory"
+	playse SE_PIN
+# 584 "data/maps/MarinacreTown/scripts.pory"
+	applymovement LOCALID_HOMETOWN_RIVAL, Common_Movement_ExclamationMark
+# 585 "data/maps/MarinacreTown/scripts.pory"
+	waitmovement 0
+# 586 "data/maps/MarinacreTown/scripts.pory"
+	delay 40
+# 587 "data/maps/MarinacreTown/scripts.pory"
+	fadeinbgm 1
+# 588 "data/maps/MarinacreTown/scripts.pory"
+	turnobject LOCALID_HOMETOWN_RIVAL, DIR_EAST
+# 589 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_21, MSGBOX_DEFAULT
+# 605 "data/maps/MarinacreTown/scripts.pory"
+	closemessage
+# 606 "data/maps/MarinacreTown/scripts.pory"
+	delay 20
+# 607 "data/maps/MarinacreTown/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_NORTH
+# 608 "data/maps/MarinacreTown/scripts.pory"
+	turnobject LOCALID_HOMETOWN_RIVAL, DIR_NORTH
+# 609 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_22, MSGBOX_DEFAULT
+# 616 "data/maps/MarinacreTown/scripts.pory"
+	turnobject LOCALID_HOMETOWN_RIVAL, DIR_EAST
+# 617 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_Start_Text_23
+# 622 "data/maps/MarinacreTown/scripts.pory"
+	closemessage
+# 624 "data/maps/MarinacreTown/scripts.pory"
 	releaseall
 	return
 
 HomeTown_BeachScene1_Start_3:
-# 174 "data/maps/MarinacreTown/scripts.pory"
+# 273 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_PLAYER, HomeTown_BeachScene1_Start_Movement_0
 	goto HomeTown_BeachScene1_Start_1
 
 HomeTown_BeachScene1_Start_4:
-# 182 "data/maps/MarinacreTown/scripts.pory"
+# 281 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_PLAYER, HomeTown_BeachScene1_Start_Movement_1
 	goto HomeTown_BeachScene1_Start_1
 
 HomeTown_BeachScene1_Start_5:
-# 189 "data/maps/MarinacreTown/scripts.pory"
+# 288 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_PLAYER, HomeTown_BeachScene1_Start_Movement_2
 	goto HomeTown_BeachScene1_Start_1
 
 HomeTown_BeachScene1_Start_8:
-# 446 "data/maps/MarinacreTown/scripts.pory"
+# 548 "data/maps/MarinacreTown/scripts.pory"
 	msgbox HomeTown_BeachScene1_Start_Text_18, MSGBOX_DEFAULT
 	goto HomeTown_BeachScene1_Start_6
 
 HomeTown_BeachScene1_Start_9:
-# 455 "data/maps/MarinacreTown/scripts.pory"
+# 557 "data/maps/MarinacreTown/scripts.pory"
 	msgbox HomeTown_BeachScene1_Start_Text_19, MSGBOX_DEFAULT
 	goto HomeTown_BeachScene1_Start_6
 
 HomeTown_BeachScene1_Start_10:
-# 466 "data/maps/MarinacreTown/scripts.pory"
+# 568 "data/maps/MarinacreTown/scripts.pory"
 	msgbox HomeTown_BeachScene1_Start_Text_20, MSGBOX_DEFAULT
 	goto HomeTown_BeachScene1_Start_6
 
 
 HomeTown_BeachScene1_ExamineStarterGrass::
-# 526 "data/maps/MarinacreTown/scripts.pory"
+# 628 "data/maps/MarinacreTown/scripts.pory"
 	setvar VAR_0x8000, SPECIES_TURTWIG
-# 527 "data/maps/MarinacreTown/scripts.pory"
+# 629 "data/maps/MarinacreTown/scripts.pory"
 	setvar VAR_0x8001, LOCALID_HOMETOWN_STARTER_GRASS
-# 528 "data/maps/MarinacreTown/scripts.pory"
+# 630 "data/maps/MarinacreTown/scripts.pory"
 	bufferstring STR_VAR_2, HomeTown_BeachScene1_ExamineStarterGrass_Text_0
-# 529 "data/maps/MarinacreTown/scripts.pory"
+# 631 "data/maps/MarinacreTown/scripts.pory"
 	setvar VAR_STARTER_MON, 0
-# 530 "data/maps/MarinacreTown/scripts.pory"
+# 632 "data/maps/MarinacreTown/scripts.pory"
 	goto HomeTown_BeachScene1_ExamineStarter
 	return
 
 
 HomeTown_BeachScene1_ExamineStarterFire::
-# 534 "data/maps/MarinacreTown/scripts.pory"
+# 636 "data/maps/MarinacreTown/scripts.pory"
 	setvar VAR_0x8000, SPECIES_FENNEKIN
-# 535 "data/maps/MarinacreTown/scripts.pory"
+# 637 "data/maps/MarinacreTown/scripts.pory"
 	setvar VAR_0x8001, LOCALID_HOMETOWN_STARTER_FIRE
-# 536 "data/maps/MarinacreTown/scripts.pory"
+# 638 "data/maps/MarinacreTown/scripts.pory"
 	bufferstring STR_VAR_2, HomeTown_BeachScene1_ExamineStarterFire_Text_0
-# 537 "data/maps/MarinacreTown/scripts.pory"
+# 639 "data/maps/MarinacreTown/scripts.pory"
 	setvar VAR_STARTER_MON, 1
-# 538 "data/maps/MarinacreTown/scripts.pory"
+# 640 "data/maps/MarinacreTown/scripts.pory"
 	goto HomeTown_BeachScene1_ExamineStarter
 	return
 
 
 HomeTown_BeachScene1_ExamineStarterWater::
-# 542 "data/maps/MarinacreTown/scripts.pory"
+# 644 "data/maps/MarinacreTown/scripts.pory"
 	setvar VAR_0x8000, SPECIES_POPPLIO
-# 543 "data/maps/MarinacreTown/scripts.pory"
+# 645 "data/maps/MarinacreTown/scripts.pory"
 	setvar VAR_0x8001, LOCALID_HOMETOWN_STARTER_WATER
-# 544 "data/maps/MarinacreTown/scripts.pory"
+# 646 "data/maps/MarinacreTown/scripts.pory"
 	bufferstring STR_VAR_2, HomeTown_BeachScene1_ExamineStarterWater_Text_0
-# 545 "data/maps/MarinacreTown/scripts.pory"
+# 647 "data/maps/MarinacreTown/scripts.pory"
 	setvar VAR_STARTER_MON, 2
-# 546 "data/maps/MarinacreTown/scripts.pory"
+# 648 "data/maps/MarinacreTown/scripts.pory"
 	goto HomeTown_BeachScene1_ExamineStarter
 	return
 
 
 HomeTown_BeachScene1_ExamineStarter::
-# 550 "data/maps/MarinacreTown/scripts.pory"
+# 652 "data/maps/MarinacreTown/scripts.pory"
 	lock
-# 551 "data/maps/MarinacreTown/scripts.pory"
+# 653 "data/maps/MarinacreTown/scripts.pory"
 	faceplayer
-# 552 "data/maps/MarinacreTown/scripts.pory"
+# 654 "data/maps/MarinacreTown/scripts.pory"
 	bufferspeciesname STR_VAR_1, VAR_0x8000
-# 553 "data/maps/MarinacreTown/scripts.pory"
+# 655 "data/maps/MarinacreTown/scripts.pory"
 	showmonpic VAR_0x8000, 10, 3
-# 554 "data/maps/MarinacreTown/scripts.pory"
+# 656 "data/maps/MarinacreTown/scripts.pory"
 	playmoncry VAR_0x8000, 0
-# 555 "data/maps/MarinacreTown/scripts.pory"
+# 657 "data/maps/MarinacreTown/scripts.pory"
 	waitmoncry
-# 556 "data/maps/MarinacreTown/scripts.pory"
+# 658 "data/maps/MarinacreTown/scripts.pory"
 	msgbox HomeTown_BeachScene1_ExamineStarter_Text_0, MSGBOX_YESNO
-# 561 "data/maps/MarinacreTown/scripts.pory"
+# 663 "data/maps/MarinacreTown/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq HomeTown_BeachScene1_ExamineStarter_1
-# 565 "data/maps/MarinacreTown/scripts.pory"
+# 667 "data/maps/MarinacreTown/scripts.pory"
 	hidemonpic
-# 566 "data/maps/MarinacreTown/scripts.pory"
+# 668 "data/maps/MarinacreTown/scripts.pory"
 	closemessage
-# 567 "data/maps/MarinacreTown/scripts.pory"
+# 669 "data/maps/MarinacreTown/scripts.pory"
 	release
 	return
 
 HomeTown_BeachScene1_ExamineStarter_1:
-# 562 "data/maps/MarinacreTown/scripts.pory"
+# 664 "data/maps/MarinacreTown/scripts.pory"
 	goto HomeTown_BeachScene1_TakeStarter
 	return
 
 
 HomeTown_BeachScene1_TakeStarter::
-# 572 "data/maps/MarinacreTown/scripts.pory"
+# 674 "data/maps/MarinacreTown/scripts.pory"
 	hidemonpic
-# 573 "data/maps/MarinacreTown/scripts.pory"
+# 675 "data/maps/MarinacreTown/scripts.pory"
 	playfanfare MUS_OBTAIN_TMHM
-# 574 "data/maps/MarinacreTown/scripts.pory"
+# 676 "data/maps/MarinacreTown/scripts.pory"
 	message HomeTown_BeachScene1_TakeStarter_Text_0
-# 575 "data/maps/MarinacreTown/scripts.pory"
+# 677 "data/maps/MarinacreTown/scripts.pory"
 	waitmessage
-# 576 "data/maps/MarinacreTown/scripts.pory"
+# 678 "data/maps/MarinacreTown/scripts.pory"
 	waitfanfare
-# 577 "data/maps/MarinacreTown/scripts.pory"
+# 679 "data/maps/MarinacreTown/scripts.pory"
 	closemessage
-# 578 "data/maps/MarinacreTown/scripts.pory"
+# 680 "data/maps/MarinacreTown/scripts.pory"
 	release
-# 579 "data/maps/MarinacreTown/scripts.pory"
+# 681 "data/maps/MarinacreTown/scripts.pory"
 	removeobject VAR_0x8001
-# 581 "data/maps/MarinacreTown/scripts.pory"
+# 683 "data/maps/MarinacreTown/scripts.pory"
 	givemon VAR_0x8000, 5
-# 582 "data/maps/MarinacreTown/scripts.pory"
+# 684 "data/maps/MarinacreTown/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 583 "data/maps/MarinacreTown/scripts.pory"
+# 685 "data/maps/MarinacreTown/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 584 "data/maps/MarinacreTown/scripts.pory"
+# 686 "data/maps/MarinacreTown/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 585 "data/maps/MarinacreTown/scripts.pory"
+# 687 "data/maps/MarinacreTown/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq HomeTown_BeachScene1_TakeStarter_1
-# 590 "data/maps/MarinacreTown/scripts.pory"
+# 692 "data/maps/MarinacreTown/scripts.pory"
 	goto HomeTown_BeachScene1_Finish
 	return
 
 HomeTown_BeachScene1_TakeStarter_1:
-# 586 "data/maps/MarinacreTown/scripts.pory"
+# 688 "data/maps/MarinacreTown/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
-# 587 "data/maps/MarinacreTown/scripts.pory"
+# 689 "data/maps/MarinacreTown/scripts.pory"
 	goto HomeTown_BeachScene1_Finish
 	return
 
 
 HomeTown_BeachScene1_Finish::
-# 595 "data/maps/MarinacreTown/scripts.pory"
+# 697 "data/maps/MarinacreTown/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_SOUTH
-# 596 "data/maps/MarinacreTown/scripts.pory"
+# 698 "data/maps/MarinacreTown/scripts.pory"
 	turnobject LOCALID_HOMETOWN_RIVAL, DIR_NORTH
-# 597 "data/maps/MarinacreTown/scripts.pory"
+# 699 "data/maps/MarinacreTown/scripts.pory"
 	delay 10
-# 598 "data/maps/MarinacreTown/scripts.pory"
+# 700 "data/maps/MarinacreTown/scripts.pory"
 	msgbox HomeTown_BeachScene1_Finish_Text_0, MSGBOX_DEFAULT
-# 602 "data/maps/MarinacreTown/scripts.pory"
+# 704 "data/maps/MarinacreTown/scripts.pory"
 	closemessage
-# 605 "data/maps/MarinacreTown/scripts.pory"
+# 707 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Finish_Movement_0
-# 610 "data/maps/MarinacreTown/scripts.pory"
+# 712 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
-# 611 "data/maps/MarinacreTown/scripts.pory"
+# 713 "data/maps/MarinacreTown/scripts.pory"
 	removeobject LOCALID_HOMETOWN_BAG
-# 612 "data/maps/MarinacreTown/scripts.pory"
+# 714 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Finish_Movement_1
-# 617 "data/maps/MarinacreTown/scripts.pory"
+# 719 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_PLAYER, HomeTown_BeachScene1_Finish_Movement_2
-# 622 "data/maps/MarinacreTown/scripts.pory"
+# 724 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
-# 625 "data/maps/MarinacreTown/scripts.pory"
+# 727 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Finish_Movement_3
-# 628 "data/maps/MarinacreTown/scripts.pory"
+# 730 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
-# 629 "data/maps/MarinacreTown/scripts.pory"
+# 731 "data/maps/MarinacreTown/scripts.pory"
 	compare VAR_STARTER_MON, 0
 	goto_if_ne HomeTown_BeachScene1_Finish_2
 HomeTown_BeachScene1_Finish_1:
-# 633 "data/maps/MarinacreTown/scripts.pory"
+# 735 "data/maps/MarinacreTown/scripts.pory"
 	compare VAR_STARTER_MON, 1
 	goto_if_ne HomeTown_BeachScene1_Finish_5
-# 640 "data/maps/MarinacreTown/scripts.pory"
+# 742 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_IntroPreventLeave_Movement_3
-# 643 "data/maps/MarinacreTown/scripts.pory"
+# 745 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
 HomeTown_BeachScene1_Finish_4:
-# 645 "data/maps/MarinacreTown/scripts.pory"
+# 747 "data/maps/MarinacreTown/scripts.pory"
 	compare VAR_STARTER_MON, 2
 	goto_if_ne HomeTown_BeachScene1_Finish_9
-# 652 "data/maps/MarinacreTown/scripts.pory"
+# 754 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_IntroPreventLeave_Movement_3
-# 655 "data/maps/MarinacreTown/scripts.pory"
+# 757 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
 HomeTown_BeachScene1_Finish_8:
-# 659 "data/maps/MarinacreTown/scripts.pory"
+# 761 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Finish_Movement_4
-# 664 "data/maps/MarinacreTown/scripts.pory"
+# 766 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
-# 665 "data/maps/MarinacreTown/scripts.pory"
+# 767 "data/maps/MarinacreTown/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_EAST
-# 666 "data/maps/MarinacreTown/scripts.pory"
+# 768 "data/maps/MarinacreTown/scripts.pory"
 	msgbox HomeTown_BeachScene1_Finish_Text_1, MSGBOX_DEFAULT
-# 672 "data/maps/MarinacreTown/scripts.pory"
+# 774 "data/maps/MarinacreTown/scripts.pory"
 	closemessage
-# 675 "data/maps/MarinacreTown/scripts.pory"
+# 777 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_Finish_Movement_5
-# 682 "data/maps/MarinacreTown/scripts.pory"
+# 784 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
-# 683 "data/maps/MarinacreTown/scripts.pory"
+# 785 "data/maps/MarinacreTown/scripts.pory"
 	removeobject LOCALID_HOMETOWN_RIVAL
-# 684 "data/maps/MarinacreTown/scripts.pory"
+# 786 "data/maps/MarinacreTown/scripts.pory"
 	setobjectxyperm LOCALID_HOMETOWN_RIVAL, 0, 47
-# 686 "data/maps/MarinacreTown/scripts.pory"
+# 788 "data/maps/MarinacreTown/scripts.pory"
 	setflag FLAG_INTRO_MET_RIVAL
-# 687 "data/maps/MarinacreTown/scripts.pory"
+# 789 "data/maps/MarinacreTown/scripts.pory"
 	setvar VAR_INTRO_SEQUENCE_STATE, 3
-# 689 "data/maps/MarinacreTown/scripts.pory"
+# 791 "data/maps/MarinacreTown/scripts.pory"
 	releaseall
 	return
 
 HomeTown_BeachScene1_Finish_2:
-# 630 "data/maps/MarinacreTown/scripts.pory"
+# 732 "data/maps/MarinacreTown/scripts.pory"
 	delay 30
-# 631 "data/maps/MarinacreTown/scripts.pory"
+# 733 "data/maps/MarinacreTown/scripts.pory"
 	removeobject LOCALID_HOMETOWN_STARTER_GRASS
 	goto HomeTown_BeachScene1_Finish_1
 
 HomeTown_BeachScene1_Finish_5:
-# 634 "data/maps/MarinacreTown/scripts.pory"
+# 736 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter
-# 635 "data/maps/MarinacreTown/scripts.pory"
+# 737 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
-# 636 "data/maps/MarinacreTown/scripts.pory"
+# 738 "data/maps/MarinacreTown/scripts.pory"
 	delay 30
-# 637 "data/maps/MarinacreTown/scripts.pory"
+# 739 "data/maps/MarinacreTown/scripts.pory"
 	removeobject LOCALID_HOMETOWN_STARTER_FIRE
 	goto HomeTown_BeachScene1_Finish_4
 
 HomeTown_BeachScene1_Finish_9:
-# 646 "data/maps/MarinacreTown/scripts.pory"
+# 748 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter
-# 647 "data/maps/MarinacreTown/scripts.pory"
+# 749 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
-# 648 "data/maps/MarinacreTown/scripts.pory"
+# 750 "data/maps/MarinacreTown/scripts.pory"
 	delay 30
-# 649 "data/maps/MarinacreTown/scripts.pory"
+# 751 "data/maps/MarinacreTown/scripts.pory"
 	removeobject LOCALID_HOMETOWN_STARTER_WATER
 	goto HomeTown_BeachScene1_Finish_8
 
 
 HomeTown_BeachScene1_PreventLeave::
-# 693 "data/maps/MarinacreTown/scripts.pory"
+# 795 "data/maps/MarinacreTown/scripts.pory"
 	lock
-# 694 "data/maps/MarinacreTown/scripts.pory"
+# 796 "data/maps/MarinacreTown/scripts.pory"
 	playse SE_PIN
-# 695 "data/maps/MarinacreTown/scripts.pory"
+# 797 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_PreventLeave_Movement_0
-# 699 "data/maps/MarinacreTown/scripts.pory"
+# 801 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
-# 700 "data/maps/MarinacreTown/scripts.pory"
+# 802 "data/maps/MarinacreTown/scripts.pory"
 	delay 60
-# 701 "data/maps/MarinacreTown/scripts.pory"
+# 803 "data/maps/MarinacreTown/scripts.pory"
 	msgbox HomeTown_BeachScene1_PreventLeave_Text_0, MSGBOX_DEFAULT
-# 706 "data/maps/MarinacreTown/scripts.pory"
+# 808 "data/maps/MarinacreTown/scripts.pory"
 	closemessage
-# 707 "data/maps/MarinacreTown/scripts.pory"
+# 809 "data/maps/MarinacreTown/scripts.pory"
 	applymovement LOCALID_PLAYER, HomeTown_IntroPreventLeave_Movement_0
-# 710 "data/maps/MarinacreTown/scripts.pory"
+# 812 "data/maps/MarinacreTown/scripts.pory"
 	waitmovement 0
-# 711 "data/maps/MarinacreTown/scripts.pory"
+# 813 "data/maps/MarinacreTown/scripts.pory"
 	release
 	return
 
 
 HomeTown_BeachScene1_FlavorTextBag::
-# 715 "data/maps/MarinacreTown/scripts.pory"
+# 817 "data/maps/MarinacreTown/scripts.pory"
 	msgbox HomeTown_BeachScene1_FlavorTextBag_Text_0, MSGBOX_SIGN
 	return
 
 
 HomeTown_BeachScene1_TalkRival::
-# 723 "data/maps/MarinacreTown/scripts.pory"
+# 825 "data/maps/MarinacreTown/scripts.pory"
 	lock
-# 724 "data/maps/MarinacreTown/scripts.pory"
+# 826 "data/maps/MarinacreTown/scripts.pory"
 	faceplayer
-# 725 "data/maps/MarinacreTown/scripts.pory"
-	msgbox HomeTown_BeachScene1_TalkRival_Text_0, MSGBOX_NPC
-# 730 "data/maps/MarinacreTown/scripts.pory"
+# 827 "data/maps/MarinacreTown/scripts.pory"
+	msgbox HomeTown_BeachScene1_TalkRival_Text_0, MSGBOX_DEFAULT
+# 832 "data/maps/MarinacreTown/scripts.pory"
 	release
 	return
 
 
-# 733 "data/maps/MarinacreTown/scripts.pory"
-HomeTown_BeachScene1_WalkToBag:
-# 734 "data/maps/MarinacreTown/scripts.pory"
-	walk_left
-# 735 "data/maps/MarinacreTown/scripts.pory"
+# 835 "data/maps/MarinacreTown/scripts.pory"
+HomeTown_BeachScene1_EndMonologue:
+# 836 "data/maps/MarinacreTown/scripts.pory"
 	walk_down
-# 735 "data/maps/MarinacreTown/scripts.pory"
-	walk_down
-# 735 "data/maps/MarinacreTown/scripts.pory"
-	walk_down
-# 735 "data/maps/MarinacreTown/scripts.pory"
-	walk_down
-# 736 "data/maps/MarinacreTown/scripts.pory"
-	walk_left
-# 736 "data/maps/MarinacreTown/scripts.pory"
-	walk_left
-# 737 "data/maps/MarinacreTown/scripts.pory"
-	walk_down
-# 737 "data/maps/MarinacreTown/scripts.pory"
+# 836 "data/maps/MarinacreTown/scripts.pory"
 	walk_down
 	step_end
 
-# 740 "data/maps/MarinacreTown/scripts.pory"
+# 839 "data/maps/MarinacreTown/scripts.pory"
+HomeTown_BeachScene1_WalkToBag:
+# 840 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 840 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 841 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 841 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 841 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 842 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 843 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+	step_end
+
+# 846 "data/maps/MarinacreTown/scripts.pory"
 HomeTown_BeachScene1_GoToNextStarter:
-# 741 "data/maps/MarinacreTown/scripts.pory"
+# 847 "data/maps/MarinacreTown/scripts.pory"
 	walk_right
-# 742 "data/maps/MarinacreTown/scripts.pory"
+# 848 "data/maps/MarinacreTown/scripts.pory"
 	face_up
 	step_end
 
-# 745 "data/maps/MarinacreTown/scripts.pory"
+# 851 "data/maps/MarinacreTown/scripts.pory"
 HomeTown_BeachScene1_StarterReact:
-# 746 "data/maps/MarinacreTown/scripts.pory"
+# 852 "data/maps/MarinacreTown/scripts.pory"
 	emote_exclamation_mark
-# 747 "data/maps/MarinacreTown/scripts.pory"
+# 853 "data/maps/MarinacreTown/scripts.pory"
 	face_down
-# 748 "data/maps/MarinacreTown/scripts.pory"
+# 854 "data/maps/MarinacreTown/scripts.pory"
 	delay_16
-# 748 "data/maps/MarinacreTown/scripts.pory"
+# 854 "data/maps/MarinacreTown/scripts.pory"
 	delay_16
-# 749 "data/maps/MarinacreTown/scripts.pory"
+# 855 "data/maps/MarinacreTown/scripts.pory"
 	jump_in_place_down
-# 750 "data/maps/MarinacreTown/scripts.pory"
+# 856 "data/maps/MarinacreTown/scripts.pory"
 	face_left
-# 751 "data/maps/MarinacreTown/scripts.pory"
+# 857 "data/maps/MarinacreTown/scripts.pory"
 	delay_16
-# 752 "data/maps/MarinacreTown/scripts.pory"
+# 858 "data/maps/MarinacreTown/scripts.pory"
 	face_right
-# 753 "data/maps/MarinacreTown/scripts.pory"
+# 859 "data/maps/MarinacreTown/scripts.pory"
 	delay_16
-# 754 "data/maps/MarinacreTown/scripts.pory"
+# 860 "data/maps/MarinacreTown/scripts.pory"
 	face_down
-	step_end
-
-# 69 "data/maps/MarinacreTown/scripts.pory"
-HomeTown_IntroPreventLeave_Movement_0:
-# 70 "data/maps/MarinacreTown/scripts.pory"
-	walk_down
-	step_end
-
-# 73 "data/maps/MarinacreTown/scripts.pory"
-HomeTown_IntroPreventLeave_Movement_1:
-# 74 "data/maps/MarinacreTown/scripts.pory"
-	walk_down
-# 74 "data/maps/MarinacreTown/scripts.pory"
-	walk_down
 	step_end
 
 # 77 "data/maps/MarinacreTown/scripts.pory"
+HomeTown_IntroPreventLeave_Movement_0:
+# 78 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+	step_end
+
+# 81 "data/maps/MarinacreTown/scripts.pory"
+HomeTown_IntroPreventLeave_Movement_1:
+# 82 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 82 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+	step_end
+
+# 85 "data/maps/MarinacreTown/scripts.pory"
 HomeTown_IntroPreventLeave_Movement_2:
-# 78 "data/maps/MarinacreTown/scripts.pory"
+# 86 "data/maps/MarinacreTown/scripts.pory"
 	walk_down
-# 78 "data/maps/MarinacreTown/scripts.pory"
+# 86 "data/maps/MarinacreTown/scripts.pory"
 	walk_down
-# 78 "data/maps/MarinacreTown/scripts.pory"
+# 86 "data/maps/MarinacreTown/scripts.pory"
 	walk_down
 	step_end
 
-# 94 "data/maps/MarinacreTown/scripts.pory"
-HomeTown_IntroPreventLeave_Movement_3:
-# 94 "data/maps/MarinacreTown/scripts.pory"
-	walk_right
-	step_end
-
-# 101 "data/maps/MarinacreTown/scripts.pory"
-HomeTown_IntroPreventLeave_Movement_4:
 # 102 "data/maps/MarinacreTown/scripts.pory"
-	walk_up
-# 103 "data/maps/MarinacreTown/scripts.pory"
-	face_down
-	step_end
-
-# 106 "data/maps/MarinacreTown/scripts.pory"
-HomeTown_IntroPreventLeave_Movement_5:
-# 107 "data/maps/MarinacreTown/scripts.pory"
-	walk_up
-# 107 "data/maps/MarinacreTown/scripts.pory"
-	walk_up
-# 108 "data/maps/MarinacreTown/scripts.pory"
-	face_down
-	step_end
-
-# 111 "data/maps/MarinacreTown/scripts.pory"
-HomeTown_IntroPreventLeave_Movement_6:
-# 112 "data/maps/MarinacreTown/scripts.pory"
-	walk_up
-# 112 "data/maps/MarinacreTown/scripts.pory"
-	walk_up
-# 112 "data/maps/MarinacreTown/scripts.pory"
-	walk_up
-# 113 "data/maps/MarinacreTown/scripts.pory"
-	face_down
-	step_end
-
-# 174 "data/maps/MarinacreTown/scripts.pory"
-HomeTown_BeachScene1_Start_Movement_0:
-# 175 "data/maps/MarinacreTown/scripts.pory"
+HomeTown_IntroPreventLeave_Movement_3:
+# 102 "data/maps/MarinacreTown/scripts.pory"
 	walk_right
+	step_end
+
+# 109 "data/maps/MarinacreTown/scripts.pory"
+HomeTown_IntroPreventLeave_Movement_4:
+# 110 "data/maps/MarinacreTown/scripts.pory"
+	walk_up
+# 111 "data/maps/MarinacreTown/scripts.pory"
+	face_down
+	step_end
+
+# 114 "data/maps/MarinacreTown/scripts.pory"
+HomeTown_IntroPreventLeave_Movement_5:
+# 115 "data/maps/MarinacreTown/scripts.pory"
+	walk_up
+# 115 "data/maps/MarinacreTown/scripts.pory"
+	walk_up
+# 116 "data/maps/MarinacreTown/scripts.pory"
+	face_down
+	step_end
+
+# 119 "data/maps/MarinacreTown/scripts.pory"
+HomeTown_IntroPreventLeave_Movement_6:
+# 120 "data/maps/MarinacreTown/scripts.pory"
+	walk_up
+# 120 "data/maps/MarinacreTown/scripts.pory"
+	walk_up
+# 120 "data/maps/MarinacreTown/scripts.pory"
+	walk_up
+# 121 "data/maps/MarinacreTown/scripts.pory"
+	face_down
+	step_end
+
+# 163 "data/maps/MarinacreTown/scripts.pory"
+MarinacreTown_Intro_LeaveWithRivalScene_Movement_0:
+# 164 "data/maps/MarinacreTown/scripts.pory"
+	walk_up
+# 164 "data/maps/MarinacreTown/scripts.pory"
+	walk_up
+# 164 "data/maps/MarinacreTown/scripts.pory"
+	walk_up
+# 164 "data/maps/MarinacreTown/scripts.pory"
+	walk_up
+	step_end
+
 # 176 "data/maps/MarinacreTown/scripts.pory"
-	walk_down
-# 176 "data/maps/MarinacreTown/scripts.pory"
+MarinacreTown_Intro_LeaveWithRivalScene_Movement_1:
+# 177 "data/maps/MarinacreTown/scripts.pory"
 	walk_down
 # 177 "data/maps/MarinacreTown/scripts.pory"
-	walk_right
+	walk_down
+# 177 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 177 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 177 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
 # 178 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 178 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 178 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 178 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 178 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 178 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 178 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 178 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 178 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 178 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 178 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 178 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 178 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 178 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 178 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 178 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 179 "data/maps/MarinacreTown/scripts.pory"
 	walk_down
 # 179 "data/maps/MarinacreTown/scripts.pory"
-	face_left
+	walk_down
+# 179 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 180 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 180 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 180 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 180 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 180 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 180 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 180 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 180 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 180 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 180 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 181 "data/maps/MarinacreTown/scripts.pory"
+	walk_up
+# 181 "data/maps/MarinacreTown/scripts.pory"
+	walk_up
+# 182 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 182 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 182 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 182 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 182 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 183 "data/maps/MarinacreTown/scripts.pory"
+	face_right
 	step_end
 
-# 182 "data/maps/MarinacreTown/scripts.pory"
-HomeTown_BeachScene1_Start_Movement_1:
-# 183 "data/maps/MarinacreTown/scripts.pory"
-	walk_down
-# 183 "data/maps/MarinacreTown/scripts.pory"
-	walk_down
-# 184 "data/maps/MarinacreTown/scripts.pory"
-	walk_right
 # 185 "data/maps/MarinacreTown/scripts.pory"
+MarinacreTown_Intro_LeaveWithRivalScene_Movement_2:
+# 186 "data/maps/MarinacreTown/scripts.pory"
 	walk_down
 # 186 "data/maps/MarinacreTown/scripts.pory"
-	face_left
-	step_end
-
+	walk_down
+# 186 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 186 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 186 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 186 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 186 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 187 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 187 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 187 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 187 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 187 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 187 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 187 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 187 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 187 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 187 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 187 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 187 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 187 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 187 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 187 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 187 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 188 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 188 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 188 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
 # 189 "data/maps/MarinacreTown/scripts.pory"
-HomeTown_BeachScene1_Start_Movement_2:
+	walk_left
+# 189 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 189 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 189 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 189 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 189 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 189 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 189 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 189 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 189 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
 # 190 "data/maps/MarinacreTown/scripts.pory"
-	walk_down
+	walk_up
 # 190 "data/maps/MarinacreTown/scripts.pory"
-	walk_down
-# 190 "data/maps/MarinacreTown/scripts.pory"
-	walk_down
+	walk_up
 # 191 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 191 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 191 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 192 "data/maps/MarinacreTown/scripts.pory"
 	face_left
 	step_end
 
-# 254 "data/maps/MarinacreTown/scripts.pory"
+# 236 "data/maps/MarinacreTown/scripts.pory"
+MarinacreTown_Intro_LeaveWithRivalScene_Movement_3:
+# 237 "data/maps/MarinacreTown/scripts.pory"
+	walk_left
+# 238 "data/maps/MarinacreTown/scripts.pory"
+	face_right
+# 239 "data/maps/MarinacreTown/scripts.pory"
+	delay_16
+# 239 "data/maps/MarinacreTown/scripts.pory"
+	delay_16
+# 240 "data/maps/MarinacreTown/scripts.pory"
+	walk_fast_left
+# 240 "data/maps/MarinacreTown/scripts.pory"
+	walk_fast_left
+# 240 "data/maps/MarinacreTown/scripts.pory"
+	walk_fast_left
+# 240 "data/maps/MarinacreTown/scripts.pory"
+	walk_fast_left
+# 240 "data/maps/MarinacreTown/scripts.pory"
+	walk_fast_left
+# 240 "data/maps/MarinacreTown/scripts.pory"
+	walk_fast_left
+# 240 "data/maps/MarinacreTown/scripts.pory"
+	walk_fast_left
+	step_end
+
+# 273 "data/maps/MarinacreTown/scripts.pory"
+HomeTown_BeachScene1_Start_Movement_0:
+# 274 "data/maps/MarinacreTown/scripts.pory"
+	walk_right
+# 275 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 275 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 276 "data/maps/MarinacreTown/scripts.pory"
+	walk_right
+# 277 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 278 "data/maps/MarinacreTown/scripts.pory"
+	face_left
+	step_end
+
+# 281 "data/maps/MarinacreTown/scripts.pory"
+HomeTown_BeachScene1_Start_Movement_1:
+# 282 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 282 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 283 "data/maps/MarinacreTown/scripts.pory"
+	walk_right
+# 284 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 285 "data/maps/MarinacreTown/scripts.pory"
+	face_left
+	step_end
+
+# 288 "data/maps/MarinacreTown/scripts.pory"
+HomeTown_BeachScene1_Start_Movement_2:
+# 289 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 289 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 289 "data/maps/MarinacreTown/scripts.pory"
+	walk_down
+# 290 "data/maps/MarinacreTown/scripts.pory"
+	face_left
+	step_end
+
+# 353 "data/maps/MarinacreTown/scripts.pory"
 HomeTown_BeachScene1_Start_Movement_3:
-# 255 "data/maps/MarinacreTown/scripts.pory"
+# 354 "data/maps/MarinacreTown/scripts.pory"
 	walk_in_place_right
-# 255 "data/maps/MarinacreTown/scripts.pory"
+# 354 "data/maps/MarinacreTown/scripts.pory"
 	walk_in_place_right
 	step_end
 
-# 300 "data/maps/MarinacreTown/scripts.pory"
+# 402 "data/maps/MarinacreTown/scripts.pory"
 HomeTown_BeachScene1_Start_Movement_4:
-# 301 "data/maps/MarinacreTown/scripts.pory"
+# 403 "data/maps/MarinacreTown/scripts.pory"
 	walk_down
-# 302 "data/maps/MarinacreTown/scripts.pory"
+# 404 "data/maps/MarinacreTown/scripts.pory"
 	face_right
 	step_end
 
-# 309 "data/maps/MarinacreTown/scripts.pory"
+# 411 "data/maps/MarinacreTown/scripts.pory"
 HomeTown_BeachScene1_Start_Movement_5:
-# 310 "data/maps/MarinacreTown/scripts.pory"
+# 412 "data/maps/MarinacreTown/scripts.pory"
 	jump_in_place_right
-# 310 "data/maps/MarinacreTown/scripts.pory"
+# 412 "data/maps/MarinacreTown/scripts.pory"
 	jump_in_place_right
-# 311 "data/maps/MarinacreTown/scripts.pory"
+# 413 "data/maps/MarinacreTown/scripts.pory"
 	delay_16
-# 311 "data/maps/MarinacreTown/scripts.pory"
+# 413 "data/maps/MarinacreTown/scripts.pory"
 	delay_16
-# 312 "data/maps/MarinacreTown/scripts.pory"
+# 414 "data/maps/MarinacreTown/scripts.pory"
 	face_up
-# 313 "data/maps/MarinacreTown/scripts.pory"
+# 415 "data/maps/MarinacreTown/scripts.pory"
 	delay_8
-# 314 "data/maps/MarinacreTown/scripts.pory"
+# 416 "data/maps/MarinacreTown/scripts.pory"
 	face_right
-# 315 "data/maps/MarinacreTown/scripts.pory"
+# 417 "data/maps/MarinacreTown/scripts.pory"
 	delay_8
-# 316 "data/maps/MarinacreTown/scripts.pory"
+# 418 "data/maps/MarinacreTown/scripts.pory"
 	face_up
-# 317 "data/maps/MarinacreTown/scripts.pory"
+# 419 "data/maps/MarinacreTown/scripts.pory"
 	delay_8
-# 318 "data/maps/MarinacreTown/scripts.pory"
+# 420 "data/maps/MarinacreTown/scripts.pory"
 	face_right
 	step_end
 
-# 343 "data/maps/MarinacreTown/scripts.pory"
+# 445 "data/maps/MarinacreTown/scripts.pory"
 HomeTown_BeachScene1_Start_Movement_6:
-# 344 "data/maps/MarinacreTown/scripts.pory"
+# 446 "data/maps/MarinacreTown/scripts.pory"
 	walk_up
-# 344 "data/maps/MarinacreTown/scripts.pory"
+# 446 "data/maps/MarinacreTown/scripts.pory"
 	walk_up
 	step_end
 
-# 362 "data/maps/MarinacreTown/scripts.pory"
+# 464 "data/maps/MarinacreTown/scripts.pory"
 HomeTown_BeachScene1_Start_Movement_7:
-# 363 "data/maps/MarinacreTown/scripts.pory"
+# 465 "data/maps/MarinacreTown/scripts.pory"
 	walk_left
-# 363 "data/maps/MarinacreTown/scripts.pory"
+# 465 "data/maps/MarinacreTown/scripts.pory"
 	walk_left
-# 364 "data/maps/MarinacreTown/scripts.pory"
+# 466 "data/maps/MarinacreTown/scripts.pory"
 	face_up
 	step_end
 
-# 393 "data/maps/MarinacreTown/scripts.pory"
+# 495 "data/maps/MarinacreTown/scripts.pory"
 HomeTown_BeachScene1_Start_Movement_8:
-# 394 "data/maps/MarinacreTown/scripts.pory"
+# 496 "data/maps/MarinacreTown/scripts.pory"
 	jump_in_place_up
-# 395 "data/maps/MarinacreTown/scripts.pory"
+# 497 "data/maps/MarinacreTown/scripts.pory"
 	walk_fast_down
-# 396 "data/maps/MarinacreTown/scripts.pory"
+# 498 "data/maps/MarinacreTown/scripts.pory"
 	face_up
 	step_end
 
-# 605 "data/maps/MarinacreTown/scripts.pory"
+# 707 "data/maps/MarinacreTown/scripts.pory"
 HomeTown_BeachScene1_Finish_Movement_0:
-# 606 "data/maps/MarinacreTown/scripts.pory"
+# 708 "data/maps/MarinacreTown/scripts.pory"
 	walk_down
-# 607 "data/maps/MarinacreTown/scripts.pory"
+# 709 "data/maps/MarinacreTown/scripts.pory"
 	face_right
-# 608 "data/maps/MarinacreTown/scripts.pory"
+# 710 "data/maps/MarinacreTown/scripts.pory"
 	delay_16
 	step_end
 
-# 612 "data/maps/MarinacreTown/scripts.pory"
+# 714 "data/maps/MarinacreTown/scripts.pory"
 HomeTown_BeachScene1_Finish_Movement_1:
-# 613 "data/maps/MarinacreTown/scripts.pory"
+# 715 "data/maps/MarinacreTown/scripts.pory"
 	delay_16
-# 614 "data/maps/MarinacreTown/scripts.pory"
+# 716 "data/maps/MarinacreTown/scripts.pory"
 	delay_16
-# 615 "data/maps/MarinacreTown/scripts.pory"
+# 717 "data/maps/MarinacreTown/scripts.pory"
 	walk_up
 	step_end
 
-# 617 "data/maps/MarinacreTown/scripts.pory"
+# 719 "data/maps/MarinacreTown/scripts.pory"
 HomeTown_BeachScene1_Finish_Movement_2:
-# 618 "data/maps/MarinacreTown/scripts.pory"
+# 720 "data/maps/MarinacreTown/scripts.pory"
 	delay_16
-# 619 "data/maps/MarinacreTown/scripts.pory"
+# 721 "data/maps/MarinacreTown/scripts.pory"
 	walk_up
-# 619 "data/maps/MarinacreTown/scripts.pory"
+# 721 "data/maps/MarinacreTown/scripts.pory"
 	walk_up
-# 620 "data/maps/MarinacreTown/scripts.pory"
+# 722 "data/maps/MarinacreTown/scripts.pory"
 	face_down
 	step_end
 
-# 625 "data/maps/MarinacreTown/scripts.pory"
+# 727 "data/maps/MarinacreTown/scripts.pory"
 HomeTown_BeachScene1_Finish_Movement_3:
-# 626 "data/maps/MarinacreTown/scripts.pory"
+# 728 "data/maps/MarinacreTown/scripts.pory"
 	walk_up
 	step_end
 
-# 659 "data/maps/MarinacreTown/scripts.pory"
+# 761 "data/maps/MarinacreTown/scripts.pory"
 HomeTown_BeachScene1_Finish_Movement_4:
-# 660 "data/maps/MarinacreTown/scripts.pory"
+# 762 "data/maps/MarinacreTown/scripts.pory"
 	walk_right
-# 661 "data/maps/MarinacreTown/scripts.pory"
+# 763 "data/maps/MarinacreTown/scripts.pory"
 	walk_up
-# 661 "data/maps/MarinacreTown/scripts.pory"
+# 763 "data/maps/MarinacreTown/scripts.pory"
 	walk_up
-# 662 "data/maps/MarinacreTown/scripts.pory"
+# 764 "data/maps/MarinacreTown/scripts.pory"
 	face_left
 	step_end
 
-# 675 "data/maps/MarinacreTown/scripts.pory"
+# 777 "data/maps/MarinacreTown/scripts.pory"
 HomeTown_BeachScene1_Finish_Movement_5:
-# 676 "data/maps/MarinacreTown/scripts.pory"
+# 778 "data/maps/MarinacreTown/scripts.pory"
 	walk_up
-# 677 "data/maps/MarinacreTown/scripts.pory"
+# 779 "data/maps/MarinacreTown/scripts.pory"
 	delay_16
-# 677 "data/maps/MarinacreTown/scripts.pory"
+# 779 "data/maps/MarinacreTown/scripts.pory"
 	delay_16
-# 678 "data/maps/MarinacreTown/scripts.pory"
+# 780 "data/maps/MarinacreTown/scripts.pory"
 	face_left
-# 679 "data/maps/MarinacreTown/scripts.pory"
+# 781 "data/maps/MarinacreTown/scripts.pory"
 	delay_16
-# 679 "data/maps/MarinacreTown/scripts.pory"
+# 781 "data/maps/MarinacreTown/scripts.pory"
 	delay_16
-# 680 "data/maps/MarinacreTown/scripts.pory"
+# 782 "data/maps/MarinacreTown/scripts.pory"
 	walk_fast_up
-# 680 "data/maps/MarinacreTown/scripts.pory"
+# 782 "data/maps/MarinacreTown/scripts.pory"
 	walk_fast_up
-# 680 "data/maps/MarinacreTown/scripts.pory"
+# 782 "data/maps/MarinacreTown/scripts.pory"
 	walk_fast_up
-# 680 "data/maps/MarinacreTown/scripts.pory"
+# 782 "data/maps/MarinacreTown/scripts.pory"
 	walk_fast_up
-# 680 "data/maps/MarinacreTown/scripts.pory"
+# 782 "data/maps/MarinacreTown/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 695 "data/maps/MarinacreTown/scripts.pory"
+# 797 "data/maps/MarinacreTown/scripts.pory"
 HomeTown_BeachScene1_PreventLeave_Movement_0:
-# 696 "data/maps/MarinacreTown/scripts.pory"
+# 798 "data/maps/MarinacreTown/scripts.pory"
 	emote_exclamation_mark
-# 697 "data/maps/MarinacreTown/scripts.pory"
+# 799 "data/maps/MarinacreTown/scripts.pory"
 	face_player
 	step_end
 
 HomeTown_TownSign_Text_0:
-# 38 "data/maps/MarinacreTown/scripts.pory"
+# 46 "data/maps/MarinacreTown/scripts.pory"
 	.string "MARINACRE TOWN\n"
 	.string "Gifts from the sea, sparkling in the\l"
-	.string "rising sun$"
+	.string "rising sun.$"
 
 HomeTown_PlayerMailbox_Text_0:
-# 47 "data/maps/MarinacreTown/scripts.pory"
+# 55 "data/maps/MarinacreTown/scripts.pory"
 	.string "{PLAYER}'s HOUSE$"
 
 HomeTown_IntroPreventLeave_Text_0:
-# 61 "data/maps/MarinacreTown/scripts.pory"
+# 69 "data/maps/MarinacreTown/scripts.pory"
 	.string "Excuse me!$"
 
 HomeTown_IntroPreventLeave_Text_1:
-# 85 "data/maps/MarinacreTown/scripts.pory"
+# 93 "data/maps/MarinacreTown/scripts.pory"
 	.string "We're still working on the road out of\n"
 	.string "town.\l"
 	.string "The repairs are almost done, and we\l"
@@ -1128,27 +1418,62 @@ HomeTown_IntroPreventLeave_Text_1:
 	.string "Do you mind waiting a little bit longer?$"
 
 HomeTown_IntroTalkGatekeeper_Text_0:
-# 125 "data/maps/MarinacreTown/scripts.pory"
+# 133 "data/maps/MarinacreTown/scripts.pory"
 	.string "I'm with the road crew. We're working on \n"
 	.string "the road out of town.\p"
 	.string "We're just about finished. Please wait\n"
 	.string "a little longer, okay?$"
 
 HomeTown_IntroBlockMart_Text_0:
-# 140 "data/maps/MarinacreTown/scripts.pory"
+# 148 "data/maps/MarinacreTown/scripts.pory"
 	.string "Hi.\n"
 	.string "The PokéMart is closing up for today.\p"
 	.string "If you need something, you'll have to \n"
 	.string "come back tomorrow.\l"
 	.string "Sorry!$"
 
+MarinacreTown_Intro_LeaveWithRivalScene_Text_0:
+# 169 "data/maps/MarinacreTown/scripts.pory"
+	.string "MAYA: Hey, {PLAYER}!\n"
+	.string "Perfect timing!\l"
+	.string "Are you all ready to go?$"
+
+MarinacreTown_Intro_LeaveWithRivalScene_Text_1:
+# 196 "data/maps/MarinacreTown/scripts.pory"
+	.string "Hey, you got a Pokédex! Cool!\n"
+	.string "Always prepared for everything, aren't\l"
+	.string "you?$"
+
+MarinacreTown_Intro_LeaveWithRivalScene_Text_2:
+# 203 "data/maps/MarinacreTown/scripts.pory"
+	.string "It's exciting, isn't it?\p"
+	.string "We'll explore the whole region, all on\n"
+	.string "our own…{PAUSE 10}\l"
+	.string "Away{PAUSE 10} from{PAUSE 20} home…\p"
+	.string "I-{PAUSE 20}\p"
+	.string "…I talked about it with my parents.\n"
+	.string "They're cool with it.\p"
+	.string "I guess they'll call me once Dad\n"
+	.string "makes a decision about that job…$"
+
+MarinacreTown_Intro_LeaveWithRivalScene_Text_3:
+# 221 "data/maps/MarinacreTown/scripts.pory"
+	.string "Well, let's take the road west out\n"
+	.string "of town.\p"
+	.string "Professor Hawthorn gave us two\n"
+	.string "places to look for clues.\p"
+	.string "We can decide which direction\n"
+	.string "to go once we reach the next city.\p"
+	.string "Alright, {PLAYER}!\n"
+	.string "Let's go!$"
+
 HomeTown_BeachScene1_Start_Text_0:
-# 164 "data/maps/MarinacreTown/scripts.pory"
-	.string "Oh, {PLAYER}!\n"
+# 263 "data/maps/MarinacreTown/scripts.pory"
+	.string "MAYA: Oh, {PLAYER}!\n"
 	.string "I was hoping I'd run into you!$"
 
 HomeTown_BeachScene1_Start_Text_1:
-# 200 "data/maps/MarinacreTown/scripts.pory"
+# 299 "data/maps/MarinacreTown/scripts.pory"
 	.string "Huh? Why?\p"
 	.string "…{PAUSE 30}I just wanted to hang out, dude.\n"
 	.string "Does there have to be a reason?\p"
@@ -1156,7 +1481,7 @@ HomeTown_BeachScene1_Start_Text_1:
 	.string "just chilled here together.$"
 
 HomeTown_BeachScene1_Start_Text_2:
-# 213 "data/maps/MarinacreTown/scripts.pory"
+# 312 "data/maps/MarinacreTown/scripts.pory"
 	.string "Hey, remember when we found that\n"
 	.string "Shellder in the sand?\l"
 	.string "…{PAUSE 30}And then I stuck it in my mom's purse?\p"
@@ -1164,7 +1489,7 @@ HomeTown_BeachScene1_Start_Text_2:
 	.string "was so worth getting grounded for!$"
 
 HomeTown_BeachScene1_Start_Text_3:
-# 227 "data/maps/MarinacreTown/scripts.pory"
+# 326 "data/maps/MarinacreTown/scripts.pory"
 	.string "…{PAUSE 30}So…\p"
 	.string "You know how my dad's been looking\n"
 	.string "for a new job, right?\p"
@@ -1179,13 +1504,13 @@ HomeTown_BeachScene1_Start_Text_3:
 	.string "But if he takes it…$"
 
 HomeTown_BeachScene1_Start_Text_4:
-# 249 "data/maps/MarinacreTown/scripts.pory"
+# 348 "data/maps/MarinacreTown/scripts.pory"
 	.string "Anyways, I had a talk with my family\n"
 	.string "about it.\l"
 	.string "Well, I guess less of a talk, and more…$"
 
 HomeTown_BeachScene1_Start_Text_5:
-# 260 "data/maps/MarinacreTown/scripts.pory"
+# 359 "data/maps/MarinacreTown/scripts.pory"
 	.string "…Gah, forget it!\p"
 	.string "Don't worry about it.\n"
 	.string "I just wanna sit here and take in the\l"
@@ -1193,42 +1518,42 @@ HomeTown_BeachScene1_Start_Text_5:
 	.string "C'mon, let's just chill!$"
 
 HomeTown_BeachScene1_Start_Text_6:
-# 280 "data/maps/MarinacreTown/scripts.pory"
+# 382 "data/maps/MarinacreTown/scripts.pory"
 	.string "Hey, what's that over there?$"
 
 HomeTown_BeachScene1_Start_Text_7:
-# 294 "data/maps/MarinacreTown/scripts.pory"
+# 396 "data/maps/MarinacreTown/scripts.pory"
 	.string "Oh, it's an old bag.\n"
 	.string "Must've washed up here.\l"
 	.string "Just trash, I guess.$"
 
 HomeTown_BeachScene1_Start_Text_8:
-# 322 "data/maps/MarinacreTown/scripts.pory"
+# 424 "data/maps/MarinacreTown/scripts.pory"
 	.string "Wait a second!{PAUSE 30} {PLAYER}! Look!\n"
 	.string "There are Poké Balls in here!$"
 
 HomeTown_BeachScene1_Start_Text_9:
-# 329 "data/maps/MarinacreTown/scripts.pory"
+# 431 "data/maps/MarinacreTown/scripts.pory"
 	.string "Do you think…{PAUSE 30} there's anything\n"
 	.string "in them?$"
 
 HomeTown_BeachScene1_Start_Text_10:
-# 337 "data/maps/MarinacreTown/scripts.pory"
+# 439 "data/maps/MarinacreTown/scripts.pory"
 	.string "We should probably check, huh?$"
 
 HomeTown_BeachScene1_Start_Text_11:
-# 400 "data/maps/MarinacreTown/scripts.pory"
+# 502 "data/maps/MarinacreTown/scripts.pory"
 	.string "Woah!$"
 
 HomeTown_BeachScene1_Start_Text_12:
-# 412 "data/maps/MarinacreTown/scripts.pory"
+# 514 "data/maps/MarinacreTown/scripts.pory"
 	.string "{PLAYER}! These Pokémon belong\n"
 	.string "to someone!\l"
 	.string "Their trainer must've lost that bag \l"
 	.string "in the ocean!$"
 
 HomeTown_BeachScene1_Start_Text_13:
-# 423 "data/maps/MarinacreTown/scripts.pory"
+# 525 "data/maps/MarinacreTown/scripts.pory"
 	.string "They look…{PAUSE 30} \n"
 	.string "confused, don't they?\p"
 	.string "Like they haven't been let out in a \n"
@@ -1237,32 +1562,32 @@ HomeTown_BeachScene1_Start_Text_13:
 	.string "the sea?$"
 
 HomeTown_BeachScene1_Start_Text_14:
-# 438 "data/maps/MarinacreTown/scripts.pory"
+# 540 "data/maps/MarinacreTown/scripts.pory"
 	.string "What should we do about this,\n"
 	.string "{PLAYER}?\l"
 	.string "Got any ideas?$"
 
 HomeTown_BeachScene1_Start_Text_15:
-# 443 "data/maps/MarinacreTown/scripts.pory"
+# 545 "data/maps/MarinacreTown/scripts.pory"
 	.string "No clue$"
 
 HomeTown_BeachScene1_Start_Text_16:
-# 443 "data/maps/MarinacreTown/scripts.pory"
+# 545 "data/maps/MarinacreTown/scripts.pory"
 	.string "Look for their trainer$"
 
 HomeTown_BeachScene1_Start_Text_17:
-# 443 "data/maps/MarinacreTown/scripts.pory"
+# 545 "data/maps/MarinacreTown/scripts.pory"
 	.string "Finders keepers$"
 
 HomeTown_BeachScene1_Start_Text_18:
-# 447 "data/maps/MarinacreTown/scripts.pory"
+# 549 "data/maps/MarinacreTown/scripts.pory"
 	.string "Yeah, me neither.\p"
 	.string "I wanna say we should try to return\n"
 	.string "them to their trainer, but…\l"
 	.string "where would we even start?$"
 
 HomeTown_BeachScene1_Start_Text_19:
-# 456 "data/maps/MarinacreTown/scripts.pory"
+# 558 "data/maps/MarinacreTown/scripts.pory"
 	.string "Do you think there's a shot?\n"
 	.string "It'd be the right thing to do, but…\p"
 	.string "…{PAUSE 30}Who knows where they drifted in from,\n"
@@ -1270,7 +1595,7 @@ HomeTown_BeachScene1_Start_Text_19:
 	.string "Where would we even start looking?$"
 
 HomeTown_BeachScene1_Start_Text_20:
-# 467 "data/maps/MarinacreTown/scripts.pory"
+# 569 "data/maps/MarinacreTown/scripts.pory"
 	.string "…You really think so?\n"
 	.string "I guess it'd be hard to track down\l"
 	.string "their original trainer…\p"
@@ -1279,7 +1604,7 @@ HomeTown_BeachScene1_Start_Text_20:
 	.string "…{PAUSE 30}Nevermind. I got nothing.$"
 
 HomeTown_BeachScene1_Start_Text_21:
-# 488 "data/maps/MarinacreTown/scripts.pory"
+# 590 "data/maps/MarinacreTown/scripts.pory"
 	.string "Wait, I have an idea!\n"
 	.string "We should take these Pokémon to\l"
 	.string "Professor Hawthorn!\p"
@@ -1292,60 +1617,60 @@ HomeTown_BeachScene1_Start_Text_21:
 	.string "What if wild Pokémon attacked us?$"
 
 HomeTown_BeachScene1_Start_Text_22:
-# 508 "data/maps/MarinacreTown/scripts.pory"
+# 610 "data/maps/MarinacreTown/scripts.pory"
 	.string "{PLAYER}, how about we each keep one \n"
 	.string "of these Pokémon for the trip?\p"
 	.string "Yeah, that sounds like a plan!$"
 
 HomeTown_BeachScene1_Start_Text_23:
-# 516 "data/maps/MarinacreTown/scripts.pory"
+# 618 "data/maps/MarinacreTown/scripts.pory"
 	.string "Go ahead, {PLAYER}!\n"
 	.string "You pick first!$"
 
 HomeTown_BeachScene1_ExamineStarterGrass_Text_0:
-# 528 "data/maps/MarinacreTown/scripts.pory"
+# 630 "data/maps/MarinacreTown/scripts.pory"
 	.string "Grass$"
 
 HomeTown_BeachScene1_ExamineStarterFire_Text_0:
-# 536 "data/maps/MarinacreTown/scripts.pory"
+# 638 "data/maps/MarinacreTown/scripts.pory"
 	.string "Fire$"
 
 HomeTown_BeachScene1_ExamineStarterWater_Text_0:
-# 544 "data/maps/MarinacreTown/scripts.pory"
+# 646 "data/maps/MarinacreTown/scripts.pory"
 	.string "Water$"
 
 HomeTown_BeachScene1_ExamineStarter_Text_0:
-# 557 "data/maps/MarinacreTown/scripts.pory"
+# 659 "data/maps/MarinacreTown/scripts.pory"
 	.string "{STR_VAR_1}\n"
 	.string "The {STR_VAR_2}-type Pokémon\p"
 	.string "Take {STR_VAR_1} with you?$"
 
 HomeTown_BeachScene1_TakeStarter_Text_0:
-# 574 "data/maps/MarinacreTown/scripts.pory"
+# 676 "data/maps/MarinacreTown/scripts.pory"
 	.string "You took {STR_VAR_1} with you!$"
 
 HomeTown_BeachScene1_Finish_Text_0:
-# 599 "data/maps/MarinacreTown/scripts.pory"
+# 701 "data/maps/MarinacreTown/scripts.pory"
 	.string "Alright, then!\n"
 	.string "I'll bring the rest!$"
 
 HomeTown_BeachScene1_Finish_Text_1:
-# 667 "data/maps/MarinacreTown/scripts.pory"
+# 769 "data/maps/MarinacreTown/scripts.pory"
 	.string "Alright then! Let's not waste any time!\n"
 	.string "I'll meet you at Professor Hawthorn's\l"
 	.string "lab!$"
 
 HomeTown_BeachScene1_PreventLeave_Text_0:
-# 702 "data/maps/MarinacreTown/scripts.pory"
+# 804 "data/maps/MarinacreTown/scripts.pory"
 	.string "MAYA: Hey, where are you going?\n"
 	.string "Don't leave now!$"
 
 HomeTown_BeachScene1_FlavorTextBag_Text_0:
-# 716 "data/maps/MarinacreTown/scripts.pory"
+# 818 "data/maps/MarinacreTown/scripts.pory"
 	.string "It's been bleached by the sun,\n"
 	.string "and pummeled by waves.$"
 
 HomeTown_BeachScene1_TalkRival_Text_0:
-# 726 "data/maps/MarinacreTown/scripts.pory"
+# 828 "data/maps/MarinacreTown/scripts.pory"
 	.string "MAYA: Hurry up and pick one!\n"
 	.string "Uh, no rush, though!$"

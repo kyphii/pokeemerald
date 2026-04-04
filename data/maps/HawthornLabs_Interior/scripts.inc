@@ -138,30 +138,30 @@ HawthornLabs_Interior_Intro_MeetProfessorScene::
 	delay 30
 # 177 "data/maps/HawthornLabs_Interior/scripts.pory"
 	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_0, MSGBOX_DEFAULT
+# 182 "data/maps/HawthornLabs_Interior/scripts.pory"
+	closemessage
 # 183 "data/maps/HawthornLabs_Interior/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_NORTH
-# 184 "data/maps/HawthornLabs_Interior/scripts.pory"
-	turnobject LOCALID_LABINT_RIVAL, DIR_NORTH
-# 185 "data/maps/HawthornLabs_Interior/scripts.pory"
-	playse SE_PIN
-# 186 "data/maps/HawthornLabs_Interior/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 187 "data/maps/HawthornLabs_Interior/scripts.pory"
-	applymovement LOCALID_LABINT_RIVAL, Common_Movement_ExclamationMark
+	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_1, MSGBOX_DEFAULT
 # 188 "data/maps/HawthornLabs_Interior/scripts.pory"
-	waitmovement 0
-# 189 "data/maps/HawthornLabs_Interior/scripts.pory"
-	delay 60
-# 190 "data/maps/HawthornLabs_Interior/scripts.pory"
-	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_1, MSGBOX_NPC
-# 194 "data/maps/HawthornLabs_Interior/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_NORTH
+# 189 "data/maps/HawthornLabs_Interior/scripts.pory"
+	turnobject LOCALID_LABINT_RIVAL, DIR_NORTH
+# 190 "data/maps/HawthornLabs_Interior/scripts.pory"
+	playse SE_PIN
+# 191 "data/maps/HawthornLabs_Interior/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+# 192 "data/maps/HawthornLabs_Interior/scripts.pory"
+	applymovement LOCALID_LABINT_RIVAL, Common_Movement_ExclamationMark
+# 193 "data/maps/HawthornLabs_Interior/scripts.pory"
+	waitmovement 0
+# 194 "data/maps/HawthornLabs_Interior/scripts.pory"
+	delay 60
 # 195 "data/maps/HawthornLabs_Interior/scripts.pory"
 	applymovement LOCALID_LABINT_RECEPTIONIST, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_1
 # 201 "data/maps/HawthornLabs_Interior/scripts.pory"
 	waitmovement 0
 # 203 "data/maps/HawthornLabs_Interior/scripts.pory"
-	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_2, MSGBOX_NPC
+	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_2, MSGBOX_DEFAULT
 # 212 "data/maps/HawthornLabs_Interior/scripts.pory"
 	delay 10
 # 213 "data/maps/HawthornLabs_Interior/scripts.pory"
@@ -179,7 +179,7 @@ HawthornLabs_Interior_Intro_MeetProfessorScene::
 # 230 "data/maps/HawthornLabs_Interior/scripts.pory"
 	waitmovement 0
 # 231 "data/maps/HawthornLabs_Interior/scripts.pory"
-	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_4, MSGBOX_NPC
+	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_4, MSGBOX_DEFAULT
 # 240 "data/maps/HawthornLabs_Interior/scripts.pory"
 	closemessage
 # 241 "data/maps/HawthornLabs_Interior/scripts.pory"
@@ -219,7 +219,7 @@ HawthornLabs_Interior_Intro_MeetProfessorScene::
 # 268 "data/maps/HawthornLabs_Interior/scripts.pory"
 	waitmovement 0
 # 269 "data/maps/HawthornLabs_Interior/scripts.pory"
-	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_6, MSGBOX_NPC
+	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_6, MSGBOX_DEFAULT
 # 276 "data/maps/HawthornLabs_Interior/scripts.pory"
 	closemessage
 # 277 "data/maps/HawthornLabs_Interior/scripts.pory"
@@ -249,7 +249,7 @@ HawthornLabs_Interior_Intro_MeetProfessorScene::
 # 300 "data/maps/HawthornLabs_Interior/scripts.pory"
 	waitmovement 0
 # 301 "data/maps/HawthornLabs_Interior/scripts.pory"
-	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_9, MSGBOX_NPC
+	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_9, MSGBOX_DEFAULT
 # 307 "data/maps/HawthornLabs_Interior/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_EAST
 # 308 "data/maps/HawthornLabs_Interior/scripts.pory"
@@ -271,7 +271,7 @@ HawthornLabs_Interior_Intro_MeetProfessorScene::
 # 334 "data/maps/HawthornLabs_Interior/scripts.pory"
 	delay 60
 # 335 "data/maps/HawthornLabs_Interior/scripts.pory"
-	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_11, MSGBOX_NPC
+	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_11, MSGBOX_DEFAULT
 # 339 "data/maps/HawthornLabs_Interior/scripts.pory"
 	closemessage
 # 340 "data/maps/HawthornLabs_Interior/scripts.pory"
@@ -1103,7 +1103,7 @@ HawthornLabs_Interior_Intro_MeetProfessorScene_Text_0:
 	.string "Hawthorn?$"
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_Text_1:
-# 191 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 184 "data/maps/HawthornLabs_Interior/scripts.pory"
 	.string "Excuse me!$"
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_Text_2:

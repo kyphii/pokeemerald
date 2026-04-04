@@ -14,7 +14,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE_1",
+      "map": "MAP_ROUTE1",
       "offset": 0,
       "direction": "down"
     },
@@ -31,7 +31,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(EEVEE)",
       "x": 19,
       "y": 10,
       "elevation": 0,
@@ -44,7 +44,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_KIRLIA",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
       "x": 4,
       "y": 13,
       "elevation": 0,
@@ -164,7 +164,7 @@
       "y": 10,
       "elevation": 0,
       "item": "ITEM_ORAN_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_LAVARIDGE_TOWN_ICE_HEAL"
+      "flag": "FLAG_HIDDEN_ITEM_HAWTHORN_LABS_1"
     }
   ]
 }

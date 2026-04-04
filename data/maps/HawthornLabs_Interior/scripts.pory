@@ -179,6 +179,11 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 		Hawthorn?", 
         MSGBOX_DEFAULT
     )
+	closemessage
+    msgbox(
+		"Excuse me!",
+		MSGBOX_DEFAULT
+	)
 	
 	turnobject(LOCALID_PLAYER, DIR_NORTH)
     turnobject(LOCALID_LABINT_RIVAL, DIR_NORTH)
@@ -187,11 +192,6 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
     applymovement(LOCALID_LABINT_RIVAL, Common_Movement_ExclamationMark)
 	waitmovement(0)
 	delay(60)
-    msgbox(
-		"Excuse me!",
-		MSGBOX_NPC
-	)
-	turnobject(LOCALID_PLAYER, DIR_NORTH)
     applymovement(LOCALID_LABINT_RECEPTIONIST, moves(
 		walk_right * 2
 		walk_down * 2
@@ -207,7 +207,7 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 		
 		Whatever you're selling, we have no
 		interest in it, so please leave!", 
-        MSGBOX_NPC
+		MSGBOX_DEFAULT
     )
 	delay(10)
 	playse(SE_PIN)
@@ -235,7 +235,7 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 		No solicitors allowed!
 		
 		Please see yourselves to the door!",
-        MSGBOX_NPC
+		MSGBOX_DEFAULT
     )
 	closemessage
 	delay(30)
@@ -271,7 +271,7 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
         
         My apologies, I was just about to show
         these solicitors here to the door.",
-        MSGBOX_NPC
+		MSGBOX_DEFAULT
     )
 	closemessage
 	delay(40)
@@ -302,7 +302,7 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
         "…But Professor, isn't that what you
         wrote on the sign out front?
         That was your rule, no?",
-        MSGBOX_NPC
+		MSGBOX_DEFAULT
     )	
     turnobject(LOCALID_PLAYER, DIR_EAST)
     turnobject(LOCALID_LABINT_RIVAL, DIR_EAST)
@@ -334,7 +334,7 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
     delay(60)
     msgbox(
         "…I-{PAUSE 30}I'll take my leave, then.",
-        MSGBOX_NPC
+		MSGBOX_DEFAULT
     )
 	closemessage
     applymovement(LOCALID_LABINT_RECEPTIONIST, moves(

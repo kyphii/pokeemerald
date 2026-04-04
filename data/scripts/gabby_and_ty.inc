@@ -9,18 +9,6 @@
 @ Route 111 and Route 118 have 3 object events each (parties 1,4,6 and 2,5,6 respectively)
 @ and Route 120 has 2 object events each (parties 3 and 6).
 GabbyAndTy_EventScript_UpdateLocation::
-	cleartrainerflag TRAINER_GABBY_AND_TY_6  @ Clear flag for their final party to allow infinite rematches.
-	specialvar VAR_RESULT, GabbyAndTyGetBattleNum
-	switch VAR_RESULT
-	case 0, GabbyAndTy_EventScript_MoveForBattle1
-	case 1, GabbyAndTy_EventScript_MoveForBattle2
-	case 2, GabbyAndTy_EventScript_MoveForBattle3
-	case 3, GabbyAndTy_EventScript_MoveForBattle4
-	case 4, GabbyAndTy_EventScript_MoveForBattle5
-	case 5, GabbyAndTy_EventScript_MoveForBattle6
-	case 6, GabbyAndTy_EventScript_MoveForBattle7
-	case 7, GabbyAndTy_EventScript_MoveForBattle8
-	case 8, GabbyAndTy_EventScript_MoveForBattle9
 	end
 
 GabbyAndTy_EventScript_MoveForBattle1::

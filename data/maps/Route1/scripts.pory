@@ -66,12 +66,12 @@ script Route1_Intro_BattlerSeq {
 }
 
 script Route1_Intro_CryWingull {
-	playmoncry(SPECIES_WINGULL 0)
+	playmoncry(SPECIES_WINGULL, 0)
     waitmoncry
 }
 
 script Route1_Intro_CrySkitty {
-	playmoncry(SPECIES_SKITTY 0)
+	playmoncry(SPECIES_SKITTY, 0)
     waitmoncry
 }
 
@@ -85,7 +85,7 @@ script Route1_Talk_RoadWorker {
 		
 		If you have to get through, make sure
 		you have a Pok\emon with you.",
-		MSGBOX_NPC
+		MSGBOX_DEFAULT
 	)
 	closemessage
 	release
@@ -105,7 +105,7 @@ script Route1_Talk_ConspiracyLady {
 		research, and her accomplishments, and
 		her opinions on my Ditto People Theory!
 		Now who am I gonna have on my podcast?",
-		MSGBOX_NPC
+		MSGBOX_DEFAULT
 	)
 	closemessage
 	release

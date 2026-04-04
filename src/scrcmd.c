@@ -3388,3 +3388,14 @@ bool8 Scrcmd_addplayerlevel(struct ScriptContext* ctx)
     return FALSE;
 }
 
+bool8 Scrcmd_pausertc(struct ScriptContext* ctx)
+{
+    VarSet(VAR_RTC_OVERRIDE_HOUR, ScriptReadByte(ctx) + 1);
+    return FALSE;
+}
+
+bool8 Scrcmd_resumertc(struct ScriptContext* ctx)
+{
+    VarSet(VAR_RTC_OVERRIDE_HOUR, 0);
+    return FALSE;
+}

@@ -14,6 +14,10 @@ mapscripts MarinacreTown_PlayerHouse_1F_MapScripts {
 	]
 }
 
+script MarinacreTown_PlayerHouse_1F_TalkPurrloin {
+	playmoncry(SPECIES_PURRLOIN, 0)
+}
+
 script HomeTown_PlayerHouse_TalkMom {
 	lock
 	faceplayer
@@ -272,5 +276,7 @@ script HomeTown_PlayerHouse_Intro_LeaveHomeScene {
 	setflag(FLAG_MOM_ENABLE_HEAL)
 	setvar(VAR_CABLE_CLUB_TUTORIAL_STATE, 1)
 	setvar(VAR_INTRO_SEQUENCE_STATE, 7)
+	
+	resumertc()
 	releaseall
 }

@@ -1,0 +1,434 @@
+mapscripts Route2_MapScripts {}
+
+script Route2_Talk_CutTreePerson {
+	applymovement(LOCALID_ROUTE2_CUTTREEGUY, Route2_Movement_CutTreeGuyJump)
+	waitmovement(0)
+	delay(20)
+	msgbox(
+		"Ow! Ow! Ow!
+		
+		This obstacle has mighty defenses…
+		But I cannot accept defeat!
+		
+		Ow! Ow! Ow!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+}
+
+script Route2_Intro_EnterForestScene {
+	lockall
+	
+	turnobject(LOCALID_HOMETOWN_RIVAL, DIR_SOUTH)
+	
+	msgbox(
+		"MAYA: Hey!
+		Try to keep up, {PLAYER}!",
+		MSGBOX_DEFAULT
+	)
+	
+	applymovement(LOCALID_ROUTE2_RIVAL, moves(
+		walk_up
+		walk_left * 3
+		face_down
+	))
+	delay(10)
+	
+	getplayerxy(VAR_0x8008, VAR_0x8009)
+	switch(var(VAR_0x8008)) {
+		case 26:
+			applymovement(LOCALID_PLAYER, moves(
+				walk_up
+				walk_left
+			))
+		case 27:
+			applymovement(LOCALID_PLAYER, moves(
+				walk_up
+				walk_left * 2
+			))
+		case 28:
+			applymovement(LOCALID_PLAYER, moves(
+				walk_up
+				walk_left * 3
+			))
+		case 29:
+			applymovement(LOCALID_PLAYER, moves(
+				walk_up
+				walk_left * 4
+			))
+		case 30:
+			applymovement(LOCALID_PLAYER, moves(
+				walk_up
+				walk_left * 5
+			))
+	}
+	waitmovement(0)
+	turnobject(LOCALID_PLAYER, DIR_NORTH)
+	
+	msgbox(
+		"MAYA: Looks like the road is still
+		blocked off here.
+		But no worries! This guy is on it!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	
+    turnobject(LOCALID_PLAYER, DIR_WEST)
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_WEST)
+	
+	applymovement(LOCALID_ROUTE2_CUTTREEGUY, moves(
+		walk_in_place_right * 2
+	))
+	waitmovement(0)
+	msgbox(
+		"Hoo hah!
+		This thorny obstacle stands opposed
+		to freedom and justice!
+		
+		I shall strike it down with my mighty
+		ROCK SMASH attack!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	
+	applymovement(LOCALID_ROUTE2_CUTTREEGUY, Route2_Movement_CutTreeGuyJump)
+	waitmovement(0)
+	delay(20)
+	msgbox(
+		"Ow!
+		Ow ow ow!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	
+	delay(30)
+	
+	turnobject(LOCALID_PLAYER, DIR_NORTH)
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_SOUTH)
+	
+	msgbox(
+		"MAYA: …Maybe it's gonna take a while.",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	
+	applymovement(LOCALID_ROUTE2_RIVAL, moves(
+		walk_right * 3
+		walk_up * 5
+	))
+	applymovement(LOCALID_PLAYER, moves(
+		walk_right * 4
+		walk_up * 6
+	))
+	
+	applymovement(LOCALID_ROUTE2_CUTTREEGUY, Route2_Movement_CutTreeGuyJump)
+	delay(30)
+	msgbox(
+		"Ow ow ow!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	waitmovement(LOCALID_PLAYER)
+	
+	msgbox(
+		"MAYA: The only other way is through 
+		Nautirust Forest.",
+		MSGBOX_DEFAULT
+	)
+	
+	turnobject(LOCALID_PLAYER, DIR_WEST)
+    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
+	
+	msgbox(
+		"Remember how we used to play here when
+		we were kids?
+		
+		I'm sure there's a trail we can take to 
+		get to the city.",
+		MSGBOX_DEFAULT
+	)
+	
+	applymovement(LOCALID_ROUTE2_RIVAL, moves(
+		walk_up * 4
+		face_right
+	))
+	delay(10)
+	applymovement(LOCALID_PLAYER, moves(
+		walk_up * 4
+		face_left
+	))
+	waitmovement(0)
+	
+	msgbox(
+		"Well?
+		
+		What do you think we should do?"
+	)
+	dynmultichoice(16, 4, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+		"Go together",
+		"Let's race"
+	)
+	switch(var(VAR_RESULT)) {
+        case 0: // setup follower
+            msgbox(
+                "Okay! Just lead the way!",
+                MSGBOX_DEFAULT
+            )
+        case 1: //setup race
+            msgbox(
+                "Oh, you know me too well, dude.
+				
+				Alright! First one out of the forest
+				wins!
+				
+				Ready? Let's go!",
+                MSGBOX_DEFAULT
+            )
+    }
+    closemessage
+	
+    setvar(VAR_INTRO_SEQUENCE_STATE, 9)
+	
+	releaseall
+}
+
+script Route2_Intro_MeetBigBadScene {
+	lockall
+	fadeoutbgm(3)
+	
+	getplayerxy(VAR_0x8008, VAR_0x8009)
+	switch(var(VAR_0x8009)) {
+		case 11:
+			setobjectxyperm(LOCALID_ROUTE2_BIGBAD, -5, 12)
+			addobject(LOCALID_ROUTE2_BIGBAD)
+			applymovement(LOCALID_ROUTE2_BIGBAD, moves(
+				walk_right * 11
+				delay_16 * 2
+				walk_left * 2
+				face_up
+			))
+		case 12:
+			setobjectxyperm(LOCALID_ROUTE2_BIGBAD, -5, 13)
+			addobject(LOCALID_ROUTE2_BIGBAD)
+			applymovement(LOCALID_ROUTE2_BIGBAD, moves(
+				walk_right * 11
+				delay_16 * 2
+				walk_left * 2
+				face_up
+			))
+		case 13:
+			setobjectxyperm(LOCALID_ROUTE2_BIGBAD, -5, 12)
+			addobject(LOCALID_ROUTE2_BIGBAD)
+			applymovement(LOCALID_ROUTE2_BIGBAD, moves(
+				walk_right * 11
+				delay_16 * 2
+				walk_left * 2
+				face_down
+			))
+		case 14:
+			setobjectxyperm(LOCALID_ROUTE2_BIGBAD, -5, 13)
+			addobject(LOCALID_ROUTE2_BIGBAD)
+			applymovement(LOCALID_ROUTE2_BIGBAD, moves(
+				walk_right * 11
+				delay_16 * 2
+				walk_left * 2
+				face_down
+			))
+	}
+	waitmovement(0)
+	
+	msgbox(
+		"Pardon me, but… 
+		You are a fledgeling Pok\emon trainer, 
+		are you not?
+		
+		There's no denying it. You have that 
+		glint in your eyes, the unmistakable 
+		shine of one who has just received 
+		their first Pok\emon.
+		
+		Ah, but where are my manners? 
+		My name is Slater. I am but a wandering 
+		old soul.
+		
+		Young trainer, if you would permit me to 
+		inquire…
+		
+		What is it, that compels you onto the 
+		path of the Pok\emon trainer?
+		
+		Is it the allure of overcoming great 
+		challenge and adversity?
+		
+		Or, perhaps, you seek to unravel the 
+		many mysteries of these curious 
+		creatures?
+		
+		Or is it something else? A greater 
+		purpose, perhaps?",
+		MSGBOX_DEFAULT
+	)
+	
+	applymovement(LOCALID_ROUTE2_BIGBAD, moves(
+		walk_left
+	))
+	waitmovement(0)
+	
+	msgbox(
+		"SLATER: …Young trainer, ahead of you 
+		lies Nautirust City.
+		
+		Long ago, this city was a bastion of 
+		industry.
+		
+		Factories and workers, ushering in a 
+		new age of prosperity for the whole 
+		world.
+		
+		Its smokestacks were monuments to 
+		humanity, and its flywheels spun the 
+		earth itself.
+		
+		That was a lifetime ago, though. 
+		In time, the new age this city created… 
+		left it behind.
+		
+		One by one, the factories shut their 
+		doors.
+		
+		Their lifeblood gone, the workers 
+		were forced to search for a new
+		identity.
+		
+		In all change, it seems, something is 
+		lost.
+		
+		Nowadays, the city before you persists 
+		as a mere stepping stone, in the 
+		journeys of travelers and Pok\emon 
+		trainers such as yourself.
+		
+		Some call it a revival.",
+		MSGBOX_DEFAULT
+	)
+	
+	getplayerxy(VAR_0x8008, VAR_0x8009)
+	switch(var(VAR_0x8009)) {
+		case 11:
+		case 12:
+			applymovement(LOCALID_ROUTE2_BIGBAD, moves(
+				walk_right
+				face_up
+			))
+		case 13:
+		case 14:
+			applymovement(LOCALID_ROUTE2_BIGBAD, moves(
+				walk_right
+				face_down
+			))
+	}
+	waitmovement(0)
+	
+	msgbox(
+		"SLATER: …Forgive me. I have kept you
+		for too long.
+		
+		I am sure that nothing will stop you on 
+		your journey.
+		
+		If I may leave you with one thing, 
+		young trainer, a word of advice…
+		
+		All that you touch, you change.
+		
+		May we meet again.",
+		MSGBOX_DEFAULT
+	)
+
+	applymovement(LOCALID_ROUTE2_BIGBAD, moves(
+		walk_right * 4
+		walk_up * 7
+	))
+	waitmovement(0)
+	setobjectxyperm(LOCALID_ROUTE2_BIGBAD, 48, 48)
+	removeobject(LOCALID_ROUTE2_BIGBAD)
+	
+	setflag(FLAG_INTRO_MET_BIGBAD)
+    setvar(VAR_INTRO_SEQUENCE_STATE, 11)
+	
+    fadeinbgm(1)
+	releaseall
+}
+
+script Route2_RouteSign {
+	msgbox(
+		"ROUTE 2
+		{RIGHT_ARROW} MARINACRE TOWN
+		{LEFT_ARROW} NAUTIRUST CITY
+		{UP_ARROW} NAUTIRUST FOREST",
+		MSGBOX_SIGN
+	)
+}
+
+script Route2_Trainer_1 {
+	trainerbattle_single(
+		TRAINER_ROUTE2_1,
+
+		//Intro
+		"You!
+		You're a Pok\emon trainer, aren't you?
+
+		But you look like a total newbie!
+		This'll be easy!", 
+
+		//On Defeat
+		"N-No fair!
+		That's a rare Pok\emon!")
+
+	// Post battle
+	msgbox(
+		"I underestimated you…",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route2_Trainer_2 {
+	trainerbattle_single(
+		TRAINER_ROUTE2_2,
+
+		//Intro
+		"I'll take you on with the cool Bug
+		Pok\emon I found in the woods!", 
+
+		//On Defeat
+		"")
+
+	// Post battle
+	msgbox(
+		"My girlfriend doesn't like Bug Pok\emon…
+		What's wrong with bugs?", 
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route2_Trainer_3 {
+	trainerbattle_single(
+		TRAINER_ROUTE2_3,
+
+		//Intro
+		"I'm looking for cute Pok\emon!", 
+
+		//On Defeat
+		"Not cute!")
+
+	// Post battle
+	msgbox(
+		"I like cute Pok\emon, but my friend
+		here only likes gross Bug types…", 
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+movement Route2_Movement_CutTreeGuyJump {
+    jump_in_place_right
+}

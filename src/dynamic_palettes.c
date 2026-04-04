@@ -206,8 +206,6 @@ static void DynPal_InitBattleFront(u16* dest, const u16* skinPalData, const u16*
     DynPal_CopySection(sDynPal_Base, dest, 5, 2, groupOffset, 1);
 }
 
-// *MODIFY*
-// Derive battle front sprite palette - first load the overworld palette, then make modifications. Your specific implementation may differ.
 static void DynPal_InitBattleBack(u16* dest, const u16* skinPalData, const u16* hairPalData, const u16* clothesPalData, int groupOffset)
 {
     DynPal_InitOverworld(dest, skinPalData, hairPalData, clothesPalData, groupOffset);
@@ -215,12 +213,10 @@ static void DynPal_InitBattleBack(u16* dest, const u16* skinPalData, const u16* 
     DynPal_CopySection(clothesPalData, dest, 3, 2, groupOffset, 1);
 }
 
-// *MODIFY*
-// If you don't want the character sprites to load with parts {0, 0, 0} in the intro, you can set the preferred palette indices here
 void DynPal_LoadIntroToneIndices()
 {
-    DynPal_ReloadPlayerPaletteForMenu(TRAINER_PIC_FRONT_BRENDAN, 0, 0, 0);
-    DynPal_ReloadPlayerPaletteForMenu(TRAINER_PIC_FRONT_MAY, 0, 2, 0);
+    DynPal_ReloadPlayerPaletteForMenu(TRAINER_PIC_FRONT_BRENDAN, 0, 4, 1);
+    DynPal_ReloadPlayerPaletteForMenu(TRAINER_PIC_FRONT_MAY, 0, 4, 1);
 }
 
 // Copies <numberOfColors> values from the ROM palette <src>, to dynamic palette <dest>

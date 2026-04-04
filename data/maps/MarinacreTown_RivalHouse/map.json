@@ -12,30 +12,24 @@
   "allow_running": true,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
-  "object_events": [
-
-  ],
+  "connections": null,
+  "object_events": [],
   "warp_events": [
     {
-      "x": 8,
+      "x": 12,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_MARINACRE_TOWN",
       "dest_warp_id": "2"
     },
     {
-      "x": 9,
+      "x": 13,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_MARINACRE_TOWN",
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

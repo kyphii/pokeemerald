@@ -93,7 +93,7 @@ Route1_Intro_BattlerSeq_10:
 
 Route1_Intro_CryWingull::
 # 69 "data/maps/Route1/scripts.pory"
-	playmoncry SPECIES_WINGULL 0
+	playmoncry SPECIES_WINGULL, 0
 # 70 "data/maps/Route1/scripts.pory"
 	waitmoncry
 	return
@@ -101,7 +101,7 @@ Route1_Intro_CryWingull::
 
 Route1_Intro_CrySkitty::
 # 74 "data/maps/Route1/scripts.pory"
-	playmoncry SPECIES_SKITTY 0
+	playmoncry SPECIES_SKITTY, 0
 # 75 "data/maps/Route1/scripts.pory"
 	waitmoncry
 	return
@@ -113,7 +113,7 @@ Route1_Talk_RoadWorker::
 # 80 "data/maps/Route1/scripts.pory"
 	faceplayer
 # 81 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Talk_RoadWorker_Text_0, MSGBOX_NPC
+	msgbox Route1_Talk_RoadWorker_Text_0, MSGBOX_DEFAULT
 # 90 "data/maps/Route1/scripts.pory"
 	closemessage
 # 91 "data/maps/Route1/scripts.pory"
@@ -127,7 +127,7 @@ Route1_Talk_ConspiracyLady::
 # 96 "data/maps/Route1/scripts.pory"
 	faceplayer
 # 97 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Talk_ConspiracyLady_Text_0, MSGBOX_NPC
+	msgbox Route1_Talk_ConspiracyLady_Text_0, MSGBOX_DEFAULT
 # 110 "data/maps/Route1/scripts.pory"
 	closemessage
 # 111 "data/maps/Route1/scripts.pory"

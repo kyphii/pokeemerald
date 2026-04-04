@@ -82,7 +82,8 @@
   "gMapGroup_IndoorsHouses": [
     "MarinacreTown_PlayerHouse_1F",
     "MarinacreTown_PlayerHouse_2F",
-    "MarinacreTown_RivalHouse"
+    "MarinacreTown_RivalHouse",
+    "Route2_House"
   ],
   "gMapGroup_IndoorsOther": [
     "HawthornLabs_Interior"

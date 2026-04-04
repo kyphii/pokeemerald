@@ -77,7 +77,7 @@
       ],
       "encounters": [
         {
-          "map": "MAP_ROUTE_1",
+          "map": "MAP_ROUTE1",
           "base_label": "gRoute1",
           "land_mons": {
             "encounter_rate": 20,

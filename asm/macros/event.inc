@@ -2871,3 +2871,14 @@
 	callnative Scrcmd_addplayerlevel, requests_effects=1
 	.byte \inc
 	.endm
+
+    @ Pause real time clock, at specified hour
+	.macro pausertc hour:req
+	callnative Scrcmd_pausertc
+	.byte \hour
+	.endm
+
+	@ Resume real time clock, allow time to reset to actual
+	.macro resumertc
+	callnative Scrcmd_resumertc
+	.endm

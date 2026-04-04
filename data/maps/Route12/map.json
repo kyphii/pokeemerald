@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ROUTE_12",
+  "id": "MAP_ROUTE12",
   "name": "Route12",
-  "layout": "LAYOUT_ROUTE_12",
+  "layout": "LAYOUT_ROUTE12",
   "music": "MUS_ROUTE104",
   "region_map_section": "MAPSEC_ROUTE_12",
   "requires_flash": false,
@@ -19,7 +19,7 @@
       "direction": "right"
     },
     {
-      "map": "MAP_ROUTE_20",
+      "map": "MAP_ROUTE20",
       "offset": 72,
       "direction": "up"
     },

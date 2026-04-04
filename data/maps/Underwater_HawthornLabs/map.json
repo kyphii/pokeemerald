@@ -19,7 +19,7 @@
       "direction": "emerge"
     },
     {
-      "map": "MAP_UNDERWATER_ROUTE_1",
+      "map": "MAP_UNDERWATER_ROUTE1",
       "offset": 0,
       "direction": "down"
     }

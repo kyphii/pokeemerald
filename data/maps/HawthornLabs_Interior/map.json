@@ -85,7 +85,7 @@
     },
     {
       "local_id": "LOCALID_LABINT_STARTER_GRASS",
-      "graphics_id": "OBJ_EVENT_GFX_SKITTY",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TURTWIG)",
       "x": 19,
       "y": 28,
       "elevation": 0,
@@ -99,7 +99,7 @@
     },
     {
       "local_id": "LOCALID_LABINT_STARTER_FIRE",
-      "graphics_id": "OBJ_EVENT_GFX_PIKACHU",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FENNEKIN)",
       "x": 18,
       "y": 28,
       "elevation": 0,
@@ -113,7 +113,7 @@
     },
     {
       "local_id": "LOCALID_LABINT_STARTER_WATER",
-      "graphics_id": "OBJ_EVENT_GFX_WINGULL",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(POPPLIO)",
       "x": 20,
       "y": 28,
       "elevation": 0,
