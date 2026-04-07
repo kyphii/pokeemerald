@@ -2818,7 +2818,7 @@
 @ FRLG
 
 
-	@ Prints the provided message after playing the fanfare music (can only be MUS_LEVEL_UP or MUS_RG_OBTAIN_KEY_ITEM).
+	@ Prints the provided message after playing the fanfare music (can only be MUS_LEVEL_UP).
 	@ It then prints the message shown by using putitemaway.
 	.macro msgreceiveditem msg:req, item:req, amount=1, fanfare=MUS_LEVEL_UP
 	loadword 0, \msg

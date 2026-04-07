@@ -5774,7 +5774,7 @@ u16 GetBattleBGM(void)
         case SPECIES_REGIDRAGO:
             return MUS_VS_REGI;
         default:
-            return MUS_RG_VS_LEGEND;
+            return MUS_VS_WILD;
         }
     }
     else if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
@@ -5814,11 +5814,7 @@ u16 GetBattleBGM(void)
             return MUS_VS_RIVAL;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_ELITE_FOUR;
-        case TRAINER_CLASS_CHAMPION_FRLG:
-            return MUS_RG_VS_CHAMPION;
         case TRAINER_CLASS_LEADER_FRLG:
-        case TRAINER_CLASS_ELITE_FOUR_FRLG:
-            return MUS_RG_VS_GYM_LEADER;
         case TRAINER_CLASS_SALON_MAIDEN:
         case TRAINER_CLASS_DOME_ACE:
         case TRAINER_CLASS_PALACE_MAVEN:
@@ -5828,18 +5824,12 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
         default:
-            if (GetCurrentRegion() == REGION_KANTO)
-                return MUS_RG_VS_TRAINER;
-            else
-                return MUS_VS_TRAINER;
+            return MUS_VS_TRAINER;
         }
     }
     else
     {
-        if (GetCurrentRegion() == REGION_KANTO)
-            return MUS_RG_VS_WILD;
-        else
-            return MUS_VS_WILD;
+        return MUS_VS_WILD;
     }
 }
 

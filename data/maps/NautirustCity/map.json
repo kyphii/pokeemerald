@@ -2,7 +2,7 @@
   "id": "MAP_NAUTIRUST_CITY",
   "name": "NautirustCity",
   "layout": "LAYOUT_NAUTIRUST_CITY",
-  "music": "MUS_PETALBURG",
+  "music": "MUS_VG_TEST",
   "region_map_section": "MAPSEC_NAUTIRUST_CITY",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

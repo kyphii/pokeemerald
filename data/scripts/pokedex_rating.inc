@@ -23,7 +23,6 @@ PokedexRating_EventScript_ShowRatingMsg::
 	return
 
 PokedexRating_EventScript_NormalFanfare::
-	playfanfare MUS_RG_DEX_RATING
 	return
 
 PokedexRating_EventScript_DexCompleteFanfare::

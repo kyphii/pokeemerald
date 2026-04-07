@@ -441,7 +441,6 @@ static bool32 HandleMysteryGiftOrEReaderSetup(s32 isEReader)
     case 3:
         ShowBg(0);
         ShowBg(3);
-        PlayBGM(MUS_RG_MYSTERY_GIFT);
         SetVBlankCallback(VBlankCB_MysteryGiftEReader);
         EnableInterrupts(INTR_FLAG_VBLANK | INTR_FLAG_VCOUNT | INTR_FLAG_TIMER3 | INTR_FLAG_SERIAL);
         return TRUE;

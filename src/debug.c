@@ -3790,8 +3790,6 @@ static void DebugAction_PCBag_Fill_PCBoxes_Slow(u8 taskId)
         {
             if (!GetBoxMonData(&gPokemonStoragePtr->boxes[boxId][boxPosition], MON_DATA_SANITY_HAS_SPECIES))
             {
-                if (!spaceAvailable)
-                    PlayBGM(MUS_RG_MYSTERY_GIFT);
                 CreateBoxMon(&boxMon, species, 100, Random32(), OTID_STRUCT_PLAYER_ID);
                 SetBoxMonIVs(&boxMon, USE_RANDOM_IVS);
                 GiveBoxMonInitialMoveset(&boxMon);
@@ -4201,81 +4199,8 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_VS_RIVAL)                 \
     X(MUS_VS_ELITE_FOUR)            \
     X(MUS_VS_AQUA_MAGMA_LEADER)     \
-    X(MUS_RG_FOLLOW_ME)             \
-    X(MUS_RG_GAME_CORNER)           \
-    X(MUS_RG_ROCKET_HIDEOUT)        \
-    X(MUS_RG_GYM)                   \
-    X(MUS_RG_JIGGLYPUFF)            \
-    X(MUS_RG_INTRO_FIGHT)           \
-    X(MUS_RG_TITLE)                 \
-    X(MUS_RG_CINNABAR)              \
-    X(MUS_RG_LAVENDER)              \
-    X(MUS_RG_HEAL)                  \
-    X(MUS_RG_CYCLING)               \
-    X(MUS_RG_ENCOUNTER_ROCKET)      \
-    X(MUS_RG_ENCOUNTER_GIRL)        \
-    X(MUS_RG_ENCOUNTER_BOY)         \
-    X(MUS_RG_HALL_OF_FAME)          \
-    X(MUS_RG_VIRIDIAN_FOREST)       \
-    X(MUS_RG_MT_MOON)               \
-    X(MUS_RG_POKE_MANSION)          \
-    X(MUS_RG_CREDITS)               \
-    X(MUS_RG_ROUTE1)                \
-    X(MUS_RG_ROUTE24)               \
-    X(MUS_RG_ROUTE3)                \
-    X(MUS_RG_ROUTE11)               \
-    X(MUS_RG_VICTORY_ROAD)          \
-    X(MUS_RG_VS_GYM_LEADER)         \
-    X(MUS_RG_VS_TRAINER)            \
-    X(MUS_RG_VS_WILD)               \
-    X(MUS_RG_VS_CHAMPION)           \
-    X(MUS_RG_PALLET)                \
-    X(MUS_RG_OAK_LAB)               \
-    X(MUS_RG_OAK)                   \
-    X(MUS_RG_POKE_CENTER)           \
-    X(MUS_RG_SS_ANNE)               \
-    X(MUS_RG_SURF)                  \
-    X(MUS_RG_POKE_TOWER)            \
-    X(MUS_RG_SILPH)                 \
-    X(MUS_RG_FUCHSIA)               \
-    X(MUS_RG_CELADON)               \
-    X(MUS_RG_VICTORY_TRAINER)       \
-    X(MUS_RG_VICTORY_WILD)          \
-    X(MUS_RG_VICTORY_GYM_LEADER)    \
-    X(MUS_RG_VERMILLION)            \
-    X(MUS_RG_PEWTER)                \
-    X(MUS_RG_ENCOUNTER_RIVAL)       \
-    X(MUS_RG_RIVAL_EXIT)            \
-    X(MUS_RG_DEX_RATING)            \
-    X(MUS_RG_OBTAIN_KEY_ITEM)       \
-    X(MUS_RG_CAUGHT_INTRO)          \
-    X(MUS_RG_PHOTO)                 \
-    X(MUS_RG_GAME_FREAK)            \
-    X(MUS_RG_CAUGHT)                \
-    X(MUS_RG_NEW_GAME_INSTRUCT)     \
-    X(MUS_RG_NEW_GAME_INTRO)        \
-    X(MUS_RG_NEW_GAME_EXIT)         \
-    X(MUS_RG_POKE_JUMP)             \
-    X(MUS_RG_UNION_ROOM)            \
-    X(MUS_RG_NET_CENTER)            \
-    X(MUS_RG_MYSTERY_GIFT)          \
-    X(MUS_RG_BERRY_PICK)            \
-    X(MUS_RG_SEVII_CAVE)            \
-    X(MUS_RG_TEACHY_TV_SHOW)        \
-    X(MUS_RG_SEVII_ROUTE)           \
-    X(MUS_RG_SEVII_DUNGEON)         \
-    X(MUS_RG_SEVII_123)             \
-    X(MUS_RG_SEVII_45)              \
-    X(MUS_RG_SEVII_67)              \
-    X(MUS_RG_POKE_FLUTE)            \
-    X(MUS_RG_VS_DEOXYS)             \
-    X(MUS_RG_VS_MEWTWO)             \
-    X(MUS_RG_VS_LEGEND)             \
-    X(MUS_RG_ENCOUNTER_GYM_LEADER)  \
-    X(MUS_RG_ENCOUNTER_DEOXYS)      \
-    X(MUS_RG_TRAINER_TOWER)         \
-    X(MUS_RG_SLOW_PALLET)           \
-    X(MUS_RG_TEACHY_TV_MENU)
+    X(MUS_VG_TEST)                  \
+    X(MUS_ROUTE_C_THROUGHTHEWINDOW)
 
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \

@@ -578,7 +578,6 @@ static void Task_StartPokemonJump(u8 taskId)
     case 2:
         if (!IsPokeJumpGfxFuncFinished() && IsNotWaitingForBGMStop() == TRUE)
         {
-            FadeOutAndPlayNewMapMusic(MUS_RG_POKE_JUMP, 8);
             sPokemonJump->mainState++;
         }
         break;
