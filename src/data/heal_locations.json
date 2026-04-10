@@ -5,6 +5,12 @@
       "map": "MAP_JUNOPOLIS_CITY",
       "x": 29,
       "y": 50
+    },
+    {
+      "id": "HEAL_LOCATION_CANVENUS_CITY",
+      "map": "MAP_CANVENUS_CITY",
+      "x": 24,
+      "y": 25
     }
   ]
 }

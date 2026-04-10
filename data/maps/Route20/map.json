@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_JUNOPOLIS_CITY",
+      "map": "MAP_ROUTE19",
       "offset": 0,
       "direction": "up"
     },
     {
-      "map": "MAP_ROUTE12",
-      "offset": -72,
-      "direction": "down"
+      "map": "MAP_JUNOPOLIS_CITY",
+      "offset": -24,
+      "direction": "right"
     }
   ],
   "object_events": [],

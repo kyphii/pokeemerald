@@ -40,7 +40,7 @@
       "width": 48,
       "height": 48,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Lilycove",
+      "secondary_tileset": "gTileset_Fallarbor",
       "border_filepath": "data/layouts/PeriwindCity/border.bin",
       "blockdata_filepath": "data/layouts/PeriwindCity/map.bin",
       "layout_version": "emerald"
@@ -157,7 +157,7 @@
     {
       "id": "LAYOUT_ROUTE12",
       "name": "Route12_Layout",
-      "width": 144,
+      "width": 96,
       "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
@@ -166,21 +166,30 @@
       "layout_version": "emerald"
     },
     {
+      "id": "LAYOUT_ROUTE14",
+      "name": "Route14_Layout",
+      "width": 24,
+      "height": 120,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/Route14/border.bin",
+      "blockdata_filepath": "data/layouts/Route14/map.bin"
+    },
+    {
       "id": "LAYOUT_ROUTE15",
       "name": "Route15_Layout",
-      "width": 24,
-      "height": 96,
+      "width": 120,
+      "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/Route15/border.bin",
-      "blockdata_filepath": "data/layouts/Route15/map.bin",
-      "layout_version": "emerald"
+      "blockdata_filepath": "data/layouts/Route15/map.bin"
     },
     {
       "id": "LAYOUT_ROUTE16",
-      "name": "Route16_Layout",
+      "name": "Route15_Layout",
       "width": 24,
-      "height": 120,
+      "height": 144,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/Route16/border.bin",
@@ -190,8 +199,8 @@
     {
       "id": "LAYOUT_ROUTE17",
       "name": "Route17_Layout",
-      "width": 96,
-      "height": 24,
+      "width": 24,
+      "height": 120,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/Route17/border.bin",
@@ -201,10 +210,10 @@
     {
       "id": "LAYOUT_ROUTE18",
       "name": "Route18_Layout",
-      "width": 24,
-      "height": 72,
+      "width": 96,
+      "height": 24,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Rustboro",
+      "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/Route18/border.bin",
       "blockdata_filepath": "data/layouts/Route18/map.bin",
       "layout_version": "emerald"
@@ -212,10 +221,10 @@
     {
       "id": "LAYOUT_ROUTE19",
       "name": "Route19_Layout",
-      "width": 48,
-      "height": 24,
+      "width": 24,
+      "height": 72,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Route19/border.bin",
       "blockdata_filepath": "data/layouts/Route19/map.bin",
       "layout_version": "emerald"
@@ -223,12 +232,23 @@
     {
       "id": "LAYOUT_ROUTE20",
       "name": "Route20_Layout",
+      "width": 48,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/Route20/border.bin",
+      "blockdata_filepath": "data/layouts/Route20/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE21",
+      "name": "Route21_Layout",
       "width": 24,
       "height": 72,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
-      "border_filepath": "data/layouts/Route20/border.bin",
-      "blockdata_filepath": "data/layouts/Route20/map.bin",
+      "border_filepath": "data/layouts/Route21/border.bin",
+      "blockdata_filepath": "data/layouts/Route21/map.bin",
       "layout_version": "emerald"
     },
     {
@@ -469,6 +489,66 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/Route2_House/border.bin",
       "blockdata_filepath": "data/layouts/Route2_House/map.bin"
+    },
+    {
+      "id": "LAYOUT_DESERT_SANCTUARY",
+      "name": "DesertSanctuary_Layout",
+      "width": 72,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/DesertSanctuary/border.bin",
+      "blockdata_filepath": "data/layouts/DesertSanctuary/map.bin"
+    },
+    {
+      "id": "LAYOUT_PERIWIND_MEADOW",
+      "name": "PeriwindMeadow_Layout",
+      "width": 24,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/PeriwindMeadow/border.bin",
+      "blockdata_filepath": "data/layouts/PeriwindMeadow/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE13",
+      "name": "Route13_Layout",
+      "width": 48,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/Route13/border.bin",
+      "blockdata_filepath": "data/layouts/Route13/map.bin"
+    },
+    {
+      "id": "LAYOUT_GARDELLIN_ISLAND",
+      "name": "GardellinIsland_Layout",
+      "width": 48,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/GardellinIsland/border.bin",
+      "blockdata_filepath": "data/layouts/GardellinIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE23",
+      "name": "Route23_Layout",
+      "width": 144,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/Route23/border.bin",
+      "blockdata_filepath": "data/layouts/Route23/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE22",
+      "name": "Route22_Layout",
+      "width": 24,
+      "height": 96,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Route22/border.bin",
+      "blockdata_filepath": "data/layouts/Route22/map.bin"
     }
   ]
 }

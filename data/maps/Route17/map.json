@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_MARINACRE_TOWN",
-      "offset": -24,
-      "direction": "up"
+      "map": "MAP_ROUTE18",
+      "offset": 0,
+      "direction": "left"
     },
     {
-      "map": "MAP_ROUTE16",
+      "map": "MAP_ABALOVE_TOWN",
       "offset": 0,
-      "direction": "right"
+      "direction": "down"
     }
   ],
   "object_events": [],

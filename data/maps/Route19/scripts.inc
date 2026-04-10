@@ -1,2 +1,2 @@
-Route19_MapScripts::
+Route18_MapScripts::
 	.byte 0

@@ -912,3 +912,19 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Route11/scripts.inc"
 
 	.include "data/maps/Route2_House/scripts.inc"
+
+	.include "data/maps/DesertSanctuary/scripts.inc"
+
+	.include "data/maps/Route13/scripts.inc"
+
+	.include "data/maps/PeriwindMeadow/scripts.inc"
+
+	.include "data/maps/Route14/scripts.inc"
+
+	.include "data/maps/Route13/scripts.inc"
+
+	.include "data/maps/GardellinIsland/scripts.inc"
+
+	.include "data/maps/Route23/scripts.inc"
+
+	.include "data/maps/Route22/scripts.inc"

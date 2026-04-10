@@ -17,6 +17,11 @@
       "map": "MAP_CANVENUS_CITY",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_DESERT_SANCTUARY",
+      "offset": -24,
+      "direction": "up"
     }
   ],
   "object_events": [],

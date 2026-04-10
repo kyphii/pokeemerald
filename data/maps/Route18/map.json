@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE18",
   "name": "Route18",
   "layout": "LAYOUT_ROUTE18",
-  "music": "MUS_ROUTE_C_THROUGHTHEWINDOW",
+  "music": "MUS_ROUTE104",
   "region_map_section": "MAPSEC_ROUTE_18",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_NAUTIRUST_CITY",
-      "offset": 0,
+      "map": "MAP_MARINACRE_TOWN",
+      "offset": -24,
       "direction": "up"
     },
     {
-      "map": "MAP_ROUTE19",
+      "map": "MAP_ROUTE17",
       "offset": 0,
-      "direction": "down"
+      "direction": "right"
     }
   ],
   "object_events": [],
