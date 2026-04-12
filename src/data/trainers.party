@@ -81,6 +81,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 
+
 === TRAINER_ANABEL ===
 Name: ANABEL
 Class: Salon Maiden
@@ -93,6 +94,7 @@ AI: Basic Trainer
 Beldum
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 
 === TRAINER_TUCKER ===
 Name: TUCKER
@@ -107,6 +109,7 @@ Beldum
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+
 === TRAINER_SPENSER ===
 Name: SPENSER
 Class: Palace Maven
@@ -119,6 +122,7 @@ AI: Basic Trainer
 Beldum
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 
 === TRAINER_GRETA ===
 Name: GRETA
@@ -133,6 +137,7 @@ Beldum
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+
 === TRAINER_NOLAND ===
 Name: NOLAND
 Class: Factory Head
@@ -145,6 +150,7 @@ AI: Basic Trainer
 Beldum
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 
 === TRAINER_LUCY ===
 Name: LUCY
@@ -159,6 +165,7 @@ Beldum
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+
 === TRAINER_BRANDON ===
 Name: BRANDON
 Class: Pyramid King
@@ -171,6 +178,7 @@ AI: Basic Trainer
 Beldum
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 
 === TRAINER_RIVAL_INTRO_GRASS ===
 Name: Maya
@@ -185,6 +193,7 @@ Turtwig
 Level: 0
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+
 === TRAINER_RIVAL_INTRO_FIRE ===
 Name: Maya
 Class: Rival
@@ -198,6 +207,7 @@ Fennekin
 Level: 0
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+
 === TRAINER_RIVAL_INTRO_WATER ===
 Name: Maya
 Class: Rival
@@ -210,6 +220,7 @@ AI: Basic Trainer
 Popplio
 Level: 0
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 
 === TRAINER_ROUTE2_1 ===
 Name: Liam
@@ -238,7 +249,7 @@ Accelgor
 Level: -2
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Scolipede
+Escavalier
 Level: -1
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -256,4 +267,84 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Azumarill
 Level: -2
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+
+=== TRAINER_NAUTIRUST_FOREST_1 ===
+Name: Shane
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+AI: Check Bad Move
+
+Ledian
+Level: 0
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Dustox
+Level: -1
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+
+=== TRAINER_NAUTIRUST_FOREST_2 ===
+Name: Valerie
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
+AI: Check Bad Move
+
+Furret
+Level: -3
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+
+=== TRAINER_NAUTIRUST_FOREST_3 ===
+Name: Audrey
+Class: Lass
+Pic: Lass
+Gender: Female
+AI: Check Bad Move
+
+Ninetales
+Level: 0
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+
+=== TRAINER_NAUTIRUST_FOREST_4 ===
+Name: Kyle
+Class: Youngster
+Pic: Youngster
+Gender: Male
+AI: Check Bad Move
+
+Arbok
+Level: -1
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Skuntank
+Level: -1
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+
+=== TRAINER_NAUTIRUST_FOREST_5 ===
+Name: Garret
+Class: Camper
+Pic: Camper
+Gender: Male
+AI: Check Bad Move
+
+Shiftry
+Level: -2
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Ludicolo
+Level: -1
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Leavanny
+Level: -1
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Ursaring
+Level: 0
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe

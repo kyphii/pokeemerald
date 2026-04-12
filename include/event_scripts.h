@@ -659,6 +659,8 @@ extern const u8 EventScript_VsSeekerChargingDone[];
 extern const u8 Common_Movement_FollowerSafeStart[];
 extern const u8 Common_Movement_FollowerSafeEnd[];
 
+extern const u8 NautirustForest_Intro_RivalRacePath[];
+
 extern const u8 Common_Movement_WalkUpSlow[];
 extern const u8 Common_Movement_WalkDownSlow[];
 extern const u8 Common_Movement_WalkRightSlow[];

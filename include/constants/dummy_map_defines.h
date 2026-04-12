@@ -669,12 +669,8 @@
 #define MAP_ROUTE8                                           30746
 #define MAP_ROUTE9                                           30747
 #define MAP_ROUTE10                                          30748
-#define MAP_ROUTE13                                          30751
-#define MAP_ROUTE14                                          30752
 #define MAP_ROUTE21_NORTH                                    30759
 #define MAP_ROUTE21_SOUTH                                    30760
-#define MAP_ROUTE22                                          30761
-#define MAP_ROUTE23                                          30762
 #define MAP_ROUTE24                                          30763
 #define MAP_ROUTE25                                          30764
 #define MAP_ONE_ISLAND_KINDLE_ROAD                           30765

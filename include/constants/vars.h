@@ -268,9 +268,9 @@
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
 #define VAR_INTRO_SEQUENCE_STATE                         0x40F7
 #define VAR_RTC_OVERRIDE_HOUR                            0x40F8 // If set to value 1-25, override RTC time with (value - 1) as hour
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
+#define VAR_PERSIST_NPC                                  0x40F9 // If non-zero, prevent NPC with that localID from despawning offscreen
+#define VAR_MOVEMENT_PATH                                0x40FA // set as index to sMovementPathScriptIDs for Path movementtype
+#define VAR_MOVEMENT_PATH_PROGRESS                       0x40FB // incremented automatically
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var

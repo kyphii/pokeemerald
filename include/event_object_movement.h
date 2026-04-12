@@ -324,6 +324,7 @@ void MovementType_RunInPlace(struct Sprite *sprite);
 void MovementType_Invisible(struct Sprite *sprite);
 void MovementType_WalkSlowlyInPlace(struct Sprite *sprite);
 void MovementType_FollowPlayer(struct Sprite *sprite);
+void MovementType_Path(struct Sprite* sprite);
 u8 GetSlideMovementAction(u32);
 u8 GetJump2MovementAction(u32);
 u8 CopySprite(struct Sprite *sprite, s16 x, s16 y, u8 subpriority);
@@ -500,6 +501,10 @@ u8 MovementType_RunInPlace_Step0(struct ObjectEvent *objectEvent, struct Sprite 
 u8 MovementType_Invisible_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_Invisible_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_Invisible_Step2(struct ObjectEvent *objectEvent, struct Sprite *sprite);
+u8 MovementType_Path_Step0(struct ObjectEvent* objectEvent, struct Sprite* sprite);
+u8 MovementType_Path_Step1(struct ObjectEvent* objectEvent, struct Sprite* sprite);
+u8 MovementType_Path_Step2(struct ObjectEvent* objectEvent, struct Sprite* sprite);
+u8 MovementType_Path_Step3(struct ObjectEvent* objectEvent, struct Sprite* sprite);
 
 u8 CreateVirtualObject(u16 graphicsId, u8 virtualObjId, s16 x, s16 y, u8 elevation, enum Direction direction);
 void TurnVirtualObject(u8 virtualObjId, enum Direction direction);

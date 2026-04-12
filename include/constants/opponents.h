@@ -18,13 +18,13 @@
 #define TRAINER_ROUTE2_1        			  11
 #define TRAINER_ROUTE2_2			          12
 #define TRAINER_ROUTE2_3          			  13
+#define TRAINER_NAUTIRUST_FOREST_1        	  14
+#define TRAINER_NAUTIRUST_FOREST_2			  15
+#define TRAINER_NAUTIRUST_FOREST_3            16
+#define TRAINER_NAUTIRUST_FOREST_4			  17
+#define TRAINER_NAUTIRUST_FOREST_5            18
+#define TRAINERS_COUNT_EMERALD     19
 
-
-// NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
-//       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
-//       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
-
-#define TRAINERS_COUNT_EMERALD     14
 #define MAX_TRAINERS_COUNT_EMERALD 864
 
 #if IS_FRLG

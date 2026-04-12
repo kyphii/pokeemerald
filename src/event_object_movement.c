@@ -347,6 +347,7 @@ static void (*const sMovementTypeCallbacks[])(struct Sprite *) =
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = MovementType_FollowPlayer,
+    [MOVEMENT_TYPE_PATH] = MovementType_Path,
 };
 
 static const bool8 sMovementTypeHasRange[NUM_MOVEMENT_TYPES] = {
@@ -476,6 +477,7 @@ const u8 gInitialMovementTypeFacingDirections[NUM_MOVEMENT_TYPES] = {
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = DIR_WEST,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = DIR_EAST,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = DIR_SOUTH,
+    [MOVEMENT_TYPE_PATH] = DIR_SOUTH,
 };
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -1346,6 +1348,11 @@ static const u8 sPlayerDirectionToCopyDirection[][4] = {
         [DIR_WEST - 1]  = DIR_NORTH,
         [DIR_EAST - 1]  = DIR_SOUTH
     }
+};
+
+static const u8* sMovementPathScriptIDs[] = {
+    Common_Movement_FaceDown,
+    NautirustForest_Intro_RivalRacePath,
 };
 
 #include "data/object_events/movement_action_func_tables.h"
@@ -2942,7 +2949,7 @@ void RemoveObjectEventsOutsideView(void)
             // Followers should not go OOB, or their sprites may be freed early during a cross-map scripting event,
             // such as Wally's Ralts catch sequence
             if (objectEvent->active && !objectEvent->isPlayer && objectEvent->localId != OBJ_EVENT_ID_FOLLOWER
-             && objectEvent->localId != OBJ_EVENT_ID_NPC_FOLLOWER)
+             && objectEvent->localId != OBJ_EVENT_ID_NPC_FOLLOWER && objectEvent->localId != VarGet(VAR_PERSIST_NPC))
                 RemoveObjectEventIfOutsideView(objectEvent);
         }
     }
@@ -6184,6 +6191,57 @@ bool8 MovementType_Invisible_Step1(struct ObjectEvent *objectEvent, struct Sprit
 }
 
 bool8 MovementType_Invisible_Step2(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    objectEvent->singleMovementActive = FALSE;
+    return FALSE;
+}
+
+movement_type_def(MovementType_Path, gMovementTypeFuncs_Path)
+
+bool8 MovementType_Path_Step0(struct ObjectEvent* objectEvent, struct Sprite* sprite)
+{
+    ClearObjectEventMovement(objectEvent, sprite);
+    sprite->sTypeFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementType_Path_Step1(struct ObjectEvent* objectEvent, struct Sprite* sprite)
+{
+    u16 pathProgress = VarGet(VAR_MOVEMENT_PATH_PROGRESS);
+    const u8* movementPtr = sMovementPathScriptIDs[VarGet(VAR_MOVEMENT_PATH)];
+    movementPtr += pathProgress;
+
+    // Cancel motion at STEP_END or if an invalid value is reached
+    // 0xB5 = MOVEMENT_ACTION_SPIN_RIGHT
+    if (*movementPtr > 0xB5)
+    {
+        ClearObjectEventMovement(objectEvent, sprite);
+        // Send to a step that does nothing
+        sprite->sTypeFuncId = 3;
+    }
+    else
+    {
+        ObjectEventSetSingleMovement(objectEvent, sprite, *movementPtr);
+        objectEvent->singleMovementActive = TRUE;
+        sprite->sTypeFuncId = 2;
+
+        VarSet(VAR_MOVEMENT_PATH_PROGRESS, pathProgress + 1);
+    }
+    
+    return TRUE;
+}
+
+bool8 MovementType_Path_Step2(struct ObjectEvent* objectEvent, struct Sprite* sprite)
+{
+    if (ObjectEventExecSingleMovementAction(objectEvent, sprite))
+    {
+        objectEvent->singleMovementActive = FALSE;
+        sprite->sTypeFuncId = 1;
+    }
+    return FALSE;
+}
+
+bool8 MovementType_Path_Step3(struct ObjectEvent* objectEvent, struct Sprite* sprite)
 {
     objectEvent->singleMovementActive = FALSE;
     return FALSE;

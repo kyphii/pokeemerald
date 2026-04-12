@@ -29,8 +29,192 @@
       "direction": "left"
     }
   ],
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 27,
+      "y": 25,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CutTree",
+      "flag": "FLAG_TEMP_10"
+    },
+    {
+      "local_id": "LOCALID_WOODS_RIVAL",
+      "graphics_id": "OBJ_EVENT_GFX_RIVAL",
+      "x": 47,
+      "y": 0,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_PATH",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_INTRO_EXITED_WOODS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
+      "x": 40,
+      "y": 60,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "NautirustForest_Trainer_1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+      "x": 25,
+      "y": 41,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "NautirustForest_Trainer_2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "x": 28,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "NautirustForest_Trainer_3",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 7,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "5",
+      "script": "NautirustForest_Trainer_4",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "x": 13,
+      "y": 49,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "NautirustForest_Trainer_5",
+      "flag": "0"
+    }
+  ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 67,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "11",
+      "script": "NautirustForest_Intro_EndRace"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 67,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "11",
+      "script": "NautirustForest_Intro_EndRace"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 67,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "11",
+      "script": "NautirustForest_Intro_EndRace"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 68,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "10",
+      "script": "NautirustForest_Intro_EndFollower"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 68,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "10",
+      "script": "NautirustForest_Intro_EndFollower"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 68,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "10",
+      "script": "NautirustForest_Intro_EndFollower"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 71,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "10",
+      "script": "NautirustForest_Intro_FollowInterrupt"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 71,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "10",
+      "script": "NautirustForest_Intro_FollowInterrupt"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 69,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "12",
+      "script": "NautirustForest_Intro_FollowResume"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 69,
+      "elevation": 0,
+      "var": "VAR_INTRO_SEQUENCE_STATE",
+      "var_value": "12",
+      "script": "NautirustForest_Intro_FollowResume"
+    }
+  ],
   "bg_events": []
 }

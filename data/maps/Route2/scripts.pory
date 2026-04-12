@@ -1,4 +1,16 @@
-mapscripts Route2_MapScripts {}
+mapscripts Route2_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		switch (var(VAR_INTRO_SEQUENCE_STATE)) {
+			case 10:
+				setvar(VAR_INTRO_SEQUENCE_STATE, 12)
+			case 11:
+				setvar(VAR_INTRO_SEQUENCE_STATE, 13)
+				setvar(VAR_PERSIST_NPC, 0)
+			case 19:
+				clearflag(FLAG_INTRO_MET_BIGBAD)
+		}
+	}
+}
 
 script Route2_Talk_CutTreePerson {
 	applymovement(LOCALID_ROUTE2_CUTTREEGUY, Route2_Movement_CutTreeGuyJump)
@@ -107,7 +119,7 @@ script Route2_Intro_EnterForestScene {
     turnobject(LOCALID_HOMETOWN_RIVAL, DIR_SOUTH)
 	
 	msgbox(
-		"MAYA: …Maybe it's gonna take a while.",
+		"MAYA: …I think he's gonna take a while.",
 		MSGBOX_DEFAULT
 	)
 	closemessage
@@ -147,93 +159,70 @@ script Route2_Intro_EnterForestScene {
 		get to the city.",
 		MSGBOX_DEFAULT
 	)
+	closemessage
 	
+	setvar(VAR_INTRO_SEQUENCE_STATE, 9)
 	applymovement(LOCALID_ROUTE2_RIVAL, moves(
-		walk_up * 4
+		walk_up * 5
 		face_right
 	))
 	delay(10)
 	applymovement(LOCALID_PLAYER, moves(
-		walk_up * 4
+		walk_up * 5
 		face_left
 	))
 	waitmovement(0)
-	
-	msgbox(
-		"Well?
-		
-		What do you think we should do?"
-	)
-	dynmultichoice(16, 4, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
-		"Go together",
-		"Let's race"
-	)
-	switch(var(VAR_RESULT)) {
-        case 0: // setup follower
-            msgbox(
-                "Okay! Just lead the way!",
-                MSGBOX_DEFAULT
-            )
-        case 1: //setup race
-            msgbox(
-                "Oh, you know me too well, dude.
-				
-				Alright! First one out of the forest
-				wins!
-				
-				Ready? Let's go!",
-                MSGBOX_DEFAULT
-            )
-    }
-    closemessage
-	
-    setvar(VAR_INTRO_SEQUENCE_STATE, 9)
-	
-	releaseall
+	// Continued in Nautirust Forest
+	// Do not release
 }
 
 script Route2_Intro_MeetBigBadScene {
 	lockall
-	fadeoutbgm(3)
-	
+	addobject(LOCALID_ROUTE2_BIGBAD)
 	getplayerxy(VAR_0x8008, VAR_0x8009)
 	switch(var(VAR_0x8009)) {
 		case 11:
-			setobjectxyperm(LOCALID_ROUTE2_BIGBAD, -5, 12)
-			addobject(LOCALID_ROUTE2_BIGBAD)
 			applymovement(LOCALID_ROUTE2_BIGBAD, moves(
-				walk_right * 11
+				walk_right * 10
 				delay_16 * 2
 				walk_left * 2
 				face_up
 			))
+			fadeoutbgm(2)
+			delay(120)
+			turnobject(LOCALID_PLAYER, DIR_SOUTH)
 		case 12:
-			setobjectxyperm(LOCALID_ROUTE2_BIGBAD, -5, 13)
-			addobject(LOCALID_ROUTE2_BIGBAD)
 			applymovement(LOCALID_ROUTE2_BIGBAD, moves(
-				walk_right * 11
+				walk_down
+				walk_right * 10
 				delay_16 * 2
 				walk_left * 2
 				face_up
 			))
+			fadeoutbgm(2)
+			delay(120)
+			turnobject(LOCALID_PLAYER, DIR_SOUTH)
 		case 13:
-			setobjectxyperm(LOCALID_ROUTE2_BIGBAD, -5, 12)
-			addobject(LOCALID_ROUTE2_BIGBAD)
 			applymovement(LOCALID_ROUTE2_BIGBAD, moves(
-				walk_right * 11
+				walk_right * 10
 				delay_16 * 2
 				walk_left * 2
 				face_down
 			))
+			fadeoutbgm(2)
+			delay(120)
+			turnobject(LOCALID_PLAYER, DIR_NORTH)
 		case 14:
-			setobjectxyperm(LOCALID_ROUTE2_BIGBAD, -5, 13)
-			addobject(LOCALID_ROUTE2_BIGBAD)
 			applymovement(LOCALID_ROUTE2_BIGBAD, moves(
-				walk_right * 11
+				walk_down
+				walk_right * 10
 				delay_16 * 2
 				walk_left * 2
 				face_down
 			))
+			fadeoutbgm(2)
+			delay(120)
+			turnobject(LOCALID_PLAYER, DIR_NORTH)
 	}
 	waitmovement(0)
 	
@@ -350,11 +339,10 @@ script Route2_Intro_MeetBigBadScene {
 		walk_up * 7
 	))
 	waitmovement(0)
-	setobjectxyperm(LOCALID_ROUTE2_BIGBAD, 48, 48)
 	removeobject(LOCALID_ROUTE2_BIGBAD)
 	
 	setflag(FLAG_INTRO_MET_BIGBAD)
-    setvar(VAR_INTRO_SEQUENCE_STATE, 11)
+    setvar(VAR_INTRO_SEQUENCE_STATE, 20)
 	
     fadeinbgm(1)
 	releaseall

@@ -187,7 +187,7 @@
     },
     {
       "id": "LAYOUT_ROUTE16",
-      "name": "Route15_Layout",
+      "name": "Route16_Layout",
       "width": 24,
       "height": 144,
       "primary_tileset": "gTileset_General",
@@ -526,7 +526,7 @@
       "width": 48,
       "height": 24,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mossdeep",
+      "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/GardellinIsland/border.bin",
       "blockdata_filepath": "data/layouts/GardellinIsland/map.bin"
     },

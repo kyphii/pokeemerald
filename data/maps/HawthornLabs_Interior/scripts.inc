@@ -104,7 +104,7 @@ HawthornLabs_Interior_Talk_Professor::
 # 145 "data/maps/HawthornLabs_Interior/scripts.pory"
 	faceplayer
 # 146 "data/maps/HawthornLabs_Interior/scripts.pory"
-	compare VAR_INTRO_SEQUENCE_STATE, 9
+	compare VAR_INTRO_SEQUENCE_STATE, 20
 	goto_if_lt HawthornLabs_Interior_Talk_Professor_2
 HawthornLabs_Interior_Talk_Professor_1:
 # 157 "data/maps/HawthornLabs_Interior/scripts.pory"

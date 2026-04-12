@@ -1,0 +1,569 @@
+mapscripts NautirustForest_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		switch (var(VAR_INTRO_SEQUENCE_STATE)) {
+			case 12:
+				clearflag(FLAG_INTRO_EXITED_WOODS)
+				setobjectxyperm(LOCALID_WOODS_RIVAL, 28, 65)
+				addobject(LOCALID_WOODS_RIVAL)
+			case 13:
+				clearflag(FLAG_INTRO_EXITED_WOODS)
+				setobjectxyperm(LOCALID_WOODS_RIVAL, 9, 68)
+				setvar(VAR_MOVEMENT_PATH_PROGRESS, 250)
+				setvar(VAR_INTRO_SEQUENCE_STATE, 11)
+		}
+	}
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_INTRO_SEQUENCE_STATE, 9 {
+			call(NautirustForest_Intro_RivalFollowOrRace)
+		}
+	]
+}
+
+// STATES REFERENCE
+// 9: Entering forest for first time. Cue dialog to decide whether follow or race
+// 10: Maya follower active. If map is reloaded, cancel race with auto player loss
+// 11: Maya race active.
+// 12: Maya follower interrupted - rejoin at entrance
+// 19: Forest sequence completed.
+
+script NautirustForest_Intro_RivalFollowOrRace {
+	addplayerlevel(1)
+
+	turnobject(LOCALID_WOODS_RIVAL, DIR_EAST)
+	setobjectxyperm(LOCALID_WOODS_RIVAL, 28, 71)
+	addobject(LOCALID_WOODS_RIVAL)
+	turnobject(LOCALID_WOODS_RIVAL, DIR_EAST)
+	lockall
+	
+	delay(5)
+	removeobject(LOCALID_ROUTE2_RIVAL, MAP_ROUTE2)
+	
+	msgbox(
+		"Well?
+		
+		What do you think we should do?"
+	)
+	dynmultichoice(16, 4, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+		"Go together",
+		"Let's race"
+	)
+	switch(var(VAR_RESULT)) {
+        case 0: // setup follower
+            msgbox(
+                "Okay! Just lead the way!",
+                MSGBOX_DEFAULT
+            )
+			closemessage
+			
+			applymovement(LOCALID_PLAYER, moves(
+				walk_up * 2
+			))
+			applymovement(LOCALID_WOODS_RIVAL, moves (
+				walk_right
+				walk_up
+			))
+			
+			waitmovement(0)
+			setvar(VAR_INTRO_SEQUENCE_STATE, 10)
+			goto(NautirustForest_Intro_SetupRivalFollower)
+        case 1: //setup race
+            msgbox(
+                "Oh, you know me too well, dude.",
+                MSGBOX_DEFAULT
+            )
+			turnobject(LOCALID_PLAYER, DIR_NORTH)
+			turnobject(LOCALID_WOODS_RIVAL, DIR_NORTH)
+			
+			msgbox(
+                "Alright! First one out of the forest
+				wins!
+				
+				Ready? On three!",
+                MSGBOX_DEFAULT
+            )
+			message(
+				"…{PAUSE 10}…{PAUSE 10}…{PAUSE 30}Three!"
+			)
+			delay(70)
+			setvar(VAR_INTRO_SEQUENCE_STATE, 11)
+			// Set path from sMovementPathScriptIDs
+			setvar(VAR_MOVEMENT_PATH_PROGRESS, 0)
+			setvar(VAR_MOVEMENT_PATH, 1)
+			// Prevent NPC from despawning offscreen
+			setvar(VAR_PERSIST_NPC, LOCALID_WOODS_RIVAL)
+			// Release rival NPC first
+			releaseall
+			waitmessage
+			closemessage
+    }
+}
+
+script NautirustForest_Intro_SetupRivalFollower {
+	
+	switch(var(VAR_STARTER_MON)) {
+		case 0: // player picked grass
+			setfollowernpc(LOCALID_WOODS_RIVAL, FNPC_WHITE_OUT, NautirustForest_Intro_TalkRivalFollower, PARTNER_INTRO_RIVAL_FIRE)
+		case 1: // player picked fire
+			setfollowernpc(LOCALID_WOODS_RIVAL, FNPC_WHITE_OUT, NautirustForest_Intro_TalkRivalFollower, PARTNER_INTRO_RIVAL_WATER)
+		case 2: // player picked water
+			setfollowernpc(LOCALID_WOODS_RIVAL, FNPC_WHITE_OUT, NautirustForest_Intro_TalkRivalFollower, PARTNER_INTRO_RIVAL_GRASS)
+		}
+	releaseall
+}
+
+script NautirustForest_Intro_TalkRivalFollower {
+	msgbox(
+		"MAYA: Doing okay?"
+	)
+}
+
+script NautirustForest_Intro_FollowInterrupt {
+	lockall
+	facefollowernpc
+	msgbox(
+        "MAYA: Oh?
+		Do you have to go back?
+		
+		I'll just wait here, okay?",
+        MSGBOX_DEFAULT
+    )
+	closemessage
+	
+	getplayerxy(VAR_0x8008, VAR_0x8009)
+	if (var(VAR_0x8008) == 28) {
+		setobjectxyperm(LOCALID_WOODS_RIVAL, 28, 70)
+		destroyfollowernpc
+		addobject(LOCALID_WOODS_RIVAL)
+		lockall
+		applymovement(LOCALID_WOODS_RIVAL, moves(
+			walk_up * 5
+			face_down
+		))
+	}
+	else {
+		setobjectxyperm(LOCALID_WOODS_RIVAL, 29, 70)
+		destroyfollowernpc
+		addobject(LOCALID_WOODS_RIVAL)
+		lockall
+		applymovement(LOCALID_WOODS_RIVAL, moves(
+			walk_left
+			walk_up * 5
+			face_down
+		))
+	}
+	waitmovement(0)
+	setobjectxyperm(LOCALID_WOODS_RIVAL, 27, 68)
+	setvar(VAR_INTRO_SEQUENCE_STATE, 12)
+	releaseall
+}
+
+script NautirustForest_Intro_FollowResume {
+	lockall
+	applymovement(LOCALID_PLAYER, moves(
+		walk_up * 2
+	))
+	waitmovement(0)
+	turnobject(LOCALID_WOODS_RIVAL, DIR_SOUTH)
+	msgbox(
+        "MAYA: There you are!
+		All good?
+		
+		C'mon, let's get going already!",
+        MSGBOX_DEFAULT
+    )
+	closemessage
+	getplayerxy(VAR_0x8008, VAR_0x8009)
+	if (var(VAR_0x8008) == 28) {
+		applymovement(LOCALID_WOODS_RIVAL, moves(
+			walk_down
+		))
+	}
+	else {
+		applymovement(LOCALID_WOODS_RIVAL, moves(
+			walk_down * 2
+			face_right
+		))
+	}
+	waitmovement(0)
+	setvar(VAR_INTRO_SEQUENCE_STATE, 10)
+	goto(NautirustForest_Intro_SetupRivalFollower)
+}
+
+script NautirustForest_Intro_EndFollower {
+	getplayerxy(VAR_0x8008, VAR_0x8009)
+	switch (var(VAR_0x8008)) {
+		case 8:
+			setobjectxyperm(LOCALID_WOODS_RIVAL, 8, 67)
+		case 9:
+			setobjectxyperm(LOCALID_WOODS_RIVAL, 9, 67)
+		case 10:
+			setobjectxyperm(LOCALID_WOODS_RIVAL, 10, 67)
+	}
+
+	destroyfollowernpc
+	addobject(LOCALID_WOODS_RIVAL)
+	
+	lockall
+	turnobject(LOCALID_WOODS_RIVAL, DIR_SOUTH)
+	applymovement(LOCALID_WOODS_RIVAL, Common_Movement_ExclamationMark)
+    waitmovement(0)
+	delay(60)
+	msgbox(
+        "MAYA: Look! There's the exit!",
+        MSGBOX_DEFAULT
+    )
+	
+	if (var(VAR_0x8008) == 8) {
+		applymovement(LOCALID_WOODS_RIVAL, moves(
+			walk_right
+			walk_down * 2
+		))
+	}
+	else {
+		applymovement(LOCALID_WOODS_RIVAL, moves(
+			walk_left
+			walk_down * 2
+		))
+	}
+	waitmovement(0)
+	
+	msgbox(
+		"We should be pretty close to 
+		the city now.
+		
+		This was good fun! Let's meet up on 
+		ahead, okay?",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	
+	setvar(VAR_INTRO_SEQUENCE_STATE, 19)
+
+	applymovement(LOCALID_WOODS_RIVAL, NautirustForest_Intro_RivalExit)
+	waitmovement(0)
+	
+	removeobject(LOCALID_WOODS_RIVAL)
+	closemessage
+}
+
+script NautirustForest_Intro_EndRace {
+	if (var(VAR_MOVEMENT_PATH_PROGRESS) >= 247) {
+		//Player lost race
+		lockall
+		turnobject(LOCALID_WOODS_RIVAL, DIR_NORTH)
+		
+		msgbox(
+            "MAYA: Hah! Too slow!",
+            MSGBOX_DEFAULT
+        )
+		closemessage
+		applymovement(LOCALID_WOODS_RIVAL, moves(
+			walk_in_place_down
+		))
+		waitmovement(0)
+		msgbox(
+            "MAYA: Look, the way out is just up
+			ahead.
+			
+			No time to waste! I hope you're not out
+			of breath!",
+            MSGBOX_DEFAULT
+        )
+	}
+	else {
+		// Player won race
+		// move player out of the way
+		getplayerxy(VAR_0x8008, VAR_0x8009)
+		switch(var(VAR_0x8008)) {
+			case 8:
+				applymovement(LOCALID_PLAYER, moves(
+					walk_down * 2
+					walk_right
+					face_up
+				))
+			case 9:
+				applymovement(LOCALID_PLAYER, moves(
+					walk_down * 2
+					face_up
+				))
+			case 10:
+				applymovement(LOCALID_PLAYER, moves(
+					walk_down * 2
+					walk_left
+					face_up
+				))
+		}
+		
+		setvar(VAR_INTRO_SEQUENCE_STATE, 19)
+		if (var(VAR_MOVEMENT_PATH_PROGRESS) >= 232) {
+			// Close race - allow rival to finish movement
+			waitmovement(0)
+			while (var(VAR_MOVEMENT_PATH_PROGRESS) < 247) {
+				delay(16)
+			}
+			lockall
+			msgbox(
+				"MAYA: And FINISH!
+				
+				Wow, that was close, huh?",
+				MSGBOX_DEFAULT
+			)
+		}
+		else {
+			setvar(VAR_PERSIST_NPC, 0)
+			// Move rival closer
+			lockall
+			setobjectxyperm(LOCALID_WOODS_RIVAL, 10, 60)
+			removeobject(LOCALID_WOODS_RIVAL)
+			clearflag(FLAG_INTRO_EXITED_WOODS)
+			addobject(LOCALID_WOODS_RIVAL)
+			applymovement(LOCALID_WOODS_RIVAL, moves(
+				walk_down * 2
+				delay_16
+				walk_down * 2
+				delay_16
+				walk_left
+				walk_down
+				delay_16
+				walk_down * 2
+				
+			))
+			waitmovement(0)
+			msgbox(
+				"MAYA: …Huff… huff…
+				
+				Wow, you're a machine!
+				That was so fast!",
+				MSGBOX_DEFAULT
+			)
+		}
+		setvar(VAR_PERSIST_NPC, 0)
+		msgbox(
+			"Hah, what a rush!
+			
+			And to the victor go the spoils!
+			Here, I picked this up along the way.
+			
+			Go ahead, take it!",
+			MSGBOX_DEFAULT
+		)
+		giveitem(ITEM_QUICK_CLAW, 1)
+		applymovement(LOCALID_WOODS_RIVAL, moves(
+			walk_left
+			walk_down * 2
+		))
+		waitmovement(0)
+		turnobject(LOCALID_PLAYER, DIR_SOUTH)
+		msgbox(
+			"Anyways, we should be pretty close to
+			the city now.",
+			MSGBOX_DEFAULT
+		)
+		turnobject(LOCALID_WOODS_RIVAL, DIR_NORTH)
+		msgbox(
+			"Let's keep going! Try not to leave
+			me totally in your dust, okay?"
+		)
+	}
+	
+	closemessage
+	setvar(VAR_INTRO_SEQUENCE_STATE, 19)
+
+	setvar(VAR_MOVEMENT_PATH_PROGRESS, 0)
+	setvar(VAR_MOVEMENT_PATH, 0)
+
+	applymovement(LOCALID_WOODS_RIVAL, NautirustForest_Intro_RivalExit)
+	waitmovement(0)
+	
+	removeobject(LOCALID_WOODS_RIVAL)
+
+	releaseall
+}
+
+script NautirustForest_Trainer_1 {
+	trainerbattle_single(
+		TRAINER_NAUTIRUST_FOREST_1,
+		//Intro
+		"Hah!
+		Caught you!", 
+		//On Defeat
+		"I got caught out!")
+
+	// Post battle
+	msgbox(
+		"Found any cool bugs in the forest?",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script NautirustForest_Trainer_2 {
+	trainerbattle_single(
+		TRAINER_NAUTIRUST_FOREST_2,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"I lost my friend in the grass.
+		Have you seen her anywhere?",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script NautirustForest_Trainer_3 {
+	trainerbattle_single(
+		TRAINER_NAUTIRUST_FOREST_3,
+		//Intro
+		"Eek!
+		Something's rustling!", 
+		//On Defeat
+		"Oh, it's just a person…")
+
+	// Post battle
+	msgbox(
+		"Eek!
+		Don't scare me like that!",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script NautirustForest_Trainer_4 {
+	trainerbattle_single(
+		TRAINER_NAUTIRUST_FOREST_4,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script NautirustForest_Trainer_5 {
+	trainerbattle_single(
+		TRAINER_NAUTIRUST_FOREST_5,
+		//Intro
+		"", 
+		//On Defeat
+		"")
+
+	// Post battle
+	msgbox(
+		"",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+movement NautirustForest_Intro_RivalExit {
+	walk_fast_down * 7
+}
+
+movement(global) NautirustForest_Intro_RivalRacePath {
+	walk_fast_up * 8
+	walk_fast_right * 3
+
+	delay_16
+	face_right
+	delay_16
+	face_up
+	delay_16
+
+	walk_fast_up * 3
+	walk_up * 5
+	walk_right * 4
+	walk_fast_right * 4
+	walk_fast_up * 9
+	walk_fast_left * 3
+	walk_fast_up * 2
+	walk_fast_left * 12
+	walk_fast_up * 2
+	walk_fast_left * 2
+	walk_fast_up * 3
+	walk_up
+
+	emote_exclamation_mark
+	delay_16 * 4
+	jump_in_place_up * 2
+	delay_16
+	jump_in_place_up * 2
+	delay_16
+	jump_in_place_up * 2
+	delay_16
+
+	walk_up * 2
+	walk_fast_up
+	walk_up * 2
+	walk_right * 3
+	walk_fast_right * 2
+	walk_fast_up * 5
+	walk_fast_right * 4
+	walk_right * 4
+	walk_up * 5
+	walk_fast_up * 2
+	walk_up * 6
+	walk_fast_up * 3
+	walk_fast_left * 2
+	
+	delay_16
+	face_up
+	delay_16
+	face_left
+	delay_16
+	face_up
+	delay_16 * 2
+	
+	walk_fast_left * 4
+	walk_left * 2
+	walk_down * 4
+	walk_left
+	walk_down * 3
+	walk_left * 3
+	walk_fast_left * 6
+	walk_left * 3
+	walk_down
+	
+	emote_exclamation_mark
+	delay_16 * 4
+	jump_in_place_down * 2
+	delay_16
+	jump_in_place_down * 2
+	delay_16
+	jump_in_place_down * 2
+	delay_16
+	
+	walk_down * 4
+	walk_left * 2
+	walk_fast_left * 2
+	walk_fast_down * 4
+	walk_fast_left * 5
+	walk_fast_down * 5
+	
+	walk_down * 3
+	walk_right
+	walk_down
+	walk_fast_down * 3
+	walk_down * 2
+	walk_right * 3
+	walk_down * 3
+	walk_fast_right * 3
+	
+	walk_fast_down
+	walk_fast_right * 4
+	walk_fast_down * 2
+	walk_fast_right
+	walk_fast_down * 4
+	walk_fast_left * 3
+	walk_fast_down
+	walk_fast_left
+	walk_fast_down
+	walk_fast_left * 3
+	
+	walk_fast_down * 10
+	walk_fast_left
+	walk_fast_down * 4
+}

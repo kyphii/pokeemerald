@@ -229,6 +229,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_NAUTIRUST_FOREST",
+          "base_label": "gNautirustForest",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 65,
+                "species": "SPECIES_SHIFTRY"
+              },
+              {
+                "min_level": 2,
+                "max_level": 65,
+                "species": "SPECIES_GREEDENT"
+              },
+              {
+                "min_level": 2,
+                "max_level": 65,
+                "species": "SPECIES_ACCELGOR"
+              },
+              {
+                "min_level": 2,
+                "max_level": 65,
+                "species": "SPECIES_ESCAVALIER"
+              },
+              {
+                "min_level": 2,
+                "max_level": 65,
+                "species": "SPECIES_ARBOK"
+              },
+              {
+                "min_level": 2,
+                "max_level": 65,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 2,
+                "max_level": 65,
+                "species": "SPECIES_NINETALES"
+              },
+              {
+                "min_level": 2,
+                "max_level": 65,
+                "species": "SPECIES_SKUNTANK"
+              },
+              {
+                "min_level": 2,
+                "max_level": 65,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 65,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 2,
+                "max_level": 65,
+                "species": "SPECIES_PINSIR"
+              },
+              {
+                "min_level": 2,
+                "max_level": 65,
+                "species": "SPECIES_PINSIR"
+              }
+            ]
+          }
         }
       ]
     },
