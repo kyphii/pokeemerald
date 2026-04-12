@@ -67,7 +67,10 @@ u8 DynamicScaleGetSpeciesEvolveLevel(u16 inputSpecies, struct Evolution evolutio
     {
         case EVO_LEVEL:
         case EVO_LEVEL_BATTLE_ONLY:
-            return evolution.param;
+            if (evolution.param != 0) {
+                return evolution.param;
+            }
+            // Else continue
         default:
             // For non-leveled evolutions, guesstimate "ideal" evolution level based on first form's BST
             return GetTotalBaseStat(inputSpecies) / 11;
