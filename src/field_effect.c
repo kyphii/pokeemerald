@@ -991,7 +991,7 @@ u8 CreateTrainerSprite(u8 trainerSpriteID, s16 x, s16 y, u8 subpriority, u8 *buf
     }
 
     // DYNPAL: override palette
-    if (trainerSpriteID == TRAINER_PIC_FRONT_BRENDAN || trainerSpriteID == TRAINER_PIC_FRONT_MAY)
+    if (trainerSpriteID == TRAINER_PIC_FRONT_PROTAG_M || trainerSpriteID == TRAINER_PIC_FRONT_PROTAG_F)
     {
         DynPal_LoadPaletteByTag(sDynPalPlayerBattleFront, gTrainerSprites[trainerSpriteID].palette.tag);
     }

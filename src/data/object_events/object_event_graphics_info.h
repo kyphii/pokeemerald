@@ -4467,9 +4467,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ApricornTree = {
     .images = sPicTable_ApricornTree,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rival = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Maya = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_RIVAL,
+    .paletteTag = OBJ_EVENT_PAL_TAG_MAYA,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -4482,7 +4482,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rival = {
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_Rival,
+    .images = sPicTable_Maya,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
@@ -4502,6 +4502,25 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StarterBag = {
     .subspriteTables = sOamTables_16x16,
     .anims = sAnimTable_Inanimate,
     .images = sPicTable_StarterBag,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfHawthorn = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_PROF_HAWTHORN,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_ProfHawthorn,
+    .affineAnims = gDummySpriteAffineAnimTable,
 };
 
 #if IS_FRLG

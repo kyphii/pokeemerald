@@ -208,15 +208,27 @@ static void DynPal_InitBattleFront(u16* dest, const u16* skinPalData, const u16*
 
 static void DynPal_InitBattleBack(u16* dest, const u16* skinPalData, const u16* hairPalData, const u16* clothesPalData, int groupOffset)
 {
-    DynPal_InitOverworld(dest, skinPalData, hairPalData, clothesPalData, groupOffset);
-    // extra outline color for clothes
-    DynPal_CopySection(clothesPalData, dest, 3, 2, groupOffset, 1);
+    //0 transparent
+    //1-1 skin
+    DynPal_CopySection(skinPalData, dest, 1, 1, groupOffset, 1);
+    //2-3 skin
+    DynPal_CopySection(skinPalData, dest, 3, 2, groupOffset, 2);
+    //5-6 hair 1
+    DynPal_CopySection(hairPalData, dest, 1, 4, groupOffset, 2);
+    //7 hair 2
+    DynPal_CopySection(hairPalData, dest, 4, 6, groupOffset, 1);
+    //8-9 shirt
+    DynPal_CopySection(clothesPalData, dest, 1, 7, groupOffset, 3);
+    //10-11 bag
+    DynPal_CopySection(clothesPalData, dest, 4, 10, groupOffset, 2);
+    //12-15 greyscale
+    DynPal_CopySection(sDynPal_Base, dest, 1, 12, groupOffset, 4);
 }
 
 void DynPal_LoadIntroToneIndices()
 {
-    DynPal_ReloadPlayerPaletteForMenu(TRAINER_PIC_FRONT_BRENDAN, 0, 4, 1);
-    DynPal_ReloadPlayerPaletteForMenu(TRAINER_PIC_FRONT_MAY, 0, 4, 1);
+    DynPal_ReloadPlayerPaletteForMenu(TRAINER_PIC_FRONT_PROTAG_M, 0, 4, 1);
+    DynPal_ReloadPlayerPaletteForMenu(TRAINER_PIC_FRONT_PROTAG_F, 0, 4, 1);
 }
 
 // Copies <numberOfColors> values from the ROM palette <src>, to dynamic palette <dest>

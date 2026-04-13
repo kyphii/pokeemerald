@@ -27,7 +27,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_HOMETOWN_RIVAL",
-      "graphics_id": "OBJ_EVENT_GFX_RIVAL",
+      "graphics_id": "OBJ_EVENT_GFX_MAYA",
       "x": 0,
       "y": 41,
       "elevation": 0,
