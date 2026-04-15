@@ -1,0 +1,36 @@
+{
+  "id": "MAP_BLEAKROCK_PASS",
+  "name": "BleakrockPass",
+  "layout": "LAYOUT_BLEAKROCK_PASS",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_BLEAKROCK_PASS",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_WHELCHORD_CITY",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE5",
+      "offset": 24,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE6",
+      "offset": -72,
+      "direction": "down"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

@@ -917,3 +917,17 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
 
+
+	.include "data/maps/ArmiterCity/scripts.inc"
+
+	.include "data/maps/Route7/scripts.inc"
+
+	.include "data/maps/Route26/scripts.inc"
+
+	.include "data/maps/BleakrockPass/scripts.inc"
+
+	.include "data/maps/RiverviewPark/scripts.inc"
+
+	.include "data/maps/WitchlightWoods/scripts.inc"
+
+	.include "data/maps/VersifiersPond/scripts.inc"

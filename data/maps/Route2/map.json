@@ -27,6 +27,11 @@
       "map": "MAP_NAUTIRUST_CITY",
       "offset": -24,
       "direction": "left"
+    },
+    {
+      "map": "MAP_WITCHLIGHT_WOODS",
+      "offset": -24,
+      "direction": "down"
     }
   ],
   "object_events": [

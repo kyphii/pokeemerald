@@ -665,14 +665,8 @@
 #define MAP_FIVE_ISLAND                                      30736
 #define MAP_SEVEN_ISLAND                                     30737
 #define MAP_SIX_ISLAND                                       30738
-#define MAP_ROUTE7                                           30745
-#define MAP_ROUTE8                                           30746
-#define MAP_ROUTE9                                           30747
-#define MAP_ROUTE10                                          30748
 #define MAP_ROUTE21_NORTH                                    30759
 #define MAP_ROUTE21_SOUTH                                    30760
-#define MAP_ROUTE24                                          30763
-#define MAP_ROUTE25                                          30764
 #define MAP_ONE_ISLAND_KINDLE_ROAD                           30765
 #define MAP_ONE_ISLAND_TREASURE_BEACH                        30766
 #define MAP_TWO_ISLAND_CAPE_BRINK                            30767

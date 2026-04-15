@@ -136,7 +136,7 @@
     {
       "id": "LAYOUT_ROUTE6",
       "name": "Route6_Layout",
-      "width": 72,
+      "width": 96,
       "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Dewford",
@@ -549,6 +549,76 @@
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/Route22/border.bin",
       "blockdata_filepath": "data/layouts/Route22/map.bin"
+    },
+    {
+      "id": "LAYOUT_ARMITER_CITY",
+      "name": "ArmiterCity_Layout",
+      "width": 48,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/ArmiterCity/border.bin",
+      "blockdata_filepath": "data/layouts/ArmiterCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE7",
+      "name": "Route7_Layout",
+      "width": 24,
+      "height": 96,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/Route7/border.bin",
+      "blockdata_filepath": "data/layouts/Route7/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE26",
+      "name": "Route26_Layout",
+      "width": 120,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/Route26/border.bin",
+      "blockdata_filepath": "data/layouts/Route26/map.bin"
+    },
+    {
+      "id": "LAYOUT_BLEAKROCK_PASS",
+      "name": "BleakrockPass_Layout",
+      "width": 72,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Sootopolis",
+      "border_filepath": "data/layouts/BleakrockPass/border.bin",
+      "blockdata_filepath": "data/layouts/BleakrockPass/map.bin"
+    },
+    {
+      "id": "LAYOUT_RIVERVIEW_PARK",
+      "name": "RiverviewPark_Layout",
+      "width": 24,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/RiverviewPark/border.bin",
+      "blockdata_filepath": "data/layouts/RiverviewPark/map.bin"
+    },
+    {
+      "id": "LAYOUT_WITCHLIGHT_WOODS",
+      "name": "WitchlightWoods_Layout",
+      "width": 48,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/WitchlightWoods/border.bin",
+      "blockdata_filepath": "data/layouts/WitchlightWoods/map.bin"
+    },
+    {
+      "id": "LAYOUT_VERSIFIERS_POND",
+      "name": "VersifiersPond_Layout",
+      "width": 24,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/VersifiersPond/border.bin",
+      "blockdata_filepath": "data/layouts/VersifiersPond/map.bin"
     }
   ]
 }

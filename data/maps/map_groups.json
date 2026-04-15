@@ -23,7 +23,8 @@
     "AbaloveTown",
     "WhelchordCity",
     "CanvenusCity",
-    "GardellinIsland"
+    "GardellinIsland",
+    "ArmiterCity"
   ],
   "gMapGroup_Routes": [
     "Route1",
@@ -44,7 +45,9 @@
     "Route21",
     "Route13",
     "Route23",
-    "Route22"
+    "Route22",
+    "Route7",
+    "Route26"
   ],
   "gMapGroup_Wilderness": [
     "NautirustForest",
@@ -52,7 +55,11 @@
     "SecretCove",
     "SecretWaterfall",
     "DesertSanctuary",
-    "PeriwindMeadow"
+    "PeriwindMeadow",
+    "BleakrockPass",
+    "RiverviewPark",
+    "WitchlightWoods",
+    "VersifiersPond"
   ],
   "gMapGroup_Dungeons": [
     "PrismaticCave_1",
