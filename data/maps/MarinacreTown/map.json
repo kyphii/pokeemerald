@@ -22,6 +22,11 @@
       "map": "MAP_ROUTE18",
       "offset": 24,
       "direction": "down"
+    },
+    {
+      "map": "MAP_SECRET_COVE",
+      "offset": 24,
+      "direction": "left"
     }
   ],
   "object_events": [

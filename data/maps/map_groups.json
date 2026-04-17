@@ -18,13 +18,14 @@
     "MarinacreTown",
     "HawthornLabs",
     "NautirustCity",
-    "JunopolisCity",
-    "PeriwindCity",
-    "AbaloveTown",
     "WhelchordCity",
+    "ArmiterCity",
+    "JunopolisCity",
     "CanvenusCity",
-    "GardellinIsland",
-    "ArmiterCity"
+    "PeriwindCity",
+    "VolutideTown",
+    "AbaloveTown",
+    "GardellinIsland"
   ],
   "gMapGroup_Routes": [
     "Route1",
@@ -33,6 +34,8 @@
     "Route4",
     "Route5",
     "Route6",
+    "Route7",
+    "Route10",
     "Route11",
     "Route12",
     "Route14",
@@ -46,7 +49,6 @@
     "Route13",
     "Route23",
     "Route22",
-    "Route7",
     "Route26"
   ],
   "gMapGroup_Wilderness": [

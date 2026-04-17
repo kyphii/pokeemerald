@@ -17,6 +17,11 @@
       "map": "MAP_ROUTE1",
       "offset": -24,
       "direction": "up"
+    },
+    {
+      "map": "MAP_MARINACRE_TOWN",
+      "offset": -24,
+      "direction": "right"
     }
   ],
   "object_events": [

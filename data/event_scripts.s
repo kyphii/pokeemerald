@@ -931,3 +931,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/WitchlightWoods/scripts.inc"
 
 	.include "data/maps/VersifiersPond/scripts.inc"
+
+	.include "data/maps/Route10/scripts.inc"
+
+	.include "data/maps/VolutideTown/scripts.inc"

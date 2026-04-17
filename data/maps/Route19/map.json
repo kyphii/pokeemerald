@@ -22,6 +22,11 @@
       "map": "MAP_ROUTE20",
       "offset": 0,
       "direction": "down"
+    },
+    {
+      "map": "MAP_WITCHLIGHT_WOODS",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [],

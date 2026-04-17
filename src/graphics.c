@@ -2022,27 +2022,27 @@ const u32 gUnionRoomChat_Keyboard_Gfx[] = INCBIN_U32("graphics/union_room_chat/k
 const u32 gUnionRoomChat_Keyboard_Tilemap[] = INCBIN_U32("graphics/union_room_chat/keyboard.bin.smolTM");
 const u32 gUnionRoomChat_RButtonLabels[] = INCBIN_U32("graphics/union_room_chat/r_button_labels.4bpp.smol");
 
-const u16 ALIGNED(4) gTilesetPalettes_General[][16] =
+const u16 ALIGNED(4) gTilesetPalettes_Overworld[][16] =
 {
-    INCBIN_U16("data/tilesets/primary/general/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/primary/general/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/primary/general/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/primary/general/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/primary/general/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/primary/general/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/primary/general/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/primary/general/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/primary/general/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/primary/general/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/primary/general/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/primary/general/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/primary/general/palettes/12.gbapal"),
-    INCBIN_U16("data/tilesets/primary/general/palettes/13.gbapal"),
-    INCBIN_U16("data/tilesets/primary/general/palettes/14.gbapal"),
-    INCBIN_U16("data/tilesets/primary/general/palettes/15.gbapal"),
+    INCBIN_U16("data/tilesets/primary/overworld/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/overworld/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/overworld/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/overworld/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/overworld/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/overworld/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/overworld/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/overworld/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/overworld/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/overworld/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/overworld/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/overworld/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/overworld/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/overworld/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/overworld/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/overworld/palettes/15.gbapal"),
 };
 
-const u32 gTilesetTiles_General[] = INCBIN_U32("data/tilesets/primary/general/tiles.4bpp.smol");
+const u32 gTilesetTiles_Overworld[] = INCBIN_U32("data/tilesets/primary/overworld/tiles.4bpp.smol");
 
 // trade/egg hatch
 
