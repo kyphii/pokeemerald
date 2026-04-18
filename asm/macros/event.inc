@@ -2882,3 +2882,8 @@
 	.macro resumertc
 	callnative Scrcmd_resumertc
 	.endm
+	
+	@ Retrieves the number of badges possessed by the player 
+	.macro getbadgecount
+	callnative Scrcmd_getbadgecount, requests_effects=1
+	.endm

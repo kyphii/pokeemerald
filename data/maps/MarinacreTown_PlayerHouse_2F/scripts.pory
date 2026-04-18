@@ -34,3 +34,168 @@ script MarinacreTown_PlayerHouse_2F_Mirror {
     }
 	releaseall
 }
+
+script Debug_Talk_DevMenu {
+	lockall
+	applymovement(LOCALID_DEBUG_KYPHII, moves(
+		jump_in_place_down
+	))
+	delay(4)
+	turnobject(LOCALID_DEBUG_KYPHII, DIR_WEST)
+	delay(4)
+	turnobject(LOCALID_DEBUG_KYPHII, DIR_NORTH)
+	delay(4)
+	turnobject(LOCALID_DEBUG_KYPHII, DIR_EAST)
+	waitmovement(0)
+
+	faceplayer
+
+	msgbox(
+		"Hello! Welcome to DEBUG!
+
+		I can help you with various debug
+		settings.
+
+		What do you want to change?"
+	)
+
+    dynmultichoice(25, 6, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE,
+		"Trainer Level", "Cancel")
+    switch(var(VAR_RESULT)) {
+        case 0: //Adjust Trainer Level
+			goto(Debug_Script_TrainerLevel)
+	}
+	releaseall
+}
+
+script Debug_Script_TrainerLevel {
+	getplayerlevel
+	buffernumberstring(STR_VAR_1, VAR_RESULT)
+	msgbox(
+		"Your current Trainer Level is {STR_VAR_1}."
+	)
+	dynmultichoice(25, 6, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE,
+		"Up 1", "Down 1", "Up 10", "Down 10")
+	switch(var(VAR_RESULT)) {
+		case 0:
+			addplayerlevel(1)
+		case 1:
+			addplayerlevel(-1)
+		case 2:
+			addplayerlevel(10)
+		case 3:
+			addplayerlevel(-10)
+	}
+	closemessage
+	releaseall
+	return
+}
+
+script Debug_Sign_GetStarters {
+	if (flag(FLAG_DEBUG_GET_STARTERS)) {
+		msgbox(
+			"You already have the starters!
+			What more could you want?",
+		MSGBOX_SIGN)
+	}
+	else {
+		msgbox(
+			"In the box…
+			is a ready-made Pok\emon team!
+			
+			Take them with you?",
+		MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			getpartysize
+			if (var(VAR_RESULT) < 3) {
+				playfanfare(MUS_OBTAIN_TMHM)
+				msgbox("You took the Pok\emon!")
+				waitfanfare
+				waitmessage
+				closemessage
+				
+				givemon(SPECIES_ROSERADE, 10)
+				givemon(SPECIES_FLYGON, 10)
+				givemon(SPECIES_CLOYSTER, 10)
+				
+				setflag(FLAG_SYS_POKEMON_GET)
+				setflag(FLAG_DEBUG_GET_STARTERS)
+			}
+			else {
+				msgbox(
+					"Your party is too full!
+					You need 3 empty party slots.",
+				MSGBOX_SIGN)
+			}
+		}
+	}
+	closemessage
+}
+
+script Debug_Sign_GetHMs {
+	if (flag(FLAG_DEBUG_GET_HMS)) {
+		msgbox(
+			"All HM moves are unlocked",
+			MSGBOX_SIGN)
+	}
+	else {
+		msgbox(
+			"This drawer is full of
+			FLAG_RECEIVED_HMs!
+			
+			Take them?",
+			MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			setflag(FLAG_RECEIVED_HM_CUT)
+			setflag(FLAG_RECEIVED_HM_FLASH)
+			setflag(FLAG_RECEIVED_HM_ROCK_SMASH)
+			setflag(FLAG_RECEIVED_HM_STRENGTH)
+			setflag(FLAG_RECEIVED_HM_SURF)
+			setflag(FLAG_RECEIVED_HM_FLY)
+			setflag(FLAG_RECEIVED_HM_DIVE)
+			setflag(FLAG_RECEIVED_HM_WATERFALL)
+			setflag(FLAG_RECEIVED_HM_ROCK_CLIMB)
+			playfanfare(MUS_OBTAIN_ITEM)
+			msgbox("You unlocked all the HM field moves!")
+			waitfanfare
+			waitmessage
+			closemessage
+		}
+	}
+	closemessage
+}
+
+script Debug_Sign_WarpAndSkipIntro {
+	msgbox(
+		"This door will take you to 
+		Nautirust City. It's one-way only.
+		
+		If you enter, the intro sequence will be 
+		skipped, and cannot be triggered again.
+		
+		Make sure you have a Pok\emon first!
+		
+		Enter?",
+		MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		special(SetUnlockedPokedexFlags)
+		setflag(FLAG_ADVENTURE_STARTED)
+		setflag(FLAG_SYS_POKEDEX_GET)
+		setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
+		
+		setflag(FLAG_INTRO_MET_RIVAL)
+		setflag(FLAG_INTRO_MET_PROFESSOR)
+		setflag(FLAG_INTRO_MET_MOM)
+		setflag(FLAG_INTRO_MET_BIGBAD)
+		setflag(FLAG_MOM_ENABLE_HEAL)
+		setflag(FLAG_INTRO_ENTERED_WOODS)
+		setflag(FLAG_INTRO_EXITED_WOODS)
+		
+		setvar(VAR_INTRO_SEQUENCE_STATE, 255)
+		resumertc()
+		releaseall
+		
+		warp(MAP_NAUTIRUST_CITY, 0)
+		waitstate
+	}
+}

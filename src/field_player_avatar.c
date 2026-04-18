@@ -628,7 +628,7 @@ static bool8 ForcedMovement_Slide(enum Direction direction, void (*moveFunc)(enu
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
 
     playerObjEvent->disableAnim = TRUE;
-    playerObjEvent->facingDirectionLocked = TRUE;
+    playerObjEvent->facingDirectionLocked = FALSE;
     return DoForcedMovement(direction, moveFunc);
 }
 

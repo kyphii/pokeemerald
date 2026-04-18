@@ -4,10 +4,10 @@
     {
       "id": "LAYOUT_DUMMY_MAP",
       "name": "DummyMap_Layout",
-      "width": 1,
-      "height": 1,
+      "width": 24,
+      "height": 24,
       "primary_tileset": "gTileset_Overworld",
-      "secondary_tileset": "gTileset_Marinacre",
+      "secondary_tileset": "gTileset_Armiter",
       "border_filepath": "data/layouts/DummyMap/border.bin",
       "blockdata_filepath": "data/layouts/DummyMap/map.bin",
       "layout_version": "emerald"
@@ -365,7 +365,7 @@
       "id": "LAYOUT_MARINACRE_TOWN_PLAYER_HOUSE_2F",
       "name": "MarinacreTown_PlayerHouse_2F_Layout",
       "width": 18,
-      "height": 10,
+      "height": 20,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PlayerHouse",
       "border_filepath": "data/layouts/MarinacreTown_PlayerHouse_2F/border.bin",
@@ -636,7 +636,7 @@
       "width": 48,
       "height": 24,
       "primary_tileset": "gTileset_Overworld",
-      "secondary_tileset": "gTileset_DesertSanctuary",
+      "secondary_tileset": "gTileset_QuaheartGym",
       "border_filepath": "data/layouts/VolutideTown/border.bin",
       "blockdata_filepath": "data/layouts/VolutideTown/map.bin"
     }

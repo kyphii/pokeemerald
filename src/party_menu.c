@@ -2676,11 +2676,13 @@ static void PartyMenuRemoveWindow(u8 *ptr)
 {
     if (*ptr != WINDOW_NONE)
     {
+        DebugPrintf("PartyMenuRemoveWindow %u", *ptr);
         ClearStdWindowAndFrameToTransparent(*ptr, FALSE);
         RemoveWindow(*ptr);
         *ptr = WINDOW_NONE;
         ScheduleBgCopyTilemapToVram(2);
     }
+    DebugPrintf("PartyMenuRemoveWindow Ok", *ptr);
 }
 
 void DisplayPartyMenuStdMessage(u32 stringId)
@@ -2863,9 +2865,8 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
     u8 j;
-
-    u16 species = GetMonData(&gPlayerParty[slotId], MON_DATA_SPECIES, NULL);
     u8 numAdded = 0;
+    u16 species = GetMonData(&gPlayerParty[slotId], MON_DATA_SPECIES, NULL);
     enum Move moveId;
 
     sPartyMenuInternal->numActions = 0;
@@ -2878,14 +2879,15 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUB_MOVES);
     }
 
-    for (j = 0; j < FIELD_MOVES_COUNT && numAdded < 6; j++)
+    // There is a hard maximum of 4 - if more attempt to load, game crashes
+    for (j = 0; j < FIELD_MOVES_COUNT && numAdded < 4; j++)
     {
         moveId = FieldMove_GetMoveId(j);
-        if (MonKnowsMove(&gPlayerParty[slotId], moveId) || CanLearnTeachableMove(species, moveId))
+        if ((MonKnowsMove(&gPlayerParty[slotId], moveId) || CanLearnTeachableMove(species, moveId))
+            && gFieldMoveInfo[j].isUnlockedFunc())
         {
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
             numAdded++;
-            continue;
         }
     }
 
@@ -3021,6 +3023,7 @@ static void Task_TryCreateSelectionWindow(u8 taskId)
 
 static void Task_HandleSelectionMenuInput(u8 taskId)
 {
+    DebugPrintf("Task_HandleSelectionMenuInput START");
     if (!gPaletteFade.active && MenuHelpers_ShouldWaitForLinkRecv() != TRUE)
     {
         s8 input;
@@ -3032,25 +3035,30 @@ static void Task_HandleSelectionMenuInput(u8 taskId)
             input = ProcessMenuInput_other();
 
         data[0] = Menu_GetCursorPos();
+        DebugPrintf("Task_HandleSelectionMenuInput SWITCH");
         switch (input)
         {
         case MENU_NOTHING_CHOSEN:
             break;
         case MENU_B_PRESSED:
+            DebugPrintf("Task_HandleSelectionMenuInput MENU_B_PRESSED %u", taskId);
             PlaySE(SE_SELECT);
             PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[2]);
             if (sPartyMenuInternal->actions[sPartyMenuInternal->numActions - 1] >= MENU_FIELD_MOVES)
                 CursorCb_FieldMove(taskId);
             else
                 sCursorOptions[sPartyMenuInternal->actions[sPartyMenuInternal->numActions - 1]].func(taskId);
+            DebugPrintf("Task_HandleSelectionMenuInput MENU_B_PRESSED OK");
             break;
         default:
+            DebugPrintf("Task_HandleSelectionMenuInput default %u", taskId);
             PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[2]);
             if (sPartyMenuInternal->actions[input] >= MENU_FIELD_MOVES)
                 CursorCb_FieldMove(taskId);
             else
                 sCursorOptions[sPartyMenuInternal->actions[input]].func(taskId);
             break;
+            DebugPrintf("Task_HandleSelectionMenuInput default OK");
         }
     }
 }

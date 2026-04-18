@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_NURSE",
+      "graphics_id": "OBJ_EVENT_GFX_NURSE_FRLG",
       "x": 7,
       "y": 2,
       "elevation": 3,
@@ -41,13 +41,6 @@
       "y": 8,
       "elevation": 3,
       "dest_map": "MAP_ABALOVE_TOWN",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 1,
-      "y": 6,
-      "elevation": 4,
-      "dest_map": "MAP_ABALOVE_TOWN_POKEMON_CENTER_2F",
       "dest_warp_id": "0"
     }
   ],

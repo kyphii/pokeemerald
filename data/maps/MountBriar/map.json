@@ -5,7 +5,7 @@
   "music": "MUS_MT_CHIMNEY",
   "region_map_section": "MAPSEC_MOUNT_BRIAR",
   "requires_flash": false,
-  "weather": "WEATHER_SUNNY_CLOUDS",
+  "weather": "WEATHER_SNOW",
   "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
@@ -21,10 +21,25 @@
   ],
   "object_events": [
     {
+      "local_id": "LOCALID_LIFT_ATTENDANT",
       "graphics_id": "OBJ_EVENT_GFX_MYSTERY_GIFT_MAN",
       "x": 26,
       "y": 61,
       "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MountBriar_Talk_LiftAttendant",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SKI_LIFT",
+      "graphics_id": "OBJ_EVENT_GFX_CABLE_CAR",
+      "x": 27,
+      "y": 58,
+      "elevation": 6,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -35,6 +50,16 @@
     }
   ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "MountBriar_Trigger_LiftAttendant"
+    }
+  ],
   "bg_events": []
 }

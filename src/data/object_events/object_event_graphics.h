@@ -397,6 +397,8 @@ const u16 gObjectEventPal_Maya[] = INCBIN_U16("graphics/object_events/palettes/m
 const u32 gObjectEventPic_StarterBag[] = INCBIN_U32("graphics/object_events/pics/misc/starter_bag.4bpp");
 const u32 gObjectEventPic_ProfHawthorn[] = INCBIN_U32("graphics/object_events/pics/people/prof_hawthorn.4bpp");
 const u16 gObjectEventPal_ProfHawthorn[] = INCBIN_U16("graphics/object_events/palettes/prof_hawthorn.gbapal");
+const u32 gObjectEventPic_Kyphii[] = INCBIN_U32("graphics/object_events/pics/people/kyphii.4bpp");
+const u16 gObjectEventPal_Kyphii[] = INCBIN_U16("graphics/object_events/palettes/kyphii.gbapal");
 
 #if OW_FOLLOWERS_POKEBALLS
 const u32 gObjectEventPic_MasterBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_master.4bpp");

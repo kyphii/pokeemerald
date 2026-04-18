@@ -1,0 +1,65 @@
+mapscripts MountBriar_MapScripts {}
+
+script MountBriar_Talk_LiftAttendant {
+	lock
+	faceplayer
+	msgbox(MountBriar_Text_RideLift, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		closemessage
+		release
+		applymovement(LOCALID_PLAYER, moves(
+			walk_right
+			walk_up
+		))
+		waitmovement(0)
+		goto(MountBriar_Script_RideLift)
+	}
+	else {
+		closemessage
+		release
+	}
+}
+
+script MountBriar_Trigger_LiftAttendant {
+	lock
+	turnobject(LOCALID_LIFT_ATTENDANT, DIR_EAST)
+	turnobject(LOCALID_PLAYER, DIR_WEST)
+	msgbox(MountBriar_Text_RideLift, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		goto(MountBriar_Script_RideLift)
+	}
+	release
+}
+
+script MountBriar_Script_RideLift {
+	closemessage
+	
+	// respawn chair
+	removeobject(LOCALID_SKI_LIFT)
+	addobject(LOCALID_SKI_LIFT)
+	
+	applymovement(LOCALID_PLAYER, moves(
+		walk_up * 3
+	))
+	waitmovement(0)
+	delay(20)
+	
+	applymovement(LOCALID_PLAYER, MountBriar_Moves_SkiLift)
+	applymovement(LOCALID_SKI_LIFT, MountBriar_Moves_SkiLift)
+	waitmovement(0)
+	
+	applymovement(LOCALID_PLAYER, moves(
+		force_up
+		jump_up
+	))
+	waitmovement(0)
+}
+
+text MountBriar_Text_RideLift {
+	"Hello. Do you want to ride the lift 
+	to the summit?"
+}
+
+movement MountBriar_Moves_SkiLift {
+	force_up * 46
+}

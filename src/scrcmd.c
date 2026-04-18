@@ -3399,3 +3399,17 @@ bool8 Scrcmd_resumertc(struct ScriptContext* ctx)
     VarSet(VAR_RTC_OVERRIDE_HOUR, 0);
     return FALSE;
 }
+
+bool8 Scrcmd_getbadgecount(struct ScriptContext* ctx)
+{
+    u32 i;
+    Script_RequestEffects(SCREFF_V1);
+    gSpecialVar_Result = 0;
+    for (i = FLAG_BADGE01_GET; i <= FLAG_BADGE08_GET; ++i)
+    {
+        if (FlagGet(i)) {
+            ++gSpecialVar_Result;
+        }
+    }
+    return FALSE;
+}

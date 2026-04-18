@@ -253,12 +253,10 @@ HomeTown_PlayerHouse_Intro_LeaveHomeScene::
 # 276 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	setflag FLAG_MOM_ENABLE_HEAL
 # 277 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
-# 278 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	setvar VAR_INTRO_SEQUENCE_STATE, 7
-# 280 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 279 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	resumertc
-# 281 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 280 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	releaseall
 	return
 

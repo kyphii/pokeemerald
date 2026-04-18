@@ -59,9 +59,9 @@
 #define FLAG_MOM_ENABLE_HEAL        0x25
 #define FLAG_INTRO_ENTERED_WOODS    0x26
 #define FLAG_INTRO_EXITED_WOODS     0x27
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
+#define FLAG_DEBUG_GET_HMS          0x28
+#define FLAG_DEBUG_GET_STARTERS     0x29
+#define FLAG_RECEIVED_HM_ROCK_CLIMB 0x2A
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag

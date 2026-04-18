@@ -274,7 +274,6 @@ script HomeTown_PlayerHouse_Intro_LeaveHomeScene {
 	setflag(FLAG_SYS_POKEDEX_GET)
 	setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
 	setflag(FLAG_MOM_ENABLE_HEAL)
-	setvar(VAR_CABLE_CLUB_TUTORIAL_STATE, 1)
 	setvar(VAR_INTRO_SEQUENCE_STATE, 7)
 	
 	resumertc()
