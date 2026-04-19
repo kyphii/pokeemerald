@@ -367,6 +367,9 @@ static const u8 *GetInteractedObjectEventScript(struct MapPosition *position, u8
         else if (MetatileBehavior_IsSidewaysStairsRightSideAny(currBehavior))
             // on top of right-side stairs -> check southeast
             objectEventId = GetObjectEventIdByPosition(currX + 1, currY + 1, position->elevation);
+        else if (MapGridGetMetatileBehaviorAt(currX + 1, currY) == MB_COUNTER)
+            // check two tiles away
+            objectEventId = GetObjectEventIdByPosition(currX + 2, currY, position->elevation);
         else
             // check in front of player
             objectEventId = GetObjectEventIdByPosition(position->x, position->y, position->elevation);
@@ -378,6 +381,25 @@ static const u8 *GetInteractedObjectEventScript(struct MapPosition *position, u8
         else if (MetatileBehavior_IsSidewaysStairsLeftSideAny(currBehavior))
             // on top of left-side stairs -> check southwest
             objectEventId = GetObjectEventIdByPosition(currX - 1, currY + 1, position->elevation);
+        else if (MapGridGetMetatileBehaviorAt(currX - 1, currY) == MB_COUNTER)
+            // check two tiles away
+            objectEventId = GetObjectEventIdByPosition(currX - 2, currY, position->elevation);
+        else
+            // check in front of player
+            objectEventId = GetObjectEventIdByPosition(position->x, position->y, position->elevation);
+        break;
+    case DIR_NORTH:
+        if (MapGridGetMetatileBehaviorAt(currX, currY - 1) == MB_COUNTER)
+            // check two tiles away
+            objectEventId = GetObjectEventIdByPosition(currX, currY - 2, position->elevation);
+        else
+            // check in front of player
+            objectEventId = GetObjectEventIdByPosition(position->x, position->y, position->elevation);
+        break;
+    case DIR_SOUTH:
+        if (MapGridGetMetatileBehaviorAt(currX, currY + 1) == MB_COUNTER)
+            // check two tiles away
+            objectEventId = GetObjectEventIdByPosition(currX, currY + 2, position->elevation);
         else
             // check in front of player
             objectEventId = GetObjectEventIdByPosition(position->x, position->y, position->elevation);

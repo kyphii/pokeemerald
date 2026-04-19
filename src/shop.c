@@ -843,6 +843,13 @@ static void BuyMenuDrawMapMetatile(s16 x, s16 y, const u16 *src, u8 metatileLaye
         BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[2], offset1, offset2, src);
         BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[1], offset1, offset2, src + 4);
         break;
+    case METATILE_LAYER_TYPE_HALF_COVERED:
+        BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[2], offset1, offset2, src);
+        sShopData->tilemapBuffers[3][offset1 + offset2] = src[4]; // top left
+        sShopData->tilemapBuffers[3][offset1 + offset2 + 1] = src[5]; // top right
+        sShopData->tilemapBuffers[1][offset1 + offset2 + 32] = src[6]; // bottom left
+        sShopData->tilemapBuffers[1][offset1 + offset2 + 33] = src[7]; // bottom right
+        break;
     }
 }
 

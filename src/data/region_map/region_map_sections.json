@@ -34,7 +34,7 @@
     },
     {
       "id": "MAPSEC_ARMITER_CITY",
-      "name": "WHELCHORD CITY",
+      "name": "ARMITER CITY",
       "x": 6,
       "y": 6,
       "width": 1,
@@ -58,7 +58,7 @@
     },
     {
       "id": "MAPSEC_SNOWRIE_TOWN",
-      "name": "SNOWRIE TOWN",
+      "name": "SNOWRIE_TOWN",
       "x": 6,
       "y": 0,
       "width": 1,

@@ -303,6 +303,25 @@ static void DrawMetatile(s32 metatileLayerType, const u16 *tiles, u16 offset)
         gOverworldTilemapBuffer_Bg1[offset + 0x20] = tiles[6];
         gOverworldTilemapBuffer_Bg1[offset + 0x21] = tiles[7];
         break;
+    case METATILE_LAYER_TYPE_HALF_COVERED:
+        // Draw metatile's bottom layer to the bottom background layer.
+        gOverworldTilemapBuffer_Bg3[offset] = tiles[0];
+        gOverworldTilemapBuffer_Bg3[offset + 1] = tiles[1];
+        gOverworldTilemapBuffer_Bg3[offset + 0x20] = tiles[2];
+        gOverworldTilemapBuffer_Bg3[offset + 0x21] = tiles[3];
+
+        // Draw top 2 tiles of metatile's top layer to the middle background layer.
+        gOverworldTilemapBuffer_Bg2[offset] = tiles[4];
+        gOverworldTilemapBuffer_Bg2[offset + 1] = tiles[5];
+        gOverworldTilemapBuffer_Bg2[offset + 0x20] = 0;
+        gOverworldTilemapBuffer_Bg2[offset + 0x21] = 0;
+
+        // Draw metatile's top layer to the top background layer.
+        gOverworldTilemapBuffer_Bg1[offset] = 0;
+        gOverworldTilemapBuffer_Bg1[offset + 1] = 0;
+        gOverworldTilemapBuffer_Bg1[offset + 0x20] = tiles[6];
+        gOverworldTilemapBuffer_Bg1[offset + 0x21] = tiles[7];
+        break;
     }
     ScheduleBgCopyTilemapToVram(1);
     ScheduleBgCopyTilemapToVram(2);
