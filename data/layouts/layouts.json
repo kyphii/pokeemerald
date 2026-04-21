@@ -46,6 +46,28 @@
       "layout_version": "emerald"
     },
     {
+      "id": "LAYOUT_QUAHEART_CITY",
+      "name": "QuaheartCity_Layout",
+      "width": 48,
+      "height": 48,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Periwind",
+      "border_filepath": "data/layouts/QuaheartCity/border.bin",
+      "blockdata_filepath": "data/layouts/QuaheartCity/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NERILIGHT_CITY",
+      "name": "NerilightCity_Layout",
+      "width": 48,
+      "height": 48,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Periwind",
+      "border_filepath": "data/layouts/NerilightCity/border.bin",
+      "blockdata_filepath": "data/layouts/NerilightCity/map.bin",
+      "layout_version": "emerald"
+    },
+    {
       "id": "LAYOUT_MARINACRE_TOWN",
       "name": "MarinacreTown_Layout",
       "width": 48,
@@ -68,6 +90,16 @@
       "layout_version": "emerald"
     },
     {
+      "id": "LAYOUT_VOLUTIDE_TOWN",
+      "name": "VolutideTown_Layout",
+      "width": 48,
+      "height": 24,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_QuaheartGym",
+      "border_filepath": "data/layouts/VolutideTown/border.bin",
+      "blockdata_filepath": "data/layouts/VolutideTown/map.bin"
+    },
+    {
       "id": "LAYOUT_ABALOVE_TOWN",
       "name": "AbaloveTown_Layout",
       "width": 48,
@@ -76,6 +108,17 @@
       "secondary_tileset": "gTileset_Abalove",
       "border_filepath": "data/layouts/AbaloveTown/border.bin",
       "blockdata_filepath": "data/layouts/AbaloveTown/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_SNOWRIE_TOWN",
+      "name": "SnowrieTown_Layout",
+      "width": 48,
+      "height": 24,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Snowrie",
+      "border_filepath": "data/layouts/SnowrieTown/border.bin",
+      "blockdata_filepath": "data/layouts/SnowrieTown/map.bin",
       "layout_version": "emerald"
     },
     {
@@ -395,25 +438,14 @@
       "layout_version": "emerald"
     },
     {
-      "id": "LAYOUT_POKEMON_CENTER_1F",
-      "name": "PokemonCenter_1F_Layout",
+      "id": "LAYOUT_POKEMON_CENTER",
+      "name": "PokemonCenter_Layout",
       "width": 15,
       "height": 16,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonCenter",
-      "border_filepath": "data/layouts/PokemonCenter_1F/border.bin",
-      "blockdata_filepath": "data/layouts/PokemonCenter_1F/map.bin",
-      "layout_version": "emerald"
-    },
-    {
-      "id": "LAYOUT_POKEMON_CENTER_2F",
-      "name": "PokemonCenter_2F_Layout",
-      "width": 14,
-      "height": 10,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_PokemonCenter",
-      "border_filepath": "data/layouts/PokemonCenter_2F/border.bin",
-      "blockdata_filepath": "data/layouts/PokemonCenter_2F/map.bin",
+      "border_filepath": "data/layouts/PokemonCenter/border.bin",
+      "blockdata_filepath": "data/layouts/PokemonCenter/map.bin",
       "layout_version": "emerald"
     },
     {
@@ -436,6 +468,61 @@
       "secondary_tileset": "gTileset_NautirustGym",
       "border_filepath": "data/layouts/NautirustCity_Gym/border.bin",
       "blockdata_filepath": "data/layouts/NautirustCity_Gym/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_WHELCHORD_CITY_GYM",
+      "name": "WhelchordCity_Gym_Layout",
+      "width": 1,
+      "height": 1,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_WhelchordGym",
+      "border_filepath": "data/layouts/WhelchordCity_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/WhelchordCity_Gym/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ARMITER_CITY_GYM",
+      "name": "ArmiterCity_Gym_Layout",
+      "width": 1,
+      "height": 1,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_ArmiterGym",
+      "border_filepath": "data/layouts/ArmiterCity_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/ArmiterCity_Gym/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_QUAHEART_CITY_GYM",
+      "name": "QuaheartCity_Gym_Layout",
+      "width": 1,
+      "height": 1,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_QuaheartGym",
+      "border_filepath": "data/layouts/QuaheartCity_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/QuaheartCity_Gym/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NERILIGHT_CITY_GYM",
+      "name": "NerilightCity_Gym_Layout",
+      "width": 1,
+      "height": 1,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_NerilightGym",
+      "border_filepath": "data/layouts/NerilightCity_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/NerilightCity_Gym/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_CANVENUS_CITY_GYM",
+      "name": "CanvenusCity_Gym_Layout",
+      "width": 1,
+      "height": 1,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_CanvenusGym",
+      "border_filepath": "data/layouts/CanvenusCity_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/CanvenusCity_Gym/map.bin",
       "layout_version": "emerald"
     },
     {
@@ -629,16 +716,6 @@
       "secondary_tileset": "gTileset_DesertSanctuary",
       "border_filepath": "data/layouts/Route10/border.bin",
       "blockdata_filepath": "data/layouts/Route10/map.bin"
-    },
-    {
-      "id": "LAYOUT_VOLUTIDE_TOWN",
-      "name": "VolutideTown_Layout",
-      "width": 48,
-      "height": 24,
-      "primary_tileset": "gTileset_Overworld",
-      "secondary_tileset": "gTileset_QuaheartGym",
-      "border_filepath": "data/layouts/VolutideTown/border.bin",
-      "blockdata_filepath": "data/layouts/VolutideTown/map.bin"
     }
   ]
 }

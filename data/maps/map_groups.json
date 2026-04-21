@@ -22,10 +22,13 @@
     "ArmiterCity",
     "JunopolisCity",
     "CanvenusCity",
+    "NerilightCity",
+    "QuaheartCity",
     "PeriwindCity",
     "VolutideTown",
+    "GardellinIsland",
     "AbaloveTown",
-    "GardellinIsland"
+    "SnowrieTown"
   ],
   "gMapGroup_Routes": [
     "Route1",
@@ -73,25 +76,41 @@
     "Underwater_HawthornLabs"
   ],
   "gMapGroup_IndoorsPokemonCenters": [
-    "NautirustCity_PokemonCenter_1F",
-    "NautirustCity_PokemonCenter_2F",
-    "JunopolisCity_PokemonCenter_1F",
-    "JunopolisCity_PokemonCenter_2F",
-    "PeriwindCity_PokemonCenter_1F",
-    "PeriwindCity_PokemonCenter_2F",
-    "AbaloveTown_PokemonCenter_1F",
-    "AbaloveTown_PokemonCenter_2F"
+    "NautirustCity_PokemonCenter",
+    "WhelchordCity_PokemonCenter",
+    "ArmiterCity_PokemonCenter",
+    "JunopolisCity_PokemonCenter",
+    "CanvenusCity_PokemonCenter",
+    "NerilightCity_PokemonCenter",
+    "QuaheartCity_PokemonCenter",
+    "PeriwindCity_PokemonCenter",
+    "VolutideTown_PokemonCenter",
+    "GardellinIsland_PokemonCenter",
+    "AbaloveTown_PokemonCenter",
+    "SnowrieTown_PokemonCenter"
   ],
   "gMapGroup_IndoorsMarts": [
     "MarinacreTown_Mart",
     "NautirustCity_Mart",
+    "WhelchordCity_Mart",
     "JunopolisCity_Mart",
+    "CanvenusCity_Mart",
+    "NerilightCity_Mart",
+    "QuaheartCity_Mart",
     "PeriwindCity_Mart",
-    "AbaloveTown_Mart"
+    "VolutideTown_Mart",
+    "GardellinIsland_Mart",
+    "AbaloveTown_Mart",
+    "SnowrieTown_Mart"
   ],
   "gMapGroup_IndoorsGyms": [
     "NautirustCity_Gym",
+    "WhelchordCity_Gym",
+    "ArmiterCity_Gym",
     "JunopolisCity_Gym",
+    "CanvenusCity_Gym",
+    "NerilightCity_Gym",
+    "QuaheartCity_Gym",
     "PeriwindCity_Gym"
   ],
   "gMapGroup_IndoorsPokemonLeague": [],

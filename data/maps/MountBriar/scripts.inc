@@ -71,109 +71,111 @@ MountBriar_Script_RideLift::
 # 47 "data/maps/MountBriar/scripts.pory"
 	applymovement LOCALID_PLAYER, MountBriar_Moves_SkiLift
 # 48 "data/maps/MountBriar/scripts.pory"
-	applymovement LOCALID_SKI_LIFT, MountBriar_Moves_SkiLift
+	delay 1
 # 49 "data/maps/MountBriar/scripts.pory"
+	applymovement LOCALID_SKI_LIFT, MountBriar_Moves_SkiLift
+# 50 "data/maps/MountBriar/scripts.pory"
 	waitmovement 0
-# 51 "data/maps/MountBriar/scripts.pory"
+# 52 "data/maps/MountBriar/scripts.pory"
 	applymovement LOCALID_PLAYER, MountBriar_Script_RideLift_Movement_1
-# 55 "data/maps/MountBriar/scripts.pory"
+# 56 "data/maps/MountBriar/scripts.pory"
 	waitmovement 0
 	return
 
 
-# 63 "data/maps/MountBriar/scripts.pory"
+# 64 "data/maps/MountBriar/scripts.pory"
 MountBriar_Moves_SkiLift:
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 64 "data/maps/MountBriar/scripts.pory"
+# 65 "data/maps/MountBriar/scripts.pory"
 	force_up
 	step_end
 
@@ -195,15 +197,15 @@ MountBriar_Script_RideLift_Movement_0:
 	walk_up
 	step_end
 
-# 51 "data/maps/MountBriar/scripts.pory"
-MountBriar_Script_RideLift_Movement_1:
 # 52 "data/maps/MountBriar/scripts.pory"
-	force_up
+MountBriar_Script_RideLift_Movement_1:
 # 53 "data/maps/MountBriar/scripts.pory"
+	force_up
+# 54 "data/maps/MountBriar/scripts.pory"
 	jump_up
 	step_end
 
 MountBriar_Text_RideLift::
-# 58 "data/maps/MountBriar/scripts.pory"
+# 59 "data/maps/MountBriar/scripts.pory"
 	.string "Hello. Do you want to ride the lift \n"
 	.string "to the summit?$"

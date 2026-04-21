@@ -45,6 +45,7 @@ script MountBriar_Script_RideLift {
 	delay(20)
 	
 	applymovement(LOCALID_PLAYER, MountBriar_Moves_SkiLift)
+	delay(1)
 	applymovement(LOCALID_SKI_LIFT, MountBriar_Moves_SkiLift)
 	waitmovement(0)
 	

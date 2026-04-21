@@ -30,7 +30,29 @@
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 25,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_CANVENUS_CITY_POKEMON_CENTER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 29,
+      "y": 40,
+      "elevation": 0,
+      "dest_map": "MAP_CANVENUS_CITY_MART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_CANVENUS_CITY_GYM",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }
