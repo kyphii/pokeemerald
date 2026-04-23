@@ -1432,7 +1432,7 @@ static void NamingScreen_CreateWaldaDadIcon(void)
 {
     u8 spriteId;
 
-    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_MAN_1, SpriteCallbackDummy, 56, 37, 0);
+    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_KYPHII, SpriteCallbackDummy, 56, 37, 0);
     gSprites[spriteId].oam.priority = 3;
     StartSpriteAnim(&gSprites[spriteId], ANIM_STD_GO_SOUTH);
 }
@@ -1440,7 +1440,7 @@ static void NamingScreen_CreateWaldaDadIcon(void)
 static void NamingScreen_CreateCodeIcon(void)
 {
     u8 spriteId;
-    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_MYSTERY_GIFT_MAN, SpriteCallbackDummy, 56, 37, 0);
+    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_KYPHII, SpriteCallbackDummy, 56, 37, 0);
     gSprites[spriteId].oam.priority = 3;
 }
 
@@ -1470,7 +1470,7 @@ static void NamingScreen_CreateRivalIcon(void)
     const struct SubspriteTable * tables_p;
     u8 spriteId;
 
-    CopyObjectGraphicsInfoToSpriteTemplate(OBJ_EVENT_GFX_RED_NORMAL, SpriteCallbackDummy, &template, &tables_p);
+    CopyObjectGraphicsInfoToSpriteTemplate(OBJ_EVENT_GFX_KYPHII, SpriteCallbackDummy, &template, &tables_p);
 
     template.tileTag = sheet.tag;
     template.paletteTag = palette.tag;

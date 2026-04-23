@@ -4,7 +4,7 @@
     {
       "id": "LAYOUT_DUMMY_MAP",
       "name": "DummyMap_Layout",
-      "width": 24,
+      "width": 72,
       "height": 24,
       "primary_tileset": "gTileset_Overworld",
       "secondary_tileset": "gTileset_Armiter",

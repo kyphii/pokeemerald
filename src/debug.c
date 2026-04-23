@@ -4025,12 +4025,12 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
 
 static const u32 gDebugFollowerNPCGraphics[] =
 {
-    OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL,
-    OBJ_EVENT_GFX_RIVAL_MAY_NORMAL,
-    OBJ_EVENT_GFX_STEVEN,
-    OBJ_EVENT_GFX_WALLY,
-    OBJ_EVENT_GFX_RED,
-    OBJ_EVENT_GFX_LEAF,
+    OBJ_EVENT_GFX_KYPHII,
+    OBJ_EVENT_GFX_KYPHII,
+    OBJ_EVENT_GFX_KYPHII,
+    OBJ_EVENT_GFX_KYPHII,
+    OBJ_EVENT_GFX_KYPHII,
+    OBJ_EVENT_GFX_KYPHII,
 };
 
 static void DebugAction_CreateFollowerNPC(u8 taskId)

@@ -733,7 +733,7 @@ static void Task_BardSong(u8 taskId)
 
 void SetMauvilleOldManObjEventGfx(void)
 {
-    VarSet(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_BARD);
+    VarSet(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_KYPHII);
 }
 
 // Language fixers?

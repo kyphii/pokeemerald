@@ -601,21 +601,21 @@ void SpawnLinkPartnerObjectEvent(void)
             case VERSION_RUBY:
             case VERSION_SAPPHIRE:
                 if (gLinkPlayers[i].gender == 0)
-                    linkSpriteId = OBJ_EVENT_GFX_LINK_RS_BRENDAN;
+                    linkSpriteId = OBJ_EVENT_GFX_PLAYER_M_NORMAL;
                 else
-                    linkSpriteId = OBJ_EVENT_GFX_LINK_RS_MAY;
+                    linkSpriteId = OBJ_EVENT_GFX_PLAYER_F_NORMAL;
                 break;
             case VERSION_EMERALD:
                 if (gLinkPlayers[i].gender == 0)
-                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL;
+                    linkSpriteId = OBJ_EVENT_GFX_PLAYER_M_NORMAL;
                 else
-                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
+                    linkSpriteId = OBJ_EVENT_GFX_PLAYER_F_NORMAL;
                 break;
             default:
                 if (gLinkPlayers[i].gender == 0)
-                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL;
+                    linkSpriteId = OBJ_EVENT_GFX_PLAYER_M_NORMAL;
                 else
-                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
+                    linkSpriteId = OBJ_EVENT_GFX_PLAYER_F_NORMAL;
                 break;
             }
             SpawnSpecialObjectEventParameterized(linkSpriteId, movementTypes[j], LOCALID_BERRY_BLENDER_PLAYER_END - i, coordOffsets[j][0] + x + MAP_OFFSET, coordOffsets[j][1] + y + MAP_OFFSET, 0);
@@ -632,10 +632,7 @@ static void LoadLinkPartnerObjectEventSpritePalette(u16 graphicsId, u8 localEven
     u8 adjustedPaletteNum;
     // Note: This temp var is necessary; paletteNum += 6 doesn't match.
     adjustedPaletteNum = paletteNum + 6;
-    if (graphicsId == OBJ_EVENT_GFX_LINK_RS_BRENDAN ||
-        graphicsId == OBJ_EVENT_GFX_LINK_RS_MAY ||
-        graphicsId == OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL ||
-        graphicsId == OBJ_EVENT_GFX_RIVAL_MAY_NORMAL)
+    if (graphicsId == OBJ_EVENT_GFX_KYPHII)
     {
         u8 obj = GetObjectEventIdByLocalIdAndMap(localEventId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
         if (obj != OBJECT_EVENTS_COUNT)
@@ -644,21 +641,7 @@ static void LoadLinkPartnerObjectEventSpritePalette(u16 graphicsId, u8 localEven
             struct Sprite *sprite = &gSprites[spriteId];
             sprite->oam.paletteNum = adjustedPaletteNum;
 
-            switch (graphicsId)
-            {
-            case OBJ_EVENT_GFX_LINK_RS_BRENDAN:
-                LoadPalette(gObjectEventPal_RubySapphireBrendan, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
-                break;
-            case OBJ_EVENT_GFX_LINK_RS_MAY:
-                LoadPalette(gObjectEventPal_RubySapphireMay, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
-                break;
-            case OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL:
-                LoadPalette(gObjectEventPal_Brendan, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
-                break;
-            case OBJ_EVENT_GFX_RIVAL_MAY_NORMAL:
-                LoadPalette(gObjectEventPal_May, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
-                break;
-            }
+            LoadPalette(gObjectEventPal_Player, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
         }
     }
 }
@@ -1336,7 +1319,7 @@ void IsGrassTypeInParty(void)
 
 void SpawnCameraObject(void)
 {
-    u8 obj = SpawnSpecialObjectEventParameterized(OBJ_EVENT_GFX_BOY_1,
+    u8 obj = SpawnSpecialObjectEventParameterized(OBJ_EVENT_GFX_KYPHII,
                                                   MOVEMENT_TYPE_FACE_DOWN,
                                                   LOCALID_CAMERA,
                                                   gSaveBlock1Ptr->pos.x + MAP_OFFSET,
@@ -3378,7 +3361,7 @@ static void Task_DeoxysRockInteraction(u8 taskId)
 
 static void ChangeDeoxysRockLevel(u8 rockLevel)
 {
-    u8 paletteNum = IndexOfSpritePaletteTag(OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE);
+    u8 paletteNum = IndexOfSpritePaletteTag(OBJ_EVENT_PAL_TAG_NONE);
     LoadPalette(&sDeoxysRockPalettes[rockLevel], OBJ_PLTT_ID(paletteNum), PLTT_SIZEOF(4));
     UpdateSpritePaletteWithWeather(paletteNum, FALSE);
 
@@ -3438,7 +3421,7 @@ void IncrementBirthIslandRockStepCount(void)
 // called before fade-in
 void SetDeoxysRockPalette(void)
 {
-    u32 paletteNum = IndexOfSpritePaletteTag(OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE);
+    u32 paletteNum = IndexOfSpritePaletteTag(OBJ_EVENT_PAL_TAG_NONE);
     LoadPalette(&sDeoxysRockPalettes[(u8)VarGet(VAR_DEOXYS_ROCK_LEVEL)], OBJ_PLTT_ID(paletteNum), PLTT_SIZEOF(4));
     // Set faded to all black, weather blending handled during fade-in
     CpuFill16(RGB_BLACK, &gPlttBufferFaded[OBJ_PLTT_ID(paletteNum)], PLTT_SIZE_4BPP);

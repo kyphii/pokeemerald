@@ -8,25 +8,25 @@
 // surfing, etc.
 // The normalId tells the game what GFX to tie the associated alternate sprites to. This is usually the sprite you would
 // give to the object in Porymap.
-// For example, Rival May's normalId is OBJ_EVENT_GFX_RIVAL_MAY_NORMAL. All the rest of the sprites in that same block
+// For example, Rival May's normalId is OBJ_EVENT_GFX_KYPHII. All the rest of the sprites in that same block
 // will be used with an NPC follower that has that normalId.
 
 static const struct FollowerNPCSpriteGraphics gFollowerNPCAlternateSprites[] =
 {
     {
-        .normalId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL,
-        .machBikeId = OBJ_EVENT_GFX_RIVAL_MAY_MACH_BIKE,
-        .acroBikeId = OBJ_EVENT_GFX_RIVAL_MAY_ACRO_BIKE,
-        .surfId = OBJ_EVENT_GFX_RIVAL_MAY_SURFING,
-        .underwaterId = OBJ_EVENT_GFX_MAY_UNDERWATER,
+        .normalId = OBJ_EVENT_GFX_KYPHII,
+        .machBikeId = OBJ_EVENT_GFX_KYPHII,
+        .acroBikeId = OBJ_EVENT_GFX_KYPHII,
+        .surfId = OBJ_EVENT_GFX_KYPHII,
+        .underwaterId = OBJ_EVENT_GFX_PLAYER_F_UNDERWATER,
         .hasRunningFrames = TRUE,
     },
     {
-        .normalId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL,
-        .machBikeId = OBJ_EVENT_GFX_RIVAL_BRENDAN_MACH_BIKE,
-        .acroBikeId = OBJ_EVENT_GFX_RIVAL_BRENDAN_ACRO_BIKE,
-        .surfId = OBJ_EVENT_GFX_RIVAL_BRENDAN_SURFING,
-        .underwaterId = OBJ_EVENT_GFX_BRENDAN_UNDERWATER,
+        .normalId = OBJ_EVENT_GFX_KYPHII,
+        .machBikeId = OBJ_EVENT_GFX_KYPHII,
+        .acroBikeId = OBJ_EVENT_GFX_KYPHII,
+        .surfId = OBJ_EVENT_GFX_KYPHII,
+        .underwaterId = OBJ_EVENT_GFX_PLAYER_M_UNDERWATER,
         .hasRunningFrames = TRUE,
     },
 
