@@ -1,0 +1,132 @@
+mapscripts Route19_MapScripts {}
+
+script Route19_Sign_RouteSign {
+	msgbox(
+		"ROUTE 19
+		{UP_ARROW} NAUTIRUST CITY
+		{DOWN_ARROW} JUNOPOLIS CITY",
+		MSGBOX_SIGN
+	)
+}
+
+script Route19_Sign_CutMasterHouse {
+	msgbox(
+		"Home of the CUT MASTER",
+		MSGBOX_SIGN
+	)
+}
+
+script Route19_Script_Talk_BenchGirl {
+	lock
+	faceplayer
+	msgbox(
+		"TODO",
+		MSGBOX_DEFAULT
+	)
+	release
+}
+
+script Route19_Trainer_1 {
+	trainerbattle_single(
+		TRAINER_ROUTE19_1,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route19_Trainer_2 {
+	trainerbattle_single(
+		TRAINER_ROUTE19_2,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route19_Trainer_3 {
+	trainerbattle_single(
+		TRAINER_ROUTE19_3,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route19_Trainer_4 {
+	trainerbattle_single(
+		TRAINER_ROUTE19_4,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route19_Trainer_5 {
+	trainerbattle_single(
+		TRAINER_ROUTE19_5,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route19_Trainer_6 {
+	trainerbattle_single(
+		TRAINER_ROUTE19_6,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route19_Trainer_7 {
+	trainerbattle_single(
+		TRAINER_ROUTE19_7,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}

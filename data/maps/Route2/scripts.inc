@@ -228,7 +228,7 @@ Route2_Intro_MeetBigBadScene_7:
 # 344 "data/maps/Route2/scripts.pory"
 	setflag FLAG_INTRO_MET_BIGBAD
 # 345 "data/maps/Route2/scripts.pory"
-	setvar VAR_INTRO_SEQUENCE_STATE, 20
+	setvar VAR_INTRO_SEQUENCE_STATE, 255
 # 347 "data/maps/Route2/scripts.pory"
 	fadeinbgm 1
 # 348 "data/maps/Route2/scripts.pory"
@@ -313,16 +313,24 @@ Route2_Trainer_2::
 
 
 Route2_Trainer_3::
-# 403 "data/maps/Route2/scripts.pory"
+# 402 "data/maps/Route2/scripts.pory"
 	trainerbattle_single TRAINER_ROUTE2_3, Route2_Trainer_3_Text_0, Route2_Trainer_3_Text_1
-# 413 "data/maps/Route2/scripts.pory"
+# 412 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Trainer_3_Text_2, MSGBOX_AUTOCLOSE
 	return
 
 
+Route2_Trainer_4::
 # 420 "data/maps/Route2/scripts.pory"
+	trainerbattle_single TRAINER_ROUTE2_2, Route2_Trainer_4_Text_0, Route2_Trainer_4_Text_1
+# 431 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Trainer_4_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+# 438 "data/maps/Route2/scripts.pory"
 Route2_Movement_CutTreeGuyJump:
-# 421 "data/maps/Route2/scripts.pory"
+# 439 "data/maps/Route2/scripts.pory"
 	jump_in_place_right
 	step_end
 
@@ -811,27 +819,40 @@ Route2_Trainer_1_Text_2:
 
 Route2_Trainer_2_Text_0:
 # 388 "data/maps/Route2/scripts.pory"
-	.string "I'll take you on with the cool Bug\n"
-	.string "Pokémon I found in the woods!$"
+	.string "Bugs!\n"
+	.string "Bugs bugs bugs!$"
 
 Route2_Trainer_2_Text_1:
 # 392 "data/maps/Route2/scripts.pory"
-	.string "$"
+	.string "Bugggsss!$"
 
 Route2_Trainer_2_Text_2:
 # 396 "data/maps/Route2/scripts.pory"
-	.string "My girlfriend doesn't like Bug Pokémon…\n"
-	.string "What's wrong with bugs?$"
+	.string "Hi, I'm Bimmy.$"
 
 Route2_Trainer_3_Text_0:
-# 407 "data/maps/Route2/scripts.pory"
+# 406 "data/maps/Route2/scripts.pory"
 	.string "I'm looking for cute Pokémon!$"
 
 Route2_Trainer_3_Text_1:
-# 410 "data/maps/Route2/scripts.pory"
+# 409 "data/maps/Route2/scripts.pory"
 	.string "Not cute!$"
 
 Route2_Trainer_3_Text_2:
-# 414 "data/maps/Route2/scripts.pory"
+# 413 "data/maps/Route2/scripts.pory"
 	.string "I like cute Pokémon, but my friend\n"
 	.string "here only likes gross Bug types…$"
+
+Route2_Trainer_4_Text_0:
+# 424 "data/maps/Route2/scripts.pory"
+	.string "I'll take you on with the cool Bug\n"
+	.string "Pokémon I found in the woods!$"
+
+Route2_Trainer_4_Text_1:
+# 428 "data/maps/Route2/scripts.pory"
+	.string "$"
+
+Route2_Trainer_4_Text_2:
+# 432 "data/maps/Route2/scripts.pory"
+	.string "My girlfriend doesn't like Bug Pokémon…\n"
+	.string "What's wrong with bugs?$"

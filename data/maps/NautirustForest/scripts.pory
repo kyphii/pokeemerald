@@ -203,6 +203,8 @@ script NautirustForest_Intro_EndFollower {
 	destroyfollowernpc
 	addobject(LOCALID_WOODS_RIVAL)
 	
+	addplayerlevel(1)
+	
 	lockall
 	turnobject(LOCALID_WOODS_RIVAL, DIR_SOUTH)
 	applymovement(LOCALID_WOODS_RIVAL, Common_Movement_ExclamationMark)
@@ -244,6 +246,7 @@ script NautirustForest_Intro_EndFollower {
 	
 	removeobject(LOCALID_WOODS_RIVAL)
 	closemessage
+	releaseall
 }
 
 script NautirustForest_Intro_EndRace {
@@ -371,6 +374,8 @@ script NautirustForest_Intro_EndRace {
 
 	setvar(VAR_MOVEMENT_PATH_PROGRESS, 0)
 	setvar(VAR_MOVEMENT_PATH, 0)
+	
+	addplayerlevel(1)
 
 	applymovement(LOCALID_WOODS_RIVAL, NautirustForest_Intro_RivalExit)
 	waitmovement(0)

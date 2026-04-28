@@ -1,0 +1,119 @@
+mapscripts Route19_House_MapScripts {}
+
+script Route19_House_TalkCutMaster {
+	if (!flag(FLAG_RECEIVED_HM_CUT)) {
+		lock
+		faceplayer
+		
+		msgbox(
+			"Ah!
+			I knew you would find me here.
+			
+			Very well! I will teach you my secret
+			CUT technique.
+			…That is, if you defeat me in Pok\emon 
+			combat!",
+			MSGBOX_DEFAULT
+		)
+		
+		msgbox(
+			"What say you?
+			Shall we clash blades?",
+			MSGBOX_YESNO
+		)
+		if (var(VAR_RESULT) == YES) {
+			trainerbattle_single(
+				TRAINER_CUT_MASTER_1,
+				// Intro
+				"En garde!",
+				// On Defeat
+				"Well!
+				You're a cut above!", 
+				// Post-battle script
+				Route19_House_CutMasterPostBattle)
+		}
+		else {
+			msgbox(
+				"If you will not face me,
+				you will never be worthy of my secret
+				art!
+				
+				Begone!",
+				MSGBOX_DEFAULT
+			)
+			closemessage
+			release
+		}
+	}
+	else {
+		lock
+		faceplayer
+		msgbox(
+			"You have returned.
+			Do you have further need of my
+			mastery?
+			
+			Documents to shred, perhaps?",
+			MSGBOX_DEFAULT
+		)
+		release
+	}
+}
+
+script Route19_House_CutMasterPostBattle {
+	lock
+	faceplayer
+	msgbox(
+		"Well, now!
+		That was quite the battle!
+
+		You are certainly worthy of my
+		technique.
+
+		Let me show you!",
+		MSGBOX_DEFAULT
+	)
+	playfanfare(MUS_OBTAIN_TMHM)
+	message("{PLAYER} learned how to use the 
+		field move CUT!")
+	waitmessage
+	waitfanfare
+	
+	addplayerlevel(1)
+
+	msgbox(
+		"Now that I've passed down my CUT
+		technique, I can finally pass on from
+		this world…
+
+		…{PAUSE 30}Or maybe not.
+		My show's on tonight.
+
+		Use my technique wisely, young one!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	
+	setflag(FLAG_RECEIVED_HM_CUT)
+	
+	release
+}
+
+script Route19_House_TalkScyther {
+	playmoncry(SPECIES_SCYTHER, 0)
+	waitmoncry
+}
+
+script Route19_House_Sign_CutMasterNote {
+	msgbox(
+		"There's a note on the table.
+		
+		\qoI have gone away to hone my
+		blades up on Mount Briar.\qc
+		\qoSeek me there!\qc
+		\qoAlso, get out of my house!\qc
+		
+		\qo- THE CUT MASTER\qc",
+		MSGBOX_SIGN
+	)
+}

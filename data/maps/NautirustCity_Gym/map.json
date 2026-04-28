@@ -9,286 +9,479 @@
   "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": false,
+  "allow_running": true,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_GYM",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LEADER_LANDON",
+      "x": 8,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NautirustCity_Gym_TalkLandon",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_NAUTIRUST_GYM_GUIDE",
+      "graphics_id": "OBJ_EVENT_GFX_NPC_GYM_GUIDE",
+      "x": 10,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NautirustCity_Gym_TalkGuide",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NPC_SCOUT_M",
+      "x": 37,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "NautirustCity_Gym_Trainer1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NPC_HIKER",
+      "x": 10,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "NautirustCity_Gym_Trainer4",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NPC_SCOUT_F",
+      "x": 2,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "NautirustCity_Gym_Trainer5",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NPC_HIKER",
+      "x": 36,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "NautirustCity_Gym_Trainer6",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NPC_SCOUT_M",
+      "x": 1,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "NautirustCity_Gym_Trainer3",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NPC_SCOUT_F",
+      "x": 38,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "5",
+      "script": "NautirustCity_Gym_Trainer2",
+      "flag": "0"
+    }
+  ],
   "warp_events": [
     {
-      "x": 5,
-      "y": 4,
+      "x": 8,
+      "y": 28,
       "elevation": 0,
-      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "1"
+      "dest_map": "MAP_NAUTIRUST_CITY",
+      "dest_warp_id": "2"
     },
     {
-      "x": 26,
-      "y": 4,
-      "elevation": 0,
-      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 13,
-      "y": 4,
+      "x": 14,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
       "dest_warp_id": "2"
     },
     {
-      "x": 34,
-      "y": 4,
+      "x": 37,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "0"
+      "dest_warp_id": "1"
     },
     {
-      "x": 7,
-      "y": 5,
-      "elevation": 0,
-      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "5"
-    },
-    {
-      "x": 28,
-      "y": 5,
+      "x": 10,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
       "dest_warp_id": "4"
     },
     {
-      "x": 5,
-      "y": 6,
+      "x": 33,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 1,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 24,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 4,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 27,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
       "dest_warp_id": "7"
     },
     {
-      "x": 26,
-      "y": 6,
-      "elevation": 0,
-      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 10,
-      "y": 6,
-      "elevation": 0,
-      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "9"
-    },
-    {
-      "x": 31,
-      "y": 6,
-      "elevation": 0,
-      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 9,
-      "y": 7,
-      "elevation": 0,
-      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "11"
-    },
-    {
-      "x": 30,
-      "y": 7,
+      "x": 13,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
       "dest_warp_id": "10"
     },
     {
-      "x": 3,
+      "x": 36,
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "13"
+      "dest_warp_id": "9"
     },
     {
-      "x": 24,
-      "y": 9,
-      "elevation": 0,
-      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 5,
+      "x": 11,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "15"
+      "dest_warp_id": "12"
     },
     {
-      "x": 26,
+      "x": 34,
       "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 4,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
       "dest_warp_id": "14"
     },
     {
-      "x": 9,
-      "y": 10,
+      "x": 27,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "13"
+    },
+    {
+      "x": 12,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "16"
+    },
+    {
+      "x": 35,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "15"
+    },
+    {
+      "x": 3,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "18"
+    },
+    {
+      "x": 26,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
       "dest_warp_id": "17"
     },
     {
-      "x": 30,
-      "y": 10,
-      "elevation": 0,
-      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 3,
-      "y": 11,
-      "elevation": 0,
-      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "19"
-    },
-    {
-      "x": 24,
-      "y": 11,
-      "elevation": 0,
-      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 10,
-      "y": 11,
-      "elevation": 0,
-      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "21"
-    },
-    {
-      "x": 31,
-      "y": 11,
+      "x": 6,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
       "dest_warp_id": "20"
     },
     {
-      "x": 7,
-      "y": 12,
+      "x": 29,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "23"
+      "dest_warp_id": "19"
     },
     {
-      "x": 28,
-      "y": 12,
+      "x": 10,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
       "dest_warp_id": "22"
     },
     {
-      "x": 11,
+      "x": 33,
       "y": 13,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "25"
+      "dest_warp_id": "21"
     },
     {
-      "x": 32,
-      "y": 13,
-      "elevation": 0,
-      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 13,
+      "x": 15,
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "27"
+      "dest_warp_id": "24"
     },
     {
-      "x": 34,
+      "x": 38,
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "26"
+      "dest_warp_id": "23"
     },
     {
       "x": 1,
       "y": 15,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "29"
+      "dest_warp_id": "26"
     },
     {
-      "x": 22,
+      "x": 24,
       "y": 15,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "0"
+      "dest_warp_id": "25"
     },
     {
-      "x": 10,
+      "x": 5,
       "y": 15,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "31"
+      "dest_warp_id": "28"
     },
     {
-      "x": 31,
+      "x": 28,
       "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "27"
+    },
+    {
+      "x": 13,
+      "y": 16,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
       "dest_warp_id": "30"
     },
     {
-      "x": 4,
+      "x": 36,
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "33"
-    },
-    {
-      "x": 25,
-      "y": 16,
-      "elevation": 0,
-      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "0"
+      "dest_warp_id": "29"
     },
     {
       "x": 11,
-      "y": 18,
+      "y": 17,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "35"
+      "dest_warp_id": "32"
     },
     {
-      "x": 32,
+      "x": 34,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "31"
+    },
+    {
+      "x": 13,
       "y": 18,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
       "dest_warp_id": "34"
     },
     {
-      "x": 2,
+      "x": 36,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "33"
+    },
+    {
+      "x": 1,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "36"
+    },
+    {
+      "x": 24,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "35"
+    },
+    {
+      "x": 12,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "38"
+    },
+    {
+      "x": 35,
       "y": 20,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
       "dest_warp_id": "37"
     },
     {
-      "x": 23,
+      "x": 15,
       "y": 20,
       "elevation": 0,
       "dest_map": "MAP_NAUTIRUST_CITY_GYM",
-      "dest_warp_id": "36"
+      "dest_warp_id": "40"
+    },
+    {
+      "x": 38,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "39"
+    },
+    {
+      "x": 5,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "42"
+    },
+    {
+      "x": 28,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "41"
     },
     {
       "x": 7,
-      "y": 20,
+      "y": 21,
       "elevation": 0,
-      "dest_map": "MAP_NAUTIRUST_CITY",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "44"
+    },
+    {
+      "x": 30,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "43"
+    },
+    {
+      "x": 3,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "46"
+    },
+    {
+      "x": 26,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "45"
+    },
+    {
+      "x": 12,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "48"
+    },
+    {
+      "x": 35,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY_GYM",
+      "dest_warp_id": "47"
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 26,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "NautirustCity_Gym_GymStatue"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 26,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "NautirustCity_Gym_GymStatue"
+    }
+  ]
 }

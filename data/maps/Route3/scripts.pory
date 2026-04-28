@@ -1,0 +1,130 @@
+mapscripts Route3_MapScripts {}
+
+script Route3_Sign_RouteSign {
+	msgbox(
+		"ROUTE 3
+		{LEFT_ARROW} WHELCHORD CITY
+		{RIGHT_ARROW} NAUTIRUST CITY",
+		MSGBOX_SIGN
+	)
+}
+
+script Route3_Trainer_1 {
+	trainerbattle_single(
+		TRAINER_ROUTE3_1,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route3_Trainer_2 {
+	trainerbattle_single(
+		TRAINER_ROUTE3_2,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route3_Trainer_3 {
+	trainerbattle_single(
+		TRAINER_ROUTE3_3,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route3_Trainer_4 {
+	trainerbattle_single(
+		TRAINER_ROUTE3_4,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route3_Trainer_5 {
+	trainerbattle_single(
+		TRAINER_ROUTE3_5,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route3_Trainer_6 {
+	trainerbattle_single(
+		TRAINER_ROUTE3_6,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route3_Trainer_7 {
+	trainerbattle_single(
+		TRAINER_ROUTE3_7,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route3_Trainer_8 {
+	trainerbattle_single(
+		TRAINER_ROUTE3_8,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}

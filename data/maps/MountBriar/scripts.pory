@@ -56,6 +56,96 @@ script MountBriar_Script_RideLift {
 	waitmovement(0)
 }
 
+script MountBriar_Talk_CutMaster {
+	lock
+	applymovement(VAR_LAST_TALKED, moves(
+		walk_in_place_left * 2
+	))
+	waitmovement(0)
+	msgbox(
+		"Observe, if you will,
+		the obstacle before you.
+		
+		Contemplate its shape.
+		In every shape lies a weakness,
+		a fault plane.
+		
+		Align your blade with that…
+		and then…{PAUSE 30} release!",
+		MSGBOX_DEFAULT
+	)
+	playmoncry(SPECIES_SCYTHER, 0)
+	delay(15)
+	applymovement(LOCALID_MOUNTBRIAR_TREE, Movement_CutTreeDown)
+	waitmovement(0)
+	removeobject(LOCALID_MOUNTBRIAR_TREE)
+	
+	delay(15)
+	faceplayer
+	
+	msgbox(
+		"To have sought me out on this 
+		mountain… you seek the CUT technique, 
+		surely.
+		
+		Very well!
+		
+		If you are truly dedicated to obtain my
+		secret art…
+		
+		Then find me once more, in my most
+		secret of sanctuaries!
+		I will be waiting!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	
+	turnobject(VAR_LAST_TALKED, DIR_WEST)
+	delay(20)
+	removeobject(LOCALID_MOUNTBRIAR_CUTMASTERMON)
+	playse(SE_BALL)
+	
+	delay(30)
+	
+	applymovement(VAR_LAST_TALKED, moves(
+		walk_left * 3
+		walk_down
+		delay_16 * 2
+		walk_in_place_faster_down * 4
+		force_down * 3
+		face_right
+		force_right
+		face_down
+		force_down
+		face_right
+		force_right * 6
+		face_down
+		force_down
+		face_right
+		force_right
+		face_down
+		force_down * 2
+	))
+	waitmovement(0)
+	
+	removeobject(VAR_LAST_TALKED)
+	setflag(FLAG_STORY_MET_CUT_MASTER)
+	clearflag(FLAG_STORY_CUT_MASTER_AWAY)
+	
+	release
+}
+
+script MountBriar_Talk_CutMasterMon {
+	playmoncry(SPECIES_SCYTHER, 0)
+	waitmoncry
+	msgbox(
+		"Scyther is focused intently, ready to
+		strike.",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+}
+
 text MountBriar_Text_RideLift {
 	"Hello. Do you want to ride the lift 
 	to the summit?"

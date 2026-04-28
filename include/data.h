@@ -131,6 +131,8 @@ struct Trainer
     u8 poolPickIndex;
     u8 poolPruneIndex;
     u16 overrideTrainer;
+    u8 baseLevel;
+    u8 basePartySize;
     enum TrainerPicID trainerBackPic;
 };
 

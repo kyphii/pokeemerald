@@ -1,3 +1,84 @@
 {
-  "heal_locations": []
+  "heal_locations": [
+    {
+      "id": "HEAL_LOCATION_ABALOVE_TOWN",
+      "map": "MAP_ABALOVE_TOWN",
+      "x": 27,
+      "y": 10,
+      "respawn_map": "MAP_ABALOVE_TOWN_POKEMON_CENTER",
+      "respawn_npc": 1,
+      "respawn_x": 6,
+      "respawn_y": 11
+    },
+    {
+      "id": "HEAL_LOCATION_ARMITER_CITY",
+      "map": "MAP_ARMITER_CITY",
+      "x": 21,
+      "y": 18,
+      "respawn_map": "MAP_ARMITER_CITY_POKEMON_CENTER",
+      "respawn_npc": 1,
+      "respawn_x": 6,
+      "respawn_y": 11
+    },
+    {
+      "id": "HEAL_LOCATION_CANVENUS_CITY",
+      "map": "MAP_CANVENUS_CITY",
+      "x": 25,
+      "y": 18,
+      "respawn_map": "MAP_CANVENUS_CITY_POKEMON_CENTER",
+      "respawn_npc": 1,
+      "respawn_x": 6,
+      "respawn_y": 11
+    },
+    {
+      "id": "HEAL_LOCATION_JUNOPOLIS_CITY",
+      "map": "MAP_JUNOPOLIS_CITY",
+      "x": 19,
+      "y": 21,
+      "respawn_map": "MAP_JUNOPOLIS_CITY_POKEMON_CENTER",
+      "respawn_npc": 1,
+      "respawn_x": 6,
+      "respawn_y": 11
+    },
+    {
+      "id": "HEAL_LOCATION_MARINACRE_TOWN",
+      "map": "MAP_MARINACRE_TOWN",
+      "x": 31,
+      "y": 5,
+      "respawn_map": "MAP_MARINACRE_TOWN_PLAYER_HOUSE_1F",
+      "respawn_npc": 1,
+      "respawn_x": 5,
+      "respawn_y": 7
+    },
+    {
+      "id": "HEAL_LOCATION_NAUTIRUST_CITY",
+      "map": "MAP_NAUTIRUST_CITY",
+      "x": 32,
+      "y": 32,
+      "respawn_map": "MAP_NAUTIRUST_CITY_POKEMON_CENTER",
+      "respawn_npc": 1,
+      "respawn_x": 6,
+      "respawn_y": 11
+    },
+    {
+      "id": "HEAL_LOCATION_PERIWIND_CITY",
+      "map": "MAP_PERIWIND_CITY",
+      "x": 18,
+      "y": 21,
+      "respawn_map": "MAP_PERIWIND_CITY_POKEMON_CENTER",
+      "respawn_npc": 1,
+      "respawn_x": 6,
+      "respawn_y": 11
+    },
+    {
+      "id": "HEAL_LOCATION_WHELCHORD_CITY",
+      "map": "MAP_WHELCHORD_CITY",
+      "x": 24,
+      "y": 8,
+      "respawn_map": "MAP_WHELCHORD_CITY_POKEMON_CENTER",
+      "respawn_npc": 1,
+      "respawn_x": 6,
+      "respawn_y": 11
+    }
+  ]
 }

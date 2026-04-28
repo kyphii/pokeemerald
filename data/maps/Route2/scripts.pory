@@ -342,7 +342,7 @@ script Route2_Intro_MeetBigBadScene {
 	removeobject(LOCALID_ROUTE2_BIGBAD)
 	
 	setflag(FLAG_INTRO_MET_BIGBAD)
-    setvar(VAR_INTRO_SEQUENCE_STATE, 20)
+    setvar(VAR_INTRO_SEQUENCE_STATE, 255)
 	
     fadeinbgm(1)
 	releaseall
@@ -385,16 +385,15 @@ script Route2_Trainer_2 {
 		TRAINER_ROUTE2_2,
 
 		//Intro
-		"I'll take you on with the cool Bug
-		Pok\emon I found in the woods!", 
+		"Bugs!
+		Bugs bugs bugs!", 
 
 		//On Defeat
-		"")
+		"Bugggsss!")
 
 	// Post battle
 	msgbox(
-		"My girlfriend doesn't like Bug Pok\emon…
-		What's wrong with bugs?", 
+		"Hi, I'm Bimmy.", 
 		MSGBOX_AUTOCLOSE
 	)
 }
@@ -413,6 +412,25 @@ script Route2_Trainer_3 {
 	msgbox(
 		"I like cute Pok\emon, but my friend
 		here only likes gross Bug types…", 
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route2_Trainer_4 {
+	trainerbattle_single(
+		TRAINER_ROUTE2_2,
+
+		//Intro
+		"I'll take you on with the cool Bug
+		Pok\emon I found in the woods!", 
+
+		//On Defeat
+		"")
+
+	// Post battle
+	msgbox(
+		"My girlfriend doesn't like Bug Pok\emon…
+		What's wrong with bugs?", 
 		MSGBOX_AUTOCLOSE
 	)
 }

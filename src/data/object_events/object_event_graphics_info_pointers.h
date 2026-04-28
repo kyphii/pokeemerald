@@ -43,6 +43,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcFisher;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcGardener;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcGentleman;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcGuard;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcGymGuide;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcHiker;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcMan1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcMan2;
@@ -85,6 +86,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BallLight;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StarterBag;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CableCar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeaderLandon;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_PLAYER_M_NORMAL] = &gObjectEventGraphicsInfo_PlayerMNormal,
@@ -130,6 +132,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_NPC_GARDENER] = &gObjectEventGraphicsInfo_NpcGardener,
     [OBJ_EVENT_GFX_NPC_GENTLEMAN] = &gObjectEventGraphicsInfo_NpcGentleman,
     [OBJ_EVENT_GFX_NPC_GUARD] = &gObjectEventGraphicsInfo_NpcGuard,
+    [OBJ_EVENT_GFX_NPC_GYM_GUIDE] = &gObjectEventGraphicsInfo_NpcGymGuide,
     [OBJ_EVENT_GFX_NPC_HIKER] = &gObjectEventGraphicsInfo_NpcHiker,
     [OBJ_EVENT_GFX_NPC_MAN_1] = &gObjectEventGraphicsInfo_NpcMan1,
     [OBJ_EVENT_GFX_NPC_MAN_2] = &gObjectEventGraphicsInfo_NpcMan2,
@@ -159,6 +162,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_NPC_TYKE_M] = &gObjectEventGraphicsInfo_NpcTykeM,
     [OBJ_EVENT_GFX_NPC_WOMAN_1] = &gObjectEventGraphicsInfo_NpcWoman1,
     [OBJ_EVENT_GFX_NPC_WORKER] = &gObjectEventGraphicsInfo_NpcWorker,
+    [OBJ_EVENT_GFX_LEADER_LANDON] = &gObjectEventGraphicsInfo_LeaderLandon,
     [OBJ_EVENT_GFX_KYPHII] = &gObjectEventGraphicsInfo_Kyphii,
     [OBJ_EVENT_GFX_ITEM_BALL] = &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_CUTTABLE_TREE] = &gObjectEventGraphicsInfo_CuttableTree,

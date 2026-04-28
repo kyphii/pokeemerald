@@ -64,12 +64,18 @@
     "BleakrockPass",
     "RiverviewPark",
     "WitchlightWoods",
-    "VersifiersPond"
+    "VersifiersPond",
+    "OldPrincesTrailWest",
+    "OldPrincesTrailEast"
   ],
   "gMapGroup_Dungeons": [
     "PrismaticCave_1",
     "PrismaticCave_2",
-    "PrismaticCave_3"
+    "PrismaticCave_3",
+    "OldPrincesTrail_1",
+    "OldPrincesTrail_2",
+    "OldPrincesTrail_3",
+    "WanderingCave"
   ],
   "gMapGroup_Underwater": [
     "Underwater_Route1",
@@ -119,7 +125,9 @@
     "MarinacreTown_PlayerHouse_1F",
     "MarinacreTown_PlayerHouse_2F",
     "MarinacreTown_RivalHouse",
-    "Route2_House"
+    "Route2_House",
+    "Route19_House",
+    "Route4_House"
   ],
   "gMapGroup_IndoorsOther": [
     "HawthornLabs_Interior"

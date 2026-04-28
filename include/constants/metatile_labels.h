@@ -7,6 +7,26 @@
 #define METATILE_Building_TV_Off  0x002
 #define METATILE_Building_TV_On   0x003
 
+// gTileset_Cave
+#define METATILE_Cave_CrackedFloor                       0x22F
+#define METATILE_Cave_CrackedFloor_Hole                  0x206
+#define METATILE_Cave_EntranceCover                      0x229
+#define METATILE_Cave_Floor_Ledge_Bottom                 0x2E1
+#define METATILE_Cave_Floor_Ledge_Top                    0x2D1
+#define METATILE_Cave_RockBarrier_Bottom                 0x317
+#define METATILE_Cave_RockBarrier_Top                    0x307
+#define METATILE_Cave_SealedChamberBraille_Mid           0x235
+#define METATILE_Cave_SealedChamberEntrance_BottomLeft   0x232
+#define METATILE_Cave_SealedChamberEntrance_BottomMid    0x233
+#define METATILE_Cave_SealedChamberEntrance_BottomRight  0x234
+#define METATILE_Cave_SealedChamberEntrance_TopLeft      0x22A
+#define METATILE_Cave_SealedChamberEntrance_TopMid       0x22B
+#define METATILE_Cave_SealedChamberEntrance_TopRight     0x22C
+#define METATILE_Cave_ShoalCave_BlueStone_Large          0x359
+#define METATILE_Cave_ShoalCave_BlueStone_Small          0x35B
+#define METATILE_Cave_ShoalCave_DirtPile_Large           0x358
+#define METATILE_Cave_ShoalCave_DirtPile_Small           0x35A
+
 // gTileset_Contest
 #define METATILE_Contest_CounterFlap_Bottom  0x2D9
 #define METATILE_Contest_CounterFlap_Top     0x2D1
@@ -420,24 +440,6 @@
 #define METATILE_BrendansMaysHouse_MovingBox_Open                        0x270
 #define METATILE_BuildingFrlg_PCOff                                      0x062
 #define METATILE_BuildingFrlg_PCOn                                       0x063
-#define METATILE_Cave_CrackedFloor                                       0x22F
-#define METATILE_Cave_CrackedFloor_Hole                                  0x206
-#define METATILE_Cave_EntranceCover                                      0x229
-#define METATILE_Cave_Floor_Ledge_Bottom                                 0x2E1
-#define METATILE_Cave_Floor_Ledge_Top                                    0x2D1
-#define METATILE_Cave_RockBarrier_Bottom                                 0x317
-#define METATILE_Cave_RockBarrier_Top                                    0x307
-#define METATILE_Cave_SealedChamberBraille_Mid                           0x235
-#define METATILE_Cave_SealedChamberEntrance_BottomLeft                   0x232
-#define METATILE_Cave_SealedChamberEntrance_BottomMid                    0x233
-#define METATILE_Cave_SealedChamberEntrance_BottomRight                  0x234
-#define METATILE_Cave_SealedChamberEntrance_TopLeft                      0x22A
-#define METATILE_Cave_SealedChamberEntrance_TopMid                       0x22B
-#define METATILE_Cave_SealedChamberEntrance_TopRight                     0x22C
-#define METATILE_Cave_ShoalCave_BlueStone_Large                          0x359
-#define METATILE_Cave_ShoalCave_BlueStone_Small                          0x35B
-#define METATILE_Cave_ShoalCave_DirtPile_Large                           0x358
-#define METATILE_Cave_ShoalCave_DirtPile_Small                           0x35A
 #define METATILE_CeladonCity_CyclingRoad_Grass                           0x352
 #define METATILE_CeladonCity_CyclingRoad_Mowed                           0x33E
 #define METATILE_CeladonCity_DeptStoreDoor                               0x294

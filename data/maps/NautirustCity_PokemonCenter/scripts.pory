@@ -1,0 +1,32 @@
+mapscripts NautirustCity_PokemonCenter_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		setrespawn(HEAL_LOCATION_NAUTIRUST_CITY)
+	}
+}
+
+script NautirustCity_PokemonCenter_Script_TalkMaya {
+	lock
+	faceplayer
+	
+	msgbox(
+		"MAYA: I don't know if I've ever actually
+		been in a Pok\emon Center before.
+		
+		It's amazing that all this is a 
+		free service, isn't it?
+		
+		Well, anyways, we have two ways to go
+		from here.
+		
+		We can go west towards Armiter City, or
+		south towards Canvenus City.
+		
+		Honestly, I kinda want to hit up
+		the Pok\emon Gym here in town…
+		
+		What do you think, {PLAYER}?",
+		MSGBOX_DEFAULT
+	)
+	
+	release
+}

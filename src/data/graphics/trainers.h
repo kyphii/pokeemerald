@@ -218,6 +218,9 @@ const u32 gTrainerFrontPic_ProtagM[] = INCBIN_U32("graphics/trainers/front_pics/
 const u32 gTrainerFrontPic_ProtagF[] = INCBIN_U32("graphics/trainers/front_pics/protag_f.4bpp.smol");
 const u16 gTrainerPalette_Protag[] = INCBIN_U16("graphics/trainers/palettes/protag.gbapal");
 
+const u32 gTrainerFrontPic_LeaderLandon[] = INCBIN_U32("graphics/trainers/front_pics/leader_landon.4bpp.smol");
+const u16 gTrainerPalette_LeaderLandon[] = INCBIN_U16("graphics/trainers/palettes/leader_landon.gbapal");
+
 const u32 gTrainerFrontPic_BugCatcher[] = INCBIN_U32("graphics/trainers/front_pics/bug_catcher.4bpp.smol");
 const u16 gTrainerPalette_BugCatcher[] = INCBIN_U16("graphics/trainers/front_pics/bug_catcher.gbapal");
 
@@ -569,6 +572,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_FRONT_MAYA, gTrainerFrontPic_Maya, gTrainerPalette_Maya),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_PROTAG_M, gTrainerFrontPic_ProtagM, gTrainerPalette_Protag),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_PROTAG_F, gTrainerFrontPic_ProtagF, gTrainerPalette_Protag),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_LEADER_LANDON, gTrainerFrontPic_LeaderLandon, gTrainerPalette_LeaderLandon),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_BUG_CATCHER, gTrainerFrontPic_BugCatcher, gTrainerPalette_BugCatcher),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_POKEMON_RANGER_M, gTrainerFrontPic_PokemonRangerM, gTrainerPalette_PokemonRangerM),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_POKEMON_RANGER_F, gTrainerFrontPic_PokemonRangerF, gTrainerPalette_PokemonRangerF),

@@ -140,6 +140,12 @@ struct Trainer
     struct String difficulty;
     int difficulty_line;
 
+    int baseLevel;
+    int baseLevel_line;
+
+    int basePartySize;
+    int basePartySize_line;
+
     int party_size;
     int party_size_line;
 
@@ -1262,6 +1268,22 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
             trainer->difficulty_line = value.location.line;
             trainer->difficulty = token_string(&value);
         }
+        else if (is_literal_token(&key, "Base Level"))
+        {
+            if (trainer->baseLevel_line)
+                any_error = !set_show_parse_error(p, key.location, "duplicate 'Base Level'");
+            trainer->baseLevel_line = value.location.line;
+            if (!token_int(p, &value, &trainer->baseLevel))
+                any_error = !show_parse_error(p);
+        }
+        else if (is_literal_token(&key, "Base Party Size"))
+        {
+            if (trainer->basePartySize_line)
+                any_error = !set_show_parse_error(p, key.location, "duplicate 'Base Party Size'");
+            trainer->basePartySize_line = value.location.line;
+            if (!token_int(p, &value, &trainer->basePartySize))
+                any_error = !show_parse_error(p);
+        }
         else if (is_literal_token(&key, "Party Size"))
         {
             if (trainer->party_size_line)
@@ -1831,6 +1853,12 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
             fprint_constant(f, "TRAINER_GENDER", trainer->gender);
             fprintf(f, ",\n");
         }
+
+        fprintf(f, "#line %d\n", trainer->baseLevel_line);
+        fprintf(f, "        .baseLevel = % d, \n", trainer->baseLevel);
+
+        fprintf(f, "#line %d\n", trainer->basePartySize_line);
+        fprintf(f, "        .basePartySize = % d, \n", trainer->basePartySize);
 
         if (!is_empty_string(trainer->encounter_music))
         {

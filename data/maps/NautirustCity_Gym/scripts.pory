@@ -1,0 +1,359 @@
+mapscripts NautirustCity_Gym_MapScripts {
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE {
+		getbadgecount
+		if (var(VAR_RESULT) == 0) {
+			goto(NautirustCity_Gym_GuideIntro)
+		}
+	}
+}
+
+
+
+script NautirustCity_Gym_GymStatue {
+	if (flag(FLAG_BADGE01_GET)) {
+		msgbox(
+			"Nautirust City Pok\emon Gym",
+			MSGBOX_SIGN
+		)
+		closemessage
+	}
+	else {
+		msgbox(
+			"Nautirust City Pok\emon Gym
+			
+			Landon's Certified Trainers:
+			{PLAYER}
+			Maya",
+			MSGBOX_SIGN
+		)
+		closemessage
+	}
+}
+
+script NautirustCity_Gym_GuideIntro {
+	lockall
+	delay(30)
+	turnobject(LOCALID_NAUTIRUST_GYM_GUIDE, DIR_WEST)
+	playse(SE_PIN)
+    applymovement(LOCALID_NAUTIRUST_GYM_GUIDE, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	delay(60)
+	applymovement(LOCALID_NAUTIRUST_GYM_GUIDE, moves(
+		walk_left * 2
+		face_down
+	))
+	waitmovement(0)
+	
+	msgbox(
+		"Well, what do we have here?
+		Could it be a brand new, bright-eyed 
+		champ-in-the-making?
+		
+		Welcome to the Nautirust City Gym!
+
+		If you're looking to test your mettle
+		against the Wohnet Pok\emon League,
+		then you're in the right place!
+		
+		Eight gyms, eight cities, eight badges
+		to collect!
+		
+		Make your way through the gauntlet,
+		and you'll come face to face with
+		Landon, the leader of this gym!
+		
+		Think you got what it takes to beat him
+		and claim the Clay Badge?
+		
+		Show me what you got, hotshot!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	applymovement(LOCALID_NAUTIRUST_GYM_GUIDE, moves(
+		walk_right * 2
+		face_down
+	))
+	release
+}
+
+script NautirustCity_Gym_TalkGuide {
+	lock
+	faceplayer
+	if (flag(FLAG_BADGE01_GET)) {
+		msgbox(
+			"I saw the whole thing!
+			What a breathtaking bout!
+			
+			You got the stuff, kid!
+			
+			And now, the Clay Badge is yours!
+			Proudly displayed on your Trainer Card!
+			
+			You've climbed the first step on the 
+			path towards the Wohnet Pok\emon 
+			League! How's it feel?
+			
+			Keep going! Challenge the other gyms
+			across the Wohnet region!
+			You're gonna go far kid!",
+			MSGBOX_DEFAULT
+		)
+		closemessage
+		release
+	}
+	else {
+		msgbox(
+			"Need a tip, hotshot?
+			
+			Landon's an expert in Ground-type
+			Pok\emon, and no slouch in battle!
+			
+			His Pok\emon are sturdy enough to take
+			a mighty hit, and dish out a whallop in
+			return.
+			
+			Water and Grass type attacks can send 
+			them packing!
+			
+			But watch out! Landon's Pok\emon can 
+			also whip up a ferocious sandstorm!
+			
+			It'll scour your Pok\emon, and give his
+			a hearty defensive buff!
+			
+			If you have a Ground, Rock, or Steel-
+			type Pok\emon, they can withstand the 
+			sand!
+			
+			Or you can turn the tide with a 
+			Pok\emon that can call in sun, rain, or 
+			snow!
+			
+			That's all I got, hotshot!
+			Go for it!",
+			MSGBOX_DEFAULT
+		)
+		closemessage
+		release
+	}
+}
+
+script NautirustCity_Gym_TalkLandon {
+	if (flag(FLAG_BADGE01_GET)) {
+		if (flag(FLAG_RECEIVED_TM_ROCK_TOMB)) {
+			lock
+			faceplayer
+			msgbox(
+				"If you're ever on Mount Briar, we 
+				might into each other again.
+				
+				Next time I'll be tougher!",
+				MSGBOX_DEFAULT
+			)
+			closemessage
+			release
+		}
+		else {
+			lock
+			faceplayer
+			call(NautirustCity_Gym_GetRewardTM)
+			release
+		}
+	}
+	else {
+		lock
+		faceplayer
+		trainerbattle_single(TRAINER_NAUTIRUST_GYM_LEADER_LANDON, 
+			NautirustCity_Gym_Text_LandonPreBattle, 
+			NautirustCity_Gym_Text_LandonPostBattle, 
+			NautirustCity_Gym_Script_BeatLandon, 
+			NO_MUSIC
+		)
+		
+		release
+	}
+}
+
+script NautirustCity_Gym_Script_BeatLandon {
+	msgbox(
+		"I learned a lot from that battle. 
+		My team has some weak points I need to 
+		shore up.
+
+		I'll train harder!
+
+		If you train hard too, I'm sure you'll 
+		make it all the way to the Pok\emon 
+		League!
+
+		As proof of your victory, take this.
+		The Clay Badge!",
+		MSGBOX_DEFAULT
+	)
+	message(
+		"{PLAYER} received the Clay Badge from 
+		Landon!"
+	)
+	waitmessage
+	call(Common_EventScript_PlayGymBadgeFanfare)
+	setflag(FLAG_BADGE01_GET)
+	addplayerlevel(1)
+	
+	call(NautirustCity_Gym_GetRewardTM)
+	
+	msgbox(
+		"Good luck out there, trainer!", 
+		MSGBOX_DEFAULT
+	)
+	setvar(VAR_0x8008, 1)
+	call(Common_EventScript_SetGymTrainers)
+	closemessage
+	release
+}
+
+script NautirustCity_Gym_GetRewardTM {
+	msgbox(
+		"Take this too!",
+		MSGBOX_DEFAULT
+	)
+	giveitem(ITEM_TM_DIG)
+	if (var(VAR_RESULT) == FALSE) {
+		call(Common_EventScript_ShowBagIsFull)
+	}
+	msgbox(
+		"That's the TM for the move Dig.
+
+		Teach it to your Pok\emon, and they'll 
+		be able to strike your foes where they 
+		least expect it!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	return
+}
+
+text NautirustCity_Gym_Text_LandonPreBattle {
+	"Hey, hey!
+	I've been watching you make your way
+	through my gym, trainer.
+
+	The name's Landon! I'm the leader of 
+	Nautirust City's Pok\emon Gym.
+
+	The gym leader before me was my father.
+	He entrusted it to me when he retired.
+
+	Since then, I've been training on 
+	Mount Briar every day to prove I have 
+	what it takes to be a gym leader!
+
+	What about you, trainer?
+	How do you train your Pok\emon?
+
+	Show me!"
+}
+
+text NautirustCity_Gym_Text_LandonPostBattle {
+	"Wow!
+	Your training is exceptional!"
+}
+
+script NautirustCity_Gym_Trainer1 {
+	trainerbattle_single(
+		TRAINER_NAUTIRUST_GYM_1,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script NautirustCity_Gym_Trainer2 {
+	trainerbattle_single(
+		TRAINER_NAUTIRUST_GYM_2,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script NautirustCity_Gym_Trainer3 {
+	trainerbattle_single(
+		TRAINER_NAUTIRUST_GYM_3,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script NautirustCity_Gym_Trainer4 {
+	trainerbattle_single(
+		TRAINER_NAUTIRUST_GYM_4,
+		//Intro
+		"Didn't see me, huh?
+		
+		That's me!
+		Strong like a rock!
+		Tough like a rock!
+		Stealthy like… a… rock!", 
+		//On Defeat
+		"I got rocked!")
+
+	// Post battle
+	msgbox(
+		"Ha!
+		You got guts!
+		
+		I bet you could roll right through
+		Landon!",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script NautirustCity_Gym_Trainer5 {
+	trainerbattle_single(
+		TRAINER_NAUTIRUST_GYM_5,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script NautirustCity_Gym_Trainer6 {
+	trainerbattle_single(
+		TRAINER_NAUTIRUST_GYM_6,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+

@@ -50,6 +50,7 @@ const u32 gObjectEventPic_NpcFisher[] = INCBIN_U32("graphics/object_events/pics/
 const u32 gObjectEventPic_NpcGardener[] = INCBIN_U32("graphics/object_events/pics/people/npc_gardener.4bpp");
 const u32 gObjectEventPic_NpcGentleman[] = INCBIN_U32("graphics/object_events/pics/people/npc_gentleman.4bpp");
 const u32 gObjectEventPic_NpcGuard[] = INCBIN_U32("graphics/object_events/pics/people/npc_guard.4bpp");
+const u32 gObjectEventPic_NpcGymGuide[] = INCBIN_U32("graphics/object_events/pics/people/npc_gym_guide.4bpp");
 const u32 gObjectEventPic_NpcHiker[] = INCBIN_U32("graphics/object_events/pics/people/npc_hiker.4bpp");
 const u32 gObjectEventPic_NpcMan1[] = INCBIN_U32("graphics/object_events/pics/people/npc_man_1.4bpp");
 const u32 gObjectEventPic_NpcMan2[] = INCBIN_U32("graphics/object_events/pics/people/npc_man_2.4bpp");
@@ -79,6 +80,9 @@ const u32 gObjectEventPic_NpcTykeF[] = INCBIN_U32("graphics/object_events/pics/p
 const u32 gObjectEventPic_NpcTykeM[] = INCBIN_U32("graphics/object_events/pics/people/npc_tyke_m.4bpp");
 const u32 gObjectEventPic_NpcWoman1[] = INCBIN_U32("graphics/object_events/pics/people/npc_woman_1.4bpp");
 const u32 gObjectEventPic_NpcWorker[] = INCBIN_U32("graphics/object_events/pics/people/npc_worker.4bpp");
+
+const u32 gObjectEventPic_LeaderLandon[] = INCBIN_U32("graphics/object_events/pics/people/leader_landon.4bpp");
+const u16 gObjectEventPal_LeaderLandon[] = INCBIN_U16("graphics/object_events/palettes/leader_landon.gbapal");
 
 const u16 gObjectEventPal_Npc1[] = INCBIN_U16("graphics/object_events/palettes/npc_1.gbapal");
 const u16 gObjectEventPal_Npc2[] = INCBIN_U16("graphics/object_events/palettes/npc_2.gbapal");

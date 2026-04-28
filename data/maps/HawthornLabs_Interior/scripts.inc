@@ -323,279 +323,287 @@ HawthornLabs_Interior_Intro_MeetProfessorScene::
 # 423 "data/maps/HawthornLabs_Interior/scripts.pory"
 	addobject LOCALID_LABINT_BAG
 # 424 "data/maps/HawthornLabs_Interior/scripts.pory"
+	playse SE_BALL
+# 425 "data/maps/HawthornLabs_Interior/scripts.pory"
 	delay 60
-# 426 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 427 "data/maps/HawthornLabs_Interior/scripts.pory"
 	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_15, MSGBOX_DEFAULT
-# 441 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 442 "data/maps/HawthornLabs_Interior/scripts.pory"
 	closemessage
-# 443 "data/maps/HawthornLabs_Interior/scripts.pory"
-	delay 10
 # 444 "data/maps/HawthornLabs_Interior/scripts.pory"
+	delay 10
+# 445 "data/maps/HawthornLabs_Interior/scripts.pory"
 	applymovement LOCALID_LABINT_RIVAL, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_8
-# 447 "data/maps/HawthornLabs_Interior/scripts.pory"
-	waitmovement 0
 # 448 "data/maps/HawthornLabs_Interior/scripts.pory"
+	waitmovement 0
+# 449 "data/maps/HawthornLabs_Interior/scripts.pory"
 	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_16, MSGBOX_DEFAULT
-# 452 "data/maps/HawthornLabs_Interior/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_SOUTH
 # 453 "data/maps/HawthornLabs_Interior/scripts.pory"
-	turnobject LOCALID_LABINT_RIVAL, DIR_SOUTH
+	turnobject LOCALID_PLAYER, DIR_SOUTH
 # 454 "data/maps/HawthornLabs_Interior/scripts.pory"
-	delay 30
+	turnobject LOCALID_LABINT_RIVAL, DIR_SOUTH
 # 455 "data/maps/HawthornLabs_Interior/scripts.pory"
-	fadescreen FADE_TO_WHITE
+	delay 30
 # 456 "data/maps/HawthornLabs_Interior/scripts.pory"
-	switch VAR_STARTER_MON
+	fadescreen FADE_TO_WHITE
 # 457 "data/maps/HawthornLabs_Interior/scripts.pory"
+	switch VAR_STARTER_MON
+# 458 "data/maps/HawthornLabs_Interior/scripts.pory"
 	case 0, HawthornLabs_Interior_Intro_MeetProfessorScene_3
-# 461 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 462 "data/maps/HawthornLabs_Interior/scripts.pory"
 	case 1, HawthornLabs_Interior_Intro_MeetProfessorScene_4
-# 465 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 466 "data/maps/HawthornLabs_Interior/scripts.pory"
 	case 2, HawthornLabs_Interior_Intro_MeetProfessorScene_5
 HawthornLabs_Interior_Intro_MeetProfessorScene_1:
-# 470 "data/maps/HawthornLabs_Interior/scripts.pory"
-	addobject LOCALID_LABINT_STARTER_GRASS
 # 471 "data/maps/HawthornLabs_Interior/scripts.pory"
-	addobject LOCALID_LABINT_STARTER_FIRE
+	addobject LOCALID_LABINT_STARTER_GRASS
 # 472 "data/maps/HawthornLabs_Interior/scripts.pory"
-	addobject LOCALID_LABINT_STARTER_WATER
+	addobject LOCALID_LABINT_STARTER_FIRE
 # 473 "data/maps/HawthornLabs_Interior/scripts.pory"
-	fadescreen FADE_FROM_WHITE
+	addobject LOCALID_LABINT_STARTER_WATER
 # 474 "data/maps/HawthornLabs_Interior/scripts.pory"
-	delay 60
+	playse SE_BALL_OPEN
+# 475 "data/maps/HawthornLabs_Interior/scripts.pory"
+	fadescreen FADE_FROM_WHITE
 # 476 "data/maps/HawthornLabs_Interior/scripts.pory"
-	applymovement LOCALID_LABINT_PROFESSOR, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_12
-# 480 "data/maps/HawthornLabs_Interior/scripts.pory"
-	waitmovement 0
-# 482 "data/maps/HawthornLabs_Interior/scripts.pory"
-	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_17, MSGBOX_DEFAULT
-# 491 "data/maps/HawthornLabs_Interior/scripts.pory"
-	applymovement LOCALID_LABINT_RIVAL, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_13
-# 494 "data/maps/HawthornLabs_Interior/scripts.pory"
-	waitmovement 0
-# 495 "data/maps/HawthornLabs_Interior/scripts.pory"
-	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_18, MSGBOX_DEFAULT
-# 505 "data/maps/HawthornLabs_Interior/scripts.pory"
-	turnobject LOCALID_LABINT_PROFESSOR, DIR_NORTH
-# 506 "data/maps/HawthornLabs_Interior/scripts.pory"
-	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_19, MSGBOX_DEFAULT
-# 511 "data/maps/HawthornLabs_Interior/scripts.pory"
-	closemessage
-# 512 "data/maps/HawthornLabs_Interior/scripts.pory"
-	turnobject LOCALID_LABINT_RIVAL, DIR_WEST
-# 514 "data/maps/HawthornLabs_Interior/scripts.pory"
 	delay 60
-# 515 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 478 "data/maps/HawthornLabs_Interior/scripts.pory"
+	applymovement LOCALID_LABINT_PROFESSOR, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_12
+# 482 "data/maps/HawthornLabs_Interior/scripts.pory"
+	waitmovement 0
+# 484 "data/maps/HawthornLabs_Interior/scripts.pory"
+	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_17, MSGBOX_DEFAULT
+# 493 "data/maps/HawthornLabs_Interior/scripts.pory"
+	applymovement LOCALID_LABINT_RIVAL, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_13
+# 496 "data/maps/HawthornLabs_Interior/scripts.pory"
+	waitmovement 0
+# 497 "data/maps/HawthornLabs_Interior/scripts.pory"
+	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_18, MSGBOX_DEFAULT
+# 507 "data/maps/HawthornLabs_Interior/scripts.pory"
+	turnobject LOCALID_LABINT_PROFESSOR, DIR_NORTH
+# 508 "data/maps/HawthornLabs_Interior/scripts.pory"
+	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_19, MSGBOX_DEFAULT
+# 513 "data/maps/HawthornLabs_Interior/scripts.pory"
+	closemessage
+# 514 "data/maps/HawthornLabs_Interior/scripts.pory"
+	turnobject LOCALID_LABINT_RIVAL, DIR_WEST
+# 516 "data/maps/HawthornLabs_Interior/scripts.pory"
+	delay 60
+# 517 "data/maps/HawthornLabs_Interior/scripts.pory"
 	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_20, MSGBOX_DEFAULT
-# 521 "data/maps/HawthornLabs_Interior/scripts.pory"
-	closemessage
 # 523 "data/maps/HawthornLabs_Interior/scripts.pory"
+	closemessage
+# 525 "data/maps/HawthornLabs_Interior/scripts.pory"
 	applymovement LOCALID_LABINT_PROFESSOR, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_14
-# 527 "data/maps/HawthornLabs_Interior/scripts.pory"
-	waitmovement 0
-# 528 "data/maps/HawthornLabs_Interior/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_NORTH
 # 529 "data/maps/HawthornLabs_Interior/scripts.pory"
-	turnobject LOCALID_LABINT_RIVAL, DIR_NORTH
+	waitmovement 0
 # 530 "data/maps/HawthornLabs_Interior/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_NORTH
+# 531 "data/maps/HawthornLabs_Interior/scripts.pory"
+	turnobject LOCALID_LABINT_RIVAL, DIR_NORTH
+# 532 "data/maps/HawthornLabs_Interior/scripts.pory"
 	applymovement LOCALID_LABINT_PROFESSOR, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_15
-# 540 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 542 "data/maps/HawthornLabs_Interior/scripts.pory"
 	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_21, MSGBOX_DEFAULT
-# 555 "data/maps/HawthornLabs_Interior/scripts.pory"
-	waitmovement 0
-# 556 "data/maps/HawthornLabs_Interior/scripts.pory"
-	turnobject LOCALID_LABINT_PROFESSOR, DIR_SOUTH
 # 557 "data/maps/HawthornLabs_Interior/scripts.pory"
-	delay 30
+	waitmovement 0
 # 558 "data/maps/HawthornLabs_Interior/scripts.pory"
-	applymovement LOCALID_LABINT_PROFESSOR, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_13
-# 561 "data/maps/HawthornLabs_Interior/scripts.pory"
-	waitmovement 0
-# 562 "data/maps/HawthornLabs_Interior/scripts.pory"
-	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_22, MSGBOX_DEFAULT
-# 596 "data/maps/HawthornLabs_Interior/scripts.pory"
-	closemessage
-# 597 "data/maps/HawthornLabs_Interior/scripts.pory"
-	applymovement LOCALID_LABINT_RIVAL, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_16
-# 600 "data/maps/HawthornLabs_Interior/scripts.pory"
-	waitmovement 0
-# 601 "data/maps/HawthornLabs_Interior/scripts.pory"
-	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_23, MSGBOX_DEFAULT
-# 606 "data/maps/HawthornLabs_Interior/scripts.pory"
-	closemessage
-# 607 "data/maps/HawthornLabs_Interior/scripts.pory"
+	turnobject LOCALID_LABINT_PROFESSOR, DIR_SOUTH
+# 559 "data/maps/HawthornLabs_Interior/scripts.pory"
 	delay 30
-# 608 "data/maps/HawthornLabs_Interior/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_WEST
-# 609 "data/maps/HawthornLabs_Interior/scripts.pory"
-	applymovement LOCALID_LABINT_RIVAL, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_17
-# 613 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 560 "data/maps/HawthornLabs_Interior/scripts.pory"
+	applymovement LOCALID_LABINT_PROFESSOR, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_13
+# 563 "data/maps/HawthornLabs_Interior/scripts.pory"
 	waitmovement 0
-# 614 "data/maps/HawthornLabs_Interior/scripts.pory"
-	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_24, MSGBOX_DEFAULT
-# 618 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 564 "data/maps/HawthornLabs_Interior/scripts.pory"
+	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_22, MSGBOX_DEFAULT
+# 598 "data/maps/HawthornLabs_Interior/scripts.pory"
 	closemessage
-# 619 "data/maps/HawthornLabs_Interior/scripts.pory"
-	switch VAR_STARTER_MON
+# 599 "data/maps/HawthornLabs_Interior/scripts.pory"
+	applymovement LOCALID_LABINT_RIVAL, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_16
+# 602 "data/maps/HawthornLabs_Interior/scripts.pory"
+	waitmovement 0
+# 603 "data/maps/HawthornLabs_Interior/scripts.pory"
+	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_23, MSGBOX_DEFAULT
+# 608 "data/maps/HawthornLabs_Interior/scripts.pory"
+	closemessage
+# 609 "data/maps/HawthornLabs_Interior/scripts.pory"
+	delay 30
+# 610 "data/maps/HawthornLabs_Interior/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_WEST
+# 611 "data/maps/HawthornLabs_Interior/scripts.pory"
+	applymovement LOCALID_LABINT_RIVAL, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_17
+# 615 "data/maps/HawthornLabs_Interior/scripts.pory"
+	waitmovement 0
+# 616 "data/maps/HawthornLabs_Interior/scripts.pory"
+	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_24, MSGBOX_DEFAULT
 # 620 "data/maps/HawthornLabs_Interior/scripts.pory"
+	closemessage
+# 621 "data/maps/HawthornLabs_Interior/scripts.pory"
+	switch VAR_STARTER_MON
+# 622 "data/maps/HawthornLabs_Interior/scripts.pory"
 	case 0, HawthornLabs_Interior_Intro_MeetProfessorScene_8
-# 623 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 625 "data/maps/HawthornLabs_Interior/scripts.pory"
 	case 1, HawthornLabs_Interior_Intro_MeetProfessorScene_9
-# 626 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 628 "data/maps/HawthornLabs_Interior/scripts.pory"
 	case 2, HawthornLabs_Interior_Intro_MeetProfessorScene_10
 HawthornLabs_Interior_Intro_MeetProfessorScene_6:
-# 630 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 632 "data/maps/HawthornLabs_Interior/scripts.pory"
+	playse SE_BALL
+# 633 "data/maps/HawthornLabs_Interior/scripts.pory"
 	delay 60
-# 631 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 634 "data/maps/HawthornLabs_Interior/scripts.pory"
 	applymovement LOCALID_LABINT_PROFESSOR, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_17
-# 635 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 638 "data/maps/HawthornLabs_Interior/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_NORTH
-# 636 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 639 "data/maps/HawthornLabs_Interior/scripts.pory"
 	turnobject LOCALID_LABINT_RIVAL, DIR_EAST
-# 637 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 640 "data/maps/HawthornLabs_Interior/scripts.pory"
 	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_25, MSGBOX_DEFAULT
-# 645 "data/maps/HawthornLabs_Interior/scripts.pory"
-	closemessage
-# 646 "data/maps/HawthornLabs_Interior/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_SOUTH
-# 647 "data/maps/HawthornLabs_Interior/scripts.pory"
-	delay 30
 # 648 "data/maps/HawthornLabs_Interior/scripts.pory"
-	switch VAR_STARTER_MON
+	closemessage
 # 649 "data/maps/HawthornLabs_Interior/scripts.pory"
-	case 0, HawthornLabs_Interior_Intro_MeetProfessorScene_13
+	turnobject LOCALID_PLAYER, DIR_SOUTH
+# 650 "data/maps/HawthornLabs_Interior/scripts.pory"
+	delay 30
+# 651 "data/maps/HawthornLabs_Interior/scripts.pory"
+	switch VAR_STARTER_MON
 # 652 "data/maps/HawthornLabs_Interior/scripts.pory"
-	case 1, HawthornLabs_Interior_Intro_MeetProfessorScene_14
+	case 0, HawthornLabs_Interior_Intro_MeetProfessorScene_13
 # 655 "data/maps/HawthornLabs_Interior/scripts.pory"
+	case 1, HawthornLabs_Interior_Intro_MeetProfessorScene_14
+# 658 "data/maps/HawthornLabs_Interior/scripts.pory"
 	case 2, HawthornLabs_Interior_Intro_MeetProfessorScene_15
 HawthornLabs_Interior_Intro_MeetProfessorScene_11:
-# 659 "data/maps/HawthornLabs_Interior/scripts.pory"
-	delay 60
-# 661 "data/maps/HawthornLabs_Interior/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_NORTH
 # 662 "data/maps/HawthornLabs_Interior/scripts.pory"
-	turnobject LOCALID_LABINT_RIVAL, DIR_NORTH
+	playse SE_BALL
 # 663 "data/maps/HawthornLabs_Interior/scripts.pory"
-	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_26, MSGBOX_DEFAULT
-# 672 "data/maps/HawthornLabs_Interior/scripts.pory"
-	applymovement LOCALID_LABINT_PROFESSOR, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_18
-# 678 "data/maps/HawthornLabs_Interior/scripts.pory"
-	applymovement LOCALID_LABINT_RIVAL, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_19
-# 682 "data/maps/HawthornLabs_Interior/scripts.pory"
-	delay 40
-# 683 "data/maps/HawthornLabs_Interior/scripts.pory"
-	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_27, MSGBOX_DEFAULT
-# 687 "data/maps/HawthornLabs_Interior/scripts.pory"
-	closemessage
-# 688 "data/maps/HawthornLabs_Interior/scripts.pory"
 	delay 60
-# 689 "data/maps/HawthornLabs_Interior/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_WEST
-# 690 "data/maps/HawthornLabs_Interior/scripts.pory"
-	turnobject LOCALID_LABINT_RIVAL, DIR_WEST
+# 665 "data/maps/HawthornLabs_Interior/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_NORTH
+# 666 "data/maps/HawthornLabs_Interior/scripts.pory"
+	turnobject LOCALID_LABINT_RIVAL, DIR_NORTH
+# 667 "data/maps/HawthornLabs_Interior/scripts.pory"
+	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_26, MSGBOX_DEFAULT
+# 676 "data/maps/HawthornLabs_Interior/scripts.pory"
+	applymovement LOCALID_LABINT_PROFESSOR, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_18
+# 682 "data/maps/HawthornLabs_Interior/scripts.pory"
+	applymovement LOCALID_LABINT_RIVAL, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_19
+# 686 "data/maps/HawthornLabs_Interior/scripts.pory"
+	delay 40
+# 687 "data/maps/HawthornLabs_Interior/scripts.pory"
+	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_27, MSGBOX_DEFAULT
 # 691 "data/maps/HawthornLabs_Interior/scripts.pory"
-	waitmovement LOCALID_LABINT_PROFESSOR
-# 692 "data/maps/HawthornLabs_Interior/scripts.pory"
-	setobjectxyperm LOCALID_LABINT_PROFESSOR, 15, 4
-# 693 "data/maps/HawthornLabs_Interior/scripts.pory"
-	removeobject LOCALID_LABINT_PROFESSOR
-# 695 "data/maps/HawthornLabs_Interior/scripts.pory"
-	turnobject LOCALID_LABINT_RIVAL, DIR_EAST
-# 696 "data/maps/HawthornLabs_Interior/scripts.pory"
-	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_28, MSGBOX_DEFAULT
-# 704 "data/maps/HawthornLabs_Interior/scripts.pory"
 	closemessage
-# 705 "data/maps/HawthornLabs_Interior/scripts.pory"
-	applymovement LOCALID_LABINT_RIVAL, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_20
+# 692 "data/maps/HawthornLabs_Interior/scripts.pory"
+	delay 60
+# 693 "data/maps/HawthornLabs_Interior/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_WEST
+# 694 "data/maps/HawthornLabs_Interior/scripts.pory"
+	turnobject LOCALID_LABINT_RIVAL, DIR_WEST
+# 695 "data/maps/HawthornLabs_Interior/scripts.pory"
+	waitmovement LOCALID_LABINT_PROFESSOR
+# 696 "data/maps/HawthornLabs_Interior/scripts.pory"
+	setobjectxyperm LOCALID_LABINT_PROFESSOR, 15, 4
+# 697 "data/maps/HawthornLabs_Interior/scripts.pory"
+	removeobject LOCALID_LABINT_PROFESSOR
+# 699 "data/maps/HawthornLabs_Interior/scripts.pory"
+	turnobject LOCALID_LABINT_RIVAL, DIR_EAST
+# 700 "data/maps/HawthornLabs_Interior/scripts.pory"
+	msgbox HawthornLabs_Interior_Intro_MeetProfessorScene_Text_28, MSGBOX_DEFAULT
+# 708 "data/maps/HawthornLabs_Interior/scripts.pory"
+	closemessage
 # 709 "data/maps/HawthornLabs_Interior/scripts.pory"
-	waitmovement 0
-# 710 "data/maps/HawthornLabs_Interior/scripts.pory"
-	setobjectxyperm LOCALID_LABINT_RIVAL, 32, 0
-# 711 "data/maps/HawthornLabs_Interior/scripts.pory"
-	removeobject LOCALID_LABINT_RIVAL
+	applymovement LOCALID_LABINT_RIVAL, HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_20
 # 713 "data/maps/HawthornLabs_Interior/scripts.pory"
-	setflag FLAG_INTRO_MET_PROFESSOR
+	waitmovement 0
 # 714 "data/maps/HawthornLabs_Interior/scripts.pory"
-	setvar VAR_INTRO_SEQUENCE_STATE, 4
+	setobjectxyperm LOCALID_LABINT_RIVAL, 32, 0
 # 715 "data/maps/HawthornLabs_Interior/scripts.pory"
+	removeobject LOCALID_LABINT_RIVAL
+# 717 "data/maps/HawthornLabs_Interior/scripts.pory"
+	setflag FLAG_INTRO_MET_PROFESSOR
+# 718 "data/maps/HawthornLabs_Interior/scripts.pory"
+	setvar VAR_INTRO_SEQUENCE_STATE, 4
+# 719 "data/maps/HawthornLabs_Interior/scripts.pory"
 	releaseall
 	return
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_3:
-# 458 "data/maps/HawthornLabs_Interior/scripts.pory"
-	setobjectxyperm LOCALID_LABINT_STARTER_WATER, 13, 12
 # 459 "data/maps/HawthornLabs_Interior/scripts.pory"
-	setobjectxyperm LOCALID_LABINT_STARTER_FIRE, 14, 12
+	setobjectxyperm LOCALID_LABINT_STARTER_WATER, 13, 12
 # 460 "data/maps/HawthornLabs_Interior/scripts.pory"
+	setobjectxyperm LOCALID_LABINT_STARTER_FIRE, 14, 12
+# 461 "data/maps/HawthornLabs_Interior/scripts.pory"
 	setobjectxyperm LOCALID_LABINT_STARTER_GRASS, 15, 12
 	goto HawthornLabs_Interior_Intro_MeetProfessorScene_1
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_4:
-# 462 "data/maps/HawthornLabs_Interior/scripts.pory"
-	setobjectxyperm LOCALID_LABINT_STARTER_GRASS, 13, 12
 # 463 "data/maps/HawthornLabs_Interior/scripts.pory"
-	setobjectxyperm LOCALID_LABINT_STARTER_WATER, 14, 12
+	setobjectxyperm LOCALID_LABINT_STARTER_GRASS, 13, 12
 # 464 "data/maps/HawthornLabs_Interior/scripts.pory"
+	setobjectxyperm LOCALID_LABINT_STARTER_WATER, 14, 12
+# 465 "data/maps/HawthornLabs_Interior/scripts.pory"
 	setobjectxyperm LOCALID_LABINT_STARTER_FIRE, 15, 12
 	goto HawthornLabs_Interior_Intro_MeetProfessorScene_1
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_5:
-# 466 "data/maps/HawthornLabs_Interior/scripts.pory"
-	setobjectxyperm LOCALID_LABINT_STARTER_FIRE, 13, 12
 # 467 "data/maps/HawthornLabs_Interior/scripts.pory"
-	setobjectxyperm LOCALID_LABINT_STARTER_GRASS, 14, 12
+	setobjectxyperm LOCALID_LABINT_STARTER_FIRE, 13, 12
 # 468 "data/maps/HawthornLabs_Interior/scripts.pory"
+	setobjectxyperm LOCALID_LABINT_STARTER_GRASS, 14, 12
+# 469 "data/maps/HawthornLabs_Interior/scripts.pory"
 	setobjectxyperm LOCALID_LABINT_STARTER_WATER, 15, 12
 	goto HawthornLabs_Interior_Intro_MeetProfessorScene_1
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_8:
-# 621 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 623 "data/maps/HawthornLabs_Interior/scripts.pory"
 	setobjectxyperm LOCALID_LABINT_STARTER_FIRE, 32, 0
-# 622 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 624 "data/maps/HawthornLabs_Interior/scripts.pory"
 	removeobject LOCALID_LABINT_STARTER_FIRE
 	goto HawthornLabs_Interior_Intro_MeetProfessorScene_6
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_9:
-# 624 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 626 "data/maps/HawthornLabs_Interior/scripts.pory"
 	setobjectxyperm LOCALID_LABINT_STARTER_WATER, 32, 0
-# 625 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 627 "data/maps/HawthornLabs_Interior/scripts.pory"
 	removeobject LOCALID_LABINT_STARTER_WATER
 	goto HawthornLabs_Interior_Intro_MeetProfessorScene_6
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_10:
-# 627 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 629 "data/maps/HawthornLabs_Interior/scripts.pory"
 	setobjectxyperm LOCALID_LABINT_STARTER_GRASS, 32, 0
-# 628 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 630 "data/maps/HawthornLabs_Interior/scripts.pory"
 	removeobject LOCALID_LABINT_STARTER_GRASS
 	goto HawthornLabs_Interior_Intro_MeetProfessorScene_6
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_13:
-# 650 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 653 "data/maps/HawthornLabs_Interior/scripts.pory"
 	setobjectxyperm LOCALID_LABINT_STARTER_GRASS, 32, 0
-# 651 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 654 "data/maps/HawthornLabs_Interior/scripts.pory"
 	removeobject LOCALID_LABINT_STARTER_GRASS
 	goto HawthornLabs_Interior_Intro_MeetProfessorScene_11
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_14:
-# 653 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 656 "data/maps/HawthornLabs_Interior/scripts.pory"
 	setobjectxyperm LOCALID_LABINT_STARTER_FIRE, 32, 0
-# 654 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 657 "data/maps/HawthornLabs_Interior/scripts.pory"
 	removeobject LOCALID_LABINT_STARTER_FIRE
 	goto HawthornLabs_Interior_Intro_MeetProfessorScene_11
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_15:
-# 656 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 659 "data/maps/HawthornLabs_Interior/scripts.pory"
 	setobjectxyperm LOCALID_LABINT_STARTER_WATER, 32, 0
-# 657 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 660 "data/maps/HawthornLabs_Interior/scripts.pory"
 	removeobject LOCALID_LABINT_STARTER_WATER
 	goto HawthornLabs_Interior_Intro_MeetProfessorScene_11
 
 
-# 718 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 722 "data/maps/HawthornLabs_Interior/scripts.pory"
 HawthornLabs_Interior_Intro_ApproachDesk:
-# 719 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 723 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_up
-# 719 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 723 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_up
 	step_end
 
@@ -843,48 +851,40 @@ HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_11:
 	face_up
 	step_end
 
-# 476 "data/maps/HawthornLabs_Interior/scripts.pory"
-HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_12:
-# 477 "data/maps/HawthornLabs_Interior/scripts.pory"
-	walk_down
-# 477 "data/maps/HawthornLabs_Interior/scripts.pory"
-	walk_down
 # 478 "data/maps/HawthornLabs_Interior/scripts.pory"
+HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_12:
+# 479 "data/maps/HawthornLabs_Interior/scripts.pory"
+	walk_down
+# 479 "data/maps/HawthornLabs_Interior/scripts.pory"
+	walk_down
+# 480 "data/maps/HawthornLabs_Interior/scripts.pory"
 	face_right
 	step_end
 
-# 491 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 493 "data/maps/HawthornLabs_Interior/scripts.pory"
 HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_13:
-# 492 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 494 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_in_place_down
 	step_end
 
-# 523 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 525 "data/maps/HawthornLabs_Interior/scripts.pory"
 HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_14:
-# 524 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 526 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_up
-# 524 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 526 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_up
-# 524 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 526 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_up
-# 525 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 527 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_right
-# 525 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 527 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_right
 	step_end
 
-# 530 "data/maps/HawthornLabs_Interior/scripts.pory"
-HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_15:
-# 531 "data/maps/HawthornLabs_Interior/scripts.pory"
-	delay_16
-# 531 "data/maps/HawthornLabs_Interior/scripts.pory"
-	delay_16
-# 531 "data/maps/HawthornLabs_Interior/scripts.pory"
-	delay_16
-# 531 "data/maps/HawthornLabs_Interior/scripts.pory"
-	delay_16
 # 532 "data/maps/HawthornLabs_Interior/scripts.pory"
-	walk_right
+HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_15:
+# 533 "data/maps/HawthornLabs_Interior/scripts.pory"
+	delay_16
 # 533 "data/maps/HawthornLabs_Interior/scripts.pory"
 	delay_16
 # 533 "data/maps/HawthornLabs_Interior/scripts.pory"
@@ -892,7 +892,7 @@ HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_15:
 # 533 "data/maps/HawthornLabs_Interior/scripts.pory"
 	delay_16
 # 534 "data/maps/HawthornLabs_Interior/scripts.pory"
-	walk_left
+	walk_right
 # 535 "data/maps/HawthornLabs_Interior/scripts.pory"
 	delay_16
 # 535 "data/maps/HawthornLabs_Interior/scripts.pory"
@@ -900,7 +900,7 @@ HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_15:
 # 535 "data/maps/HawthornLabs_Interior/scripts.pory"
 	delay_16
 # 536 "data/maps/HawthornLabs_Interior/scripts.pory"
-	walk_right
+	walk_left
 # 537 "data/maps/HawthornLabs_Interior/scripts.pory"
 	delay_16
 # 537 "data/maps/HawthornLabs_Interior/scripts.pory"
@@ -908,100 +908,108 @@ HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_15:
 # 537 "data/maps/HawthornLabs_Interior/scripts.pory"
 	delay_16
 # 538 "data/maps/HawthornLabs_Interior/scripts.pory"
+	walk_right
+# 539 "data/maps/HawthornLabs_Interior/scripts.pory"
+	delay_16
+# 539 "data/maps/HawthornLabs_Interior/scripts.pory"
+	delay_16
+# 539 "data/maps/HawthornLabs_Interior/scripts.pory"
+	delay_16
+# 540 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_left
 	step_end
 
-# 597 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 599 "data/maps/HawthornLabs_Interior/scripts.pory"
 HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_16:
-# 598 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 600 "data/maps/HawthornLabs_Interior/scripts.pory"
 	jump_in_place_up
-# 598 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 600 "data/maps/HawthornLabs_Interior/scripts.pory"
 	jump_in_place_up
 	step_end
 
-# 609 "data/maps/HawthornLabs_Interior/scripts.pory"
-HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_17:
-# 610 "data/maps/HawthornLabs_Interior/scripts.pory"
-	walk_right
 # 611 "data/maps/HawthornLabs_Interior/scripts.pory"
+HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_17:
+# 612 "data/maps/HawthornLabs_Interior/scripts.pory"
+	walk_right
+# 613 "data/maps/HawthornLabs_Interior/scripts.pory"
 	face_down
 	step_end
 
-# 672 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 676 "data/maps/HawthornLabs_Interior/scripts.pory"
 HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_18:
-# 673 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 677 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_left
-# 673 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 677 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_left
-# 673 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 677 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_left
-# 674 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 678 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_down
-# 674 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 678 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_down
-# 675 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 679 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_left
-# 675 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 679 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_left
-# 675 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 679 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_left
-# 676 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 680 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_up
-# 676 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 680 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_up
-# 676 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 680 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_up
-# 676 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 680 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_up
-# 676 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 680 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_up
-# 676 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 680 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_up
-# 676 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 680 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_up
-# 676 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 680 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_up
-# 676 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 680 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_up
 	step_end
 
-# 678 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 682 "data/maps/HawthornLabs_Interior/scripts.pory"
 HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_19:
-# 679 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 683 "data/maps/HawthornLabs_Interior/scripts.pory"
 	jump_in_place_up
-# 679 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 683 "data/maps/HawthornLabs_Interior/scripts.pory"
 	jump_in_place_up
-# 680 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 684 "data/maps/HawthornLabs_Interior/scripts.pory"
 	face_left
 	step_end
 
-# 705 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 709 "data/maps/HawthornLabs_Interior/scripts.pory"
 HawthornLabs_Interior_Intro_MeetProfessorScene_Movement_20:
-# 706 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 710 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_fast_left
-# 706 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 710 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_fast_left
-# 706 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 710 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_fast_left
-# 706 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 710 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_fast_left
-# 706 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 710 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_fast_left
-# 706 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 710 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_fast_left
-# 707 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 711 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_fast_down
-# 707 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 711 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_fast_down
-# 707 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 711 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_fast_down
-# 707 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 711 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_fast_down
-# 707 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 711 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_fast_down
-# 707 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 711 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_fast_down
-# 707 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 711 "data/maps/HawthornLabs_Interior/scripts.pory"
 	walk_fast_down
 	step_end
 
@@ -1193,7 +1201,7 @@ HawthornLabs_Interior_Intro_MeetProfessorScene_Text_14:
 	.string "I'd like to take a look at this.$"
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_Text_15:
-# 427 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 428 "data/maps/HawthornLabs_Interior/scripts.pory"
 	.string "PROFESSOR: Hmm.\p"
 	.string "It does appear as you said.\n"
 	.string "This certainly looks like it's been lost\l"
@@ -1205,11 +1213,11 @@ HawthornLabs_Interior_Intro_MeetProfessorScene_Text_15:
 	.string "will you?$"
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_Text_16:
-# 449 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 450 "data/maps/HawthornLabs_Interior/scripts.pory"
 	.string "MAYA: Okay!$"
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_Text_17:
-# 483 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 485 "data/maps/HawthornLabs_Interior/scripts.pory"
 	.string "PROFESSOR: Well now, isn't that\n"
 	.string "something.\p"
 	.string "Though their Poké Balls are clearly\n"
@@ -1217,7 +1225,7 @@ HawthornLabs_Interior_Intro_MeetProfessorScene_Text_17:
 	.string "appear to be healthy.$"
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_Text_18:
-# 496 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 498 "data/maps/HawthornLabs_Interior/scripts.pory"
 	.string "MAYA: They seemed confused when we let\n"
 	.string "them out.\p"
 	.string "I wonder if they felt anything while\n"
@@ -1226,18 +1234,18 @@ HawthornLabs_Interior_Intro_MeetProfessorScene_Text_18:
 	.string "Were they scared? Hungry? Hurting?$"
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_Text_19:
-# 507 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 509 "data/maps/HawthornLabs_Interior/scripts.pory"
 	.string "PROFESSOR: Yes, it's a fascinating\n"
 	.string "research opportunity, isn't it?$"
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_Text_20:
-# 516 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 518 "data/maps/HawthornLabs_Interior/scripts.pory"
 	.string "MAYA: So, do you have any ideas for how\n"
 	.string "we could find their original trainer,\l"
 	.string "Professor?$"
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_Text_21:
-# 541 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 543 "data/maps/HawthornLabs_Interior/scripts.pory"
 	.string "PROFESSOR: Hmm…\n"
 	.string "It's quite the puzzle.\p"
 	.string "These could've drifted here from just\n"
@@ -1249,7 +1257,7 @@ HawthornLabs_Interior_Intro_MeetProfessorScene_Text_21:
 	.string "could narrow it down.$"
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_Text_22:
-# 563 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 565 "data/maps/HawthornLabs_Interior/scripts.pory"
 	.string "Off the top of my head…\p"
 	.string "There's a Poké Ball factory in\n"
 	.string "Armiter City, to the west.\p"
@@ -1273,34 +1281,34 @@ HawthornLabs_Interior_Intro_MeetProfessorScene_Text_22:
 	.string "the lab boys can learn anything more.$"
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_Text_23:
-# 602 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 604 "data/maps/HawthornLabs_Interior/scripts.pory"
 	.string "MAYA: Great!\n"
 	.string "Sounds like a plan!$"
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_Text_24:
-# 615 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 617 "data/maps/HawthornLabs_Interior/scripts.pory"
 	.string "MAYA: I'll take this one, then!$"
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_Text_25:
-# 638 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 641 "data/maps/HawthornLabs_Interior/scripts.pory"
 	.string "PROFESSOR: As for you…\p"
 	.string "You appear to already be acquainted\n"
 	.string "with that Pokémon beside you.\l"
 	.string "Go ahead, now.$"
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_Text_26:
-# 664 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 668 "data/maps/HawthornLabs_Interior/scripts.pory"
 	.string "PROFESSOR: Excellent!\p"
 	.string "I commend you two for seeking me out.\n"
 	.string "Good luck on your search.\p"
 	.string "Run along, now!$"
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_Text_27:
-# 684 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 688 "data/maps/HawthornLabs_Interior/scripts.pory"
 	.string "MAYA: Alright! Thank you, Professor!$"
 
 HawthornLabs_Interior_Intro_MeetProfessorScene_Text_28:
-# 697 "data/maps/HawthornLabs_Interior/scripts.pory"
+# 701 "data/maps/HawthornLabs_Interior/scripts.pory"
 	.string "MAYA: That went… better than I\n"
 	.string "anticipated.\p"
 	.string "I guess we'd better get going!\n"

@@ -946,3 +946,19 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
 	.include "data/scripts/shop.inc"
+
+	.include "data/maps/OldPrincesTrailWest/scripts.inc"
+
+	.include "data/maps/OldPrincesTrailEast/scripts.inc"
+
+	.include "data/maps/OldPrincesTrail_1/scripts.inc"
+
+	.include "data/maps/OldPrincesTrail_2/scripts.inc"
+
+	.include "data/maps/OldPrincesTrail_3/scripts.inc"
+
+	.include "data/maps/WanderingCave/scripts.inc"
+
+	.include "data/maps/Route19_House/scripts.inc"
+
+	.include "data/maps/Route4_House/scripts.inc"

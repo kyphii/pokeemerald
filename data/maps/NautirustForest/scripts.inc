@@ -258,39 +258,43 @@ NautirustForest_Intro_EndFollower_1:
 # 204 "data/maps/NautirustForest/scripts.pory"
 	addobject LOCALID_WOODS_RIVAL
 # 206 "data/maps/NautirustForest/scripts.pory"
-	lockall
-# 207 "data/maps/NautirustForest/scripts.pory"
-	turnobject LOCALID_WOODS_RIVAL, DIR_SOUTH
+	addplayerlevel 1
 # 208 "data/maps/NautirustForest/scripts.pory"
-	applymovement LOCALID_WOODS_RIVAL, Common_Movement_ExclamationMark
+	lockall
 # 209 "data/maps/NautirustForest/scripts.pory"
-	waitmovement 0
+	turnobject LOCALID_WOODS_RIVAL, DIR_SOUTH
 # 210 "data/maps/NautirustForest/scripts.pory"
-	delay 60
+	applymovement LOCALID_WOODS_RIVAL, Common_Movement_ExclamationMark
 # 211 "data/maps/NautirustForest/scripts.pory"
+	waitmovement 0
+# 212 "data/maps/NautirustForest/scripts.pory"
+	delay 60
+# 213 "data/maps/NautirustForest/scripts.pory"
 	msgbox NautirustForest_Intro_EndFollower_Text_0, MSGBOX_DEFAULT
-# 216 "data/maps/NautirustForest/scripts.pory"
+# 218 "data/maps/NautirustForest/scripts.pory"
 	compare VAR_0x8008, 8
 	goto_if_eq NautirustForest_Intro_EndFollower_7
-# 223 "data/maps/NautirustForest/scripts.pory"
+# 225 "data/maps/NautirustForest/scripts.pory"
 	applymovement LOCALID_WOODS_RIVAL, NautirustForest_Intro_EndFollower_Movement_1
 NautirustForest_Intro_EndFollower_6:
-# 228 "data/maps/NautirustForest/scripts.pory"
-	waitmovement 0
 # 230 "data/maps/NautirustForest/scripts.pory"
-	msgbox NautirustForest_Intro_EndFollower_Text_1, MSGBOX_DEFAULT
-# 238 "data/maps/NautirustForest/scripts.pory"
-	closemessage
-# 240 "data/maps/NautirustForest/scripts.pory"
-	setvar VAR_INTRO_SEQUENCE_STATE, 19
-# 242 "data/maps/NautirustForest/scripts.pory"
-	applymovement LOCALID_WOODS_RIVAL, NautirustForest_Intro_RivalExit
-# 243 "data/maps/NautirustForest/scripts.pory"
 	waitmovement 0
-# 245 "data/maps/NautirustForest/scripts.pory"
-	removeobject LOCALID_WOODS_RIVAL
-# 246 "data/maps/NautirustForest/scripts.pory"
+# 232 "data/maps/NautirustForest/scripts.pory"
+	msgbox NautirustForest_Intro_EndFollower_Text_1, MSGBOX_DEFAULT
+# 240 "data/maps/NautirustForest/scripts.pory"
 	closemessage
+# 242 "data/maps/NautirustForest/scripts.pory"
+	setvar VAR_INTRO_SEQUENCE_STATE, 19
+# 244 "data/maps/NautirustForest/scripts.pory"
+	applymovement LOCALID_WOODS_RIVAL, NautirustForest_Intro_RivalExit
+# 245 "data/maps/NautirustForest/scripts.pory"
+	waitmovement 0
+# 247 "data/maps/NautirustForest/scripts.pory"
+	removeobject LOCALID_WOODS_RIVAL
+# 248 "data/maps/NautirustForest/scripts.pory"
+	closemessage
+# 249 "data/maps/NautirustForest/scripts.pory"
+	releaseall
 	return
 
 NautirustForest_Intro_EndFollower_3:
@@ -309,691 +313,693 @@ NautirustForest_Intro_EndFollower_5:
 	goto NautirustForest_Intro_EndFollower_1
 
 NautirustForest_Intro_EndFollower_7:
-# 217 "data/maps/NautirustForest/scripts.pory"
+# 219 "data/maps/NautirustForest/scripts.pory"
 	applymovement LOCALID_WOODS_RIVAL, NautirustForest_Intro_EndFollower_Movement_0
 	goto NautirustForest_Intro_EndFollower_6
 
 
 NautirustForest_Intro_EndRace::
-# 250 "data/maps/NautirustForest/scripts.pory"
+# 253 "data/maps/NautirustForest/scripts.pory"
 	compare VAR_MOVEMENT_PATH_PROGRESS, 247
 	goto_if_ge NautirustForest_Intro_EndRace_2
-# 276 "data/maps/NautirustForest/scripts.pory"
+# 279 "data/maps/NautirustForest/scripts.pory"
 	getplayerxy VAR_0x8008, VAR_0x8009
-# 277 "data/maps/NautirustForest/scripts.pory"
+# 280 "data/maps/NautirustForest/scripts.pory"
 	switch VAR_0x8008
-# 278 "data/maps/NautirustForest/scripts.pory"
+# 281 "data/maps/NautirustForest/scripts.pory"
 	case 8, NautirustForest_Intro_EndRace_7
-# 284 "data/maps/NautirustForest/scripts.pory"
+# 287 "data/maps/NautirustForest/scripts.pory"
 	case 9, NautirustForest_Intro_EndRace_8
-# 289 "data/maps/NautirustForest/scripts.pory"
+# 292 "data/maps/NautirustForest/scripts.pory"
 	case 10, NautirustForest_Intro_EndRace_9
 NautirustForest_Intro_EndRace_5:
-# 297 "data/maps/NautirustForest/scripts.pory"
+# 300 "data/maps/NautirustForest/scripts.pory"
 	setvar VAR_INTRO_SEQUENCE_STATE, 19
-# 298 "data/maps/NautirustForest/scripts.pory"
+# 301 "data/maps/NautirustForest/scripts.pory"
 	compare VAR_MOVEMENT_PATH_PROGRESS, 232
 	goto_if_ge NautirustForest_Intro_EndRace_11
-# 313 "data/maps/NautirustForest/scripts.pory"
-	setvar VAR_PERSIST_NPC, 0
-# 315 "data/maps/NautirustForest/scripts.pory"
-	lockall
 # 316 "data/maps/NautirustForest/scripts.pory"
-	setobjectxyperm LOCALID_WOODS_RIVAL, 10, 60
-# 317 "data/maps/NautirustForest/scripts.pory"
-	removeobject LOCALID_WOODS_RIVAL
+	setvar VAR_PERSIST_NPC, 0
 # 318 "data/maps/NautirustForest/scripts.pory"
-	clearflag FLAG_INTRO_EXITED_WOODS
+	lockall
 # 319 "data/maps/NautirustForest/scripts.pory"
-	addobject LOCALID_WOODS_RIVAL
+	setobjectxyperm LOCALID_WOODS_RIVAL, 10, 60
 # 320 "data/maps/NautirustForest/scripts.pory"
+	removeobject LOCALID_WOODS_RIVAL
+# 321 "data/maps/NautirustForest/scripts.pory"
+	clearflag FLAG_INTRO_EXITED_WOODS
+# 322 "data/maps/NautirustForest/scripts.pory"
+	addobject LOCALID_WOODS_RIVAL
+# 323 "data/maps/NautirustForest/scripts.pory"
 	applymovement LOCALID_WOODS_RIVAL, NautirustForest_Intro_EndRace_Movement_4
-# 331 "data/maps/NautirustForest/scripts.pory"
+# 334 "data/maps/NautirustForest/scripts.pory"
 	waitmovement 0
-# 332 "data/maps/NautirustForest/scripts.pory"
+# 335 "data/maps/NautirustForest/scripts.pory"
 	msgbox NautirustForest_Intro_EndRace_Text_3, MSGBOX_DEFAULT
 NautirustForest_Intro_EndRace_10:
-# 340 "data/maps/NautirustForest/scripts.pory"
+# 343 "data/maps/NautirustForest/scripts.pory"
 	setvar VAR_PERSIST_NPC, 0
-# 341 "data/maps/NautirustForest/scripts.pory"
+# 344 "data/maps/NautirustForest/scripts.pory"
 	msgbox NautirustForest_Intro_EndRace_Text_4, MSGBOX_DEFAULT
-# 350 "data/maps/NautirustForest/scripts.pory"
+# 353 "data/maps/NautirustForest/scripts.pory"
 	giveitem ITEM_QUICK_CLAW, 1
-# 351 "data/maps/NautirustForest/scripts.pory"
+# 354 "data/maps/NautirustForest/scripts.pory"
 	applymovement LOCALID_WOODS_RIVAL, NautirustForest_Intro_EndFollower_Movement_1
-# 355 "data/maps/NautirustForest/scripts.pory"
+# 358 "data/maps/NautirustForest/scripts.pory"
 	waitmovement 0
-# 356 "data/maps/NautirustForest/scripts.pory"
+# 359 "data/maps/NautirustForest/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_SOUTH
-# 357 "data/maps/NautirustForest/scripts.pory"
+# 360 "data/maps/NautirustForest/scripts.pory"
 	msgbox NautirustForest_Intro_EndRace_Text_5, MSGBOX_DEFAULT
-# 362 "data/maps/NautirustForest/scripts.pory"
+# 365 "data/maps/NautirustForest/scripts.pory"
 	turnobject LOCALID_WOODS_RIVAL, DIR_NORTH
-# 363 "data/maps/NautirustForest/scripts.pory"
+# 366 "data/maps/NautirustForest/scripts.pory"
 	msgbox NautirustForest_Intro_EndRace_Text_6
 NautirustForest_Intro_EndRace_1:
-# 369 "data/maps/NautirustForest/scripts.pory"
-	closemessage
-# 370 "data/maps/NautirustForest/scripts.pory"
-	setvar VAR_INTRO_SEQUENCE_STATE, 19
 # 372 "data/maps/NautirustForest/scripts.pory"
-	setvar VAR_MOVEMENT_PATH_PROGRESS, 0
+	closemessage
 # 373 "data/maps/NautirustForest/scripts.pory"
-	setvar VAR_MOVEMENT_PATH, 0
+	setvar VAR_INTRO_SEQUENCE_STATE, 19
 # 375 "data/maps/NautirustForest/scripts.pory"
-	applymovement LOCALID_WOODS_RIVAL, NautirustForest_Intro_RivalExit
+	setvar VAR_MOVEMENT_PATH_PROGRESS, 0
 # 376 "data/maps/NautirustForest/scripts.pory"
-	waitmovement 0
+	setvar VAR_MOVEMENT_PATH, 0
 # 378 "data/maps/NautirustForest/scripts.pory"
-	removeobject LOCALID_WOODS_RIVAL
+	addplayerlevel 1
 # 380 "data/maps/NautirustForest/scripts.pory"
+	applymovement LOCALID_WOODS_RIVAL, NautirustForest_Intro_RivalExit
+# 381 "data/maps/NautirustForest/scripts.pory"
+	waitmovement 0
+# 383 "data/maps/NautirustForest/scripts.pory"
+	removeobject LOCALID_WOODS_RIVAL
+# 385 "data/maps/NautirustForest/scripts.pory"
 	releaseall
 	return
 
 NautirustForest_Intro_EndRace_2:
-# 252 "data/maps/NautirustForest/scripts.pory"
-	lockall
-# 253 "data/maps/NautirustForest/scripts.pory"
-	turnobject LOCALID_WOODS_RIVAL, DIR_NORTH
 # 255 "data/maps/NautirustForest/scripts.pory"
+	lockall
+# 256 "data/maps/NautirustForest/scripts.pory"
+	turnobject LOCALID_WOODS_RIVAL, DIR_NORTH
+# 258 "data/maps/NautirustForest/scripts.pory"
 	msgbox NautirustForest_Intro_EndRace_Text_0, MSGBOX_DEFAULT
-# 259 "data/maps/NautirustForest/scripts.pory"
+# 262 "data/maps/NautirustForest/scripts.pory"
 	closemessage
-# 260 "data/maps/NautirustForest/scripts.pory"
-	applymovement LOCALID_WOODS_RIVAL, NautirustForest_Intro_EndRace_Movement_0
 # 263 "data/maps/NautirustForest/scripts.pory"
+	applymovement LOCALID_WOODS_RIVAL, NautirustForest_Intro_EndRace_Movement_0
+# 266 "data/maps/NautirustForest/scripts.pory"
 	waitmovement 0
-# 264 "data/maps/NautirustForest/scripts.pory"
+# 267 "data/maps/NautirustForest/scripts.pory"
 	msgbox NautirustForest_Intro_EndRace_Text_1, MSGBOX_DEFAULT
 	goto NautirustForest_Intro_EndRace_1
 
 NautirustForest_Intro_EndRace_7:
-# 279 "data/maps/NautirustForest/scripts.pory"
+# 282 "data/maps/NautirustForest/scripts.pory"
 	applymovement LOCALID_PLAYER, NautirustForest_Intro_EndRace_Movement_1
 	goto NautirustForest_Intro_EndRace_5
 
 NautirustForest_Intro_EndRace_8:
-# 285 "data/maps/NautirustForest/scripts.pory"
+# 288 "data/maps/NautirustForest/scripts.pory"
 	applymovement LOCALID_PLAYER, NautirustForest_Intro_EndRace_Movement_2
 	goto NautirustForest_Intro_EndRace_5
 
 NautirustForest_Intro_EndRace_9:
-# 290 "data/maps/NautirustForest/scripts.pory"
+# 293 "data/maps/NautirustForest/scripts.pory"
 	applymovement LOCALID_PLAYER, NautirustForest_Intro_EndRace_Movement_3
 	goto NautirustForest_Intro_EndRace_5
 
 NautirustForest_Intro_EndRace_11:
-# 300 "data/maps/NautirustForest/scripts.pory"
+# 303 "data/maps/NautirustForest/scripts.pory"
 	waitmovement 0
 NautirustForest_Intro_EndRace_15:
-# 301 "data/maps/NautirustForest/scripts.pory"
+# 304 "data/maps/NautirustForest/scripts.pory"
 	compare VAR_MOVEMENT_PATH_PROGRESS, 247
 	goto_if_lt NautirustForest_Intro_EndRace_16
-# 304 "data/maps/NautirustForest/scripts.pory"
+# 307 "data/maps/NautirustForest/scripts.pory"
 	lockall
-# 305 "data/maps/NautirustForest/scripts.pory"
+# 308 "data/maps/NautirustForest/scripts.pory"
 	msgbox NautirustForest_Intro_EndRace_Text_2, MSGBOX_DEFAULT
 	goto NautirustForest_Intro_EndRace_10
 
 NautirustForest_Intro_EndRace_16:
-# 302 "data/maps/NautirustForest/scripts.pory"
+# 305 "data/maps/NautirustForest/scripts.pory"
 	delay 16
 	goto NautirustForest_Intro_EndRace_15
 
 
 NautirustForest_Trainer_1::
-# 384 "data/maps/NautirustForest/scripts.pory"
+# 389 "data/maps/NautirustForest/scripts.pory"
 	trainerbattle_single TRAINER_NAUTIRUST_FOREST_1, NautirustForest_Trainer_1_Text_0, NautirustForest_Trainer_1_Text_1
-# 393 "data/maps/NautirustForest/scripts.pory"
+# 398 "data/maps/NautirustForest/scripts.pory"
 	msgbox NautirustForest_Trainer_1_Text_2, MSGBOX_AUTOCLOSE
 	return
 
 
 NautirustForest_Trainer_2::
-# 400 "data/maps/NautirustForest/scripts.pory"
+# 405 "data/maps/NautirustForest/scripts.pory"
 	trainerbattle_single TRAINER_NAUTIRUST_FOREST_2, NautirustForest_Trainer_2_Text_0, NautirustForest_Trainer_2_Text_0
-# 408 "data/maps/NautirustForest/scripts.pory"
+# 413 "data/maps/NautirustForest/scripts.pory"
 	msgbox NautirustForest_Trainer_2_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 NautirustForest_Trainer_3::
-# 416 "data/maps/NautirustForest/scripts.pory"
+# 421 "data/maps/NautirustForest/scripts.pory"
 	trainerbattle_single TRAINER_NAUTIRUST_FOREST_3, NautirustForest_Trainer_3_Text_0, NautirustForest_Trainer_3_Text_1
-# 425 "data/maps/NautirustForest/scripts.pory"
+# 430 "data/maps/NautirustForest/scripts.pory"
 	msgbox NautirustForest_Trainer_3_Text_2, MSGBOX_AUTOCLOSE
 	return
 
 
 NautirustForest_Trainer_4::
-# 433 "data/maps/NautirustForest/scripts.pory"
+# 438 "data/maps/NautirustForest/scripts.pory"
 	trainerbattle_single TRAINER_NAUTIRUST_FOREST_4, NautirustForest_Trainer_2_Text_0, NautirustForest_Trainer_2_Text_0
-# 441 "data/maps/NautirustForest/scripts.pory"
+# 446 "data/maps/NautirustForest/scripts.pory"
 	msgbox NautirustForest_Trainer_2_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 NautirustForest_Trainer_5::
-# 448 "data/maps/NautirustForest/scripts.pory"
+# 453 "data/maps/NautirustForest/scripts.pory"
 	trainerbattle_single TRAINER_NAUTIRUST_FOREST_5, NautirustForest_Trainer_5_Text_0, NautirustForest_Trainer_5_Text_0
-# 456 "data/maps/NautirustForest/scripts.pory"
+# 461 "data/maps/NautirustForest/scripts.pory"
 	msgbox NautirustForest_Trainer_5_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
-# 462 "data/maps/NautirustForest/scripts.pory"
+# 467 "data/maps/NautirustForest/scripts.pory"
 NautirustForest_Intro_RivalExit:
-# 463 "data/maps/NautirustForest/scripts.pory"
+# 468 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
-# 463 "data/maps/NautirustForest/scripts.pory"
+# 468 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
-# 463 "data/maps/NautirustForest/scripts.pory"
+# 468 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
-# 463 "data/maps/NautirustForest/scripts.pory"
+# 468 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
-# 463 "data/maps/NautirustForest/scripts.pory"
+# 468 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
-# 463 "data/maps/NautirustForest/scripts.pory"
+# 468 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
-# 463 "data/maps/NautirustForest/scripts.pory"
+# 468 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 466 "data/maps/NautirustForest/scripts.pory"
-NautirustForest_Intro_RivalRacePath::
-# 467 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 467 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 467 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 467 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 467 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 467 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 467 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 467 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 468 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
-# 468 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
-# 468 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
-# 470 "data/maps/NautirustForest/scripts.pory"
-	delay_16
 # 471 "data/maps/NautirustForest/scripts.pory"
-	face_right
+NautirustForest_Intro_RivalRacePath::
 # 472 "data/maps/NautirustForest/scripts.pory"
-	delay_16
+	walk_fast_up
+# 472 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
+# 472 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
+# 472 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
+# 472 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
+# 472 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
+# 472 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
+# 472 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
 # 473 "data/maps/NautirustForest/scripts.pory"
-	face_up
-# 474 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_right
+# 473 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_right
+# 473 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_right
+# 475 "data/maps/NautirustForest/scripts.pory"
 	delay_16
 # 476 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 476 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 476 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
+	face_right
 # 477 "data/maps/NautirustForest/scripts.pory"
-	walk_up
-# 477 "data/maps/NautirustForest/scripts.pory"
-	walk_up
-# 477 "data/maps/NautirustForest/scripts.pory"
-	walk_up
-# 477 "data/maps/NautirustForest/scripts.pory"
-	walk_up
-# 477 "data/maps/NautirustForest/scripts.pory"
-	walk_up
+	delay_16
 # 478 "data/maps/NautirustForest/scripts.pory"
-	walk_right
-# 478 "data/maps/NautirustForest/scripts.pory"
-	walk_right
-# 478 "data/maps/NautirustForest/scripts.pory"
-	walk_right
-# 478 "data/maps/NautirustForest/scripts.pory"
-	walk_right
+	face_up
 # 479 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
-# 479 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
-# 479 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
-# 479 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
-# 480 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 480 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 480 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 480 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 480 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 480 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 480 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 480 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 480 "data/maps/NautirustForest/scripts.pory"
+	delay_16
+# 481 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_up
 # 481 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
+	walk_fast_up
 # 481 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 481 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 482 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_up
 # 482 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
+	walk_up
+# 482 "data/maps/NautirustForest/scripts.pory"
+	walk_up
+# 482 "data/maps/NautirustForest/scripts.pory"
+	walk_up
+# 482 "data/maps/NautirustForest/scripts.pory"
+	walk_up
+# 482 "data/maps/NautirustForest/scripts.pory"
+	walk_up
 # 483 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
+	walk_right
 # 483 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
+	walk_right
 # 483 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
+	walk_right
 # 483 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 483 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 483 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 483 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 483 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 483 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 483 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 483 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 483 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
+	walk_right
 # 484 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
+	walk_fast_right
 # 484 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_right
+# 484 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_right
+# 484 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_right
+# 485 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_up
 # 485 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
+	walk_fast_up
 # 485 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
+# 485 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
+# 485 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
+# 485 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
+# 485 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
+# 485 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
+# 485 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
+# 486 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_left
 # 486 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
+	walk_fast_left
 # 486 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 486 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 487 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_up
 # 487 "data/maps/NautirustForest/scripts.pory"
-	walk_up
+	walk_fast_up
+# 488 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 488 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 488 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 488 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 488 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 488 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 488 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 488 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 488 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 488 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 488 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 488 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
 # 489 "data/maps/NautirustForest/scripts.pory"
-	emote_exclamation_mark
+	walk_fast_up
+# 489 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
 # 490 "data/maps/NautirustForest/scripts.pory"
-	delay_16
+	walk_fast_left
 # 490 "data/maps/NautirustForest/scripts.pory"
-	delay_16
-# 490 "data/maps/NautirustForest/scripts.pory"
-	delay_16
-# 490 "data/maps/NautirustForest/scripts.pory"
-	delay_16
+	walk_fast_left
 # 491 "data/maps/NautirustForest/scripts.pory"
-	jump_in_place_up
+	walk_fast_up
 # 491 "data/maps/NautirustForest/scripts.pory"
-	jump_in_place_up
+	walk_fast_up
+# 491 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
 # 492 "data/maps/NautirustForest/scripts.pory"
-	delay_16
-# 493 "data/maps/NautirustForest/scripts.pory"
-	jump_in_place_up
-# 493 "data/maps/NautirustForest/scripts.pory"
-	jump_in_place_up
+	walk_up
 # 494 "data/maps/NautirustForest/scripts.pory"
+	emote_exclamation_mark
+# 495 "data/maps/NautirustForest/scripts.pory"
 	delay_16
 # 495 "data/maps/NautirustForest/scripts.pory"
-	jump_in_place_up
+	delay_16
 # 495 "data/maps/NautirustForest/scripts.pory"
+	delay_16
+# 495 "data/maps/NautirustForest/scripts.pory"
+	delay_16
+# 496 "data/maps/NautirustForest/scripts.pory"
 	jump_in_place_up
 # 496 "data/maps/NautirustForest/scripts.pory"
+	jump_in_place_up
+# 497 "data/maps/NautirustForest/scripts.pory"
 	delay_16
 # 498 "data/maps/NautirustForest/scripts.pory"
-	walk_up
+	jump_in_place_up
 # 498 "data/maps/NautirustForest/scripts.pory"
-	walk_up
+	jump_in_place_up
 # 499 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
+	delay_16
 # 500 "data/maps/NautirustForest/scripts.pory"
-	walk_up
+	jump_in_place_up
 # 500 "data/maps/NautirustForest/scripts.pory"
-	walk_up
+	jump_in_place_up
 # 501 "data/maps/NautirustForest/scripts.pory"
-	walk_right
-# 501 "data/maps/NautirustForest/scripts.pory"
-	walk_right
-# 501 "data/maps/NautirustForest/scripts.pory"
-	walk_right
-# 502 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
-# 502 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
+	delay_16
 # 503 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
+	walk_up
 # 503 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 503 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 503 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
-# 503 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
+	walk_up
 # 504 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
-# 504 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
-# 504 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
-# 504 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
+	walk_fast_up
 # 505 "data/maps/NautirustForest/scripts.pory"
-	walk_right
+	walk_up
 # 505 "data/maps/NautirustForest/scripts.pory"
-	walk_right
-# 505 "data/maps/NautirustForest/scripts.pory"
-	walk_right
-# 505 "data/maps/NautirustForest/scripts.pory"
+	walk_up
+# 506 "data/maps/NautirustForest/scripts.pory"
 	walk_right
 # 506 "data/maps/NautirustForest/scripts.pory"
-	walk_up
+	walk_right
 # 506 "data/maps/NautirustForest/scripts.pory"
-	walk_up
-# 506 "data/maps/NautirustForest/scripts.pory"
-	walk_up
-# 506 "data/maps/NautirustForest/scripts.pory"
-	walk_up
-# 506 "data/maps/NautirustForest/scripts.pory"
-	walk_up
+	walk_right
 # 507 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
+	walk_fast_right
 # 507 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_right
+# 508 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_up
 # 508 "data/maps/NautirustForest/scripts.pory"
-	walk_up
+	walk_fast_up
 # 508 "data/maps/NautirustForest/scripts.pory"
-	walk_up
+	walk_fast_up
 # 508 "data/maps/NautirustForest/scripts.pory"
-	walk_up
+	walk_fast_up
 # 508 "data/maps/NautirustForest/scripts.pory"
-	walk_up
-# 508 "data/maps/NautirustForest/scripts.pory"
-	walk_up
-# 508 "data/maps/NautirustForest/scripts.pory"
-	walk_up
-# 509 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_up
 # 509 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
+	walk_fast_right
 # 509 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_up
+	walk_fast_right
+# 509 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_right
+# 509 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_right
 # 510 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
+	walk_right
 # 510 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
+	walk_right
+# 510 "data/maps/NautirustForest/scripts.pory"
+	walk_right
+# 510 "data/maps/NautirustForest/scripts.pory"
+	walk_right
+# 511 "data/maps/NautirustForest/scripts.pory"
+	walk_up
+# 511 "data/maps/NautirustForest/scripts.pory"
+	walk_up
+# 511 "data/maps/NautirustForest/scripts.pory"
+	walk_up
+# 511 "data/maps/NautirustForest/scripts.pory"
+	walk_up
+# 511 "data/maps/NautirustForest/scripts.pory"
+	walk_up
 # 512 "data/maps/NautirustForest/scripts.pory"
-	delay_16
+	walk_fast_up
+# 512 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
 # 513 "data/maps/NautirustForest/scripts.pory"
-	face_up
+	walk_up
+# 513 "data/maps/NautirustForest/scripts.pory"
+	walk_up
+# 513 "data/maps/NautirustForest/scripts.pory"
+	walk_up
+# 513 "data/maps/NautirustForest/scripts.pory"
+	walk_up
+# 513 "data/maps/NautirustForest/scripts.pory"
+	walk_up
+# 513 "data/maps/NautirustForest/scripts.pory"
+	walk_up
 # 514 "data/maps/NautirustForest/scripts.pory"
-	delay_16
+	walk_fast_up
+# 514 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
+# 514 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_up
 # 515 "data/maps/NautirustForest/scripts.pory"
-	face_left
-# 516 "data/maps/NautirustForest/scripts.pory"
-	delay_16
+	walk_fast_left
+# 515 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
 # 517 "data/maps/NautirustForest/scripts.pory"
+	delay_16
+# 518 "data/maps/NautirustForest/scripts.pory"
 	face_up
-# 518 "data/maps/NautirustForest/scripts.pory"
-	delay_16
-# 518 "data/maps/NautirustForest/scripts.pory"
+# 519 "data/maps/NautirustForest/scripts.pory"
 	delay_16
 # 520 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 520 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 520 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 520 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
+	face_left
 # 521 "data/maps/NautirustForest/scripts.pory"
-	walk_left
-# 521 "data/maps/NautirustForest/scripts.pory"
-	walk_left
+	delay_16
 # 522 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 522 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 522 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 522 "data/maps/NautirustForest/scripts.pory"
-	walk_down
+	face_up
 # 523 "data/maps/NautirustForest/scripts.pory"
-	walk_left
-# 524 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 524 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 524 "data/maps/NautirustForest/scripts.pory"
-	walk_down
+	delay_16
+# 523 "data/maps/NautirustForest/scripts.pory"
+	delay_16
 # 525 "data/maps/NautirustForest/scripts.pory"
-	walk_left
+	walk_fast_left
 # 525 "data/maps/NautirustForest/scripts.pory"
-	walk_left
+	walk_fast_left
 # 525 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 525 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 526 "data/maps/NautirustForest/scripts.pory"
 	walk_left
 # 526 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 526 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 526 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 526 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 526 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 526 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 527 "data/maps/NautirustForest/scripts.pory"
 	walk_left
 # 527 "data/maps/NautirustForest/scripts.pory"
-	walk_left
+	walk_down
 # 527 "data/maps/NautirustForest/scripts.pory"
-	walk_left
+	walk_down
+# 527 "data/maps/NautirustForest/scripts.pory"
+	walk_down
+# 527 "data/maps/NautirustForest/scripts.pory"
+	walk_down
 # 528 "data/maps/NautirustForest/scripts.pory"
+	walk_left
+# 529 "data/maps/NautirustForest/scripts.pory"
+	walk_down
+# 529 "data/maps/NautirustForest/scripts.pory"
+	walk_down
+# 529 "data/maps/NautirustForest/scripts.pory"
 	walk_down
 # 530 "data/maps/NautirustForest/scripts.pory"
-	emote_exclamation_mark
+	walk_left
+# 530 "data/maps/NautirustForest/scripts.pory"
+	walk_left
+# 530 "data/maps/NautirustForest/scripts.pory"
+	walk_left
 # 531 "data/maps/NautirustForest/scripts.pory"
-	delay_16
+	walk_fast_left
 # 531 "data/maps/NautirustForest/scripts.pory"
-	delay_16
+	walk_fast_left
 # 531 "data/maps/NautirustForest/scripts.pory"
-	delay_16
+	walk_fast_left
 # 531 "data/maps/NautirustForest/scripts.pory"
-	delay_16
+	walk_fast_left
+# 531 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 531 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
 # 532 "data/maps/NautirustForest/scripts.pory"
-	jump_in_place_down
+	walk_left
 # 532 "data/maps/NautirustForest/scripts.pory"
-	jump_in_place_down
+	walk_left
+# 532 "data/maps/NautirustForest/scripts.pory"
+	walk_left
 # 533 "data/maps/NautirustForest/scripts.pory"
-	delay_16
-# 534 "data/maps/NautirustForest/scripts.pory"
-	jump_in_place_down
-# 534 "data/maps/NautirustForest/scripts.pory"
-	jump_in_place_down
+	walk_down
 # 535 "data/maps/NautirustForest/scripts.pory"
+	emote_exclamation_mark
+# 536 "data/maps/NautirustForest/scripts.pory"
 	delay_16
 # 536 "data/maps/NautirustForest/scripts.pory"
-	jump_in_place_down
+	delay_16
 # 536 "data/maps/NautirustForest/scripts.pory"
+	delay_16
+# 536 "data/maps/NautirustForest/scripts.pory"
+	delay_16
+# 537 "data/maps/NautirustForest/scripts.pory"
 	jump_in_place_down
 # 537 "data/maps/NautirustForest/scripts.pory"
+	jump_in_place_down
+# 538 "data/maps/NautirustForest/scripts.pory"
 	delay_16
 # 539 "data/maps/NautirustForest/scripts.pory"
-	walk_down
+	jump_in_place_down
 # 539 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 539 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 539 "data/maps/NautirustForest/scripts.pory"
-	walk_down
+	jump_in_place_down
 # 540 "data/maps/NautirustForest/scripts.pory"
-	walk_left
-# 540 "data/maps/NautirustForest/scripts.pory"
-	walk_left
+	delay_16
 # 541 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
+	jump_in_place_down
 # 541 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
+	jump_in_place_down
 # 542 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 542 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 542 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 542 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 543 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 543 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 543 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 543 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 543 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
+	delay_16
 # 544 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 544 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 544 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 544 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 544 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 546 "data/maps/NautirustForest/scripts.pory"
 	walk_down
-# 546 "data/maps/NautirustForest/scripts.pory"
+# 544 "data/maps/NautirustForest/scripts.pory"
 	walk_down
-# 546 "data/maps/NautirustForest/scripts.pory"
+# 544 "data/maps/NautirustForest/scripts.pory"
 	walk_down
+# 544 "data/maps/NautirustForest/scripts.pory"
+	walk_down
+# 545 "data/maps/NautirustForest/scripts.pory"
+	walk_left
+# 545 "data/maps/NautirustForest/scripts.pory"
+	walk_left
+# 546 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 546 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
 # 547 "data/maps/NautirustForest/scripts.pory"
-	walk_right
+	walk_fast_down
+# 547 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 547 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 547 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
 # 548 "data/maps/NautirustForest/scripts.pory"
-	walk_down
+	walk_fast_left
+# 548 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 548 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 548 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 548 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
 # 549 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
 # 549 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
 # 549 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
-# 550 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 550 "data/maps/NautirustForest/scripts.pory"
+# 549 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 549 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 551 "data/maps/NautirustForest/scripts.pory"
 	walk_down
 # 551 "data/maps/NautirustForest/scripts.pory"
-	walk_right
+	walk_down
 # 551 "data/maps/NautirustForest/scripts.pory"
+	walk_down
+# 552 "data/maps/NautirustForest/scripts.pory"
 	walk_right
-# 551 "data/maps/NautirustForest/scripts.pory"
-	walk_right
-# 552 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 552 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 552 "data/maps/NautirustForest/scripts.pory"
-	walk_down
 # 553 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
-# 553 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
-# 553 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
+	walk_down
+# 554 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 554 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 554 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
 # 555 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
+	walk_down
+# 555 "data/maps/NautirustForest/scripts.pory"
+	walk_down
 # 556 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
+	walk_right
 # 556 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
+	walk_right
 # 556 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
-# 556 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_right
+	walk_right
 # 557 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
+	walk_down
 # 557 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
+	walk_down
+# 557 "data/maps/NautirustForest/scripts.pory"
+	walk_down
 # 558 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_right
-# 559 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 559 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 559 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 559 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
+# 558 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_right
+# 558 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_right
 # 560 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 560 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
-# 560 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
+	walk_fast_down
 # 561 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_right
+# 561 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_right
+# 561 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_right
+# 561 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_right
+# 562 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
 # 562 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
+	walk_fast_down
 # 563 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_right
+# 564 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
 # 564 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
+	walk_fast_down
 # 564 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_left
+	walk_fast_down
 # 564 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 565 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_left
-# 566 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 566 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 566 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 566 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 566 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 566 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 566 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 566 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
-# 566 "data/maps/NautirustForest/scripts.pory"
-	walk_fast_down
+# 565 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 565 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
 # 566 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
 # 567 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_left
 # 568 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
-# 568 "data/maps/NautirustForest/scripts.pory"
+# 569 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 569 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 569 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 571 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
-# 568 "data/maps/NautirustForest/scripts.pory"
+# 571 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
-# 568 "data/maps/NautirustForest/scripts.pory"
+# 571 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 571 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 571 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 571 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 571 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 571 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 571 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 571 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 572 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_left
+# 573 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 573 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 573 "data/maps/NautirustForest/scripts.pory"
+	walk_fast_down
+# 573 "data/maps/NautirustForest/scripts.pory"
 	walk_fast_down
 	step_end
 
@@ -1063,89 +1069,89 @@ NautirustForest_Intro_FollowResume_Movement_1:
 	face_right
 	step_end
 
-# 217 "data/maps/NautirustForest/scripts.pory"
+# 219 "data/maps/NautirustForest/scripts.pory"
 NautirustForest_Intro_EndFollower_Movement_0:
-# 218 "data/maps/NautirustForest/scripts.pory"
+# 220 "data/maps/NautirustForest/scripts.pory"
 	walk_right
-# 219 "data/maps/NautirustForest/scripts.pory"
+# 221 "data/maps/NautirustForest/scripts.pory"
 	walk_down
-# 219 "data/maps/NautirustForest/scripts.pory"
+# 221 "data/maps/NautirustForest/scripts.pory"
 	walk_down
 	step_end
 
-# 223 "data/maps/NautirustForest/scripts.pory"
+# 225 "data/maps/NautirustForest/scripts.pory"
 NautirustForest_Intro_EndFollower_Movement_1:
-# 224 "data/maps/NautirustForest/scripts.pory"
+# 226 "data/maps/NautirustForest/scripts.pory"
 	walk_left
-# 225 "data/maps/NautirustForest/scripts.pory"
+# 227 "data/maps/NautirustForest/scripts.pory"
 	walk_down
-# 225 "data/maps/NautirustForest/scripts.pory"
+# 227 "data/maps/NautirustForest/scripts.pory"
 	walk_down
 	step_end
 
-# 260 "data/maps/NautirustForest/scripts.pory"
+# 263 "data/maps/NautirustForest/scripts.pory"
 NautirustForest_Intro_EndRace_Movement_0:
-# 261 "data/maps/NautirustForest/scripts.pory"
+# 264 "data/maps/NautirustForest/scripts.pory"
 	walk_in_place_down
 	step_end
 
-# 279 "data/maps/NautirustForest/scripts.pory"
-NautirustForest_Intro_EndRace_Movement_1:
-# 280 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 280 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 281 "data/maps/NautirustForest/scripts.pory"
-	walk_right
 # 282 "data/maps/NautirustForest/scripts.pory"
-	face_up
-	step_end
-
+NautirustForest_Intro_EndRace_Movement_1:
+# 283 "data/maps/NautirustForest/scripts.pory"
+	walk_down
+# 283 "data/maps/NautirustForest/scripts.pory"
+	walk_down
+# 284 "data/maps/NautirustForest/scripts.pory"
+	walk_right
 # 285 "data/maps/NautirustForest/scripts.pory"
+	face_up
+	step_end
+
+# 288 "data/maps/NautirustForest/scripts.pory"
 NautirustForest_Intro_EndRace_Movement_2:
-# 286 "data/maps/NautirustForest/scripts.pory"
+# 289 "data/maps/NautirustForest/scripts.pory"
 	walk_down
-# 286 "data/maps/NautirustForest/scripts.pory"
+# 289 "data/maps/NautirustForest/scripts.pory"
 	walk_down
-# 287 "data/maps/NautirustForest/scripts.pory"
-	face_up
-	step_end
-
 # 290 "data/maps/NautirustForest/scripts.pory"
-NautirustForest_Intro_EndRace_Movement_3:
-# 291 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 291 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 292 "data/maps/NautirustForest/scripts.pory"
-	walk_left
-# 293 "data/maps/NautirustForest/scripts.pory"
 	face_up
 	step_end
 
-# 320 "data/maps/NautirustForest/scripts.pory"
+# 293 "data/maps/NautirustForest/scripts.pory"
+NautirustForest_Intro_EndRace_Movement_3:
+# 294 "data/maps/NautirustForest/scripts.pory"
+	walk_down
+# 294 "data/maps/NautirustForest/scripts.pory"
+	walk_down
+# 295 "data/maps/NautirustForest/scripts.pory"
+	walk_left
+# 296 "data/maps/NautirustForest/scripts.pory"
+	face_up
+	step_end
+
+# 323 "data/maps/NautirustForest/scripts.pory"
 NautirustForest_Intro_EndRace_Movement_4:
-# 321 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 321 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 322 "data/maps/NautirustForest/scripts.pory"
-	delay_16
-# 323 "data/maps/NautirustForest/scripts.pory"
-	walk_down
-# 323 "data/maps/NautirustForest/scripts.pory"
+# 324 "data/maps/NautirustForest/scripts.pory"
 	walk_down
 # 324 "data/maps/NautirustForest/scripts.pory"
-	delay_16
+	walk_down
 # 325 "data/maps/NautirustForest/scripts.pory"
-	walk_left
+	delay_16
+# 326 "data/maps/NautirustForest/scripts.pory"
+	walk_down
 # 326 "data/maps/NautirustForest/scripts.pory"
 	walk_down
 # 327 "data/maps/NautirustForest/scripts.pory"
 	delay_16
 # 328 "data/maps/NautirustForest/scripts.pory"
+	walk_left
+# 329 "data/maps/NautirustForest/scripts.pory"
 	walk_down
-# 328 "data/maps/NautirustForest/scripts.pory"
+# 330 "data/maps/NautirustForest/scripts.pory"
+	delay_16
+# 331 "data/maps/NautirustForest/scripts.pory"
+	walk_down
+# 331 "data/maps/NautirustForest/scripts.pory"
 	walk_down
 	step_end
 
@@ -1197,91 +1203,91 @@ NautirustForest_Intro_FollowResume_Text_0:
 	.string "C'mon, let's get going already!$"
 
 NautirustForest_Intro_EndFollower_Text_0:
-# 212 "data/maps/NautirustForest/scripts.pory"
+# 214 "data/maps/NautirustForest/scripts.pory"
 	.string "MAYA: Look! There's the exit!$"
 
 NautirustForest_Intro_EndFollower_Text_1:
-# 231 "data/maps/NautirustForest/scripts.pory"
+# 233 "data/maps/NautirustForest/scripts.pory"
 	.string "We should be pretty close to \n"
 	.string "the city now.\p"
 	.string "This was good fun! Let's meet up on \n"
 	.string "ahead, okay?$"
 
 NautirustForest_Intro_EndRace_Text_0:
-# 256 "data/maps/NautirustForest/scripts.pory"
+# 259 "data/maps/NautirustForest/scripts.pory"
 	.string "MAYA: Hah! Too slow!$"
 
 NautirustForest_Intro_EndRace_Text_1:
-# 265 "data/maps/NautirustForest/scripts.pory"
+# 268 "data/maps/NautirustForest/scripts.pory"
 	.string "MAYA: Look, the way out is just up\n"
 	.string "ahead.\p"
 	.string "No time to waste! I hope you're not out\n"
 	.string "of breath!$"
 
 NautirustForest_Intro_EndRace_Text_2:
-# 306 "data/maps/NautirustForest/scripts.pory"
+# 309 "data/maps/NautirustForest/scripts.pory"
 	.string "MAYA: And FINISH!\p"
 	.string "Wow, that was close, huh?$"
 
 NautirustForest_Intro_EndRace_Text_3:
-# 333 "data/maps/NautirustForest/scripts.pory"
+# 336 "data/maps/NautirustForest/scripts.pory"
 	.string "MAYA: …Huff… huff…\p"
 	.string "Wow, you're a machine!\n"
 	.string "That was so fast!$"
 
 NautirustForest_Intro_EndRace_Text_4:
-# 342 "data/maps/NautirustForest/scripts.pory"
+# 345 "data/maps/NautirustForest/scripts.pory"
 	.string "Hah, what a rush!\p"
 	.string "And to the victor go the spoils!\n"
 	.string "Here, I picked this up along the way.\p"
 	.string "Go ahead, take it!$"
 
 NautirustForest_Intro_EndRace_Text_5:
-# 358 "data/maps/NautirustForest/scripts.pory"
+# 361 "data/maps/NautirustForest/scripts.pory"
 	.string "Anyways, we should be pretty close to\n"
 	.string "the city now.$"
 
 NautirustForest_Intro_EndRace_Text_6:
-# 364 "data/maps/NautirustForest/scripts.pory"
+# 367 "data/maps/NautirustForest/scripts.pory"
 	.string "Let's keep going! Try not to leave\n"
 	.string "me totally in your dust, okay?$"
 
 NautirustForest_Trainer_1_Text_0:
-# 387 "data/maps/NautirustForest/scripts.pory"
+# 392 "data/maps/NautirustForest/scripts.pory"
 	.string "Hah!\n"
 	.string "Caught you!$"
 
 NautirustForest_Trainer_1_Text_1:
-# 390 "data/maps/NautirustForest/scripts.pory"
+# 395 "data/maps/NautirustForest/scripts.pory"
 	.string "I got caught out!$"
 
 NautirustForest_Trainer_1_Text_2:
-# 394 "data/maps/NautirustForest/scripts.pory"
+# 399 "data/maps/NautirustForest/scripts.pory"
 	.string "Found any cool bugs in the forest?$"
 
 NautirustForest_Trainer_2_Text_0:
-# 403 "data/maps/NautirustForest/scripts.pory"
+# 408 "data/maps/NautirustForest/scripts.pory"
 	.string "TODO$"
 
 NautirustForest_Trainer_2_Text_1:
-# 409 "data/maps/NautirustForest/scripts.pory"
+# 414 "data/maps/NautirustForest/scripts.pory"
 	.string "I lost my friend in the grass.\n"
 	.string "Have you seen her anywhere?$"
 
 NautirustForest_Trainer_3_Text_0:
-# 419 "data/maps/NautirustForest/scripts.pory"
+# 424 "data/maps/NautirustForest/scripts.pory"
 	.string "Eek!\n"
 	.string "Something's rustling!$"
 
 NautirustForest_Trainer_3_Text_1:
-# 422 "data/maps/NautirustForest/scripts.pory"
+# 427 "data/maps/NautirustForest/scripts.pory"
 	.string "Oh, it's just a person…$"
 
 NautirustForest_Trainer_3_Text_2:
-# 426 "data/maps/NautirustForest/scripts.pory"
+# 431 "data/maps/NautirustForest/scripts.pory"
 	.string "Eek!\n"
 	.string "Don't scare me like that!$"
 
 NautirustForest_Trainer_5_Text_0:
-# 451 "data/maps/NautirustForest/scripts.pory"
+# 456 "data/maps/NautirustForest/scripts.pory"
 	.string "$"

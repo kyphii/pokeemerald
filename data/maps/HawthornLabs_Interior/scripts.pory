@@ -421,6 +421,7 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 	waitmovement(0)
 	setobjectxyperm(LOCALID_LABINT_BAG, 13, 10)
 	addobject(LOCALID_LABINT_BAG)
+	playse(SE_BALL)
 	delay(60)
 	
 	msgbox(
@@ -470,6 +471,7 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 	addobject(LOCALID_LABINT_STARTER_GRASS)
 	addobject(LOCALID_LABINT_STARTER_FIRE)
 	addobject(LOCALID_LABINT_STARTER_WATER)
+	playse(SE_BALL_OPEN)
 	fadescreen(FADE_FROM_WHITE)
 	delay(60)
 	
@@ -627,6 +629,7 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 			setobjectxyperm(LOCALID_LABINT_STARTER_GRASS, 32, 0)
 			removeobject(LOCALID_LABINT_STARTER_GRASS)
 	}
+	playse(SE_BALL)
 	delay(60)
 	applymovement(LOCALID_LABINT_PROFESSOR, moves(
 		walk_right
@@ -656,6 +659,7 @@ script HawthornLabs_Interior_Intro_MeetProfessorScene {
 			setobjectxyperm(LOCALID_LABINT_STARTER_WATER, 32, 0)
 			removeobject(LOCALID_LABINT_STARTER_WATER)
 	}
+	playse(SE_BALL)
 	delay(60)
 	
 	turnobject(LOCALID_PLAYER, DIR_NORTH)

@@ -1900,7 +1900,7 @@ u32 GeneratePersonalityForGender(u32 gender, u32 species)
         return speciesInfo->genderRatio / 2;
 }
 
-void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon *partyEntry)
+void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon *partyEntry, u8 level)
 {
     bool32 noMoveSet = TRUE;
     u32 j;
@@ -1919,8 +1919,9 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
 
     for (j = 0; j < MAX_MON_MOVES; ++j)
     {
-        u32 pp = GetMovePP(partyEntry->moves[j]);
-        SetMonData(mon, MON_DATA_MOVE1 + j, &partyEntry->moves[j]);
+        enum Move moveId = DynamicScaleGetTrainerMonMove(partyEntry->species, partyEntry->moves[j], level, j);
+        u32 pp = GetMovePP(moveId);
+        SetMonData(mon, MON_DATA_MOVE1 + j, &moveId);
         SetMonData(mon, MON_DATA_PP1 + j, &pp);
     }
 }
@@ -1948,6 +1949,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
         {
             monsCount = trainer->partySize;
         }
+        monsCount = DynamicScaleGetTrainerPartySize(monsCount, trainer->basePartySize, trainer->baseLevel);
 
         u32 monIndices[monsCount];
         DoTrainerPartyPool(trainer, monIndices, monsCount, battleTypeFlags);
@@ -1961,7 +1963,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             struct OriginalTrainerId otId = OTID_STRUCT_RANDOM_NO_SHINY;
             u32 abilityNum = 0;
 
-            u8 level = max(1, DynamicScaleAdjustMonLevel(100, FALSE) + partyData[i].lvl);
+            u8 level = DynamicScaleGetMonLevelForTrainer(trainer->baseLevel, partyData[i].lvl);
             u16 species = DynamicScaleAdjustMonSpecies(partyData[i].species, level);
 
             if (trainer->battleType != TRAINER_BATTLE_TYPE_SINGLES)
@@ -1987,7 +1989,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             CreateMon(&party[i], species, level, personalityValue, otId);
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
 
-            CustomTrainerPartyAssignMoves(&party[i], &partyData[monIndex]);
+            CustomTrainerPartyAssignMoves(&party[i], &partyData[monIndex], level);
             SetMonData(&party[i], MON_DATA_IVS, &(partyData[monIndex].iv));
             if (partyData[monIndex].ev != NULL)
             {
@@ -2077,10 +2079,11 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
         const struct Trainer *origTrainer = GetTrainerStructFromId(tempTrainer.overrideTrainer);
 
         tempTrainer.party = origTrainer->party;
-
+        tempTrainer.baseLevel = origTrainer->baseLevel;
         tempTrainer.poolSize = origTrainer->poolSize;
-        if (tempTrainer.partySize == 0)
-            tempTrainer.partySize = origTrainer->partySize;
+        tempTrainer.partySize = DynamicScaleGetTrainerPartySize(
+            origTrainer->partySize, origTrainer->basePartySize, origTrainer->baseLevel
+        );
 
         retVal = CreateNPCTrainerPartyFromTrainer(party, (const struct Trainer *)(&tempTrainer), firstTrainer, gBattleTypeFlags);
     }

@@ -1,0 +1,135 @@
+mapscripts Route20_MapScripts {}
+
+script Route20_Sign_RouteSign {
+	msgbox(
+		"ROUTE 20
+		{LEFT_ARROW} NAUTIRUST CITY
+		{RIGHT_ARROW} JUNOPOLIS CITY",
+		MSGBOX_SIGN
+	)
+}
+
+script Route20_Script_TalkWithMaya {
+	lockall
+	getplayerxy(VAR_0x8008, VAR_0x8009)
+	switch(var(VAR_0x8009)) {
+		case 10:
+		case 12:
+			setobjectxyperm(LOCALID_ROUTE20_MAYA, 9, 11)
+		case 11:
+		case 13:
+			setobjectxyperm(LOCALID_ROUTE20_MAYA, 9, 12)
+	}
+	addobject(LOCALID_ROUTE20_MAYA)
+	applymovement(LOCALID_ROUTE20_MAYA, moves(
+		walk_right * 9
+		delay_16 * 2
+	))
+	turnobject(LOCALID_PLAYER, DIR_WEST)
+	delay(144)
+	switch(var(VAR_0x8009)) {
+		case 10:
+		case 11:
+			turnobject(LOCALID_PLAYER, DIR_SOUTH)
+		case 12:
+		case 13:
+			turnobject(LOCALID_PLAYER, DIR_NORTH)
+	}
+	waitmovement(0)
+	
+	msgbox(
+		"MAYA: Dang, what's going on up here?
+		More roadblocks?", 
+		MSGBOX_DEFAULT
+	)
+	
+	switch(var(VAR_0x8009)) {
+		case 10:
+		case 11:
+			turnobject(LOCALID_ROUTE20_MAYA, DIR_NORTH)
+		case 12:
+		case 13:
+			turnobject(LOCALID_ROUTE20_MAYA, DIR_SOUTH)
+	}
+	
+	msgbox(
+		"Just our luck, huh?
+		
+		This doesn't look like it's gonna be
+		clearing anytime soon.
+		
+		Guess we'd better start looking for
+		another way around.
+		
+		Let me know if you figure anything out,
+		okay?", 
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	
+	applymovement(LOCALID_ROUTE20_MAYA, moves(
+		walk_fast_left * 8
+		walk_fast_up * 6
+		walk_fast_left
+	))
+	delay(32)
+	turnobject(LOCALID_PLAYER, DIR_WEST)
+	waitmovement(0)
+	
+	setobjectxyperm(LOCALID_ROUTE20_MAYA, -8, -8)
+	removeobject(LOCALID_ROUTE20_MAYA)
+	
+	setvar(VAR_STORY_STATE_ACT1_B, 2)
+	clearflag(FLAG_STORY_ROUTE4_TRAIL_HINT)
+	addplayerlevel(1)
+	
+	releaseall
+}
+
+script Route20_Script_TalkCrowdOldMan {
+	lock
+	faceplayer
+	msgbox(
+		"This is preposterous!
+		Just what is going on up there?
+		
+		At this rate, I'll be late for my haircut!",
+		MSGBOX_DEFAULT
+	)
+	if (var(VAR_STORY_STATE_ACT1_B) == 0) {
+		setvar(VAR_STORY_STATE_ACT1_B, 1)
+	}
+	release
+}
+
+script Route20_Script_TalkCrowdMan {
+	lock
+	faceplayer
+	msgbox(
+		"It's always something in this city.
+		
+		Average Wohnet traffic, am I right?",
+		MSGBOX_DEFAULT
+	)
+	if (var(VAR_STORY_STATE_ACT1_B) == 0) {
+		setvar(VAR_STORY_STATE_ACT1_B, 1)
+	}
+	release
+}
+
+script Route20_Script_TalkCrowdWoman {
+	lock
+	faceplayer
+	msgbox(
+		"There's some people up there,
+		holding up the whole road…
+		
+		They're yelling about something, but I
+		can't make it out…",
+		MSGBOX_DEFAULT
+	)
+	if (var(VAR_STORY_STATE_ACT1_B) == 0) {
+		setvar(VAR_STORY_STATE_ACT1_B, 1)
+	}
+	release
+}

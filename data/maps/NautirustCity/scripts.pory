@@ -1,1 +1,173 @@
-mapscripts NautirustCity_MapScripts {}
+mapscripts NautirustCity_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		if (!flag(FLAG_VISITED_PETALBURG_CITY)) {
+			setflag(FLAG_VISITED_PETALBURG_CITY)
+			
+			// Setup flags for story Act 1
+			setflag(FLAG_STORY_CUT_MASTER_AWAY)
+			// Scene on Route 20 unsets this flag
+			setflag(FLAG_STORY_ROUTE4_TRAIL_HINT)
+			addplayerlevel(1)
+		}
+	}
+}
+
+script NautirustCity_Sign_TownSign {
+	msgbox(
+        "NAUTIRUST CITY
+        Streams of energy, to power a new age.", 
+        MSGBOX_SIGN
+    )
+}
+
+script NautirustCity_Sign_GymSign {
+	msgbox(
+        "NAUTIRUST CITY Pok\emon Gym
+        Leader: Landon
+		The Sultan of Soil!", 
+        MSGBOX_SIGN
+    )
+}
+
+script NautirustCity_Script_TalkGreeter {
+	lock
+	faceplayer
+	msgbox(
+		"Hi!
+		Are you from out of town?
+		
+		There are a lot of trainers like you
+		passing through these days.
+		
+		Lucky for you, Nautirust has everything
+		that a trainer needs!
+		
+		You can get your Pok\emon healed at
+		the Pok\emon Center, right here.
+		
+		There's also a Pok\e Mart just up the
+		street.
+		
+		We're even part of the Wohnet Pok\emon 
+		League, with our very own Pok\emon Gym!
+		It's run by a guy named Landon.",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script NautirustCity_Script_TalkMan1 {
+	lock
+	faceplayer
+	msgbox(
+		"All these buildings used to be 
+		factories.
+		
+		Nowadays, though, most of them have 
+		been made into apartments.
+		
+		Sometimes it feels strange, to live in
+		a space that was never built for 
+		that purpose.",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script NautirustCity_Script_TalkBenchGirl {
+	lock
+	faceplayer
+	msgbox(
+		"The canals are so nice now that the
+		city's cleaned them up!
+		
+		I used to hate living here, but now I 
+		can't imagine being anywhere else!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script NautirustCity_Script_TalkExpShareStore {
+	lock
+	faceplayer
+	if (!flag(FLAG_RECEIVED_EXP_SHARE)) {
+		message(
+			"Hi there!
+			
+			My days as a Pok\emon trainer are 
+			behind me, so I'm selling my old gear.
+			
+			I have an Exp. All here.
+			Want to buy it?"
+		)
+		waitmessage
+		showmoneybox(0, 0)
+		dynmultichoice(14, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE,
+			"EXP. ALL{CLEAR_TO 0x49}{FONT_SMALL}¥5,000", "No thanks")
+		switch(var(VAR_RESULT)) {
+			case 0:
+				checkmoney(5000)
+				if (var(VAR_RESULT) == TRUE) {
+					msgbox(
+						"Here you go!",
+						MSGBOX_DEFAULT
+					)
+					removemoney(5000)
+					giveitem(ITEM_EXP_SHARE, 1)
+					setflag(FLAG_RECEIVED_EXP_SHARE)
+					
+					msgbox(
+						"Turn the Exp. All on?",
+						MSGBOX_YESNO
+					)
+					if (var(VAR_RESULT) == TRUE) {
+						playse(SE_POKENAV_ON)
+						msgbox(
+							"You turned on the Exp. All."
+						)
+						setflag(FLAG_EXP_SHARE_ENABLED)
+					}
+					
+					msgbox(
+						"Thank you!",
+						MSGBOX_DEFAULT
+					)
+					closemessage
+					release
+				}
+				else {
+					msgbox(
+						"Sorry!
+						You don't have enough money…
+						
+						Maybe come back later?",
+						MSGBOX_DEFAULT
+					)
+					closemessage
+					release
+				}
+			case 1:
+				msgbox(
+					"Thanks for stopping by!",
+					MSGBOX_DEFAULT
+				)
+				closemessage
+				release
+		}
+	}
+	else {
+		msgbox(
+			"I'm all out of stock, but I still have a
+			lease for this stand.
+			
+			Maybe I could sell other things?",
+			MSGBOX_DEFAULT
+		)
+		closemessage
+		release
+	}
+}

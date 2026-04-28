@@ -452,7 +452,7 @@
       "id": "LAYOUT_MART",
       "name": "Mart_Layout",
       "width": 11,
-      "height": 8,
+      "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/Mart/border.bin",
@@ -462,8 +462,8 @@
     {
       "id": "LAYOUT_NAUTIRUST_CITY_GYM",
       "name": "NautirustCity_Gym_Layout",
-      "width": 36,
-      "height": 22,
+      "width": 40,
+      "height": 30,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_NautirustGym",
       "border_filepath": "data/layouts/NautirustCity_Gym/border.bin",
@@ -716,6 +716,86 @@
       "secondary_tileset": "gTileset_DesertSanctuary",
       "border_filepath": "data/layouts/Route10/border.bin",
       "blockdata_filepath": "data/layouts/Route10/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLD_PRINCES_TRAIL_WEST",
+      "name": "OldPrincesTrailWest_Layout",
+      "width": 24,
+      "height": 24,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Whelchord",
+      "border_filepath": "data/layouts/OldPrincesTrailWest/border.bin",
+      "blockdata_filepath": "data/layouts/OldPrincesTrailWest/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLD_PRINCES_TRAIL_EAST",
+      "name": "OldPrincesTrailEast_Layout",
+      "width": 24,
+      "height": 24,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Junopolis",
+      "border_filepath": "data/layouts/OldPrincesTrailEast/border.bin",
+      "blockdata_filepath": "data/layouts/OldPrincesTrailEast/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLD_PRINCES_TRAIL_1",
+      "name": "OldPrincesTrail_1_Layout",
+      "width": 24,
+      "height": 24,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/OldPrincesTrail_1/border.bin",
+      "blockdata_filepath": "data/layouts/OldPrincesTrail_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLD_PRINCES_TRAIL_2",
+      "name": "OldPrincesTrail_2_Layout",
+      "width": 24,
+      "height": 96,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/OldPrincesTrail_2/border.bin",
+      "blockdata_filepath": "data/layouts/OldPrincesTrail_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLD_PRINCES_TRAIL_3",
+      "name": "OldPrincesTrail_3_Layout",
+      "width": 72,
+      "height": 24,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/OldPrincesTrail_3/border.bin",
+      "blockdata_filepath": "data/layouts/OldPrincesTrail_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_WANDERING_CAVE",
+      "name": "WanderingCave_Layout",
+      "width": 24,
+      "height": 24,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/WanderingCave/border.bin",
+      "blockdata_filepath": "data/layouts/WanderingCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE19_HOUSE",
+      "name": "Route19_House_Layout",
+      "width": 13,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route19_House/border.bin",
+      "blockdata_filepath": "data/layouts/Route19_House/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE4_HOUSE",
+      "name": "Route4_House_Layout",
+      "width": 12,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route4_House/border.bin",
+      "blockdata_filepath": "data/layouts/Route4_House/map.bin"
     }
   ]
 }

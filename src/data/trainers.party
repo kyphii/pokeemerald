@@ -80,6 +80,8 @@ Pic: Hiker
 Gender: Male
 Music: Male
 Double Battle: No
+Base Level: 5
+Base Party Size: 1
 
 
 === TRAINER_ANABEL ===
@@ -90,6 +92,8 @@ Gender: Female
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Base Level: 5
+Base Party Size: 1
 
 Beldum
 Level: 5
@@ -104,6 +108,8 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Base Level: 5
+Base Party Size: 1
 
 Beldum
 Level: 5
@@ -118,6 +124,8 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Base Level: 5
+Base Party Size: 1
 
 Beldum
 Level: 5
@@ -132,6 +140,8 @@ Gender: Female
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Base Level: 5
+Base Party Size: 1
 
 Beldum
 Level: 5
@@ -146,6 +156,8 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Base Level: 5
+Base Party Size: 1
 
 Beldum
 Level: 5
@@ -160,6 +172,8 @@ Gender: Female
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Base Level: 5
+Base Party Size: 1
 
 Beldum
 Level: 5
@@ -174,10 +188,11 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
+Base Level: 5
+Base Party Size: 1
 
 Beldum
 Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 
 === TRAINER_RIVAL_INTRO_GRASS ===
@@ -188,10 +203,11 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Base Level: 5
+Base Party Size: 1
 
-Turtwig
+Turtwig (F)
 Level: 0
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 
 === TRAINER_RIVAL_INTRO_FIRE ===
@@ -202,10 +218,11 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Base Level: 5
+Base Party Size: 1
 
-Fennekin
+Fennekin (F)
 Level: 0
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 
 === TRAINER_RIVAL_INTRO_WATER ===
@@ -216,10 +233,11 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
+Base Level: 5
+Base Party Size: 1
 
-Popplio
+Popplio (F)
 Level: 0
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 
 === TRAINER_ROUTE2_1 ===
@@ -228,14 +246,14 @@ Class: Youngster
 Pic: Youngster
 Gender: Male
 AI: Check Bad Move
+Base Level: 4
+Base Party Size: 2
 
 Swellow
 Level: -1
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Linoone
+Greedent
 Level: 0
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 
 === TRAINER_ROUTE2_2 ===
@@ -244,14 +262,14 @@ Class: Bug Catcher
 Pic: Bug Catcher
 Gender: Male
 AI: Check Bad Move
-
-Accelgor
-Level: -2
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Base Level: 5
+Base Party Size: 2
 
 Escavalier
 Level: -1
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Venipede
+Level: 0
 
 
 === TRAINER_ROUTE2_3 ===
@@ -260,14 +278,430 @@ Class: Lass
 Pic: Lass
 Gender: Female
 AI: Check Bad Move
+Base Level: 7
+Base Party Size: 2
 
 Delcatty
 Level: -1
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Azumarill
-Level: -2
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: -0
+
+
+=== TRAINER_ROUTE2_4 ===
+Name: Gareth
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+AI: Check Bad Move
+Base Level: 7
+Base Party Size: 2
+
+Dustox
+Level: -1
+
+Accelgor
+Level: -0
+
+
+
+
+=== TRAINER_ROUTE3_1 ===
+Name: Scott
+Class: School Kid
+Pic: School Kid M
+Gender: Male
+AI: Check Bad Move
+Base Level: 8
+Base Party Size: 2
+
+Raichu
+Level: 0
+
+Bibarel
+Level: 1
+
+=== TRAINER_ROUTE3_2 ===
+Name: Rico
+Class: Camper
+Pic: Camper
+Gender: Male
+AI: Check Bad Move
+Base Level: 8
+Base Party Size: 1
+
+Houndoom
+Level: 2
+
+=== TRAINER_ROUTE3_3 ===
+Name: Ashley
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
+AI: Check Bad Move
+Base Level: 9
+Base Party Size: 2
+
+Granbull
+Level: 0
+
+Altaria
+Level: -1
+
+=== TRAINER_ROUTE3_4 ===
+Name: Miguel
+Class: Hiker
+Pic: Hiker
+Gender: Male
+AI: Check Bad Move
+Base Level: 9
+Base Party Size: 2
+
+Sudowoodo
+Level: -1
+
+Crustle
+Level: 0
+
+Dugtrio
+Level: 1
+
+
+=== TRAINER_ROUTE3_5 ===
+Name: Doris
+Class: Battle Girl
+Pic: Battle Girl
+Gender: Female
+AI: Check Bad Move
+Base Level: 10
+Base Party Size: 3
+
+Lopunny
+Level: 0
+
+Hitmontop
+Level: 1
+
+ToxicroaK
+Level: 0
+
+=== TRAINER_ROUTE3_6 ===
+Name: Marcel
+Class: Triathlete
+Pic: Running Triathlete M
+Gender: Male
+AI: Check Bad Move
+Base Level: 10
+Base Party Size: 2
+
+Fearow
+Level: 1
+
+Swellow
+Level: 0
+
+
+=== TRAINER_ROUTE3_7 ===
+Name: Victor
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+AI: Check Bad Move
+Base Level: 11
+Base Party Size: 2
+
+Hitmonchan
+Level: 0
+
+Heracross
+Level: 1
+
+=== TRAINER_ROUTE3_8 ===
+Name: Coleen
+Class: Battle Girl
+Pic: Battle Girl
+Gender: Female
+AI: Check Bad Move
+Base Level: 11
+Base Party Size: 2
+
+Hitmonlee
+Level: 0
+
+Gallade (M)
+Level: 1
+
+
+
+=== TRAINER_ROUTE4_1 ===
+Name: Dustin
+Class: Hiker
+Pic: Hiker
+Gender: Male
+AI: Check Bad Move
+Base Level: 10
+Base Party Size: 2
+
+Mamoswine
+Level: 0
+
+Sudowoodo
+Level: 0
+
+=== TRAINER_ROUTE4_2 ===
+Name: Jacob
+Class: Camper
+Pic: Camper
+Gender: Male
+AI: Check Bad Move
+Base Level: 10
+Base Party Size: 4
+
+Abomasnow
+Level: 0
+
+Cryogonal
+Level: 0
+
+Glalie
+Level: 0
+
+Frosmoth
+Level: 0
+
+=== TRAINER_ROUTE4_3 ===
+Name: Janet
+Class: Aroma Lady
+Pic: Aroma Lady
+Gender: Female
+AI: Check Bad Move
+Base Level: 10
+Base Party Size: 3
+
+Jumpluff
+Level: 0
+
+Shiftry
+Level: 0
+
+Roserade
+Level: 0
+
+=== TRAINER_ROUTE4_4 ===
+Name: Ellie
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
+AI: Check Bad Move
+Base Level: 10
+Base Party Size: 3
+
+Beautifly
+Level: 0
+
+Greedent
+Level: 0
+
+Pachirisu
+Level: 0
+
+=== TRAINER_ROUTE4_5 ===
+Name: Austin
+Class: Bird Keeper
+Pic: Bird Keeper
+Gender: Male
+AI: Check Bad Move
+Base Level: 11
+Base Party Size: 3
+
+Xatu
+Level: 0
+
+Swellow
+Level: 0
+
+Fearow
+Level: 0
+
+=== TRAINER_ROUTE4_7 ===
+Name: Devon
+Class: Triathlete
+Pic: Running Triathlete M
+Gender: Male
+AI: Check Bad Move
+Base Level: 11
+Base Party Size: 2
+
+Liepard
+Level: 0
+
+Weavile
+Level: 0
+
+=== TRAINER_ROUTE4_8 ===
+Name: Randy
+Class: Black Belt
+Pic: Black Belt
+Gender: Male
+AI: Check Bad Move
+Base Level: 12
+Base Party Size: 2
+
+Hitmonlee
+Level: 0
+
+Crabrawler
+Level: 0
+
+=== TRAINER_ROUTE4_9 ===
+Name: Sydney
+Class: Bird Keeper
+Pic: Bird Keeper
+Gender: Male
+AI: Check Bad Move
+Base Level: 12
+Base Party Size: 4
+
+Altaria
+Level: 0
+
+Kilowattrel
+Level: -1
+
+Fearow
+Level: 2
+
+Xatu
+Level: 0
+
+=== TRAINER_ROUTE4_10 ===
+Name: Rosalynn
+Class: Battle Girl
+Pic: Battle Girl
+Gender: Female
+AI: Check Bad Move
+Base Level: 13
+Base Party Size: 3
+
+Bewear
+Level: 0
+
+Medicham
+Level: 0
+
+Mienshao
+Level: 0
+
+=== TRAINER_ROUTE19_1 ===
+Name: Marilyn
+Class: Aroma Lady
+Pic: Aroma Lady
+Gender: Female
+AI: Check Bad Move
+Base Level: 8
+Base Party Size: 3
+
+Leavanny
+Level: 0
+
+Whimsicott
+Level: 0
+
+Vespiquen
+Level: 1
+
+=== TRAINER_ROUTE19_2 ===
+Name: Lars
+Class: Triathlete
+Pic: Running Triathlete M
+Gender: Male
+AI: Check Bad Move
+Base Level: 8
+Base Party Size: 1
+
+Pinsir
+Level: 2
+
+=== TRAINER_ROUTE19_3 ===
+Name: Jesse
+Class: Triathlete
+Pic: Running Triathlete F
+Gender: Female
+AI: Check Bad Move
+Base Level: 9
+Base Party Size: 2
+
+Unfezant
+Level: 1
+
+Swellow
+Level: 0
+
+=== TRAINER_ROUTE19_4 ===
+Name: Allison
+Class: School Kid
+Pic: School Kid F
+Gender: Female
+AI: Check Bad Move
+Base Level: 9
+Base Party Size: 3
+
+Wigglytuff
+Level: 0
+
+Ribombee
+Level: 0
+
+Togekiss
+Level: 1
+
+=== TRAINER_ROUTE19_5 ===
+Name: Isaac
+Class: Youngster
+Pic: Youngster
+Gender: Male
+AI: Check Bad Move
+Base Level: 10
+Base Party Size: 3
+
+Dustox
+Level: 0
+
+Banette
+Level: 1
+
+Liepard
+Level: 0
+
+=== TRAINER_ROUTE19_6 ===
+Name: Nicole
+Class: Beauty
+Pic: Beauty
+Gender: Female
+AI: Check Bad Move
+Base Level: 10
+Base Party Size: 2
+
+Liepard
+Level: 0
+
+Gothitelle
+Level: 1
+
+=== TRAINER_ROUTE19_7 ===
+Name: Veronica
+Class: Aroma Lady
+Pic: Aroma Lady
+Gender: Female
+AI: Check Bad Move
+Base Level: 10
+Base Party Size: 2
+
+Roserade
+Level: 1
+
+Florges
+Level: 0
 
 
 === TRAINER_NAUTIRUST_FOREST_1 ===
@@ -276,14 +710,14 @@ Class: Bug Catcher
 Pic: Bug Catcher
 Gender: Male
 AI: Check Bad Move
+Base Level: 5
+Base Party Size: 2
 
 Ledian
 Level: 0
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Dustox
 Level: -1
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 
 === TRAINER_NAUTIRUST_FOREST_2 ===
@@ -292,10 +726,11 @@ Class: Picnicker
 Pic: Picnicker
 Gender: Female
 AI: Check Bad Move
+Base Level: 6
+Base Party Size: 1
 
 Furret
 Level: -3
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 
 === TRAINER_NAUTIRUST_FOREST_3 ===
@@ -304,10 +739,11 @@ Class: Lass
 Pic: Lass
 Gender: Female
 AI: Check Bad Move
+Base Level: 7
+Base Party Size: 1
 
-Ninetales
+Thievul
 Level: 0
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 
 === TRAINER_NAUTIRUST_FOREST_4 ===
@@ -316,14 +752,14 @@ Class: Youngster
 Pic: Youngster
 Gender: Male
 AI: Check Bad Move
+Base Level: 7
+Base Party Size: 2
 
 Arbok
 Level: -1
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Skuntank
 Level: -1
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 
 === TRAINER_NAUTIRUST_FOREST_5 ===
@@ -332,19 +768,206 @@ Class: Camper
 Pic: Camper
 Gender: Male
 AI: Check Bad Move
+Base Level: 8
+Base Party Size: 4
 
 Shiftry
 Level: -2
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Ludicolo
 Level: -1
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Leavanny
 Level: -1
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Ursaring
 Level: 0
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_CUT_MASTER_1 ===
+Name: Sherman
+Class: Expert
+Pic: Expert M
+Gender: Male
+AI: Check Bad Move
+Base Level: 13
+Base Party Size: 3
+
+Crawdaunt
+Level: 1
+
+Bisharp
+Level: 1
+
+Scyther
+Level: 3
+
+
+
+=== TRAINER_NAUTIRUST_GYM_1 ===
+Name: Mason
+Class: Camper
+Pic: Camper
+Gender: Male
+AI: Check Bad Move
+Base Level: 12
+Base Party Size: 3
+
+Sandslash
+Level: 0
+
+Palossand
+Level: 0
+
+Mamoswine
+Level: 0
+
+=== TRAINER_NAUTIRUST_GYM_2 ===
+Name: Tara
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
+AI: Check Bad Move
+Base Level: 12
+Base Party Size: 3
+
+Stunfisk
+Level: 0
+
+Quagsire
+Level: 0
+
+Golurk
+Level: 0
+
+=== TRAINER_NAUTIRUST_GYM_3 ===
+Name: Brandon
+Class: Camper
+Pic: Camper
+Gender: Male
+AI: Check Bad Move
+Base Level: 13
+Base Party Size: 2
+
+Nidoqueen
+Level: 0
+
+Nidoking
+Level: 0
+
+=== TRAINER_NAUTIRUST_GYM_4 ===
+Name: Nigel
+Class: Hiker
+Pic: Hiker
+Gender: Male
+AI: Check Bad Move
+Base Level: 13
+Base Party Size: 3
+
+Mamoswine
+Level: 0
+
+Rampardos
+Level: 0
+
+Flygon
+Level: 0
+
+Dugtrio
+Level: 0
+
+=== TRAINER_NAUTIRUST_GYM_5 ===
+Name: Monica
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
+AI: Check Bad Move
+Base Level: 13
+Base Party Size: 2
+
+Sandslash
+Level: 0
+
+Steelix
+Level: 0
+
+=== TRAINER_NAUTIRUST_GYM_6 ===
+Name: Tiago
+Class: Hiker
+Pic: Hiker
+Gender: Male
+AI: Check Bad Move
+Base Level: 14
+Base Party Size: 1
+
+Gigalith
+Level: 0
+
+
+
+=== TRAINER_NAUTIRUST_GYM_LEADER_LANDON ===
+Name: Landon
+Class: Leader
+Pic: Leader Landon
+Gender: Male
+AI: Check Bad Move / Try To Faint / Check Viability / HP Aware
+Base Level: 15
+Base Party Size: 3
+
+Hippowdon (F) @ Rocky Helmet
+Level: -1
+Ability: Sand Stream
+Nature: Impish
+IVs: 31 HP / 31 Atk / 31 Def / 0 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Thunder Fang
+- Stealth Rock
+- Roar
+
+Gliscor (M) @ Toxic Orb
+Level: 0
+Ability: Poison Heal
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 0 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Knock Off
+- U-turn
+- Roost
+
+Cradily (F) @ Leftovers
+Level: -1
+Ability: Storm Drain
+Nature: Bold
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earth Power
+- Giga Drain
+- Toxic
+- Protect
+
+Mamoswine (M) @ Assault Vest
+Level: -2
+Ability: Thick Fat
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 0 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Stone Edge
+- Icicle Crash
+- Ice Shard
+
+Rhyperior (F) @ Weakness Policy
+Level: -2
+Ability: Solid Rock
+Nature: Brave
+IVs: 31 HP / 31 Atk / 31 Def / 0 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Rock Blast
+- Megahorn
+- Hammer Arm
+
+Flygon (F) @ Choice Specs
+Level: -1
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 0 SpA / 31 SpD / 31 Spe
+- Earth Power
+- Dragon Pulse
+- Fire Blast
+- Air Slash

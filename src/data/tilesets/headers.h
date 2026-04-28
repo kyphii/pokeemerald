@@ -227,6 +227,17 @@ const struct Tileset gTileset_PokemonCenter =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_Cave =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Cave,
+    .palettes = gTilesetPalettes_Cave,
+    .metatiles = gMetatiles_Cave,
+    .metatileAttributes = gMetatileAttributes_Cave,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_PrismaticCave =
 {
     .isCompressed = TRUE,
@@ -301,7 +312,7 @@ const struct Tileset gTileset_NautirustGym =
     .palettes = gTilesetPalettes_NautirustGym,
     .metatiles = gMetatiles_NautirustGym,
     .metatileAttributes = gMetatileAttributes_NautirustGym,
-    .callback = NULL,
+    .callback = InitTilesetAnim_NautirustGym,
 };
 
 

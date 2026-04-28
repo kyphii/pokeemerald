@@ -21,5 +21,6 @@ void InitTilesetAnim_Pacifidlog(void);
 void InitTilesetAnim_Sootopolis(void);
 void InitTilesetAnim_Building(void);
 void InitTilesetAnim_Underwater(void);
+void InitTilesetAnim_NautirustGym(void);
 
 #endif // GUARD_TILESET_ANIMS_H

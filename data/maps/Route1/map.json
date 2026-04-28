@@ -32,6 +32,11 @@
       "map": "MAP_SECRET_COVE",
       "offset": 24,
       "direction": "down"
+    },
+    {
+      "map": "MAP_UNDERWATER_ROUTE1",
+      "offset": 0,
+      "direction": "dive"
     }
   ],
   "object_events": [

@@ -1,0 +1,77 @@
+mapscripts Route4_House_MapScripts {}
+
+script Route4_House_TalkWoman {
+	if (flag(FLAG_ROUTE_4_MET_HEALER)) {
+		lock
+		faceplayer
+		
+		msgbox(
+			"Oh, it's you again. Welcome!
+			
+			Still on that mission of yours? I'd love 
+			to hear about it!
+			
+			Oh, do you and your Pok\emon need a 
+			rest?
+			
+			I've just brewed a pot of tea. Come, 
+			stay a while!",
+			MSGBOX_DEFAULT
+		)
+		
+		call(Common_EventScript_OutOfCenterPartyHeal)
+		
+		msgbox(
+			"Wonderful! Your Pok\emon look all ready 
+			to get back out there!
+			
+			Good luck!",
+			MSGBOX_DEFAULT
+		)
+		
+		closemessage
+		release
+	}
+	else {
+		lock
+		faceplayer
+		
+		msgbox(
+			"Oh, hello. Are you a traveling 
+			Pok\emon trainer?
+			
+			What brings you on this rocky route?
+			
+			…
+			
+			Missing Pok\emon? You want to return 
+			them to their original owner?
+			
+			Wow, what a story! What a wonderful 
+			goal you have!
+			
+			You look tired from your journey. 
+			Come, stay a while, and tell me about 
+			your adventure!",
+			MSGBOX_DEFAULT
+		)
+		
+		call(Common_EventScript_OutOfCenterPartyHeal)
+		
+		msgbox(
+			"How exciting!
+			
+			Well, I shouldn't keep you. It looks like 
+			your Pok\emon are rested up and ready 
+			to get back out there!
+			
+			Good luck, trainer!",
+			MSGBOX_DEFAULT
+		)
+		
+		setflag(FLAG_ROUTE_4_MET_HEALER)
+		
+		closemessage
+		release
+	}
+}

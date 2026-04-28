@@ -226,6 +226,10 @@ static const struct SpriteFrameImage sPicTable_NpcGuard[] = {
     overworld_ascending_frames(gObjectEventPic_NpcGuard, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_NpcGymGuide[] = {
+    overworld_ascending_frames(gObjectEventPic_NpcGymGuide, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_NpcHiker[] = {
     overworld_ascending_frames(gObjectEventPic_NpcHiker, 2, 4),
 };
@@ -340,6 +344,10 @@ static const struct SpriteFrameImage sPicTable_NpcWoman1[] = {
 
 static const struct SpriteFrameImage sPicTable_NpcWorker[] = {
     overworld_ascending_frames(gObjectEventPic_NpcWorker, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_LeaderLandon[] = {
+    overworld_ascending_frames(gObjectEventPic_LeaderLandon, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_Kyphii[] = {

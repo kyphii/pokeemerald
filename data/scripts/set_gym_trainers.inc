@@ -1,0 +1,13 @@
+Common_EventScript_SetGymTrainers::
+	switch VAR_0x8008
+	case 1, NautirustCity_Gym_SetGymTrainers
+	end
+
+NautirustCity_Gym_SetGymTrainers::
+	settrainerflag TRAINER_NAUTIRUST_GYM_1
+	settrainerflag TRAINER_NAUTIRUST_GYM_2
+	settrainerflag TRAINER_NAUTIRUST_GYM_3
+	settrainerflag TRAINER_NAUTIRUST_GYM_4
+	settrainerflag TRAINER_NAUTIRUST_GYM_5
+	settrainerflag TRAINER_NAUTIRUST_GYM_6
+	return

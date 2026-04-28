@@ -1,0 +1,219 @@
+mapscripts Route4_MapScripts {}
+
+script Route4_Talk_OldPrincesTrailHint {
+	lock
+	fadeoutbgm(2)
+	delay(90)
+	msgbox(
+		"…{PAUSE 10}…{PAUSE 10}…{PAUSE 10}…
+		…The way{PAUSE 20} beneath…
+		
+		…{PAUSE 10}There{PAUSE 20} is{PAUSE 5} a{PAUSE 5} way{PAUSE 30} beneath…",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	
+	getplayerxy(VAR_0x8008, VAR_0x8009)
+	switch(var(VAR_0x8008)) {
+		case 17:
+		case 19:
+			applymovement(VAR_LAST_TALKED, moves(
+				walk_down * 8
+			))
+		case 18:
+			applymovement(VAR_LAST_TALKED, moves(
+				walk_right
+				walk_down * 8
+			))
+	}
+	waitmovement(0)
+	removeobject(VAR_LAST_TALKED)
+	setflag(FLAG_STORY_ROUTE4_TRAIL_HINT)
+	
+	fadeinbgm(1)
+	release
+}
+
+script Route4_Sign_RouteSign {
+	msgbox(
+		"ROUTE 4
+		{DOWN_ARROW} WHELCHORD CITY
+		{RIGHT_ARROW} NAUTIRUST CITY
+		{UP_ARROW} MOUNT BRIAR",
+		MSGBOX_SIGN
+	)
+}
+
+script Route4_Talk_IndecisiveWoman {
+	lock
+	faceplayer
+	msgbox(
+		"Oh dear, oh dear.
+		I'm exhausted… This route is so rugged… 
+		
+		And it splits in two! 
+		which way should I go?
+		
+		I could turn around back to Nautirust 
+		City… but I already made it halfway to 
+		Whelchord City!
+		
+		Oh, what to do?
+		
+		…Maybe I can just pitch a tent, and say 
+		I live here now.",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script Route4_Trainer_1 {
+	trainerbattle_single(
+		TRAINER_ROUTE4_1,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route4_Trainer_2 {
+	trainerbattle_single(
+		TRAINER_ROUTE4_2,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route4_Trainer_3 {
+	trainerbattle_single(
+		TRAINER_ROUTE4_3,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route4_Trainer_4 {
+	trainerbattle_single(
+		TRAINER_ROUTE4_4,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route4_Trainer_5 {
+	trainerbattle_single(
+		TRAINER_ROUTE4_5,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route4_Trainer_6 {
+	trainerbattle_single(
+		TRAINER_ROUTE4_6,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route4_Trainer_7 {
+	trainerbattle_single(
+		TRAINER_ROUTE4_7,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route4_Trainer_8 {
+	trainerbattle_single(
+		TRAINER_ROUTE4_8,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route4_Trainer_9 {
+	trainerbattle_single(
+		TRAINER_ROUTE4_9,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script Route4_Trainer_10 {
+	trainerbattle_single(
+		TRAINER_ROUTE4_10,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}

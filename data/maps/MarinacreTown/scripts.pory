@@ -48,13 +48,32 @@ script HomeTown_TownSign {
         rising sun.", 
         MSGBOX_SIGN
     )
+	closemessage
 }
     
 script HomeTown_PlayerMailbox {
     msgbox(
-        "{PLAYER}'s HOUSE",
+        "It's your house's mailbox.
+		What's inside?
+		
+		Spam, bills, bills, spam disguised
+		as bills…
+		
+		-Uh oh!
+		One of Mom's magazines!
+		It's time to go!",
         MSGBOX_SIGN
     )
+	closemessage
+}
+
+script HomeTown_MayaMailbox {
+    msgbox(
+        "This is Maya's house.
+		Probably shouldn't look in the mailbox.",
+        MSGBOX_SIGN
+    )
+	closemessage
 }
 
 script HomeTown_IntroPreventLeave {
@@ -450,16 +469,19 @@ script HomeTown_BeachScene1_Start {
 	delay(30)
     setobjectxyperm(LOCALID_HOMETOWN_BALL_GRASS, 27, 35)
     addobject(LOCALID_HOMETOWN_BALL_GRASS)
+	playse(SE_BALL)
     delay(30)
     applymovement(LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter)
     waitmovement(0)
     setobjectxyperm(LOCALID_HOMETOWN_BALL_FIRE, 28, 35)
     addobject(LOCALID_HOMETOWN_BALL_FIRE)
+	playse(SE_BALL)
     delay(30)
     applymovement(LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter)
     waitmovement(0)
     setobjectxyperm(LOCALID_HOMETOWN_BALL_WATER, 29, 35)
     addobject(LOCALID_HOMETOWN_BALL_WATER)
+	playse(SE_BALL)
     delay(30)
     applymovement(LOCALID_HOMETOWN_RIVAL, moves(
     walk_left * 2
@@ -479,6 +501,7 @@ script HomeTown_BeachScene1_Start {
     removeobject(LOCALID_HOMETOWN_BALL_GRASS)
     removeobject(LOCALID_HOMETOWN_BALL_FIRE)
     removeobject(LOCALID_HOMETOWN_BALL_WATER)
+	playse(SE_BALL_OPEN)
     fadescreen(FADE_FROM_WHITE)
     lockall
     playse(SE_PIN)
@@ -679,6 +702,7 @@ script HomeTown_BeachScene1_TakeStarter {
     closemessage
     release
     removeobject(VAR_0x8001)
+	playse(SE_BALL)
     
     givemon(VAR_0x8000, 5)
     setflag(FLAG_SYS_POKEMON_GET)
@@ -711,6 +735,7 @@ script HomeTown_BeachScene1_Finish {
 	))
     waitmovement(0)
 	removeobject(LOCALID_HOMETOWN_BAG)
+	playse(SE_BALL)
 	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
 		delay_16
 		delay_16
@@ -731,12 +756,14 @@ script HomeTown_BeachScene1_Finish {
 	if (var(VAR_STARTER_MON) != 0) {
 		delay(30)
 		removeobject(LOCALID_HOMETOWN_STARTER_GRASS)
+		playse(SE_BALL)
 	}
 	if (var(VAR_STARTER_MON) != 1) {
 		applymovement(LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter)
 		waitmovement(0)
 		delay(30)
 		removeobject(LOCALID_HOMETOWN_STARTER_FIRE)
+		playse(SE_BALL)
 	}
 	else {
 		applymovement(LOCALID_HOMETOWN_RIVAL, moves(
@@ -749,6 +776,7 @@ script HomeTown_BeachScene1_Finish {
 		waitmovement(0)
 		delay(30)
 		removeobject(LOCALID_HOMETOWN_STARTER_WATER)
+		playse(SE_BALL)
 	}
 	else {
 		applymovement(LOCALID_HOMETOWN_RIVAL, moves(

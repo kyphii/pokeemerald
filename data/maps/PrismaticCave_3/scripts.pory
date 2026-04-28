@@ -1,0 +1,36 @@
+mapscripts PrismaticCave_3_MapScripts {}
+
+script PrismaticCave_3_Event_EncounterDiancie {
+	lock
+	faceplayer
+	waitse
+	playmoncry(SPECIES_DIANCIE, CRY_MODE_ENCOUNTER)
+	waitmoncry
+	delay(10)
+	waitbuttonpress
+	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	seteventmon(SPECIES_DIANCIE, 40)
+	special(BattleSetup_StartLegendaryBattle)
+	waitstate
+	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	specialvar(VAR_RESULT, GetBattleOutcome)
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+		removeobject(VAR_LAST_TALKED)
+		setflag(FLAG_ENCOUNTERED_DIANCIE)
+		release
+	}
+	else {
+		fadescreenswapbuffers(FADE_TO_BLACK)
+		removeobject(VAR_LAST_TALKED)
+		fadescreenswapbuffers(FADE_FROM_BLACK)
+		
+		msgbox(
+			"Diancie retreated further into the
+			cave…",
+			MSGBOX_DEFAULT
+		)
+		
+		setflag(FLAG_ENCOUNTERED_DIANCIE)
+		release
+	}
+}

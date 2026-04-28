@@ -5,6 +5,8 @@ Pic: Leaf
 Gender: Male
 Music: Male
 Back Pic: Leaf
+Base Level: 5
+Base Party Size: 0
 
 === PARTNER_STEVEN ===
 Name: STEVEN
@@ -14,6 +16,8 @@ Gender: Male
 Music: Male
 Back Pic: Steven
 AI: Basic Trainer
+Base Level: 5
+Base Party Size: 3
 
 Metang
 Brave Nature
@@ -53,6 +57,8 @@ Gender: Male
 Music: Male
 Back Pic: Leaf
 Party Size: 0
+Base Level: 5
+Base Party Size: 1
 
 Wynaut
 
@@ -64,9 +70,14 @@ Gender: Female
 Music: Female
 Back Pic: Steven
 AI: Basic Trainer
+Base Level: 8
+Base Party Size: 2
 
 Turtwig
 Level: 8
+
+Taillow
+Level:7
 
 === PARTNER_INTRO_RIVAL_FIRE ===
 Name: Maya
@@ -76,9 +87,14 @@ Gender: Female
 Music: Female
 Back Pic: Steven
 AI: Basic Trainer
+Base Level: 8
+Base Party Size: 2
 
 Fennekin
 Level: 8
+
+Taillow
+Level:7
 
 === PARTNER_INTRO_RIVAL_WATER ===
 Name: Maya
@@ -88,6 +104,11 @@ Gender: Female
 Music: Female
 Back Pic: Steven
 AI: Basic Trainer
+Base Level: 8
+Base Party Size: 2
 
 Popplio
 Level: 8
+
+Taillow
+Level:7

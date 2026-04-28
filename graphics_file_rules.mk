@@ -28,6 +28,15 @@ contest_types := cool beauty cute smart tough
 
 ### Tilesets ###
 
+$(TILESETGFXDIR)/primary/overworld/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 512 -Wnum_tiles
+
+$(TILESETGFXDIR)/primary/building/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 512 -Wnum_tiles
+
+$(TILESETGFXDIR)/primary/secret_base/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 512 -Wnum_tiles
+
 $(TILESETGFXDIR)/secondary/marinacre/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 159 -Wnum_tiles
 
@@ -77,7 +86,7 @@ $(TILESETGFXDIR)/secondary/cave/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 425 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/prismatic_cave/tiles.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 17 -Wnum_tiles
+	$(GFX) $< $@ -num_tiles 192 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/secret_base/brown_cave/unused_tiles.4bpp: $(TILESETGFXDIR)/secondary/secret_base/brown_cave/tiles.png
 	$(GFX) $< $@ -num_tiles 82 -Wnum_tiles

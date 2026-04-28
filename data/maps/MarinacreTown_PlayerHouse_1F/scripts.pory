@@ -16,6 +16,7 @@ mapscripts MarinacreTown_PlayerHouse_1F_MapScripts {
 
 script MarinacreTown_PlayerHouse_1F_TalkPurrloin {
 	playmoncry(SPECIES_PURRLOIN, 0)
+	waitmoncry
 }
 
 script HomeTown_PlayerHouse_TalkMom {
@@ -39,7 +40,7 @@ script HomeTown_PlayerHouse_TalkMom {
 					"MOM: Huh? {PLAYER}, is something
 					the matter?
 					
-					...
+					…
 					
 					Wow. That's quite something, isn't
 					it?

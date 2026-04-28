@@ -33,6 +33,7 @@ static void TilesetAnim_Lavaridge(u16);
 static void TilesetAnim_Pacifidlog(u16);
 static void TilesetAnim_Sootopolis(u16);
 static void TilesetAnim_Underwater(u16);
+static void TilesetAnim_NautirustGym(u16);
 static void QueueAnimTiles_General_Flower(u16);
 static void QueueAnimTiles_General_Water(u16);
 static void QueueAnimTiles_General_SandWaterEdge(u16);
@@ -42,6 +43,7 @@ static void QueueAnimTiles_Building_TVTurnedOn(u16);
 static void QueueAnimTiles_Rustboro_Fountain(u16);
 static void QueueAnimTiles_Pacifidlog_WaterCurrents(u8);
 static void QueueAnimTiles_Underwater_Seaweed(u8);
+static void QueueAnimTiles_NautirustGym_Sinkhole(u8);
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/overworld/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/overworld/anim/flower/0.4bpp");
@@ -182,6 +184,18 @@ const u16 gTilesetAnims_Building_TvTurnedOn_Frame1[] = INCBIN_U16("data/tilesets
 const u16 *const gTilesetAnims_Building_TvTurnedOn[] = {
     gTilesetAnims_Building_TvTurnedOn_Frame0,
     gTilesetAnims_Building_TvTurnedOn_Frame1
+};
+
+const u16 gTilesetAnims_NautirustGym_Sinkhole_Frame0[] = INCBIN_U16("data/tilesets/secondary/nautirust_gym/anim/sinkhole/0.4bpp");
+const u16 gTilesetAnims_NautirustGym_Sinkhole_Frame1[] = INCBIN_U16("data/tilesets/secondary/nautirust_gym/anim/sinkhole/1.4bpp");
+const u16 gTilesetAnims_NautirustGym_Sinkhole_Frame2[] = INCBIN_U16("data/tilesets/secondary/nautirust_gym/anim/sinkhole/2.4bpp");
+const u16 gTilesetAnims_NautirustGym_Sinkhole_Frame3[] = INCBIN_U16("data/tilesets/secondary/nautirust_gym/anim/sinkhole/3.4bpp");
+
+const u16* const gTilesetAnims_NautirustGym_Sinkhole[] = {
+    gTilesetAnims_NautirustGym_Sinkhole_Frame0,
+    gTilesetAnims_NautirustGym_Sinkhole_Frame1,
+    gTilesetAnims_NautirustGym_Sinkhole_Frame2,
+    gTilesetAnims_NautirustGym_Sinkhole_Frame3,
 };
 
 static void ResetTilesetAnimBuffer(void)
@@ -404,6 +418,13 @@ void InitTilesetAnim_Underwater(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_Underwater;
 }
 
+void InitTilesetAnim_NautirustGym(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 64;
+    sSecondaryTilesetAnimCallback = TilesetAnim_NautirustGym;
+}
+
 static void TilesetAnim_Rustboro(u16 timer)
 {
 }
@@ -444,6 +465,12 @@ static void TilesetAnim_Underwater(u16 timer)
         QueueAnimTiles_Underwater_Seaweed(timer / 16);
 }
 
+static void TilesetAnim_NautirustGym(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_NautirustGym_Sinkhole(timer / 16);
+}
+
 static void QueueAnimTiles_General_LandWaterEdge(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_General_LandWaterEdge);
@@ -454,6 +481,12 @@ static void QueueAnimTiles_Underwater_Seaweed(u8 timer)
 {
     u8 i = timer % ARRAY_COUNT(gTilesetAnims_Underwater_Seaweed);
     AppendTilesetAnimToBuffer(gTilesetAnims_Underwater_Seaweed[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 496)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_NautirustGym_Sinkhole(u8 timer)
+{
+    u8 i = timer % ARRAY_COUNT(gTilesetAnims_NautirustGym_Sinkhole);
+    AppendTilesetAnimToBuffer(gTilesetAnims_NautirustGym_Sinkhole[i], (u16*)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 73)), 4 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_Pacifidlog_WaterCurrents(u8 timer)
