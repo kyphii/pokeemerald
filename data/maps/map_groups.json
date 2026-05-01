@@ -75,7 +75,8 @@
     "OldPrincesTrail_1",
     "OldPrincesTrail_2",
     "OldPrincesTrail_3",
-    "WanderingCave"
+    "WanderingCave",
+    "BleakrockPass_Interior"
   ],
   "gMapGroup_Underwater": [
     "Underwater_Route1",
@@ -127,10 +128,12 @@
     "MarinacreTown_RivalHouse",
     "Route2_House",
     "Route19_House",
-    "Route4_House"
+    "Route4_House",
+    "MarinacreTown_House_1"
   ],
   "gMapGroup_IndoorsOther": [
-    "HawthornLabs_Interior"
+    "HawthornLabs_Interior",
+    "MountBriar_Lodge"
   ],
   "gMapGroup_Misc": [
     "DummyMap"

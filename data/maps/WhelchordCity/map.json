@@ -30,7 +30,38 @@
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 24,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_WHELCHORD_CITY_POKEMON_CENTER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 34,
+      "elevation": 0,
+      "dest_map": "MAP_WHELCHORD_CITY_MART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 15,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_WHELCHORD_CITY_GYM",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    }
+  ]
 }

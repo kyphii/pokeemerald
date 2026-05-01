@@ -58,7 +58,14 @@
 #define TRAINER_ROUTE4_8			          50
 #define TRAINER_ROUTE4_9        			  51
 #define TRAINER_ROUTE4_10			          52
-#define TRAINERS_COUNT_EMERALD                53
+#define TRAINER_MOUNT_BRIAR_1				  53
+#define TRAINER_MOUNT_BRIAR_2				  54
+#define TRAINER_MOUNT_BRIAR_3				  55
+#define TRAINER_MOUNT_BRIAR_4				  56
+#define TRAINER_MOUNT_BRIAR_5				  57
+#define TRAINER_MOUNT_BRIAR_6				  58
+
+#define TRAINERS_COUNT_EMERALD                59
 
 #define MAX_TRAINERS_COUNT_EMERALD 864
 

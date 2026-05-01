@@ -311,7 +311,7 @@
       "width": 48,
       "height": 72,
       "primary_tileset": "gTileset_Overworld",
-      "secondary_tileset": "gTileset_Snowrie",
+      "secondary_tileset": "gTileset_MountBriar",
       "border_filepath": "data/layouts/MountBriar/border.bin",
       "blockdata_filepath": "data/layouts/MountBriar/map.bin",
       "layout_version": "emerald"
@@ -568,14 +568,14 @@
       "blockdata_filepath": "data/layouts/CanvenusCity/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE2_HOUSE",
-      "name": "Route2_House_Layout",
+      "id": "LAYOUT_HOUSE_1",
+      "name": "House_1_Layout",
       "width": 12,
       "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
-      "border_filepath": "data/layouts/Route2_House/border.bin",
-      "blockdata_filepath": "data/layouts/Route2_House/map.bin"
+      "border_filepath": "data/layouts/House_1/border.bin",
+      "blockdata_filepath": "data/layouts/House_1/map.bin"
     },
     {
       "id": "LAYOUT_DESERT_SANCTUARY",
@@ -713,7 +713,7 @@
       "width": 24,
       "height": 96,
       "primary_tileset": "gTileset_Overworld",
-      "secondary_tileset": "gTileset_DesertSanctuary",
+      "secondary_tileset": "gTileset_Volutide",
       "border_filepath": "data/layouts/Route10/border.bin",
       "blockdata_filepath": "data/layouts/Route10/map.bin"
     },
@@ -788,14 +788,44 @@
       "blockdata_filepath": "data/layouts/Route19_House/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE4_HOUSE",
-      "name": "Route4_House_Layout",
+      "id": "LAYOUT_HOUSE_2",
+      "name": "House_2_Layout",
       "width": 12,
       "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
-      "border_filepath": "data/layouts/Route4_House/border.bin",
-      "blockdata_filepath": "data/layouts/Route4_House/map.bin"
+      "border_filepath": "data/layouts/House_2/border.bin",
+      "blockdata_filepath": "data/layouts/House_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_MARINACRE_TOWN_HOUSE_1",
+      "name": "MarinacreTown_House_1_Layout",
+      "width": 12,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/MarinacreTown_House_1/border.bin",
+      "blockdata_filepath": "data/layouts/MarinacreTown_House_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_BLEAKROCK_PASS_INTERIOR",
+      "name": "BleakrockPass_Interior_Layout",
+      "width": 72,
+      "height": 72,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Whelchord",
+      "border_filepath": "data/layouts/BleakrockPass_Interior/border.bin",
+      "blockdata_filepath": "data/layouts/BleakrockPass_Interior/map.bin"
+    },
+    {
+      "id": "LAYOUT_MOUNT_BRIAR_LODGE",
+      "name": "MountBriar_Lodge_Layout",
+      "width": 16,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MountBriar",
+      "border_filepath": "data/layouts/MountBriar_Lodge/border.bin",
+      "blockdata_filepath": "data/layouts/MountBriar_Lodge/map.bin"
     }
   ]
 }

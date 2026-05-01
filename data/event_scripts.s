@@ -962,3 +962,9 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Route19_House/scripts.inc"
 
 	.include "data/maps/Route4_House/scripts.inc"
+
+	.include "data/maps/MarinacreTown_House_1/scripts.inc"
+
+	.include "data/maps/BleakrockPass_Interior/scripts.inc"
+
+	.include "data/maps/MountBriar_Lodge/scripts.inc"

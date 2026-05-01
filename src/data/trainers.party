@@ -783,6 +783,107 @@ Level: -1
 Ursaring
 Level: 0
 
+
+
+=== TRAINER_MOUNT_BRIAR_1 ===
+Name: 
+Class: Skier
+Pic: Skier M
+Gender: Male
+AI: Check Bad Move
+Base Level: 12
+Base Party Size: 2
+
+Glalie
+Level: 0
+
+Crabominable
+Level: 0
+
+=== TRAINER_MOUNT_BRIAR_2 ===
+Name: 
+Class: Skier
+Pic: Skier F
+Gender: Female
+AI: Check Bad Move
+Base Level: 12
+Base Party Size: 2
+
+Frosmoth
+Level: 0
+
+Weavile
+Level: 0
+
+=== TRAINER_MOUNT_BRIAR_3 ===
+Name: 
+Class: Skier
+Pic: Skier M
+Gender: Male
+AI: Check Bad Move
+Base Level: 12
+Base Party Size: 3
+
+Cryogonal
+Level: -1
+
+Glalie
+Level: 0
+
+Ursaluna
+Level: 0
+
+=== TRAINER_MOUNT_BRIAR_4 ===
+Name: Sheila
+Class: Skier
+Pic: Skier F
+Gender: Female
+AI: Check Bad Move
+Base Level: 12
+Base Party Size: 2
+
+Mamoswine
+Level: 0
+
+Medicham
+Level: 0
+
+=== TRAINER_MOUNT_BRIAR_5 ===
+Name: 
+Class: Skier
+Pic: Skier F
+Gender: Female
+AI: Check Bad Move
+Base Level: 13
+Base Party Size: 4
+
+Abomasnow
+Level: 0
+
+Glaceon
+Level: -1
+
+Froslass
+Level: -1
+
+Cetitan
+Level: 0
+
+=== TRAINER_MOUNT_BRIAR_6 ===
+Name: 
+Class: Hiker
+Pic: Hiker
+Gender: Male
+AI: Check Bad Move
+Base Level: 12
+Base Party Size: 2
+
+Boldore
+Level: 0
+
+Aurorus
+Level: 0
+
 === TRAINER_CUT_MASTER_1 ===
 Name: Sherman
 Class: Expert
@@ -793,13 +894,13 @@ Base Level: 13
 Base Party Size: 3
 
 Crawdaunt
-Level: 1
+Level: -1
 
 Bisharp
-Level: 1
+Level: -1
 
 Scyther
-Level: 3
+Level: 1
 
 
 

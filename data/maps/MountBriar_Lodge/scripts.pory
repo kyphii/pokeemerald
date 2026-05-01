@@ -1,0 +1,56 @@
+mapscripts MountBriar_Lodge_MapScripts {}
+
+script MountBriar_Lodge_Talk_Man1 {
+	lock
+	faceplayer
+	msgbox(
+		"TODO",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script MountBriar_Lodge_Talk_Man2 {
+	lock
+	faceplayer
+	msgbox(
+		"TODO",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script MountBriar_Lodge_Talk_Woman1 {
+	lock
+	faceplayer
+	msgbox(
+		"TODO",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script MountBriar_Lodge_Talk_Woman2 {
+	lock
+	faceplayer
+	msgbox(
+		"TODO",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script MountBriar_Lodge_Talk_Cashier {
+	lock
+	faceplayer
+	msgbox(
+		"TODO",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}

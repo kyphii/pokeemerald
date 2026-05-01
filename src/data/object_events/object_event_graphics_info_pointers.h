@@ -61,6 +61,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcScientis
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcScoutF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcScoutM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcShopkeeper;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcSkierF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcSkierM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcStewardess;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcStudentM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcSwimmerLandM;
@@ -150,6 +152,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_NPC_SCOUT_F] = &gObjectEventGraphicsInfo_NpcScoutF,
     [OBJ_EVENT_GFX_NPC_SCOUT_M] = &gObjectEventGraphicsInfo_NpcScoutM,
     [OBJ_EVENT_GFX_NPC_SHOPKEEPER] = &gObjectEventGraphicsInfo_NpcShopkeeper,
+    [OBJ_EVENT_GFX_NPC_SKIER_M] = &gObjectEventGraphicsInfo_NpcSkierM,
+    [OBJ_EVENT_GFX_NPC_SKIER_F] = &gObjectEventGraphicsInfo_NpcSkierF,
     [OBJ_EVENT_GFX_NPC_STEWARDESS] = &gObjectEventGraphicsInfo_NpcStewardess,
     [OBJ_EVENT_GFX_NPC_STUDENT_M] = &gObjectEventGraphicsInfo_NpcStudentM,
     [OBJ_EVENT_GFX_NPC_SWIMMER_LAND_M] = &gObjectEventGraphicsInfo_NpcSwimmerLandM,

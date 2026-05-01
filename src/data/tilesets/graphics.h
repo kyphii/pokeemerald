@@ -301,6 +301,29 @@ const u16 gTilesetPalettes_DesertSanctuary[][16] =
     INCBIN_U16("data/tilesets/secondary/desert_sanctuary/palettes/15.gbapal"),
 };
 
+
+const u32 gTilesetTiles_MountBriar[] = INCBIN_U32("data/tilesets/secondary/mount_briar/tiles.4bpp.fastSmol");
+
+const u16 gTilesetPalettes_MountBriar[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/mount_briar/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mount_briar/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mount_briar/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mount_briar/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mount_briar/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mount_briar/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mount_briar/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mount_briar/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mount_briar/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mount_briar/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mount_briar/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mount_briar/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mount_briar/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mount_briar/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mount_briar/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mount_briar/palettes/15.gbapal"),
+};
+
 const u32 gTilesetTiles_InsideBuilding[] = INCBIN_U32("data/tilesets/primary/building/tiles.4bpp.smol");
 
 const u16 gTilesetPalettes_InsideBuilding[][16] =

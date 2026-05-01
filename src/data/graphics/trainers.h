@@ -245,6 +245,12 @@ const u16 gTrainerPalette_OldCouple[] = INCBIN_U16("graphics/trainers/front_pics
 const u32 gTrainerFrontPic_SisAndBro[] = INCBIN_U32("graphics/trainers/front_pics/sis_and_bro.4bpp.smol");
 const u16 gTrainerPalette_SisAndBro[] = INCBIN_U16("graphics/trainers/front_pics/sis_and_bro.gbapal");
 
+const u32 gTrainerFrontPic_Skier_M[] = INCBIN_U32("graphics/trainers/front_pics/skier_m.4bpp.smol");
+const u16 gTrainerPalette_Skier_M[] = INCBIN_U16("graphics/trainers/palettes/skier_m.gbapal");
+
+const u32 gTrainerFrontPic_Skier_F[] = INCBIN_U32("graphics/trainers/front_pics/skier_f.4bpp.smol");
+const u16 gTrainerPalette_Skier_F[] = INCBIN_U16("graphics/trainers/palettes/skier_f.gbapal");
+
 const u32 gTrainerFrontPic_Steven[] = INCBIN_U32("graphics/trainers/front_pics/steven.4bpp.smol");
 const u16 gTrainerPalette_Steven[] = INCBIN_U16("graphics/trainers/front_pics/steven.gbapal");
 
@@ -573,6 +579,8 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_FRONT_PROTAG_M, gTrainerFrontPic_ProtagM, gTrainerPalette_Protag),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_PROTAG_F, gTrainerFrontPic_ProtagF, gTrainerPalette_Protag),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_LEADER_LANDON, gTrainerFrontPic_LeaderLandon, gTrainerPalette_LeaderLandon),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_SKIER_F, gTrainerFrontPic_Skier_F, gTrainerPalette_Skier_F),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_SKIER_M, gTrainerFrontPic_Skier_M, gTrainerPalette_Skier_M),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_BUG_CATCHER, gTrainerFrontPic_BugCatcher, gTrainerPalette_BugCatcher),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_POKEMON_RANGER_M, gTrainerFrontPic_PokemonRangerM, gTrainerPalette_PokemonRangerM),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_POKEMON_RANGER_F, gTrainerFrontPic_PokemonRangerF, gTrainerPalette_PokemonRangerF),

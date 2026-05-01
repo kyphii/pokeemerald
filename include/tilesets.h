@@ -29,6 +29,7 @@ extern const struct Tileset gTileset_Abalove;
 
 extern const struct Tileset gTileset_DesertSanctuary;
 extern const struct Tileset gTileset_PrismaticCave;
+extern const struct Tileset gTileset_MountBriar;
 
 extern const struct Tileset gTileset_PokemonCenter;
 extern const struct Tileset gTileset_Shop;

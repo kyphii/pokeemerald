@@ -3,7 +3,7 @@ mapscripts MarinacreTown_PlayerHouse_2F_MapScripts {
 		if (var(VAR_INTRO_SEQUENCE_STATE) == 0) {
 			setflag(FLAG_SYS_B_DASH)
 			setflag(FLAG_RECEIVED_RUNNING_SHOES)
-			setplayerlevel(4)
+			setplayerlevel(5)
 			
 			pausertc(20)
 		}

@@ -1,13 +1,10 @@
 mapscripts NautirustCity_Gym_MapScripts {
-	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE {
-		getbadgecount
-		if (var(VAR_RESULT) == 0) {
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_GYM_ENTERED, 0 {
 			goto(NautirustCity_Gym_GuideIntro)
 		}
-	}
+	]
 }
-
-
 
 script NautirustCity_Gym_GymStatue {
 	if (flag(FLAG_BADGE01_GET)) {
@@ -32,7 +29,7 @@ script NautirustCity_Gym_GymStatue {
 
 script NautirustCity_Gym_GuideIntro {
 	lockall
-	delay(30)
+	delay(5)
 	turnobject(LOCALID_NAUTIRUST_GYM_GUIDE, DIR_WEST)
 	playse(SE_PIN)
     applymovement(LOCALID_NAUTIRUST_GYM_GUIDE, Common_Movement_ExclamationMark)
@@ -73,6 +70,10 @@ script NautirustCity_Gym_GuideIntro {
 		walk_right * 2
 		face_down
 	))
+	waitmovement(0)
+	
+	setvar(VAR_GYM_ENTERED, 1)
+	
 	release
 }
 

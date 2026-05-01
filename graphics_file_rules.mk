@@ -88,6 +88,9 @@ $(TILESETGFXDIR)/secondary/cave/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/prismatic_cave/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 192 -Wnum_tiles
 
+$(TILESETGFXDIR)/secondary/mount_briar/tiles.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 504 -Wnum_tiles
+
 $(TILESETGFXDIR)/secondary/secret_base/brown_cave/unused_tiles.4bpp: $(TILESETGFXDIR)/secondary/secret_base/brown_cave/tiles.png
 	$(GFX) $< $@ -num_tiles 82 -Wnum_tiles
 

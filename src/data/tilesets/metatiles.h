@@ -49,6 +49,9 @@ const u16 gMetatileAttributes_Snowrie[] = INCBIN_U16("data/tilesets/secondary/sn
 const u16 gMetatiles_DesertSanctuary[] = INCBIN_U16("data/tilesets/secondary/desert_sanctuary/metatiles.bin");
 const u16 gMetatileAttributes_DesertSanctuary[] = INCBIN_U16("data/tilesets/secondary/desert_sanctuary/metatile_attributes.bin");
 
+const u16 gMetatiles_MountBriar[] = INCBIN_U16("data/tilesets/secondary/mount_briar/metatiles.bin");
+const u16 gMetatileAttributes_MountBriar[] = INCBIN_U16("data/tilesets/secondary/mount_briar/metatile_attributes.bin");
+
 const u16 gMetatiles_InsideBuilding[] = INCBIN_U16("data/tilesets/primary/building/metatiles.bin");
 const u16 gMetatileAttributes_InsideBuilding[] = INCBIN_U16("data/tilesets/primary/building/metatile_attributes.bin");
 

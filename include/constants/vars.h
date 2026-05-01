@@ -271,7 +271,7 @@
 #define VAR_PERSIST_NPC                                  0x40F9 // If non-zero, prevent NPC with that localID from despawning offscreen
 #define VAR_MOVEMENT_PATH                                0x40FA // set as index to sMovementPathScriptIDs for Path movementtype
 #define VAR_MOVEMENT_PATH_PROGRESS                       0x40FB // incremented automatically
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
+#define VAR_GYM_ENTERED                                  0x40FC // Used to play intro script when first entering a gym
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var

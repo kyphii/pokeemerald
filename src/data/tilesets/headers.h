@@ -194,6 +194,17 @@ const struct Tileset gTileset_DesertSanctuary =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_MountBriar =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_MountBriar,
+    .palettes = gTilesetPalettes_MountBriar,
+    .metatiles = gMetatiles_MountBriar,
+    .metatileAttributes = gMetatileAttributes_MountBriar,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_Building =
 {
     .isCompressed = TRUE,

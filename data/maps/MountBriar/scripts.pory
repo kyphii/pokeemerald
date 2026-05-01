@@ -1,5 +1,134 @@
 mapscripts MountBriar_MapScripts {}
 
+script MountBriar_Sign_Lodge {
+	msgbox(
+		"Aurora Veil Lodge",
+		MSGBOX_SIGN
+	)
+}
+
+script MountBriar_Talk_Man1 {
+	lock
+	faceplayer
+	msgbox(
+		"TODO",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script MountBriar_Talk_Woman1 {
+	lock
+	faceplayer
+	msgbox(
+		"TODO",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script MountBriar_Talk_Woman2 {
+	lock
+	msgbox(
+		"TODO",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script MountBriar_Trainer_1 {
+	trainerbattle_single(
+		TRAINER_MOUNT_BRIAR_1,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script MountBriar_Trainer_2 {
+	trainerbattle_single(
+		TRAINER_MOUNT_BRIAR_2,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script MountBriar_Trainer_3 {
+	trainerbattle_single(
+		TRAINER_MOUNT_BRIAR_3,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script MountBriar_Trainer_4 {
+	trainerbattle_single(
+		TRAINER_MOUNT_BRIAR_4,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script MountBriar_Trainer_5 {
+	trainerbattle_single(
+		TRAINER_MOUNT_BRIAR_5,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script MountBriar_Trainer_6 {
+	trainerbattle_single(
+		TRAINER_MOUNT_BRIAR_6,
+		//Intro
+		"TODO", 
+		//On Defeat
+		"TODO")
+
+	// Post battle
+	msgbox(
+		"TODO",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
 script MountBriar_Talk_LiftAttendant {
 	lock
 	faceplayer
@@ -75,6 +204,9 @@ script MountBriar_Talk_CutMaster {
 		MSGBOX_DEFAULT
 	)
 	playmoncry(SPECIES_SCYTHER, 0)
+	applymovement(VAR_LAST_TALKED, moves(
+		walk_in_place_left * 2
+	))
 	delay(15)
 	applymovement(LOCALID_MOUNTBRIAR_TREE, Movement_CutTreeDown)
 	waitmovement(0)
@@ -107,24 +239,31 @@ script MountBriar_Talk_CutMaster {
 	
 	delay(30)
 	
+	getplayerxy(VAR_0x8008, VAR_0x8009)
+	switch (var(VAR_0x8008)) {
+		case 40:
+			applymovement(VAR_LAST_TALKED, moves(
+				walk_right
+				walk_down
+			))
+		case 41:
+			applymovement(VAR_LAST_TALKED, moves(
+				walk_down
+				walk_right
+			))
+	}
+	waitmovement(0)
+	
 	applymovement(VAR_LAST_TALKED, moves(
-		walk_left * 3
+		walk_right
 		walk_down
 		delay_16 * 2
 		walk_in_place_faster_down * 4
-		force_down * 3
-		face_right
-		force_right
+		force_down * 5
+		face_left
+		force_left
 		face_down
 		force_down
-		face_right
-		force_right * 6
-		face_down
-		force_down
-		face_right
-		force_right
-		face_down
-		force_down * 2
 	))
 	waitmovement(0)
 	

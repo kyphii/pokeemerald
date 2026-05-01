@@ -1,7 +1,7 @@
 {
   "id": "MAP_ROUTE4_HOUSE",
   "name": "Route4_House",
-  "layout": "LAYOUT_ROUTE4_HOUSE",
+  "layout": "LAYOUT_HOUSE_2",
   "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_ROUTE_4",
   "requires_flash": false,
@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Route4_House_TalkWoman",
       "flag": "0"
     }
   ],

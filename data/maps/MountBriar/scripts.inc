@@ -2,349 +2,462 @@ MountBriar_MapScripts::
 	.byte 0
 
 
-MountBriar_Talk_LiftAttendant::
+MountBriar_Sign_Lodge::
 # 4 "data/maps/MountBriar/scripts.pory"
+	msgbox MountBriar_Sign_Lodge_Text_0, MSGBOX_SIGN
+	return
+
+
+MountBriar_Talk_Man1::
+# 11 "data/maps/MountBriar/scripts.pory"
 	lock
-# 5 "data/maps/MountBriar/scripts.pory"
+# 12 "data/maps/MountBriar/scripts.pory"
 	faceplayer
-# 6 "data/maps/MountBriar/scripts.pory"
+# 13 "data/maps/MountBriar/scripts.pory"
+	msgbox MountBriar_Talk_Man1_Text_0, MSGBOX_DEFAULT
+# 17 "data/maps/MountBriar/scripts.pory"
+	closemessage
+# 18 "data/maps/MountBriar/scripts.pory"
+	release
+	return
+
+
+MountBriar_Talk_Woman1::
+# 22 "data/maps/MountBriar/scripts.pory"
+	lock
+# 23 "data/maps/MountBriar/scripts.pory"
+	faceplayer
+# 24 "data/maps/MountBriar/scripts.pory"
+	msgbox MountBriar_Talk_Man1_Text_0, MSGBOX_DEFAULT
+# 28 "data/maps/MountBriar/scripts.pory"
+	closemessage
+# 29 "data/maps/MountBriar/scripts.pory"
+	release
+	return
+
+
+MountBriar_Talk_Woman2::
+# 33 "data/maps/MountBriar/scripts.pory"
+	lock
+# 34 "data/maps/MountBriar/scripts.pory"
+	msgbox MountBriar_Talk_Man1_Text_0, MSGBOX_DEFAULT
+# 38 "data/maps/MountBriar/scripts.pory"
+	closemessage
+# 39 "data/maps/MountBriar/scripts.pory"
+	release
+	return
+
+
+MountBriar_Trainer_1::
+# 43 "data/maps/MountBriar/scripts.pory"
+	trainerbattle_single TRAINER_MOUNT_BRIAR_1, MountBriar_Talk_Man1_Text_0, MountBriar_Talk_Man1_Text_0
+# 51 "data/maps/MountBriar/scripts.pory"
+	msgbox MountBriar_Talk_Man1_Text_0, MSGBOX_AUTOCLOSE
+	return
+
+
+MountBriar_Trainer_2::
+# 58 "data/maps/MountBriar/scripts.pory"
+	trainerbattle_single TRAINER_MOUNT_BRIAR_2, MountBriar_Talk_Man1_Text_0, MountBriar_Talk_Man1_Text_0
+# 66 "data/maps/MountBriar/scripts.pory"
+	msgbox MountBriar_Talk_Man1_Text_0, MSGBOX_AUTOCLOSE
+	return
+
+
+MountBriar_Trainer_3::
+# 73 "data/maps/MountBriar/scripts.pory"
+	trainerbattle_single TRAINER_MOUNT_BRIAR_3, MountBriar_Talk_Man1_Text_0, MountBriar_Talk_Man1_Text_0
+# 81 "data/maps/MountBriar/scripts.pory"
+	msgbox MountBriar_Talk_Man1_Text_0, MSGBOX_AUTOCLOSE
+	return
+
+
+MountBriar_Trainer_4::
+# 88 "data/maps/MountBriar/scripts.pory"
+	trainerbattle_single TRAINER_MOUNT_BRIAR_4, MountBriar_Talk_Man1_Text_0, MountBriar_Talk_Man1_Text_0
+# 96 "data/maps/MountBriar/scripts.pory"
+	msgbox MountBriar_Talk_Man1_Text_0, MSGBOX_AUTOCLOSE
+	return
+
+
+MountBriar_Trainer_5::
+# 103 "data/maps/MountBriar/scripts.pory"
+	trainerbattle_single TRAINER_MOUNT_BRIAR_5, MountBriar_Talk_Man1_Text_0, MountBriar_Talk_Man1_Text_0
+# 111 "data/maps/MountBriar/scripts.pory"
+	msgbox MountBriar_Talk_Man1_Text_0, MSGBOX_AUTOCLOSE
+	return
+
+
+MountBriar_Trainer_6::
+# 118 "data/maps/MountBriar/scripts.pory"
+	trainerbattle_single TRAINER_MOUNT_BRIAR_6, MountBriar_Talk_Man1_Text_0, MountBriar_Talk_Man1_Text_0
+# 126 "data/maps/MountBriar/scripts.pory"
+	msgbox MountBriar_Talk_Man1_Text_0, MSGBOX_AUTOCLOSE
+	return
+
+
+MountBriar_Talk_LiftAttendant::
+# 133 "data/maps/MountBriar/scripts.pory"
+	lock
+# 134 "data/maps/MountBriar/scripts.pory"
+	faceplayer
+# 135 "data/maps/MountBriar/scripts.pory"
 	msgbox MountBriar_Text_RideLift, MSGBOX_YESNO
-# 7 "data/maps/MountBriar/scripts.pory"
+# 136 "data/maps/MountBriar/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MountBriar_Talk_LiftAttendant_1
-# 18 "data/maps/MountBriar/scripts.pory"
+# 147 "data/maps/MountBriar/scripts.pory"
 	closemessage
-# 19 "data/maps/MountBriar/scripts.pory"
+# 148 "data/maps/MountBriar/scripts.pory"
 	release
 	return
 
 MountBriar_Talk_LiftAttendant_1:
-# 8 "data/maps/MountBriar/scripts.pory"
+# 137 "data/maps/MountBriar/scripts.pory"
 	closemessage
-# 9 "data/maps/MountBriar/scripts.pory"
+# 138 "data/maps/MountBriar/scripts.pory"
 	release
-# 10 "data/maps/MountBriar/scripts.pory"
+# 139 "data/maps/MountBriar/scripts.pory"
 	applymovement LOCALID_PLAYER, MountBriar_Talk_LiftAttendant_Movement_0
-# 14 "data/maps/MountBriar/scripts.pory"
+# 143 "data/maps/MountBriar/scripts.pory"
 	waitmovement 0
-# 15 "data/maps/MountBriar/scripts.pory"
+# 144 "data/maps/MountBriar/scripts.pory"
 	goto MountBriar_Script_RideLift
 	return
 
 
 MountBriar_Trigger_LiftAttendant::
-# 24 "data/maps/MountBriar/scripts.pory"
+# 153 "data/maps/MountBriar/scripts.pory"
 	lock
-# 25 "data/maps/MountBriar/scripts.pory"
+# 154 "data/maps/MountBriar/scripts.pory"
 	turnobject LOCALID_LIFT_ATTENDANT, DIR_EAST
-# 26 "data/maps/MountBriar/scripts.pory"
+# 155 "data/maps/MountBriar/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_WEST
-# 27 "data/maps/MountBriar/scripts.pory"
+# 156 "data/maps/MountBriar/scripts.pory"
 	msgbox MountBriar_Text_RideLift, MSGBOX_YESNO
-# 28 "data/maps/MountBriar/scripts.pory"
+# 157 "data/maps/MountBriar/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MountBriar_Trigger_LiftAttendant_2
 MountBriar_Trigger_LiftAttendant_1:
-# 31 "data/maps/MountBriar/scripts.pory"
+# 160 "data/maps/MountBriar/scripts.pory"
 	release
 	return
 
 MountBriar_Trigger_LiftAttendant_2:
-# 29 "data/maps/MountBriar/scripts.pory"
+# 158 "data/maps/MountBriar/scripts.pory"
 	goto MountBriar_Script_RideLift
 	goto MountBriar_Trigger_LiftAttendant_1
 
 
 MountBriar_Script_RideLift::
-# 35 "data/maps/MountBriar/scripts.pory"
+# 164 "data/maps/MountBriar/scripts.pory"
 	closemessage
-# 38 "data/maps/MountBriar/scripts.pory"
+# 167 "data/maps/MountBriar/scripts.pory"
 	removeobject LOCALID_SKI_LIFT
-# 39 "data/maps/MountBriar/scripts.pory"
+# 168 "data/maps/MountBriar/scripts.pory"
 	addobject LOCALID_SKI_LIFT
-# 41 "data/maps/MountBriar/scripts.pory"
+# 170 "data/maps/MountBriar/scripts.pory"
 	applymovement LOCALID_PLAYER, MountBriar_Script_RideLift_Movement_0
-# 44 "data/maps/MountBriar/scripts.pory"
+# 173 "data/maps/MountBriar/scripts.pory"
 	waitmovement 0
-# 45 "data/maps/MountBriar/scripts.pory"
+# 174 "data/maps/MountBriar/scripts.pory"
 	delay 20
-# 47 "data/maps/MountBriar/scripts.pory"
+# 176 "data/maps/MountBriar/scripts.pory"
 	applymovement LOCALID_PLAYER, MountBriar_Moves_SkiLift
-# 48 "data/maps/MountBriar/scripts.pory"
+# 177 "data/maps/MountBriar/scripts.pory"
 	delay 1
-# 49 "data/maps/MountBriar/scripts.pory"
+# 178 "data/maps/MountBriar/scripts.pory"
 	applymovement LOCALID_SKI_LIFT, MountBriar_Moves_SkiLift
-# 50 "data/maps/MountBriar/scripts.pory"
+# 179 "data/maps/MountBriar/scripts.pory"
 	waitmovement 0
-# 52 "data/maps/MountBriar/scripts.pory"
+# 181 "data/maps/MountBriar/scripts.pory"
 	applymovement LOCALID_PLAYER, MountBriar_Script_RideLift_Movement_1
-# 56 "data/maps/MountBriar/scripts.pory"
+# 185 "data/maps/MountBriar/scripts.pory"
 	waitmovement 0
 	return
 
 
 MountBriar_Talk_CutMaster::
-# 60 "data/maps/MountBriar/scripts.pory"
+# 189 "data/maps/MountBriar/scripts.pory"
 	lock
-# 61 "data/maps/MountBriar/scripts.pory"
+# 190 "data/maps/MountBriar/scripts.pory"
 	applymovement VAR_LAST_TALKED, MountBriar_Talk_CutMaster_Movement_0
-# 64 "data/maps/MountBriar/scripts.pory"
+# 193 "data/maps/MountBriar/scripts.pory"
 	waitmovement 0
-# 65 "data/maps/MountBriar/scripts.pory"
+# 194 "data/maps/MountBriar/scripts.pory"
 	msgbox MountBriar_Talk_CutMaster_Text_0, MSGBOX_DEFAULT
-# 77 "data/maps/MountBriar/scripts.pory"
+# 206 "data/maps/MountBriar/scripts.pory"
 	playmoncry SPECIES_SCYTHER, 0
-# 78 "data/maps/MountBriar/scripts.pory"
+# 207 "data/maps/MountBriar/scripts.pory"
+	applymovement VAR_LAST_TALKED, MountBriar_Talk_CutMaster_Movement_0
+# 210 "data/maps/MountBriar/scripts.pory"
 	delay 15
-# 79 "data/maps/MountBriar/scripts.pory"
+# 211 "data/maps/MountBriar/scripts.pory"
 	applymovement LOCALID_MOUNTBRIAR_TREE, Movement_CutTreeDown
-# 80 "data/maps/MountBriar/scripts.pory"
+# 212 "data/maps/MountBriar/scripts.pory"
 	waitmovement 0
-# 81 "data/maps/MountBriar/scripts.pory"
+# 213 "data/maps/MountBriar/scripts.pory"
 	removeobject LOCALID_MOUNTBRIAR_TREE
-# 83 "data/maps/MountBriar/scripts.pory"
+# 215 "data/maps/MountBriar/scripts.pory"
 	delay 15
-# 84 "data/maps/MountBriar/scripts.pory"
+# 216 "data/maps/MountBriar/scripts.pory"
 	faceplayer
-# 86 "data/maps/MountBriar/scripts.pory"
+# 218 "data/maps/MountBriar/scripts.pory"
 	msgbox MountBriar_Talk_CutMaster_Text_1, MSGBOX_DEFAULT
-# 101 "data/maps/MountBriar/scripts.pory"
+# 233 "data/maps/MountBriar/scripts.pory"
 	closemessage
-# 103 "data/maps/MountBriar/scripts.pory"
+# 235 "data/maps/MountBriar/scripts.pory"
 	turnobject VAR_LAST_TALKED, DIR_WEST
-# 104 "data/maps/MountBriar/scripts.pory"
+# 236 "data/maps/MountBriar/scripts.pory"
 	delay 20
-# 105 "data/maps/MountBriar/scripts.pory"
+# 237 "data/maps/MountBriar/scripts.pory"
 	removeobject LOCALID_MOUNTBRIAR_CUTMASTERMON
-# 106 "data/maps/MountBriar/scripts.pory"
+# 238 "data/maps/MountBriar/scripts.pory"
 	playse SE_BALL
-# 108 "data/maps/MountBriar/scripts.pory"
+# 240 "data/maps/MountBriar/scripts.pory"
 	delay 30
-# 110 "data/maps/MountBriar/scripts.pory"
-	applymovement VAR_LAST_TALKED, MountBriar_Talk_CutMaster_Movement_1
-# 129 "data/maps/MountBriar/scripts.pory"
+# 242 "data/maps/MountBriar/scripts.pory"
+	getplayerxy VAR_0x8008, VAR_0x8009
+# 243 "data/maps/MountBriar/scripts.pory"
+	switch VAR_0x8008
+# 244 "data/maps/MountBriar/scripts.pory"
+	case 40, MountBriar_Talk_CutMaster_3
+# 249 "data/maps/MountBriar/scripts.pory"
+	case 41, MountBriar_Talk_CutMaster_4
+MountBriar_Talk_CutMaster_1:
+# 255 "data/maps/MountBriar/scripts.pory"
 	waitmovement 0
-# 131 "data/maps/MountBriar/scripts.pory"
+# 257 "data/maps/MountBriar/scripts.pory"
+	applymovement VAR_LAST_TALKED, MountBriar_Talk_CutMaster_Movement_3
+# 268 "data/maps/MountBriar/scripts.pory"
+	waitmovement 0
+# 270 "data/maps/MountBriar/scripts.pory"
 	removeobject VAR_LAST_TALKED
-# 132 "data/maps/MountBriar/scripts.pory"
+# 271 "data/maps/MountBriar/scripts.pory"
 	setflag FLAG_STORY_MET_CUT_MASTER
-# 133 "data/maps/MountBriar/scripts.pory"
+# 272 "data/maps/MountBriar/scripts.pory"
 	clearflag FLAG_STORY_CUT_MASTER_AWAY
-# 135 "data/maps/MountBriar/scripts.pory"
+# 274 "data/maps/MountBriar/scripts.pory"
 	release
 	return
 
+MountBriar_Talk_CutMaster_3:
+# 245 "data/maps/MountBriar/scripts.pory"
+	applymovement VAR_LAST_TALKED, MountBriar_Talk_CutMaster_Movement_1
+	goto MountBriar_Talk_CutMaster_1
+
+MountBriar_Talk_CutMaster_4:
+# 250 "data/maps/MountBriar/scripts.pory"
+	applymovement VAR_LAST_TALKED, MountBriar_Talk_CutMaster_Movement_2
+	goto MountBriar_Talk_CutMaster_1
+
 
 MountBriar_Talk_CutMasterMon::
-# 139 "data/maps/MountBriar/scripts.pory"
+# 278 "data/maps/MountBriar/scripts.pory"
 	playmoncry SPECIES_SCYTHER, 0
-# 140 "data/maps/MountBriar/scripts.pory"
+# 279 "data/maps/MountBriar/scripts.pory"
 	waitmoncry
-# 141 "data/maps/MountBriar/scripts.pory"
+# 280 "data/maps/MountBriar/scripts.pory"
 	msgbox MountBriar_Talk_CutMasterMon_Text_0, MSGBOX_DEFAULT
-# 146 "data/maps/MountBriar/scripts.pory"
+# 285 "data/maps/MountBriar/scripts.pory"
 	closemessage
 	return
 
 
-# 154 "data/maps/MountBriar/scripts.pory"
+# 293 "data/maps/MountBriar/scripts.pory"
 MountBriar_Moves_SkiLift:
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 155 "data/maps/MountBriar/scripts.pory"
+# 294 "data/maps/MountBriar/scripts.pory"
 	force_up
 	step_end
 
-# 10 "data/maps/MountBriar/scripts.pory"
+# 139 "data/maps/MountBriar/scripts.pory"
 MountBriar_Talk_LiftAttendant_Movement_0:
-# 11 "data/maps/MountBriar/scripts.pory"
+# 140 "data/maps/MountBriar/scripts.pory"
 	walk_right
-# 12 "data/maps/MountBriar/scripts.pory"
+# 141 "data/maps/MountBriar/scripts.pory"
 	walk_up
 	step_end
 
-# 41 "data/maps/MountBriar/scripts.pory"
+# 170 "data/maps/MountBriar/scripts.pory"
 MountBriar_Script_RideLift_Movement_0:
-# 42 "data/maps/MountBriar/scripts.pory"
+# 171 "data/maps/MountBriar/scripts.pory"
 	walk_up
-# 42 "data/maps/MountBriar/scripts.pory"
+# 171 "data/maps/MountBriar/scripts.pory"
 	walk_up
-# 42 "data/maps/MountBriar/scripts.pory"
+# 171 "data/maps/MountBriar/scripts.pory"
 	walk_up
 	step_end
 
-# 52 "data/maps/MountBriar/scripts.pory"
+# 181 "data/maps/MountBriar/scripts.pory"
 MountBriar_Script_RideLift_Movement_1:
-# 53 "data/maps/MountBriar/scripts.pory"
+# 182 "data/maps/MountBriar/scripts.pory"
 	force_up
-# 54 "data/maps/MountBriar/scripts.pory"
+# 183 "data/maps/MountBriar/scripts.pory"
 	jump_up
 	step_end
 
-# 61 "data/maps/MountBriar/scripts.pory"
+# 190 "data/maps/MountBriar/scripts.pory"
 MountBriar_Talk_CutMaster_Movement_0:
-# 62 "data/maps/MountBriar/scripts.pory"
+# 191 "data/maps/MountBriar/scripts.pory"
 	walk_in_place_left
-# 62 "data/maps/MountBriar/scripts.pory"
+# 191 "data/maps/MountBriar/scripts.pory"
 	walk_in_place_left
 	step_end
 
-# 110 "data/maps/MountBriar/scripts.pory"
+# 245 "data/maps/MountBriar/scripts.pory"
 MountBriar_Talk_CutMaster_Movement_1:
-# 111 "data/maps/MountBriar/scripts.pory"
-	walk_left
-# 111 "data/maps/MountBriar/scripts.pory"
-	walk_left
-# 111 "data/maps/MountBriar/scripts.pory"
-	walk_left
-# 112 "data/maps/MountBriar/scripts.pory"
+# 246 "data/maps/MountBriar/scripts.pory"
+	walk_right
+# 247 "data/maps/MountBriar/scripts.pory"
 	walk_down
-# 113 "data/maps/MountBriar/scripts.pory"
+	step_end
+
+# 250 "data/maps/MountBriar/scripts.pory"
+MountBriar_Talk_CutMaster_Movement_2:
+# 251 "data/maps/MountBriar/scripts.pory"
+	walk_down
+# 252 "data/maps/MountBriar/scripts.pory"
+	walk_right
+	step_end
+
+# 257 "data/maps/MountBriar/scripts.pory"
+MountBriar_Talk_CutMaster_Movement_3:
+# 258 "data/maps/MountBriar/scripts.pory"
+	walk_right
+# 259 "data/maps/MountBriar/scripts.pory"
+	walk_down
+# 260 "data/maps/MountBriar/scripts.pory"
 	delay_16
-# 113 "data/maps/MountBriar/scripts.pory"
+# 260 "data/maps/MountBriar/scripts.pory"
 	delay_16
-# 114 "data/maps/MountBriar/scripts.pory"
+# 261 "data/maps/MountBriar/scripts.pory"
 	walk_in_place_faster_down
-# 114 "data/maps/MountBriar/scripts.pory"
+# 261 "data/maps/MountBriar/scripts.pory"
 	walk_in_place_faster_down
-# 114 "data/maps/MountBriar/scripts.pory"
+# 261 "data/maps/MountBriar/scripts.pory"
 	walk_in_place_faster_down
-# 114 "data/maps/MountBriar/scripts.pory"
+# 261 "data/maps/MountBriar/scripts.pory"
 	walk_in_place_faster_down
-# 115 "data/maps/MountBriar/scripts.pory"
+# 262 "data/maps/MountBriar/scripts.pory"
 	force_down
-# 115 "data/maps/MountBriar/scripts.pory"
+# 262 "data/maps/MountBriar/scripts.pory"
 	force_down
-# 115 "data/maps/MountBriar/scripts.pory"
+# 262 "data/maps/MountBriar/scripts.pory"
 	force_down
-# 116 "data/maps/MountBriar/scripts.pory"
-	face_right
-# 117 "data/maps/MountBriar/scripts.pory"
-	force_right
-# 118 "data/maps/MountBriar/scripts.pory"
+# 262 "data/maps/MountBriar/scripts.pory"
+	force_down
+# 262 "data/maps/MountBriar/scripts.pory"
+	force_down
+# 263 "data/maps/MountBriar/scripts.pory"
+	face_left
+# 264 "data/maps/MountBriar/scripts.pory"
+	force_left
+# 265 "data/maps/MountBriar/scripts.pory"
 	face_down
-# 119 "data/maps/MountBriar/scripts.pory"
-	force_down
-# 120 "data/maps/MountBriar/scripts.pory"
-	face_right
-# 121 "data/maps/MountBriar/scripts.pory"
-	force_right
-# 121 "data/maps/MountBriar/scripts.pory"
-	force_right
-# 121 "data/maps/MountBriar/scripts.pory"
-	force_right
-# 121 "data/maps/MountBriar/scripts.pory"
-	force_right
-# 121 "data/maps/MountBriar/scripts.pory"
-	force_right
-# 121 "data/maps/MountBriar/scripts.pory"
-	force_right
-# 122 "data/maps/MountBriar/scripts.pory"
-	face_down
-# 123 "data/maps/MountBriar/scripts.pory"
-	force_down
-# 124 "data/maps/MountBriar/scripts.pory"
-	face_right
-# 125 "data/maps/MountBriar/scripts.pory"
-	force_right
-# 126 "data/maps/MountBriar/scripts.pory"
-	face_down
-# 127 "data/maps/MountBriar/scripts.pory"
-	force_down
-# 127 "data/maps/MountBriar/scripts.pory"
+# 266 "data/maps/MountBriar/scripts.pory"
 	force_down
 	step_end
+
+MountBriar_Sign_Lodge_Text_0:
+# 5 "data/maps/MountBriar/scripts.pory"
+	.string "Aurora Veil Lodge$"
+
+MountBriar_Talk_Man1_Text_0:
+# 14 "data/maps/MountBriar/scripts.pory"
+	.string "TODO$"
 
 MountBriar_Talk_CutMaster_Text_0:
-# 66 "data/maps/MountBriar/scripts.pory"
+# 195 "data/maps/MountBriar/scripts.pory"
 	.string "Observe, if you will,\n"
 	.string "the obstacle before you.\p"
 	.string "Contemplate its shape.\n"
@@ -354,7 +467,7 @@ MountBriar_Talk_CutMaster_Text_0:
 	.string "and then…{PAUSE 30} release!$"
 
 MountBriar_Talk_CutMaster_Text_1:
-# 87 "data/maps/MountBriar/scripts.pory"
+# 219 "data/maps/MountBriar/scripts.pory"
 	.string "To have sought me out on this \n"
 	.string "mountain… you seek the CUT technique, \l"
 	.string "surely.\p"
@@ -366,11 +479,11 @@ MountBriar_Talk_CutMaster_Text_1:
 	.string "I will be waiting!$"
 
 MountBriar_Talk_CutMasterMon_Text_0:
-# 142 "data/maps/MountBriar/scripts.pory"
+# 281 "data/maps/MountBriar/scripts.pory"
 	.string "Scyther is focused intently, ready to\n"
 	.string "strike.$"
 
 MountBriar_Text_RideLift::
-# 149 "data/maps/MountBriar/scripts.pory"
+# 288 "data/maps/MountBriar/scripts.pory"
 	.string "Hello. Do you want to ride the lift \n"
 	.string "to the summit?$"

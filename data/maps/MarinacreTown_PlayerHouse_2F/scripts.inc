@@ -15,7 +15,7 @@ MarinacreTown_PlayerHouse_2F_MapScripts_MAP_SCRIPT_ON_LOAD_1:
 # 5 "data/maps/MarinacreTown_PlayerHouse_2F/scripts.pory"
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 # 6 "data/maps/MarinacreTown_PlayerHouse_2F/scripts.pory"
-	setplayerlevel 4
+	setplayerlevel 5
 # 8 "data/maps/MarinacreTown_PlayerHouse_2F/scripts.pory"
 	pausertc 20
 	return

@@ -56,7 +56,6 @@ script HawthornLabs_Talk_Receptionist {
 
 script HawthornLabs_Intro_MeetRival {
 	lockall
-	addplayerlevel(1)
 	turnobject(LOCALID_PLAYER, DIR_NORTH)
     applymovement(LOCALID_LABEXT_RIVAL, moves(
 		jump_in_place_down
@@ -258,6 +257,7 @@ script HawthornLabs_Intro_BattleRival {
     setobjectxyperm(LOCALID_LABEXT_RIVAL, 47, 0)
 	
 	setvar(VAR_INTRO_SEQUENCE_STATE, 5)
+	addplayerlevel(1)
 	
 	warp(MAP_MARINACRE_TOWN_PLAYER_HOUSE_1F, 0)
     waitstate

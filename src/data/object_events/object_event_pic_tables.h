@@ -298,6 +298,14 @@ static const struct SpriteFrameImage sPicTable_NpcShopkeeper[] = {
     overworld_ascending_frames(gObjectEventPic_NpcShopkeeper, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_NpcSkierF[] = {
+    overworld_ascending_frames(gObjectEventPic_NpcSkierF, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_NpcSkierM[] = {
+    overworld_ascending_frames(gObjectEventPic_NpcSkierM, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_NpcStewardess[] = {
     overworld_ascending_frames(gObjectEventPic_NpcStewardess, 2, 4),
 };

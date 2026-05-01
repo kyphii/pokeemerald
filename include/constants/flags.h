@@ -567,8 +567,8 @@
 #define FLAG_HIDDEN_ITEM_NAUTIRUST_CITY_1                    (FLAG_HIDDEN_ITEMS_START + 0x0E)
 #define FLAG_HIDDEN_ITEM_NAUTIRUST_CITY_2                    (FLAG_HIDDEN_ITEMS_START + 0x0F)
 #define FLAG_HIDDEN_ITEM_NAUTIRUST_CITY_3                    (FLAG_HIDDEN_ITEMS_START + 0x10)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_PEARL                (FLAG_HIDDEN_ITEMS_START + 0x11)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_YELLOW_SHARD         (FLAG_HIDDEN_ITEMS_START + 0x12)
+#define FLAG_HIDDEN_ITEM_MOUNT_BRIAR_1                       (FLAG_HIDDEN_ITEMS_START + 0x11)
+#define FLAG_HIDDEN_ITEM_MOUNT_BRIAR_2                       (FLAG_HIDDEN_ITEMS_START + 0x12)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_126_IRON                 (FLAG_HIDDEN_ITEMS_START + 0x13)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_126_BIG_PEARL            (FLAG_HIDDEN_ITEMS_START + 0x14)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_127_STAR_PIECE           (FLAG_HIDDEN_ITEMS_START + 0x15)
@@ -1061,12 +1061,12 @@
 #define FLAG_ITEM_ROUTE19_1                                         0x3F3
 #define FLAG_ITEM_ROUTE19_2                                         0x3F4
 #define FLAG_ITEM_ROUTE19_3                                         0x3F5
-#define FLAG_ITEM_NAUTIRUST_CITY_1                                  0x3F6
-#define FLAG_ITEM_NAUTIRUST_CITY_2                                  0x3F7
-#define FLAG_ITEM_ROUTE_115_SUPER_POTION                            0x3F8
-#define FLAG_ITEM_ROUTE_115_TM_FOCUS_PUNCH                          0x3F9
-#define FLAG_ITEM_ROUTE_115_IRON                                    0x3FA
-#define FLAG_ITEM_ROUTE_116_ETHER                                   0x3FB
+#define FLAG_ITEM_ROUTE19_4                                         0x3F6
+#define FLAG_ITEM_ROUTE19_5                                         0x3F7
+#define FLAG_ITEM_NAUTIRUST_CITY_1                                  0x3F8
+#define FLAG_ITEM_NAUTIRUST_CITY_2                                  0x3F9
+#define FLAG_ITEM_MOUNT_BRIAR_1                                     0x3FA
+#define FLAG_ITEM_MOUNT_BRIAR_2                                     0x3FB
 #define FLAG_ITEM_ROUTE_116_REPEL                                   0x3FC
 #define FLAG_ITEM_ROUTE_116_HP_UP                                   0x3FD
 #define FLAG_ITEM_ROUTE_117_GREAT_BALL                              0x3FE

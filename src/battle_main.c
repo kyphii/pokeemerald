@@ -370,6 +370,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PIKE_QUEEN] = { _("PIKE QUEEN") },
     [TRAINER_CLASS_PYRAMID_KING] = { _("PYRAMID KING") },
     [TRAINER_CLASS_RS_PROTAG] = { _("{PKMN} TRAINER") },
+    [TRAINER_CLASS_SKIER] = { _("SKIER"), 7 },
 
     [TRAINER_CLASS_YOUNGSTER_FRLG] =       { _("YOUNGSTER"), 4 },
     [TRAINER_CLASS_BUG_CATCHER_FRLG] =     { _("BUG CATCHER"), 3 },
@@ -1900,7 +1901,7 @@ u32 GeneratePersonalityForGender(u32 gender, u32 species)
         return speciesInfo->genderRatio / 2;
 }
 
-void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon *partyEntry, u8 level)
+void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon *partyEntry, u16 speciesId)
 {
     bool32 noMoveSet = TRUE;
     u32 j;
@@ -1919,10 +1920,11 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
 
     for (j = 0; j < MAX_MON_MOVES; ++j)
     {
-        enum Move moveId = DynamicScaleGetTrainerMonMove(partyEntry->species, partyEntry->moves[j], level, j);
+        enum Move moveId = DynamicScaleGetTrainerMonMove(mon, speciesId, partyEntry->moves[j]);
         u32 pp = GetMovePP(moveId);
         SetMonData(mon, MON_DATA_MOVE1 + j, &moveId);
         SetMonData(mon, MON_DATA_PP1 + j, &pp);
+        DebugPrintf(" - %S", gMovesInfo[SanitizeMoveId(moveId)].name);
     }
 }
 
@@ -1989,7 +1991,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             CreateMon(&party[i], species, level, personalityValue, otId);
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
 
-            CustomTrainerPartyAssignMoves(&party[i], &partyData[monIndex], level);
+            CustomTrainerPartyAssignMoves(&party[i], &partyData[monIndex], partyData[monIndex].species);
             SetMonData(&party[i], MON_DATA_IVS, &(partyData[monIndex].iv));
             if (partyData[monIndex].ev != NULL)
             {
