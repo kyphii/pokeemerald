@@ -1,6 +1,6 @@
 EventScript_PC::
 	lockall
-	setvar VAR_0x8004, PC_LOCATION_OTHER
+	setvar VAR_0x8004, PC_LOCATION_POKEMON_CENTER
 	special DoPCTurnOnEffect
 	playse SE_PC_ON
 	msgbox Text_BootUpPC, MSGBOX_DEFAULT
@@ -55,7 +55,7 @@ EventScript_AccessLanettesPC::
 	return
 
 EventScript_TurnOffPC::
-	setvar VAR_0x8004, PC_LOCATION_OTHER
+	setvar VAR_0x8004, PC_LOCATION_POKEMON_CENTER
 	playse SE_PC_OFF
 	special DoPCTurnOffEffect
 	releaseall

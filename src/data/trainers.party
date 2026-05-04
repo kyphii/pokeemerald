@@ -786,7 +786,7 @@ Level: 0
 
 
 === TRAINER_MOUNT_BRIAR_1 ===
-Name: 
+Name: Damien
 Class: Skier
 Pic: Skier M
 Gender: Male
@@ -801,7 +801,7 @@ Crabominable
 Level: 0
 
 === TRAINER_MOUNT_BRIAR_2 ===
-Name: 
+Name: Gina
 Class: Skier
 Pic: Skier F
 Gender: Female
@@ -816,7 +816,7 @@ Weavile
 Level: 0
 
 === TRAINER_MOUNT_BRIAR_3 ===
-Name: 
+Name: Nate
 Class: Skier
 Pic: Skier M
 Gender: Male
@@ -849,7 +849,7 @@ Medicham
 Level: 0
 
 === TRAINER_MOUNT_BRIAR_5 ===
-Name: 
+Name: Andrea
 Class: Skier
 Pic: Skier F
 Gender: Female
@@ -870,7 +870,7 @@ Cetitan
 Level: 0
 
 === TRAINER_MOUNT_BRIAR_6 ===
-Name: 
+Name: Terry
 Class: Hiker
 Pic: Hiker
 Gender: Male

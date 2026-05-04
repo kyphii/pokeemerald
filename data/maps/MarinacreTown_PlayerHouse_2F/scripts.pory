@@ -10,6 +10,21 @@ mapscripts MarinacreTown_PlayerHouse_2F_MapScripts {
 	}
 }
 
+script MarinacreTown_PlayerHouse_2F_Script_PlayerPCOn {
+	setvar(VAR_0x8004, PC_LOCATION_PLAYER_HOUSE)
+	special(DoPCTurnOnEffect)
+	playse(SE_PC_LOGIN)
+	msgbox(gText_AccessedPlayersPC, MSGBOX_DEFAULT)
+	special(PlayerPC)
+	waitstate
+	goto(EventScript_PCMainMenu)
+}
+
+script MarinacreTown_PlayerHouse_2F_Script_PlayerPCOff {
+	setvar(VAR_0x8004, PC_LOCATION_PLAYER_HOUSE)
+	playse(SE_PC_OFF)
+}
+
 script MarinacreTown_PlayerHouse_2F_Sign_NintendoSwitch {
 	msgbox("It's your Nintendo Switch.
 		When was the last time you used it?", 

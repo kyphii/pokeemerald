@@ -92,8 +92,8 @@
 EWRAM_DATA bool8 gBikeCyclingChallenge = FALSE;
 EWRAM_DATA u8 gBikeCollisions = 0;
 static EWRAM_DATA u32 sBikeCyclingTimer = 0;
-static EWRAM_DATA u8 sSlidingDoorNextFrameCounter = 0;
-static EWRAM_DATA u8 sSlidingDoorFrame = 0;
+//static EWRAM_DATA u8 sSlidingDoorNextFrameCounter = 0;
+//static EWRAM_DATA u8 sSlidingDoorFrame = 0;
 static EWRAM_DATA u8 sTutorMoveAndElevatorWindowId = 0;
 static EWRAM_DATA u16 sLilycoveDeptStore_DefaultFloorChoice = 0;
 static EWRAM_DATA struct ListMenuItem *sScrollableMultichoice_ListMenuItem = NULL;
@@ -119,8 +119,6 @@ u16 GetNumFansOfPlayerInTrainerFanClub(void);
 
 static void RecordCyclingRoadResults(u32, u8);
 static void LoadLinkPartnerObjectEventSpritePalette(u16, u8, u8);
-static void Task_PetalburgGymSlideOpenRoomDoors(u8);
-static void PetalburgGymSetDoorMetatiles(u8, u16);
 static void Task_PCTurnOnEffect(u8);
 static void PCTurnOnEffect(struct Task *);
 static void PCTurnOnEffect_SetMetatile(s16, s8, s8);
@@ -654,277 +652,6 @@ static const struct UCoords8 sMauvilleGymSwitchCoords[] =
     { 8 + MAP_OFFSET,  9 + MAP_OFFSET}
 };
 
-// Presses the stepped-on switch and raises the rest
-void MauvilleGymPressSwitch(void)
-{
-    u8 i;
-    for (i = 0; i < ARRAY_COUNT(sMauvilleGymSwitchCoords); i++)
-    {
-        if (i == gSpecialVar_0x8004)
-            MapGridSetMetatileIdAt(sMauvilleGymSwitchCoords[i].x, sMauvilleGymSwitchCoords[i].y, METATILE_MauvilleGym_PressedSwitch);
-        else
-            MapGridSetMetatileIdAt(sMauvilleGymSwitchCoords[i].x, sMauvilleGymSwitchCoords[i].y, METATILE_MauvilleGym_RaisedSwitch);
-    }
-}
-
-// Sets the gym barriers back to the default state; their alt state is handled by MauvilleCity_Gym_EventScript_SetAltBarriers
-void MauvilleGymSetDefaultBarriers(void)
-{
-    int x, y;
-    // All switches/barriers are within these coord ranges
-    for (y = 5 + MAP_OFFSET; y < 17 + MAP_OFFSET; y++)
-    {
-        for (x = 0 + MAP_OFFSET; x < 9 + MAP_OFFSET; x++)
-        {
-            switch (MapGridGetMetatileIdAt(x, y))
-            {
-            case METATILE_MauvilleGym_GreenBeamH1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH1_Off);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH2_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH2_Off);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH3_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH3_Off);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH4_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH4_Off);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH1_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH1_On);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH2_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH2_On);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH3_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH3_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH4_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH4_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_RedBeamH1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH1_Off);
-                break;
-            case METATILE_MauvilleGym_RedBeamH2_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH2_Off);
-                break;
-            case METATILE_MauvilleGym_RedBeamH3_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH3_Off);
-                break;
-            case METATILE_MauvilleGym_RedBeamH4_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH4_Off);
-                break;
-            case METATILE_MauvilleGym_RedBeamH1_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH1_On);
-                break;
-            case METATILE_MauvilleGym_RedBeamH2_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH2_On);
-                break;
-            case METATILE_MauvilleGym_RedBeamH3_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH3_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_RedBeamH4_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH4_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_GreenBeamV1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_GreenBeamV2_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_FloorTile);
-                break;
-            case METATILE_MauvilleGym_RedBeamV1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_Off | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_RedBeamV2_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_FloorTile);
-                break;
-            case METATILE_MauvilleGym_PoleBottom_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamV1_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_FloorTile:
-                if (MapGridGetMetatileIdAt(x, y - 1) == METATILE_MauvilleGym_GreenBeamV1_On)
-                    MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamV2_On | MAPGRID_IMPASSABLE);
-                else
-                    MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamV2_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_PoleBottom_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamV1_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_PoleTop_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleTop_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_PoleTop_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleTop_Off);
-                break;
-            }
-        }
-    }
-}
-
-// Presses all switches and deactivates all beams.
-void MauvilleGymDeactivatePuzzle(void)
-{
-    int i, x, y;
-    const struct UCoords8 *switchCoords = sMauvilleGymSwitchCoords;
-    for (i = ARRAY_COUNT(sMauvilleGymSwitchCoords) - 1; i >= 0; i--)
-    {
-        MapGridSetMetatileIdAt(switchCoords->x, switchCoords->y, METATILE_MauvilleGym_PressedSwitch);
-        switchCoords++;
-    }
-    for (y = 5 + MAP_OFFSET; y < 17 + MAP_OFFSET; y++)
-    {
-        for (x = 0 + MAP_OFFSET; x < 9 + MAP_OFFSET; x++)
-        {
-            switch (MapGridGetMetatileIdAt(x, y))
-            {
-            case METATILE_MauvilleGym_GreenBeamH1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH1_Off);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH2_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH2_Off);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH3_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH3_Off);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH4_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH4_Off);
-                break;
-            case METATILE_MauvilleGym_RedBeamH1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH1_Off);
-                break;
-            case METATILE_MauvilleGym_RedBeamH2_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH2_Off);
-                break;
-            case METATILE_MauvilleGym_RedBeamH3_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH3_Off);
-                break;
-            case METATILE_MauvilleGym_RedBeamH4_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH4_Off);
-                break;
-            case METATILE_MauvilleGym_GreenBeamV1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_RedBeamV1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_Off | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_GreenBeamV2_On:
-            case METATILE_MauvilleGym_RedBeamV2_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_FloorTile);
-                break;
-            case METATILE_MauvilleGym_PoleTop_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleTop_Off);
-                break;
-            }
-        }
-    }
-}
-
-static const bool8 sSlidingDoorNextFrameDelay[] = {0, 1, 1, 1, 1};
-
-static const u16 sPetalburgGymSlidingDoorMetatiles[] = {
-    METATILE_PetalburgGym_SlidingDoor_Frame0,
-    METATILE_PetalburgGym_SlidingDoor_Frame1,
-    METATILE_PetalburgGym_SlidingDoor_Frame2,
-    METATILE_PetalburgGym_SlidingDoor_Frame3,
-    METATILE_PetalburgGym_SlidingDoor_Frame4,
-};
-
-void PetalburgGymSlideOpenRoomDoors(void)
-{
-    sSlidingDoorNextFrameCounter = 0;
-    sSlidingDoorFrame = 0;
-    PlaySE(SE_UNLOCK);
-    CreateTask(Task_PetalburgGymSlideOpenRoomDoors, 8);
-}
-
-static void Task_PetalburgGymSlideOpenRoomDoors(u8 taskId)
-{
-    if (sSlidingDoorNextFrameDelay[sSlidingDoorFrame] == sSlidingDoorNextFrameCounter)
-    {
-        PetalburgGymSetDoorMetatiles(gSpecialVar_0x8004, sPetalburgGymSlidingDoorMetatiles[sSlidingDoorFrame]);
-        sSlidingDoorNextFrameCounter = 0;
-        if ((++sSlidingDoorFrame) == ARRAY_COUNT(sPetalburgGymSlidingDoorMetatiles))
-        {
-            DestroyTask(taskId);
-            ScriptContext_Enable();
-        }
-    }
-    else
-    {
-        sSlidingDoorNextFrameCounter++;
-    }
-}
-
-static void PetalburgGymSetDoorMetatiles(u8 roomNumber, u16 metatileId)
-{
-    u16 doorCoordsX[4];
-    u16 doorCoordsY[4];
-    u8 i;
-    u8 nDoors = 0;
-    switch (roomNumber)
-    {
-    case 1:
-        nDoors = 2;
-        doorCoordsX[0] = 1;
-        doorCoordsX[1] = 7;
-        doorCoordsY[0] = 104;
-        doorCoordsY[1] = 104;
-        break;
-    case 2:
-        nDoors = 2;
-        doorCoordsX[0] = 1;
-        doorCoordsX[1] = 7;
-        doorCoordsY[0] = 78;
-        doorCoordsY[1] = 78;
-        break;
-    case 3:
-        nDoors = 2;
-        doorCoordsX[0] = 1;
-        doorCoordsX[1] = 7;
-        doorCoordsY[0] = 91;
-        doorCoordsY[1] = 91;
-        break;
-    case 4:
-        nDoors = 1;
-        doorCoordsX[0] = 7;
-        doorCoordsY[0] = 39;
-        break;
-    case 5:
-        nDoors = 2;
-        doorCoordsX[0] = 1;
-        doorCoordsX[1] = 7;
-        doorCoordsY[0] = 52;
-        doorCoordsY[1] = 52;
-        break;
-    case 6:
-        nDoors = 1;
-        doorCoordsX[0] = 1;
-        doorCoordsY[0] = 65;
-        break;
-    case 7:
-        nDoors = 1;
-        doorCoordsX[0] = 7;
-        doorCoordsY[0] = 13;
-        break;
-    case 8:
-        nDoors = 1;
-        doorCoordsX[0] = 1;
-        doorCoordsY[0] = 26;
-        break;
-    }
-    for (i = 0; i < nDoors; i++)
-    {
-        MapGridSetMetatileIdAt(doorCoordsX[i] + MAP_OFFSET, doorCoordsY[i] + MAP_OFFSET, metatileId | MAPGRID_IMPASSABLE);
-        MapGridSetMetatileIdAt(doorCoordsX[i] + MAP_OFFSET, doorCoordsY[i] + MAP_OFFSET + 1, (metatileId + METATILE_ROW_WIDTH) | MAPGRID_IMPASSABLE);
-    }
-    DrawWholeMapView();
-}
-
-void PetalburgGymUnlockRoomDoors(void)
-{
-    PetalburgGymSetDoorMetatiles(gSpecialVar_0x8004, sPetalburgGymSlidingDoorMetatiles[4]);
-}
-
 void ShowFieldMessageStringVar4(void)
 {
     ShowFieldMessage(gStringVar4);
@@ -1018,18 +745,12 @@ static bool32 IsPlayerHousePCTile(u32 tileId)
         return FALSE;
 
     return gMapHeader.mapLayout->secondaryTileset == &gTileset_PlayerHouse
-        && (tileId == METATILE_BrendansMaysHouse_BrendanPC_On
-            || tileId == METATILE_BrendansMaysHouse_BrendanPC_Off
-            || tileId == METATILE_BrendansMaysHouse_MayPC_On
-            || tileId == METATILE_BrendansMaysHouse_MayPC_Off);
+        && (tileId == METATILE_Player_House_PC_On
+            || tileId == METATILE_Player_House_PC_Off);
 }
 
 static bool32 IsPlayerHousePCTileFrlg(u32 tileId)
 {
-    if (IS_FRLG)
-        return gMapHeader.mapLayout->secondaryTileset == &gTileset_GenericBuilding1
-            && (tileId == METATILE_GenericBuilding1_PlayersPCOn || tileId == METATILE_GenericBuilding1_PlayersPCOff);
-
     return FALSE;
 }
 
@@ -1123,26 +844,18 @@ static void PCTurnOnEffect_SetMetatile(s16 isScreenOn, s8 dx, s8 dy)
     if (isScreenOn)
     {
         // Screen is on, set it off
-        if (gSpecialVar_0x8004 == PC_LOCATION_OTHER)
-            metatileId = IS_FRLG ? METATILE_BuildingFrlg_PCOff : METATILE_Building_PC_Off;
-        else if (gSpecialVar_0x8004 == PC_LOCATION_BRENDANS_HOUSE)
-            metatileId = METATILE_BrendansMaysHouse_BrendanPC_Off;
-        else if (gSpecialVar_0x8004 == PC_LOCATION_MAYS_HOUSE)
-            metatileId = METATILE_BrendansMaysHouse_MayPC_Off;
-        else if (gSpecialVar_0x8004 == PC_LOCATION_PLAYER_HOUSE_FRLG)
-            metatileId = METATILE_GenericBuilding1_PlayersPCOff;
+        if (gSpecialVar_0x8004 == PC_LOCATION_POKEMON_CENTER)
+            metatileId = METATILE_Pokemon_Center_PC_Off;
+        else if (gSpecialVar_0x8004 == PC_LOCATION_PLAYER_HOUSE)
+            metatileId = METATILE_Player_House_PC_Off;
     }
     else
     {
         // Screen is off, set it on
-        if (gSpecialVar_0x8004 == PC_LOCATION_OTHER)
-            metatileId = IS_FRLG ? METATILE_BuildingFrlg_PCOn : METATILE_Building_PC_On;
-        else if (gSpecialVar_0x8004 == PC_LOCATION_BRENDANS_HOUSE)
-            metatileId = METATILE_BrendansMaysHouse_BrendanPC_On;
-        else if (gSpecialVar_0x8004 == PC_LOCATION_MAYS_HOUSE)
-            metatileId = METATILE_BrendansMaysHouse_MayPC_On;
-        else if (gSpecialVar_0x8004 == PC_LOCATION_PLAYER_HOUSE_FRLG)
-            metatileId = METATILE_GenericBuilding1_PlayersPCOn;
+        if (gSpecialVar_0x8004 == PC_LOCATION_POKEMON_CENTER)
+            metatileId = METATILE_Pokemon_Center_PC_On;
+        else if (gSpecialVar_0x8004 == PC_LOCATION_PLAYER_HOUSE)
+            metatileId = METATILE_Player_House_PC_On;
     }
     MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + MAP_OFFSET, gSaveBlock1Ptr->pos.y + dy + MAP_OFFSET, metatileId | MAPGRID_IMPASSABLE);
 }
@@ -1182,14 +895,10 @@ static void PCTurnOffEffect(void)
         break;
     }
 
-    if (gSpecialVar_0x8004 == PC_LOCATION_OTHER)
-        metatileId = IS_FRLG ? METATILE_BuildingFrlg_PCOff : METATILE_Building_PC_Off;
-    else if (gSpecialVar_0x8004 == PC_LOCATION_BRENDANS_HOUSE)
-        metatileId = METATILE_BrendansMaysHouse_BrendanPC_Off;
-    else if (gSpecialVar_0x8004 == PC_LOCATION_MAYS_HOUSE)
-        metatileId = METATILE_BrendansMaysHouse_MayPC_Off;
-    else if (gSpecialVar_0x8004 == PC_LOCATION_PLAYER_HOUSE_FRLG)
-        metatileId = METATILE_GenericBuilding1_PlayersPCOff;
+    if (gSpecialVar_0x8004 == PC_LOCATION_POKEMON_CENTER)
+        metatileId = METATILE_Pokemon_Center_PC_Off;
+    else if (gSpecialVar_0x8004 == PC_LOCATION_PLAYER_HOUSE)
+        metatileId = METATILE_Player_House_PC_Off;
 
     MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + MAP_OFFSET, gSaveBlock1Ptr->pos.y + dy + MAP_OFFSET, metatileId | MAPGRID_IMPASSABLE);
     DrawWholeMapView();
@@ -1220,18 +929,6 @@ static void LotteryCornerComputerEffect(struct Task *task)
     if (task->tTimer == 6)
     {
         task->tTimer = 0;
-        if (task->tIsScreenOn)
-        {
-            // Screen is on, set it off
-            MapGridSetMetatileIdAt(11 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_Shop_Laptop1_Normal | MAPGRID_IMPASSABLE);
-            MapGridSetMetatileIdAt(11 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_Shop_Laptop2_Normal | MAPGRID_IMPASSABLE);
-        }
-        else
-        {
-            // Screen is off, set it on
-            MapGridSetMetatileIdAt(11 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_Shop_Laptop1_Flash | MAPGRID_IMPASSABLE);
-            MapGridSetMetatileIdAt(11 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_Shop_Laptop2_Flash | MAPGRID_IMPASSABLE);
-        }
         DrawWholeMapView();
 
         // Screen flickers 5 times. Odd number and starting with the
@@ -1245,8 +942,6 @@ static void LotteryCornerComputerEffect(struct Task *task)
 
 void EndLotteryCornerComputerEffect(void)
 {
-    MapGridSetMetatileIdAt(11 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_Shop_Laptop1_Normal | MAPGRID_IMPASSABLE);
-    MapGridSetMetatileIdAt(11 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_Shop_Laptop2_Normal | MAPGRID_IMPASSABLE);
     DrawWholeMapView();
 }
 
@@ -1774,44 +1469,6 @@ static const u8 *const sDeptStoreFloorNames[] =
     [DEPT_STORE_FLOORNUM_ROOFTOP] = gText_Rooftop
 };
 
-static const u16 sElevatorWindowTiles_Ascending[ELEVATOR_WINDOW_HEIGHT][ELEVATOR_LIGHT_STAGES] =
-{
-    {
-        METATILE_BattleFrontier_Elevator_Top0,
-        METATILE_BattleFrontier_Elevator_Top1,
-        METATILE_BattleFrontier_Elevator_Top2
-    },
-    {
-        METATILE_BattleFrontier_Elevator_Mid0,
-        METATILE_BattleFrontier_Elevator_Mid1,
-        METATILE_BattleFrontier_Elevator_Mid2
-    },
-    {
-        METATILE_BattleFrontier_Elevator_Bottom0,
-        METATILE_BattleFrontier_Elevator_Bottom1,
-        METATILE_BattleFrontier_Elevator_Bottom2
-    },
-};
-
-static const u16 sElevatorWindowTiles_Descending[ELEVATOR_WINDOW_HEIGHT][ELEVATOR_LIGHT_STAGES] =
-{
-    {
-        METATILE_BattleFrontier_Elevator_Top0,
-        METATILE_BattleFrontier_Elevator_Top2,
-        METATILE_BattleFrontier_Elevator_Top1
-    },
-    {
-        METATILE_BattleFrontier_Elevator_Mid0,
-        METATILE_BattleFrontier_Elevator_Mid2,
-        METATILE_BattleFrontier_Elevator_Mid1
-    },
-    {
-        METATILE_BattleFrontier_Elevator_Bottom0,
-        METATILE_BattleFrontier_Elevator_Bottom2,
-        METATILE_BattleFrontier_Elevator_Bottom1
-    },
-};
-
 void SetDeptStoreFloor(void)
 {
     enum DeptStoreFloorNumber deptStoreFloor;
@@ -1990,6 +1647,7 @@ static void MoveElevatorWindowLights(u16 floorDelta, bool8 descending)
 
 static void Task_MoveElevatorWindowLights(u8 taskId)
 {
+    /*
     u8 x, y;
     s16 *data = gTasks[taskId].data;
 
@@ -2021,6 +1679,7 @@ static void Task_MoveElevatorWindowLights(u8 taskId)
             DestroyTask(taskId);
     }
     tTimer++;
+    */
 }
 
 #undef tMoveCounter
@@ -3887,7 +3546,7 @@ static void Task_CloseBattlePikeCurtain(u8 taskId)
             {
                 MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + x + MAP_OFFSET - 1,
                                        gSaveBlock1Ptr->pos.y + y + MAP_OFFSET - 3,
-                                       (x + METATILE_BattlePike_CurtainFrames_Start) + (y * METATILE_ROW_WIDTH) + (tCurrentFrame * CURTAIN_HEIGHT * METATILE_ROW_WIDTH));
+                                       (x) + (y * METATILE_ROW_WIDTH) + (tCurrentFrame * CURTAIN_HEIGHT * METATILE_ROW_WIDTH));
             }
         }
         DrawWholeMapView();
@@ -4684,23 +4343,6 @@ static void Task_DrawTeleporterHousing(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
 
-    if (tTimer == 0)
-    {
-        // Alternate the teleporter light / brightness of the teleporter door
-        if ((tState & 1) == 0)
-        {
-            MapGridSetMetatileIdAt(tX, tY, METATILE_SeaCottage_Teleporter_Light_Yellow | MAPGRID_COLLISION_MASK);
-            MapGridSetMetatileIdAt(tX, tY + 2, METATILE_SeaCottage_Teleporter_Door_HalfGlowing | MAPGRID_COLLISION_MASK);
-        }
-        else
-        {
-            MapGridSetMetatileIdAt(tX, tY, METATILE_SeaCottage_Teleporter_Light_Red | MAPGRID_COLLISION_MASK);
-            MapGridSetMetatileIdAt(tX, tY + 2, METATILE_SeaCottage_Teleporter_Door_FullGlowing | MAPGRID_COLLISION_MASK);
-        }
-        CurrentMapDrawMetatileAt(tX, tY);
-        CurrentMapDrawMetatileAt(tX, tY + 2);
-    }
-
     tTimer++;
     if (tTimer != 16)
         return;
@@ -4710,8 +4352,6 @@ static void Task_DrawTeleporterHousing(u8 taskId)
     if (tState != 13)
         return;
 
-    MapGridSetMetatileIdAt(tX, tY, METATILE_SeaCottage_Teleporter_Light_Green | MAPGRID_COLLISION_MASK);
-    MapGridSetMetatileIdAt(tX, tY + 2, METATILE_SeaCottage_Teleporter_Door | MAPGRID_COLLISION_MASK);
     CurrentMapDrawMetatileAt(tX, tY);
     CurrentMapDrawMetatileAt(tX, tY + 2);
     DestroyTask(taskId);
@@ -4751,8 +4391,6 @@ static void Task_DrawTeleporterCable(u8 taskId)
         if (tState != 0)
         {
             // Set default cable tiles to clear the ball
-            MapGridSetMetatileIdAt(tX, tY, METATILE_SeaCottage_Teleporter_Cable_Top | MAPGRID_COLLISION_MASK);
-            MapGridSetMetatileIdAt(tX, tY + 1, METATILE_SeaCottage_Teleporter_Cable_Bottom | MAPGRID_COLLISION_MASK);
             CurrentMapDrawMetatileAt(tX, tY);
             CurrentMapDrawMetatileAt(tX, tY + 1);
 
@@ -4767,8 +4405,6 @@ static void Task_DrawTeleporterCable(u8 taskId)
         }
 
         // Draw the cable ball
-        MapGridSetMetatileIdAt(tX, tY, METATILE_SeaCottage_Teleporter_CableBall_Top | MAPGRID_COLLISION_MASK);
-        MapGridSetMetatileIdAt(tX, tY + 1, METATILE_SeaCottage_Teleporter_CableBall_Bottom | MAPGRID_COLLISION_MASK);
         CurrentMapDrawMetatileAt(tX, tY);
         CurrentMapDrawMetatileAt(tX, tY + 1);
     }
@@ -5679,7 +5315,6 @@ bool8 CutMoveRuinValleyCheck(void)
 
 void CutMoveOpenDottedHoleDoor(void)
 {
-    MapGridSetMetatileIdAt(31, 31, METATILE_SeviiIslands67_DottedHoleDoor_Open);
     DrawWholeMapView();
     PlaySE(SE_BANG);
     FlagSet(FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE);

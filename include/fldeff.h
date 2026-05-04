@@ -12,11 +12,6 @@ void FixLongGrassMetatilesWindowBottom(s16 x, s16 y);
 extern const struct SpritePalette gSpritePalette_CutGrass;
 extern struct MapPosition gPlayerFacingPosition;
 
-// escalator
-void StartEscalator(bool8 goingUp);
-void StopEscalator(void);
-bool8 IsEscalatorMoving(void);
-
 // soft-boiled
 bool32 SetUpFieldMove_SoftBoiled(void);
 void Task_TryUseSoftboiledOnPartyMon(u8 taskId);

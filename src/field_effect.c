@@ -92,28 +92,6 @@ static bool8 FallWarpEffect_Land(struct Task *);
 static bool8 FallWarpEffect_CameraShake(struct Task *);
 static bool8 FallWarpEffect_End(struct Task *);
 
-static void Task_EscalatorWarpOut(u8);
-static bool8 EscalatorWarpOut_Init(struct Task *);
-static bool8 EscalatorWarpOut_WaitForPlayer(struct Task *);
-static bool8 EscalatorWarpOut_Up_Ride(struct Task *);
-static bool8 EscalatorWarpOut_Up_End(struct Task *);
-static bool8 EscalatorWarpOut_Down_Ride(struct Task *);
-static bool8 EscalatorWarpOut_Down_End(struct Task *);
-static void RideUpEscalatorOut(struct Task *);
-static void RideDownEscalatorOut(struct Task *);
-static void FadeOutAtEndOfEscalator(void);
-static void WarpAtEndOfEscalator(void);
-
-static void FieldCallback_EscalatorWarpIn(void);
-static void Task_EscalatorWarpIn(u8);
-static bool8 EscalatorWarpIn_Init(struct Task *);
-static bool8 EscalatorWarpIn_Down_Init(struct Task *);
-static bool8 EscalatorWarpIn_Down_Ride(struct Task *);
-static bool8 EscalatorWarpIn_Up_Init(struct Task *);
-static bool8 EscalatorWarpIn_Up_Ride(struct Task *);
-static bool8 EscalatorWarpIn_WaitForMovement(struct Task *);
-static bool8 EscalatorWarpIn_End(struct Task *);
-
 static void Task_UseWaterfall(u8);
 static bool8 WaterfallFieldEffect_Init(struct Task *, struct ObjectEvent *);
 static bool8 WaterfallFieldEffect_ShowMon(struct Task *, struct ObjectEvent *);
@@ -700,27 +678,6 @@ static bool8 (*const sFallWarpFieldEffectFuncs[])(struct Task *) =
     FallWarpEffect_End,
 };
 
-static bool8 (*const sEscalatorWarpOutFieldEffectFuncs[])(struct Task *) =
-{
-    EscalatorWarpOut_Init,
-    EscalatorWarpOut_WaitForPlayer,
-    EscalatorWarpOut_Up_Ride,
-    EscalatorWarpOut_Up_End,
-    EscalatorWarpOut_Down_Ride,
-    EscalatorWarpOut_Down_End,
-};
-
-static bool8 (*const sEscalatorWarpInFieldEffectFuncs[])(struct Task *) =
-{
-    EscalatorWarpIn_Init,
-    EscalatorWarpIn_Down_Init,
-    EscalatorWarpIn_Down_Ride,
-    EscalatorWarpIn_Up_Init,
-    EscalatorWarpIn_Up_Ride,
-    EscalatorWarpIn_WaitForMovement,
-    EscalatorWarpIn_End,
-};
-
 static bool8 (*const sWaterfallFieldEffectFuncs[])(struct Task *, struct ObjectEvent *) =
 {
     WaterfallFieldEffect_Init,
@@ -1130,7 +1087,7 @@ bool8 FldEff_PokecenterHeal(void)
     task = &gTasks[CreateTask(Task_PokecenterHeal, 0xff)];
     task->tNumMons = nPokemon;
     task->tFirstBallX = 112;
-    task->tFirstBallY = 29;
+    task->tFirstBallY = 27;
     task->tMonitorX = 120;
     task->tMonitorY = 12;
     return FALSE;
@@ -1765,9 +1722,6 @@ static bool8 FallWarpEffect_End(struct Task *task)
 #undef tVertShake
 #undef tNumShakes
 
-#define tState   data[0]
-#define tGoingUp data[1]
-
 void HideFollowerForFieldEffect(void)
 {
     struct ObjectEvent *followerObj = GetFollowerObject();
@@ -1776,277 +1730,6 @@ void HideFollowerForFieldEffect(void)
     ClearObjectEventMovement(followerObj, &gSprites[followerObj->spriteId]);
     ObjectEventSetHeldMovement(followerObj, MOVEMENT_ACTION_ENTER_POKEBALL);
 }
-
-void StartEscalatorWarp(u8 metatileBehavior, u8 priority)
-{
-    u8 taskId;
-    taskId = CreateTask(Task_EscalatorWarpOut, priority);
-    gTasks[taskId].tGoingUp = FALSE;
-    if (metatileBehavior == MB_UP_ESCALATOR)
-    {
-        gTasks[taskId].tGoingUp = TRUE;
-    }
-    EndORASDowsing();
-}
-
-static void Task_EscalatorWarpOut(u8 taskId)
-{
-    struct Task *task;
-    task = &gTasks[taskId];
-    while (sEscalatorWarpOutFieldEffectFuncs[task->tState](task));
-}
-
-static bool8 EscalatorWarpOut_Init(struct Task *task)
-{
-    FreezeObjectEvents();
-    CameraObjectFreeze();
-    StartEscalator(task->tGoingUp);
-    HideFollowerForFieldEffect(); // Hide follower before warping
-    task->tState++;
-    return FALSE;
-}
-
-static bool8 EscalatorWarpOut_WaitForPlayer(struct Task *task)
-{
-    struct ObjectEvent *objectEvent;
-    objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
-    if (!ObjectEventIsMovementOverridden(objectEvent) || ObjectEventClearHeldMovementIfFinished(objectEvent))
-    {
-        ObjectEventSetHeldMovement(objectEvent, GetFaceDirectionMovementAction(GetPlayerFacingDirection()));
-        objectEvent->noShadow = TRUE; // hide shadow for cleaner movement
-        task->tState++;
-        task->data[2] = 0;
-        task->data[3] = 0;
-        EscalatorMoveFollowerNPC(task->data[1]);
-
-        if ((u8)task->data[1] == FALSE)
-        {
-            task->tState = 4; // jump to EscalatorWarpOut_Down_Ride
-        }
-        PlaySE(SE_ESCALATOR);
-    }
-    return FALSE;
-}
-
-static bool8 EscalatorWarpOut_Up_Ride(struct Task *task)
-{
-    RideUpEscalatorOut(task);
-    if (task->data[2] > 3)
-    {
-        FadeOutAtEndOfEscalator();
-        task->tState++;
-    }
-    return FALSE;
-}
-
-static bool8 EscalatorWarpOut_Up_End(struct Task *task)
-{
-    RideUpEscalatorOut(task);
-    WarpAtEndOfEscalator();
-    return FALSE;
-}
-
-static bool8 EscalatorWarpOut_Down_Ride(struct Task *task)
-{
-    RideDownEscalatorOut(task);
-    if (task->data[2] > 3)
-    {
-        FadeOutAtEndOfEscalator();
-        task->tState++;
-    }
-    return FALSE;
-}
-
-static bool8 EscalatorWarpOut_Down_End(struct Task *task)
-{
-    RideDownEscalatorOut(task);
-    WarpAtEndOfEscalator();
-    return FALSE;
-}
-
-static void RideUpEscalatorOut(struct Task *task)
-{
-    struct Sprite *sprite;
-    sprite = &gSprites[gPlayerAvatar.spriteId];
-    sprite->x2 = Cos(0x84, task->data[2]);
-    sprite->y2 = Sin(0x94, task->data[2]);
-    task->data[3]++;
-    if (task->data[3] & 1)
-    {
-        task->data[2]++;
-    }
-}
-
-static void RideDownEscalatorOut(struct Task *task)
-{
-    struct Sprite *sprite;
-    sprite = &gSprites[gPlayerAvatar.spriteId];
-    sprite->x2 = Cos(0x7c, task->data[2]);
-    sprite->y2 = Sin(0x76, task->data[2]);
-    task->data[3]++;
-    if (task->data[3] & 1)
-    {
-        task->data[2]++;
-    }
-}
-
-static void FadeOutAtEndOfEscalator(void)
-{
-    TryFadeOutOldMapMusic();
-    WarpFadeOutScreen();
-}
-
-static void WarpAtEndOfEscalator(void)
-{
-    if (!gPaletteFade.active && BGMusicStopped() == TRUE)
-    {
-        StopEscalator();
-        WarpIntoMap();
-        gFieldCallback = FieldCallback_EscalatorWarpIn;
-        SetMainCallback2(CB2_LoadMap);
-        DestroyTask(FindTaskIdByFunc(Task_EscalatorWarpOut));
-    }
-}
-
-#undef tState
-#undef tGoingUp
-
-static void FieldCallback_EscalatorWarpIn(void)
-{
-    Overworld_PlaySpecialMapMusic();
-    WarpFadeInScreen();
-    LockPlayerFieldControls();
-    CreateTask(Task_EscalatorWarpIn, 0);
-    gFieldCallback = NULL;
-}
-
-#define tState data[0]
-
-static void Task_EscalatorWarpIn(u8 taskId)
-{
-    struct Task *task;
-    task = &gTasks[taskId];
-    while (sEscalatorWarpInFieldEffectFuncs[task->tState](task));
-}
-
-static bool8 EscalatorWarpIn_Init(struct Task *task)
-{
-    struct ObjectEvent *objectEvent;
-    s16 x;
-    s16 y;
-    u8 behavior;
-    CameraObjectFreeze();
-    objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
-    objectEvent->noShadow = TRUE;
-    ObjectEventSetHeldMovement(objectEvent, GetFaceDirectionMovementAction(DIR_EAST));
-    PlayerGetDestCoords(&x, &y);
-    behavior = MapGridGetMetatileBehaviorAt(x, y);
-    EscalatorMoveFollowerNPCFinish();
-    task->tState++;
-    task->data[1] = 16;
-
-    if (behavior == MB_DOWN_ESCALATOR)
-    {
-        // If dest is down escalator tile, player is riding up
-        behavior = TRUE;
-        task->tState = 3; // jump to EscalatorWarpIn_Up_Init
-    }
-    else // MB_UP_ESCALATOR
-    {
-        // If dest is up escalator tile, player is riding down
-        behavior = FALSE;
-    }
-    StartEscalator(behavior);
-    return TRUE;
-}
-
-static bool8 EscalatorWarpIn_Down_Init(struct Task *task)
-{
-    struct Sprite *sprite;
-    sprite = &gSprites[gPlayerAvatar.spriteId];
-    sprite->x2 = Cos(0x84, task->data[1]);
-    sprite->y2 = Sin(0x94, task->data[1]);
-    task->tState++;
-    return FALSE;
-}
-
-static bool8 EscalatorWarpIn_Down_Ride(struct Task *task)
-{
-    struct Sprite *sprite;
-    sprite = &gSprites[gPlayerAvatar.spriteId];
-    sprite->x2 = Cos(0x84, task->data[1]);
-    sprite->y2 = Sin(0x94, task->data[1]);
-    task->data[2]++;
-    if (task->data[2] & 1)
-    {
-        task->data[1]--;
-    }
-    if (task->data[1] == 0)
-    {
-        sprite->x2 = 0;
-        sprite->y2 = 0;
-        task->tState = 5;
-    }
-    return FALSE;
-}
-
-static bool8 EscalatorWarpIn_Up_Init(struct Task *task)
-{
-    struct Sprite *sprite;
-    sprite = &gSprites[gPlayerAvatar.spriteId];
-    sprite->x2 = Cos(0x7c, task->data[1]);
-    sprite->y2 = Sin(0x76, task->data[1]);
-    task->tState++;
-    return FALSE;
-}
-
-static bool8 EscalatorWarpIn_Up_Ride(struct Task *task)
-{
-    struct Sprite *sprite;
-    sprite = &gSprites[gPlayerAvatar.spriteId];
-    sprite->x2 = Cos(0x7c, task->data[1]);
-    sprite->y2 = Sin(0x76, task->data[1]);
-    task->data[2]++;
-    if (task->data[2] & 1)
-    {
-        task->data[1]--;
-    }
-    if (task->data[1] == 0)
-    {
-        sprite->x2 = 0;
-        sprite->y2 = 0;
-        task->tState++;
-    }
-    return FALSE;
-}
-
-static bool8 EscalatorWarpIn_WaitForMovement(struct Task *task)
-{
-    if (IsEscalatorMoving())
-    {
-        return FALSE;
-    }
-    StopEscalator();
-    task->tState++;
-    return TRUE;
-}
-
-static bool8 EscalatorWarpIn_End(struct Task *task)
-{
-    struct ObjectEvent *objectEvent;
-    objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
-    objectEvent->noShadow = FALSE;
-    if (ObjectEventClearHeldMovementIfFinished(objectEvent))
-    {
-        CameraObjectReset();
-        UnlockPlayerFieldControls();
-        ObjectEventSetHeldMovement(objectEvent, GetWalkNormalMovementAction(DIR_EAST));
-        DestroyTask(FindTaskIdByFunc(Task_EscalatorWarpIn));
-    }
-    return FALSE;
-}
-
-#undef tState
 
 #define tState data[0]
 #define tMonId data[1]

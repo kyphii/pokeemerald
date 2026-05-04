@@ -1227,33 +1227,21 @@ CableClub_EventScript_AdapterNotConnected::
 	end
 
 CableClub_EventScript_OpenUnionRoomBarrier::
-	setmetatile 5, 2, METATILE_PokemonCenter_Floor_ShadowTop_Alt, FALSE
-	setmetatile 5, 3, METATILE_PokemonCenter_Floor_Plain_Alt, FALSE
 	return
 
 CableClub_EventScript_CloseUnionRoomBarrier::
-	setmetatile 5, 2, METATILE_PokemonCenter_Floor_ShadowTop, TRUE
-	setmetatile 5, 3, METATILE_PokemonCenter_CounterBarrier, TRUE
 	return
 
 CableClub_EventScript_OpenDirectCornerBarrier::
-	setmetatile 9, 2, METATILE_PokemonCenter_Floor_ShadowTop_Alt, FALSE
-	setmetatile 9, 3, METATILE_PokemonCenter_Floor_Plain_Alt, FALSE
 	return
 
 CableClub_EventScript_CloseDirectCornerBarrier::
-	setmetatile 9, 2, METATILE_PokemonCenter_Floor_ShadowTop, TRUE
-	setmetatile 9, 3, METATILE_PokemonCenter_CounterBarrier, TRUE
 	return
 
 EventScript_OpenMossdeepGameCornerBarrier::
-	setmetatile 5, 2, METATILE_MossdeepGameCorner_CounterOpen_Top, FALSE
-	setmetatile 5, 3, METATILE_MossdeepGameCorner_CounterOpen_Bottom, FALSE
 	return
 
 EventScript_CloseMossdeepGameCornerBarrier::
-	setmetatile 5, 2, METATILE_MossdeepGameCorner_CounterClosed_Top, TRUE
-	setmetatile 5, 3, METATILE_MossdeepGameCorner_CounterClosed_Bottom, TRUE
 	return
 
 CableClub_OnResume:

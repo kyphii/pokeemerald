@@ -564,8 +564,6 @@ void DoFallWarp(void)
 
 void DoEscalatorWarp(u8 metatileBehavior)
 {
-    LockPlayerFieldControls();
-    StartEscalatorWarp(metatileBehavior, 10);
 }
 
 void DoLavaridgeGymB1FWarp(void)

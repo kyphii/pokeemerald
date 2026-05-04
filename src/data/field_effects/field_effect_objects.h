@@ -109,6 +109,8 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_ShadowExtraLarge = {
     .callback = UpdateShadowFieldEffect,
 };
 
+const struct SpritePalette gSpritePalette_Grass = { gFieldEffectPal_Grass, FLDEFF_PAL_TAG_GRASS };
+
 static const struct SpriteFrameImage sPicTable_TallGrass[] = {
     overworld_frame(gFieldEffectObjectPic_TallGrass, 2, 2, 0),
     overworld_frame(gFieldEffectObjectPic_TallGrass, 2, 2, 1),
@@ -134,7 +136,7 @@ static const union AnimCmd *const sAnimTable_TallGrass[] =
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_TallGrass = {
     .tileTag = TAG_NONE,
-    .paletteTag = FLDEFF_PAL_TAG_GENERAL_1,
+    .paletteTag = FLDEFF_PAL_TAG_GRASS,
     .oam = &gObjectEventBaseOam_16x16,
     .anims = sAnimTable_TallGrass,
     .images = sPicTable_TallGrass,
@@ -709,7 +711,7 @@ static const union AnimCmd *const sAnimTable_LongGrass[] =
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_LongGrass = {
     .tileTag = TAG_NONE,
-    .paletteTag = FLDEFF_PAL_TAG_GENERAL_1,
+    .paletteTag = FLDEFF_PAL_TAG_GRASS,
     .oam = &gObjectEventBaseOam_16x16,
     .anims = sAnimTable_LongGrass,
     .images = sPicTable_LongGrass,

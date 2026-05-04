@@ -65,10 +65,10 @@ Wynaut
 === PARTNER_INTRO_RIVAL_GRASS ===
 Name: Maya
 Class: Rival
-Pic: Steven
+Pic: Maya
 Gender: Female
 Music: Female
-Back Pic: Steven
+Back Pic: Maya
 AI: Basic Trainer
 Base Level: 8
 Base Party Size: 2
@@ -82,10 +82,10 @@ Level:7
 === PARTNER_INTRO_RIVAL_FIRE ===
 Name: Maya
 Class: Rival
-Pic: Steven
+Pic: Maya
 Gender: Female
 Music: Female
-Back Pic: Steven
+Back Pic: Maya
 AI: Basic Trainer
 Base Level: 8
 Base Party Size: 2
@@ -99,10 +99,10 @@ Level:7
 === PARTNER_INTRO_RIVAL_WATER ===
 Name: Maya
 Class: Rival
-Pic: Steven
+Pic: Maya
 Gender: Female
 Music: Female
-Back Pic: Steven
+Back Pic: Maya
 AI: Basic Trainer
 Base Level: 8
 Base Party Size: 2

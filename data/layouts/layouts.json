@@ -62,7 +62,7 @@
       "width": 48,
       "height": 48,
       "primary_tileset": "gTileset_Overworld",
-      "secondary_tileset": "gTileset_Periwind",
+      "secondary_tileset": "gTileset_Nerilight",
       "border_filepath": "data/layouts/NerilightCity/border.bin",
       "blockdata_filepath": "data/layouts/NerilightCity/map.bin",
       "layout_version": "emerald"

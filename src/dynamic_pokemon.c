@@ -169,9 +169,15 @@ s32 DynamicMonEvaluateMove(struct Pokemon *mon, const struct SpeciesInfo* specie
             ? 100 : -100;
         currentMoveScore += (moveInfo->type == moveType) ? 50 : -50;
         currentMoveScore -= (moveInfo->type == TYPE_NORMAL) ? 15 : 0;
+        currentMoveScore -= (moveId == MOVE_HIDDEN_POWER) ? 25 : 0;
     }
     if (movePower != 0) {
-        currentMoveScore -= abs(movePower - moveInfo->power);
+        if (moveInfo->power > movePower) {
+            currentMoveScore -= 2 * (moveInfo->power - movePower);
+        }
+        else {
+            currentMoveScore -= abs(movePower - moveInfo->power);
+        }
     }
     return currentMoveScore;
 }

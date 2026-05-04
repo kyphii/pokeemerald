@@ -1774,31 +1774,6 @@
 	.byte \location
 	.endm
 
-	@ For the rotating tile puzzles in Mossdeep Gym / Trick House Room 7. Moves the objects one rotation
-	@ on the colored puzzle specified by puzzleNumber.
-	.macro moverotatingtileobjects puzzleNumber:req
-	.byte SCR_OP_MOVEROTATINGTILEOBJECTS
-	.2byte \puzzleNumber
-	.endm
-
-	@ For the rotating tile puzzles in Mossdeep Gym / Trick House Room 7. Updates the facing direction of all objects on the puzzle tiles
-	.macro turnrotatingtileobjects
-	.byte SCR_OP_TURNROTATINGTILEOBJECTS
-	.endm
-
-	@ For the rotating tile puzzles in Mossdeep Gym / Trick House Room 7. Allocates memory for the puzzle objects.
-	@ isTrickHouse is needed to determine which of the two maps the puzzle is on, in order to know where in the tileset
-	@ the puzzle tiles start (TRUE for Trick House Room, FALSE for Mossdeep Gym).
-	.macro initrotatingtilepuzzle isTrickHouse:req
-	.byte SCR_OP_INITROTATINGTILEPUZZLE
-	.2byte \isTrickHouse
-	.endm
-
-	@ For the rotating tile puzzles in Mossdeep Gym / Trick House Room 7. Frees the memory allocated for the puzzle objects.
-	.macro freerotatingtilepuzzle
-	.byte SCR_OP_FREEROTATINGTILEPUZZLE
-	.endm
-
 	@ Warp used by the teleport tiles in the Mossdeep Gym. Plays SE_WARP_IN and does a simple fade transition.
 	@ Also skips reloading object events by setting SKIP_OBJECT_EVENT_LOAD.
 	@ Warp commands can be given either the id of which warp location to go to on the destination map

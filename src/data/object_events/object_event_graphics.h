@@ -217,6 +217,8 @@ const u32 gFieldEffectObjectPic_SmallSparkle[] = INCBIN_U32("graphics/field_effe
 const u16 gFieldEffectPal_SmallSparkle[] = INCBIN_U16("graphics/field_effects/palettes/small_sparkle.gbapal");
 const u32 gFieldEffectObjectPic_Bird[] = INCBIN_U32("graphics/field_effects/pics/bird.4bpp");
 
+const u16 gFieldEffectPal_Grass[] = INCBIN_U16("data/tilesets/primary/overworld/palettes/02.gbapal");
+
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
 const u16 gObjectEventPaletteLight2[] = INCBIN_U16("graphics/object_events/palettes/light2.gbapal");
 const u16 gObjectEventPal_Substitute[] = INCBIN_U16("graphics/object_events/pics/pokemon_old/substitute.gbapal");

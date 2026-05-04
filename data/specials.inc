@@ -157,14 +157,9 @@ gSpecials::
 	def_special DoesContestCategoryHaveMuseumPainting
 	def_special CountPlayerMuseumPaintings
 	def_special ShowContestPainting  @ Unused, redundant with showcontestpainting command
-	def_special MauvilleGymSetDefaultBarriers
-	def_special MauvilleGymPressSwitch
 	def_special ShowFieldMessageStringVar4
 	def_special DrawWholeMapView
 	def_special StorePlayerCoordsInVars
-	def_special MauvilleGymDeactivatePuzzle
-	def_special PetalburgGymSlideOpenRoomDoors
-	def_special PetalburgGymUnlockRoomDoors
 	def_special GetPlayerTrainerIdOnesDigit
 	def_special GetPlayerBigGuyGirlString
 	def_special GetRivalSonDaughterString
@@ -324,7 +319,6 @@ gSpecials::
 	def_special ShowDeptStoreElevatorFloorSelect
 	def_special InteractWithShieldOrTVDecoration
 	def_special IsPokerusInParty
-	def_special SetSootopolisGymCrackedIceMetatiles
 	def_special ShakeCamera
 	def_special StartGroudonKyogreBattle
 	def_special BattleSetup_StartLegendaryBattle
@@ -625,7 +619,6 @@ gSpecials::
 	def_special CB2_StartCreditsSequence
 	def_special DoPokemonLeagueLightingEffect
 	def_special GetStarterPokemon
-	def_special SetIcefallCaveCrackedIceMetatiles
 	def_special UpdateLoreleiDollCollection
 	def_special SampleResortGorgeousMonAndReward
 	def_special PlayerPartyContainsSpeciesWithPlayerID

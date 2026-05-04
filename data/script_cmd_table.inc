@@ -233,10 +233,6 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_SETWORLDMAPFLAG               ScrCmd_setworldmapflag,             requests_effects=1  @ 0xd0
 	script_cmd_table_entry SCR_OP_WARPSPINENTER                 ScrCmd_warpspinenter,               requests_effects=1  @ 0xd1
 	script_cmd_table_entry SCR_OP_SETMONMETLOCATION             ScrCmd_setmonmetlocation,           requests_effects=1  @ 0xd2
-	script_cmd_table_entry SCR_OP_MOVEROTATINGTILEOBJECTS       ScrCmd_moverotatingtileobjects,     requests_effects=1  @ 0xd3
-	script_cmd_table_entry SCR_OP_TURNROTATINGTILEOBJECTS       ScrCmd_turnrotatingtileobjects,     requests_effects=1  @ 0xd4
-	script_cmd_table_entry SCR_OP_INITROTATINGTILEPUZZLE        ScrCmd_initrotatingtilepuzzle,      requests_effects=1  @ 0xd5
-	script_cmd_table_entry SCR_OP_FREEROTATINGTILEPUZZLE        ScrCmd_freerotatingtilepuzzle,      requests_effects=1  @ 0xd6
 	script_cmd_table_entry SCR_OP_WARPMOSSDEEPGYM               ScrCmd_warpmossdeepgym,             requests_effects=1  @ 0xd7
 	script_cmd_table_entry SCR_OP_SELECTAPPROACHINGTRAINER      ScrCmd_selectapproachingtrainer,    requests_effects=1  @ 0xd8
 	script_cmd_table_entry SCR_OP_LOCKFORTRAINER                ScrCmd_lockfortrainer,              requests_effects=1  @ 0xd9

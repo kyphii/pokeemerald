@@ -77,7 +77,7 @@ script HomeTown_PlayerHouse_TalkMom {
 				closemessage
 				release
 			}
-		case 6:
+		default:
 			msgbox(
 				"MOM: Hi, {PLAYER}!
 				Do you and your Pok\emon need a break?

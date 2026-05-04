@@ -35,8 +35,7 @@ EventScript_PkmnCenterNurse_IllTakeYourPkmn2::
 
 EventScript_PkmnCenterNurse_TakeAndHealPkmn::
 	hidefollower 0
-	applymovement VAR_LAST_TALKED, Movement_PkmnCenterNurse_Turn
-	waitmovement 0
+	turnobject VAR_LAST_TALKED, DIR_NORTH
 	dofieldeffect FLDEFF_POKECENTER_HEAL
 .if OW_UNION_DISABLE_CHECK == FALSE && OW_FLAG_MOVE_UNION_ROOM_CHECK != 0
 	setflag OW_FLAG_MOVE_UNION_ROOM_CHECK

@@ -872,24 +872,6 @@ EventScript_BrailleCursorWaitButton::
 	special BrailleCursorToggle
 	return
 
-EventScript_PalletTown_PlayersHouse_2F_ShutDownPC::
-	setvar VAR_0x8004, PC_LOCATION_PLAYER_HOUSE_FRLG
-	playse SE_PC_OFF
-	special DoPCTurnOffEffect
-	releaseall
-	end
-
-EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
-	lockall
-	setvar VAR_0x8004, PC_LOCATION_PLAYER_HOUSE_FRLG
-	special DoPCTurnOnEffect
-	playse SE_PC_ON
-	msgbox gText_PlayerHouseBootPC
-	special BedroomPC
-	waitstate
-	releaseall
-	end
-
 
 	.include "data/scripts/pc_transfer.inc"
 	.include "data/scripts/questionnaire.inc"

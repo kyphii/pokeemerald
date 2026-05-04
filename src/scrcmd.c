@@ -2886,42 +2886,6 @@ bool8 ScrCmd_removecoins(struct ScriptContext *ctx)
     return FALSE;
 }
 
-bool8 ScrCmd_moverotatingtileobjects(struct ScriptContext *ctx)
-{
-    u16 puzzleNumber = VarGet(ScriptReadHalfword(ctx));
-
-    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
-
-    sMovingNpcId = MoveRotatingTileObjects(puzzleNumber);
-    return FALSE;
-}
-
-bool8 ScrCmd_turnrotatingtileobjects(struct ScriptContext *ctx)
-{
-    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
-
-    TurnRotatingTileObjects();
-    return FALSE;
-}
-
-bool8 ScrCmd_initrotatingtilepuzzle(struct ScriptContext *ctx)
-{
-    u16 isTrickHouse = VarGet(ScriptReadHalfword(ctx));
-
-    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
-
-    InitRotatingTilePuzzle(isTrickHouse);
-    return FALSE;
-}
-
-bool8 ScrCmd_freerotatingtilepuzzle(struct ScriptContext *ctx)
-{
-    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
-
-    FreeRotatingTilePuzzle();
-    return FALSE;
-}
-
 bool8 ScrCmd_selectapproachingtrainer(struct ScriptContext *ctx)
 {
     Script_RequestEffects(SCREFF_V1);

@@ -53,8 +53,18 @@ HomeTown_PlayerHouse_TalkMom::
 	case 1, HomeTown_PlayerHouse_TalkMom_2
 # 37 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	case 3, HomeTown_PlayerHouse_TalkMom_3
-# 80 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	case 6, HomeTown_PlayerHouse_TalkMom_4
+# 81 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	msgbox HomeTown_PlayerHouse_TalkMom_Text_4, MSGBOX_DEFAULT
+# 88 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	call Common_EventScript_OutOfCenterPartyHeal
+# 89 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	incrementgamestat GAME_STAT_RESTED_AT_HOME
+# 90 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	msgbox HomeTown_PlayerHouse_TalkMom_Text_5, MSGBOX_DEFAULT
+# 97 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	closemessage
+# 98 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	release
 	return
 
 HomeTown_PlayerHouse_TalkMom_2:
@@ -80,21 +90,6 @@ HomeTown_PlayerHouse_TalkMom_3:
 # 77 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	closemessage
 # 78 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	release
-	return
-
-HomeTown_PlayerHouse_TalkMom_4:
-# 81 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	msgbox HomeTown_PlayerHouse_TalkMom_Text_4, MSGBOX_DEFAULT
-# 88 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	call Common_EventScript_OutOfCenterPartyHeal
-# 89 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	incrementgamestat GAME_STAT_RESTED_AT_HOME
-# 90 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	msgbox HomeTown_PlayerHouse_TalkMom_Text_5, MSGBOX_DEFAULT
-# 97 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	closemessage
-# 98 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	release
 	return
 
