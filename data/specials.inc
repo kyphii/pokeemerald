@@ -345,7 +345,7 @@ gSpecials::
 	def_special Script_FadeOutMapMusic
 	def_special SetPacifidlogTMReceivedDay
 	def_special GetDaysUntilPacifidlogTMAvailable
-	def_special HasAllHoennMons
+	def_special HasAllWohnetMons
 	def_special MonOTNameNotPlayer
 	def_special BufferLottoTicketNumber
 	def_special TryHideBattleTowerReporter
@@ -596,7 +596,6 @@ gSpecials::
 	def_special GetHeracrossSizeRecordInfo
 	def_special CompareHeracrossSize
 	def_special GetRandomSlotMachineId
-	def_special HasAllKantoMons
 	def_special AnimateElevator
 	def_special InitElevatorFloorSelectMenuPos
 	def_special CloseElevatorCurrentFloorWindow

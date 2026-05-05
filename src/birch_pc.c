@@ -91,16 +91,6 @@ extern const u8 PokedexRating_Text_Complete[];
 
 u16 GetFrlgPokedexCount(void)
 {
-    if (gSpecialVar_0x8004 == 0)
-    {
-        gSpecialVar_0x8005 = GetKantoPokedexCount(FLAG_GET_SEEN);
-        gSpecialVar_0x8006 = GetKantoPokedexCount(FLAG_GET_CAUGHT);
-    }
-    else
-    {
-        gSpecialVar_0x8005 = GetNationalPokedexCount(FLAG_GET_SEEN);
-        gSpecialVar_0x8006 = GetNationalPokedexCount(FLAG_GET_CAUGHT);
-    }
     return IsNationalPokedexEnabled();
 }
 
@@ -153,7 +143,7 @@ static const u8 *GetProfOaksRatingMessageByCount(u16 count)
     if (count < 140)
         return PokedexRating_Text_LessThan140;
 
-    if (count < KANTO_DEX_COUNT - 1)
+    if (count < WOHNET_DEX_COUNT - 1)
         return PokedexRating_Text_LessThan150;
 
     gSpecialVar_Result = TRUE;

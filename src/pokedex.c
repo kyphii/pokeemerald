@@ -4563,48 +4563,24 @@ u16 GetNationalPokedexCount(u8 caseID)
 
 u32 GetRegionalPokedexCount(u8 caseID)
 {
-    if (IS_FRLG)
-        return GetKantoPokedexCount(caseID);
-    return GetHoennPokedexCount(caseID);
+    return GetWohnetPokedexCount(caseID);
 }
 
-u16 GetHoennPokedexCount(u8 caseID)
+u16 GetWohnetPokedexCount(u8 caseID)
 {
     u16 count = 0;
     u16 i;
 
-    for (i = 0; i < HOENN_DEX_COUNT - 1; i++)
+    for (i = 0; i < WOHNET_DEX_COUNT - 1; i++)
     {
         switch (caseID)
         {
         case FLAG_GET_SEEN:
-            if (GetSetPokedexFlag(HoennToNationalOrder(i + 1), FLAG_GET_SEEN))
+            if (GetSetPokedexFlag(WohnetToNationalOrder(i + 1), FLAG_GET_SEEN))
                 count++;
             break;
         case FLAG_GET_CAUGHT:
-            if (GetSetPokedexFlag(HoennToNationalOrder(i + 1), FLAG_GET_CAUGHT))
-                count++;
-            break;
-        }
-    }
-    return count;
-}
-
-u16 GetKantoPokedexCount(u8 caseID)
-{
-    u16 count = 0;
-    u16 i;
-
-    for (i = 0; i < KANTO_DEX_COUNT - 1; i++)
-    {
-        switch (caseID)
-        {
-        case FLAG_GET_SEEN:
-            if (GetSetPokedexFlag(i + 1, FLAG_GET_SEEN))
-                count++;
-            break;
-        case FLAG_GET_CAUGHT:
-            if (GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
+            if (GetSetPokedexFlag(WohnetToNationalOrder(i + 1), FLAG_GET_CAUGHT))
                 count++;
             break;
         }
@@ -4614,32 +4590,16 @@ u16 GetKantoPokedexCount(u8 caseID)
 
 bool16 HasAllRegionalMons(void)
 {
-    if (IS_FRLG)
-        return HasAllKantoMons();
-    return HasAllHoennMons();
+    return HasAllWohnetMons();
 }
 
-bool16 HasAllHoennMons(void)
+bool16 HasAllWohnetMons(void)
 {
     u32 i, j;
 
-    for (i = 0; i < HOENN_DEX_COUNT - 1; i++)
+    for (i = 0; i < WOHNET_DEX_COUNT - 1; i++)
     {
-        j = HoennToNationalOrder(i + 1);
-        if (!(gSpeciesInfo[j].isMythical && !gSpeciesInfo[j].dexForceRequired) && !GetSetPokedexFlag(j, FLAG_GET_CAUGHT))
-            return FALSE;
-    }
-    return TRUE;
-}
-
-bool16 HasAllKantoMons(void)
-{
-    u32 i, j;
-
-    // -1 excludes Mew
-    for (i = 0; i < KANTO_DEX_COUNT - 1; i++)
-    {
-        j = KantoToNationalOrder(i + 1);
+        j = WohnetToNationalOrder(i + 1);
         if (!(gSpeciesInfo[j].isMythical && !gSpeciesInfo[j].dexForceRequired) && !GetSetPokedexFlag(j, FLAG_GET_CAUGHT))
             return FALSE;
     }
