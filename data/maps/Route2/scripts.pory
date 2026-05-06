@@ -31,7 +31,10 @@ script Route2_Talk_CutTreePerson {
 script Route2_Intro_EnterForestScene {
 	lockall
 	
-	turnobject(LOCALID_HOMETOWN_RIVAL, DIR_SOUTH)
+	turnobject(LOCALID_ROUTE2_MAYA, DIR_SOUTH)
+	
+	// Set this flag by default
+	setflag(FLAG_INTRO_CLEAR_EXTRA_FOREST_TRAINERS)
 	
 	msgbox(
 		"MAYA: Hey!
@@ -39,7 +42,7 @@ script Route2_Intro_EnterForestScene {
 		MSGBOX_DEFAULT
 	)
 	
-	applymovement(LOCALID_ROUTE2_RIVAL, moves(
+	applymovement(LOCALID_ROUTE2_MAYA, moves(
 		walk_up
 		walk_left * 3
 		face_down
@@ -86,11 +89,9 @@ script Route2_Intro_EnterForestScene {
 	closemessage
 	
     turnobject(LOCALID_PLAYER, DIR_WEST)
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_WEST)
+    turnobject(LOCALID_ROUTE2_MAYA, DIR_WEST)
 	
-	applymovement(LOCALID_ROUTE2_CUTTREEGUY, moves(
-		walk_in_place_right * 2
-	))
+	applymovement(LOCALID_ROUTE2_CUTTREEGUY, Common_Movement_WalkInPlaceRight)
 	waitmovement(0)
 	msgbox(
 		"Hoo hah!
@@ -116,7 +117,7 @@ script Route2_Intro_EnterForestScene {
 	delay(30)
 	
 	turnobject(LOCALID_PLAYER, DIR_NORTH)
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_SOUTH)
+    turnobject(LOCALID_ROUTE2_MAYA, DIR_SOUTH)
 	
 	msgbox(
 		"MAYA: …I think he's gonna take a while.",
@@ -124,7 +125,7 @@ script Route2_Intro_EnterForestScene {
 	)
 	closemessage
 	
-	applymovement(LOCALID_ROUTE2_RIVAL, moves(
+	applymovement(LOCALID_ROUTE2_MAYA, moves(
 		walk_right * 3
 		walk_up * 5
 	))
@@ -149,7 +150,7 @@ script Route2_Intro_EnterForestScene {
 	)
 	
 	turnobject(LOCALID_PLAYER, DIR_WEST)
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
+    turnobject(LOCALID_ROUTE2_MAYA, DIR_EAST)
 	
 	msgbox(
 		"Remember how we used to play here when
@@ -162,7 +163,7 @@ script Route2_Intro_EnterForestScene {
 	closemessage
 	
 	setvar(VAR_INTRO_SEQUENCE_STATE, 9)
-	applymovement(LOCALID_ROUTE2_RIVAL, moves(
+	applymovement(LOCALID_ROUTE2_MAYA, moves(
 		walk_up * 5
 		face_right
 	))
@@ -232,9 +233,9 @@ script Route2_Intro_MeetBigBadScene {
 		are you not?
 		
 		There's no denying it. You have that 
-		glint in your eyes, the unmistakable 
-		shine of one who has just received 
-		their first Pok\emon.
+		unmistakable glint in your eyes, of one 
+		who has just received their first 
+		Pok\emon.
 		
 		Ah, but where are my manners? 
 		My name is Slater. I am but a wandering 
@@ -254,7 +255,11 @@ script Route2_Intro_MeetBigBadScene {
 		creatures?
 		
 		Or is it something else? A greater 
-		purpose, perhaps?",
+		purpose, perhaps?
+		
+		Whatever it may be, I am sure that 
+		nothing will keep you from your 
+		ambition.",
 		MSGBOX_DEFAULT
 	)
 	
@@ -262,6 +267,7 @@ script Route2_Intro_MeetBigBadScene {
 		walk_left
 	))
 	waitmovement(0)
+	delay(20)
 	
 	msgbox(
 		"SLATER: …Young trainer, ahead of you 
@@ -274,28 +280,20 @@ script Route2_Intro_MeetBigBadScene {
 		new age of prosperity for the whole 
 		world.
 		
-		Its smokestacks were monuments to 
-		humanity, and its flywheels spun the 
+		The city's smokestacks were monuments 
+		to humanity, and its flywheels spun the 
 		earth itself.
 		
 		That was a lifetime ago, though. 
-		In time, the new age this city created… 
-		left it behind.
+		One day, the last factory closed its 
+		doors, and the city's soul was lost.
 		
-		One by one, the factories shut their 
-		doors.
+		Nowadays, it persists due to the 
+		phenomenon that is Pok\emon training. 
 		
-		Their lifeblood gone, the workers 
-		were forced to search for a new
-		identity.
-		
-		In all change, it seems, something is 
-		lost.
-		
-		Nowadays, the city before you persists 
-		as a mere stepping stone, in the 
-		journeys of travelers and Pok\emon 
-		trainers such as yourself.
+		A mere stepping stone, in the journeys 
+		of travelers and Pok\emon trainers 
+		such as yourself.
 		
 		Some call it a revival.",
 		MSGBOX_DEFAULT
@@ -321,9 +319,6 @@ script Route2_Intro_MeetBigBadScene {
 	msgbox(
 		"SLATER: …Forgive me. I have kept you
 		for too long.
-		
-		I am sure that nothing will stop you on 
-		your journey.
 		
 		If I may leave you with one thing, 
 		young trainer, a word of advice…
@@ -383,17 +378,20 @@ script Route2_Trainer_1 {
 script Route2_Trainer_2 {
 	trainerbattle_single(
 		TRAINER_ROUTE2_2,
-
+		
 		//Intro
-		"Bugs!
-		Bugs bugs bugs!", 
+		"If two Pok\emon trainers' eyes meet,
+		then it's a battle!
+		
+		You can't refuse my challenge!", 
 
 		//On Defeat
-		"Bugggsss!")
+		"I shouldn't have looked!")
 
 	// Post battle
 	msgbox(
-		"Hi, I'm Bimmy.", 
+		"If you don't want to battle, then
+		keep your eyes to yourself!", 
 		MSGBOX_AUTOCLOSE
 	)
 }
@@ -425,12 +423,12 @@ script Route2_Trainer_4 {
 		Pok\emon I found in the woods!", 
 
 		//On Defeat
-		"")
+		"Bugggsss!")
 
 	// Post battle
 	msgbox(
 		"My girlfriend doesn't like Bug Pok\emon…
-		What's wrong with bugs?", 
+		What's wrong with her?", 
 		MSGBOX_AUTOCLOSE
 	)
 }

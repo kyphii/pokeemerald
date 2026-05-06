@@ -27,6 +27,8 @@ const u32 gObjectEventPic_Maya[] = INCBIN_U32("graphics/object_events/pics/peopl
 const u16 gObjectEventPal_Maya[] = INCBIN_U16("graphics/object_events/palettes/maya.gbapal");
 const u32 gObjectEventPic_ProfHawthorn[] = INCBIN_U32("graphics/object_events/pics/people/prof_hawthorn.4bpp");
 const u16 gObjectEventPal_ProfHawthorn[] = INCBIN_U16("graphics/object_events/palettes/prof_hawthorn.gbapal");
+const u32 gObjectEventPic_MayasFather[] = INCBIN_U32("graphics/object_events/pics/people/mayas_father.4bpp");
+const u32 gObjectEventPic_MayasMother[] = INCBIN_U32("graphics/object_events/pics/people/mayas_mother.4bpp");
 
 const u32 gObjectEventPic_NpcAceTrainerF[] = INCBIN_U32("graphics/object_events/pics/people/npc_acetrainer_f.4bpp");
 const u32 gObjectEventPic_NpcAceTrainerM[] = INCBIN_U32("graphics/object_events/pics/people/npc_acetrainer_m.4bpp");
@@ -86,6 +88,9 @@ const u32 gObjectEventPic_NpcWorker[] = INCBIN_U32("graphics/object_events/pics/
 const u32 gObjectEventPic_LeaderLandon[] = INCBIN_U32("graphics/object_events/pics/people/leader_landon.4bpp");
 const u16 gObjectEventPal_LeaderLandon[] = INCBIN_U16("graphics/object_events/palettes/leader_landon.gbapal");
 
+const u32 gObjectEventPic_TeamRustSlater[] = INCBIN_U32("graphics/object_events/pics/people/team_rust_slater.4bpp");
+const u16 gObjectEventPal_TeamRustSlater[] = INCBIN_U16("graphics/object_events/palettes/team_rust_slater.gbapal");
+
 const u16 gObjectEventPal_Npc1[] = INCBIN_U16("graphics/object_events/palettes/npc_1.gbapal");
 const u16 gObjectEventPal_Npc2[] = INCBIN_U16("graphics/object_events/palettes/npc_2.gbapal");
 const u16 gObjectEventPal_Npc3[] = INCBIN_U16("graphics/object_events/palettes/npc_3.gbapal");
@@ -97,6 +102,8 @@ const u16 gObjectEventPal_Npc8[] = INCBIN_U16("graphics/object_events/palettes/n
 const u16 gObjectEventPal_Npc9[] = INCBIN_U16("graphics/object_events/palettes/npc_9.gbapal");
 const u16 gObjectEventPal_Npc10[] = INCBIN_U16("graphics/object_events/palettes/npc_10.gbapal");
 const u16 gObjectEventPal_Npc11[] = INCBIN_U16("graphics/object_events/palettes/npc_11.gbapal");
+const u16 gObjectEventPal_Npc12[] = INCBIN_U16("graphics/object_events/palettes/npc_12.gbapal");
+const u16 gObjectEventPal_Npc13[] = INCBIN_U16("graphics/object_events/palettes/npc_13.gbapal");
 
 const u16 gObjectEventPal_Nurse[] = INCBIN_U16("graphics/object_events/palettes/nurse.gbapal");
 

@@ -377,6 +377,54 @@
       "height": 1
     },
     {
+      "id": "MAPSEC_WITCHLIGHT_WOODS",
+      "name": "WITCHLIGHT WOODS",
+      "x": 17,
+      "y": 3,
+      "width": 2,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_VERSIFIERS_POND",
+      "name": "VERSIFIER'S POND",
+      "x": 17,
+      "y": 4,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_RIVERVIEW_PARK",
+      "name": "RIVERVIEW PARK",
+      "x": 5,
+      "y": 7,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_OLD_PRINCES_TRAIL",
+      "name": "OLD PRINCE'S TRAIL",
+      "x": 15,
+      "y": 5,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_OLD_PRINCES_TRAIL_WEST",
+      "name": "OLD PRINCE'S TRAIL",
+      "x": 13,
+      "y": 3,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_OLD_PRINCES_TRAIL_EAST",
+      "name": "OLD PRINCE'S TRAIL",
+      "x": 17,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
       "id": "MAPSEC_BLEAKROCK_PASS",
       "name": "BLEAKROCK PASS",
       "x": 9,
@@ -985,6 +1033,9 @@
     },
     {
       "id": "MAPSEC_TRAINER_HILL"
+    },
+    {
+      "id": "MAPSEC_WANDERING_CAVE"
     }
   ]
 }

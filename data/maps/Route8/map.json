@@ -1,9 +1,9 @@
 {
-  "id": "MAP_RIVERVIEW_PARK",
-  "name": "RiverviewPark",
-  "layout": "LAYOUT_RIVERVIEW_PARK",
+  "id": "MAP_ROUTE8",
+  "name": "Route8",
+  "layout": "LAYOUT_ROUTE8",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_RIVERVIEW_PARK",
+  "region_map_section": "MAPSEC_ROUTE_8",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
@@ -14,18 +14,8 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ARMITER_CITY",
-      "offset": -24,
-      "direction": "right"
-    },
-    {
-      "map": "MAP_ROUTE7",
-      "offset": 24,
-      "direction": "right"
-    },
-    {
-      "map": "MAP_ROUTE26",
-      "offset": -96,
+      "map": "MAP_VOLUTIDE_TOWN",
+      "offset": 120,
       "direction": "up"
     }
   ],

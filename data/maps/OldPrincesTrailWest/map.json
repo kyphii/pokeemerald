@@ -3,7 +3,7 @@
   "name": "OldPrincesTrailWest",
   "layout": "LAYOUT_OLD_PRINCES_TRAIL_WEST",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_NONE",
+  "region_map_section": "MAPSEC_OLD_PRINCES_TRAIL_WEST",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",

@@ -950,3 +950,5 @@ EventScript_BrailleCursorWaitButton::
 	.include "data/maps/BleakrockPass_Interior/scripts.inc"
 
 	.include "data/maps/MountBriar_Lodge/scripts.inc"
+
+	.include "data/maps/Route8/scripts.inc"

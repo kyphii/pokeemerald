@@ -113,12 +113,15 @@
 #define OBJ_EVENT_GFX_LEADER_LANDON 87
 #define	OBJ_EVENT_GFX_NPC_SKIER_M 88
 #define	OBJ_EVENT_GFX_NPC_SKIER_F 89
+#define OBJ_EVENT_GFX_TEAM_RUST_SLATER 90
+#define OBJ_EVENT_GFX_MAYAS_FATHER 91
+#define OBJ_EVENT_GFX_MAYAS_MOTHER 92
 
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        90
+#define NUM_OBJ_EVENT_GFX                        93
 
 
 // These are dynamic object gfx ids.
@@ -217,6 +220,8 @@
 #define OBJ_EVENT_PAL_TAG_MAYA	                  0x1110
 #define OBJ_EVENT_PAL_TAG_PROF_HAWTHORN	          0x1111
 #define OBJ_EVENT_PAL_TAG_MOM	                  0x1112
+#define OBJ_EVENT_PAL_TAG_TEAM_RUST_SLATER        0x1118
+#define OBJ_EVENT_PAL_TAG_NPC_REFLECTION          0x1120
 #define OBJ_EVENT_PAL_TAG_NPC_1                   0x1121
 #define OBJ_EVENT_PAL_TAG_NPC_2                   0x1122
 #define OBJ_EVENT_PAL_TAG_NPC_3                   0x1123
@@ -228,8 +233,9 @@
 #define OBJ_EVENT_PAL_TAG_NPC_9                   0x1129
 #define OBJ_EVENT_PAL_TAG_NPC_10                  0x112A
 #define OBJ_EVENT_PAL_TAG_NPC_11                  0x112B
-#define OBJ_EVENT_PAL_TAG_NURSE                   0x112C
-#define OBJ_EVENT_PAL_TAG_NPC_REFLECTION          0x112F
+#define OBJ_EVENT_PAL_TAG_NPC_12                  0x112C
+#define OBJ_EVENT_PAL_TAG_NPC_13                  0x112D
+#define OBJ_EVENT_PAL_TAG_NURSE                   0x112F
 #define OBJ_EVENT_PAL_TAG_POKE_BALL               0x1130
 #define OBJ_EVENT_PAL_TAG_STARTER_BAG             0x1131
 #define OBJ_EVENT_PAL_TAG_CABLE_CAR               0x1132

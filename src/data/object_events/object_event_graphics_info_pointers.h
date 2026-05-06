@@ -20,6 +20,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkPlayerM
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkPlayerF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mom;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Maya;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayasFather;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayasMother;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfHawthorn;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcAceTrainerF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NpcAceTrainerM;
@@ -89,6 +91,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StarterBag;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CableCar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LeaderLandon;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TeamRustSlater;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_PLAYER_M_NORMAL] = &gObjectEventGraphicsInfo_PlayerMNormal,
@@ -111,6 +114,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_PLAYER_F_DECORATING] = &gObjectEventGraphicsInfo_PlayerFDecorating,
     [OBJ_EVENT_GFX_MOM] = &gObjectEventGraphicsInfo_Mom,
     [OBJ_EVENT_GFX_MAYA] = &gObjectEventGraphicsInfo_Maya,
+    [OBJ_EVENT_GFX_MAYAS_FATHER] = &gObjectEventGraphicsInfo_MayasFather,
+    [OBJ_EVENT_GFX_MAYAS_MOTHER] = &gObjectEventGraphicsInfo_MayasMother,
     [OBJ_EVENT_GFX_PROF_HAWTHORN] = &gObjectEventGraphicsInfo_ProfHawthorn,
     [OBJ_EVENT_GFX_NPC_ACE_TRAINER_F] = &gObjectEventGraphicsInfo_NpcAceTrainerF,
     [OBJ_EVENT_GFX_NPC_ACE_TRAINER_M] = &gObjectEventGraphicsInfo_NpcAceTrainerM,
@@ -167,6 +172,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_NPC_WOMAN_1] = &gObjectEventGraphicsInfo_NpcWoman1,
     [OBJ_EVENT_GFX_NPC_WORKER] = &gObjectEventGraphicsInfo_NpcWorker,
     [OBJ_EVENT_GFX_LEADER_LANDON] = &gObjectEventGraphicsInfo_LeaderLandon,
+    [OBJ_EVENT_GFX_TEAM_RUST_SLATER] = &gObjectEventGraphicsInfo_TeamRustSlater,
     [OBJ_EVENT_GFX_KYPHII] = &gObjectEventGraphicsInfo_Kyphii,
     [OBJ_EVENT_GFX_ITEM_BALL] = &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_CUTTABLE_TREE] = &gObjectEventGraphicsInfo_CuttableTree,

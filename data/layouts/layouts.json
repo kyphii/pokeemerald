@@ -826,6 +826,16 @@
       "secondary_tileset": "gTileset_MountBriar",
       "border_filepath": "data/layouts/MountBriar_Lodge/border.bin",
       "blockdata_filepath": "data/layouts/MountBriar_Lodge/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE8",
+      "name": "Route8_Layout",
+      "width": 144,
+      "height": 24,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Nerilight",
+      "border_filepath": "data/layouts/Route8/border.bin",
+      "blockdata_filepath": "data/layouts/Route8/map.bin"
     }
   ]
 }

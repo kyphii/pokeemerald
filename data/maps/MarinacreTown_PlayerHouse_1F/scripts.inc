@@ -107,30 +107,32 @@ HomeTown_PlayerHouse_TalkMom_5:
 
 HomeTown_PlayerHouse_Intro_MeetMomScene::
 # 103 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	lockall
+	setvar VAR_LAST_TALKED, LOCALID_MOM
 # 104 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	playse SE_EXIT
+	lock
 # 106 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	setobjectxyperm LOCALID_MOM, 6, 9
+	playse SE_EXIT
 # 107 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	addobject LOCALID_MOM
+	setobjectxyperm LOCALID_MOM, 6, 8
 # 108 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	applymovement LOCALID_MOM, Common_Movement_FaceUp
+	addobject LOCALID_MOM
 # 109 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_MOM, Common_Movement_FaceUp
 # 110 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	waitmovement 0
+# 111 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	delay 20
-# 112 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 113 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	msgbox HomeTown_PlayerHouse_Intro_MeetMomScene_Text_0, MSGBOX_DEFAULT
-# 116 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 117 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	closemessage
-# 118 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	getplayerxy VAR_0x8008, VAR_0x8009
 # 119 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	getplayerxy VAR_0x8008, VAR_0x8009
+# 120 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	compare VAR_0x8009, 7
 	goto_if_eq HomeTown_PlayerHouse_Intro_MeetMomScene_2
 HomeTown_PlayerHouse_Intro_MeetMomScene_1:
-# 125 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 126 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	applymovement LOCALID_MOM, HomeTown_PlayerHouse_Intro_MeetMomScene_Movement_1
 # 129 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	applymovement LOCALID_PLAYER, HomeTown_PlayerHouse_Intro_MeetMomScene_Movement_2
@@ -165,109 +167,123 @@ HomeTown_PlayerHouse_Intro_MeetMomScene_1:
 # 174 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	setvar VAR_INTRO_SEQUENCE_STATE, 1
 # 175 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	releaseall
+	release
 	return
 
 HomeTown_PlayerHouse_Intro_MeetMomScene_2:
-# 120 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 121 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	applymovement LOCALID_MOM, HomeTown_PlayerHouse_Intro_MeetMomScene_Movement_0
-# 123 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 124 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	waitmovement 0
 	goto HomeTown_PlayerHouse_Intro_MeetMomScene_1
 
 
 HomeTown_PlayerHouse_Intro_ReturnHomeScene::
 # 179 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	lockall
+	setvar VAR_LAST_TALKED, LOCALID_MOM
 # 180 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	lock
+# 182 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	applymovement LOCALID_PLAYER, HomeTown_PlayerHouse_Intro_ReturnHomeScene_Movement_0
-# 184 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 187 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	waitmovement 0
-# 185 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	turnobject LOCALID_MOM, DIR_EAST
-# 186 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 188 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	turnobject LOCALID_MOM, DIR_SOUTH
+# 189 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	msgbox HomeTown_PlayerHouse_Intro_ReturnHomeScene_Text_0, MSGBOX_DEFAULT
-# 207 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 210 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	closemessage
-# 209 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	setvar VAR_INTRO_SEQUENCE_STATE, 6
-# 211 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	fadescreen FADE_TO_BLACK
 # 212 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	call Common_EventScript_OutOfCenterPartyHeal
-# 213 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	warp MAP_MARINACRE_TOWN_PLAYER_HOUSE_2F, 12, 2
+	setvar VAR_INTRO_SEQUENCE_STATE, 6
 # 214 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreen FADE_TO_BLACK
 # 215 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	waitstate
+	call Common_EventScript_OutOfCenterPartyHeal
+# 216 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	warp MAP_MARINACRE_TOWN_PLAYER_HOUSE_2F, 12, 2
 # 217 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	releaseall
+	fadescreen FADE_FROM_BLACK
+# 218 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	waitstate
+# 220 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	release
 	return
 
 
 HomeTown_PlayerHouse_Intro_LeaveHomeScene::
-# 221 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	applymovement LOCALID_PLAYER, HomeTown_PlayerHouse_Intro_LeaveHomeScene_Movement_0
-# 226 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	waitmovement 0
+# 224 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	setvar VAR_LAST_TALKED, LOCALID_MOM
+# 225 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	lock
 # 227 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	lockall
-# 228 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	turnobject LOCALID_MOM, DIR_EAST
-# 229 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	applymovement LOCALID_PLAYER, HomeTown_PlayerHouse_Intro_LeaveHomeScene_Movement_0
+# 231 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	waitmovement 0
+# 232 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	turnobject LOCALID_MOM, DIR_SOUTH
+# 233 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	msgbox HomeTown_PlayerHouse_Intro_LeaveHomeScene_Text_0, MSGBOX_DEFAULT
-# 242 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 244 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	closemessage
-# 243 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	giveitem ITEM_POKE_BALL, 5
 # 245 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	msgbox HomeTown_PlayerHouse_Intro_LeaveHomeScene_Text_1, MSGBOX_DEFAULT
-# 249 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	closemessage
-# 250 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 251 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	message HomeTown_PlayerHouse_Intro_LeaveHomeScene_Text_2
+	applymovement LOCALID_MOM, HomeTown_PlayerHouse_Intro_LeaveHomeScene_Movement_1
 # 252 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	waitmessage
+	delay 30
 # 253 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	waitfanfare
+	turnobject LOCALID_PLAYER, DIR_EAST
+# 254 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	waitmovement 0
 # 255 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	msgbox HomeTown_PlayerHouse_Intro_LeaveHomeScene_Text_3, MSGBOX_DEFAULT
-# 270 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	msgbox HomeTown_PlayerHouse_Intro_LeaveHomeScene_Text_1, MSGBOX_DEFAULT
+# 261 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	closemessage
+# 262 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	giveitem ITEM_POKE_BALL, 5
+# 264 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	msgbox HomeTown_PlayerHouse_Intro_LeaveHomeScene_Text_2, MSGBOX_DEFAULT
+# 268 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	closemessage
+# 269 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 270 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	message HomeTown_PlayerHouse_Intro_LeaveHomeScene_Text_3
+# 271 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	waitmessage
 # 272 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	special SetUnlockedPokedexFlags
-# 273 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	setflag FLAG_ADVENTURE_STARTED
+	waitfanfare
 # 274 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	msgbox HomeTown_PlayerHouse_Intro_LeaveHomeScene_Text_4, MSGBOX_DEFAULT
+# 289 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	closemessage
+# 291 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	special SetUnlockedPokedexFlags
+# 292 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	setflag FLAG_ADVENTURE_STARTED
+# 293 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	setflag FLAG_INTRO_MET_MOM
-# 275 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 294 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	setflag FLAG_SYS_POKEDEX_GET
-# 276 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 295 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
-# 277 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 296 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	setflag FLAG_MOM_ENABLE_HEAL
-# 278 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 297 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	setvar VAR_INTRO_SEQUENCE_STATE, 7
-# 280 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 299 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	resumertc
-# 281 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	releaseall
+# 300 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	release
 	return
 
 
-# 120 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-HomeTown_PlayerHouse_Intro_MeetMomScene_Movement_0:
 # 121 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+HomeTown_PlayerHouse_Intro_MeetMomScene_Movement_0:
+# 122 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	walk_up
 	step_end
 
-# 125 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-HomeTown_PlayerHouse_Intro_MeetMomScene_Movement_1:
 # 126 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	walk_up
+HomeTown_PlayerHouse_Intro_MeetMomScene_Movement_1:
 # 127 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	face_right
 	step_end
@@ -285,47 +301,95 @@ HomeTown_PlayerHouse_Intro_MeetMomScene_Movement_2:
 # 166 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 HomeTown_PlayerHouse_Intro_MeetMomScene_Movement_3:
 # 167 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	walk_up
-# 168 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	walk_left
+# 168 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_up
 # 169 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	face_down
 	step_end
 
-# 180 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-HomeTown_PlayerHouse_Intro_ReturnHomeScene_Movement_0:
-# 181 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	walk_up
-# 181 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	walk_up
-# 181 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	walk_up
 # 182 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	face_left
+HomeTown_PlayerHouse_Intro_ReturnHomeScene_Movement_0:
+# 183 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_up
+# 184 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_left
+# 185 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	face_up
 	step_end
 
-# 221 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 227 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 HomeTown_PlayerHouse_Intro_LeaveHomeScene_Movement_0:
-# 222 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 228 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	walk_left
-# 222 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 228 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	walk_left
-# 222 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 228 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	walk_left
-# 222 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 228 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	walk_left
-# 222 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 228 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	walk_left
-# 222 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 228 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	walk_left
-# 222 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 228 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	walk_left
-# 222 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 228 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	walk_left
-# 223 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
-	walk_up
-# 224 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 228 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	walk_left
+# 228 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_left
+# 229 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	face_up
+	step_end
+
+# 245 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+HomeTown_PlayerHouse_Intro_LeaveHomeScene_Movement_1:
+# 246 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	jump_right
+# 247 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_down
+# 248 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_right
+# 248 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_right
+# 248 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_right
+# 248 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_right
+# 248 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_right
+# 248 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_right
+# 248 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_right
+# 249 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	delay_16
+# 249 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	delay_16
+# 249 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	delay_16
+# 249 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	delay_16
+# 249 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	delay_16
+# 249 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	delay_16
+# 250 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_left
+# 250 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_left
+# 250 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_left
+# 250 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_left
+# 250 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_left
+# 250 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_left
+# 250 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	walk_fast_left
 	step_end
 
 HomeTown_PlayerHouse_TalkMom_Text_0:
@@ -373,7 +437,7 @@ HomeTown_PlayerHouse_TalkMom_Text_5:
 	.string "Good luck out there, {PLAYER}!$"
 
 HomeTown_PlayerHouse_Intro_MeetMomScene_Text_0:
-# 113 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 114 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	.string "{PLAYER}! I'm home!$"
 
 HomeTown_PlayerHouse_Intro_MeetMomScene_Text_1:
@@ -395,7 +459,7 @@ HomeTown_PlayerHouse_Intro_MeetMomScene_Text_2:
 	.string "see what she wants?$"
 
 HomeTown_PlayerHouse_Intro_ReturnHomeScene_Text_0:
-# 187 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 190 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	.string "MOM: Welcome back, {PLAYER}!\n"
 	.string "What happened out there?\p"
 	.string "…{PAUSE 30}…{PAUSE 30}…\p"
@@ -410,25 +474,29 @@ HomeTown_PlayerHouse_Intro_ReturnHomeScene_Text_0:
 	.string "on your mission first thing tomorrow!$"
 
 HomeTown_PlayerHouse_Intro_LeaveHomeScene_Text_0:
-# 230 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+# 234 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	.string "MOM: There you are!\p"
 	.string "Are you all ready to go\n"
 	.string "travelling with Maya?\p"
 	.string "Great!\p"
-	.string "Hey, I have a surprise for you!\n"
+	.string "Wait, I have a surprise for you!$"
+
+HomeTown_PlayerHouse_Intro_LeaveHomeScene_Text_1:
+# 256 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+	.string "Ok, {PLAYER}!\n"
 	.string "Close your eyes, and hold out your\l"
 	.string "hands…$"
 
-HomeTown_PlayerHouse_Intro_LeaveHomeScene_Text_1:
-# 246 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+HomeTown_PlayerHouse_Intro_LeaveHomeScene_Text_2:
+# 265 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	.string "Don't move! Take this, too!$"
 
-HomeTown_PlayerHouse_Intro_LeaveHomeScene_Text_2:
-# 251 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+HomeTown_PlayerHouse_Intro_LeaveHomeScene_Text_3:
+# 270 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	.string "{PLAYER} received a Pokédex from Mom!$"
 
-HomeTown_PlayerHouse_Intro_LeaveHomeScene_Text_3:
-# 256 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
+HomeTown_PlayerHouse_Intro_LeaveHomeScene_Text_4:
+# 275 "data/maps/MarinacreTown_PlayerHouse_1F/scripts.pory"
 	.string "I got that for you at the Poké\n"
 	.string "Mart as soon as it opened!\p"
 	.string "Ah… to be so young and ready for\n"

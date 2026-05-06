@@ -136,6 +136,13 @@ static const struct SpriteFrameImage sPicTable_ProfHawthorn[] = {
     overworld_ascending_frames(gObjectEventPic_ProfHawthorn, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_MayasFather[] = {
+    overworld_ascending_frames(gObjectEventPic_MayasFather, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_MayasMother[] = {
+    overworld_ascending_frames(gObjectEventPic_MayasMother, 2, 4),
+};
 
 
 static const struct SpriteFrameImage sPicTable_NpcAceTrainerF[] = {
@@ -356,6 +363,10 @@ static const struct SpriteFrameImage sPicTable_NpcWorker[] = {
 
 static const struct SpriteFrameImage sPicTable_LeaderLandon[] = {
     overworld_ascending_frames(gObjectEventPic_LeaderLandon, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_TeamRustSlater[] = {
+    overworld_ascending_frames(gObjectEventPic_TeamRustSlater, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_Kyphii[] = {

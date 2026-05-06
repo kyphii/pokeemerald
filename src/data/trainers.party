@@ -710,13 +710,15 @@ Class: Bug Catcher
 Pic: Bug Catcher
 Gender: Male
 AI: Check Bad Move
-Base Level: 5
 Base Party Size: 2
 
 Ledian
 Level: 0
 
 Dustox
+Level: -1
+
+Ribombee
 Level: -1
 
 
@@ -726,11 +728,13 @@ Class: Picnicker
 Pic: Picnicker
 Gender: Female
 AI: Check Bad Move
-Base Level: 6
-Base Party Size: 1
+Base Party Size: 2
 
 Furret
-Level: -3
+Level: -1
+
+Azumarill
+Level: 0
 
 
 === TRAINER_NAUTIRUST_FOREST_3 ===
@@ -739,11 +743,16 @@ Class: Lass
 Pic: Lass
 Gender: Female
 AI: Check Bad Move
-Base Level: 7
-Base Party Size: 1
+Base Party Size: 3
 
 Thievul
 Level: 0
+
+Swellow
+Level: -1
+
+Beautifly
+Level: -1
 
 
 === TRAINER_NAUTIRUST_FOREST_4 ===
@@ -752,7 +761,6 @@ Class: Youngster
 Pic: Youngster
 Gender: Male
 AI: Check Bad Move
-Base Level: 7
 Base Party Size: 2
 
 Arbok
@@ -763,12 +771,11 @@ Level: -1
 
 
 === TRAINER_NAUTIRUST_FOREST_5 ===
-Name: Garret
-Class: Camper
-Pic: Camper
-Gender: Male
+Name: Amanda
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
 AI: Check Bad Move
-Base Level: 8
 Base Party Size: 4
 
 Shiftry
@@ -783,6 +790,68 @@ Level: -1
 Ursaring
 Level: 0
 
+
+=== TRAINER_NAUTIRUST_FOREST_6 ===
+Name: Miles
+Class: Youngster
+Pic: Youngster
+Gender: Male
+AI: Check Bad Move
+Base Party Size: 2
+
+Greedent
+Level: -1
+
+Shiftry
+Level: 0
+
+
+=== TRAINER_NAUTIRUST_FOREST_7 ===
+Name: Ethan
+Class: Camper
+Pic: Camper
+Gender: Male
+AI: Check Bad Move
+Base Party Size: 2
+
+Ludicolo
+Level: -1
+
+Raichu
+Level: 0
+
+
+=== TRAINER_NAUTIRUST_FOREST_8 ===
+Name: Chloe
+Class: Lass
+Pic: Lass
+Gender: Female
+AI: Check Bad Move
+Base Party Size: 2
+
+Lopunny
+Level: -1
+
+Delcatty
+Level: 0
+
+
+=== TRAINER_NAUTIRUST_FOREST_9 ===
+Name: Jacob
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+AI: Check Bad Move
+Base Party Size: 3
+
+Masquerain
+Level: -1
+
+Vespiquen
+Level: -1
+
+Scolipede
+Level: 0
 
 
 === TRAINER_MOUNT_BRIAR_1 ===

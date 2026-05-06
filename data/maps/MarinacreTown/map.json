@@ -31,7 +31,7 @@
   ],
   "object_events": [
     {
-      "local_id": "LOCALID_HOMETOWN_RIVAL",
+      "local_id": "LOCALID_MARINACRE_MAYA",
       "graphics_id": "OBJ_EVENT_GFX_MAYA",
       "x": 0,
       "y": 41,
@@ -168,6 +168,34 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "HomeTown_IntroBlockMart",
       "flag": "FLAG_INTRO_MET_PROFESSOR"
+    },
+    {
+      "local_id": "LOCALID_MARINACRE_MAYAS_FATHER",
+      "graphics_id": "OBJ_EVENT_GFX_MAYAS_FATHER",
+      "x": 0,
+      "y": 48,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_MARINACRE_MAYAS_MOTHER",
+      "graphics_id": "OBJ_EVENT_GFX_MAYAS_MOTHER",
+      "x": 0,
+      "y": 49,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -201,33 +229,6 @@
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 29,
-      "y": 26,
-      "elevation": 0,
-      "var": "VAR_TEMP_A",
-      "var_value": "1",
-      "script": "HomeTown_Trigger_RestoreMusic"
-    },
-    {
-      "type": "trigger",
-      "x": 30,
-      "y": 26,
-      "elevation": 0,
-      "var": "VAR_TEMP_A",
-      "var_value": "1",
-      "script": "HomeTown_Trigger_RestoreMusic"
-    },
-    {
-      "type": "trigger",
-      "x": 31,
-      "y": 26,
-      "elevation": 0,
-      "var": "VAR_TEMP_A",
-      "var_value": "1",
-      "script": "HomeTown_Trigger_RestoreMusic"
-    },
     {
       "type": "trigger",
       "x": 25,
@@ -272,33 +273,6 @@
       "var": "VAR_INTRO_SEQUENCE_STATE",
       "var_value": "1",
       "script": "HomeTown_BeachScene1_Start"
-    },
-    {
-      "type": "trigger",
-      "x": 29,
-      "y": 27,
-      "elevation": 0,
-      "var": "VAR_TEMP_A",
-      "var_value": "0",
-      "script": "HomeTown_Trigger_CutMusic"
-    },
-    {
-      "type": "trigger",
-      "x": 30,
-      "y": 27,
-      "elevation": 0,
-      "var": "VAR_TEMP_A",
-      "var_value": "0",
-      "script": "HomeTown_Trigger_CutMusic"
-    },
-    {
-      "type": "trigger",
-      "x": 31,
-      "y": 27,
-      "elevation": 0,
-      "var": "VAR_TEMP_A",
-      "var_value": "0",
-      "script": "HomeTown_Trigger_CutMusic"
     },
     {
       "type": "trigger",

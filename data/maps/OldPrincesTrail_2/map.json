@@ -3,7 +3,7 @@
   "name": "OldPrincesTrail_2",
   "layout": "LAYOUT_OLD_PRINCES_TRAIL_2",
   "music": "MUS_NONE",
-  "region_map_section": "MAPSEC_NONE",
+  "region_map_section": "MAPSEC_OLD_PRINCES_TRAIL",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_UNDERGROUND",

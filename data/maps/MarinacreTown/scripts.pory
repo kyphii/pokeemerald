@@ -9,13 +9,13 @@ mapscripts MarinacreTown_MapScripts {
 	MAP_SCRIPT_ON_LOAD {
 		switch(var(VAR_INTRO_SEQUENCE_STATE)) {
 			case 1:
-				setobjectxyperm(LOCALID_HOMETOWN_RIVAL, 30, 31)
+				setobjectxyperm(LOCALID_MARINACRE_MAYA, 30, 31)
 				setobjectxyperm(LOCALID_HOMETOWN_BAG, 28, 38)
 				
 				// prevent music cutout
 				setvar(VAR_TEMP_A, 5)
 			case 7:
-				setobjectxyperm(LOCALID_HOMETOWN_RIVAL, 31, 11)
+				setobjectxyperm(LOCALID_MARINACRE_MAYA, 31, 11)
 		}
 	}
 	MAP_SCRIPT_ON_FRAME_TABLE [
@@ -179,7 +179,7 @@ script HomeTown_IntroBlockMart {
 script MarinacreTown_Intro_LeaveWithRivalScene {
 	lockall
 	
-	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+	applymovement(LOCALID_MARINACRE_MAYA, moves(
 		walk_up * 4
 	))
 	waitmovement(0)
@@ -192,13 +192,13 @@ script MarinacreTown_Intro_LeaveWithRivalScene {
     )
     closemessage
 	
-	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+	applymovement(LOCALID_MARINACRE_MAYA, moves(
 		walk_down * 5
 		walk_left * 16
 		walk_down * 3
 		walk_left * 10
 		walk_up * 2
-		walk_left * 5
+		walk_left * 4
 		face_right
 	))
     applymovement(LOCALID_PLAYER, moves(
@@ -217,50 +217,168 @@ script MarinacreTown_Intro_LeaveWithRivalScene {
 		you?", 
 		MSGBOX_DEFAULT
     )
-	delay(10)
+	delay(30)
 	msgbox(
         "It's exciting, isn't it?
 		
-		We'll explore the whole region, all on
-		our own…{PAUSE 10}
-		Away{PAUSE 10} from{PAUSE 20} home…
+		A journey to help these poor lost 
+		Pok\emon…
 		
-		I-{PAUSE 20}
+		We'll get to travel across the whole 
+		region! We can go wherever we want, 
+		whenever we want!
+		
+		…{PAUSE 10}…{PAUSE 10}…
+		
+		I-{PAUSE 10}
 		
 		…I talked about it with my parents.
-		They're cool with it.
+		They're… cool with this plan.
 		
-		I guess they'll call me once Dad
-		makes a decision about that job…", 
+		I guess they'll just call me once Dad
+		makes his decision…", 
 		MSGBOX_DEFAULT
     )
 	waitmovement(0)
 	
+	applymovement(LOCALID_MARINACRE_MAYA, moves(
+		walk_left
+	))
+	waitmovement(0)
+	
+	message(
+		"Hey!"
+	)
+	turnobject(LOCALID_MARINACRE_MAYA, DIR_EAST)
+	turnobject(LOCALID_PLAYER, DIR_EAST)
+	playse(SE_PIN)
+	applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    applymovement(LOCALID_LABINT_RIVAL, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	waitmessage
+	waitbuttonpress
+	closemessage
+	delay(30)
+	
+	setobjectxyperm(LOCALID_MARINACRE_MAYAS_FATHER, 5, 7)
+	addobject(LOCALID_MARINACRE_MAYAS_FATHER)
+	applymovement(LOCALID_MARINACRE_MAYAS_FATHER, moves(
+		walk_down * 5
+		walk_left * 4
+		face_down
+	))
+	setobjectxyperm(LOCALID_MARINACRE_MAYAS_MOTHER, 5, 6)
+	addobject(LOCALID_MARINACRE_MAYAS_MOTHER)
+	applymovement(LOCALID_MARINACRE_MAYAS_MOTHER, moves(
+		walk_down * 6
+		walk_left * 3
+		face_down
+	))
+	waitmovement(0)
+	
+	turnobject(LOCALID_PLAYER, DIR_NORTH)
+	applymovement(LOCALID_MARINACRE_MAYA, Common_Movement_WalkInPlaceRight)
 	msgbox(
-		"Well, let's take the road west out
-		of town.
+		"MAYA: Oh, hey Dad. Hey, Mom.",
+		MSGBOX_DEFAULT
+	)
+	waitmovement(0)
+	closemessage
+	
+	applymovement(LOCALID_MARINACRE_MAYAS_FATHER, Common_Movement_WalkInPlaceDown)
+	msgbox(
+		"It'd be wrong if we didn't see you and 
+		{PLAYER} off on your big adventure.",
+		MSGBOX_DEFAULT
+	)
+	waitmovement(0)
+	closemessage
+	
+	applymovement(LOCALID_MARINACRE_MAYAS_MOTHER, Common_Movement_WalkInPlaceLeft)
+	msgbox(
+		"Before you two leave town, you should 
+		take these!",
+		MSGBOX_DEFAULT
+	)
+	waitmovement(0)
+	closemessage
+	
+	applymovement(LOCALID_MARINACRE_MAYA, moves(
+		walk_right
+		face_up
+	))
+	waitmovement(0)
+	
+	turnobject(LOCALID_MARINACRE_MAYAS_MOTHER, DIR_SOUTH)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message("{PLAYER} and Maya received Region Maps!")
+	waitmessage
+	waitfanfare
+	waitbuttonpress
+	additem(ITEM_TOWN_MAP, 1)
+	
+	msgbox(
+		"Can't have you getting lost out there, 
+		can we?
+		
+		Stay safe and have fun, you two!
+		Goodbye!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	
+	applymovement(LOCALID_MARINACRE_MAYAS_FATHER, moves(
+		walk_right * 4
+		walk_up * 6
+	))
+	applymovement(LOCALID_MARINACRE_MAYAS_MOTHER, moves(
+		walk_right * 3
+		walk_up * 5
+	))
+	
+	delay(10)
+	applymovement(LOCALID_MARINACRE_MAYA, Common_Movement_WalkInPlaceRight)
+	msgbox(
+		"MAYA: ………{PAUSE 10}
+		Thanks, Mom! Thanks, Dad!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	waitmovement(LOCALID_MARINACRE_MAYAS_FATHER)
+	setobjectxyperm(LOCALID_MARINACRE_MAYAS_FATHER, 0, 48)
+	setobjectxyperm(LOCALID_MARINACRE_MAYAS_MOTHER, 0, 48)
+	removeobject(LOCALID_MARINACRE_MAYAS_FATHER)
+	removeobject(LOCALID_MARINACRE_MAYAS_MOTHER)
+	
+	turnobject(LOCALID_MARINACRE_MAYA, DIR_EAST)
+	turnobject(LOCALID_PLAYER, DIR_WEST)
+	msgbox(
+		"{PLAYER}!
+		We're all ready to go!
 		
 		Professor Hawthorn gave us two
 		places to look for clues.
 		
 		We can decide which direction
-		to go once we reach the next city.
-		
-		Alright, {PLAYER}!
-		Let's go!", 
+		to go once we reach the next city.",
 		MSGBOX_DEFAULT
     )
+	msgbox(
+		"Alright, {PLAYER}! 
+		No time to waste! Let's go!", 
+		MSGBOX_DEFAULT
+	)
     closemessage
 	
-	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+	applymovement(LOCALID_MARINACRE_MAYA, moves(
 		walk_left
 		face_right
 		delay_16 * 2
 		walk_fast_left * 7
 	))
     waitmovement(0)
-    removeobject(LOCALID_HOMETOWN_RIVAL)
-    setobjectxyperm(LOCALID_HOMETOWN_RIVAL, 0, 47)
+    removeobject(LOCALID_MARINACRE_MAYA)
+    setobjectxyperm(LOCALID_MARINACRE_MAYA, 0, 47)
     setvar(VAR_INTRO_SEQUENCE_STATE, 8)
 	
 	releaseall
@@ -269,13 +387,13 @@ script MarinacreTown_Intro_LeaveWithRivalScene {
 script HomeTown_BeachScene1_Start {
     lockall
     setvar(VAR_INTRO_SEQUENCE_STATE, 2)
-	turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
+	turnobject(LOCALID_MARINACRE_MAYA, DIR_EAST)
     
     // Rival see player
-    applymovement(LOCALID_HOMETOWN_RIVAL, Common_Movement_FaceUp)
+    applymovement(LOCALID_MARINACRE_MAYA, Common_Movement_FaceUp)
     waitmovement(0)
     playse(SE_PIN)
-    applymovement(LOCALID_HOMETOWN_RIVAL, Common_Movement_ExclamationMark)
+    applymovement(LOCALID_MARINACRE_MAYA, Common_Movement_ExclamationMark)
     waitmovement(0)
     delay(60)
     msgbox(
@@ -311,7 +429,7 @@ script HomeTown_BeachScene1_Start {
     }
     waitmovement(0)
     turnobject(LOCALID_PLAYER, DIR_WEST)
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
+    turnobject(LOCALID_MARINACRE_MAYA, DIR_EAST)
     
     // rival monologue
     msgbox(
@@ -320,20 +438,25 @@ script HomeTown_BeachScene1_Start {
 		…{PAUSE 30}I just wanted to hang out, dude.
 		Does there have to be a reason?
 		
-		I feel like it's been too long since we
-		just chilled here together.",
+		I feel like it's been forever since we 
+		just chilled here together.
+		
+		Hey, you better not get it in your head
+		that you're too cool now!
+		I'm supposed to be the cool one!",
         MSGBOX_DEFAULT
     )
     closemessage
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_SOUTH)
+    turnobject(LOCALID_MARINACRE_MAYA, DIR_SOUTH)
 	delay(60)
 	msgbox(
-        "Hey, remember when we found that
-		Shellder in the sand?
-		…{PAUSE 30}And then I stuck it in my mom's purse?
+        "Hey, remember back when we were kids, 
+		when we found that Shellder in the 
+		sand?
+		…{PAUSE 10}And then I stuck it in my mom's purse?
 		
-		Her face when she found it - man, that
-		was so worth getting grounded for!",
+		Her face when she found it…
+		That still cracks me up!",
         MSGBOX_DEFAULT
     )
     closemessage
@@ -341,7 +464,7 @@ script HomeTown_BeachScene1_Start {
     fadeoutbgm(3)
 	turnobject(LOCALID_PLAYER, DIR_SOUTH)
     delay(60)
-    msgbox(
+    message(
         "…{PAUSE 30}So…
 		
 		You know how my dad's been looking
@@ -355,38 +478,37 @@ script HomeTown_BeachScene1_Start {
 		That's good, right?
 		
 		He hasn't made a decision if he's gonna
-		accept it yet, but it's apparently, like,
-		really good money.
+		accept it yet.
+		It's apparently, like, really good money.
 		
-		But if he takes it…",
-        MSGBOX_DEFAULT
+		But if he does…"
     )
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_WEST)
+	waitmessage
+    turnobject(LOCALID_MARINACRE_MAYA, DIR_WEST)
+	waitbuttonpress
 	delay(60)
     msgbox(
-        "Anyways, I had a talk with my family
-		about it.
+        "My family… 
+		we talked about it earlier.
+		
 		Well, I guess less of a talk, and more…",
         MSGBOX_DEFAULT
     )
-	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
-		walk_in_place_right * 2
-	))
+	applymovement(LOCALID_MARINACRE_MAYA, Common_Movement_WalkInPlaceRight)
 	waitmovement(0)
 	
     msgbox(
         "…Gah, forget it!
 		
-		Don't worry about it.
-		I just wanna sit here and take in the
-		scenery.
+		I just wanna chill and get my mind off
+		it!
 		
-		C'mon, let's just chill!",
+		Let's talk about something else!",
         MSGBOX_DEFAULT
     )
     closemessage
 	
-	applymovement(LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_EndMonologue)
+	applymovement(LOCALID_MARINACRE_MAYA, HomeTown_BeachScene1_EndMonologue)
     delay(10)
     applymovement(LOCALID_PLAYER, HomeTown_BeachScene1_EndMonologue)
     waitmovement(0)
@@ -394,7 +516,7 @@ script HomeTown_BeachScene1_Start {
     
     // See bag
     playse(SE_PIN)
-    applymovement(LOCALID_HOMETOWN_RIVAL, Common_Movement_QuestionMark)
+    applymovement(LOCALID_MARINACRE_MAYA, Common_Movement_QuestionMark)
     waitmovement(0)
     delay(60)
     msgbox(
@@ -404,7 +526,7 @@ script HomeTown_BeachScene1_Start {
     closemessage
     
     // Walk to bag
-    applymovement(LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_WalkToBag)
+    applymovement(LOCALID_MARINACRE_MAYA, HomeTown_BeachScene1_WalkToBag)
     delay(30)
     applymovement(LOCALID_PLAYER, HomeTown_BeachScene1_WalkToBag)
     waitmovement(0)
@@ -418,16 +540,16 @@ script HomeTown_BeachScene1_Start {
         MSGBOX_DEFAULT
     )
     closemessage
-    applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+    applymovement(LOCALID_MARINACRE_MAYA, moves(
         walk_down
         face_right))
     waitmovement(0)
     delay(60)
     playse(SE_PIN)
-    applymovement(LOCALID_HOMETOWN_RIVAL, Common_Movement_ExclamationMark)
+    applymovement(LOCALID_MARINACRE_MAYA, Common_Movement_ExclamationMark)
     waitmovement(0)
     delay(60)
-    applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+    applymovement(LOCALID_MARINACRE_MAYA, moves(
       jump_in_place_right * 2
 	  delay_16 * 2
 	  face_up
@@ -445,14 +567,14 @@ script HomeTown_BeachScene1_Start {
 		MSGBOX_DEFAULT
     )
     waitmovement(0)
-	turnobject(LOCALID_HOMETOWN_RIVAL, DIR_NORTH)
+	turnobject(LOCALID_MARINACRE_MAYA, DIR_NORTH)
 	msgbox(
         "Do you think…{PAUSE 30} there's anything
         in them?",
 		MSGBOX_DEFAULT
     )
     closemessage
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
+    turnobject(LOCALID_MARINACRE_MAYA, DIR_EAST)
     delay(60)
     msgbox(
         "We should probably check, huh?",
@@ -460,8 +582,9 @@ script HomeTown_BeachScene1_Start {
     closemessage
     
     // Rival starter place
-	delay(40)
-    applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+    applymovement(LOCALID_MARINACRE_MAYA, moves(
+		walk_in_place_right
+		delay_16 * 2
 		walk_up * 2
 	))
     waitmovement(0)
@@ -471,19 +594,19 @@ script HomeTown_BeachScene1_Start {
     addobject(LOCALID_HOMETOWN_BALL_GRASS)
 	playse(SE_BALL)
     delay(30)
-    applymovement(LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter)
+    applymovement(LOCALID_MARINACRE_MAYA, HomeTown_BeachScene1_GoToNextStarter)
     waitmovement(0)
     setobjectxyperm(LOCALID_HOMETOWN_BALL_FIRE, 28, 35)
     addobject(LOCALID_HOMETOWN_BALL_FIRE)
 	playse(SE_BALL)
     delay(30)
-    applymovement(LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter)
+    applymovement(LOCALID_MARINACRE_MAYA, HomeTown_BeachScene1_GoToNextStarter)
     waitmovement(0)
     setobjectxyperm(LOCALID_HOMETOWN_BALL_WATER, 29, 35)
     addobject(LOCALID_HOMETOWN_BALL_WATER)
 	playse(SE_BALL)
     delay(30)
-    applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+    applymovement(LOCALID_MARINACRE_MAYA, moves(
     walk_left * 2
     face_up
 	))
@@ -515,7 +638,7 @@ script HomeTown_BeachScene1_Start {
     delay(10)
     
     // Rival react
-    applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+    applymovement(LOCALID_MARINACRE_MAYA, moves(
         jump_in_place_up
         walk_fast_down
         face_up
@@ -526,13 +649,13 @@ script HomeTown_BeachScene1_Start {
         MSGBOX_DEFAULT)
     closemessage
     releaseall // Allow starters to look around freely
-    applymovement(LOCALID_HOMETOWN_RIVAL, Common_Movement_FaceUp) // reapply lock to rival
+    applymovement(LOCALID_MARINACRE_MAYA, Common_Movement_FaceUp) // reapply lock to rival
     waitmovement(0)
     
     // Talk
     delay(30)
     turnobject(LOCALID_PLAYER, DIR_WEST)
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
+    turnobject(LOCALID_MARINACRE_MAYA, DIR_EAST)
     msgbox(
         "{PLAYER}! These Pok\emon belong
         to someone!
@@ -542,7 +665,7 @@ script HomeTown_BeachScene1_Start {
     )
     closemessage
     turnobject(LOCALID_PLAYER, DIR_NORTH)
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_NORTH)
+    turnobject(LOCALID_MARINACRE_MAYA, DIR_NORTH)
     delay(60)
     msgbox(
         "They look…{PAUSE 30} 
@@ -551,14 +674,13 @@ script HomeTown_BeachScene1_Start {
         Like they haven't been let out in a 
         really long time.
         
-        How long were they drifting out in
-        the sea?",
+        How long were they out in the ocean?",
         MSGBOX_DEFAULT
     )
     closemessage
     delay(20)
     turnobject(LOCALID_PLAYER, DIR_WEST)
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
+    turnobject(LOCALID_MARINACRE_MAYA, DIR_EAST)
     msgbox(
         "What should we do about this,
         {PLAYER}?
@@ -602,13 +724,13 @@ script HomeTown_BeachScene1_Start {
     }
     closemessage
     delay(60)
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_SOUTH)
+    turnobject(LOCALID_MARINACRE_MAYA, DIR_SOUTH)
     playse(SE_PIN)
-    applymovement(LOCALID_HOMETOWN_RIVAL, Common_Movement_ExclamationMark)
+    applymovement(LOCALID_MARINACRE_MAYA, Common_Movement_ExclamationMark)
     waitmovement(0)
 	delay(40)
     fadeinbgm(1)
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
+    turnobject(LOCALID_MARINACRE_MAYA, DIR_EAST)
     msgbox(
         "Wait, I have an idea!
         We should take these Pok\emon to
@@ -628,15 +750,17 @@ script HomeTown_BeachScene1_Start {
     closemessage
     delay(20)
     turnobject(LOCALID_PLAYER, DIR_NORTH)
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_NORTH)
+    turnobject(LOCALID_MARINACRE_MAYA, DIR_NORTH)
     msgbox(
         "{PLAYER}, how about we each keep one 
         of these Pok\emon for the trip?
         
-        Yeah, that sounds like a plan!",
+        Yeah, that sounds like a plan!
+		Great plan, me!
+		Thanks, me!",
         MSGBOX_DEFAULT
     )
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_EAST)
+    turnobject(LOCALID_MARINACRE_MAYA, DIR_EAST)
     msgbox(
         "Go ahead, {PLAYER}!
         You pick first!"
@@ -719,7 +843,7 @@ script HomeTown_BeachScene1_TakeStarter {
 
 script HomeTown_BeachScene1_Finish {
     turnobject(LOCALID_PLAYER, DIR_SOUTH)
-    turnobject(LOCALID_HOMETOWN_RIVAL, DIR_NORTH)
+    turnobject(LOCALID_MARINACRE_MAYA, DIR_NORTH)
     delay(10)
     msgbox(
         "Alright, then!
@@ -728,7 +852,7 @@ script HomeTown_BeachScene1_Finish {
 	closemessage
 	
 	// rival clean up bag
-	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+	applymovement(LOCALID_MARINACRE_MAYA, moves(
 		walk_down
 		face_right
 		delay_16
@@ -736,7 +860,7 @@ script HomeTown_BeachScene1_Finish {
     waitmovement(0)
 	removeobject(LOCALID_HOMETOWN_BAG)
 	playse(SE_BALL)
-	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+	applymovement(LOCALID_MARINACRE_MAYA, moves(
 		delay_16
 		delay_16
 		walk_up
@@ -749,7 +873,7 @@ script HomeTown_BeachScene1_Finish {
 	waitmovement(0)
 	
 	// rival cleanup starters
-	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+	applymovement(LOCALID_MARINACRE_MAYA, moves(
 		walk_up
 	))
 	waitmovement(0)
@@ -759,34 +883,34 @@ script HomeTown_BeachScene1_Finish {
 		playse(SE_BALL)
 	}
 	if (var(VAR_STARTER_MON) != 1) {
-		applymovement(LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter)
+		applymovement(LOCALID_MARINACRE_MAYA, HomeTown_BeachScene1_GoToNextStarter)
 		waitmovement(0)
 		delay(30)
 		removeobject(LOCALID_HOMETOWN_STARTER_FIRE)
 		playse(SE_BALL)
 	}
 	else {
-		applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+		applymovement(LOCALID_MARINACRE_MAYA, moves(
 			walk_right
 		))
 		waitmovement(0)
 	}
 	if (var(VAR_STARTER_MON) != 2) {
-		applymovement(LOCALID_HOMETOWN_RIVAL, HomeTown_BeachScene1_GoToNextStarter)
+		applymovement(LOCALID_MARINACRE_MAYA, HomeTown_BeachScene1_GoToNextStarter)
 		waitmovement(0)
 		delay(30)
 		removeobject(LOCALID_HOMETOWN_STARTER_WATER)
 		playse(SE_BALL)
 	}
 	else {
-		applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+		applymovement(LOCALID_MARINACRE_MAYA, moves(
 			walk_right
 		))
 		waitmovement(0)
 	}
 	
 	// end convo
-	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+	applymovement(LOCALID_MARINACRE_MAYA, moves(
 		walk_right
 		walk_up * 2
 		face_left
@@ -802,7 +926,7 @@ script HomeTown_BeachScene1_Finish {
 	closemessage
 	
 	// rival run off
-	applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+	applymovement(LOCALID_MARINACRE_MAYA, moves(
 		walk_up
 		delay_16 * 2
 		face_left
@@ -810,8 +934,8 @@ script HomeTown_BeachScene1_Finish {
 		walk_fast_up * 5
 	))
     waitmovement(0)
-    removeobject(LOCALID_HOMETOWN_RIVAL)
-    setobjectxyperm(LOCALID_HOMETOWN_RIVAL, 0, 47)
+    removeobject(LOCALID_MARINACRE_MAYA)
+    setobjectxyperm(LOCALID_MARINACRE_MAYA, 0, 47)
     
     setflag(FLAG_INTRO_MET_RIVAL)
     setvar(VAR_INTRO_SEQUENCE_STATE, 3)
@@ -822,7 +946,7 @@ script HomeTown_BeachScene1_Finish {
 script HomeTown_BeachScene1_PreventLeave {
     lock
     playse(SE_PIN)
-    applymovement(LOCALID_HOMETOWN_RIVAL, moves(
+    applymovement(LOCALID_MARINACRE_MAYA, moves(
         emote_exclamation_mark
         face_player
     ))

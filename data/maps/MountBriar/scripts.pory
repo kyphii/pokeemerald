@@ -1,4 +1,8 @@
-mapscripts MountBriar_MapScripts {}
+mapscripts MountBriar_MapScripts {
+	MAP_SCRIPT_ON_RESUME {
+		setstepcallback(STEP_CB_ASH)
+    }
+}
 
 script MountBriar_Sign_Lodge {
 	msgbox(
@@ -187,9 +191,7 @@ script MountBriar_Script_RideLift {
 
 script MountBriar_Talk_CutMaster {
 	lock
-	applymovement(VAR_LAST_TALKED, moves(
-		walk_in_place_left * 2
-	))
+	applymovement(VAR_LAST_TALKED, Common_Movement_WalkInPlaceLeft)
 	waitmovement(0)
 	msgbox(
 		"Observe, if you will,
@@ -204,9 +206,7 @@ script MountBriar_Talk_CutMaster {
 		MSGBOX_DEFAULT
 	)
 	playmoncry(SPECIES_SCYTHER, 0)
-	applymovement(VAR_LAST_TALKED, moves(
-		walk_in_place_left * 2
-	))
+	applymovement(VAR_LAST_TALKED, Common_Movement_WalkInPlaceLeft)
 	delay(15)
 	applymovement(LOCALID_MOUNTBRIAR_TREE, Movement_CutTreeDown)
 	waitmovement(0)

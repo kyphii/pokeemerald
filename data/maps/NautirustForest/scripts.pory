@@ -36,7 +36,7 @@ script NautirustForest_Intro_RivalFollowOrRace {
 	lockall
 	
 	delay(5)
-	removeobject(LOCALID_ROUTE2_RIVAL, MAP_ROUTE2)
+	removeobject(LOCALID_ROUTE2_MAYA, MAP_ROUTE2)
 	
 	msgbox(
 		"Well?
@@ -65,6 +65,7 @@ script NautirustForest_Intro_RivalFollowOrRace {
 			
 			waitmovement(0)
 			setvar(VAR_INTRO_SEQUENCE_STATE, 10)
+			clearflag(FLAG_INTRO_CLEAR_EXTRA_FOREST_TRAINERS)
 			goto(NautirustForest_Intro_SetupRivalFollower)
         case 1: //setup race
             msgbox(
@@ -115,6 +116,7 @@ script NautirustForest_Intro_TalkRivalFollower {
 	msgbox(
 		"MAYA: Doing okay?"
 	)
+	closemessage
 }
 
 script NautirustForest_Intro_FollowInterrupt {
@@ -260,9 +262,7 @@ script NautirustForest_Intro_EndRace {
             MSGBOX_DEFAULT
         )
 		closemessage
-		applymovement(LOCALID_WOODS_RIVAL, moves(
-			walk_in_place_down
-		))
+		applymovement(LOCALID_WOODS_RIVAL, Common_Movement_WalkInPlaceDown)
 		waitmovement(0)
 		msgbox(
             "MAYA: Look, the way out is just up
@@ -375,6 +375,9 @@ script NautirustForest_Intro_EndRace {
 	setvar(VAR_MOVEMENT_PATH_PROGRESS, 0)
 	setvar(VAR_MOVEMENT_PATH, 0)
 	
+	// Allow the additional forest NPCs to spawn in
+	clearflag(FLAG_INTRO_CLEAR_EXTRA_FOREST_TRAINERS)
+	
 	addplayerlevel(1)
 
 	applymovement(LOCALID_WOODS_RIVAL, NautirustForest_Intro_RivalExit)
@@ -389,14 +392,15 @@ script NautirustForest_Trainer_1 {
 	trainerbattle_single(
 		TRAINER_NAUTIRUST_FOREST_1,
 		//Intro
-		"Hah!
-		Caught you!", 
+		"There are so many bugs in the woods!
+		Let me show you!", 
 		//On Defeat
-		"I got caught out!")
+		"Huh? I ran out of bugs!"
+	)
 
 	// Post battle
 	msgbox(
-		"Found any cool bugs in the forest?",
+		"Shh! You'll scare the bugs away!",
 		MSGBOX_AUTOCLOSE
 	)
 }
@@ -405,14 +409,16 @@ script NautirustForest_Trainer_2 {
 	trainerbattle_single(
 		TRAINER_NAUTIRUST_FOREST_2,
 		//Intro
-		"TODO", 
+		"I want to catch a bunch of different 
+		Pok\emon!", 
 		//On Defeat
-		"TODO")
+		"I'm sorry, my Pok\emon!"
+	)
 
 	// Post battle
 	msgbox(
-		"I lost my friend in the grass.
-		Have you seen her anywhere?",
+		"I came here to catch lots of Pok\emon, 
+		but I forgot to bring any Pok\e Balls…",
 		MSGBOX_AUTOCLOSE
 	)
 }
@@ -424,7 +430,8 @@ script NautirustForest_Trainer_3 {
 		"Eek!
 		Something's rustling!", 
 		//On Defeat
-		"Oh, it's just a person…")
+		"Oh, it's just a person…"
+	)
 
 	// Post battle
 	msgbox(
@@ -438,13 +445,20 @@ script NautirustForest_Trainer_4 {
 	trainerbattle_single(
 		TRAINER_NAUTIRUST_FOREST_4,
 		//Intro
-		"TODO", 
+		"I found the perfect strategy! You've 
+		got no chance against my poison!", 
 		//On Defeat
-		"TODO")
+		"My strategy didn't work."
+	)
 
 	// Post battle
 	msgbox(
-		"TODO",
+		"What if there isn't a perfect strategy, 
+		and every one just has different 
+		strengths and weaknesses?
+		
+		…Nah, that can't be it. I should try 
+		using more poison.",
 		MSGBOX_AUTOCLOSE
 	)
 }
@@ -453,13 +467,90 @@ script NautirustForest_Trainer_5 {
 	trainerbattle_single(
 		TRAINER_NAUTIRUST_FOREST_5,
 		//Intro
-		"", 
+		"Found any cool Pok\emon in the woods?", 
 		//On Defeat
-		"")
+		"That's not what I was looking for!"
+	)
 
 	// Post battle
 	msgbox(
-		"",
+		"I lost my friend in the grass earlier.
+		Have you seen her?",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script NautirustForest_Trainer_6 {
+	trainerbattle_single(
+		TRAINER_NAUTIRUST_FOREST_6,
+		//Intro
+		"A battle? All together?
+		Sounds awesome!", 
+		//On Defeat
+		"…Let's do something else."
+	)
+
+	// Post battle
+	msgbox(
+		"Battling against two trainers is so
+		tough. There's so much more to think
+		about.
+		
+		I'm not paid to think!",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script NautirustForest_Trainer_7 {
+	trainerbattle_single(
+		TRAINER_NAUTIRUST_FOREST_7,
+		//Intro
+		"I'm challenging myself! I'm not gonna 
+		leave until I win a Pok\emon battle!", 
+		//On Defeat
+		"Oh, now I have to go home and heal
+		my Pok\emon…")
+
+	// Post battle
+	msgbox(
+		"All my Pok\emon fainted…
+		What am I gonna do now?",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script NautirustForest_Trainer_8 {
+	trainerbattle_single(
+		TRAINER_NAUTIRUST_FOREST_8,
+		//Intro
+		"I've been studying so hard at the 
+		Trainers' School!
+		There's no way I lose!", 
+		//On Defeat
+		"It all amounted to nothing!")
+
+	// Post battle
+	msgbox(
+		"All my training didn't matter in a real 
+		battle… Maybe I should just stick to 
+		the simulator.",
+		MSGBOX_AUTOCLOSE
+	)
+}
+
+script NautirustForest_Trainer_9 {
+	trainerbattle_single(
+		TRAINER_NAUTIRUST_FOREST_9,
+		//Intro
+		"Why the rush?
+		Let's battle!", 
+		//On Defeat
+		"Oh no!")
+
+	// Post battle
+	msgbox(
+		"I saw a Pinsir off in the grass earlier.
+		I need to catch it!",
 		MSGBOX_AUTOCLOSE
 	)
 }

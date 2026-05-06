@@ -1,0 +1,64 @@
+mapscripts MarinacreTown_RivalHouse_MapScripts {}
+
+script MarinacreTown_RivalHouse_Talk_MayasFather {
+	lock
+	faceplayer
+	switch (var(VAR_INTRO_SEQUENCE_STATE)) {
+		case 1:
+			msgbox(
+				"Oh, hello, {PLAYER}.
+				Are you looking for Maya?
+
+				She went to the beach on the south 
+				side of town.",
+				MSGBOX_DEFAULT
+			)
+		case 3:
+			msgbox(
+				"Oh, hello, {PLAYER}.
+				Did Maya tell you the news?",
+				MSGBOX_DEFAULT
+			)
+		default:
+			msgbox(
+				"Hello, {PLAYER}.
+				How are you and Maya doing on your 
+				travels?
+				
+				I'm afraid I'm quite busy with 
+				everything going on, but you're 
+				welcome to stop by anytime.",
+				MSGBOX_DEFAULT
+			)
+	}
+	closemessage
+	release
+}
+
+script MarinacreTown_RivalHouse_Talk_MayasMother {
+	lock
+	faceplayer
+	switch (var(VAR_INTRO_SEQUENCE_STATE)) {
+		case 1:
+			msgbox(
+				"Oh! Hello there, {PLAYER}.
+				Maya was looking for you earlier.",
+				MSGBOX_DEFAULT
+			)
+		case 3:
+			msgbox(
+				"Maya was in a temper when she left the 
+				house.
+				I hope she's able to feel a bit calmer.",
+				MSGBOX_DEFAULT
+			)
+		default:
+			msgbox(
+				"Oh! Welcome back, {PLAYER}!
+				Are you and Maya doing alright?",
+				MSGBOX_DEFAULT
+			)
+	}
+	closemessage
+	release
+}

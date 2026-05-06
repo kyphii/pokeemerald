@@ -50,633 +50,629 @@ Route2_Intro_EnterForestScene::
 # 32 "data/maps/Route2/scripts.pory"
 	lockall
 # 34 "data/maps/Route2/scripts.pory"
-	turnobject LOCALID_HOMETOWN_RIVAL, DIR_SOUTH
-# 36 "data/maps/Route2/scripts.pory"
+	turnobject LOCALID_ROUTE2_MAYA, DIR_SOUTH
+# 37 "data/maps/Route2/scripts.pory"
+	setflag FLAG_INTRO_CLEAR_EXTRA_FOREST_TRAINERS
+# 39 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Intro_EnterForestScene_Text_0, MSGBOX_DEFAULT
-# 42 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_ROUTE2_RIVAL, Route2_Intro_EnterForestScene_Movement_0
-# 47 "data/maps/Route2/scripts.pory"
-	delay 10
-# 49 "data/maps/Route2/scripts.pory"
-	getplayerxy VAR_0x8008, VAR_0x8009
+# 45 "data/maps/Route2/scripts.pory"
+	applymovement LOCALID_ROUTE2_MAYA, Route2_Intro_EnterForestScene_Movement_0
 # 50 "data/maps/Route2/scripts.pory"
+	delay 10
+# 52 "data/maps/Route2/scripts.pory"
+	getplayerxy VAR_0x8008, VAR_0x8009
+# 53 "data/maps/Route2/scripts.pory"
 	switch VAR_0x8008
-# 51 "data/maps/Route2/scripts.pory"
+# 54 "data/maps/Route2/scripts.pory"
 	case 26, Route2_Intro_EnterForestScene_3
-# 56 "data/maps/Route2/scripts.pory"
+# 59 "data/maps/Route2/scripts.pory"
 	case 27, Route2_Intro_EnterForestScene_4
-# 61 "data/maps/Route2/scripts.pory"
+# 64 "data/maps/Route2/scripts.pory"
 	case 28, Route2_Intro_EnterForestScene_5
-# 66 "data/maps/Route2/scripts.pory"
+# 69 "data/maps/Route2/scripts.pory"
 	case 29, Route2_Intro_EnterForestScene_6
-# 71 "data/maps/Route2/scripts.pory"
+# 74 "data/maps/Route2/scripts.pory"
 	case 30, Route2_Intro_EnterForestScene_7
 Route2_Intro_EnterForestScene_1:
-# 77 "data/maps/Route2/scripts.pory"
-	waitmovement 0
-# 78 "data/maps/Route2/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_NORTH
 # 80 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Intro_EnterForestScene_Text_1, MSGBOX_DEFAULT
-# 86 "data/maps/Route2/scripts.pory"
-	closemessage
-# 88 "data/maps/Route2/scripts.pory"
-	turnobject LOCALID_PLAYER, DIR_WEST
-# 89 "data/maps/Route2/scripts.pory"
-	turnobject LOCALID_HOMETOWN_RIVAL, DIR_WEST
-# 91 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_ROUTE2_CUTTREEGUY, Route2_Intro_EnterForestScene_Movement_6
-# 94 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 95 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Intro_EnterForestScene_Text_2, MSGBOX_DEFAULT
-# 104 "data/maps/Route2/scripts.pory"
-	closemessage
-# 106 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_ROUTE2_CUTTREEGUY, Route2_Movement_CutTreeGuyJump
-# 107 "data/maps/Route2/scripts.pory"
-	waitmovement 0
-# 108 "data/maps/Route2/scripts.pory"
-	delay 20
-# 109 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Intro_EnterForestScene_Text_3, MSGBOX_DEFAULT
-# 114 "data/maps/Route2/scripts.pory"
-	closemessage
-# 116 "data/maps/Route2/scripts.pory"
-	delay 30
-# 118 "data/maps/Route2/scripts.pory"
+# 81 "data/maps/Route2/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_NORTH
-# 119 "data/maps/Route2/scripts.pory"
-	turnobject LOCALID_HOMETOWN_RIVAL, DIR_SOUTH
-# 121 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Intro_EnterForestScene_Text_4, MSGBOX_DEFAULT
-# 125 "data/maps/Route2/scripts.pory"
+# 83 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Intro_EnterForestScene_Text_1, MSGBOX_DEFAULT
+# 89 "data/maps/Route2/scripts.pory"
 	closemessage
-# 127 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_ROUTE2_RIVAL, Route2_Intro_EnterForestScene_Movement_7
-# 131 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_PLAYER, Route2_Intro_EnterForestScene_Movement_8
-# 136 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_ROUTE2_CUTTREEGUY, Route2_Movement_CutTreeGuyJump
-# 137 "data/maps/Route2/scripts.pory"
-	delay 30
-# 138 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Intro_EnterForestScene_Text_5, MSGBOX_DEFAULT
-# 142 "data/maps/Route2/scripts.pory"
-	closemessage
-# 143 "data/maps/Route2/scripts.pory"
-	waitmovement LOCALID_PLAYER
-# 145 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Intro_EnterForestScene_Text_6, MSGBOX_DEFAULT
-# 151 "data/maps/Route2/scripts.pory"
+# 91 "data/maps/Route2/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_WEST
-# 152 "data/maps/Route2/scripts.pory"
-	turnobject LOCALID_HOMETOWN_RIVAL, DIR_EAST
-# 154 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Intro_EnterForestScene_Text_7, MSGBOX_DEFAULT
-# 162 "data/maps/Route2/scripts.pory"
+# 92 "data/maps/Route2/scripts.pory"
+	turnobject LOCALID_ROUTE2_MAYA, DIR_WEST
+# 94 "data/maps/Route2/scripts.pory"
+	applymovement LOCALID_ROUTE2_CUTTREEGUY, Common_Movement_WalkInPlaceRight
+# 95 "data/maps/Route2/scripts.pory"
+	waitmovement 0
+# 96 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Intro_EnterForestScene_Text_2, MSGBOX_DEFAULT
+# 105 "data/maps/Route2/scripts.pory"
 	closemessage
-# 164 "data/maps/Route2/scripts.pory"
-	setvar VAR_INTRO_SEQUENCE_STATE, 9
+# 107 "data/maps/Route2/scripts.pory"
+	applymovement LOCALID_ROUTE2_CUTTREEGUY, Route2_Movement_CutTreeGuyJump
+# 108 "data/maps/Route2/scripts.pory"
+	waitmovement 0
+# 109 "data/maps/Route2/scripts.pory"
+	delay 20
+# 110 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Intro_EnterForestScene_Text_3, MSGBOX_DEFAULT
+# 115 "data/maps/Route2/scripts.pory"
+	closemessage
+# 117 "data/maps/Route2/scripts.pory"
+	delay 30
+# 119 "data/maps/Route2/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_NORTH
+# 120 "data/maps/Route2/scripts.pory"
+	turnobject LOCALID_ROUTE2_MAYA, DIR_SOUTH
+# 122 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Intro_EnterForestScene_Text_4, MSGBOX_DEFAULT
+# 126 "data/maps/Route2/scripts.pory"
+	closemessage
+# 128 "data/maps/Route2/scripts.pory"
+	applymovement LOCALID_ROUTE2_MAYA, Route2_Intro_EnterForestScene_Movement_6
+# 132 "data/maps/Route2/scripts.pory"
+	applymovement LOCALID_PLAYER, Route2_Intro_EnterForestScene_Movement_7
+# 137 "data/maps/Route2/scripts.pory"
+	applymovement LOCALID_ROUTE2_CUTTREEGUY, Route2_Movement_CutTreeGuyJump
+# 138 "data/maps/Route2/scripts.pory"
+	delay 30
+# 139 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Intro_EnterForestScene_Text_5, MSGBOX_DEFAULT
+# 143 "data/maps/Route2/scripts.pory"
+	closemessage
+# 144 "data/maps/Route2/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 146 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Intro_EnterForestScene_Text_6, MSGBOX_DEFAULT
+# 152 "data/maps/Route2/scripts.pory"
+	turnobject LOCALID_PLAYER, DIR_WEST
+# 153 "data/maps/Route2/scripts.pory"
+	turnobject LOCALID_ROUTE2_MAYA, DIR_EAST
+# 155 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Intro_EnterForestScene_Text_7, MSGBOX_DEFAULT
+# 163 "data/maps/Route2/scripts.pory"
+	closemessage
 # 165 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_ROUTE2_RIVAL, Route2_Intro_EnterForestScene_Movement_9
-# 169 "data/maps/Route2/scripts.pory"
-	delay 10
+	setvar VAR_INTRO_SEQUENCE_STATE, 9
+# 166 "data/maps/Route2/scripts.pory"
+	applymovement LOCALID_ROUTE2_MAYA, Route2_Intro_EnterForestScene_Movement_8
 # 170 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_PLAYER, Route2_Intro_EnterForestScene_Movement_10
-# 174 "data/maps/Route2/scripts.pory"
+	delay 10
+# 171 "data/maps/Route2/scripts.pory"
+	applymovement LOCALID_PLAYER, Route2_Intro_EnterForestScene_Movement_9
+# 175 "data/maps/Route2/scripts.pory"
 	waitmovement 0
 	return
 
 Route2_Intro_EnterForestScene_3:
-# 52 "data/maps/Route2/scripts.pory"
+# 55 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_Intro_EnterForestScene_Movement_1
 	goto Route2_Intro_EnterForestScene_1
 
 Route2_Intro_EnterForestScene_4:
-# 57 "data/maps/Route2/scripts.pory"
+# 60 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_Intro_EnterForestScene_Movement_2
 	goto Route2_Intro_EnterForestScene_1
 
 Route2_Intro_EnterForestScene_5:
-# 62 "data/maps/Route2/scripts.pory"
+# 65 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_Intro_EnterForestScene_Movement_3
 	goto Route2_Intro_EnterForestScene_1
 
 Route2_Intro_EnterForestScene_6:
-# 67 "data/maps/Route2/scripts.pory"
+# 70 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_Intro_EnterForestScene_Movement_4
 	goto Route2_Intro_EnterForestScene_1
 
 Route2_Intro_EnterForestScene_7:
-# 72 "data/maps/Route2/scripts.pory"
+# 75 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_Intro_EnterForestScene_Movement_5
 	goto Route2_Intro_EnterForestScene_1
 
 
 Route2_Intro_MeetBigBadScene::
-# 180 "data/maps/Route2/scripts.pory"
-	lockall
 # 181 "data/maps/Route2/scripts.pory"
-	addobject LOCALID_ROUTE2_BIGBAD
+	lockall
 # 182 "data/maps/Route2/scripts.pory"
-	getplayerxy VAR_0x8008, VAR_0x8009
+	addobject LOCALID_ROUTE2_BIGBAD
 # 183 "data/maps/Route2/scripts.pory"
-	switch VAR_0x8009
+	getplayerxy VAR_0x8008, VAR_0x8009
 # 184 "data/maps/Route2/scripts.pory"
+	switch VAR_0x8009
+# 185 "data/maps/Route2/scripts.pory"
 	case 11, Route2_Intro_MeetBigBadScene_3
-# 194 "data/maps/Route2/scripts.pory"
+# 195 "data/maps/Route2/scripts.pory"
 	case 12, Route2_Intro_MeetBigBadScene_4
-# 205 "data/maps/Route2/scripts.pory"
+# 206 "data/maps/Route2/scripts.pory"
 	case 13, Route2_Intro_MeetBigBadScene_5
-# 215 "data/maps/Route2/scripts.pory"
+# 216 "data/maps/Route2/scripts.pory"
 	case 14, Route2_Intro_MeetBigBadScene_6
 Route2_Intro_MeetBigBadScene_1:
-# 227 "data/maps/Route2/scripts.pory"
+# 228 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 229 "data/maps/Route2/scripts.pory"
+# 230 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Intro_MeetBigBadScene_Text_0, MSGBOX_DEFAULT
-# 261 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_ROUTE2_BIGBAD, Route2_Intro_MeetBigBadScene_Movement_4
-# 264 "data/maps/Route2/scripts.pory"
-	waitmovement 0
 # 266 "data/maps/Route2/scripts.pory"
+	applymovement LOCALID_ROUTE2_BIGBAD, Route2_Intro_MeetBigBadScene_Movement_4
+# 269 "data/maps/Route2/scripts.pory"
+	waitmovement 0
+# 270 "data/maps/Route2/scripts.pory"
+	delay 20
+# 272 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Intro_MeetBigBadScene_Text_1, MSGBOX_DEFAULT
-# 304 "data/maps/Route2/scripts.pory"
+# 302 "data/maps/Route2/scripts.pory"
 	getplayerxy VAR_0x8008, VAR_0x8009
-# 305 "data/maps/Route2/scripts.pory"
+# 303 "data/maps/Route2/scripts.pory"
 	switch VAR_0x8009
-# 306 "data/maps/Route2/scripts.pory"
+# 304 "data/maps/Route2/scripts.pory"
 	case 11, Route2_Intro_MeetBigBadScene_9
-# 307 "data/maps/Route2/scripts.pory"
+# 305 "data/maps/Route2/scripts.pory"
 	case 12, Route2_Intro_MeetBigBadScene_9
-# 312 "data/maps/Route2/scripts.pory"
+# 310 "data/maps/Route2/scripts.pory"
 	case 13, Route2_Intro_MeetBigBadScene_10
-# 313 "data/maps/Route2/scripts.pory"
+# 311 "data/maps/Route2/scripts.pory"
 	case 14, Route2_Intro_MeetBigBadScene_10
 Route2_Intro_MeetBigBadScene_7:
+# 317 "data/maps/Route2/scripts.pory"
+	waitmovement 0
 # 319 "data/maps/Route2/scripts.pory"
-	waitmovement 0
-# 321 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Intro_MeetBigBadScene_Text_2, MSGBOX_DEFAULT
-# 337 "data/maps/Route2/scripts.pory"
+# 332 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_ROUTE2_BIGBAD, Route2_Intro_MeetBigBadScene_Movement_7
-# 341 "data/maps/Route2/scripts.pory"
+# 336 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 342 "data/maps/Route2/scripts.pory"
+# 337 "data/maps/Route2/scripts.pory"
 	removeobject LOCALID_ROUTE2_BIGBAD
-# 344 "data/maps/Route2/scripts.pory"
+# 339 "data/maps/Route2/scripts.pory"
 	setflag FLAG_INTRO_MET_BIGBAD
-# 345 "data/maps/Route2/scripts.pory"
+# 340 "data/maps/Route2/scripts.pory"
 	setvar VAR_INTRO_SEQUENCE_STATE, 255
-# 347 "data/maps/Route2/scripts.pory"
+# 342 "data/maps/Route2/scripts.pory"
 	fadeinbgm 1
-# 348 "data/maps/Route2/scripts.pory"
+# 343 "data/maps/Route2/scripts.pory"
 	releaseall
 	return
 
 Route2_Intro_MeetBigBadScene_3:
-# 185 "data/maps/Route2/scripts.pory"
+# 186 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_ROUTE2_BIGBAD, Route2_Intro_MeetBigBadScene_Movement_0
-# 191 "data/maps/Route2/scripts.pory"
-	fadeoutbgm 2
 # 192 "data/maps/Route2/scripts.pory"
-	delay 120
+	fadeoutbgm 2
 # 193 "data/maps/Route2/scripts.pory"
+	delay 120
+# 194 "data/maps/Route2/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_SOUTH
 	goto Route2_Intro_MeetBigBadScene_1
 
 Route2_Intro_MeetBigBadScene_4:
-# 195 "data/maps/Route2/scripts.pory"
+# 196 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_ROUTE2_BIGBAD, Route2_Intro_MeetBigBadScene_Movement_1
-# 202 "data/maps/Route2/scripts.pory"
-	fadeoutbgm 2
 # 203 "data/maps/Route2/scripts.pory"
-	delay 120
+	fadeoutbgm 2
 # 204 "data/maps/Route2/scripts.pory"
+	delay 120
+# 205 "data/maps/Route2/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_SOUTH
 	goto Route2_Intro_MeetBigBadScene_1
 
 Route2_Intro_MeetBigBadScene_5:
-# 206 "data/maps/Route2/scripts.pory"
+# 207 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_ROUTE2_BIGBAD, Route2_Intro_MeetBigBadScene_Movement_2
-# 212 "data/maps/Route2/scripts.pory"
-	fadeoutbgm 2
 # 213 "data/maps/Route2/scripts.pory"
-	delay 120
+	fadeoutbgm 2
 # 214 "data/maps/Route2/scripts.pory"
+	delay 120
+# 215 "data/maps/Route2/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_NORTH
 	goto Route2_Intro_MeetBigBadScene_1
 
 Route2_Intro_MeetBigBadScene_6:
-# 216 "data/maps/Route2/scripts.pory"
+# 217 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_ROUTE2_BIGBAD, Route2_Intro_MeetBigBadScene_Movement_3
-# 223 "data/maps/Route2/scripts.pory"
-	fadeoutbgm 2
 # 224 "data/maps/Route2/scripts.pory"
-	delay 120
+	fadeoutbgm 2
 # 225 "data/maps/Route2/scripts.pory"
+	delay 120
+# 226 "data/maps/Route2/scripts.pory"
 	turnobject LOCALID_PLAYER, DIR_NORTH
 	goto Route2_Intro_MeetBigBadScene_1
 
 Route2_Intro_MeetBigBadScene_9:
-# 308 "data/maps/Route2/scripts.pory"
+# 306 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_ROUTE2_BIGBAD, Route2_Intro_MeetBigBadScene_Movement_5
 	goto Route2_Intro_MeetBigBadScene_7
 
 Route2_Intro_MeetBigBadScene_10:
-# 314 "data/maps/Route2/scripts.pory"
+# 312 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_ROUTE2_BIGBAD, Route2_Intro_MeetBigBadScene_Movement_6
 	goto Route2_Intro_MeetBigBadScene_7
 
 
 Route2_RouteSign::
-# 352 "data/maps/Route2/scripts.pory"
+# 347 "data/maps/Route2/scripts.pory"
 	msgbox Route2_RouteSign_Text_0, MSGBOX_SIGN
 	return
 
 
 Route2_Trainer_1::
-# 362 "data/maps/Route2/scripts.pory"
+# 357 "data/maps/Route2/scripts.pory"
 	trainerbattle_single TRAINER_ROUTE2_1, Route2_Trainer_1_Text_0, Route2_Trainer_1_Text_1
-# 377 "data/maps/Route2/scripts.pory"
+# 372 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Trainer_1_Text_2, MSGBOX_AUTOCLOSE
 	return
 
 
 Route2_Trainer_2::
-# 384 "data/maps/Route2/scripts.pory"
+# 379 "data/maps/Route2/scripts.pory"
 	trainerbattle_single TRAINER_ROUTE2_2, Route2_Trainer_2_Text_0, Route2_Trainer_2_Text_1
-# 395 "data/maps/Route2/scripts.pory"
+# 392 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Trainer_2_Text_2, MSGBOX_AUTOCLOSE
 	return
 
 
 Route2_Trainer_3::
-# 402 "data/maps/Route2/scripts.pory"
+# 400 "data/maps/Route2/scripts.pory"
 	trainerbattle_single TRAINER_ROUTE2_3, Route2_Trainer_3_Text_0, Route2_Trainer_3_Text_1
-# 412 "data/maps/Route2/scripts.pory"
+# 410 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Trainer_3_Text_2, MSGBOX_AUTOCLOSE
 	return
 
 
 Route2_Trainer_4::
-# 420 "data/maps/Route2/scripts.pory"
+# 418 "data/maps/Route2/scripts.pory"
 	trainerbattle_single TRAINER_ROUTE2_2, Route2_Trainer_4_Text_0, Route2_Trainer_4_Text_1
-# 431 "data/maps/Route2/scripts.pory"
+# 429 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Trainer_4_Text_2, MSGBOX_AUTOCLOSE
 	return
 
 
-# 438 "data/maps/Route2/scripts.pory"
+# 436 "data/maps/Route2/scripts.pory"
 Route2_Movement_CutTreeGuyJump:
-# 439 "data/maps/Route2/scripts.pory"
+# 437 "data/maps/Route2/scripts.pory"
 	jump_in_place_right
 	step_end
 
-# 42 "data/maps/Route2/scripts.pory"
-Route2_Intro_EnterForestScene_Movement_0:
-# 43 "data/maps/Route2/scripts.pory"
-	walk_up
-# 44 "data/maps/Route2/scripts.pory"
-	walk_left
-# 44 "data/maps/Route2/scripts.pory"
-	walk_left
-# 44 "data/maps/Route2/scripts.pory"
-	walk_left
 # 45 "data/maps/Route2/scripts.pory"
+Route2_Intro_EnterForestScene_Movement_0:
+# 46 "data/maps/Route2/scripts.pory"
+	walk_up
+# 47 "data/maps/Route2/scripts.pory"
+	walk_left
+# 47 "data/maps/Route2/scripts.pory"
+	walk_left
+# 47 "data/maps/Route2/scripts.pory"
+	walk_left
+# 48 "data/maps/Route2/scripts.pory"
 	face_down
 	step_end
 
-# 52 "data/maps/Route2/scripts.pory"
+# 55 "data/maps/Route2/scripts.pory"
 Route2_Intro_EnterForestScene_Movement_1:
-# 53 "data/maps/Route2/scripts.pory"
+# 56 "data/maps/Route2/scripts.pory"
 	walk_up
-# 54 "data/maps/Route2/scripts.pory"
-	walk_left
-	step_end
-
 # 57 "data/maps/Route2/scripts.pory"
+	walk_left
+	step_end
+
+# 60 "data/maps/Route2/scripts.pory"
 Route2_Intro_EnterForestScene_Movement_2:
-# 58 "data/maps/Route2/scripts.pory"
+# 61 "data/maps/Route2/scripts.pory"
 	walk_up
-# 59 "data/maps/Route2/scripts.pory"
-	walk_left
-# 59 "data/maps/Route2/scripts.pory"
-	walk_left
-	step_end
-
 # 62 "data/maps/Route2/scripts.pory"
+	walk_left
+# 62 "data/maps/Route2/scripts.pory"
+	walk_left
+	step_end
+
+# 65 "data/maps/Route2/scripts.pory"
 Route2_Intro_EnterForestScene_Movement_3:
-# 63 "data/maps/Route2/scripts.pory"
+# 66 "data/maps/Route2/scripts.pory"
 	walk_up
-# 64 "data/maps/Route2/scripts.pory"
-	walk_left
-# 64 "data/maps/Route2/scripts.pory"
-	walk_left
-# 64 "data/maps/Route2/scripts.pory"
-	walk_left
-	step_end
-
 # 67 "data/maps/Route2/scripts.pory"
+	walk_left
+# 67 "data/maps/Route2/scripts.pory"
+	walk_left
+# 67 "data/maps/Route2/scripts.pory"
+	walk_left
+	step_end
+
+# 70 "data/maps/Route2/scripts.pory"
 Route2_Intro_EnterForestScene_Movement_4:
-# 68 "data/maps/Route2/scripts.pory"
+# 71 "data/maps/Route2/scripts.pory"
 	walk_up
-# 69 "data/maps/Route2/scripts.pory"
-	walk_left
-# 69 "data/maps/Route2/scripts.pory"
-	walk_left
-# 69 "data/maps/Route2/scripts.pory"
-	walk_left
-# 69 "data/maps/Route2/scripts.pory"
-	walk_left
-	step_end
-
 # 72 "data/maps/Route2/scripts.pory"
+	walk_left
+# 72 "data/maps/Route2/scripts.pory"
+	walk_left
+# 72 "data/maps/Route2/scripts.pory"
+	walk_left
+# 72 "data/maps/Route2/scripts.pory"
+	walk_left
+	step_end
+
+# 75 "data/maps/Route2/scripts.pory"
 Route2_Intro_EnterForestScene_Movement_5:
-# 73 "data/maps/Route2/scripts.pory"
+# 76 "data/maps/Route2/scripts.pory"
 	walk_up
-# 74 "data/maps/Route2/scripts.pory"
+# 77 "data/maps/Route2/scripts.pory"
 	walk_left
-# 74 "data/maps/Route2/scripts.pory"
+# 77 "data/maps/Route2/scripts.pory"
 	walk_left
-# 74 "data/maps/Route2/scripts.pory"
+# 77 "data/maps/Route2/scripts.pory"
 	walk_left
-# 74 "data/maps/Route2/scripts.pory"
+# 77 "data/maps/Route2/scripts.pory"
 	walk_left
-# 74 "data/maps/Route2/scripts.pory"
+# 77 "data/maps/Route2/scripts.pory"
 	walk_left
 	step_end
 
-# 91 "data/maps/Route2/scripts.pory"
+# 128 "data/maps/Route2/scripts.pory"
 Route2_Intro_EnterForestScene_Movement_6:
-# 92 "data/maps/Route2/scripts.pory"
-	walk_in_place_right
-# 92 "data/maps/Route2/scripts.pory"
-	walk_in_place_right
+# 129 "data/maps/Route2/scripts.pory"
+	walk_right
+# 129 "data/maps/Route2/scripts.pory"
+	walk_right
+# 129 "data/maps/Route2/scripts.pory"
+	walk_right
+# 130 "data/maps/Route2/scripts.pory"
+	walk_up
+# 130 "data/maps/Route2/scripts.pory"
+	walk_up
+# 130 "data/maps/Route2/scripts.pory"
+	walk_up
+# 130 "data/maps/Route2/scripts.pory"
+	walk_up
+# 130 "data/maps/Route2/scripts.pory"
+	walk_up
 	step_end
 
-# 127 "data/maps/Route2/scripts.pory"
+# 132 "data/maps/Route2/scripts.pory"
 Route2_Intro_EnterForestScene_Movement_7:
-# 128 "data/maps/Route2/scripts.pory"
+# 133 "data/maps/Route2/scripts.pory"
 	walk_right
-# 128 "data/maps/Route2/scripts.pory"
+# 133 "data/maps/Route2/scripts.pory"
 	walk_right
-# 128 "data/maps/Route2/scripts.pory"
+# 133 "data/maps/Route2/scripts.pory"
 	walk_right
-# 129 "data/maps/Route2/scripts.pory"
+# 133 "data/maps/Route2/scripts.pory"
+	walk_right
+# 134 "data/maps/Route2/scripts.pory"
 	walk_up
-# 129 "data/maps/Route2/scripts.pory"
+# 134 "data/maps/Route2/scripts.pory"
 	walk_up
-# 129 "data/maps/Route2/scripts.pory"
+# 134 "data/maps/Route2/scripts.pory"
 	walk_up
-# 129 "data/maps/Route2/scripts.pory"
+# 134 "data/maps/Route2/scripts.pory"
 	walk_up
-# 129 "data/maps/Route2/scripts.pory"
+# 134 "data/maps/Route2/scripts.pory"
+	walk_up
+# 134 "data/maps/Route2/scripts.pory"
 	walk_up
 	step_end
 
-# 131 "data/maps/Route2/scripts.pory"
+# 166 "data/maps/Route2/scripts.pory"
 Route2_Intro_EnterForestScene_Movement_8:
-# 132 "data/maps/Route2/scripts.pory"
-	walk_right
-# 132 "data/maps/Route2/scripts.pory"
-	walk_right
-# 132 "data/maps/Route2/scripts.pory"
-	walk_right
-# 132 "data/maps/Route2/scripts.pory"
-	walk_right
-# 133 "data/maps/Route2/scripts.pory"
-	walk_up
-# 133 "data/maps/Route2/scripts.pory"
-	walk_up
-# 133 "data/maps/Route2/scripts.pory"
-	walk_up
-# 133 "data/maps/Route2/scripts.pory"
-	walk_up
-# 133 "data/maps/Route2/scripts.pory"
-	walk_up
-# 133 "data/maps/Route2/scripts.pory"
-	walk_up
-	step_end
-
-# 165 "data/maps/Route2/scripts.pory"
-Route2_Intro_EnterForestScene_Movement_9:
-# 166 "data/maps/Route2/scripts.pory"
-	walk_up
-# 166 "data/maps/Route2/scripts.pory"
-	walk_up
-# 166 "data/maps/Route2/scripts.pory"
-	walk_up
-# 166 "data/maps/Route2/scripts.pory"
-	walk_up
-# 166 "data/maps/Route2/scripts.pory"
+# 167 "data/maps/Route2/scripts.pory"
 	walk_up
 # 167 "data/maps/Route2/scripts.pory"
+	walk_up
+# 167 "data/maps/Route2/scripts.pory"
+	walk_up
+# 167 "data/maps/Route2/scripts.pory"
+	walk_up
+# 167 "data/maps/Route2/scripts.pory"
+	walk_up
+# 168 "data/maps/Route2/scripts.pory"
 	face_right
 	step_end
 
-# 170 "data/maps/Route2/scripts.pory"
-Route2_Intro_EnterForestScene_Movement_10:
 # 171 "data/maps/Route2/scripts.pory"
-	walk_up
-# 171 "data/maps/Route2/scripts.pory"
-	walk_up
-# 171 "data/maps/Route2/scripts.pory"
-	walk_up
-# 171 "data/maps/Route2/scripts.pory"
-	walk_up
-# 171 "data/maps/Route2/scripts.pory"
+Route2_Intro_EnterForestScene_Movement_9:
+# 172 "data/maps/Route2/scripts.pory"
 	walk_up
 # 172 "data/maps/Route2/scripts.pory"
+	walk_up
+# 172 "data/maps/Route2/scripts.pory"
+	walk_up
+# 172 "data/maps/Route2/scripts.pory"
+	walk_up
+# 172 "data/maps/Route2/scripts.pory"
+	walk_up
+# 173 "data/maps/Route2/scripts.pory"
 	face_left
 	step_end
 
-# 185 "data/maps/Route2/scripts.pory"
+# 186 "data/maps/Route2/scripts.pory"
 Route2_Intro_MeetBigBadScene_Movement_0:
-# 186 "data/maps/Route2/scripts.pory"
-	walk_right
-# 186 "data/maps/Route2/scripts.pory"
-	walk_right
-# 186 "data/maps/Route2/scripts.pory"
-	walk_right
-# 186 "data/maps/Route2/scripts.pory"
-	walk_right
-# 186 "data/maps/Route2/scripts.pory"
-	walk_right
-# 186 "data/maps/Route2/scripts.pory"
-	walk_right
-# 186 "data/maps/Route2/scripts.pory"
-	walk_right
-# 186 "data/maps/Route2/scripts.pory"
-	walk_right
-# 186 "data/maps/Route2/scripts.pory"
-	walk_right
-# 186 "data/maps/Route2/scripts.pory"
+# 187 "data/maps/Route2/scripts.pory"
 	walk_right
 # 187 "data/maps/Route2/scripts.pory"
-	delay_16
+	walk_right
 # 187 "data/maps/Route2/scripts.pory"
+	walk_right
+# 187 "data/maps/Route2/scripts.pory"
+	walk_right
+# 187 "data/maps/Route2/scripts.pory"
+	walk_right
+# 187 "data/maps/Route2/scripts.pory"
+	walk_right
+# 187 "data/maps/Route2/scripts.pory"
+	walk_right
+# 187 "data/maps/Route2/scripts.pory"
+	walk_right
+# 187 "data/maps/Route2/scripts.pory"
+	walk_right
+# 187 "data/maps/Route2/scripts.pory"
+	walk_right
+# 188 "data/maps/Route2/scripts.pory"
 	delay_16
 # 188 "data/maps/Route2/scripts.pory"
-	walk_left
-# 188 "data/maps/Route2/scripts.pory"
+	delay_16
+# 189 "data/maps/Route2/scripts.pory"
 	walk_left
 # 189 "data/maps/Route2/scripts.pory"
+	walk_left
+# 190 "data/maps/Route2/scripts.pory"
 	face_up
 	step_end
 
-# 195 "data/maps/Route2/scripts.pory"
-Route2_Intro_MeetBigBadScene_Movement_1:
 # 196 "data/maps/Route2/scripts.pory"
+Route2_Intro_MeetBigBadScene_Movement_1:
+# 197 "data/maps/Route2/scripts.pory"
 	walk_down
-# 197 "data/maps/Route2/scripts.pory"
-	walk_right
-# 197 "data/maps/Route2/scripts.pory"
-	walk_right
-# 197 "data/maps/Route2/scripts.pory"
-	walk_right
-# 197 "data/maps/Route2/scripts.pory"
-	walk_right
-# 197 "data/maps/Route2/scripts.pory"
-	walk_right
-# 197 "data/maps/Route2/scripts.pory"
-	walk_right
-# 197 "data/maps/Route2/scripts.pory"
-	walk_right
-# 197 "data/maps/Route2/scripts.pory"
-	walk_right
-# 197 "data/maps/Route2/scripts.pory"
-	walk_right
-# 197 "data/maps/Route2/scripts.pory"
+# 198 "data/maps/Route2/scripts.pory"
 	walk_right
 # 198 "data/maps/Route2/scripts.pory"
-	delay_16
+	walk_right
 # 198 "data/maps/Route2/scripts.pory"
+	walk_right
+# 198 "data/maps/Route2/scripts.pory"
+	walk_right
+# 198 "data/maps/Route2/scripts.pory"
+	walk_right
+# 198 "data/maps/Route2/scripts.pory"
+	walk_right
+# 198 "data/maps/Route2/scripts.pory"
+	walk_right
+# 198 "data/maps/Route2/scripts.pory"
+	walk_right
+# 198 "data/maps/Route2/scripts.pory"
+	walk_right
+# 198 "data/maps/Route2/scripts.pory"
+	walk_right
+# 199 "data/maps/Route2/scripts.pory"
 	delay_16
 # 199 "data/maps/Route2/scripts.pory"
-	walk_left
-# 199 "data/maps/Route2/scripts.pory"
+	delay_16
+# 200 "data/maps/Route2/scripts.pory"
 	walk_left
 # 200 "data/maps/Route2/scripts.pory"
+	walk_left
+# 201 "data/maps/Route2/scripts.pory"
 	face_up
 	step_end
 
-# 206 "data/maps/Route2/scripts.pory"
+# 207 "data/maps/Route2/scripts.pory"
 Route2_Intro_MeetBigBadScene_Movement_2:
-# 207 "data/maps/Route2/scripts.pory"
-	walk_right
-# 207 "data/maps/Route2/scripts.pory"
-	walk_right
-# 207 "data/maps/Route2/scripts.pory"
-	walk_right
-# 207 "data/maps/Route2/scripts.pory"
-	walk_right
-# 207 "data/maps/Route2/scripts.pory"
-	walk_right
-# 207 "data/maps/Route2/scripts.pory"
-	walk_right
-# 207 "data/maps/Route2/scripts.pory"
-	walk_right
-# 207 "data/maps/Route2/scripts.pory"
-	walk_right
-# 207 "data/maps/Route2/scripts.pory"
-	walk_right
-# 207 "data/maps/Route2/scripts.pory"
+# 208 "data/maps/Route2/scripts.pory"
 	walk_right
 # 208 "data/maps/Route2/scripts.pory"
-	delay_16
+	walk_right
 # 208 "data/maps/Route2/scripts.pory"
+	walk_right
+# 208 "data/maps/Route2/scripts.pory"
+	walk_right
+# 208 "data/maps/Route2/scripts.pory"
+	walk_right
+# 208 "data/maps/Route2/scripts.pory"
+	walk_right
+# 208 "data/maps/Route2/scripts.pory"
+	walk_right
+# 208 "data/maps/Route2/scripts.pory"
+	walk_right
+# 208 "data/maps/Route2/scripts.pory"
+	walk_right
+# 208 "data/maps/Route2/scripts.pory"
+	walk_right
+# 209 "data/maps/Route2/scripts.pory"
 	delay_16
 # 209 "data/maps/Route2/scripts.pory"
-	walk_left
-# 209 "data/maps/Route2/scripts.pory"
+	delay_16
+# 210 "data/maps/Route2/scripts.pory"
 	walk_left
 # 210 "data/maps/Route2/scripts.pory"
+	walk_left
+# 211 "data/maps/Route2/scripts.pory"
 	face_down
 	step_end
 
-# 216 "data/maps/Route2/scripts.pory"
-Route2_Intro_MeetBigBadScene_Movement_3:
 # 217 "data/maps/Route2/scripts.pory"
+Route2_Intro_MeetBigBadScene_Movement_3:
+# 218 "data/maps/Route2/scripts.pory"
 	walk_down
-# 218 "data/maps/Route2/scripts.pory"
-	walk_right
-# 218 "data/maps/Route2/scripts.pory"
-	walk_right
-# 218 "data/maps/Route2/scripts.pory"
-	walk_right
-# 218 "data/maps/Route2/scripts.pory"
-	walk_right
-# 218 "data/maps/Route2/scripts.pory"
-	walk_right
-# 218 "data/maps/Route2/scripts.pory"
-	walk_right
-# 218 "data/maps/Route2/scripts.pory"
-	walk_right
-# 218 "data/maps/Route2/scripts.pory"
-	walk_right
-# 218 "data/maps/Route2/scripts.pory"
-	walk_right
-# 218 "data/maps/Route2/scripts.pory"
+# 219 "data/maps/Route2/scripts.pory"
 	walk_right
 # 219 "data/maps/Route2/scripts.pory"
-	delay_16
+	walk_right
 # 219 "data/maps/Route2/scripts.pory"
+	walk_right
+# 219 "data/maps/Route2/scripts.pory"
+	walk_right
+# 219 "data/maps/Route2/scripts.pory"
+	walk_right
+# 219 "data/maps/Route2/scripts.pory"
+	walk_right
+# 219 "data/maps/Route2/scripts.pory"
+	walk_right
+# 219 "data/maps/Route2/scripts.pory"
+	walk_right
+# 219 "data/maps/Route2/scripts.pory"
+	walk_right
+# 219 "data/maps/Route2/scripts.pory"
+	walk_right
+# 220 "data/maps/Route2/scripts.pory"
 	delay_16
 # 220 "data/maps/Route2/scripts.pory"
-	walk_left
-# 220 "data/maps/Route2/scripts.pory"
+	delay_16
+# 221 "data/maps/Route2/scripts.pory"
 	walk_left
 # 221 "data/maps/Route2/scripts.pory"
+	walk_left
+# 222 "data/maps/Route2/scripts.pory"
 	face_down
 	step_end
 
-# 261 "data/maps/Route2/scripts.pory"
+# 266 "data/maps/Route2/scripts.pory"
 Route2_Intro_MeetBigBadScene_Movement_4:
-# 262 "data/maps/Route2/scripts.pory"
+# 267 "data/maps/Route2/scripts.pory"
 	walk_left
 	step_end
 
-# 308 "data/maps/Route2/scripts.pory"
+# 306 "data/maps/Route2/scripts.pory"
 Route2_Intro_MeetBigBadScene_Movement_5:
-# 309 "data/maps/Route2/scripts.pory"
+# 307 "data/maps/Route2/scripts.pory"
 	walk_right
-# 310 "data/maps/Route2/scripts.pory"
+# 308 "data/maps/Route2/scripts.pory"
 	face_up
 	step_end
 
-# 314 "data/maps/Route2/scripts.pory"
+# 312 "data/maps/Route2/scripts.pory"
 Route2_Intro_MeetBigBadScene_Movement_6:
-# 315 "data/maps/Route2/scripts.pory"
+# 313 "data/maps/Route2/scripts.pory"
 	walk_right
-# 316 "data/maps/Route2/scripts.pory"
+# 314 "data/maps/Route2/scripts.pory"
 	face_down
 	step_end
 
-# 337 "data/maps/Route2/scripts.pory"
+# 332 "data/maps/Route2/scripts.pory"
 Route2_Intro_MeetBigBadScene_Movement_7:
-# 338 "data/maps/Route2/scripts.pory"
+# 333 "data/maps/Route2/scripts.pory"
 	walk_right
-# 338 "data/maps/Route2/scripts.pory"
+# 333 "data/maps/Route2/scripts.pory"
 	walk_right
-# 338 "data/maps/Route2/scripts.pory"
+# 333 "data/maps/Route2/scripts.pory"
 	walk_right
-# 338 "data/maps/Route2/scripts.pory"
+# 333 "data/maps/Route2/scripts.pory"
 	walk_right
-# 339 "data/maps/Route2/scripts.pory"
+# 334 "data/maps/Route2/scripts.pory"
 	walk_up
-# 339 "data/maps/Route2/scripts.pory"
+# 334 "data/maps/Route2/scripts.pory"
 	walk_up
-# 339 "data/maps/Route2/scripts.pory"
+# 334 "data/maps/Route2/scripts.pory"
 	walk_up
-# 339 "data/maps/Route2/scripts.pory"
+# 334 "data/maps/Route2/scripts.pory"
 	walk_up
-# 339 "data/maps/Route2/scripts.pory"
+# 334 "data/maps/Route2/scripts.pory"
 	walk_up
-# 339 "data/maps/Route2/scripts.pory"
+# 334 "data/maps/Route2/scripts.pory"
 	walk_up
-# 339 "data/maps/Route2/scripts.pory"
+# 334 "data/maps/Route2/scripts.pory"
 	walk_up
 	step_end
 
@@ -688,18 +684,18 @@ Route2_Talk_CutTreePerson_Text_0:
 	.string "Ow! Ow! Ow!$"
 
 Route2_Intro_EnterForestScene_Text_0:
-# 37 "data/maps/Route2/scripts.pory"
+# 40 "data/maps/Route2/scripts.pory"
 	.string "MAYA: Hey!\n"
 	.string "Try to keep up, {PLAYER}!$"
 
 Route2_Intro_EnterForestScene_Text_1:
-# 81 "data/maps/Route2/scripts.pory"
+# 84 "data/maps/Route2/scripts.pory"
 	.string "MAYA: Looks like the road is still\n"
 	.string "blocked off here.\l"
 	.string "But no worries! This guy is on it!$"
 
 Route2_Intro_EnterForestScene_Text_2:
-# 96 "data/maps/Route2/scripts.pory"
+# 97 "data/maps/Route2/scripts.pory"
 	.string "Hoo hah!\n"
 	.string "This thorny obstacle stands opposed\l"
 	.string "to freedom and justice!\p"
@@ -707,39 +703,39 @@ Route2_Intro_EnterForestScene_Text_2:
 	.string "ROCK SMASH attack!$"
 
 Route2_Intro_EnterForestScene_Text_3:
-# 110 "data/maps/Route2/scripts.pory"
+# 111 "data/maps/Route2/scripts.pory"
 	.string "Ow!\n"
 	.string "Ow ow ow!$"
 
 Route2_Intro_EnterForestScene_Text_4:
-# 122 "data/maps/Route2/scripts.pory"
+# 123 "data/maps/Route2/scripts.pory"
 	.string "MAYA: …I think he's gonna take a while.$"
 
 Route2_Intro_EnterForestScene_Text_5:
-# 139 "data/maps/Route2/scripts.pory"
+# 140 "data/maps/Route2/scripts.pory"
 	.string "Ow ow ow!$"
 
 Route2_Intro_EnterForestScene_Text_6:
-# 146 "data/maps/Route2/scripts.pory"
+# 147 "data/maps/Route2/scripts.pory"
 	.string "MAYA: The only other way is through \n"
 	.string "Nautirust Forest.$"
 
 Route2_Intro_EnterForestScene_Text_7:
-# 155 "data/maps/Route2/scripts.pory"
+# 156 "data/maps/Route2/scripts.pory"
 	.string "Remember how we used to play here when\n"
 	.string "we were kids?\p"
 	.string "I'm sure there's a trail we can take to \n"
 	.string "get to the city.$"
 
 Route2_Intro_MeetBigBadScene_Text_0:
-# 230 "data/maps/Route2/scripts.pory"
+# 231 "data/maps/Route2/scripts.pory"
 	.string "Pardon me, but… \n"
 	.string "You are a fledgeling Pokémon trainer, \l"
 	.string "are you not?\p"
 	.string "There's no denying it. You have that \n"
-	.string "glint in your eyes, the unmistakable \l"
-	.string "shine of one who has just received \l"
-	.string "their first Pokémon.\p"
+	.string "unmistakable glint in your eyes, of one \l"
+	.string "who has just received their first \l"
+	.string "Pokémon.\p"
 	.string "Ah, but where are my manners? \n"
 	.string "My name is Slater. I am but a wandering \l"
 	.string "old soul.\p"
@@ -753,10 +749,13 @@ Route2_Intro_MeetBigBadScene_Text_0:
 	.string "many mysteries of these curious \l"
 	.string "creatures?\p"
 	.string "Or is it something else? A greater \n"
-	.string "purpose, perhaps?$"
+	.string "purpose, perhaps?\p"
+	.string "Whatever it may be, I am sure that \n"
+	.string "nothing will keep you from your \l"
+	.string "ambition.$"
 
 Route2_Intro_MeetBigBadScene_Text_1:
-# 267 "data/maps/Route2/scripts.pory"
+# 273 "data/maps/Route2/scripts.pory"
 	.string "SLATER: …Young trainer, ahead of you \n"
 	.string "lies Nautirust City.\p"
 	.string "Long ago, this city was a bastion of \n"
@@ -764,95 +763,89 @@ Route2_Intro_MeetBigBadScene_Text_1:
 	.string "Factories and workers, ushering in a \n"
 	.string "new age of prosperity for the whole \l"
 	.string "world.\p"
-	.string "Its smokestacks were monuments to \n"
-	.string "humanity, and its flywheels spun the \l"
+	.string "The city's smokestacks were monuments \n"
+	.string "to humanity, and its flywheels spun the \l"
 	.string "earth itself.\p"
 	.string "That was a lifetime ago, though. \n"
-	.string "In time, the new age this city created… \l"
-	.string "left it behind.\p"
-	.string "One by one, the factories shut their \n"
-	.string "doors.\p"
-	.string "Their lifeblood gone, the workers \n"
-	.string "were forced to search for a new\l"
-	.string "identity.\p"
-	.string "In all change, it seems, something is \n"
-	.string "lost.\p"
-	.string "Nowadays, the city before you persists \n"
-	.string "as a mere stepping stone, in the \l"
-	.string "journeys of travelers and Pokémon \l"
-	.string "trainers such as yourself.\p"
+	.string "One day, the last factory closed its \l"
+	.string "doors, and the city's soul was lost.\p"
+	.string "Nowadays, it persists due to the \n"
+	.string "phenomenon that is Pokémon training. \p"
+	.string "A mere stepping stone, in the journeys \n"
+	.string "of travelers and Pokémon trainers \l"
+	.string "such as yourself.\p"
 	.string "Some call it a revival.$"
 
 Route2_Intro_MeetBigBadScene_Text_2:
-# 322 "data/maps/Route2/scripts.pory"
+# 320 "data/maps/Route2/scripts.pory"
 	.string "SLATER: …Forgive me. I have kept you\n"
 	.string "for too long.\p"
-	.string "I am sure that nothing will stop you on \n"
-	.string "your journey.\p"
 	.string "If I may leave you with one thing, \n"
 	.string "young trainer, a word of advice…\p"
 	.string "All that you touch, you change.\p"
 	.string "May we meet again.$"
 
 Route2_RouteSign_Text_0:
-# 353 "data/maps/Route2/scripts.pory"
+# 348 "data/maps/Route2/scripts.pory"
 	.string "ROUTE 2\n"
 	.string "{RIGHT_ARROW} MARINACRE TOWN\l"
 	.string "{LEFT_ARROW} NAUTIRUST CITY\l"
 	.string "{UP_ARROW} NAUTIRUST FOREST$"
 
 Route2_Trainer_1_Text_0:
-# 366 "data/maps/Route2/scripts.pory"
+# 361 "data/maps/Route2/scripts.pory"
 	.string "You!\n"
 	.string "You're a Pokémon trainer, aren't you?\p"
 	.string "But you look like a total newbie!\n"
 	.string "This'll be easy!$"
 
 Route2_Trainer_1_Text_1:
-# 373 "data/maps/Route2/scripts.pory"
+# 368 "data/maps/Route2/scripts.pory"
 	.string "N-No fair!\n"
 	.string "That's a rare Pokémon!$"
 
 Route2_Trainer_1_Text_2:
-# 378 "data/maps/Route2/scripts.pory"
+# 373 "data/maps/Route2/scripts.pory"
 	.string "I underestimated you…$"
 
 Route2_Trainer_2_Text_0:
-# 388 "data/maps/Route2/scripts.pory"
-	.string "Bugs!\n"
-	.string "Bugs bugs bugs!$"
+# 383 "data/maps/Route2/scripts.pory"
+	.string "If two Pokémon trainers' eyes meet,\n"
+	.string "then it's a battle!\p"
+	.string "You can't refuse my challenge!$"
 
 Route2_Trainer_2_Text_1:
-# 392 "data/maps/Route2/scripts.pory"
-	.string "Bugggsss!$"
+# 389 "data/maps/Route2/scripts.pory"
+	.string "I shouldn't have looked!$"
 
 Route2_Trainer_2_Text_2:
-# 396 "data/maps/Route2/scripts.pory"
-	.string "Hi, I'm Bimmy.$"
+# 393 "data/maps/Route2/scripts.pory"
+	.string "If you don't want to battle, then\n"
+	.string "keep your eyes to yourself!$"
 
 Route2_Trainer_3_Text_0:
-# 406 "data/maps/Route2/scripts.pory"
+# 404 "data/maps/Route2/scripts.pory"
 	.string "I'm looking for cute Pokémon!$"
 
 Route2_Trainer_3_Text_1:
-# 409 "data/maps/Route2/scripts.pory"
+# 407 "data/maps/Route2/scripts.pory"
 	.string "Not cute!$"
 
 Route2_Trainer_3_Text_2:
-# 413 "data/maps/Route2/scripts.pory"
+# 411 "data/maps/Route2/scripts.pory"
 	.string "I like cute Pokémon, but my friend\n"
 	.string "here only likes gross Bug types…$"
 
 Route2_Trainer_4_Text_0:
-# 424 "data/maps/Route2/scripts.pory"
+# 422 "data/maps/Route2/scripts.pory"
 	.string "I'll take you on with the cool Bug\n"
 	.string "Pokémon I found in the woods!$"
 
 Route2_Trainer_4_Text_1:
-# 428 "data/maps/Route2/scripts.pory"
-	.string "$"
+# 426 "data/maps/Route2/scripts.pory"
+	.string "Bugggsss!$"
 
 Route2_Trainer_4_Text_2:
-# 432 "data/maps/Route2/scripts.pory"
+# 430 "data/maps/Route2/scripts.pory"
 	.string "My girlfriend doesn't like Bug Pokémon…\n"
-	.string "What's wrong with bugs?$"
+	.string "What's wrong with her?$"

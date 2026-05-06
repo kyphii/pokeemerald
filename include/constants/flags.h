@@ -67,7 +67,7 @@
 #define FLAG_STORY_MET_CUT_MASTER       0x2D
 #define FLAG_STORY_CUT_MASTER_AWAY      0x2E
 #define FLAG_ROUTE_4_MET_HEALER         0x2F
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
+#define FLAG_INTRO_CLEAR_EXTRA_FOREST_TRAINERS    0x30
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
@@ -1067,10 +1067,10 @@
 #define FLAG_ITEM_NAUTIRUST_CITY_2                                  0x3F9
 #define FLAG_ITEM_MOUNT_BRIAR_1                                     0x3FA
 #define FLAG_ITEM_MOUNT_BRIAR_2                                     0x3FB
-#define FLAG_ITEM_ROUTE_116_REPEL                                   0x3FC
-#define FLAG_ITEM_ROUTE_116_HP_UP                                   0x3FD
-#define FLAG_ITEM_ROUTE_117_GREAT_BALL                              0x3FE
-#define FLAG_ITEM_ROUTE_117_REVIVE                                  0x3FF
+#define FLAG_ITEM_NAUTIRUST_FOREST_1                                0x3FC
+#define FLAG_ITEM_NAUTIRUST_FOREST_2                                0x3FD
+#define FLAG_ITEM_NAUTIRUST_FOREST_3                                0x3FE
+#define FLAG_ITEM_NAUTIRUST_FOREST_4                                0x3FF
 #define FLAG_ITEM_ROUTE_119_SUPER_REPEL                             0x400
 #define FLAG_ITEM_ROUTE_119_ZINC                                    0x401
 #define FLAG_ITEM_ROUTE_119_ELIXIR_1                                0x402
