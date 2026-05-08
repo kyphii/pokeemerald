@@ -68,8 +68,8 @@
 #define FLAG_STORY_CUT_MASTER_AWAY      0x2E
 #define FLAG_ROUTE_4_MET_HEALER         0x2F
 #define FLAG_INTRO_CLEAR_EXTRA_FOREST_TRAINERS    0x30
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
+#define FLAG_LEVEL_NAUTIRUST_FOREST    0x31
+#define FLAG_LEVEL_ROUTE_4    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
@@ -128,7 +128,7 @@
 #define FLAG_MOSSDEEP_GYM_SWITCH_3           0x66 //
 #define FLAG_MOSSDEEP_GYM_SWITCH_4           0x67 //
 
-#define FLAG_UNUSED_0x068                    0x68  // Unused Flag
+#define FLAG_EXP_SHARE_ENABLED               0x68
 
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
@@ -1219,26 +1219,26 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_EXP_SHARE_ENABLED                                      0x493 // Unused Flag
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
-#define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
+#define FLAG_VISITED_MARINACRE_TOWN                                 0x493 // Unused Flag
+#define FLAG_VISITED_HAWTHORN_LABS                                  0x494 // Unused Flag
+#define FLAG_VISITED_NAUTIRUST_CITY                                 0x495 // Unused Flag
+#define FLAG_VISITED_WHELCHORD_CITY                                 0x496 // Unused Flag
+#define FLAG_VISITED_ARMITER_CITY                                   0x497 // Unused Flag
+#define FLAG_VISITED_JUNOPOLIS_CITY                                 0x498 // Unused Flag
+#define FLAG_VISITED_CANVENUS_CITY                                  0x499 // Unused Flag
+#define FLAG_VISITED_VOLUTIDE_TOWN                                  0x49A // Unused Flag
+#define FLAG_VISITED_NERILIGHT_CITY                                 0x49B // Unused Flag
+#define FLAG_VISITED_QUAHEART_CITY                                  0x49C // Unused Flag
+#define FLAG_VISITED_SNOWRIE_TOWN                                   0x49D // Unused Flag
+#define FLAG_VISITED_PERIWIND_CITY                                  0x49E // Unused Flag
+#define FLAG_VISITED_GARDELLIN_ISLAND                               0x49F // Unused Flag
+#define FLAG_VISITED_ABALOVE_TOWN                                   0x4A0 // Unused Flag
+#define FLAG_VISITED_POKEMON_LEAGUE                                 0x4A1 // Unused Flag
+#define FLAG_VISITED_MOUNT_BRIAR                                    0x4A2 // Unused Flag
+#define FLAG_VISITED_BLEAKROCK_PASS                                 0x4A3 // Unused Flag
+#define FLAG_VISITED_OLD_PRINCES_TRAIL                              0x4A4 // Unused Flag
+#define FLAG_VISITED_DESERT_SANCTUARY                               0x4A5 // Unused Flag
+#define FLAG_VISITED_WANDERING_CAVE                                 0x4A6 // Unused Flag
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag

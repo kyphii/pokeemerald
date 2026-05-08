@@ -78,9 +78,7 @@ Route20_Script_TalkWithMaya_9:
 	setvar VAR_STORY_STATE_ACT1_B, 2
 # 83 "data/maps/Route20/scripts.pory"
 	clearflag FLAG_STORY_ROUTE4_TRAIL_HINT
-# 84 "data/maps/Route20/scripts.pory"
-	addplayerlevel 1
-# 86 "data/maps/Route20/scripts.pory"
+# 85 "data/maps/Route20/scripts.pory"
 	releaseall
 	return
 
@@ -116,64 +114,64 @@ Route20_Script_TalkWithMaya_12:
 
 
 Route20_Script_TalkCrowdOldMan::
-# 90 "data/maps/Route20/scripts.pory"
+# 89 "data/maps/Route20/scripts.pory"
 	lock
-# 91 "data/maps/Route20/scripts.pory"
+# 90 "data/maps/Route20/scripts.pory"
 	faceplayer
-# 92 "data/maps/Route20/scripts.pory"
+# 91 "data/maps/Route20/scripts.pory"
 	msgbox Route20_Script_TalkCrowdOldMan_Text_0, MSGBOX_DEFAULT
-# 99 "data/maps/Route20/scripts.pory"
+# 98 "data/maps/Route20/scripts.pory"
 	compare VAR_STORY_STATE_ACT1_B, 0
 	goto_if_eq Route20_Script_TalkCrowdOldMan_2
 Route20_Script_TalkCrowdOldMan_1:
-# 102 "data/maps/Route20/scripts.pory"
+# 101 "data/maps/Route20/scripts.pory"
 	release
 	return
 
 Route20_Script_TalkCrowdOldMan_2:
-# 100 "data/maps/Route20/scripts.pory"
+# 99 "data/maps/Route20/scripts.pory"
 	setvar VAR_STORY_STATE_ACT1_B, 1
 	goto Route20_Script_TalkCrowdOldMan_1
 
 
 Route20_Script_TalkCrowdMan::
-# 106 "data/maps/Route20/scripts.pory"
+# 105 "data/maps/Route20/scripts.pory"
 	lock
-# 107 "data/maps/Route20/scripts.pory"
+# 106 "data/maps/Route20/scripts.pory"
 	faceplayer
-# 108 "data/maps/Route20/scripts.pory"
+# 107 "data/maps/Route20/scripts.pory"
 	msgbox Route20_Script_TalkCrowdMan_Text_0, MSGBOX_DEFAULT
-# 114 "data/maps/Route20/scripts.pory"
+# 113 "data/maps/Route20/scripts.pory"
 	compare VAR_STORY_STATE_ACT1_B, 0
 	goto_if_eq Route20_Script_TalkCrowdMan_2
 Route20_Script_TalkCrowdMan_1:
-# 117 "data/maps/Route20/scripts.pory"
+# 116 "data/maps/Route20/scripts.pory"
 	release
 	return
 
 Route20_Script_TalkCrowdMan_2:
-# 115 "data/maps/Route20/scripts.pory"
+# 114 "data/maps/Route20/scripts.pory"
 	setvar VAR_STORY_STATE_ACT1_B, 1
 	goto Route20_Script_TalkCrowdMan_1
 
 
 Route20_Script_TalkCrowdWoman::
-# 121 "data/maps/Route20/scripts.pory"
+# 120 "data/maps/Route20/scripts.pory"
 	lock
-# 122 "data/maps/Route20/scripts.pory"
+# 121 "data/maps/Route20/scripts.pory"
 	faceplayer
-# 123 "data/maps/Route20/scripts.pory"
+# 122 "data/maps/Route20/scripts.pory"
 	msgbox Route20_Script_TalkCrowdWoman_Text_0, MSGBOX_DEFAULT
-# 131 "data/maps/Route20/scripts.pory"
+# 130 "data/maps/Route20/scripts.pory"
 	compare VAR_STORY_STATE_ACT1_B, 0
 	goto_if_eq Route20_Script_TalkCrowdWoman_2
 Route20_Script_TalkCrowdWoman_1:
-# 134 "data/maps/Route20/scripts.pory"
+# 133 "data/maps/Route20/scripts.pory"
 	release
 	return
 
 Route20_Script_TalkCrowdWoman_2:
-# 132 "data/maps/Route20/scripts.pory"
+# 131 "data/maps/Route20/scripts.pory"
 	setvar VAR_STORY_STATE_ACT1_B, 1
 	goto Route20_Script_TalkCrowdWoman_1
 
@@ -260,18 +258,18 @@ Route20_Script_TalkWithMaya_Text_1:
 	.string "okay?$"
 
 Route20_Script_TalkCrowdOldMan_Text_0:
-# 93 "data/maps/Route20/scripts.pory"
+# 92 "data/maps/Route20/scripts.pory"
 	.string "This is preposterous!\n"
 	.string "Just what is going on up there?\p"
 	.string "At this rate, I'll be late for my haircut!$"
 
 Route20_Script_TalkCrowdMan_Text_0:
-# 109 "data/maps/Route20/scripts.pory"
+# 108 "data/maps/Route20/scripts.pory"
 	.string "It's always something in this city.\p"
 	.string "Average Wohnet traffic, am I right?$"
 
 Route20_Script_TalkCrowdWoman_Text_0:
-# 124 "data/maps/Route20/scripts.pory"
+# 123 "data/maps/Route20/scripts.pory"
 	.string "There's some people up there,\n"
 	.string "holding up the whole road…\p"
 	.string "They're yelling about something, but I\n"

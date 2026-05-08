@@ -1,1 +1,12 @@
-mapscripts WhelchordCity_MapScripts {}
+mapscripts WhelchordCity_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		if (!flag(FLAG_VISITED_WHELCHORD_CITY)) {
+			setflag(FLAG_VISITED_WHELCHORD_CITY)
+			addplayerlevel(1)
+				
+			// Move Maya here for story
+			setvar(VAR_MAYA_CURRENT_CITY, 2)
+			setvar(VAR_MAYA_CURRENT_POSITION, 0)
+		}
+	}
+}

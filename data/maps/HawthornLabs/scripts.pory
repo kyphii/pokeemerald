@@ -1,6 +1,6 @@
 mapscripts HawthornLabs_MapScripts {
     MAP_SCRIPT_ON_LOAD {
-		setflag(FLAG_VISITED_OLDALE_TOWN)
+		setflag(FLAG_VISITED_HAWTHORN_LABS)
 		// INTRO: Rival needs to be readded
 		if (var(VAR_INTRO_SEQUENCE_STATE) == 4) {
 			// Make sure this flag is unset

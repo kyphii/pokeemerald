@@ -32,7 +32,7 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 50,
+      "x": 48,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_WANDERING_CAVE",

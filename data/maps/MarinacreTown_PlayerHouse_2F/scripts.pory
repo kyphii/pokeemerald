@@ -75,11 +75,22 @@ script Debug_Talk_DevMenu {
 	)
 
     dynmultichoice(25, 6, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE,
-		"Trainer Level", "Cancel")
+		"Trainer Level", "Maya Location", "Cancel")
     switch(var(VAR_RESULT)) {
         case 0: //Adjust Trainer Level
 			goto(Debug_Script_TrainerLevel)
+		case 1:
+			msgbox(
+				"Ok, done!
+				
+				I've reset Maya's location
+				to Nautirust City.",
+				MSGBOX_DEFAULT
+			)
+			setvar(VAR_MAYA_CURRENT_CITY, 1)
+			setvar(VAR_MAYA_CURRENT_POSITION, 0)
 	}
+	closemessage
 	releaseall
 }
 

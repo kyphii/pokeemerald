@@ -1,7 +1,7 @@
 mapscripts JunopolisCity_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
-		if (!flag(FLAG_VISITED_MAUVILLE_CITY)) {
-			setflag(FLAG_VISITED_MAUVILLE_CITY)
+		if (!flag(FLAG_VISITED_JUNOPOLIS_CITY)) {
+			setflag(FLAG_VISITED_JUNOPOLIS_CITY)
 			setflag(FLAG_STORY_ROUTE20_CROWD_CLEAR)
 			addplayerlevel(1)
 		}

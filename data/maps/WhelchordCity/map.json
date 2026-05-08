@@ -32,10 +32,10 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 24,
-      "y": 7,
+      "x": 4,
+      "y": 32,
       "elevation": 0,
-      "dest_map": "MAP_WHELCHORD_CITY_POKEMON_CENTER",
+      "dest_map": "MAP_WANDERING_CAVE",
       "dest_warp_id": "0"
     },
     {
@@ -50,6 +50,13 @@
       "y": 21,
       "elevation": 0,
       "dest_map": "MAP_WHELCHORD_CITY_GYM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_WHELCHORD_CITY_POKEMON_CENTER",
       "dest_warp_id": "0"
     }
   ],

@@ -1,21 +1,51 @@
 mapscripts NautirustCity_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
-		if (!flag(FLAG_VISITED_PETALBURG_CITY)) {
-			setflag(FLAG_VISITED_PETALBURG_CITY)
+		if (!flag(FLAG_VISITED_NAUTIRUST_CITY)) {
+			setflag(FLAG_VISITED_NAUTIRUST_CITY)
 			
 			// Setup flags for story Act 1
 			setflag(FLAG_STORY_CUT_MASTER_AWAY)
 			// Scene on Route 20 unsets this flag
 			setflag(FLAG_STORY_ROUTE4_TRAIL_HINT)
 			addplayerlevel(1)
+			
+			// Move Maya here for story
+			setvar(VAR_MAYA_CURRENT_CITY, 1)
+			setvar(VAR_MAYA_CURRENT_POSITION, 0)
 		}
 	}
+	MAP_SCRIPT_ON_LOAD {
+		if (var(VAR_MAYA_CURRENT_CITY) == 1) {
+			if (var(VAR_MAYA_CURRENT_POSITION) != 0) {
+				setvar(VAR_0x8004, 5)
+				special(RandomizeMayaLocation)
+			}
+			switch (var(VAR_MAYA_CURRENT_POSITION)) {
+				case 1:
+					setobjectxyperm(LOCALID_NAUTIRUST_MAYA, 7, 12)
+				case 2:
+					setobjectxyperm(LOCALID_NAUTIRUST_MAYA, 29, 20)
+				case 3:
+					setobjectxyperm(LOCALID_NAUTIRUST_MAYA, 14, 38)
+				default:
+					setobjectxyperm(LOCALID_NAUTIRUST_MAYA, 0, -8)
+			}
+		}
+	}
+}
+
+script NautirustCity_Sign_TrainerAcademy {
+	msgbox(
+        "Nautirust Trainer's Academy", 
+        MSGBOX_SIGN
+    )
 }
 
 script NautirustCity_Sign_TownSign {
 	msgbox(
         "NAUTIRUST CITY
-        Streams of energy, to power a new age.", 
+        Streams of energy, powering the gears 
+		of history.", 
         MSGBOX_SIGN
     )
 }
@@ -27,6 +57,94 @@ script NautirustCity_Sign_GymSign {
 		The Sultan of Soil!", 
         MSGBOX_SIGN
     )
+}
+
+script NautirustCity_Script_TalkMaya {
+	lock
+	faceplayer
+	switch (var(VAR_MAYA_CURRENT_POSITION)) {
+		case 1:
+			getplayerlevel
+			if (flag(FLAG_BADGE01_GET)) {
+				msgbox(
+					"MAYA: Woah, {PLAYER}!
+					You beat the gym challenge too?
+					
+					That means it's official!
+					We're rivals now!
+					
+					You're on, {PLAYER}!
+					I'm gonna beat all the gyms in Wohnet 
+					first!
+					
+					You better keep up! 
+					I need you to keep me sharp!",
+					MSGBOX_DEFAULT
+				)
+			}
+			elif (var(VAR_RESULT) < 12) {
+				msgbox(
+					"MAYA: Hey!
+					
+					Did you take a look inside the gym yet?
+					
+					I checked it out, but they told me I
+					should train more before I can
+					challenge the Gym Leader.
+					
+					Okay, {PLAYER}!
+					Let's get strong enough to take on
+					that gym!",
+					MSGBOX_DEFAULT
+				)
+			}
+			else {
+				msgbox(
+					"MAYA: Hey, {PLAYER}!
+					Guess what?
+					
+					I got a gym badge!
+					
+					You should try it out too.
+					You better keep up with me!",
+					MSGBOX_DEFAULT
+				)
+			}
+		case 2:
+			msgbox(
+				"MAYA: To be honest, I never really liked 
+				passing through this city before.
+
+				It always seemed so dreary.
+
+				But now that we're traveling with 
+				Pok\emon…
+
+				I dunno. It's making me see things 
+				through a different lens, I guess.",
+				MSGBOX_DEFAULT
+			)
+		case 3:
+			msgbox(
+				"MAYA: So, if we go west from here, it'll 
+				take us through Whelchord City, and 
+				then to the Pok\e Ball factory in 
+				Armiter City.
+
+				Or we could go south through Junopolis 
+				City to reach Canvenus City.
+				
+				It's gonna be a pretty long journey 
+				either way.
+
+				Which road should we take?",
+				MSGBOX_DEFAULT
+			)
+	}
+	setvar(VAR_0x8004, 5)
+	special(RandomizeMayaLocation)
+	closemessage
+	release
 }
 
 script NautirustCity_Script_TalkGreeter {
@@ -117,6 +235,7 @@ script NautirustCity_Script_TalkExpShareStore {
 						MSGBOX_DEFAULT
 					)
 					removemoney(5000)
+					hidemoneybox
 					giveitem(ITEM_EXP_SHARE, 1)
 					setflag(FLAG_RECEIVED_EXP_SHARE)
 					
@@ -140,6 +259,7 @@ script NautirustCity_Script_TalkExpShareStore {
 					release
 				}
 				else {
+					hidemoneybox
 					msgbox(
 						"Sorry!
 						You don't have enough money…
@@ -151,6 +271,7 @@ script NautirustCity_Script_TalkExpShareStore {
 					release
 				}
 			case 1:
+				hidemoneybox
 				msgbox(
 					"Thanks for stopping by!",
 					MSGBOX_DEFAULT

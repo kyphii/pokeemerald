@@ -9,7 +9,7 @@ MarinacreTown_MapScripts::
 
 MarinacreTown_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 7 "data/maps/MarinacreTown/scripts.pory"
-	setflag FLAG_VISITED_LITTLEROOT_TOWN
+	setflag FLAG_VISITED_MARINACRE_TOWN
 	return
 
 MarinacreTown_MapScripts_MAP_SCRIPT_ON_LOAD:

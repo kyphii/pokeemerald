@@ -1,1 +1,10 @@
-mapscripts WanderingCave_MapScripts {}
+mapscripts WanderingCave_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		if (!flag(FLAG_VISITED_WANDERING_CAVE)) {
+			setflag(FLAG_VISITED_WANDERING_CAVE)
+			addplayerlevel(1)
+		}
+		special(WanderingCaveSetExit)
+		setvar(VAR_EXITED_WANDERING_CAVE, 1)
+	}
+}

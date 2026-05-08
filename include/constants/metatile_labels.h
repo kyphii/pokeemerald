@@ -42,21 +42,25 @@
 #define METATILE_Nautirust_TallGrass_TreeMid          0x221
 
 // gTileset_Overworld
-#define METATILE_Overworld_Door_Glass              0x192
-#define METATILE_Overworld_Door_Wood               0x1B6
-#define METATILE_Overworld_Grass                   0x001
-#define METATILE_Overworld_Grass_LedgeTop          0x029
-#define METATILE_Overworld_Grass_SmallTreeTop      0x006
-#define METATILE_Overworld_Grass_TreeLeft          0x008
-#define METATILE_Overworld_Grass_TreeRight         0x009
-#define METATILE_Overworld_LongGrassBottom         0x01F
-#define METATILE_Overworld_LongGrassMid            0x017
-#define METATILE_Overworld_LongGrassTop            0x00F
-#define METATILE_Overworld_LongGrassTop_LedgeTop   0x16B
-#define METATILE_Overworld_TallGrass               0x007
-#define METATILE_Overworld_TallGrass_SmallTreeTop  0x069
-#define METATILE_Overworld_TallGrass_TreeLeft      0x00C
-#define METATILE_Overworld_TallGrass_TreeRight     0x00D
+#define METATILE_Overworld_CaveEntranceBottom       0x04F
+#define METATILE_Overworld_CaveEntranceTop          0x047
+#define METATILE_Overworld_CliffBottom_BrownShadow  0x034
+#define METATILE_Overworld_CliffBottom_GreyShadow   0x031
+#define METATILE_Overworld_Door_Glass               0x192
+#define METATILE_Overworld_Door_Wood                0x1B6
+#define METATILE_Overworld_Grass                    0x001
+#define METATILE_Overworld_Grass_LedgeTop           0x029
+#define METATILE_Overworld_Grass_SmallTreeTop       0x006
+#define METATILE_Overworld_Grass_TreeLeft           0x008
+#define METATILE_Overworld_Grass_TreeRight          0x009
+#define METATILE_Overworld_LongGrassBottom          0x01F
+#define METATILE_Overworld_LongGrassMid             0x017
+#define METATILE_Overworld_LongGrassTop             0x00F
+#define METATILE_Overworld_LongGrassTop_LedgeTop    0x16B
+#define METATILE_Overworld_TallGrass                0x007
+#define METATILE_Overworld_TallGrass_SmallTreeTop   0x069
+#define METATILE_Overworld_TallGrass_TreeLeft       0x00C
+#define METATILE_Overworld_TallGrass_TreeRight      0x00D
 
 // gTileset_SecretBase
 #define METATILE_SecretBase_AttractMat_BottomLeft       0x313

@@ -1,0 +1,20 @@
+mapscripts Route5_MapScripts {
+	MAP_SCRIPT_ON_LOAD {
+		if (var(VAR_WANDERING_CAVE_LOCATION) == MAP_ROUTE5) {
+			setmetatile(48, 16, METATILE_Overworld_CaveEntranceTop, TRUE)
+			setmetatile(48, 17, METATILE_Overworld_CaveEntranceBottom, FALSE)
+		}
+	}
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_EXITED_WANDERING_CAVE, 1 {
+			delay(30)
+			special(WanderingCaveSetExit)
+			setvar(VAR_EXITED_WANDERING_CAVE, 0)
+			fadescreen(FADE_TO_BLACK)
+			setmetatile(48, 16, METATILE_Overworld_CliffBottom_BrownShadow, TRUE)
+			setmetatile(48, 17, METATILE_Overworld_CliffBottom_GreyShadow, TRUE)
+			special(DrawWholeMapView)
+			fadescreen(FADE_FROM_BLACK)
+		}
+	]
+}

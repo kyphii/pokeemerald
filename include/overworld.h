@@ -202,4 +202,7 @@ bool8 GetSetItemObtained(enum Item item, enum ItemObtainFlags caseId);
 void Overworld_CreditsMainCB(void);
 bool32 Overworld_DoScrollSceneForCredits(u8 *, const struct CreditsOverworldCmd *);
 
+void WanderingCaveMove(void);
+void WanderingCaveSetExit(void);
+
 #endif // GUARD_OVERWORLD_H

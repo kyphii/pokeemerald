@@ -106,5 +106,8 @@ const u16 gMetatileAttributes_QuaheartGym[] = INCBIN_U16("data/tilesets/secondar
 const u16 gMetatiles_PeriwindGym[] = INCBIN_U16("data/tilesets/secondary/periwind_gym/metatiles.bin");
 const u16 gMetatileAttributes_PeriwindGym[] = INCBIN_U16("data/tilesets/secondary/periwind_gym/metatile_attributes.bin");
 
+const u16 gMetatiles_PokemonSchool[] = INCBIN_U16("data/tilesets/secondary/pokemon_school/metatiles.bin");
+const u16 gMetatileAttributes_PokemonSchool[] = INCBIN_U16("data/tilesets/secondary/pokemon_school/metatile_attributes.bin");
+
 const u16 gMetatiles_TrainerTower[] = INCBIN_U16("data/tilesets/secondary/trainer_tower_frlg/metatiles.bin");
 const u16 gMetatileAttributes_TrainerTower[] = INCBIN_U16("data/tilesets/secondary/trainer_tower_frlg/metatile_attributes.bin");

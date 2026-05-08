@@ -1,209 +1,250 @@
 Route4_MapScripts::
+# 2 "data/maps/Route4/scripts.pory"
+	map_script MAP_SCRIPT_ON_LOAD, Route4_MapScripts_MAP_SCRIPT_ON_LOAD
+# 8 "data/maps/Route4/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route4_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+Route4_MapScripts_MAP_SCRIPT_ON_LOAD:
+# 3 "data/maps/Route4/scripts.pory"
+	compare VAR_WANDERING_CAVE_LOCATION, MAP_ROUTE4
+	goto_if_eq Route4_MapScripts_MAP_SCRIPT_ON_LOAD_1
+	return
+
+Route4_MapScripts_MAP_SCRIPT_ON_LOAD_1:
+# 4 "data/maps/Route4/scripts.pory"
+	setmetatile 16, 61, METATILE_Overworld_CaveEntranceTop, TRUE
+# 5 "data/maps/Route4/scripts.pory"
+	setmetatile 16, 62, METATILE_Overworld_CaveEntranceBottom, FALSE
+	return
+
+Route4_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+# 9 "data/maps/Route4/scripts.pory"
+	map_script_2 VAR_EXITED_WANDERING_CAVE, 1, Route4_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0
+	.2byte 0
+
+Route4_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
+# 10 "data/maps/Route4/scripts.pory"
+	delay 30
+# 11 "data/maps/Route4/scripts.pory"
+	special WanderingCaveSetExit
+# 12 "data/maps/Route4/scripts.pory"
+	setvar VAR_EXITED_WANDERING_CAVE, 0
+# 13 "data/maps/Route4/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 14 "data/maps/Route4/scripts.pory"
+	setmetatile 16, 61, METATILE_Overworld_CliffBottom_BrownShadow, TRUE
+# 15 "data/maps/Route4/scripts.pory"
+	setmetatile 16, 62, METATILE_Overworld_CliffBottom_GreyShadow, TRUE
+# 16 "data/maps/Route4/scripts.pory"
+	special DrawWholeMapView
+# 17 "data/maps/Route4/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+	return
 
 
 Route4_Talk_OldPrincesTrailHint::
-# 4 "data/maps/Route4/scripts.pory"
-	lock
-# 5 "data/maps/Route4/scripts.pory"
-	fadeoutbgm 2
-# 6 "data/maps/Route4/scripts.pory"
-	delay 90
-# 7 "data/maps/Route4/scripts.pory"
-	msgbox Route4_Talk_OldPrincesTrailHint_Text_0, MSGBOX_DEFAULT
-# 14 "data/maps/Route4/scripts.pory"
-	closemessage
-# 16 "data/maps/Route4/scripts.pory"
-	getplayerxy VAR_0x8008, VAR_0x8009
-# 17 "data/maps/Route4/scripts.pory"
-	switch VAR_0x8008
-# 18 "data/maps/Route4/scripts.pory"
-	case 17, Route4_Talk_OldPrincesTrailHint_3
-# 19 "data/maps/Route4/scripts.pory"
-	case 19, Route4_Talk_OldPrincesTrailHint_3
 # 23 "data/maps/Route4/scripts.pory"
+	lock
+# 24 "data/maps/Route4/scripts.pory"
+	fadeoutbgm 2
+# 25 "data/maps/Route4/scripts.pory"
+	delay 90
+# 26 "data/maps/Route4/scripts.pory"
+	msgbox Route4_Talk_OldPrincesTrailHint_Text_0, MSGBOX_DEFAULT
+# 33 "data/maps/Route4/scripts.pory"
+	closemessage
+# 35 "data/maps/Route4/scripts.pory"
+	getplayerxy VAR_0x8008, VAR_0x8009
+# 36 "data/maps/Route4/scripts.pory"
+	switch VAR_0x8008
+# 37 "data/maps/Route4/scripts.pory"
+	case 17, Route4_Talk_OldPrincesTrailHint_3
+# 38 "data/maps/Route4/scripts.pory"
+	case 19, Route4_Talk_OldPrincesTrailHint_3
+# 42 "data/maps/Route4/scripts.pory"
 	case 18, Route4_Talk_OldPrincesTrailHint_4
 Route4_Talk_OldPrincesTrailHint_1:
-# 29 "data/maps/Route4/scripts.pory"
+# 48 "data/maps/Route4/scripts.pory"
 	waitmovement 0
-# 30 "data/maps/Route4/scripts.pory"
+# 49 "data/maps/Route4/scripts.pory"
 	removeobject VAR_LAST_TALKED
-# 31 "data/maps/Route4/scripts.pory"
+# 50 "data/maps/Route4/scripts.pory"
 	setflag FLAG_STORY_ROUTE4_TRAIL_HINT
-# 33 "data/maps/Route4/scripts.pory"
+# 52 "data/maps/Route4/scripts.pory"
 	fadeinbgm 1
-# 34 "data/maps/Route4/scripts.pory"
+# 53 "data/maps/Route4/scripts.pory"
 	release
 	return
 
 Route4_Talk_OldPrincesTrailHint_3:
-# 20 "data/maps/Route4/scripts.pory"
+# 39 "data/maps/Route4/scripts.pory"
 	applymovement VAR_LAST_TALKED, Route4_Talk_OldPrincesTrailHint_Movement_0
 	goto Route4_Talk_OldPrincesTrailHint_1
 
 Route4_Talk_OldPrincesTrailHint_4:
-# 24 "data/maps/Route4/scripts.pory"
+# 43 "data/maps/Route4/scripts.pory"
 	applymovement VAR_LAST_TALKED, Route4_Talk_OldPrincesTrailHint_Movement_1
 	goto Route4_Talk_OldPrincesTrailHint_1
 
 
 Route4_Sign_RouteSign::
-# 38 "data/maps/Route4/scripts.pory"
+# 57 "data/maps/Route4/scripts.pory"
 	msgbox Route4_Sign_RouteSign_Text_0, MSGBOX_SIGN
 	return
 
 
 Route4_Talk_IndecisiveWoman::
-# 48 "data/maps/Route4/scripts.pory"
-	lock
-# 49 "data/maps/Route4/scripts.pory"
-	faceplayer
-# 50 "data/maps/Route4/scripts.pory"
-	msgbox Route4_Talk_IndecisiveWoman_Text_0, MSGBOX_DEFAULT
 # 67 "data/maps/Route4/scripts.pory"
-	closemessage
+	lock
 # 68 "data/maps/Route4/scripts.pory"
+	faceplayer
+# 69 "data/maps/Route4/scripts.pory"
+	msgbox Route4_Talk_IndecisiveWoman_Text_0, MSGBOX_DEFAULT
+# 86 "data/maps/Route4/scripts.pory"
+	closemessage
+# 87 "data/maps/Route4/scripts.pory"
 	release
 	return
 
 
 Route4_Trainer_1::
-# 72 "data/maps/Route4/scripts.pory"
+# 91 "data/maps/Route4/scripts.pory"
 	trainerbattle_single TRAINER_ROUTE4_1, Route4_Trainer_1_Text_0, Route4_Trainer_1_Text_0
-# 80 "data/maps/Route4/scripts.pory"
+# 99 "data/maps/Route4/scripts.pory"
 	msgbox Route4_Trainer_1_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 Route4_Trainer_2::
-# 87 "data/maps/Route4/scripts.pory"
+# 106 "data/maps/Route4/scripts.pory"
 	trainerbattle_single TRAINER_ROUTE4_2, Route4_Trainer_1_Text_0, Route4_Trainer_1_Text_0
-# 95 "data/maps/Route4/scripts.pory"
+# 114 "data/maps/Route4/scripts.pory"
 	msgbox Route4_Trainer_1_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 Route4_Trainer_3::
-# 102 "data/maps/Route4/scripts.pory"
+# 121 "data/maps/Route4/scripts.pory"
 	trainerbattle_single TRAINER_ROUTE4_3, Route4_Trainer_1_Text_0, Route4_Trainer_1_Text_0
-# 110 "data/maps/Route4/scripts.pory"
+# 129 "data/maps/Route4/scripts.pory"
 	msgbox Route4_Trainer_1_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 Route4_Trainer_4::
-# 117 "data/maps/Route4/scripts.pory"
+# 136 "data/maps/Route4/scripts.pory"
 	trainerbattle_single TRAINER_ROUTE4_4, Route4_Trainer_1_Text_0, Route4_Trainer_1_Text_0
-# 125 "data/maps/Route4/scripts.pory"
+# 144 "data/maps/Route4/scripts.pory"
 	msgbox Route4_Trainer_1_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 Route4_Trainer_5::
-# 132 "data/maps/Route4/scripts.pory"
+# 151 "data/maps/Route4/scripts.pory"
 	trainerbattle_single TRAINER_ROUTE4_5, Route4_Trainer_1_Text_0, Route4_Trainer_1_Text_0
-# 140 "data/maps/Route4/scripts.pory"
+# 159 "data/maps/Route4/scripts.pory"
 	msgbox Route4_Trainer_1_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 Route4_Trainer_6::
-# 147 "data/maps/Route4/scripts.pory"
+# 166 "data/maps/Route4/scripts.pory"
 	trainerbattle_single TRAINER_ROUTE4_6, Route4_Trainer_1_Text_0, Route4_Trainer_1_Text_0
-# 155 "data/maps/Route4/scripts.pory"
+# 174 "data/maps/Route4/scripts.pory"
 	msgbox Route4_Trainer_1_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 Route4_Trainer_7::
-# 162 "data/maps/Route4/scripts.pory"
+# 181 "data/maps/Route4/scripts.pory"
 	trainerbattle_single TRAINER_ROUTE4_7, Route4_Trainer_1_Text_0, Route4_Trainer_1_Text_0
-# 170 "data/maps/Route4/scripts.pory"
+# 189 "data/maps/Route4/scripts.pory"
 	msgbox Route4_Trainer_1_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 Route4_Trainer_8::
-# 177 "data/maps/Route4/scripts.pory"
+# 196 "data/maps/Route4/scripts.pory"
 	trainerbattle_single TRAINER_ROUTE4_8, Route4_Trainer_1_Text_0, Route4_Trainer_1_Text_0
-# 185 "data/maps/Route4/scripts.pory"
+# 204 "data/maps/Route4/scripts.pory"
 	msgbox Route4_Trainer_1_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 Route4_Trainer_9::
-# 192 "data/maps/Route4/scripts.pory"
+# 211 "data/maps/Route4/scripts.pory"
 	trainerbattle_single TRAINER_ROUTE4_9, Route4_Trainer_1_Text_0, Route4_Trainer_1_Text_0
-# 200 "data/maps/Route4/scripts.pory"
+# 219 "data/maps/Route4/scripts.pory"
 	msgbox Route4_Trainer_1_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 Route4_Trainer_10::
-# 207 "data/maps/Route4/scripts.pory"
+# 226 "data/maps/Route4/scripts.pory"
 	trainerbattle_single TRAINER_ROUTE4_10, Route4_Trainer_1_Text_0, Route4_Trainer_1_Text_0
-# 215 "data/maps/Route4/scripts.pory"
+# 234 "data/maps/Route4/scripts.pory"
 	msgbox Route4_Trainer_1_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
-# 20 "data/maps/Route4/scripts.pory"
+# 39 "data/maps/Route4/scripts.pory"
 Route4_Talk_OldPrincesTrailHint_Movement_0:
-# 21 "data/maps/Route4/scripts.pory"
+# 40 "data/maps/Route4/scripts.pory"
 	walk_down
-# 21 "data/maps/Route4/scripts.pory"
+# 40 "data/maps/Route4/scripts.pory"
 	walk_down
-# 21 "data/maps/Route4/scripts.pory"
+# 40 "data/maps/Route4/scripts.pory"
 	walk_down
-# 21 "data/maps/Route4/scripts.pory"
+# 40 "data/maps/Route4/scripts.pory"
 	walk_down
-# 21 "data/maps/Route4/scripts.pory"
+# 40 "data/maps/Route4/scripts.pory"
 	walk_down
-# 21 "data/maps/Route4/scripts.pory"
+# 40 "data/maps/Route4/scripts.pory"
 	walk_down
-# 21 "data/maps/Route4/scripts.pory"
+# 40 "data/maps/Route4/scripts.pory"
 	walk_down
-# 21 "data/maps/Route4/scripts.pory"
+# 40 "data/maps/Route4/scripts.pory"
 	walk_down
 	step_end
 
-# 24 "data/maps/Route4/scripts.pory"
+# 43 "data/maps/Route4/scripts.pory"
 Route4_Talk_OldPrincesTrailHint_Movement_1:
-# 25 "data/maps/Route4/scripts.pory"
+# 44 "data/maps/Route4/scripts.pory"
 	walk_right
-# 26 "data/maps/Route4/scripts.pory"
+# 45 "data/maps/Route4/scripts.pory"
 	walk_down
-# 26 "data/maps/Route4/scripts.pory"
+# 45 "data/maps/Route4/scripts.pory"
 	walk_down
-# 26 "data/maps/Route4/scripts.pory"
+# 45 "data/maps/Route4/scripts.pory"
 	walk_down
-# 26 "data/maps/Route4/scripts.pory"
+# 45 "data/maps/Route4/scripts.pory"
 	walk_down
-# 26 "data/maps/Route4/scripts.pory"
+# 45 "data/maps/Route4/scripts.pory"
 	walk_down
-# 26 "data/maps/Route4/scripts.pory"
+# 45 "data/maps/Route4/scripts.pory"
 	walk_down
-# 26 "data/maps/Route4/scripts.pory"
+# 45 "data/maps/Route4/scripts.pory"
 	walk_down
-# 26 "data/maps/Route4/scripts.pory"
+# 45 "data/maps/Route4/scripts.pory"
 	walk_down
 	step_end
 
 Route4_Talk_OldPrincesTrailHint_Text_0:
-# 8 "data/maps/Route4/scripts.pory"
+# 27 "data/maps/Route4/scripts.pory"
 	.string "…{PAUSE 10}…{PAUSE 10}…{PAUSE 10}…\n"
 	.string "…The way{PAUSE 20} beneath…\p"
 	.string "…{PAUSE 10}There{PAUSE 20} is{PAUSE 5} a{PAUSE 5} way{PAUSE 30} beneath…$"
 
 Route4_Sign_RouteSign_Text_0:
-# 39 "data/maps/Route4/scripts.pory"
+# 58 "data/maps/Route4/scripts.pory"
 	.string "ROUTE 4\n"
 	.string "{DOWN_ARROW} WHELCHORD CITY\l"
 	.string "{RIGHT_ARROW} NAUTIRUST CITY\l"
 	.string "{UP_ARROW} MOUNT BRIAR$"
 
 Route4_Talk_IndecisiveWoman_Text_0:
-# 51 "data/maps/Route4/scripts.pory"
+# 70 "data/maps/Route4/scripts.pory"
 	.string "Oh dear, oh dear.\n"
 	.string "I'm exhausted… This route is so rugged… \p"
 	.string "And it splits in two! \n"
@@ -216,5 +257,5 @@ Route4_Talk_IndecisiveWoman_Text_0:
 	.string "I live here now.$"
 
 Route4_Trainer_1_Text_0:
-# 75 "data/maps/Route4/scripts.pory"
+# 94 "data/maps/Route4/scripts.pory"
 	.string "TODO$"

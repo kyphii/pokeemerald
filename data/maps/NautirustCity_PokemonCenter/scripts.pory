@@ -2,31 +2,79 @@ mapscripts NautirustCity_PokemonCenter_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
 		setrespawn(HEAL_LOCATION_NAUTIRUST_CITY)
 	}
+	MAP_SCRIPT_ON_LOAD {
+		if (var(VAR_MAYA_CURRENT_CITY) == 1) {
+			if (var(VAR_MAYA_CURRENT_POSITION) == 0) {
+				setobjectxyperm(LOCALID_NAUTIRUST_PC_MAYA, 3, 12)
+			}
+			else {
+				setobjectxyperm(LOCALID_NAUTIRUST_PC_MAYA, 0, -8)
+			}
+		}
+	}
 }
 
-script NautirustCity_PokemonCenter_Script_TalkMaya {
+script NautirustCity_PokemonCenter_TalkMan1 {
 	lock
 	faceplayer
 	
 	msgbox(
-		"MAYA: I don't know if I've ever actually
-		been in a Pok\emon Center before.
+		"The Pok\emon Centers in Alola have 
+		coffee shops in them.
+
+		It's a shame that hasn't caught on 
+		everywhere else.
 		
-		It's amazing that all this is a 
-		free service, isn't it?
-		
-		Well, anyways, we have two ways to go
-		from here.
-		
-		We can go west towards Armiter City, or
-		south towards Canvenus City.
-		
-		Honestly, I kinda want to hit up
-		the Pok\emon Gym here in town…
-		
-		What do you think, {PLAYER}?",
+		I guess it makes sense. Otherwise,
+		they'd probably never get rid of me.",
 		MSGBOX_DEFAULT
 	)
 	
+	closemessage
 	release
+}
+
+script NautirustCity_PokemonCenter_TalkMaya {
+	lock
+	faceplayer
+	
+	setvar(VAR_0x8004, 5)
+	special(RandomizeMayaLocation)
+	
+	if (!var(VAR_TEMP_1)) {
+		msgbox(
+			"MAYA: I don't know if I've ever actually
+			been in a Pok\emon Center before.
+			
+			It's amazing that all this is a 
+			free service, isn't it?",
+			MSGBOX_DEFAULT
+		)
+		
+		setvar(VAR_TEMP_1, 1)
+		
+		setvar(VAR_0x8004, 5)
+		special(RandomizeMayaLocation)
+		
+		closemessage
+		release
+	}
+	else {
+		msgbox(
+			"MAYA: Well, anyways, we have two ways
+			to go from here.
+			
+			We can go west towards Armiter City, or
+			south towards Canvenus City.
+			
+			Honestly, I kinda want to hit up
+			the Pok\emon Gym here in town…
+			
+			What do you think, {PLAYER}?",
+			MSGBOX_DEFAULT
+		)
+		
+		closemessage
+		release
+	}
 }

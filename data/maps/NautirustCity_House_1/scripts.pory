@@ -1,0 +1,76 @@
+mapscripts NautirustCity_House_1_MapScripts {}
+
+script NautirustCity_House_1_TalkShopkeeper {
+	lock
+	faceplayer
+	msgbox(
+		"Welcome to my humble tea caf\e.
+		Can I interest you in anything?",
+		MSGBOX_DEFAULT
+	)
+	specialvar(VAR_RESULT, GetDayOfWeek)
+	switch (var(VAR_RESULT)) {
+		case WEEKDAY_MON:
+			pokemart(Mart_MintShop_Attack)
+		case WEEKDAY_TUE:
+			pokemart(Mart_MintShop_Defense)
+		case WEEKDAY_WED:
+			pokemart(Mart_MintShop_SpAttack)
+		case WEEKDAY_THU:
+			pokemart(Mart_MintShop_SpDefense)
+		case WEEKDAY_FRI:
+			pokemart(Mart_MintShop_Speed)
+		default:
+			pokemart(Mart_MintShop_Neutral)
+	}
+	msgbox(
+		"Thank you.
+		
+		If you didn't know, we rotate our
+		selection every weekday.
+		
+		Please come again.",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+mart Mart_MintShop_Attack {
+	ITEM_LONELY_MINT
+	ITEM_ADAMANT_MINT
+	ITEM_NAUGHTY_MINT
+	ITEM_BRAVE_MINT
+}
+
+mart Mart_MintShop_Defense {
+	ITEM_BOLD_MINT
+	ITEM_IMPISH_MINT
+	ITEM_LAX_MINT
+	ITEM_RELAXED_MINT
+}
+
+mart Mart_MintShop_SpAttack {
+	ITEM_MODEST_MINT
+	ITEM_MILD_MINT
+	ITEM_RASH_MINT
+	ITEM_QUIET_MINT
+}
+
+mart Mart_MintShop_SpDefense {
+	ITEM_CALM_MINT
+	ITEM_GENTLE_MINT
+	ITEM_CAREFUL_MINT
+	ITEM_SASSY_MINT
+}
+
+mart Mart_MintShop_Speed {
+	ITEM_TIMID_MINT
+	ITEM_HASTY_MINT
+	ITEM_JOLLY_MINT
+	ITEM_NAIVE_MINT
+}
+
+mart Mart_MintShop_Neutral {
+	ITEM_SERIOUS_MINT
+}

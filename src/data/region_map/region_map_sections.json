@@ -1035,7 +1035,8 @@
       "id": "MAPSEC_TRAINER_HILL"
     },
     {
-      "id": "MAPSEC_WANDERING_CAVE"
+      "id": "MAPSEC_WANDERING_CAVE",
+      "name": "WANDERING CAVE"
     }
   ]
 }

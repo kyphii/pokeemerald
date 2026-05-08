@@ -1,0 +1,636 @@
+mapscripts NautirustCity_TrainerSchool_MapScripts {
+	MAP_SCRIPT_ON_LOAD {
+		if (var(VAR_MAYA_CURRENT_CITY) == 1) {
+			if (var(VAR_MAYA_CURRENT_POSITION) == 5) {
+				setobjectxyperm(LOCALID_NAUTIRUST_SCHOOL_MAYA, 15, 9)
+			}
+			else {
+				setobjectxyperm(LOCALID_NAUTIRUST_SCHOOL_MAYA, 0, -8)
+			}
+		}
+	}
+}
+
+script NautirustCity_TrainerSchool_TalkGymTeacher{
+	lock
+	faceplayer
+	if (var(VAR_QUEST_SCHOOL_WINSTREAK) == 0) {
+		msgbox(
+			"Hey there!
+			
+			We're just about to start some practice 
+			matches.
+			
+			If you beat all the other students in a 
+			row, you win!
+			
+			How about it? Want in?",
+			MSGBOX_YESNO
+		)
+		if (var(VAR_RESULT) == YES) {
+			msgbox(
+				"Great! Go ahead and take a spot on the 
+				battle court!",
+				MSGBOX_DEFAULT
+			)
+			closemessage
+			goto(NautirustCity_TrainerSchool_Winstreak)
+		}
+		else {
+			msgbox(
+				"That's a darn shame.
+				Maybe another time, then!",
+				MSGBOX_DEFAULT
+			)
+			closemessage
+			release
+		}
+	}
+	elif (var(VAR_QUEST_SCHOOL_WINSTREAK) == 1) {
+		goto(NautirustCity_TrainerSchool_Winstreak_GiveReward)
+	}
+	else {
+		msgbox(
+			"Hey! It's you again!
+			
+			I remember that thrashing you gave us.
+			
+			Ever thought of signing up to our 
+			battle team?
+			
+			Hah!
+			Someone with your skills has to shoot 
+			for bigger things!",
+			MSGBOX_DEFAULT
+		)
+		closemessage
+		release
+	}
+}
+
+script NautirustCity_TrainerSchool_Winstreak{
+	cleartrainerflag(TRAINER_SCHOOL_WINSTREAK_1)
+	cleartrainerflag(TRAINER_SCHOOL_WINSTREAK_2)
+	cleartrainerflag(TRAINER_SCHOOL_WINSTREAK_3)
+	cleartrainerflag(TRAINER_SCHOOL_WINSTREAK_4)
+	
+	setvar(VAR_LAST_TALKED, 0)
+	
+	lockall
+	getplayerxy(VAR_0x8008, VAR_0x8009)
+	switch(var(VAR_0x8009)) {
+		case 11:
+			applymovement(LOCALID_PLAYER, moves(
+				walk_up * 4
+				walk_left * 3
+				face_right
+			))
+		case 12:
+			applymovement(LOCALID_PLAYER, moves(
+				walk_left
+				walk_up * 5
+				walk_left * 3
+				face_right
+			))
+		case 13:
+			applymovement(LOCALID_PLAYER, moves(
+				walk_up * 6
+				walk_left * 3
+				face_right
+			))
+	}
+	applymovement(LOCALID_NAUTIRUST_SCHOOL_GYMTEACHER, moves(
+		walk_up * 7
+		face_down
+		delay_16 * 3
+	))
+	waitmovement(0)
+	
+	special(SpawnCameraObject)
+	applymovement(LOCALID_CAMERA, moves(
+		walk_right * 3
+	))
+	waitmovement(0)
+	special(RemoveCameraObject)
+	
+	applymovement(LOCALID_NAUTIRUST_SCHOOL_GYMTEACHER, Common_Movement_WalkInPlaceDown)
+	msgbox(
+		"Alright!
+		
+		Get ready for your first opponent!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	
+	applymovement(LOCALID_NAUTIRUST_SCHOOL_TRAINER_1, moves(
+		jump_down
+		walk_down * 2
+		walk_right * 2
+		face_left
+	))
+	waitmovement(0)
+	msgbox(
+		"My strategy is status effects!
+		Let's see what you're made of!", 
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	trainerbattle_no_intro(
+		TRAINER_SCHOOL_WINSTREAK_1,
+		//On Defeat
+		"You're made of stronger stuff…"
+	)
+	delay(20)
+	applymovement(LOCALID_NAUTIRUST_SCHOOL_TRAINER_1, moves(
+		walk_left * 2
+		walk_up * 3
+		face_down
+	))
+	waitmovement(0)
+	
+	applymovement(LOCALID_NAUTIRUST_SCHOOL_GYMTEACHER, Common_Movement_WalkInPlaceDown)
+	msgbox(
+		"One down!
+		But we're just warming up!
+		Time for your next opponent!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	
+	applymovement(LOCALID_NAUTIRUST_SCHOOL_TRAINER_2, moves(
+		jump_down
+		walk_down
+		walk_right * 5
+		walk_down
+		face_left
+	))
+	waitmovement(0)
+	msgbox(
+		"I'm gonna use strong attacks to get 
+		this over with quickly…", 
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	trainerbattle_no_intro(
+		TRAINER_SCHOOL_WINSTREAK_2,
+		//On Defeat
+		"Wahh!"
+	)
+	delay(20)
+	applymovement(LOCALID_NAUTIRUST_SCHOOL_TRAINER_2, moves(
+		walk_up
+		walk_left * 5
+		walk_up * 2
+		face_down
+	))
+	waitmovement(0)
+	
+	applymovement(LOCALID_NAUTIRUST_SCHOOL_GYMTEACHER, Common_Movement_WalkInPlaceDown)
+	msgbox(
+		"This is heating up!
+		But we're not done yet!
+		Time for match number three!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	
+	applymovement(LOCALID_NAUTIRUST_SCHOOL_TRAINER_3, moves(
+		jump_down
+		walk_down
+		walk_right * 6
+		walk_down
+		face_left
+	))
+	waitmovement(0)
+	msgbox(
+		"I've been honing my rock-solid defense!
+		Think you can handle this?", 
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	trainerbattle_no_intro(
+		TRAINER_SCHOOL_WINSTREAK_3,
+		//On Defeat
+		"Hey coach, this isn't fair!"
+	)
+	delay(20)
+	applymovement(LOCALID_NAUTIRUST_SCHOOL_TRAINER_3, moves(
+		walk_up
+		walk_left * 6
+		walk_up * 2
+		face_down
+	))
+	waitmovement(0)
+	
+	applymovement(LOCALID_NAUTIRUST_SCHOOL_GYMTEACHER, Common_Movement_WalkInPlaceDown)
+	msgbox(
+		"Wow! 
+		Three trainers in a row, down and out!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	applymovement(LOCALID_NAUTIRUST_SCHOOL_GYMTEACHER, moves(
+		walk_down * 2
+		face_left
+	))
+	waitmovement(0)
+	msgbox(
+		"You sure got skills! 
+		
+		For winning against all my students,
+		you've earned…",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	applymovement(LOCALID_NAUTIRUST_SCHOOL_GYMTEACHER, moves(
+		walk_right * 4
+		face_left
+	))
+	waitmovement(0)
+	msgbox(
+		"A battle against me!", 
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	trainerbattle_no_intro(
+		TRAINER_SCHOOL_WINSTREAK_4,
+		//On Defeat
+		"Aaand game!"
+	)
+	waitmovement(0)
+	
+	delay(20)
+	applymovement(LOCALID_NAUTIRUST_SCHOOL_GYMTEACHER, moves(
+		walk_left * 6
+	))
+	waitmovement(0)
+	special(SpawnCameraObject)
+	applymovement(LOCALID_CAMERA, moves(
+		walk_left * 3
+	))
+	waitmovement(0)
+	special(RemoveCameraObject)
+
+	goto(NautirustCity_TrainerSchool_Winstreak_GiveReward)
+}
+
+script NautirustCity_TrainerSchool_Winstreak_GiveReward {
+	lock
+	faceplayer
+	msgbox(
+		"Well, I'll be!
+		What a dominant performance!
+		
+		A smackdown like that deserves a 
+		special reward!
+		I got just the thing! Here, you earned 
+		it!",
+		MSGBOX_DEFAULT
+	)
+
+	setvar(VAR_QUEST_SCHOOL_WINSTREAK, 1)
+	
+	giveitem(ITEM_WISE_GLASSES)
+	waitmessage
+	waitbuttonpress
+	if (var(VAR_RESULT) == FALSE) {
+		goto(Common_EventScript_ShowBagIsFull)
+	}
+	
+	setvar(VAR_QUEST_SCHOOL_WINSTREAK, 2)
+	addplayerlevel(1)
+	
+	msgbox(
+		"With skills like that, you could wipe the 
+		floor with the Wohnet Pok\emon League!
+		
+		Remember us when you're the champ!
+		Haha!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	releaseall
+}
+
+script NautirustCity_TrainerSchool_TalkTeacher{
+	lock
+	faceplayer
+	msgbox(
+		"Remember, the damage formula isn't just 
+		about attack and defense stats.
+		
+		The level of a Pok\emon also plays a 
+		role.",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script NautirustCity_TrainerSchool_TalkMaya{
+	lock
+	
+	setvar(VAR_0x8004, 5)
+	special(RandomizeMayaLocation)
+	
+	msgbox(
+		"MAYA: Wow…
+		There's so much to take in.",
+		MSGBOX_DEFAULT
+	)
+	faceplayer
+	msgbox(
+		"What? Didn't expect to see me here?
+		
+		I gotta know all there is to know if I'm 
+		gonna be the best!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script NautirustCity_TrainerSchool_TalkStudent1{
+	lock
+	faceplayer
+	msgbox(
+		"I thought we were gonna learn about 
+		Jigglypuff!
+
+		I like Jigglypuff!
+		
+		Why isn't this Jigglypuff School?",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script NautirustCity_TrainerSchool_TalkStudent2{
+	lock
+	faceplayer
+	msgbox(
+		"Apparently, the damage from Pok\emon 
+		attacks \qorounds down\qc after every
+		step in the formula.
+		
+		I wanted to ask what that meant, but I 
+		had my hand raised for like 10 minutes.
+		
+		Now it'd be kinda awkward.",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script NautirustCity_TrainerSchool_TalkStudent3{
+	lock
+	faceplayer
+	msgbox(
+		"This lesson is kinda over my head.
+		
+		Hey, at least it's better than regular
+		school, right?",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script NautirustCity_TrainerSchool_TalkLibraryGirl{
+	lock
+	faceplayer
+	msgbox(
+		"I'm reading about a legend from the 
+		Kalos region.
+		
+		The story says that there's a man who's
+		lived for three thousand years.
+		
+		He wanders the region in search of
+		his lost Pok\emon.
+		
+		That's so romantic!
+		
+		A guy like that must be pretty hot, 
+		right?",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script NautirustCity_TrainerSchool_TalkGreeter {
+	lock
+	faceplayer
+	msgbox(
+		"Welcome! This is the Pok\emon Academy!
+		
+		We offer lessons about training and 
+		battling Pok\emon to everyone.
+		
+		Feel free to drop in on our lectures, or 
+		peruse our library!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script NautirustCity_TrainerSchool_TalkBleachersKid1{
+	lock
+	faceplayer
+	msgbox(
+		"I'm itching to show off my skills.
+		
+		I can't wait for the next tournament!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script NautirustCity_TrainerSchool_TalkBleachersKid2{
+	lock
+	faceplayer
+	msgbox(
+		"I started watching the games because 
+		of my boyfriend.
+		Then I got roped into participating…",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script NautirustCity_TrainerSchool_TalkBleachersKid3{
+	lock
+	faceplayer
+	msgbox(
+		"Are you here for a practice match?
+		I'll take you on!
+		
+		…If the teacher says it's okay…",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script NautirustCity_TrainerSchool_TalkShyPerson {
+	lock
+	faceplayer
+	msgbox(
+		"I heard that new trainers of all ages 
+		come to the Pok\emon Academy to sit in 
+		on lectures.
+		
+		But when I looked inside, it was all 
+		really young kids.
+		It made me kind of uncomfortable.
+		
+		…Would it be weirder if I just listen in
+		from the hallway?",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script NautirustCity_TrainerSchool_SignBookcase1 {
+	msgbox(
+		"Several editions of an encyclopedia 
+		cataloging every Pok\emon move.
+
+		The eighth edition appears to have had 
+		many of its pages torn out.",
+		MSGBOX_SIGN
+	)
+}
+
+script NautirustCity_TrainerSchool_SignBookcase2 {
+	msgbox(
+		"Woah!
+
+		They have a complete collection of the
+		Beckett Pok\emon Collector magazine!
+
+		Jackpot!",
+		MSGBOX_SIGN
+	)
+}
+
+script NautirustCity_TrainerSchool_SignBookcase3 {
+	msgbox(
+		"There's a print version of a famous 
+		play.
+
+		In this scene, a character delivers a 
+		maddened soliloquy, lamenting his 
+		Jirachi's loss in battle against his 
+		opponent's Gyarados.
+
+		He walks backwards into the sea, and is 
+		never heard from again.",
+		MSGBOX_SIGN
+	)
+}
+
+script NautirustCity_TrainerSchool_SignBookcase4 {
+	msgbox(
+		"A whole shelf of the Serebii book
+		series.
+		
+		You always preferred Dragonfly Cave, 
+		honestly.",
+		MSGBOX_SIGN
+	)
+}
+
+script NautirustCity_TrainerSchool_SignBookcase5 {
+	msgbox(
+		"A bunch of picture books for children.
+		
+		There are at least eight copies of 
+		\qoGoodnight Munna.\qc
+		Must still be very popular.",
+		MSGBOX_SIGN
+	)
+}
+
+script NautirustCity_TrainerSchool_SignBookcase6 {
+	msgbox(
+		"Rows of books about Pok\emon battling.
+		
+		Look, they can't all be interesting.",
+		MSGBOX_SIGN
+	)
+}
+
+script NautirustCity_TrainerSchool_SignBookcase7 {
+	msgbox(
+		"Surprisingly, they have several issues 
+		of the Pok\emon Adventures manga.
+		
+		Based on some of these panels, you're 
+		not sure if the artist has ever 
+		actually seen a real Pok\emon.",
+		MSGBOX_SIGN
+	)
+}
+
+script NautirustCity_TrainerSchool_SignTip1 {
+	msgbox(
+		"TRAINER TIPS!
+		
+		Pay attention to your Pok\emon's 
+		nature!
+		
+		Each nature increases one of a 
+		Pok\emon's stats, at the cost of 
+		another stat.
+		
+		These small variations can be the 
+		difference between winning or losing!",
+		MSGBOX_SIGN
+	)
+}
+
+script NautirustCity_TrainerSchool_SignTip2 {
+	msgbox(
+		"TRAINER TIPS!
+		
+		Some items that can be held by 
+		Pok\emon can only be used in battle 
+		once.
+		
+		However, they'll be recovered after 
+		battle, so you don't need to worry 
+		about replacing them.",
+		MSGBOX_SIGN
+	)
+}
+
+script NautirustCity_TrainerSchool_SignBubbler {
+	msgbox(
+		"The bubbler bubbles invitingly.
+		
+		Some people insist on calling these 
+		\qowater fountains.\qc
+		
+		That's ridiculous.",
+		MSGBOX_SIGN
+	)
+}
+
+script NautirustCity_TrainerSchool_SignChalkboard {
+	msgbox(
+		"A complex-looking formula is written 
+		out on the board.
+
+		If you got here earlier, you might've 
+		had a chance of understanding it.",
+		MSGBOX_SIGN
+	)
+}

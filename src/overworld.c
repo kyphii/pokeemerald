@@ -914,6 +914,8 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     ResetFieldTasksArgs();
     RunOnResumeMapScript();
 
+    WanderingCaveMove();
+
     if (OW_HIDE_REPEAT_MAP_POPUP)
     {
         if (gMapHeader.regionMapSectionId != sLastMapSectionId)
@@ -4036,4 +4038,39 @@ static void Task_OvwldCredits_WaitFade(u8 taskId)
         SetMainCallback2(CB2_LoadMap);
         DestroyTask(taskId);
     }
+}
+
+#define WANDERING_CAVE_LOCATIONS 4
+static const u16 sWanderingCaveLocations[WANDERING_CAVE_LOCATIONS] = {
+    MAP_ROUTE3,
+    MAP_ROUTE4,
+    MAP_ROUTE5,
+    MAP_ROUTE15,
+};
+
+void WanderingCaveMove(void) {
+    u16 currentValue = VarGet(VAR_WANDERING_CAVE_LOCATION);
+    u16 newValue = currentValue;
+
+    // For balancing purposes before the list is finished, include a roll to completely disable WC
+    if (gSpecialVar_0x8003 && Random() % 16 < 15) {
+        VarSet(VAR_WANDERING_CAVE_LOCATION, 0);
+    }
+
+    while (newValue == currentValue) {
+        newValue = sWanderingCaveLocations[Random() % WANDERING_CAVE_LOCATIONS];
+    }
+    VarSet(VAR_WANDERING_CAVE_LOCATION, newValue);
+}
+
+void WanderingCaveSetExit() {
+    u16 currentValue = VarGet(VAR_WANDERING_CAVE_LOCATION);
+    u16 newValue = currentValue;
+
+    while (newValue == currentValue) {
+        newValue = sWanderingCaveLocations[Random() % WANDERING_CAVE_LOCATIONS];
+    }
+    VarSet(VAR_WANDERING_CAVE_LOCATION, newValue);
+
+    SetDynamicWarp(0, MAP_GROUP(newValue), MAP_NUM(newValue), 0);
 }

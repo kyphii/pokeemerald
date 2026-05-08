@@ -130,11 +130,15 @@
     "Route2_House",
     "Route19_House",
     "Route4_House",
-    "MarinacreTown_House_1"
+    "MarinacreTown_House_1",
+    "NautirustCity_House_1",
+    "NautirustCity_House_2_1F",
+    "NautirustCity_House_2_2F"
   ],
   "gMapGroup_IndoorsOther": [
     "HawthornLabs_Interior",
-    "MountBriar_Lodge"
+    "MountBriar_Lodge",
+    "NautirustCity_TrainerSchool"
   ],
   "gMapGroup_Misc": [
     "DummyMap"

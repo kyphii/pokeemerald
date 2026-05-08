@@ -836,6 +836,46 @@
       "secondary_tileset": "gTileset_Nerilight",
       "border_filepath": "data/layouts/Route8/border.bin",
       "blockdata_filepath": "data/layouts/Route8/map.bin"
+    },
+    {
+      "id": "LAYOUT_NAUTIRUST_CITY_HOUSE_1",
+      "name": "NautirustCity_House_1_Layout",
+      "width": 16,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/NautirustCity_House_1/border.bin",
+      "blockdata_filepath": "data/layouts/NautirustCity_House_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_NAUTIRUST_CITY_HOUSE_2_1F",
+      "name": "NautirustCity_House_2_1F_Layout",
+      "width": 16,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/NautirustCity_House_2_1F/border.bin",
+      "blockdata_filepath": "data/layouts/NautirustCity_House_2_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_NAUTIRUST_CITY_HOUSE_2_2F",
+      "name": "NautirustCity_House_2_2F_Layout",
+      "width": 16,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/NautirustCity_House_2_2F/border.bin",
+      "blockdata_filepath": "data/layouts/NautirustCity_House_2_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_NAUTIRUST_CITY_TRAINER_SCHOOL",
+      "name": "NautirustCity_TrainerSchool_Layout",
+      "width": 32,
+      "height": 17,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonSchool",
+      "border_filepath": "data/layouts/NautirustCity_TrainerSchool/border.bin",
+      "blockdata_filepath": "data/layouts/NautirustCity_TrainerSchool/map.bin"
     }
   ]
 }

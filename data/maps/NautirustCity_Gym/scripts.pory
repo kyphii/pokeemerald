@@ -46,25 +46,54 @@ script NautirustCity_Gym_GuideIntro {
 		Could it be a brand new, bright-eyed 
 		champ-in-the-making?
 		
-		Welcome to the Nautirust City Gym!
+		This is the Nautirust City Gym!
+		Where tough trainers come to duke it 
+		out and hone their skills!
 
 		If you're looking to test your mettle
 		against the Wohnet Pok\emon League,
 		then you're in the right place!
-		
+
 		Eight gyms, eight cities, eight badges
 		to collect!
-		
+
 		Make your way through the gauntlet,
 		and you'll come face to face with
-		Landon, the leader of this gym!
-		
-		Think you got what it takes to beat him
-		and claim the Clay Badge?
-		
-		Show me what you got, hotshot!",
+		Landon, the leader of this gym!",
 		MSGBOX_DEFAULT
 	)
+	
+	getplayerlevel
+	if (var(VAR_RESULT) < 12) {
+		msgbox(
+			"Hmm…
+			
+			You look like you're pretty green when
+			it comes to training Pok\emon.
+			I can see it in your eyes!
+			
+			If you're thinking of taking on the gym challenge…
+			
+			Then get out there and explore!
+			Catch Pok\emon! Get stronger!
+			
+			…Or, if you're the stubborn type,
+			then I won't stop you. Go on ahead!
+			
+			I'll be waiting for your gym challenge 
+			with bated breath, hotshot!",
+			MSGBOX_DEFAULT
+		)
+	}
+	else {
+		msgbox(
+			"Think you got what it takes to beat him
+			and claim the Clay Badge?
+			
+			Show me what you got, hotshot!",
+			MSGBOX_DEFAULT
+		)
+	}
 	closemessage
 	applymovement(LOCALID_NAUTIRUST_GYM_GUIDE, moves(
 		walk_right * 2

@@ -1,1 +1,280 @@
-mapscripts Route2_House_MapScripts {}
+mapscripts Route2_House_MapScripts {
+	MAP_SCRIPT_ON_LOAD {
+		if (var(VAR_ROUTE2_FISHER_STATE) > 1) {
+			setobjectxyperm(LOCALID_ROUTE2_HOUSE_KRABBY, 8, 5)
+			addobject(LOCALID_ROUTE2_HOUSE_KRABBY)
+		}
+	}
+}
+
+script Route2_House_TalkKrabby {
+	lock
+	faceplayer
+	playmoncry(SPECIES_KRABBY, 0)
+    waitmoncry
+
+	msgbox(
+		"Krabby appears to be in good hands.",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script Route2_House_TalkFisherman {
+	switch (var(VAR_ROUTE2_FISHER_STATE)) {
+		case 0:
+			goto(Route2_House_IntroduceFisher)
+		case 1:
+			goto(Route2_House_CheckPartyForKrabby)
+		case 2:
+			if (!flag(FLAG_RECEIVED_OLD_ROD)) {
+				goto(Route2_House_ReceiveOldRod)
+			}
+			else {
+				lock
+				faceplayer
+				msgbox(
+					"Getting good use out of that Old Rod?
+					
+					If you catch a big fish Pok\emon, maybe 
+					I could be convinced to give you a 
+					better fishing rod…",
+					MSGBOX_DEFAULT
+				)
+				closemessage
+				release
+			}
+	}
+}
+
+script Route2_House_IntroduceFisher {
+	lock
+	faceplayer
+	msgbox(
+		"Most people these days have no 
+		appreciation for the art of fishing.
+
+		What about you, youngster?
+		Do you still care about fishing?",
+		MSGBOX_YESNO
+	)
+	if (var(VAR_RESULT) == YES) {
+		msgbox(
+			"Ah! Truly, you mean it?
+			A kindred spirit, in this day and age?
+			I'm overjoyed!
+
+			Oh, but you have no fishing rod?
+
+			How could you possibly appreciate 
+			fishing without any gear?
+
+			Hmm…
+			Perhaps we can help each other, then.
+
+			I want a Pok\emon called Krabby, but 
+			I'm no good at battling.
+
+			If you can catch a Krabby for me, I'd be 
+			willing to part with one of my old 
+			fishing rods.
+
+			How about it, youngster?
+			You go out there and catch me a Krabby,
+			and I'll give you my old rod!",
+			MSGBOX_DEFAULT
+		)
+		setvar(VAR_TEMP_1, 1)
+		setvar(VAR_ROUTE2_FISHER_STATE, 1)
+		closemessage
+		release
+	}
+	else {
+		msgbox(
+			"Oh…
+			No, of course…
+
+			My dreams of finding a kindred spirit, 
+			dashed upon the rocks yet again…",
+			MSGBOX_DEFAULT
+		)
+		closemessage
+		release
+	}
+	
+}
+
+script Route2_House_CheckPartyForKrabby {
+	lock
+	faceplayer
+	setvar(VAR_0x8004, SPECIES_KRABBY)
+	specialvar(VAR_RESULT, DoesPlayerPartyContainSpecies)
+	if (var(VAR_RESULT) == YES) {
+		msgbox(
+			"Oh!
+			You've caught a Krabby!
+
+			Well, youngster, a deal's a deal!
+
+			Will you give me that Krabby in
+			exchange for my fishing rod?",
+			MSGBOX_YESNO
+		)
+		if (var(VAR_RESULT) == YES) {
+			setvar(VAR_0x8004, 0)
+			special(ChoosePartyMon)
+			waitstate
+			copyvar(VAR_0x8005, VAR_0x8004)
+			if (var(VAR_0x8004) < PARTY_SIZE) {
+				specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+				if (var(VAR_RESULT) == SPECIES_KRABBY) {
+					copyvar(VAR_0x8004, VAR_0x8005)
+					special(ScriptRemoveMonFromParty)
+					goto(Route2_House_GiveKrabbyToFisher)
+				}
+				else {
+					msgbox(
+						"Hey!
+
+						That's not a Krabby!",
+						MSGBOX_DEFAULT
+					)
+					closemessage
+					release
+				}
+			}
+		}
+		else {
+			msgbox(
+				"Oh…
+
+				Okay…",
+				MSGBOX_DEFAULT
+			)
+			closemessage
+			release
+		}
+	}
+	else {
+		msgbox(
+			"I've seen Krabby before on the beaches 
+			of Route 1.
+
+			If you catch one for me, I'll give you 
+			one of my old fishing rods!",
+			MSGBOX_DEFAULT
+		)
+		closemessage
+		release
+	}
+}
+
+script Route2_House_GiveKrabbyToFisher {
+	getplayerxy(VAR_0x8008, VAR_0x8009)
+	if (var(VAR_0x8009) == 4) {
+		setobjectxyperm(LOCALID_ROUTE2_HOUSE_KRABBY, 5, 5)
+		addobject(LOCALID_ROUTE2_HOUSE_KRABBY)
+		lockall
+		turnobject(VAR_LAST_TALKED, DIR_SOUTH)
+		turnobject(LOCALID_ROUTE2_HOUSE_KRABBY, DIR_NORTH)
+	}
+	else {
+		setobjectxyperm(LOCALID_ROUTE2_HOUSE_KRABBY, 6, 4)
+		addobject(LOCALID_ROUTE2_HOUSE_KRABBY)
+		lockall
+		turnobject(VAR_LAST_TALKED, DIR_EAST)
+		turnobject(LOCALID_ROUTE2_HOUSE_KRABBY, DIR_WEST)
+	}
+	
+	msgbox(
+		"Haha!
+		Yes, a Krabby!
+		
+		Thank you so much!",
+		MSGBOX_DEFAULT
+	)
+	if (var(VAR_0x8009) == 3) {
+		applymovement(LOCALID_PLAYER, moves(
+			lock_facing_direction
+			walk_right
+			unlock_facing_direction
+		))
+	}
+	applymovement(VAR_LAST_TALKED, moves(
+		walk_up * 2
+		walk_left * 2
+		face_up
+	))
+	if (var(VAR_0x8009) == 4) {
+		applymovement(LOCALID_ROUTE2_HOUSE_KRABBY, moves(
+			walk_up * 3
+			walk_left
+			face_up
+		))
+	}
+	else {
+		applymovement(LOCALID_ROUTE2_HOUSE_KRABBY, moves(
+			walk_left
+			walk_up * 2
+			walk_left
+			face_up
+		))
+	}
+	msgbox(
+		"This will be perfect for my dinner!",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	waitmovement(0)
+	
+	applymovement(VAR_LAST_TALKED, moves(
+		jump_in_place_right * 2
+	))
+	waitmovement(0)
+	playmoncry(SPECIES_KRABBY, 0)
+    waitmoncry
+	
+	msgbox(
+		"Yes indeed!
+		
+		Krabby are great at cutting vegetables
+		with their claws!",
+		MSGBOX_DEFAULT
+	)
+	
+	applymovement(LOCALID_ROUTE2_HOUSE_KRABBY, moves(
+		walk_right * 2
+		face_down
+	))
+	applymovement(VAR_LAST_TALKED, moves(
+		walk_right * 2
+		walk_down * 2
+	))
+	waitmovement(0)
+	
+	addplayerlevel(1)
+	setvar(VAR_ROUTE2_FISHER_STATE, 2)
+	goto(Route2_House_ReceiveOldRod)
+}
+
+script Route2_House_ReceiveOldRod {
+	lock
+	faceplayer
+	msgbox(
+		"Thank you! Here, as promised!
+		Take my old fishing rod!",
+		MSGBOX_DEFAULT
+	)
+	
+	giveitem(ITEM_OLD_ROD)
+	waitmessage
+	waitbuttonpress
+	closemessage
+	releaseall
+	if (var(VAR_RESULT) == FALSE) {
+		goto(Common_EventScript_ShowBagIsFull)
+	}
+	
+	setflag(FLAG_RECEIVED_OLD_ROD)
+}

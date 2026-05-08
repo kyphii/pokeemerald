@@ -1,0 +1,326 @@
+{
+  "id": "MAP_NAUTIRUST_CITY_TRAINER_SCHOOL",
+  "name": "NautirustCity_TrainerSchool",
+  "layout": "LAYOUT_NAUTIRUST_CITY_TRAINER_SCHOOL",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_NAUTIRUST_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NPC_STEWARDESS",
+      "x": 16,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NautirustCity_TrainerSchool_TalkGreeter",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NPC_CLERK_F",
+      "x": 15,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NautirustCity_TrainerSchool_TalkTeacher",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NPC_SCHOOL_GIRL",
+      "x": 3,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NautirustCity_TrainerSchool_TalkLibraryGirl",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_NAUTIRUST_SCHOOL_GYMTEACHER",
+      "graphics_id": "OBJ_EVENT_GFX_NPC_WORKER",
+      "x": 25,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NautirustCity_TrainerSchool_TalkGymTeacher",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NPC_STUDENT_M",
+      "x": 16,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NautirustCity_TrainerSchool_TalkStudent2",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_NAUTIRUST_SCHOOL_TRAINER_1",
+      "graphics_id": "OBJ_EVENT_GFX_NPC_SCHOOL_BOY",
+      "x": 27,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NautirustCity_TrainerSchool_TalkBleachersKid3",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NPC_SCHOOL_BOY",
+      "x": 13,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NautirustCity_TrainerSchool_TalkStudent3",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NPC_TYKE_F",
+      "x": 11,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NautirustCity_TrainerSchool_TalkStudent1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NPC_FASHIONISTA",
+      "x": 11,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NautirustCity_TrainerSchool_TalkShyPerson",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_NAUTIRUST_SCHOOL_TRAINER_2",
+      "graphics_id": "OBJ_EVENT_GFX_NPC_SCHOOL_GIRL",
+      "x": 24,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NautirustCity_TrainerSchool_TalkBleachersKid2",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_NAUTIRUST_SCHOOL_TRAINER_3",
+      "graphics_id": "OBJ_EVENT_GFX_NPC_ATHELETE_M",
+      "x": 23,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NautirustCity_TrainerSchool_TalkBleachersKid1",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_NAUTIRUST_SCHOOL_MAYA",
+      "graphics_id": "OBJ_EVENT_GFX_MAYA",
+      "x": 0,
+      "y": -8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NautirustCity_TrainerSchool_TalkMaya",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 14,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 15,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_NAUTIRUST_CITY",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "NautirustCity_TrainerSchool_SignBookcase1"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "NautirustCity_TrainerSchool_SignBookcase1"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "NautirustCity_TrainerSchool_SignBookcase4"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "NautirustCity_TrainerSchool_SignBookcase4"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NautirustCity_TrainerSchool_SignBookcase3"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "NautirustCity_TrainerSchool_SignBookcase2"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "NautirustCity_TrainerSchool_SignBookcase5"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "NautirustCity_TrainerSchool_SignBookcase6"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "NautirustCity_TrainerSchool_SignBookcase7"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NautirustCity_TrainerSchool_SignTip1"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NautirustCity_TrainerSchool_SignTip2"
+    },
+    {
+      "type": "sign",
+      "x": 29,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NautirustCity_TrainerSchool_SignBubbler"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NautirustCity_TrainerSchool_SignChalkboard"
+    },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NautirustCity_TrainerSchool_SignChalkboard"
+    },
+    {
+      "type": "sign",
+      "x": 15,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NautirustCity_TrainerSchool_SignChalkboard"
+    },
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NautirustCity_TrainerSchool_SignChalkboard"
+    }
+  ]
+}

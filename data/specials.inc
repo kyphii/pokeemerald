@@ -629,3 +629,7 @@ gSpecials::
 	def_special StickerManGetBragFlags
 	def_special CheckAddCoins
 	def_special DynPal_ShowFullToneMenu
+	def_special ScriptRemoveMonFromParty
+	def_special RandomizeMayaLocation
+	def_special GetDayOfWeek
+	def_special WanderingCaveSetExit

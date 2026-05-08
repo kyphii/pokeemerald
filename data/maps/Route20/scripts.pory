@@ -81,7 +81,6 @@ script Route20_Script_TalkWithMaya {
 	
 	setvar(VAR_STORY_STATE_ACT1_B, 2)
 	clearflag(FLAG_STORY_ROUTE4_TRAIL_HINT)
-	addplayerlevel(1)
 	
 	releaseall
 }

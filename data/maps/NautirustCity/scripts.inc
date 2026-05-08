@@ -1,180 +1,358 @@
 NautirustCity_MapScripts::
 # 2 "data/maps/NautirustCity/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, NautirustCity_MapScripts_MAP_SCRIPT_ON_TRANSITION
+# 17 "data/maps/NautirustCity/scripts.pory"
+	map_script MAP_SCRIPT_ON_LOAD, NautirustCity_MapScripts_MAP_SCRIPT_ON_LOAD
 	.byte 0
 
 NautirustCity_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/NautirustCity/scripts.pory"
-	goto_if_unset FLAG_VISITED_PETALBURG_CITY, NautirustCity_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	goto_if_unset FLAG_VISITED_NAUTIRUST_CITY, NautirustCity_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 	return
 
 NautirustCity_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 # 4 "data/maps/NautirustCity/scripts.pory"
-	setflag FLAG_VISITED_PETALBURG_CITY
+	setflag FLAG_VISITED_NAUTIRUST_CITY
 # 7 "data/maps/NautirustCity/scripts.pory"
 	setflag FLAG_STORY_CUT_MASTER_AWAY
 # 9 "data/maps/NautirustCity/scripts.pory"
 	setflag FLAG_STORY_ROUTE4_TRAIL_HINT
 # 10 "data/maps/NautirustCity/scripts.pory"
 	addplayerlevel 1
+# 13 "data/maps/NautirustCity/scripts.pory"
+	setvar VAR_MAYA_CURRENT_CITY, 1
+# 14 "data/maps/NautirustCity/scripts.pory"
+	setvar VAR_MAYA_CURRENT_POSITION, 0
+	return
+
+NautirustCity_MapScripts_MAP_SCRIPT_ON_LOAD:
+# 18 "data/maps/NautirustCity/scripts.pory"
+	compare VAR_MAYA_CURRENT_CITY, 1
+	goto_if_eq NautirustCity_MapScripts_MAP_SCRIPT_ON_LOAD_1
+	return
+
+NautirustCity_MapScripts_MAP_SCRIPT_ON_LOAD_1:
+# 19 "data/maps/NautirustCity/scripts.pory"
+	compare VAR_MAYA_CURRENT_POSITION, 0
+	goto_if_ne NautirustCity_MapScripts_MAP_SCRIPT_ON_LOAD_4
+NautirustCity_MapScripts_MAP_SCRIPT_ON_LOAD_3:
+# 23 "data/maps/NautirustCity/scripts.pory"
+	switch VAR_MAYA_CURRENT_POSITION
+# 24 "data/maps/NautirustCity/scripts.pory"
+	case 1, NautirustCity_MapScripts_MAP_SCRIPT_ON_LOAD_7
+# 26 "data/maps/NautirustCity/scripts.pory"
+	case 2, NautirustCity_MapScripts_MAP_SCRIPT_ON_LOAD_8
+# 28 "data/maps/NautirustCity/scripts.pory"
+	case 3, NautirustCity_MapScripts_MAP_SCRIPT_ON_LOAD_9
+# 31 "data/maps/NautirustCity/scripts.pory"
+	setobjectxyperm LOCALID_NAUTIRUST_MAYA, 0, -8
+	return
+
+NautirustCity_MapScripts_MAP_SCRIPT_ON_LOAD_4:
+# 20 "data/maps/NautirustCity/scripts.pory"
+	setvar VAR_0x8004, 5
+# 21 "data/maps/NautirustCity/scripts.pory"
+	special RandomizeMayaLocation
+	goto NautirustCity_MapScripts_MAP_SCRIPT_ON_LOAD_3
+
+NautirustCity_MapScripts_MAP_SCRIPT_ON_LOAD_7:
+# 25 "data/maps/NautirustCity/scripts.pory"
+	setobjectxyperm LOCALID_NAUTIRUST_MAYA, 7, 12
+	return
+
+NautirustCity_MapScripts_MAP_SCRIPT_ON_LOAD_8:
+# 27 "data/maps/NautirustCity/scripts.pory"
+	setobjectxyperm LOCALID_NAUTIRUST_MAYA, 29, 20
+	return
+
+NautirustCity_MapScripts_MAP_SCRIPT_ON_LOAD_9:
+# 29 "data/maps/NautirustCity/scripts.pory"
+	setobjectxyperm LOCALID_NAUTIRUST_MAYA, 14, 38
+	return
+
+
+NautirustCity_Sign_TrainerAcademy::
+# 38 "data/maps/NautirustCity/scripts.pory"
+	msgbox NautirustCity_Sign_TrainerAcademy_Text_0, MSGBOX_SIGN
 	return
 
 
 NautirustCity_Sign_TownSign::
-# 16 "data/maps/NautirustCity/scripts.pory"
+# 45 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Sign_TownSign_Text_0, MSGBOX_SIGN
 	return
 
 
 NautirustCity_Sign_GymSign::
-# 24 "data/maps/NautirustCity/scripts.pory"
+# 54 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Sign_GymSign_Text_0, MSGBOX_SIGN
 	return
 
 
-NautirustCity_Script_TalkGreeter::
-# 33 "data/maps/NautirustCity/scripts.pory"
+NautirustCity_Script_TalkMaya::
+# 63 "data/maps/NautirustCity/scripts.pory"
 	lock
-# 34 "data/maps/NautirustCity/scripts.pory"
+# 64 "data/maps/NautirustCity/scripts.pory"
 	faceplayer
-# 35 "data/maps/NautirustCity/scripts.pory"
-	msgbox NautirustCity_Script_TalkGreeter_Text_0, MSGBOX_DEFAULT
-# 56 "data/maps/NautirustCity/scripts.pory"
+# 65 "data/maps/NautirustCity/scripts.pory"
+	switch VAR_MAYA_CURRENT_POSITION
+# 66 "data/maps/NautirustCity/scripts.pory"
+	case 1, NautirustCity_Script_TalkMaya_3
+# 113 "data/maps/NautirustCity/scripts.pory"
+	case 2, NautirustCity_Script_TalkMaya_4
+# 127 "data/maps/NautirustCity/scripts.pory"
+	case 3, NautirustCity_Script_TalkMaya_5
+NautirustCity_Script_TalkMaya_1:
+# 144 "data/maps/NautirustCity/scripts.pory"
+	setvar VAR_0x8004, 5
+# 145 "data/maps/NautirustCity/scripts.pory"
+	special RandomizeMayaLocation
+# 146 "data/maps/NautirustCity/scripts.pory"
 	closemessage
-# 57 "data/maps/NautirustCity/scripts.pory"
+# 147 "data/maps/NautirustCity/scripts.pory"
+	release
+	return
+
+NautirustCity_Script_TalkMaya_3:
+# 67 "data/maps/NautirustCity/scripts.pory"
+	getplayerlevel
+# 68 "data/maps/NautirustCity/scripts.pory"
+	goto_if_set FLAG_BADGE01_GET, NautirustCity_Script_TalkMaya_6
+# 85 "data/maps/NautirustCity/scripts.pory"
+	compare VAR_RESULT, 12
+	goto_if_lt NautirustCity_Script_TalkMaya_7
+# 102 "data/maps/NautirustCity/scripts.pory"
+	msgbox NautirustCity_Script_TalkMaya_Text_2, MSGBOX_DEFAULT
+	goto NautirustCity_Script_TalkMaya_1
+
+NautirustCity_Script_TalkMaya_4:
+# 114 "data/maps/NautirustCity/scripts.pory"
+	msgbox NautirustCity_Script_TalkMaya_Text_3, MSGBOX_DEFAULT
+	goto NautirustCity_Script_TalkMaya_1
+
+NautirustCity_Script_TalkMaya_5:
+# 128 "data/maps/NautirustCity/scripts.pory"
+	msgbox NautirustCity_Script_TalkMaya_Text_4, MSGBOX_DEFAULT
+	goto NautirustCity_Script_TalkMaya_1
+
+NautirustCity_Script_TalkMaya_6:
+# 69 "data/maps/NautirustCity/scripts.pory"
+	msgbox NautirustCity_Script_TalkMaya_Text_0, MSGBOX_DEFAULT
+	goto NautirustCity_Script_TalkMaya_1
+
+NautirustCity_Script_TalkMaya_7:
+# 86 "data/maps/NautirustCity/scripts.pory"
+	msgbox NautirustCity_Script_TalkMaya_Text_1, MSGBOX_DEFAULT
+	goto NautirustCity_Script_TalkMaya_1
+
+
+NautirustCity_Script_TalkGreeter::
+# 151 "data/maps/NautirustCity/scripts.pory"
+	lock
+# 152 "data/maps/NautirustCity/scripts.pory"
+	faceplayer
+# 153 "data/maps/NautirustCity/scripts.pory"
+	msgbox NautirustCity_Script_TalkGreeter_Text_0, MSGBOX_DEFAULT
+# 174 "data/maps/NautirustCity/scripts.pory"
+	closemessage
+# 175 "data/maps/NautirustCity/scripts.pory"
 	release
 	return
 
 
 NautirustCity_Script_TalkMan1::
-# 61 "data/maps/NautirustCity/scripts.pory"
+# 179 "data/maps/NautirustCity/scripts.pory"
 	lock
-# 62 "data/maps/NautirustCity/scripts.pory"
+# 180 "data/maps/NautirustCity/scripts.pory"
 	faceplayer
-# 63 "data/maps/NautirustCity/scripts.pory"
+# 181 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Script_TalkMan1_Text_0, MSGBOX_DEFAULT
-# 75 "data/maps/NautirustCity/scripts.pory"
+# 193 "data/maps/NautirustCity/scripts.pory"
 	closemessage
-# 76 "data/maps/NautirustCity/scripts.pory"
+# 194 "data/maps/NautirustCity/scripts.pory"
 	release
 	return
 
 
 NautirustCity_Script_TalkBenchGirl::
-# 80 "data/maps/NautirustCity/scripts.pory"
+# 198 "data/maps/NautirustCity/scripts.pory"
 	lock
-# 81 "data/maps/NautirustCity/scripts.pory"
+# 199 "data/maps/NautirustCity/scripts.pory"
 	faceplayer
-# 82 "data/maps/NautirustCity/scripts.pory"
+# 200 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Script_TalkBenchGirl_Text_0, MSGBOX_DEFAULT
-# 90 "data/maps/NautirustCity/scripts.pory"
+# 208 "data/maps/NautirustCity/scripts.pory"
 	closemessage
-# 91 "data/maps/NautirustCity/scripts.pory"
+# 209 "data/maps/NautirustCity/scripts.pory"
 	release
 	return
 
 
 NautirustCity_Script_TalkExpShareStore::
-# 95 "data/maps/NautirustCity/scripts.pory"
+# 213 "data/maps/NautirustCity/scripts.pory"
 	lock
-# 96 "data/maps/NautirustCity/scripts.pory"
+# 214 "data/maps/NautirustCity/scripts.pory"
 	faceplayer
-# 97 "data/maps/NautirustCity/scripts.pory"
+# 215 "data/maps/NautirustCity/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_EXP_SHARE, NautirustCity_Script_TalkExpShareStore_1
-# 163 "data/maps/NautirustCity/scripts.pory"
+# 284 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Script_TalkExpShareStore_Text_9, MSGBOX_DEFAULT
-# 170 "data/maps/NautirustCity/scripts.pory"
+# 291 "data/maps/NautirustCity/scripts.pory"
 	closemessage
-# 171 "data/maps/NautirustCity/scripts.pory"
+# 292 "data/maps/NautirustCity/scripts.pory"
 	release
 	return
 
 NautirustCity_Script_TalkExpShareStore_1:
-# 98 "data/maps/NautirustCity/scripts.pory"
+# 216 "data/maps/NautirustCity/scripts.pory"
 	message NautirustCity_Script_TalkExpShareStore_Text_0
-# 107 "data/maps/NautirustCity/scripts.pory"
+# 225 "data/maps/NautirustCity/scripts.pory"
 	waitmessage
-# 108 "data/maps/NautirustCity/scripts.pory"
+# 226 "data/maps/NautirustCity/scripts.pory"
 	showmoneybox 0, 0
-# 109 "data/maps/NautirustCity/scripts.pory"
+# 227 "data/maps/NautirustCity/scripts.pory"
 	dynmultichoice 14, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, NautirustCity_Script_TalkExpShareStore_Text_1, NautirustCity_Script_TalkExpShareStore_Text_2
-# 111 "data/maps/NautirustCity/scripts.pory"
+# 229 "data/maps/NautirustCity/scripts.pory"
 	switch VAR_RESULT
-# 112 "data/maps/NautirustCity/scripts.pory"
+# 230 "data/maps/NautirustCity/scripts.pory"
 	case 0, NautirustCity_Script_TalkExpShareStore_5
-# 153 "data/maps/NautirustCity/scripts.pory"
+# 273 "data/maps/NautirustCity/scripts.pory"
 	case 1, NautirustCity_Script_TalkExpShareStore_6
 	return
 
 NautirustCity_Script_TalkExpShareStore_5:
-# 113 "data/maps/NautirustCity/scripts.pory"
+# 231 "data/maps/NautirustCity/scripts.pory"
 	checkmoney 5000
-# 114 "data/maps/NautirustCity/scripts.pory"
+# 232 "data/maps/NautirustCity/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq NautirustCity_Script_TalkExpShareStore_7
-# 143 "data/maps/NautirustCity/scripts.pory"
+# 262 "data/maps/NautirustCity/scripts.pory"
+	hidemoneybox
+# 263 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Script_TalkExpShareStore_Text_7, MSGBOX_DEFAULT
-# 150 "data/maps/NautirustCity/scripts.pory"
+# 270 "data/maps/NautirustCity/scripts.pory"
 	closemessage
-# 151 "data/maps/NautirustCity/scripts.pory"
+# 271 "data/maps/NautirustCity/scripts.pory"
 	release
 	return
 
 NautirustCity_Script_TalkExpShareStore_6:
-# 154 "data/maps/NautirustCity/scripts.pory"
+# 274 "data/maps/NautirustCity/scripts.pory"
+	hidemoneybox
+# 275 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Script_TalkExpShareStore_Text_8, MSGBOX_DEFAULT
-# 158 "data/maps/NautirustCity/scripts.pory"
+# 279 "data/maps/NautirustCity/scripts.pory"
 	closemessage
-# 159 "data/maps/NautirustCity/scripts.pory"
+# 280 "data/maps/NautirustCity/scripts.pory"
 	release
 	return
 
 NautirustCity_Script_TalkExpShareStore_7:
-# 115 "data/maps/NautirustCity/scripts.pory"
+# 233 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Script_TalkExpShareStore_Text_3, MSGBOX_DEFAULT
-# 119 "data/maps/NautirustCity/scripts.pory"
+# 237 "data/maps/NautirustCity/scripts.pory"
 	removemoney 5000
-# 120 "data/maps/NautirustCity/scripts.pory"
+# 238 "data/maps/NautirustCity/scripts.pory"
+	hidemoneybox
+# 239 "data/maps/NautirustCity/scripts.pory"
 	giveitem ITEM_EXP_SHARE, 1
-# 121 "data/maps/NautirustCity/scripts.pory"
+# 240 "data/maps/NautirustCity/scripts.pory"
 	setflag FLAG_RECEIVED_EXP_SHARE
-# 123 "data/maps/NautirustCity/scripts.pory"
+# 242 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Script_TalkExpShareStore_Text_4, MSGBOX_YESNO
-# 127 "data/maps/NautirustCity/scripts.pory"
+# 246 "data/maps/NautirustCity/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq NautirustCity_Script_TalkExpShareStore_11
 NautirustCity_Script_TalkExpShareStore_10:
-# 135 "data/maps/NautirustCity/scripts.pory"
+# 254 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Script_TalkExpShareStore_Text_6, MSGBOX_DEFAULT
-# 139 "data/maps/NautirustCity/scripts.pory"
+# 258 "data/maps/NautirustCity/scripts.pory"
 	closemessage
-# 140 "data/maps/NautirustCity/scripts.pory"
+# 259 "data/maps/NautirustCity/scripts.pory"
 	release
 	return
 
 NautirustCity_Script_TalkExpShareStore_11:
-# 128 "data/maps/NautirustCity/scripts.pory"
+# 247 "data/maps/NautirustCity/scripts.pory"
 	playse SE_POKENAV_ON
-# 129 "data/maps/NautirustCity/scripts.pory"
+# 248 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Script_TalkExpShareStore_Text_5
-# 132 "data/maps/NautirustCity/scripts.pory"
+# 251 "data/maps/NautirustCity/scripts.pory"
 	setflag FLAG_EXP_SHARE_ENABLED
 	goto NautirustCity_Script_TalkExpShareStore_10
 
 
+NautirustCity_Sign_TrainerAcademy_Text_0:
+# 39 "data/maps/NautirustCity/scripts.pory"
+	.string "Nautirust Trainer's Academy$"
+
 NautirustCity_Sign_TownSign_Text_0:
-# 17 "data/maps/NautirustCity/scripts.pory"
+# 46 "data/maps/NautirustCity/scripts.pory"
 	.string "NAUTIRUST CITY\n"
-	.string "Streams of energy, to power a new age.$"
+	.string "Streams of energy, powering the gears \l"
+	.string "of history.$"
 
 NautirustCity_Sign_GymSign_Text_0:
-# 25 "data/maps/NautirustCity/scripts.pory"
+# 55 "data/maps/NautirustCity/scripts.pory"
 	.string "NAUTIRUST CITY Pokémon Gym\n"
 	.string "Leader: Landon\l"
 	.string "The Sultan of Soil!$"
 
+NautirustCity_Script_TalkMaya_Text_0:
+# 70 "data/maps/NautirustCity/scripts.pory"
+	.string "MAYA: Woah, {PLAYER}!\n"
+	.string "You beat the gym challenge too?\p"
+	.string "That means it's official!\n"
+	.string "We're rivals now!\p"
+	.string "You're on, {PLAYER}!\n"
+	.string "I'm gonna beat all the gyms in Wohnet \l"
+	.string "first!\p"
+	.string "You better keep up! \n"
+	.string "I need you to keep me sharp!$"
+
+NautirustCity_Script_TalkMaya_Text_1:
+# 87 "data/maps/NautirustCity/scripts.pory"
+	.string "MAYA: Hey!\p"
+	.string "Did you take a look inside the gym yet?\p"
+	.string "I checked it out, but they told me I\n"
+	.string "should train more before I can\l"
+	.string "challenge the Gym Leader.\p"
+	.string "Okay, {PLAYER}!\n"
+	.string "Let's get strong enough to take on\l"
+	.string "that gym!$"
+
+NautirustCity_Script_TalkMaya_Text_2:
+# 103 "data/maps/NautirustCity/scripts.pory"
+	.string "MAYA: Hey, {PLAYER}!\n"
+	.string "Guess what?\p"
+	.string "I got a gym badge!\p"
+	.string "You should try it out too.\n"
+	.string "You better keep up with me!$"
+
+NautirustCity_Script_TalkMaya_Text_3:
+# 115 "data/maps/NautirustCity/scripts.pory"
+	.string "MAYA: To be honest, I never really liked \n"
+	.string "passing through this city before.\p"
+	.string "It always seemed so dreary.\p"
+	.string "But now that we're traveling with \n"
+	.string "Pokémon…\p"
+	.string "I dunno. It's making me see things \n"
+	.string "through a different lens, I guess.$"
+
+NautirustCity_Script_TalkMaya_Text_4:
+# 129 "data/maps/NautirustCity/scripts.pory"
+	.string "MAYA: So, if we go west from here, it'll \n"
+	.string "take us through Whelchord City, and \l"
+	.string "then to the Poké Ball factory in \l"
+	.string "Armiter City.\p"
+	.string "Or we could go south through Junopolis \n"
+	.string "City to reach Canvenus City.\p"
+	.string "It's gonna be a pretty long journey \n"
+	.string "either way.\p"
+	.string "Which road should we take?$"
+
 NautirustCity_Script_TalkGreeter_Text_0:
-# 36 "data/maps/NautirustCity/scripts.pory"
+# 154 "data/maps/NautirustCity/scripts.pory"
 	.string "Hi!\n"
 	.string "Are you from out of town?\p"
 	.string "There are a lot of trainers like you\n"
@@ -190,7 +368,7 @@ NautirustCity_Script_TalkGreeter_Text_0:
 	.string "It's run by a guy named Landon.$"
 
 NautirustCity_Script_TalkMan1_Text_0:
-# 64 "data/maps/NautirustCity/scripts.pory"
+# 182 "data/maps/NautirustCity/scripts.pory"
 	.string "All these buildings used to be \n"
 	.string "factories.\p"
 	.string "Nowadays, though, most of them have \n"
@@ -200,14 +378,14 @@ NautirustCity_Script_TalkMan1_Text_0:
 	.string "that purpose.$"
 
 NautirustCity_Script_TalkBenchGirl_Text_0:
-# 83 "data/maps/NautirustCity/scripts.pory"
+# 201 "data/maps/NautirustCity/scripts.pory"
 	.string "The canals are so nice now that the\n"
 	.string "city's cleaned them up!\p"
 	.string "I used to hate living here, but now I \n"
 	.string "can't imagine being anywhere else!$"
 
 NautirustCity_Script_TalkExpShareStore_Text_0:
-# 99 "data/maps/NautirustCity/scripts.pory"
+# 217 "data/maps/NautirustCity/scripts.pory"
 	.string "Hi there!\p"
 	.string "My days as a Pokémon trainer are \n"
 	.string "behind me, so I'm selling my old gear.\p"
@@ -215,41 +393,41 @@ NautirustCity_Script_TalkExpShareStore_Text_0:
 	.string "Want to buy it?$"
 
 NautirustCity_Script_TalkExpShareStore_Text_1:
-# 110 "data/maps/NautirustCity/scripts.pory"
+# 228 "data/maps/NautirustCity/scripts.pory"
 	.string "EXP. ALL{CLEAR_TO 0x49}{FONT_SMALL}¥5,000$"
 
 NautirustCity_Script_TalkExpShareStore_Text_2:
-# 110 "data/maps/NautirustCity/scripts.pory"
+# 228 "data/maps/NautirustCity/scripts.pory"
 	.string "No thanks$"
 
 NautirustCity_Script_TalkExpShareStore_Text_3:
-# 116 "data/maps/NautirustCity/scripts.pory"
+# 234 "data/maps/NautirustCity/scripts.pory"
 	.string "Here you go!$"
 
 NautirustCity_Script_TalkExpShareStore_Text_4:
-# 124 "data/maps/NautirustCity/scripts.pory"
+# 243 "data/maps/NautirustCity/scripts.pory"
 	.string "Turn the Exp. All on?$"
 
 NautirustCity_Script_TalkExpShareStore_Text_5:
-# 130 "data/maps/NautirustCity/scripts.pory"
+# 249 "data/maps/NautirustCity/scripts.pory"
 	.string "You turned on the Exp. All.$"
 
 NautirustCity_Script_TalkExpShareStore_Text_6:
-# 136 "data/maps/NautirustCity/scripts.pory"
+# 255 "data/maps/NautirustCity/scripts.pory"
 	.string "Thank you!$"
 
 NautirustCity_Script_TalkExpShareStore_Text_7:
-# 144 "data/maps/NautirustCity/scripts.pory"
+# 264 "data/maps/NautirustCity/scripts.pory"
 	.string "Sorry!\n"
 	.string "You don't have enough money…\p"
 	.string "Maybe come back later?$"
 
 NautirustCity_Script_TalkExpShareStore_Text_8:
-# 155 "data/maps/NautirustCity/scripts.pory"
+# 276 "data/maps/NautirustCity/scripts.pory"
 	.string "Thanks for stopping by!$"
 
 NautirustCity_Script_TalkExpShareStore_Text_9:
-# 164 "data/maps/NautirustCity/scripts.pory"
+# 285 "data/maps/NautirustCity/scripts.pory"
 	.string "I'm all out of stock, but I still have a\n"
 	.string "lease for this stand.\p"
 	.string "Maybe I could sell other things?$"

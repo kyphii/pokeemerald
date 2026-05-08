@@ -952,3 +952,11 @@ EventScript_BrailleCursorWaitButton::
 	.include "data/maps/MountBriar_Lodge/scripts.inc"
 
 	.include "data/maps/Route8/scripts.inc"
+
+	.include "data/maps/NautirustCity_House_1/scripts.inc"
+
+	.include "data/maps/NautirustCity_House_2_1F/scripts.inc"
+
+	.include "data/maps/NautirustCity_House_2_2F/scripts.inc"
+
+	.include "data/maps/NautirustCity_TrainerSchool/scripts.inc"

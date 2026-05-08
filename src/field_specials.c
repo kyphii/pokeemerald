@@ -1308,6 +1308,30 @@ u16 ScriptGetSelectedMonSpecies(void)
     return GetBoxMonData(boxmon, MON_DATA_SPECIES_OR_EGG);
 }
 
+void ScriptRemoveMonFromParty(void)
+{
+    struct Pokemon* mon;
+    if (gSpecialVar_0x8004 == PC_MON_CHOSEN)
+    {
+        mon = Alloc(sizeof(struct Pokemon));
+        RemoveSelectedPcMon(mon);
+        Free(mon);
+    }
+    else
+    {
+        mon = &gPlayerParty[gSpecialVar_0x8004];
+        ZeroMonData(mon);
+        CompactPartySlots();
+        CalculatePlayerPartyCount();
+    }
+}
+
+void RandomizeMayaLocation() {
+    if (gSpecialVar_0x8004 > 1) {
+        VarSet(VAR_MAYA_CURRENT_POSITION, 1 + (Random() % gSpecialVar_0x8004));
+    }
+}
+
 // Removed for Emerald
 void TryInitBattleTowerAwardManObjectEvent(void)
 {

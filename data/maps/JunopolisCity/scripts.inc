@@ -5,12 +5,12 @@ JunopolisCity_MapScripts::
 
 JunopolisCity_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/JunopolisCity/scripts.pory"
-	goto_if_unset FLAG_VISITED_MAUVILLE_CITY, JunopolisCity_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	goto_if_unset FLAG_VISITED_JUNOPOLIS_CITY, JunopolisCity_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 	return
 
 JunopolisCity_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 # 4 "data/maps/JunopolisCity/scripts.pory"
-	setflag FLAG_VISITED_MAUVILLE_CITY
+	setflag FLAG_VISITED_JUNOPOLIS_CITY
 # 5 "data/maps/JunopolisCity/scripts.pory"
 	setflag FLAG_STORY_ROUTE20_CROWD_CLEAR
 # 6 "data/maps/JunopolisCity/scripts.pory"

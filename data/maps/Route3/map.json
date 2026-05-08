@@ -215,7 +215,7 @@
   ],
   "warp_events": [
     {
-      "x": 19,
+      "x": 22,
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_WANDERING_CAVE",

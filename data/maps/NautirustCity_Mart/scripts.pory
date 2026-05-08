@@ -1,0 +1,60 @@
+mapscripts NautirustCity_Mart_MapScripts {
+	MAP_SCRIPT_ON_LOAD {
+		if (var(VAR_MAYA_CURRENT_CITY) == 1) {
+			if (var(VAR_MAYA_CURRENT_POSITION) == 4) {
+				setobjectxyperm(LOCALID_NAUTIRUST_MART_MAYA, 9, 5)
+			}
+			else {
+				setobjectxyperm(LOCALID_NAUTIRUST_MART_MAYA, 0, -8)
+			}
+		}
+	}
+}
+
+script NautirustCity_Mart_TalkBoy1 {
+	lock
+	faceplayer
+	msgbox(
+		"There are so many items to choose from
+		here…
+		
+		But I don't have any badges, so I can 
+		only get basic stuff.
+		
+		The more Wohnet Pok\emon League gym 
+		badges you have, the more you can buy.",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}
+
+script NautirustCity_Mart_TalkMaya {
+	lock
+	
+	setvar(VAR_0x8004, 5)
+	special(RandomizeMayaLocation)
+	
+	msgbox(
+		"MAYA: Let's see…
+		Potions… Repels… some more Pok\e 
+		Balls…",
+		MSGBOX_DEFAULT
+	)
+	
+	faceplayer
+	
+	msgbox(
+		"I forgot to stock up on supplies before 
+		we left home.
+		Whoops!
+		
+		The routes out of town are pretty long.
+		
+		I've decided I'm gonna be proactive
+		for once.",
+		MSGBOX_DEFAULT
+	)
+	closemessage
+	release
+}

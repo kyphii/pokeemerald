@@ -4,7 +4,7 @@ const STARTER_SPECIES_WATER = SPECIES_POPPLIO
 
 mapscripts MarinacreTown_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        setflag(FLAG_VISITED_LITTLEROOT_TOWN)
+        setflag(FLAG_VISITED_MARINACRE_TOWN)
     }
 	MAP_SCRIPT_ON_LOAD {
 		switch(var(VAR_INTRO_SEQUENCE_STATE)) {

@@ -246,7 +246,6 @@ Class: Youngster
 Pic: Youngster
 Gender: Male
 AI: Check Bad Move
-Base Level: 4
 Base Party Size: 2
 
 Swellow
@@ -262,7 +261,6 @@ Class: Bug Catcher
 Pic: Bug Catcher
 Gender: Male
 AI: Check Bad Move
-Base Level: 5
 Base Party Size: 2
 
 Escavalier
@@ -278,7 +276,6 @@ Class: Lass
 Pic: Lass
 Gender: Female
 AI: Check Bad Move
-Base Level: 7
 Base Party Size: 2
 
 Delcatty
@@ -294,7 +291,6 @@ Class: Bug Catcher
 Pic: Bug Catcher
 Gender: Male
 AI: Check Bad Move
-Base Level: 7
 Base Party Size: 2
 
 Dustox
@@ -312,7 +308,6 @@ Class: School Kid
 Pic: School Kid M
 Gender: Male
 AI: Check Bad Move
-Base Level: 8
 Base Party Size: 2
 
 Raichu
@@ -327,7 +322,6 @@ Class: Camper
 Pic: Camper
 Gender: Male
 AI: Check Bad Move
-Base Level: 8
 Base Party Size: 1
 
 Houndoom
@@ -339,7 +333,6 @@ Class: Picnicker
 Pic: Picnicker
 Gender: Female
 AI: Check Bad Move
-Base Level: 9
 Base Party Size: 2
 
 Granbull
@@ -354,7 +347,6 @@ Class: Hiker
 Pic: Hiker
 Gender: Male
 AI: Check Bad Move
-Base Level: 9
 Base Party Size: 2
 
 Sudowoodo
@@ -373,7 +365,6 @@ Class: Battle Girl
 Pic: Battle Girl
 Gender: Female
 AI: Check Bad Move
-Base Level: 10
 Base Party Size: 3
 
 Lopunny
@@ -391,7 +382,6 @@ Class: Triathlete
 Pic: Running Triathlete M
 Gender: Male
 AI: Check Bad Move
-Base Level: 10
 Base Party Size: 2
 
 Fearow
@@ -407,7 +397,6 @@ Class: Black Belt
 Pic: Black Belt
 Gender: Male
 AI: Check Bad Move
-Base Level: 11
 Base Party Size: 2
 
 Hitmonchan
@@ -422,7 +411,6 @@ Class: Battle Girl
 Pic: Battle Girl
 Gender: Female
 AI: Check Bad Move
-Base Level: 11
 Base Party Size: 2
 
 Hitmonlee
@@ -439,7 +427,6 @@ Class: Hiker
 Pic: Hiker
 Gender: Male
 AI: Check Bad Move
-Base Level: 10
 Base Party Size: 2
 
 Mamoswine
@@ -454,7 +441,6 @@ Class: Camper
 Pic: Camper
 Gender: Male
 AI: Check Bad Move
-Base Level: 10
 Base Party Size: 4
 
 Abomasnow
@@ -475,7 +461,6 @@ Class: Aroma Lady
 Pic: Aroma Lady
 Gender: Female
 AI: Check Bad Move
-Base Level: 10
 Base Party Size: 3
 
 Jumpluff
@@ -493,7 +478,6 @@ Class: Picnicker
 Pic: Picnicker
 Gender: Female
 AI: Check Bad Move
-Base Level: 10
 Base Party Size: 3
 
 Beautifly
@@ -511,7 +495,6 @@ Class: Bird Keeper
 Pic: Bird Keeper
 Gender: Male
 AI: Check Bad Move
-Base Level: 11
 Base Party Size: 3
 
 Xatu
@@ -523,13 +506,26 @@ Level: 0
 Fearow
 Level: 0
 
+=== TRAINER_ROUTE4_6 ===
+Name: Blake
+Class: Youngster
+Pic: Youngster
+Gender: Male
+AI: Check Bad Move
+Base Party Size: 2
+
+Houndoom
+Level: 0
+
+Granbull
+Level: 0
+
 === TRAINER_ROUTE4_7 ===
 Name: Devon
 Class: Triathlete
 Pic: Running Triathlete M
 Gender: Male
 AI: Check Bad Move
-Base Level: 11
 Base Party Size: 2
 
 Liepard
@@ -544,7 +540,6 @@ Class: Black Belt
 Pic: Black Belt
 Gender: Male
 AI: Check Bad Move
-Base Level: 12
 Base Party Size: 2
 
 Hitmonlee
@@ -559,7 +554,6 @@ Class: Bird Keeper
 Pic: Bird Keeper
 Gender: Male
 AI: Check Bad Move
-Base Level: 12
 Base Party Size: 4
 
 Altaria
@@ -580,7 +574,6 @@ Class: Battle Girl
 Pic: Battle Girl
 Gender: Female
 AI: Check Bad Move
-Base Level: 13
 Base Party Size: 3
 
 Bewear
@@ -598,7 +591,6 @@ Class: Aroma Lady
 Pic: Aroma Lady
 Gender: Female
 AI: Check Bad Move
-Base Level: 8
 Base Party Size: 3
 
 Leavanny
@@ -616,7 +608,6 @@ Class: Triathlete
 Pic: Running Triathlete M
 Gender: Male
 AI: Check Bad Move
-Base Level: 8
 Base Party Size: 1
 
 Pinsir
@@ -628,7 +619,6 @@ Class: Triathlete
 Pic: Running Triathlete F
 Gender: Female
 AI: Check Bad Move
-Base Level: 9
 Base Party Size: 2
 
 Unfezant
@@ -643,7 +633,6 @@ Class: School Kid
 Pic: School Kid F
 Gender: Female
 AI: Check Bad Move
-Base Level: 9
 Base Party Size: 3
 
 Wigglytuff
@@ -661,7 +650,6 @@ Class: Youngster
 Pic: Youngster
 Gender: Male
 AI: Check Bad Move
-Base Level: 10
 Base Party Size: 3
 
 Dustox
@@ -679,7 +667,6 @@ Class: Beauty
 Pic: Beauty
 Gender: Female
 AI: Check Bad Move
-Base Level: 10
 Base Party Size: 2
 
 Liepard
@@ -694,7 +681,6 @@ Class: Aroma Lady
 Pic: Aroma Lady
 Gender: Female
 AI: Check Bad Move
-Base Level: 10
 Base Party Size: 2
 
 Roserade
@@ -860,7 +846,6 @@ Class: Skier
 Pic: Skier M
 Gender: Male
 AI: Check Bad Move
-Base Level: 12
 Base Party Size: 2
 
 Glalie
@@ -875,7 +860,6 @@ Class: Skier
 Pic: Skier F
 Gender: Female
 AI: Check Bad Move
-Base Level: 12
 Base Party Size: 2
 
 Frosmoth
@@ -890,7 +874,6 @@ Class: Skier
 Pic: Skier M
 Gender: Male
 AI: Check Bad Move
-Base Level: 12
 Base Party Size: 3
 
 Cryogonal
@@ -908,7 +891,6 @@ Class: Skier
 Pic: Skier F
 Gender: Female
 AI: Check Bad Move
-Base Level: 12
 Base Party Size: 2
 
 Mamoswine
@@ -923,7 +905,6 @@ Class: Skier
 Pic: Skier F
 Gender: Female
 AI: Check Bad Move
-Base Level: 13
 Base Party Size: 4
 
 Abomasnow
@@ -944,7 +925,6 @@ Class: Hiker
 Pic: Hiker
 Gender: Male
 AI: Check Bad Move
-Base Level: 12
 Base Party Size: 2
 
 Boldore
@@ -959,7 +939,6 @@ Class: Expert
 Pic: Expert M
 Gender: Male
 AI: Check Bad Move
-Base Level: 13
 Base Party Size: 3
 
 Crawdaunt
@@ -979,7 +958,7 @@ Class: Camper
 Pic: Camper
 Gender: Male
 AI: Check Bad Move
-Base Level: 12
+Base Level: 11
 Base Party Size: 3
 
 Sandslash
@@ -1015,7 +994,7 @@ Class: Camper
 Pic: Camper
 Gender: Male
 AI: Check Bad Move
-Base Level: 13
+Base Level: 12
 Base Party Size: 2
 
 Nidoqueen
@@ -1141,3 +1120,120 @@ IVs: 31 HP / 31 Atk / 31 Def / 0 SpA / 31 SpD / 31 Spe
 - Dragon Pulse
 - Fire Blast
 - Air Slash
+
+=== TRAINER_SCHOOL_WINSTREAK_1 ===
+Name: Robbie
+Class: Youngster
+Pic: Youngster
+Gender: Male
+AI: Check Bad Move
+Base Party Size: 3
+
+Venomoth
+Level: -2
+- Venoshock
+- Toxic
+- Sleep Powder
+- Disable
+
+Chandelure
+Level: -2
+- Confuse Ray
+- Will O Wisp
+- Flamethrower
+- Shadow Ball
+
+Magneton
+Level: -2
+- Thunderbolt
+- Tri Attack
+- Thunder Wave
+- Metal Sound
+
+
+=== TRAINER_SCHOOL_WINSTREAK_2 ===
+Name: Elise
+Class: Lass
+Pic: Lass
+Gender: Female
+AI: Check Bad Move
+Base Party Size: 3
+
+Weavile
+Level: -1
+- Icicle Crash
+- Ice Shard
+- Throat Chop
+- Hone Claws
+
+Pinsir
+Level: -2
+- Brick Break
+- Superpower
+- Thrash
+- Focus Energy
+
+Porygon Z
+Level: -1
+- Discharge
+- Tri Attack
+- Psybeam
+- Agility
+
+=== TRAINER_SCHOOL_WINSTREAK_3 ===
+Name: Mason
+Class: Triathlete
+Pic: Running Triathlete M
+Gender: Male
+AI: Check Bad Move
+Base Party Size: 2
+
+Wailord
+Level: 0
+- Brine
+- Whirlpool
+- Rest
+- Amnesia
+
+Ferrothorn
+Level: 0
+- Iron Head
+- Rollout
+- Ingrain
+- Iron Defense
+
+=== TRAINER_SCHOOL_WINSTREAK_4 ===
+Name: Rick
+Class: Pokefan
+Pic: Pokefan M
+Gender: Male
+AI: Check Bad Move
+Base Party Size: 4
+
+Swellow
+Level: 0
+- Aerial Ace
+- Quick Attack
+- Agility
+- Reversal
+
+Glalie
+Level: 1
+- Crunch
+- Ice Fang
+- Headbutt
+- Protect
+
+Granbull
+Level: 1
+- Fire Fang
+- Ice Fang
+- Thunder Fang
+- Headbutt
+
+Nidoking
+Level: 1
+- Megahorn
+- Earthquake
+- Sucker Punch
+- Focus Energy

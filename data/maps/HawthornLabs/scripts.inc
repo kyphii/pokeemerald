@@ -5,7 +5,7 @@ HawthornLabs_MapScripts::
 
 HawthornLabs_MapScripts_MAP_SCRIPT_ON_LOAD:
 # 3 "data/maps/HawthornLabs/scripts.pory"
-	setflag FLAG_VISITED_OLDALE_TOWN
+	setflag FLAG_VISITED_HAWTHORN_LABS
 # 5 "data/maps/HawthornLabs/scripts.pory"
 	compare VAR_INTRO_SEQUENCE_STATE, 4
 	goto_if_eq HawthornLabs_MapScripts_MAP_SCRIPT_ON_LOAD_1

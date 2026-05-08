@@ -712,6 +712,27 @@ const u16 gTilesetPalettes_PeriwindGym[][16] =
     INCBIN_U16("data/tilesets/secondary/periwind_gym/palettes/15.gbapal"),
 };
 
+const u32 gTilesetTiles_PokemonSchool[] = INCBIN_U32("data/tilesets/secondary/pokemon_school/tiles.4bpp.fastSmol");
+const u16 gTilesetPalettes_PokemonSchool[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/pokemon_school/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_school/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_school/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_school/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_school/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_school/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_school/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_school/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_school/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_school/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_school/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_school/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_school/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_school/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_school/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_school/palettes/15.gbapal"),
+};
+
 const u32 gTilesetTiles_SecretBaseBrownCaveCompressed[] = INCBIN_U32("data/tilesets/secondary/secret_base/brown_cave/unused_tiles.4bpp.fastSmol");
 
 const u16 gTilesetPalettes_SecretBaseBrownCave[][16] =

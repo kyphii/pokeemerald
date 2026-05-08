@@ -403,3 +403,14 @@ const struct Tileset gTileset_PeriwindGym =
     .metatileAttributes = gMetatileAttributes_PeriwindGym,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_PokemonSchool =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PokemonSchool,
+    .palettes = gTilesetPalettes_PokemonSchool,
+    .metatiles = gMetatiles_PokemonSchool,
+    .metatileAttributes = gMetatileAttributes_PokemonSchool,
+    .callback = NULL,
+};

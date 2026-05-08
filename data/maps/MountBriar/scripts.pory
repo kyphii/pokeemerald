@@ -2,6 +2,12 @@ mapscripts MountBriar_MapScripts {
 	MAP_SCRIPT_ON_RESUME {
 		setstepcallback(STEP_CB_ASH)
     }
+	MAP_SCRIPT_ON_TRANSITION {
+		if (!flag(FLAG_VISITED_MOUNT_BRIAR)) {
+			setflag(FLAG_VISITED_MOUNT_BRIAR)
+			addplayerlevel(1)
+		}
+	}
 }
 
 script MountBriar_Sign_Lodge {
