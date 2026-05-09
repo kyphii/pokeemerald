@@ -2,7 +2,7 @@
   "id": "MAP_MOUNT_BRIAR_LODGE",
   "name": "MountBriar_Lodge",
   "layout": "LAYOUT_MOUNT_BRIAR_LODGE",
-  "music": "MUS_DUMMY",
+  "music": "MUS_MT_CHIMNEY",
   "region_map_section": "MAPSEC_MOUNT_BRIAR",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

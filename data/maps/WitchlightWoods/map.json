@@ -2,7 +2,7 @@
   "id": "MAP_WITCHLIGHT_WOODS",
   "name": "WitchlightWoods",
   "layout": "LAYOUT_WITCHLIGHT_WOODS",
-  "music": "MUS_DUMMY",
+  "music": "MUS_MT_PYRE",
   "region_map_section": "MAPSEC_WITCHLIGHT_WOODS",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",

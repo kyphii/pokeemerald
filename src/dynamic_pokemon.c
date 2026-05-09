@@ -155,7 +155,7 @@ s32 DynamicMonEvaluateMove(struct Pokemon *mon, const struct SpeciesInfo* specie
     s32 currentMoveScore = learnLevel * 2;
     if (moveInfo->category != moveCategory) {
         if (moveInfo->category == DAMAGE_CATEGORY_STATUS) {
-            currentMoveScore -= 1000;
+            currentMoveScore -= 100;
         }
         else {
             currentMoveScore -= 30;
@@ -227,14 +227,19 @@ enum Move DynamicMonGetScaledAttack(struct Pokemon *mon, u16 speciesId, const st
     enum Type moveType, enum DamageCategory moveCategory, bool8 stabOnly) {
     // Return an attacking move of the same category that MATCHES the desired move type 
 
-    u16 maxPower = (30 + ((mon->level * 3) / 2));
+    // Slightly less than actual max appropriate power, to bias towards lower-power moves early on
+    u16 maxPower = (20 + ((mon->level * 3) / 2));
     
     struct MoveScore bestLevelMove = DynamicMonGetBestLevelLearnsetMove(mon, speciesId, speciesInfo,
         moveType, moveCategory, maxPower, stabOnly);
+    // Prioritize Levelup moves
+    bestLevelMove.score += 30;
 
     struct MoveScore bestTMMove = DynamicMonGetBestMoveFromLearnset(mon, speciesId, speciesInfo,
         GetSpeciesTeachableLearnset(speciesId),
         moveType, moveCategory, maxPower, stabOnly);
+    // Deprioritize TM moves
+    bestLevelMove.score -= 30;
 
     struct MoveScore bestEggMove = DynamicMonGetBestMoveFromLearnset(mon, speciesId, speciesInfo,
         GetSpeciesEggMoves(speciesId),
@@ -269,6 +274,26 @@ enum Move DynamicMonGetScaledStatusMove(struct Pokemon *mon, u16 speciesId, cons
     return bestMoveId;
 }
 
+enum Move DynamicScaleFindReplacementMove(struct Pokemon* mon, u16 speciesId, enum Move inputMoveId) {
+    const struct MoveInfo* inputMoveInfo = &gMovesInfo[SanitizeMoveId(inputMoveId)];
+    const struct SpeciesInfo* speciesInfo = &gSpeciesInfo[SanitizeSpeciesId(speciesId)];
+    if (inputMoveInfo->category != DAMAGE_CATEGORY_STATUS) {
+        if (inputMoveInfo->type == speciesInfo->types[0] || inputMoveInfo->type == speciesInfo->types[1]) {
+            return DynamicMonGetScaledAttack(mon, speciesId, speciesInfo,
+                inputMoveInfo->type, inputMoveInfo->category, TRUE);
+        }
+        else {
+            return DynamicMonGetScaledAttack(mon, speciesId, speciesInfo,
+                inputMoveInfo->type, inputMoveInfo->category, FALSE);
+        }
+    }
+    else {
+        return DynamicMonGetScaledStatusMove(mon, speciesId, speciesInfo);
+    }
+    // Fallback
+    return inputMoveId;
+}
+
 enum Move DynamicScaleGetTrainerMonMove(struct Pokemon *mon, u16 speciesId, enum Move inputMoveId) {
     const struct MoveInfo* inputMoveInfo = &gMovesInfo[SanitizeMoveId(inputMoveId)];
     u16 firstEvoId = DynamicScaleAdjustMonSpecies(speciesId, 1);
@@ -287,21 +312,5 @@ enum Move DynamicScaleGetTrainerMonMove(struct Pokemon *mon, u16 speciesId, enum
         }
     }
 
-    // Otherwise, look for a replacement
-    const struct SpeciesInfo* speciesInfo = &gSpeciesInfo[SanitizeSpeciesId(speciesId)];
-    if (inputMoveInfo->category != DAMAGE_CATEGORY_STATUS) {
-        if (inputMoveInfo->type == speciesInfo->types[0] || inputMoveInfo->type == speciesInfo->types[1]) {
-            return DynamicMonGetScaledAttack(mon, speciesId, speciesInfo,
-                inputMoveInfo->type, inputMoveInfo->category, TRUE);
-        }
-        else {
-            return DynamicMonGetScaledAttack(mon, speciesId, speciesInfo,
-                inputMoveInfo->type, inputMoveInfo->category, FALSE);
-        }
-    }
-    else {
-        return DynamicMonGetScaledStatusMove(mon, speciesId, speciesInfo);
-    }
-    // Fallback
-    return inputMoveId;
+    return DynamicScaleFindReplacementMove(mon, speciesId, inputMoveId);
 }

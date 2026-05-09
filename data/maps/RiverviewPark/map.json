@@ -2,7 +2,7 @@
   "id": "MAP_RIVERVIEW_PARK",
   "name": "RiverviewPark",
   "layout": "LAYOUT_RIVERVIEW_PARK",
-  "music": "MUS_DUMMY",
+  "music": "MUS_GAME_CORNER",
   "region_map_section": "MAPSEC_RIVERVIEW_PARK",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

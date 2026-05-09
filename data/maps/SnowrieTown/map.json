@@ -2,7 +2,7 @@
   "id": "MAP_SNOWRIE_TOWN",
   "name": "SnowrieTown",
   "layout": "LAYOUT_SNOWRIE_TOWN",
-  "music": "MUS_NONE",
+  "music": "MUS_VERDANTURF",
   "region_map_section": "MAPSEC_SNOWRIE_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

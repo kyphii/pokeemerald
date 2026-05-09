@@ -1920,7 +1920,13 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
 
     for (j = 0; j < MAX_MON_MOVES; ++j)
     {
-        enum Move moveId = DynamicScaleGetTrainerMonMove(mon, speciesId, partyEntry->moves[j]);
+        enum Move moveId;
+        if (BoxMonKnowsMove(&mon->box, partyEntry->moves[j])) {
+            moveId = DynamicScaleFindReplacementMove(mon, speciesId, partyEntry->moves[j]);
+        }
+        else {
+            moveId = DynamicScaleGetTrainerMonMove(mon, speciesId, partyEntry->moves[j]);
+        }
         u32 pp = GetMovePP(moveId);
         SetMonData(mon, MON_DATA_MOVE1 + j, &moveId);
         SetMonData(mon, MON_DATA_PP1 + j, &pp);

@@ -413,8 +413,7 @@ static void Task_DynPal_MenuCancel(u8 taskId)
 
         if (sDynPalMenu.isOverworld)
         {
-            DynPal_LoadPaletteByOffset(sDynPalPlayerOverworld, OBJ_PLTT_ID(0));
-            DynPal_LoadPaletteByOffset(sDynPalPlayerReflection, OBJ_PLTT_ID(1));
+            DynPal_LoadPaletteByOffset(sDynPalPlayerOverworld, OBJ_PLTT_ID(1));
             ScriptContext_Enable();
         }
 

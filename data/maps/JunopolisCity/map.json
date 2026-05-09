@@ -2,7 +2,7 @@
   "id": "MAP_JUNOPOLIS_CITY",
   "name": "JunopolisCity",
   "layout": "LAYOUT_JUNOPOLIS_CITY",
-  "music": "MUS_RUSTBORO",
+  "music": "MUS_SLATEPORT",
   "region_map_section": "MAPSEC_JUNOPOLIS_CITY",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

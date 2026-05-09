@@ -2,7 +2,7 @@
   "id": "MAP_MARINACRE_TOWN_HOUSE_1",
   "name": "MarinacreTown_House_1",
   "layout": "LAYOUT_MARINACRE_TOWN_HOUSE_1",
-  "music": "MUS_DUMMY",
+  "music": "MUS_LITTLEROOT",
   "region_map_section": "MAPSEC_MARINACRE_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

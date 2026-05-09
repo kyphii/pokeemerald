@@ -28,6 +28,17 @@
 #define METATILE_Building_TV_Off  0x003
 #define METATILE_Building_TV_On   0x004
 
+// gTileset_MountBriar
+#define METATILE_MountBriar_Snow                       0x200
+#define METATILE_MountBriar_Snow_TreeLeft              0x202
+#define METATILE_MountBriar_Snow_TreeRight             0x203
+#define METATILE_MountBriar_TallGrass_Clear            0x209
+#define METATILE_MountBriar_TallGrass_Clear_TreeLeft   0x20E
+#define METATILE_MountBriar_TallGrass_Clear_TreeRight  0x20F
+#define METATILE_MountBriar_TallGrass_Snowy            0x201
+#define METATILE_MountBriar_TallGrass_Snowy_TreeLeft   0x206
+#define METATILE_MountBriar_TallGrass_Snowy_TreeRight  0x207
+
 // gTileset_Nautirust
 #define METATILE_Nautirust_BigTree_Left               0x208
 #define METATILE_Nautirust_BigTree_Mid                0x201
@@ -61,6 +72,15 @@
 #define METATILE_Overworld_TallGrass_SmallTreeTop   0x069
 #define METATILE_Overworld_TallGrass_TreeLeft       0x00C
 #define METATILE_Overworld_TallGrass_TreeRight      0x00D
+
+// gTileset_PlayerHouse
+#define METATILE_PlayerHouse_PC_Off  0x23B
+#define METATILE_PlayerHouse_PC_On   0x23C
+#define METATILE_PlayerHouse_TV_Off  0x28F
+
+// gTileset_PokemonCenter
+#define METATILE_PokemonCenter_PC_Off  0x246
+#define METATILE_PokemonCenter_PC_On   0x247
 
 // gTileset_SecretBase
 #define METATILE_SecretBase_AttractMat_BottomLeft       0x313
@@ -346,30 +366,15 @@
 #define METATILE_Snowrie_TallGrass_Snowy_TreeRight  0x207
 
 // Other
-#define METATILE_Mount_Briar_Snow                       0x200
-#define METATILE_Mount_Briar_Snow_TreeLeft              0x202
-#define METATILE_Mount_Briar_Snow_TreeRight             0x203
-#define METATILE_Mount_Briar_TallGrass_Clear            0x209
-#define METATILE_Mount_Briar_TallGrass_Clear_TreeLeft   0x20E
-#define METATILE_Mount_Briar_TallGrass_Clear_TreeRight  0x20F
-#define METATILE_Mount_Briar_TallGrass_Snowy            0x201
-#define METATILE_Mount_Briar_TallGrass_Snowy_TreeLeft   0x206
-#define METATILE_Mount_Briar_TallGrass_Snowy_TreeRight  0x207
-#define METATILE_Player_House_PC_Off                    0x23B
-#define METATILE_Player_House_PC_On                     0x23C
-#define METATILE_Player_House_TV_Off                    0x28F
-#define METATILE_Player_House_TV_On                     0x28F
-#define METATILE_Pokemon_Center_PC_Off                  0x246
-#define METATILE_Pokemon_Center_PC_On                   0x247
-#define METATILE_SilphCo_ElevatorDoor                   0x2E2
-#define METATILE_SilphCo_ElevatorWindow_Bottom0         0x2F8
-#define METATILE_SilphCo_ElevatorWindow_Bottom1         0x2F9
-#define METATILE_SilphCo_ElevatorWindow_Bottom2         0x2FA
-#define METATILE_SilphCo_ElevatorWindow_Mid0            0x2F0
-#define METATILE_SilphCo_ElevatorWindow_Mid1            0x2F1
-#define METATILE_SilphCo_ElevatorWindow_Mid2            0x2F2
-#define METATILE_SilphCo_ElevatorWindow_Top0            0x2E8
-#define METATILE_SilphCo_ElevatorWindow_Top1            0x2E9
-#define METATILE_SilphCo_ElevatorWindow_Top2            0x2EA
+#define METATILE_SilphCo_ElevatorDoor            0x2E2
+#define METATILE_SilphCo_ElevatorWindow_Bottom0  0x2F8
+#define METATILE_SilphCo_ElevatorWindow_Bottom1  0x2F9
+#define METATILE_SilphCo_ElevatorWindow_Bottom2  0x2FA
+#define METATILE_SilphCo_ElevatorWindow_Mid0     0x2F0
+#define METATILE_SilphCo_ElevatorWindow_Mid1     0x2F1
+#define METATILE_SilphCo_ElevatorWindow_Mid2     0x2F2
+#define METATILE_SilphCo_ElevatorWindow_Top0     0x2E8
+#define METATILE_SilphCo_ElevatorWindow_Top1     0x2E9
+#define METATILE_SilphCo_ElevatorWindow_Top2     0x2EA
 
 #endif // GUARD_METATILE_LABELS_H

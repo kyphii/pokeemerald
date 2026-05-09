@@ -2,7 +2,7 @@
   "id": "MAP_HAWTHORN_LABS",
   "name": "HawthornLabs",
   "layout": "LAYOUT_HAWTHORN_LABS",
-  "music": "MUS_OLDALE",
+  "music": "MUS_ROUTE101",
   "region_map_section": "MAPSEC_HAWTHORN_LABS",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

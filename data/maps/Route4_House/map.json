@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE4_HOUSE",
   "name": "Route4_House",
   "layout": "LAYOUT_HOUSE_2",
-  "music": "MUS_DUMMY",
+  "music": "MUS_ROUTE104",
   "region_map_section": "MAPSEC_ROUTE_4",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

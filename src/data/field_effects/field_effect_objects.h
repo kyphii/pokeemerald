@@ -109,7 +109,7 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_ShadowExtraLarge = {
     .callback = UpdateShadowFieldEffect,
 };
 
-const struct SpritePalette gSpritePalette_Grass = { gFieldEffectPal_Grass, FLDEFF_PAL_TAG_GRASS };
+const struct SpritePalette gSpritePalette_GrassFieldEffect = { gFieldEffectPal_Grass, FLDEFF_PAL_TAG_GRASS };
 
 static const struct SpriteFrameImage sPicTable_TallGrass[] = {
     overworld_frame(gFieldEffectObjectPic_TallGrass, 2, 2, 0),

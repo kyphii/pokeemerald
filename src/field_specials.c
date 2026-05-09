@@ -745,8 +745,8 @@ static bool32 IsPlayerHousePCTile(u32 tileId)
         return FALSE;
 
     return gMapHeader.mapLayout->secondaryTileset == &gTileset_PlayerHouse
-        && (tileId == METATILE_Player_House_PC_On
-            || tileId == METATILE_Player_House_PC_Off);
+        && (tileId == METATILE_PlayerHouse_PC_On
+            || tileId == METATILE_PlayerHouse_PC_Off);
 }
 
 static bool32 IsPlayerHousePCTileFrlg(u32 tileId)
@@ -845,17 +845,17 @@ static void PCTurnOnEffect_SetMetatile(s16 isScreenOn, s8 dx, s8 dy)
     {
         // Screen is on, set it off
         if (gSpecialVar_0x8004 == PC_LOCATION_POKEMON_CENTER)
-            metatileId = METATILE_Pokemon_Center_PC_Off;
+            metatileId = METATILE_PokemonCenter_PC_Off;
         else if (gSpecialVar_0x8004 == PC_LOCATION_PLAYER_HOUSE)
-            metatileId = METATILE_Player_House_PC_Off;
+            metatileId = METATILE_PlayerHouse_PC_Off;
     }
     else
     {
         // Screen is off, set it on
         if (gSpecialVar_0x8004 == PC_LOCATION_POKEMON_CENTER)
-            metatileId = METATILE_Pokemon_Center_PC_On;
+            metatileId = METATILE_PokemonCenter_PC_On;
         else if (gSpecialVar_0x8004 == PC_LOCATION_PLAYER_HOUSE)
-            metatileId = METATILE_Player_House_PC_On;
+            metatileId = METATILE_PlayerHouse_PC_On;
     }
     MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + MAP_OFFSET, gSaveBlock1Ptr->pos.y + dy + MAP_OFFSET, metatileId | MAPGRID_IMPASSABLE);
 }
@@ -896,9 +896,9 @@ static void PCTurnOffEffect(void)
     }
 
     if (gSpecialVar_0x8004 == PC_LOCATION_POKEMON_CENTER)
-        metatileId = METATILE_Pokemon_Center_PC_Off;
+        metatileId = METATILE_PokemonCenter_PC_Off;
     else if (gSpecialVar_0x8004 == PC_LOCATION_PLAYER_HOUSE)
-        metatileId = METATILE_Player_House_PC_Off;
+        metatileId = METATILE_PlayerHouse_PC_Off;
 
     MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + MAP_OFFSET, gSaveBlock1Ptr->pos.y + dy + MAP_OFFSET, metatileId | MAPGRID_IMPASSABLE);
     DrawWholeMapView();

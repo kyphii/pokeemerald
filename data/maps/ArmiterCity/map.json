@@ -2,7 +2,7 @@
   "id": "MAP_ARMITER_CITY",
   "name": "ArmiterCity",
   "layout": "LAYOUT_ARMITER_CITY",
-  "music": "MUS_DUMMY",
+  "music": "MUS_SOOTOPOLIS",
   "region_map_section": "MAPSEC_ARMITER_CITY",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

@@ -11,6 +11,7 @@ u8 DynamicScaleGetMonLevelForTrainer(u8 trainerLevel, s8 monLevel);
 u8 DynamicScaleGetWildMonLevel(u8 inputLevel);
 u16 DynamicScaleAdjustMonSpecies(u16 inputSpecies, u8 level);
 u8 DynamicScaleGetSpeciesEvolveLevel(u16 inputSpecies, struct Evolution evolution);
+enum Move DynamicScaleFindReplacementMove(struct Pokemon* mon, u16 speciesId, enum Move inputMoveId);
 enum Move DynamicScaleGetTrainerMonMove(struct Pokemon* mon, u16 speciesId, enum Move inputMoveId);
 
 extern u32 GetTotalBaseStat(u32 species);

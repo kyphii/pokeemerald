@@ -396,15 +396,15 @@ static u16 GetCutGrassResultLabel(u16 metatileId) {
             return METATILE_Nautirust_BigTree_Right;
 
         // Snowrie tileset shares these values
-        case METATILE_Mount_Briar_TallGrass_Snowy:
-        case METATILE_Mount_Briar_TallGrass_Clear:
-            return METATILE_Mount_Briar_Snow;
-        case METATILE_Mount_Briar_TallGrass_Snowy_TreeLeft:
-        case METATILE_Mount_Briar_TallGrass_Clear_TreeLeft:
-            return METATILE_Mount_Briar_Snow_TreeLeft;
-        case METATILE_Mount_Briar_TallGrass_Snowy_TreeRight:
-        case METATILE_Mount_Briar_TallGrass_Clear_TreeRight:
-            return METATILE_Mount_Briar_Snow_TreeRight;
+        case METATILE_MountBriar_TallGrass_Snowy:
+        case METATILE_MountBriar_TallGrass_Clear:
+            return METATILE_MountBriar_Snow;
+        case METATILE_MountBriar_TallGrass_Snowy_TreeLeft:
+        case METATILE_MountBriar_TallGrass_Clear_TreeLeft:
+            return METATILE_MountBriar_Snow_TreeLeft;
+        case METATILE_MountBriar_TallGrass_Snowy_TreeRight:
+        case METATILE_MountBriar_TallGrass_Clear_TreeRight:
+            return METATILE_MountBriar_Snow_TreeRight;
 
         case METATILE_Armiter_TallGrass_Red:
             return METATILE_Armiter_Leaves;

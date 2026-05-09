@@ -2,7 +2,7 @@
   "id": "MAP_PERIWIND_CITY",
   "name": "PeriwindCity",
   "layout": "LAYOUT_PERIWIND_CITY",
-  "music": "MUS_RUSTBORO",
+  "music": "MUS_EVER_GRANDE",
   "region_map_section": "MAPSEC_PERIWIND_CITY",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

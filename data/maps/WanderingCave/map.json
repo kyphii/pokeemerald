@@ -2,7 +2,7 @@
   "id": "MAP_WANDERING_CAVE",
   "name": "WanderingCave",
   "layout": "LAYOUT_WANDERING_CAVE",
-  "music": "MUS_NONE",
+  "music": "MUS_PETALBURG_WOODS",
   "region_map_section": "MAPSEC_WANDERING_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_FOG_HORIZONTAL",

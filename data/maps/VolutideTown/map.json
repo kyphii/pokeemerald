@@ -2,7 +2,7 @@
   "id": "MAP_VOLUTIDE_TOWN",
   "name": "VolutideTown",
   "layout": "LAYOUT_VOLUTIDE_TOWN",
-  "music": "MUS_NONE",
+  "music": "MUS_VERDANTURF",
   "region_map_section": "MAPSEC_VOLUTIDE_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

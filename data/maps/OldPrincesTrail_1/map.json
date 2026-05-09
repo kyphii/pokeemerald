@@ -2,7 +2,7 @@
   "id": "MAP_OLD_PRINCES_TRAIL_1",
   "name": "OldPrincesTrail_1",
   "layout": "LAYOUT_OLD_PRINCES_TRAIL_1",
-  "music": "MUS_NONE",
+  "music": "MUS_PETALBURG_WOODS",
   "region_map_section": "MAPSEC_OLD_PRINCES_TRAIL",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",

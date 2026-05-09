@@ -2,7 +2,7 @@
   "id": "MAP_WHELCHORD_CITY",
   "name": "WhelchordCity",
   "layout": "LAYOUT_WHELCHORD_CITY",
-  "music": "MUS_DUMMY",
+  "music": "MUS_RUSTBORO",
   "region_map_section": "MAPSEC_WHELCHORD_CITY",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

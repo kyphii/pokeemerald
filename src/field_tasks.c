@@ -180,14 +180,14 @@ static void AshGrassPerStepCallback(u8 taskId)
         u16 resultLabel = 0;
         switch (MapGridGetMetatileIdAt(x, y)) {
             //Mt Briar & Snowrie Tilesets use the same values
-            case METATILE_Mount_Briar_TallGrass_Snowy:
-                resultLabel = METATILE_Mount_Briar_TallGrass_Clear;
+            case METATILE_MountBriar_TallGrass_Snowy:
+                resultLabel = METATILE_MountBriar_TallGrass_Clear;
                 break;
-            case METATILE_Mount_Briar_TallGrass_Snowy_TreeLeft:
-                resultLabel = METATILE_Mount_Briar_TallGrass_Clear_TreeLeft;
+            case METATILE_MountBriar_TallGrass_Snowy_TreeLeft:
+                resultLabel = METATILE_MountBriar_TallGrass_Clear_TreeLeft;
                 break;
-            case METATILE_Mount_Briar_TallGrass_Snowy_TreeRight:
-                resultLabel = METATILE_Mount_Briar_TallGrass_Clear_TreeRight;
+            case METATILE_MountBriar_TallGrass_Snowy_TreeRight:
+                resultLabel = METATILE_MountBriar_TallGrass_Clear_TreeRight;
                 break;
         }
         if (resultLabel != 0) {

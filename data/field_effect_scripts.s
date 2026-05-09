@@ -105,7 +105,7 @@ gFieldEffectScript_Shadow::
 	field_eff_end
 
 gFieldEffectScript_TallGrass::
-	field_eff_loadfadedpal_callnative gSpritePalette_Grass, FldEff_TallGrass
+	field_eff_loadfadedpal_callnative gSpritePalette_GrassFieldEffect, FldEff_TallGrass
 	field_eff_end
 
 gFieldEffectScript_Ripple::
@@ -157,19 +157,19 @@ gFieldEffectScript_JumpSmallSplash::
 	field_eff_end
 
 gFieldEffectScript_LongGrass::
-	field_eff_loadfadedpal_callnative gSpritePalette_Grass, FldEff_LongGrass
+	field_eff_loadfadedpal_callnative gSpritePalette_GrassFieldEffect, FldEff_LongGrass
 	field_eff_end
 
 gFieldEffectScript_JumpLongGrass::
-	field_eff_loadfadedpal_callnative gSpritePalette_Grass, FldEff_JumpLongGrass
+	field_eff_loadfadedpal_callnative gSpritePalette_GrassFieldEffect, FldEff_JumpLongGrass
 	field_eff_end
 
 gFieldEffectScript_ShakingGrass::
-	field_eff_loadfadedpal_callnative gSpritePalette_Grass, FldEff_ShakingGrass
+	field_eff_loadfadedpal_callnative gSpritePalette_GrassFieldEffect, FldEff_ShakingGrass
 	field_eff_end
 
 gFieldEffectScript_ShakingGrass2::
-	field_eff_loadfadedpal_callnative gSpritePalette_Grass, FldEff_ShakingGrass2
+	field_eff_loadfadedpal_callnative gSpritePalette_GrassFieldEffect, FldEff_ShakingGrass2
 	field_eff_end
 
 gFieldEffectScript_UnusedSand::
