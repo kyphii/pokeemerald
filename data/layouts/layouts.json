@@ -203,7 +203,7 @@
       "width": 96,
       "height": 24,
       "primary_tileset": "gTileset_Overworld",
-      "secondary_tileset": "gTileset_Canvenus",
+      "secondary_tileset": "gTileset_Canvenas",
       "border_filepath": "data/layouts/Route12/border.bin",
       "blockdata_filepath": "data/layouts/Route12/map.bin",
       "layout_version": "emerald"
@@ -289,7 +289,7 @@
       "width": 24,
       "height": 72,
       "primary_tileset": "gTileset_Overworld",
-      "secondary_tileset": "gTileset_Canvenus",
+      "secondary_tileset": "gTileset_Canvenas",
       "border_filepath": "data/layouts/Route21/border.bin",
       "blockdata_filepath": "data/layouts/Route21/map.bin",
       "layout_version": "emerald"
@@ -473,8 +473,8 @@
     {
       "id": "LAYOUT_WHELCHORD_CITY_GYM",
       "name": "WhelchordCity_Gym_Layout",
-      "width": 1,
-      "height": 1,
+      "width": 27,
+      "height": 28,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_WhelchordGym",
       "border_filepath": "data/layouts/WhelchordCity_Gym/border.bin",
@@ -515,21 +515,21 @@
       "layout_version": "emerald"
     },
     {
-      "id": "LAYOUT_CANVENUS_CITY_GYM",
-      "name": "CanvenusCity_Gym_Layout",
+      "id": "LAYOUT_CANVENAS_CITY_GYM",
+      "name": "CanvenasCity_Gym_Layout",
       "width": 1,
       "height": 1,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_CanvenusGym",
-      "border_filepath": "data/layouts/CanvenusCity_Gym/border.bin",
-      "blockdata_filepath": "data/layouts/CanvenusCity_Gym/map.bin",
+      "secondary_tileset": "gTileset_CanvenasGym",
+      "border_filepath": "data/layouts/CanvenasCity_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/CanvenasCity_Gym/map.bin",
       "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_JUNOPOLIS_CITY_GYM",
       "name": "JunopolisCity_Gym_Layout",
-      "width": 1,
-      "height": 1,
+      "width": 24,
+      "height": 24,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_JunopolisGym",
       "border_filepath": "data/layouts/JunopolisCity_Gym/border.bin",
@@ -558,14 +558,14 @@
       "blockdata_filepath": "data/layouts/WhelchordCity/map.bin"
     },
     {
-      "id": "LAYOUT_CANVENUS_CITY",
-      "name": "CanvenusCity_Layout",
+      "id": "LAYOUT_CANVENAS_CITY",
+      "name": "CanvenasCity_Layout",
       "width": 48,
       "height": 48,
       "primary_tileset": "gTileset_Overworld",
-      "secondary_tileset": "gTileset_Canvenus",
-      "border_filepath": "data/layouts/CanvenusCity/border.bin",
-      "blockdata_filepath": "data/layouts/CanvenusCity/map.bin"
+      "secondary_tileset": "gTileset_Canvenas",
+      "border_filepath": "data/layouts/CanvenasCity/border.bin",
+      "blockdata_filepath": "data/layouts/CanvenasCity/map.bin"
     },
     {
       "id": "LAYOUT_HOUSE_1",
@@ -623,7 +623,7 @@
       "width": 144,
       "height": 24,
       "primary_tileset": "gTileset_Overworld",
-      "secondary_tileset": "gTileset_Canvenus",
+      "secondary_tileset": "gTileset_Canvenas",
       "border_filepath": "data/layouts/Route23/border.bin",
       "blockdata_filepath": "data/layouts/Route23/map.bin"
     },
@@ -633,7 +633,7 @@
       "width": 24,
       "height": 96,
       "primary_tileset": "gTileset_Overworld",
-      "secondary_tileset": "gTileset_Canvenus",
+      "secondary_tileset": "gTileset_Canvenas",
       "border_filepath": "data/layouts/Route22/border.bin",
       "blockdata_filepath": "data/layouts/Route22/map.bin"
     },
@@ -660,10 +660,10 @@
     {
       "id": "LAYOUT_ROUTE26",
       "name": "Route26_Layout",
-      "width": 120,
-      "height": 24,
+      "width": 24,
+      "height": 96,
       "primary_tileset": "gTileset_Overworld",
-      "secondary_tileset": "gTileset_Armiter",
+      "secondary_tileset": "gTileset_Marinacre",
       "border_filepath": "data/layouts/Route26/border.bin",
       "blockdata_filepath": "data/layouts/Route26/map.bin"
     },
@@ -703,7 +703,7 @@
       "width": 24,
       "height": 24,
       "primary_tileset": "gTileset_Overworld",
-      "secondary_tileset": "gTileset_Canvenus",
+      "secondary_tileset": "gTileset_Canvenas",
       "border_filepath": "data/layouts/VersifiersPond/border.bin",
       "blockdata_filepath": "data/layouts/VersifiersPond/map.bin"
     },
@@ -830,8 +830,8 @@
     {
       "id": "LAYOUT_ROUTE8",
       "name": "Route8_Layout",
-      "width": 144,
-      "height": 24,
+      "width": 24,
+      "height": 120,
       "primary_tileset": "gTileset_Overworld",
       "secondary_tileset": "gTileset_Nerilight",
       "border_filepath": "data/layouts/Route8/border.bin",
@@ -876,6 +876,46 @@
       "secondary_tileset": "gTileset_PokemonSchool",
       "border_filepath": "data/layouts/NautirustCity_TrainerSchool/border.bin",
       "blockdata_filepath": "data/layouts/NautirustCity_TrainerSchool/map.bin"
+    },
+    {
+      "id": "LAYOUT_LOST_VILLAGE",
+      "name": "LostVillage_Layout",
+      "width": 48,
+      "height": 48,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_HauntedRuins",
+      "border_filepath": "data/layouts/LostVillage/border.bin",
+      "blockdata_filepath": "data/layouts/LostVillage/map.bin"
+    },
+    {
+      "id": "LAYOUT_JUNOPOLIS_AIRPORT",
+      "name": "JunopolisAirport_Layout",
+      "width": 48,
+      "height": 48,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Airport",
+      "border_filepath": "data/layouts/JunopolisAirport/border.bin",
+      "blockdata_filepath": "data/layouts/JunopolisAirport/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE9",
+      "name": "Route9_Layout",
+      "width": 144,
+      "height": 24,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Nerilight",
+      "border_filepath": "data/layouts/Route9/border.bin",
+      "blockdata_filepath": "data/layouts/Route9/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE27",
+      "name": "Route27_Layout",
+      "width": 48,
+      "height": 96,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Armiter",
+      "border_filepath": "data/layouts/Route27/border.bin",
+      "blockdata_filepath": "data/layouts/Route27/map.bin"
     }
   ]
 }

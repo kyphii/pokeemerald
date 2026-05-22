@@ -1225,7 +1225,7 @@
 #define FLAG_VISITED_WHELCHORD_CITY                                 0x496 // Unused Flag
 #define FLAG_VISITED_ARMITER_CITY                                   0x497 // Unused Flag
 #define FLAG_VISITED_JUNOPOLIS_CITY                                 0x498 // Unused Flag
-#define FLAG_VISITED_CANVENUS_CITY                                  0x499 // Unused Flag
+#define FLAG_VISITED_CANVENAS_CITY                                  0x499 // Unused Flag
 #define FLAG_VISITED_VOLUTIDE_TOWN                                  0x49A // Unused Flag
 #define FLAG_VISITED_NERILIGHT_CITY                                 0x49B // Unused Flag
 #define FLAG_VISITED_QUAHEART_CITY                                  0x49C // Unused Flag

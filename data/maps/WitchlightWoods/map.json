@@ -32,6 +32,11 @@
       "map": "MAP_JUNOPOLIS_CITY",
       "offset": 24,
       "direction": "down"
+    },
+    {
+      "map": "MAP_LOST_VILLAGE",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [

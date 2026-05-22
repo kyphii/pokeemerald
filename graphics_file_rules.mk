@@ -52,7 +52,7 @@ $(TILESETGFXDIR)/secondary/armiter/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/junopolis/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 503 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/canvenus/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/canvenas/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 493 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/nerilight/tiles.4bpp: %.4bpp: %.png
@@ -154,7 +154,7 @@ $(TILESETGFXDIR)/secondary/armiter_gym/tiles.4bpp: %.4bpp: %.png
 $(TILESETGFXDIR)/secondary/junopolis_gym/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 60 -Wnum_tiles
 
-$(TILESETGFXDIR)/secondary/canvenus_gym/tiles.4bpp: %.4bpp: %.png
+$(TILESETGFXDIR)/secondary/canvenas_gym/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 61 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/nerilight_gym/tiles.4bpp: %.4bpp: %.png

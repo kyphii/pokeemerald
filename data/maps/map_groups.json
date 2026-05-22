@@ -21,7 +21,7 @@
     "WhelchordCity",
     "ArmiterCity",
     "JunopolisCity",
-    "CanvenusCity",
+    "CanvenasCity",
     "NerilightCity",
     "QuaheartCity",
     "PeriwindCity",
@@ -53,7 +53,9 @@
     "Route23",
     "Route22",
     "Route26",
-    "Route8"
+    "Route8",
+    "Route9",
+    "Route27"
   ],
   "gMapGroup_Wilderness": [
     "NautirustForest",
@@ -67,7 +69,9 @@
     "WitchlightWoods",
     "VersifiersPond",
     "OldPrincesTrailWest",
-    "OldPrincesTrailEast"
+    "OldPrincesTrailEast",
+    "LostVillage",
+    "JunopolisAirport"
   ],
   "gMapGroup_Dungeons": [
     "PrismaticCave_1",
@@ -88,7 +92,7 @@
     "WhelchordCity_PokemonCenter",
     "ArmiterCity_PokemonCenter",
     "JunopolisCity_PokemonCenter",
-    "CanvenusCity_PokemonCenter",
+    "CanvenasCity_PokemonCenter",
     "NerilightCity_PokemonCenter",
     "QuaheartCity_PokemonCenter",
     "PeriwindCity_PokemonCenter",
@@ -102,7 +106,7 @@
     "NautirustCity_Mart",
     "WhelchordCity_Mart",
     "JunopolisCity_Mart",
-    "CanvenusCity_Mart",
+    "CanvenasCity_Mart",
     "NerilightCity_Mart",
     "QuaheartCity_Mart",
     "PeriwindCity_Mart",
@@ -116,7 +120,7 @@
     "WhelchordCity_Gym",
     "ArmiterCity_Gym",
     "JunopolisCity_Gym",
-    "CanvenusCity_Gym",
+    "CanvenasCity_Gym",
     "NerilightCity_Gym",
     "QuaheartCity_Gym",
     "PeriwindCity_Gym"

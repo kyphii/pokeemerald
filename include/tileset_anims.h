@@ -22,5 +22,6 @@ void InitTilesetAnim_Sootopolis(void);
 void InitTilesetAnim_Building(void);
 void InitTilesetAnim_Underwater(void);
 void InitTilesetAnim_NautirustGym(void);
+void InitTilesetAnim_Gardellin(void);
 
 #endif // GUARD_TILESET_ANIMS_H

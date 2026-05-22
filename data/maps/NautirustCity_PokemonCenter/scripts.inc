@@ -101,7 +101,7 @@ NautirustCity_PokemonCenter_TalkMaya_Text_1:
 	.string "MAYA: Well, anyways, we have two ways\n"
 	.string "to go from here.\p"
 	.string "We can go west towards Armiter City, or\n"
-	.string "south towards Canvenus City.\p"
+	.string "south towards Canvenas City.\p"
 	.string "Honestly, I kinda want to hit up\n"
 	.string "the Pokémon Gym here in town…\p"
 	.string "What do you think, {PLAYER}?$"

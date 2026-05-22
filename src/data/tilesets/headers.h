@@ -95,14 +95,14 @@ const struct Tileset gTileset_Junopolis =
     .callback = InitTilesetAnim_Mauville,
 };
 
-const struct Tileset gTileset_Canvenus =
+const struct Tileset gTileset_Canvenas =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Canvenus,
-    .palettes = gTilesetPalettes_Canvenus,
-    .metatiles = gMetatiles_Canvenus,
-    .metatileAttributes = gMetatileAttributes_Canvenus,
+    .tiles = gTilesetTiles_Canvenas,
+    .palettes = gTilesetPalettes_Canvenas,
+    .metatiles = gMetatiles_Canvenas,
+    .metatileAttributes = gMetatileAttributes_Canvenas,
     .callback = InitTilesetAnim_Fortree,
 };
 
@@ -158,7 +158,7 @@ const struct Tileset gTileset_Gardellin =
     .palettes = gTilesetPalettes_Gardellin,
     .metatiles = gMetatiles_Gardellin,
     .metatileAttributes = gMetatileAttributes_Gardellin,
-    .callback = InitTilesetAnim_Lavaridge,
+    .callback = InitTilesetAnim_Gardellin,
 };
 
 const struct Tileset gTileset_Abalove =
@@ -202,6 +202,28 @@ const struct Tileset gTileset_MountBriar =
     .palettes = gTilesetPalettes_MountBriar,
     .metatiles = gMetatiles_MountBriar,
     .metatileAttributes = gMetatileAttributes_MountBriar,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_HauntedRuins =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_HauntedRuins,
+    .palettes = gTilesetPalettes_HauntedRuins,
+    .metatiles = gMetatiles_HauntedRuins,
+    .metatileAttributes = gMetatileAttributes_HauntedRuins,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Airport =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Airport,
+    .palettes = gTilesetPalettes_Airport,
+    .metatiles = gMetatiles_Airport,
+    .metatileAttributes = gMetatileAttributes_Airport,
     .callback = NULL,
 };
 
@@ -360,14 +382,14 @@ const struct Tileset gTileset_JunopolisGym =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_CanvenusGym =
+const struct Tileset gTileset_CanvenasGym =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_CanvenusGym,
-    .palettes = gTilesetPalettes_CanvenusGym,
-    .metatiles = gMetatiles_CanvenusGym,
-    .metatileAttributes = gMetatileAttributes_CanvenusGym,
+    .tiles = gTilesetTiles_CanvenasGym,
+    .palettes = gTilesetPalettes_CanvenasGym,
+    .metatiles = gMetatiles_CanvenasGym,
+    .metatileAttributes = gMetatileAttributes_CanvenasGym,
     .callback = NULL,
 };
 

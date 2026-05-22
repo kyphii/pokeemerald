@@ -34,6 +34,7 @@ static void TilesetAnim_Pacifidlog(u16);
 static void TilesetAnim_Sootopolis(u16);
 static void TilesetAnim_Underwater(u16);
 static void TilesetAnim_NautirustGym(u16);
+static void TilesetAnim_Gardellin(u16);
 static void QueueAnimTiles_General_Flower(u16);
 static void QueueAnimTiles_General_Water(u16);
 static void QueueAnimTiles_General_SandWaterEdge(u16);
@@ -44,6 +45,7 @@ static void QueueAnimTiles_Rustboro_Fountain(u16);
 static void QueueAnimTiles_Pacifidlog_WaterCurrents(u8);
 static void QueueAnimTiles_Underwater_Seaweed(u8);
 static void QueueAnimTiles_NautirustGym_Sinkhole(u8);
+static void QueueAnimTiles_Gardellin_Flowers(u16);
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/overworld/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/overworld/anim/flower/0.4bpp");
@@ -196,6 +198,42 @@ const u16* const gTilesetAnims_NautirustGym_Sinkhole[] = {
     gTilesetAnims_NautirustGym_Sinkhole_Frame1,
     gTilesetAnims_NautirustGym_Sinkhole_Frame2,
     gTilesetAnims_NautirustGym_Sinkhole_Frame3,
+};
+
+const u16 gTilesetAnims_Gardellin_Flowers_Frame0[] = INCBIN_U16("data/tilesets/secondary/gardellin/anim/flower_1/0.4bpp");
+const u16 gTilesetAnims_Gardellin_Flowers_Frame1[] = INCBIN_U16("data/tilesets/secondary/gardellin/anim/flower_1/1.4bpp");
+const u16 gTilesetAnims_Gardellin_Flowers_Frame2[] = INCBIN_U16("data/tilesets/secondary/gardellin/anim/flower_1/2.4bpp");
+const u16 gTilesetAnims_Gardellin_Flowers_Frame3[] = INCBIN_U16("data/tilesets/secondary/gardellin/anim/flower_1/3.4bpp");
+const u16 gTilesetAnims_Gardellin_Flowers_Frame4[] = INCBIN_U16("data/tilesets/secondary/gardellin/anim/flower_1/4.4bpp");
+
+const u16* const gTilesetAnims_Gardellin_Flowers[] = {
+    gTilesetAnims_Gardellin_Flowers_Frame0,
+    gTilesetAnims_Gardellin_Flowers_Frame0,
+    gTilesetAnims_Gardellin_Flowers_Frame0,
+    gTilesetAnims_Gardellin_Flowers_Frame1,
+    gTilesetAnims_Gardellin_Flowers_Frame2,
+    gTilesetAnims_Gardellin_Flowers_Frame3,
+    gTilesetAnims_Gardellin_Flowers_Frame4,
+    gTilesetAnims_Gardellin_Flowers_Frame4,
+    gTilesetAnims_Gardellin_Flowers_Frame4,
+    gTilesetAnims_Gardellin_Flowers_Frame3,
+    gTilesetAnims_Gardellin_Flowers_Frame4,
+    gTilesetAnims_Gardellin_Flowers_Frame4,
+    gTilesetAnims_Gardellin_Flowers_Frame4,
+    gTilesetAnims_Gardellin_Flowers_Frame3,
+    gTilesetAnims_Gardellin_Flowers_Frame2,
+    gTilesetAnims_Gardellin_Flowers_Frame1,
+};
+
+u8 const gTilesetAnims_Gardellin_Flowers_VDests[] = {
+    64,
+    66,
+    68,
+    70,
+    72,
+    74,
+    76,
+    78,
 };
 
 static void ResetTilesetAnimBuffer(void)
@@ -425,6 +463,13 @@ void InitTilesetAnim_NautirustGym(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_NautirustGym;
 }
 
+void InitTilesetAnim_Gardellin(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 128;
+    sSecondaryTilesetAnimCallback = TilesetAnim_Gardellin;
+}
+
 static void TilesetAnim_Rustboro(u16 timer)
 {
 }
@@ -471,6 +516,11 @@ static void TilesetAnim_NautirustGym(u16 timer)
         QueueAnimTiles_NautirustGym_Sinkhole(timer / 16);
 }
 
+static void TilesetAnim_Gardellin(u16 timer)
+{
+    QueueAnimTiles_Gardellin_Flowers(timer);
+}
+
 static void QueueAnimTiles_General_LandWaterEdge(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_General_LandWaterEdge);
@@ -487,6 +537,14 @@ static void QueueAnimTiles_NautirustGym_Sinkhole(u8 timer)
 {
     u8 i = timer % ARRAY_COUNT(gTilesetAnims_NautirustGym_Sinkhole);
     AppendTilesetAnimToBuffer(gTilesetAnims_NautirustGym_Sinkhole[i], (u16*)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 73)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Gardellin_Flowers(u16 timer)
+{
+    u8 i = ((timer / 8) + ((timer % 8) * 2)) % ARRAY_COUNT(gTilesetAnims_Gardellin_Flowers);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Gardellin_Flowers[i], 
+        (u16*)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + gTilesetAnims_Gardellin_Flowers_VDests[timer % 8])),
+        2 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_Pacifidlog_WaterCurrents(u8 timer)

@@ -27,10 +27,30 @@
       "map": "MAP_WITCHLIGHT_WOODS",
       "offset": -24,
       "direction": "up"
+    },
+    {
+      "map": "MAP_JUNOPOLIS_AIRPORT",
+      "offset": -24,
+      "direction": "right"
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 19,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_JUNOPOLIS_CITY_POKEMON_CENTER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 40,
+      "y": 31,
+      "elevation": 0,
+      "dest_map": "MAP_JUNOPOLIS_CITY_MART",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

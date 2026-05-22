@@ -57,18 +57,18 @@ NautirustCity_Gym_GuideIntro::
 # 67 "data/maps/NautirustCity_Gym/scripts.pory"
 	compare VAR_RESULT, 12
 	goto_if_lt NautirustCity_Gym_GuideIntro_2
-# 89 "data/maps/NautirustCity_Gym/scripts.pory"
+# 91 "data/maps/NautirustCity_Gym/scripts.pory"
 	msgbox NautirustCity_Gym_GuideIntro_Text_2, MSGBOX_DEFAULT
 NautirustCity_Gym_GuideIntro_1:
-# 97 "data/maps/NautirustCity_Gym/scripts.pory"
+# 99 "data/maps/NautirustCity_Gym/scripts.pory"
 	closemessage
-# 98 "data/maps/NautirustCity_Gym/scripts.pory"
+# 100 "data/maps/NautirustCity_Gym/scripts.pory"
 	applymovement LOCALID_NAUTIRUST_GYM_GUIDE, NautirustCity_Gym_GuideIntro_Movement_1
-# 102 "data/maps/NautirustCity_Gym/scripts.pory"
-	waitmovement 0
 # 104 "data/maps/NautirustCity_Gym/scripts.pory"
-	setvar VAR_GYM_ENTERED, 1
+	waitmovement 0
 # 106 "data/maps/NautirustCity_Gym/scripts.pory"
+	setvar VAR_GYM_ENTERED, 1
+# 108 "data/maps/NautirustCity_Gym/scripts.pory"
 	release
 	return
 
@@ -79,163 +79,163 @@ NautirustCity_Gym_GuideIntro_2:
 
 
 NautirustCity_Gym_TalkGuide::
-# 110 "data/maps/NautirustCity_Gym/scripts.pory"
-	lock
-# 111 "data/maps/NautirustCity_Gym/scripts.pory"
-	faceplayer
 # 112 "data/maps/NautirustCity_Gym/scripts.pory"
+	lock
+# 113 "data/maps/NautirustCity_Gym/scripts.pory"
+	faceplayer
+# 114 "data/maps/NautirustCity_Gym/scripts.pory"
 	goto_if_set FLAG_BADGE01_GET, NautirustCity_Gym_TalkGuide_1
-# 135 "data/maps/NautirustCity_Gym/scripts.pory"
+# 137 "data/maps/NautirustCity_Gym/scripts.pory"
 	msgbox NautirustCity_Gym_TalkGuide_Text_1, MSGBOX_DEFAULT
-# 166 "data/maps/NautirustCity_Gym/scripts.pory"
+# 168 "data/maps/NautirustCity_Gym/scripts.pory"
 	closemessage
-# 167 "data/maps/NautirustCity_Gym/scripts.pory"
+# 169 "data/maps/NautirustCity_Gym/scripts.pory"
 	release
 	return
 
 NautirustCity_Gym_TalkGuide_1:
-# 113 "data/maps/NautirustCity_Gym/scripts.pory"
+# 115 "data/maps/NautirustCity_Gym/scripts.pory"
 	msgbox NautirustCity_Gym_TalkGuide_Text_0, MSGBOX_DEFAULT
-# 131 "data/maps/NautirustCity_Gym/scripts.pory"
+# 133 "data/maps/NautirustCity_Gym/scripts.pory"
 	closemessage
-# 132 "data/maps/NautirustCity_Gym/scripts.pory"
+# 134 "data/maps/NautirustCity_Gym/scripts.pory"
 	release
 	return
 
 
 NautirustCity_Gym_TalkLandon::
-# 172 "data/maps/NautirustCity_Gym/scripts.pory"
+# 174 "data/maps/NautirustCity_Gym/scripts.pory"
 	goto_if_set FLAG_BADGE01_GET, NautirustCity_Gym_TalkLandon_1
-# 194 "data/maps/NautirustCity_Gym/scripts.pory"
-	lock
-# 195 "data/maps/NautirustCity_Gym/scripts.pory"
-	faceplayer
 # 196 "data/maps/NautirustCity_Gym/scripts.pory"
+	lock
+# 197 "data/maps/NautirustCity_Gym/scripts.pory"
+	faceplayer
+# 198 "data/maps/NautirustCity_Gym/scripts.pory"
 	trainerbattle_single TRAINER_NAUTIRUST_GYM_LEADER_LANDON, NautirustCity_Gym_Text_LandonPreBattle, NautirustCity_Gym_Text_LandonPostBattle, NautirustCity_Gym_Script_BeatLandon, NO_MUSIC
-# 203 "data/maps/NautirustCity_Gym/scripts.pory"
+# 205 "data/maps/NautirustCity_Gym/scripts.pory"
 	release
 	return
 
 NautirustCity_Gym_TalkLandon_1:
-# 173 "data/maps/NautirustCity_Gym/scripts.pory"
+# 175 "data/maps/NautirustCity_Gym/scripts.pory"
 	goto_if_set FLAG_RECEIVED_TM_ROCK_TOMB, NautirustCity_Gym_TalkLandon_4
-# 187 "data/maps/NautirustCity_Gym/scripts.pory"
-	lock
-# 188 "data/maps/NautirustCity_Gym/scripts.pory"
-	faceplayer
 # 189 "data/maps/NautirustCity_Gym/scripts.pory"
-	call NautirustCity_Gym_GetRewardTM
+	lock
 # 190 "data/maps/NautirustCity_Gym/scripts.pory"
+	faceplayer
+# 191 "data/maps/NautirustCity_Gym/scripts.pory"
+	call NautirustCity_Gym_GetRewardTM
+# 192 "data/maps/NautirustCity_Gym/scripts.pory"
 	release
 	return
 
 NautirustCity_Gym_TalkLandon_4:
-# 174 "data/maps/NautirustCity_Gym/scripts.pory"
-	lock
-# 175 "data/maps/NautirustCity_Gym/scripts.pory"
-	faceplayer
 # 176 "data/maps/NautirustCity_Gym/scripts.pory"
+	lock
+# 177 "data/maps/NautirustCity_Gym/scripts.pory"
+	faceplayer
+# 178 "data/maps/NautirustCity_Gym/scripts.pory"
 	msgbox NautirustCity_Gym_TalkLandon_Text_0, MSGBOX_DEFAULT
-# 183 "data/maps/NautirustCity_Gym/scripts.pory"
+# 185 "data/maps/NautirustCity_Gym/scripts.pory"
 	closemessage
-# 184 "data/maps/NautirustCity_Gym/scripts.pory"
+# 186 "data/maps/NautirustCity_Gym/scripts.pory"
 	release
 	return
 
 
 NautirustCity_Gym_Script_BeatLandon::
-# 208 "data/maps/NautirustCity_Gym/scripts.pory"
+# 210 "data/maps/NautirustCity_Gym/scripts.pory"
 	msgbox NautirustCity_Gym_Script_BeatLandon_Text_0, MSGBOX_DEFAULT
-# 223 "data/maps/NautirustCity_Gym/scripts.pory"
+# 225 "data/maps/NautirustCity_Gym/scripts.pory"
 	message NautirustCity_Gym_Script_BeatLandon_Text_1
-# 227 "data/maps/NautirustCity_Gym/scripts.pory"
-	waitmessage
-# 228 "data/maps/NautirustCity_Gym/scripts.pory"
-	call Common_EventScript_PlayGymBadgeFanfare
 # 229 "data/maps/NautirustCity_Gym/scripts.pory"
-	setflag FLAG_BADGE01_GET
+	waitmessage
 # 230 "data/maps/NautirustCity_Gym/scripts.pory"
-	addplayerlevel 1
+	call Common_EventScript_PlayGymBadgeFanfare
+# 231 "data/maps/NautirustCity_Gym/scripts.pory"
+	setflag FLAG_BADGE01_GET
 # 232 "data/maps/NautirustCity_Gym/scripts.pory"
-	call NautirustCity_Gym_GetRewardTM
+	addplayerlevel 1
 # 234 "data/maps/NautirustCity_Gym/scripts.pory"
+	call NautirustCity_Gym_GetRewardTM
+# 236 "data/maps/NautirustCity_Gym/scripts.pory"
 	msgbox NautirustCity_Gym_Script_BeatLandon_Text_2, MSGBOX_DEFAULT
-# 238 "data/maps/NautirustCity_Gym/scripts.pory"
-	setvar VAR_0x8008, 1
-# 239 "data/maps/NautirustCity_Gym/scripts.pory"
-	call Common_EventScript_SetGymTrainers
 # 240 "data/maps/NautirustCity_Gym/scripts.pory"
-	closemessage
+	setvar VAR_0x8008, 1
 # 241 "data/maps/NautirustCity_Gym/scripts.pory"
+	call Common_EventScript_SetGymTrainers
+# 242 "data/maps/NautirustCity_Gym/scripts.pory"
+	closemessage
+# 243 "data/maps/NautirustCity_Gym/scripts.pory"
 	release
 	return
 
 
 NautirustCity_Gym_GetRewardTM::
-# 245 "data/maps/NautirustCity_Gym/scripts.pory"
+# 247 "data/maps/NautirustCity_Gym/scripts.pory"
 	msgbox NautirustCity_Gym_GetRewardTM_Text_0, MSGBOX_DEFAULT
-# 249 "data/maps/NautirustCity_Gym/scripts.pory"
+# 251 "data/maps/NautirustCity_Gym/scripts.pory"
 	giveitem ITEM_TM_DIG
-# 250 "data/maps/NautirustCity_Gym/scripts.pory"
+# 252 "data/maps/NautirustCity_Gym/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq NautirustCity_Gym_GetRewardTM_2
 NautirustCity_Gym_GetRewardTM_1:
-# 253 "data/maps/NautirustCity_Gym/scripts.pory"
+# 255 "data/maps/NautirustCity_Gym/scripts.pory"
 	msgbox NautirustCity_Gym_GetRewardTM_Text_1, MSGBOX_DEFAULT
-# 261 "data/maps/NautirustCity_Gym/scripts.pory"
+# 263 "data/maps/NautirustCity_Gym/scripts.pory"
 	closemessage
 	return
 
 NautirustCity_Gym_GetRewardTM_2:
-# 251 "data/maps/NautirustCity_Gym/scripts.pory"
+# 253 "data/maps/NautirustCity_Gym/scripts.pory"
 	call Common_EventScript_ShowBagIsFull
 	goto NautirustCity_Gym_GetRewardTM_1
 
 
 NautirustCity_Gym_Trainer1::
-# 292 "data/maps/NautirustCity_Gym/scripts.pory"
+# 294 "data/maps/NautirustCity_Gym/scripts.pory"
 	trainerbattle_single TRAINER_NAUTIRUST_GYM_1, NautirustCity_Gym_Trainer1_Text_0, NautirustCity_Gym_Trainer1_Text_0
-# 300 "data/maps/NautirustCity_Gym/scripts.pory"
+# 302 "data/maps/NautirustCity_Gym/scripts.pory"
 	msgbox NautirustCity_Gym_Trainer1_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 NautirustCity_Gym_Trainer2::
-# 307 "data/maps/NautirustCity_Gym/scripts.pory"
+# 309 "data/maps/NautirustCity_Gym/scripts.pory"
 	trainerbattle_single TRAINER_NAUTIRUST_GYM_2, NautirustCity_Gym_Trainer1_Text_0, NautirustCity_Gym_Trainer1_Text_0
-# 315 "data/maps/NautirustCity_Gym/scripts.pory"
+# 317 "data/maps/NautirustCity_Gym/scripts.pory"
 	msgbox NautirustCity_Gym_Trainer1_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 NautirustCity_Gym_Trainer3::
-# 322 "data/maps/NautirustCity_Gym/scripts.pory"
+# 324 "data/maps/NautirustCity_Gym/scripts.pory"
 	trainerbattle_single TRAINER_NAUTIRUST_GYM_3, NautirustCity_Gym_Trainer1_Text_0, NautirustCity_Gym_Trainer1_Text_0
-# 330 "data/maps/NautirustCity_Gym/scripts.pory"
+# 332 "data/maps/NautirustCity_Gym/scripts.pory"
 	msgbox NautirustCity_Gym_Trainer1_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 NautirustCity_Gym_Trainer4::
-# 337 "data/maps/NautirustCity_Gym/scripts.pory"
+# 339 "data/maps/NautirustCity_Gym/scripts.pory"
 	trainerbattle_single TRAINER_NAUTIRUST_GYM_4, NautirustCity_Gym_Trainer4_Text_0, NautirustCity_Gym_Trainer4_Text_1
-# 350 "data/maps/NautirustCity_Gym/scripts.pory"
+# 352 "data/maps/NautirustCity_Gym/scripts.pory"
 	msgbox NautirustCity_Gym_Trainer4_Text_2, MSGBOX_AUTOCLOSE
 	return
 
 
 NautirustCity_Gym_Trainer5::
-# 361 "data/maps/NautirustCity_Gym/scripts.pory"
+# 363 "data/maps/NautirustCity_Gym/scripts.pory"
 	trainerbattle_single TRAINER_NAUTIRUST_GYM_5, NautirustCity_Gym_Trainer1_Text_0, NautirustCity_Gym_Trainer1_Text_0
-# 369 "data/maps/NautirustCity_Gym/scripts.pory"
+# 371 "data/maps/NautirustCity_Gym/scripts.pory"
 	msgbox NautirustCity_Gym_Trainer1_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
 NautirustCity_Gym_Trainer6::
-# 376 "data/maps/NautirustCity_Gym/scripts.pory"
+# 378 "data/maps/NautirustCity_Gym/scripts.pory"
 	trainerbattle_single TRAINER_NAUTIRUST_GYM_6, NautirustCity_Gym_Trainer1_Text_0, NautirustCity_Gym_Trainer1_Text_0
-# 384 "data/maps/NautirustCity_Gym/scripts.pory"
+# 386 "data/maps/NautirustCity_Gym/scripts.pory"
 	msgbox NautirustCity_Gym_Trainer1_Text_0, MSGBOX_AUTOCLOSE
 	return
 
@@ -250,13 +250,13 @@ NautirustCity_Gym_GuideIntro_Movement_0:
 	face_down
 	step_end
 
-# 98 "data/maps/NautirustCity_Gym/scripts.pory"
-NautirustCity_Gym_GuideIntro_Movement_1:
-# 99 "data/maps/NautirustCity_Gym/scripts.pory"
-	walk_right
-# 99 "data/maps/NautirustCity_Gym/scripts.pory"
-	walk_right
 # 100 "data/maps/NautirustCity_Gym/scripts.pory"
+NautirustCity_Gym_GuideIntro_Movement_1:
+# 101 "data/maps/NautirustCity_Gym/scripts.pory"
+	walk_right
+# 101 "data/maps/NautirustCity_Gym/scripts.pory"
+	walk_right
+# 102 "data/maps/NautirustCity_Gym/scripts.pory"
 	face_down
 	step_end
 
@@ -290,11 +290,13 @@ NautirustCity_Gym_GuideIntro_Text_0:
 
 NautirustCity_Gym_GuideIntro_Text_1:
 # 69 "data/maps/NautirustCity_Gym/scripts.pory"
-	.string "Hmm…\p"
+	.string "Hmm…\n"
+	.string "No offense, but…\p"
 	.string "You look like you're pretty green when\n"
 	.string "it comes to training Pokémon.\l"
 	.string "I can see it in your eyes!\p"
-	.string "If you're thinking of taking on the gym challenge…\p"
+	.string "If you're thinking of taking on the \n"
+	.string "gym challenge…\p"
 	.string "Then get out there and explore!\n"
 	.string "Catch Pokémon! Get stronger!\p"
 	.string "…Or, if you're the stubborn type,\n"
@@ -303,13 +305,13 @@ NautirustCity_Gym_GuideIntro_Text_1:
 	.string "with bated breath, hotshot!$"
 
 NautirustCity_Gym_GuideIntro_Text_2:
-# 90 "data/maps/NautirustCity_Gym/scripts.pory"
+# 92 "data/maps/NautirustCity_Gym/scripts.pory"
 	.string "Think you got what it takes to beat him\n"
 	.string "and claim the Clay Badge?\p"
 	.string "Show me what you got, hotshot!$"
 
 NautirustCity_Gym_TalkGuide_Text_0:
-# 114 "data/maps/NautirustCity_Gym/scripts.pory"
+# 116 "data/maps/NautirustCity_Gym/scripts.pory"
 	.string "I saw the whole thing!\n"
 	.string "What a breathtaking bout!\p"
 	.string "You got the stuff, kid!\p"
@@ -323,7 +325,7 @@ NautirustCity_Gym_TalkGuide_Text_0:
 	.string "You're gonna go far kid!$"
 
 NautirustCity_Gym_TalkGuide_Text_1:
-# 136 "data/maps/NautirustCity_Gym/scripts.pory"
+# 138 "data/maps/NautirustCity_Gym/scripts.pory"
 	.string "Need a tip, hotshot?\p"
 	.string "Landon's an expert in Ground-type\n"
 	.string "Pokémon, and no slouch in battle!\p"
@@ -346,13 +348,13 @@ NautirustCity_Gym_TalkGuide_Text_1:
 	.string "Go for it!$"
 
 NautirustCity_Gym_TalkLandon_Text_0:
-# 177 "data/maps/NautirustCity_Gym/scripts.pory"
+# 179 "data/maps/NautirustCity_Gym/scripts.pory"
 	.string "If you're ever on Mount Briar, we \n"
 	.string "might into each other again.\p"
 	.string "Next time I'll be tougher!$"
 
 NautirustCity_Gym_Script_BeatLandon_Text_0:
-# 209 "data/maps/NautirustCity_Gym/scripts.pory"
+# 211 "data/maps/NautirustCity_Gym/scripts.pory"
 	.string "I learned a lot from that battle. \n"
 	.string "My team has some weak points I need to \l"
 	.string "shore up.\p"
@@ -364,31 +366,31 @@ NautirustCity_Gym_Script_BeatLandon_Text_0:
 	.string "The Clay Badge!$"
 
 NautirustCity_Gym_Script_BeatLandon_Text_1:
-# 224 "data/maps/NautirustCity_Gym/scripts.pory"
+# 226 "data/maps/NautirustCity_Gym/scripts.pory"
 	.string "{PLAYER} received the Clay Badge from \n"
 	.string "Landon!$"
 
 NautirustCity_Gym_Script_BeatLandon_Text_2:
-# 235 "data/maps/NautirustCity_Gym/scripts.pory"
+# 237 "data/maps/NautirustCity_Gym/scripts.pory"
 	.string "Good luck out there, trainer!$"
 
 NautirustCity_Gym_GetRewardTM_Text_0:
-# 246 "data/maps/NautirustCity_Gym/scripts.pory"
+# 248 "data/maps/NautirustCity_Gym/scripts.pory"
 	.string "Take this too!$"
 
 NautirustCity_Gym_GetRewardTM_Text_1:
-# 254 "data/maps/NautirustCity_Gym/scripts.pory"
+# 256 "data/maps/NautirustCity_Gym/scripts.pory"
 	.string "That's the TM for the move Dig.\p"
 	.string "Teach it to your Pokémon, and they'll \n"
 	.string "be able to strike your foes where they \l"
 	.string "least expect it!$"
 
 NautirustCity_Gym_Trainer1_Text_0:
-# 295 "data/maps/NautirustCity_Gym/scripts.pory"
+# 297 "data/maps/NautirustCity_Gym/scripts.pory"
 	.string "TODO$"
 
 NautirustCity_Gym_Trainer4_Text_0:
-# 340 "data/maps/NautirustCity_Gym/scripts.pory"
+# 342 "data/maps/NautirustCity_Gym/scripts.pory"
 	.string "Didn't see me, huh?\p"
 	.string "That's me!\n"
 	.string "Strong like a rock!\l"
@@ -396,18 +398,18 @@ NautirustCity_Gym_Trainer4_Text_0:
 	.string "Stealthy like… a… rock!$"
 
 NautirustCity_Gym_Trainer4_Text_1:
-# 347 "data/maps/NautirustCity_Gym/scripts.pory"
+# 349 "data/maps/NautirustCity_Gym/scripts.pory"
 	.string "I got rocked!$"
 
 NautirustCity_Gym_Trainer4_Text_2:
-# 351 "data/maps/NautirustCity_Gym/scripts.pory"
+# 353 "data/maps/NautirustCity_Gym/scripts.pory"
 	.string "Ha!\n"
 	.string "You got guts!\p"
 	.string "I bet you could roll right through\n"
 	.string "Landon!$"
 
 NautirustCity_Gym_Text_LandonPreBattle::
-# 265 "data/maps/NautirustCity_Gym/scripts.pory"
+# 267 "data/maps/NautirustCity_Gym/scripts.pory"
 	.string "Hey, hey!\n"
 	.string "I've been watching you make your way\l"
 	.string "through my gym, trainer.\p"
@@ -423,6 +425,6 @@ NautirustCity_Gym_Text_LandonPreBattle::
 	.string "Show me!$"
 
 NautirustCity_Gym_Text_LandonPostBattle::
-# 286 "data/maps/NautirustCity_Gym/scripts.pory"
+# 288 "data/maps/NautirustCity_Gym/scripts.pory"
 	.string "Wow!\n"
 	.string "Your training is exceptional!$"

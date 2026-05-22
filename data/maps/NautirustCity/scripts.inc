@@ -195,11 +195,11 @@ NautirustCity_Script_TalkExpShareStore::
 	faceplayer
 # 215 "data/maps/NautirustCity/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_EXP_SHARE, NautirustCity_Script_TalkExpShareStore_1
-# 284 "data/maps/NautirustCity/scripts.pory"
+# 285 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Script_TalkExpShareStore_Text_9, MSGBOX_DEFAULT
-# 291 "data/maps/NautirustCity/scripts.pory"
-	closemessage
 # 292 "data/maps/NautirustCity/scripts.pory"
+	closemessage
+# 293 "data/maps/NautirustCity/scripts.pory"
 	release
 	return
 
@@ -216,7 +216,7 @@ NautirustCity_Script_TalkExpShareStore_1:
 	switch VAR_RESULT
 # 230 "data/maps/NautirustCity/scripts.pory"
 	case 0, NautirustCity_Script_TalkExpShareStore_5
-# 273 "data/maps/NautirustCity/scripts.pory"
+# 274 "data/maps/NautirustCity/scripts.pory"
 	case 1, NautirustCity_Script_TalkExpShareStore_6
 	return
 
@@ -226,24 +226,24 @@ NautirustCity_Script_TalkExpShareStore_5:
 # 232 "data/maps/NautirustCity/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq NautirustCity_Script_TalkExpShareStore_7
-# 262 "data/maps/NautirustCity/scripts.pory"
-	hidemoneybox
 # 263 "data/maps/NautirustCity/scripts.pory"
+	hidemoneybox
+# 264 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Script_TalkExpShareStore_Text_7, MSGBOX_DEFAULT
-# 270 "data/maps/NautirustCity/scripts.pory"
-	closemessage
 # 271 "data/maps/NautirustCity/scripts.pory"
+	closemessage
+# 272 "data/maps/NautirustCity/scripts.pory"
 	release
 	return
 
 NautirustCity_Script_TalkExpShareStore_6:
-# 274 "data/maps/NautirustCity/scripts.pory"
-	hidemoneybox
 # 275 "data/maps/NautirustCity/scripts.pory"
+	hidemoneybox
+# 276 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Script_TalkExpShareStore_Text_8, MSGBOX_DEFAULT
-# 279 "data/maps/NautirustCity/scripts.pory"
-	closemessage
 # 280 "data/maps/NautirustCity/scripts.pory"
+	closemessage
+# 281 "data/maps/NautirustCity/scripts.pory"
 	release
 	return
 
@@ -258,26 +258,28 @@ NautirustCity_Script_TalkExpShareStore_7:
 	giveitem ITEM_EXP_SHARE, 1
 # 240 "data/maps/NautirustCity/scripts.pory"
 	setflag FLAG_RECEIVED_EXP_SHARE
-# 242 "data/maps/NautirustCity/scripts.pory"
+# 241 "data/maps/NautirustCity/scripts.pory"
+	addplayerlevel 1
+# 243 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Script_TalkExpShareStore_Text_4, MSGBOX_YESNO
-# 246 "data/maps/NautirustCity/scripts.pory"
+# 247 "data/maps/NautirustCity/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq NautirustCity_Script_TalkExpShareStore_11
 NautirustCity_Script_TalkExpShareStore_10:
-# 254 "data/maps/NautirustCity/scripts.pory"
+# 255 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Script_TalkExpShareStore_Text_6, MSGBOX_DEFAULT
-# 258 "data/maps/NautirustCity/scripts.pory"
-	closemessage
 # 259 "data/maps/NautirustCity/scripts.pory"
+	closemessage
+# 260 "data/maps/NautirustCity/scripts.pory"
 	release
 	return
 
 NautirustCity_Script_TalkExpShareStore_11:
-# 247 "data/maps/NautirustCity/scripts.pory"
-	playse SE_POKENAV_ON
 # 248 "data/maps/NautirustCity/scripts.pory"
+	playse SE_POKENAV_ON
+# 249 "data/maps/NautirustCity/scripts.pory"
 	msgbox NautirustCity_Script_TalkExpShareStore_Text_5
-# 251 "data/maps/NautirustCity/scripts.pory"
+# 252 "data/maps/NautirustCity/scripts.pory"
 	setflag FLAG_EXP_SHARE_ENABLED
 	goto NautirustCity_Script_TalkExpShareStore_10
 
@@ -346,7 +348,7 @@ NautirustCity_Script_TalkMaya_Text_4:
 	.string "then to the Poké Ball factory in \l"
 	.string "Armiter City.\p"
 	.string "Or we could go south through Junopolis \n"
-	.string "City to reach Canvenus City.\p"
+	.string "City to reach Canvenas City.\p"
 	.string "It's gonna be a pretty long journey \n"
 	.string "either way.\p"
 	.string "Which road should we take?$"
@@ -405,29 +407,29 @@ NautirustCity_Script_TalkExpShareStore_Text_3:
 	.string "Here you go!$"
 
 NautirustCity_Script_TalkExpShareStore_Text_4:
-# 243 "data/maps/NautirustCity/scripts.pory"
+# 244 "data/maps/NautirustCity/scripts.pory"
 	.string "Turn the Exp. All on?$"
 
 NautirustCity_Script_TalkExpShareStore_Text_5:
-# 249 "data/maps/NautirustCity/scripts.pory"
+# 250 "data/maps/NautirustCity/scripts.pory"
 	.string "You turned on the Exp. All.$"
 
 NautirustCity_Script_TalkExpShareStore_Text_6:
-# 255 "data/maps/NautirustCity/scripts.pory"
+# 256 "data/maps/NautirustCity/scripts.pory"
 	.string "Thank you!$"
 
 NautirustCity_Script_TalkExpShareStore_Text_7:
-# 264 "data/maps/NautirustCity/scripts.pory"
+# 265 "data/maps/NautirustCity/scripts.pory"
 	.string "Sorry!\n"
 	.string "You don't have enough money…\p"
 	.string "Maybe come back later?$"
 
 NautirustCity_Script_TalkExpShareStore_Text_8:
-# 276 "data/maps/NautirustCity/scripts.pory"
+# 277 "data/maps/NautirustCity/scripts.pory"
 	.string "Thanks for stopping by!$"
 
 NautirustCity_Script_TalkExpShareStore_Text_9:
-# 285 "data/maps/NautirustCity/scripts.pory"
+# 286 "data/maps/NautirustCity/scripts.pory"
 	.string "I'm all out of stock, but I still have a\n"
 	.string "lease for this stand.\p"
 	.string "Maybe I could sell other things?$"

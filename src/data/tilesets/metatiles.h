@@ -22,8 +22,8 @@ const u16 gMetatileAttributes_Armiter[] = INCBIN_U16("data/tilesets/secondary/ar
 const u16 gMetatiles_Junopolis[] = INCBIN_U16("data/tilesets/secondary/junopolis/metatiles.bin");
 const u16 gMetatileAttributes_Junopolis[] = INCBIN_U16("data/tilesets/secondary/junopolis/metatile_attributes.bin");
 
-const u16 gMetatiles_Canvenus[] = INCBIN_U16("data/tilesets/secondary/canvenus/metatiles.bin");
-const u16 gMetatileAttributes_Canvenus[] = INCBIN_U16("data/tilesets/secondary/canvenus/metatile_attributes.bin");
+const u16 gMetatiles_Canvenas[] = INCBIN_U16("data/tilesets/secondary/canvenas/metatiles.bin");
+const u16 gMetatileAttributes_Canvenas[] = INCBIN_U16("data/tilesets/secondary/canvenas/metatile_attributes.bin");
 
 const u16 gMetatiles_Nerilight[] = INCBIN_U16("data/tilesets/secondary/nerilight/metatiles.bin");
 const u16 gMetatileAttributes_Nerilight[] = INCBIN_U16("data/tilesets/secondary/nerilight/metatile_attributes.bin");
@@ -51,6 +51,12 @@ const u16 gMetatileAttributes_DesertSanctuary[] = INCBIN_U16("data/tilesets/seco
 
 const u16 gMetatiles_MountBriar[] = INCBIN_U16("data/tilesets/secondary/mount_briar/metatiles.bin");
 const u16 gMetatileAttributes_MountBriar[] = INCBIN_U16("data/tilesets/secondary/mount_briar/metatile_attributes.bin");
+
+const u16 gMetatiles_HauntedRuins[] = INCBIN_U16("data/tilesets/secondary/haunted_ruins/metatiles.bin");
+const u16 gMetatileAttributes_HauntedRuins[] = INCBIN_U16("data/tilesets/secondary/haunted_ruins/metatile_attributes.bin");
+
+const u16 gMetatiles_Airport[] = INCBIN_U16("data/tilesets/secondary/airport/metatiles.bin");
+const u16 gMetatileAttributes_Airport[] = INCBIN_U16("data/tilesets/secondary/airport/metatile_attributes.bin");
 
 const u16 gMetatiles_InsideBuilding[] = INCBIN_U16("data/tilesets/primary/building/metatiles.bin");
 const u16 gMetatileAttributes_InsideBuilding[] = INCBIN_U16("data/tilesets/primary/building/metatile_attributes.bin");
@@ -94,8 +100,8 @@ const u16 gMetatileAttributes_ArmiterGym[] = INCBIN_U16("data/tilesets/secondary
 const u16 gMetatiles_JunopolisGym[] = INCBIN_U16("data/tilesets/secondary/junopolis_gym/metatiles.bin");
 const u16 gMetatileAttributes_JunopolisGym[] = INCBIN_U16("data/tilesets/secondary/junopolis_gym/metatile_attributes.bin");
 
-const u16 gMetatiles_CanvenusGym[] = INCBIN_U16("data/tilesets/secondary/canvenus_gym/metatiles.bin");
-const u16 gMetatileAttributes_CanvenusGym[] = INCBIN_U16("data/tilesets/secondary/canvenus_gym/metatile_attributes.bin");
+const u16 gMetatiles_CanvenasGym[] = INCBIN_U16("data/tilesets/secondary/canvenas_gym/metatiles.bin");
+const u16 gMetatileAttributes_CanvenasGym[] = INCBIN_U16("data/tilesets/secondary/canvenas_gym/metatile_attributes.bin");
 
 const u16 gMetatiles_NerilightGym[] = INCBIN_U16("data/tilesets/secondary/nerilight_gym/metatiles.bin");
 const u16 gMetatileAttributes_NerilightGym[] = INCBIN_U16("data/tilesets/secondary/nerilight_gym/metatile_attributes.bin");

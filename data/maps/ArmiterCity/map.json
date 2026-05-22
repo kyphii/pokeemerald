@@ -24,11 +24,6 @@
       "direction": "down"
     },
     {
-      "map": "MAP_ROUTE26",
-      "offset": 0,
-      "direction": "left"
-    },
-    {
       "map": "MAP_RIVERVIEW_PARK",
       "offset": 24,
       "direction": "left"

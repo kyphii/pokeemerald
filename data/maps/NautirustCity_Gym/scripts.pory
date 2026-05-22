@@ -67,12 +67,14 @@ script NautirustCity_Gym_GuideIntro {
 	if (var(VAR_RESULT) < 12) {
 		msgbox(
 			"Hmm…
-			
+			No offense, but…
+            
 			You look like you're pretty green when
 			it comes to training Pok\emon.
 			I can see it in your eyes!
 			
-			If you're thinking of taking on the gym challenge…
+			If you're thinking of taking on the 
+            gym challenge…
 			
 			Then get out there and explore!
 			Catch Pok\emon! Get stronger!

@@ -132,7 +132,7 @@ script NautirustCity_Script_TalkMaya {
 				Armiter City.
 
 				Or we could go south through Junopolis 
-				City to reach Canvenus City.
+				City to reach Canvenas City.
 				
 				It's gonna be a pretty long journey 
 				either way.
@@ -238,6 +238,7 @@ script NautirustCity_Script_TalkExpShareStore {
 					hidemoneybox
 					giveitem(ITEM_EXP_SHARE, 1)
 					setflag(FLAG_RECEIVED_EXP_SHARE)
+					addplayerlevel(1)
 					
 					msgbox(
 						"Turn the Exp. All on?",

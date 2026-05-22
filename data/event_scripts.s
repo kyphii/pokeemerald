@@ -136,7 +136,7 @@ gStdScripts_End::
 	.include "data/maps/WhelchordCity/scripts.inc"
 	.include "data/maps/ArmiterCity/scripts.inc"
 	.include "data/maps/JunopolisCity/scripts.inc"
-	.include "data/maps/CanvenusCity/scripts.inc"
+	.include "data/maps/CanvenasCity/scripts.inc"
 	.include "data/maps/NerilightCity/scripts.inc"
 	.include "data/maps/QuaheartCity/scripts.inc"
 	.include "data/maps/VolutideTown/scripts.inc"
@@ -179,7 +179,7 @@ gStdScripts_End::
 	.include "data/maps/WhelchordCity_PokemonCenter/scripts.inc"
 	.include "data/maps/ArmiterCity_PokemonCenter/scripts.inc"
 	.include "data/maps/JunopolisCity_PokemonCenter/scripts.inc"
-	.include "data/maps/CanvenusCity_PokemonCenter/scripts.inc"
+	.include "data/maps/CanvenasCity_PokemonCenter/scripts.inc"
 	.include "data/maps/PeriwindCity_PokemonCenter/scripts.inc"
 	.include "data/maps/VolutideTown_PokemonCenter/scripts.inc"
 	.include "data/maps/NerilightCity_PokemonCenter/scripts.inc"
@@ -191,7 +191,7 @@ gStdScripts_End::
 	.include "data/maps/NautirustCity_Mart/scripts.inc"
 	.include "data/maps/WhelchordCity_Mart/scripts.inc"
 	.include "data/maps/JunopolisCity_Mart/scripts.inc"
-	.include "data/maps/CanvenusCity_Mart/scripts.inc"
+	.include "data/maps/CanvenasCity_Mart/scripts.inc"
 	.include "data/maps/PeriwindCity_Mart/scripts.inc"
 	.include "data/maps/VolutideTown_Mart/scripts.inc"
 	.include "data/maps/NerilightCity_Mart/scripts.inc"
@@ -203,7 +203,7 @@ gStdScripts_End::
 	.include "data/maps/WhelchordCity_Gym/scripts.inc"
 	.include "data/maps/ArmiterCity_Gym/scripts.inc"
 	.include "data/maps/JunopolisCity_Gym/scripts.inc"
-	.include "data/maps/CanvenusCity_Gym/scripts.inc"
+	.include "data/maps/CanvenasCity_Gym/scripts.inc"
 	.include "data/maps/PeriwindCity_Gym/scripts.inc"
 	.include "data/maps/NerilightCity_Gym/scripts.inc"
 	.include "data/maps/QuaheartCity_Gym/scripts.inc"
@@ -960,3 +960,11 @@ EventScript_BrailleCursorWaitButton::
 	.include "data/maps/NautirustCity_House_2_2F/scripts.inc"
 
 	.include "data/maps/NautirustCity_TrainerSchool/scripts.inc"
+
+	.include "data/maps/LostVillage/scripts.inc"
+
+	.include "data/maps/JunopolisAirport/scripts.inc"
+
+	.include "data/maps/Route9/scripts.inc"
+
+	.include "data/maps/Route27/scripts.inc"

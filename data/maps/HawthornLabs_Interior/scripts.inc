@@ -1258,7 +1258,7 @@ HawthornLabs_Interior_Intro_MeetProfessorScene_Text_23:
 	.string "Also… perhaps you could do the same for \n"
 	.string "the bag itself.\p"
 	.string "It's a long shot, but maybe someone at \n"
-	.string "the boutique in Canvenus City might \l"
+	.string "the boutique in Canvenas City might \l"
 	.string "be able to help.\p"
 	.string "I would recommend starting with those\n"
 	.string "two places.\p"

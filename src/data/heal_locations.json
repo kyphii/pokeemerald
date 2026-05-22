@@ -21,11 +21,11 @@
       "respawn_y": 11
     },
     {
-      "id": "HEAL_LOCATION_CANVENUS_CITY",
-      "map": "MAP_CANVENUS_CITY",
+      "id": "HEAL_LOCATION_CANVENAS_CITY",
+      "map": "MAP_CANVENAS_CITY",
       "x": 25,
       "y": 18,
-      "respawn_map": "MAP_CANVENUS_CITY_POKEMON_CENTER",
+      "respawn_map": "MAP_CANVENAS_CITY_POKEMON_CENTER",
       "respawn_npc": 1,
       "respawn_x": 6,
       "respawn_y": 11

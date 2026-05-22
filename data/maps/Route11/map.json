@@ -14,7 +14,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_CANVENUS_CITY",
+      "map": "MAP_CANVENAS_CITY",
       "offset": 0,
       "direction": "right"
     },

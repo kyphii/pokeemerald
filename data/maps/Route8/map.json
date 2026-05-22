@@ -14,9 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_VOLUTIDE_TOWN",
-      "offset": 120,
-      "direction": "up"
+      "map": "MAP_ROUTE9",
+      "offset": 96,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_NERILIGHT_CITY",
+      "offset": 96,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_QUAHEART_CITY",
+      "offset": -24,
+      "direction": "right"
     }
   ],
   "object_events": [],
