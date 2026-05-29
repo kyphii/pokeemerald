@@ -15,15 +15,20 @@
   "connections": [
     {
       "map": "MAP_ROUTE4",
-      "offset": -48,
+      "offset": -24,
       "direction": "left"
+    },
+    {
+      "map": "MAP_RAINBOW_WEALD",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [],
   "warp_events": [
     {
       "x": 14,
-      "y": 11,
+      "y": 35,
       "elevation": 0,
       "dest_map": "MAP_OLD_PRINCES_TRAIL_1",
       "dest_warp_id": "0"

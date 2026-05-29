@@ -968,3 +968,35 @@ EventScript_BrailleCursorWaitButton::
 	.include "data/maps/Route9/scripts.inc"
 
 	.include "data/maps/Route27/scripts.inc"
+
+	.include "data/maps/Route24/scripts.inc"
+
+	.include "data/maps/MosaicReef/scripts.inc"
+
+	.include "data/maps/RainbowWeald/scripts.inc"
+
+	.include "data/maps/SanctumSea/scripts.inc"
+
+	.include "data/maps/LonenoniaCrossing/scripts.inc"
+
+	.include "data/maps/JunopolisHarbor/scripts.inc"
+
+	.include "data/maps/BleakrockPass_Cave_1/scripts.inc"
+
+	.include "data/maps/BleakrockPass_Cave_2/scripts.inc"
+
+	.include "data/maps/BleakrockPass_Cave_3/scripts.inc"
+
+	.include "data/maps/BleakrockPass_Cave_4/scripts.inc"
+
+	.include "data/maps/BleakrockPass_Cave_5/scripts.inc"
+
+	.include "data/maps/BleakrockPass_Cave_6/scripts.inc"
+
+	.include "data/maps/BleakrockPass_Cave_7/scripts.inc"
+
+	.include "data/maps/LandsEndShore/scripts.inc"
+
+	.include "data/maps/SilentBeach/scripts.inc"
+
+	.include "data/maps/WatchmansHill/scripts.inc"

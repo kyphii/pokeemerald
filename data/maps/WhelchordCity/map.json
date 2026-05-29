@@ -22,11 +22,6 @@
       "map": "MAP_ROUTE5",
       "offset": -48,
       "direction": "down"
-    },
-    {
-      "map": "MAP_BLEAKROCK_PASS",
-      "offset": 0,
-      "direction": "left"
     }
   ],
   "object_events": [],

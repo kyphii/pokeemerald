@@ -27,6 +27,11 @@
       "map": "MAP_ROUTE13",
       "offset": 0,
       "direction": "left"
+    },
+    {
+      "map": "MAP_SILENT_BEACH",
+      "offset": 24,
+      "direction": "up"
     }
   ],
   "object_events": [],
@@ -50,6 +55,13 @@
       "y": 33,
       "elevation": 0,
       "dest_map": "MAP_PERIWIND_CITY_GYM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 31,
+      "y": 30,
+      "elevation": 0,
+      "dest_map": "MAP_PERIWIND_CITY",
       "dest_warp_id": "0"
     }
   ],

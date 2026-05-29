@@ -95,7 +95,7 @@
       "width": 48,
       "height": 24,
       "primary_tileset": "gTileset_Overworld",
-      "secondary_tileset": "gTileset_QuaheartGym",
+      "secondary_tileset": "gTileset_Volutide",
       "border_filepath": "data/layouts/VolutideTown/border.bin",
       "blockdata_filepath": "data/layouts/VolutideTown/map.bin"
     },
@@ -673,7 +673,7 @@
       "width": 72,
       "height": 48,
       "primary_tileset": "gTileset_Overworld",
-      "secondary_tileset": "gTileset_Whelchord",
+      "secondary_tileset": "gTileset_BleakrockPass",
       "border_filepath": "data/layouts/BleakrockPass/border.bin",
       "blockdata_filepath": "data/layouts/BleakrockPass/map.bin"
     },
@@ -721,7 +721,7 @@
       "id": "LAYOUT_OLD_PRINCES_TRAIL_WEST",
       "name": "OldPrincesTrailWest_Layout",
       "width": 24,
-      "height": 24,
+      "height": 48,
       "primary_tileset": "gTileset_Overworld",
       "secondary_tileset": "gTileset_Whelchord",
       "border_filepath": "data/layouts/OldPrincesTrailWest/border.bin",
@@ -813,7 +813,7 @@
       "width": 72,
       "height": 72,
       "primary_tileset": "gTileset_Overworld",
-      "secondary_tileset": "gTileset_Whelchord",
+      "secondary_tileset": "gTileset_BleakrockPass",
       "border_filepath": "data/layouts/BleakrockPass_Interior/border.bin",
       "blockdata_filepath": "data/layouts/BleakrockPass_Interior/map.bin"
     },
@@ -916,6 +916,166 @@
       "secondary_tileset": "gTileset_Armiter",
       "border_filepath": "data/layouts/Route27/border.bin",
       "blockdata_filepath": "data/layouts/Route27/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE24",
+      "name": "Route24_Layout",
+      "width": 24,
+      "height": 144,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Armiter",
+      "border_filepath": "data/layouts/Route24/border.bin",
+      "blockdata_filepath": "data/layouts/Route24/map.bin"
+    },
+    {
+      "id": "LAYOUT_MOSAIC_REEF",
+      "name": "MosaicReef_Layout",
+      "width": 48,
+      "height": 48,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Abalove",
+      "border_filepath": "data/layouts/MosaicReef/border.bin",
+      "blockdata_filepath": "data/layouts/MosaicReef/map.bin"
+    },
+    {
+      "id": "LAYOUT_RAINBOW_WEALD",
+      "name": "RainbowWeald_Layout",
+      "width": 48,
+      "height": 48,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Nautirust",
+      "border_filepath": "data/layouts/RainbowWeald/border.bin",
+      "blockdata_filepath": "data/layouts/RainbowWeald/map.bin"
+    },
+    {
+      "id": "LAYOUT_SANCTUM_SEA",
+      "name": "SanctumSea_Layout",
+      "width": 48,
+      "height": 48,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Abalove",
+      "border_filepath": "data/layouts/SanctumSea/border.bin",
+      "blockdata_filepath": "data/layouts/SanctumSea/map.bin"
+    },
+    {
+      "id": "LAYOUT_LONENONIA_CROSSING",
+      "name": "LonenoniaCrossing_Layout",
+      "width": 96,
+      "height": 24,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Abalove",
+      "border_filepath": "data/layouts/LonenoniaCrossing/border.bin",
+      "blockdata_filepath": "data/layouts/LonenoniaCrossing/map.bin"
+    },
+    {
+      "id": "LAYOUT_JUNOPOLIS_HARBOR",
+      "name": "JunopolisHarbor_Layout",
+      "width": 48,
+      "height": 48,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Junopolis",
+      "border_filepath": "data/layouts/JunopolisHarbor/border.bin",
+      "blockdata_filepath": "data/layouts/JunopolisHarbor/map.bin"
+    },
+    {
+      "id": "LAYOUT_BLEAKROCK_PASS_CAVE_1",
+      "name": "BleakrockPass_Cave_1_Layout",
+      "width": 26,
+      "height": 25,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_BleakrockPass",
+      "border_filepath": "data/layouts/BleakrockPass_Cave_1/border.bin",
+      "blockdata_filepath": "data/layouts/BleakrockPass_Cave_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_BLEAKROCK_PASS_CAVE_2",
+      "name": "BleakrockPass_Cave_2_Layout",
+      "width": 40,
+      "height": 24,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_BleakrockPass",
+      "border_filepath": "data/layouts/BleakrockPass_Cave_2/border.bin",
+      "blockdata_filepath": "data/layouts/BleakrockPass_Cave_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_BLEAKROCK_PASS_CAVE_3",
+      "name": "BleakrockPass_Cave_3_Layout",
+      "width": 35,
+      "height": 21,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_BleakrockPass",
+      "border_filepath": "data/layouts/BleakrockPass_Cave_3/border.bin",
+      "blockdata_filepath": "data/layouts/BleakrockPass_Cave_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_BLEAKROCK_PASS_CAVE_4",
+      "name": "BleakrockPass_Cave_4_Layout",
+      "width": 20,
+      "height": 28,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_BleakrockPass",
+      "border_filepath": "data/layouts/BleakrockPass_Cave_4/border.bin",
+      "blockdata_filepath": "data/layouts/BleakrockPass_Cave_4/map.bin"
+    },
+    {
+      "id": "LAYOUT_BLEAKROCK_PASS_CAVE_5",
+      "name": "BleakrockPass_Cave_5_Layout",
+      "width": 28,
+      "height": 16,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_BleakrockPass",
+      "border_filepath": "data/layouts/BleakrockPass_Cave_5/border.bin",
+      "blockdata_filepath": "data/layouts/BleakrockPass_Cave_5/map.bin"
+    },
+    {
+      "id": "LAYOUT_BLEAKROCK_PASS_CAVE_6",
+      "name": "BleakrockPass_Cave_6_Layout",
+      "width": 24,
+      "height": 36,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_BleakrockPass",
+      "border_filepath": "data/layouts/BleakrockPass_Cave_6/border.bin",
+      "blockdata_filepath": "data/layouts/BleakrockPass_Cave_6/map.bin"
+    },
+    {
+      "id": "LAYOUT_BLEAKROCK_PASS_CAVE_7",
+      "name": "BleakrockPass_Cave_7_Layout",
+      "width": 26,
+      "height": 25,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_BleakrockPass",
+      "border_filepath": "data/layouts/BleakrockPass_Cave_7/border.bin",
+      "blockdata_filepath": "data/layouts/BleakrockPass_Cave_7/map.bin"
+    },
+    {
+      "id": "LAYOUT_LANDS_END_SHORE",
+      "name": "LandsEndShore_Layout",
+      "width": 72,
+      "height": 24,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Gardellin",
+      "border_filepath": "data/layouts/LandsEndShore/border.bin",
+      "blockdata_filepath": "data/layouts/LandsEndShore/map.bin"
+    },
+    {
+      "id": "LAYOUT_SILENT_BEACH",
+      "name": "SilentBeach_Layout",
+      "width": 24,
+      "height": 48,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Periwind",
+      "border_filepath": "data/layouts/SilentBeach/border.bin",
+      "blockdata_filepath": "data/layouts/SilentBeach/map.bin"
+    },
+    {
+      "id": "LAYOUT_WATCHMANS_HILL",
+      "name": "WatchmansHill_Layout",
+      "width": 48,
+      "height": 48,
+      "primary_tileset": "gTileset_Overworld",
+      "secondary_tileset": "gTileset_Periwind",
+      "border_filepath": "data/layouts/WatchmansHill/border.bin",
+      "blockdata_filepath": "data/layouts/WatchmansHill/map.bin"
     }
   ]
 }

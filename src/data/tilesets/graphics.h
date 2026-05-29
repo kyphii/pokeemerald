@@ -938,3 +938,21 @@ const u16 gTilesetPalettes_SecretBase[][16] =
     INCBIN_U16("data/tilesets/primary/secret_base/palettes/14.gbapal"),
     INCBIN_U16("data/tilesets/primary/secret_base/palettes/15.gbapal"),
 };
+const u16 gTilesetPalettes_BleakrockPass[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/bleakrock_pass/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bleakrock_pass/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bleakrock_pass/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bleakrock_pass/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bleakrock_pass/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bleakrock_pass/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bleakrock_pass/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bleakrock_pass/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bleakrock_pass/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bleakrock_pass/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bleakrock_pass/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bleakrock_pass/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bleakrock_pass/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_BleakrockPass[] = INCBIN_U32("data/tilesets/secondary/bleakrock_pass/tiles.4bpp.lz");

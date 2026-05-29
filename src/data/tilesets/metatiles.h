@@ -117,3 +117,6 @@ const u16 gMetatileAttributes_PokemonSchool[] = INCBIN_U16("data/tilesets/second
 
 const u16 gMetatiles_TrainerTower[] = INCBIN_U16("data/tilesets/secondary/trainer_tower_frlg/metatiles.bin");
 const u16 gMetatileAttributes_TrainerTower[] = INCBIN_U16("data/tilesets/secondary/trainer_tower_frlg/metatile_attributes.bin");
+
+const u16 gMetatiles_BleakrockPass[] = INCBIN_U16("data/tilesets/secondary/bleakrock_pass/metatiles.bin");
+const u16 gMetatileAttributes_BleakrockPass[] = INCBIN_U16("data/tilesets/secondary/bleakrock_pass/metatile_attributes.bin");

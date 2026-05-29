@@ -32,6 +32,11 @@
       "map": "MAP_JUNOPOLIS_AIRPORT",
       "offset": -24,
       "direction": "right"
+    },
+    {
+      "map": "MAP_JUNOPOLIS_HARBOR",
+      "offset": 24,
+      "direction": "right"
     }
   ],
   "object_events": [],

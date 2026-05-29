@@ -436,3 +436,14 @@ const struct Tileset gTileset_PokemonSchool =
     .metatileAttributes = gMetatileAttributes_PokemonSchool,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_BleakrockPass =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_BleakrockPass,
+    .palettes = gTilesetPalettes_BleakrockPass,
+    .metatiles = gMetatiles_BleakrockPass,
+    .metatileAttributes = gMetatileAttributes_BleakrockPass,
+    .callback = NULL,
+};

@@ -19,28 +19,21 @@
       "direction": "left"
     },
     {
-      "map": "MAP_LOST_VILLAGE",
-      "offset": -24,
-      "direction": "left"
-    },
-    {
-      "map": "MAP_SECRET_COVE",
+      "map": "MAP_JUNOPOLIS_HARBOR",
       "offset": 0,
-      "direction": "up"
-    },
-    {
-      "map": "MAP_MARINACRE_TOWN",
-      "offset": 24,
-      "direction": "up"
-    },
-    {
-      "map": "MAP_ROUTE18",
-      "offset": 0,
-      "direction": "right"
+      "direction": "down"
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 2,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_WANDERING_CAVE",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

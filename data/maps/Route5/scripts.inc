@@ -13,9 +13,9 @@ Route5_MapScripts_MAP_SCRIPT_ON_LOAD:
 
 Route5_MapScripts_MAP_SCRIPT_ON_LOAD_1:
 # 4 "data/maps/Route5/scripts.pory"
-	setmetatile 48, 16, METATILE_Overworld_CaveEntranceTop, TRUE
+	setmetatile 49, 16, METATILE_Overworld_CaveEntranceTop, TRUE
 # 5 "data/maps/Route5/scripts.pory"
-	setmetatile 48, 17, METATILE_Overworld_CaveEntranceBottom, FALSE
+	setmetatile 49, 17, METATILE_Overworld_CaveEntranceBottom, FALSE
 	return
 
 Route5_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
@@ -33,9 +33,9 @@ Route5_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 # 13 "data/maps/Route5/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 14 "data/maps/Route5/scripts.pory"
-	setmetatile 48, 16, METATILE_Overworld_CliffBottom_BrownShadow, TRUE
+	setmetatile 49, 16, METATILE_Overworld_CliffBottom_BrownShadow, TRUE
 # 15 "data/maps/Route5/scripts.pory"
-	setmetatile 48, 17, METATILE_Overworld_CliffBottom_GreyShadow, TRUE
+	setmetatile 49, 17, METATILE_Overworld_CliffBottom_GreyShadow, TRUE
 # 16 "data/maps/Route5/scripts.pory"
 	special DrawWholeMapView
 # 17 "data/maps/Route5/scripts.pory"

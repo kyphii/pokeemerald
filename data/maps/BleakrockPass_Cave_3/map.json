@@ -1,0 +1,35 @@
+{
+  "id": "MAP_BLEAKROCK_PASS_CAVE_3",
+  "name": "BleakrockPass_Cave_3",
+  "layout": "LAYOUT_BLEAKROCK_PASS_CAVE_3",
+  "music": "MUS_MT_PYRE",
+  "region_map_section": "MAPSEC_BLEAKROCK_PASS",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 30,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_BLEAKROCK_PASS",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 13,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_BLEAKROCK_PASS",
+      "dest_warp_id": "4"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

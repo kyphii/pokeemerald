@@ -47,14 +47,14 @@
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_ROUTE19",
-      "dest_warp_id": "0"
+      "dest_warp_id": "1"
     },
     {
       "x": 5,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_ROUTE19",
-      "dest_warp_id": "0"
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

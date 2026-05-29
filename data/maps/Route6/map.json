@@ -24,11 +24,6 @@
       "direction": "left"
     },
     {
-      "map": "MAP_BLEAKROCK_PASS",
-      "offset": 72,
-      "direction": "up"
-    },
-    {
       "map": "MAP_ROUTE27",
       "offset": 24,
       "direction": "up"
@@ -42,6 +37,13 @@
       "elevation": 0,
       "dest_map": "MAP_WANDERING_CAVE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 83,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_BLEAKROCK_PASS_CAVE_6",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

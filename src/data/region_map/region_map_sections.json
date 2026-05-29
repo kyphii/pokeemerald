@@ -377,6 +377,10 @@
       "height": 1
     },
     {
+      "id": "MAPSEC_JUNOPOLIS_AIRPORT",
+      "name": "JUNOPOLIS AIRPORT"
+    },
+    {
       "id": "MAPSEC_WITCHLIGHT_WOODS",
       "name": "WITCHLIGHT WOODS",
       "x": 17,
@@ -391,6 +395,14 @@
       "y": 4,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_LOST_VILLAGE",
+      "name": "LOST VILLAGE"
+    },
+    {
+      "id": "MAPSEC_RAINBOW_WEALD",
+      "name": "RAINBOW_WEALD"
     },
     {
       "id": "MAPSEC_RIVERVIEW_PARK",
@@ -439,6 +451,22 @@
       "y": 8,
       "width": 2,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_JUNOPOLIS_HARBOR",
+      "name": "JUNOPOLIS HARBOR"
+    },
+    {
+      "id": "MAPSEC_LONENONIA_CROSSING",
+      "name": "LONENONIA CROSSING"
+    },
+    {
+      "id": "MAPSEC_MOSAIC_REEF",
+      "name": "MOSAIC REEF"
+    },
+    {
+      "id": "MAPSEC_SANCTUM_SEA",
+      "name": "SANCTUM SEA"
     },
     {
       "id": "MAPSEC_PERIWIND_MEADOW",
